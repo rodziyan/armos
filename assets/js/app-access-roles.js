@@ -128,7 +128,7 @@ $(function () {
         },
         {
           // User Status
-          targets: 6,
+          targets: 5,
           render: function (data, type, full, meta) {
             var $status = full['status'];
 
