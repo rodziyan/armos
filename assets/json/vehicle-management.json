@@ -1,0 +1,504 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "plat_nomor": "B 1234 LGS",
+      "expired_pajak": "2024-12-31",
+      "nama_kendaraan": "Colt Diesel",
+      "brand": "Mitsubishi",
+      "model": "Colt Diesel",
+      "type": "FE 74 HD",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "plat_nomor": "D 5678 LOG",
+      "expired_pajak": "2025-06-30",
+      "nama_kendaraan": "Hino Dutro",
+      "brand": "Hino",
+      "model": "Dutro",
+      "type": "110 SD",
+      "status": 2
+    },
+    {
+      "id": 3,
+      "plat_nomor": "F 9012 TRK",
+      "expired_pajak": "2024-09-15",
+      "nama_kendaraan": "Fuso Fighter",
+      "brand": "Mitsubishi",
+      "model": "Fuso Fighter",
+      "type": "FM 65 FS",
+      "status": 1
+    },
+    {
+      "id": 4,
+      "plat_nomor": "T 3456 CRG",
+      "expired_pajak": "2025-03-20",
+      "nama_kendaraan": "Isuzu Elf",
+      "brand": "Isuzu",
+      "model": "Elf",
+      "type": "NMR 71",
+      "status": 1
+    },
+    {
+      "id": 5,
+      "plat_nomor": "L 7890 FRT",
+      "expired_pajak": "2024-11-30",
+      "nama_kendaraan": "Hino Ranger",
+      "brand": "Hino",
+      "model": "Ranger",
+      "type": "FC 190 J",
+      "status": 2
+    },
+    {
+      "id": 6,
+      "plat_nomor": "N 2345 DLV",
+      "expired_pajak": "2025-08-25",
+      "nama_kendaraan": "Isuzu Giga",
+      "brand": "Isuzu",
+      "model": "Giga",
+      "type": "FVZ 34 P",
+      "status": 1
+    },
+    {
+      "id": 7,
+      "plat_nomor": "R 6789 HUL",
+      "expired_pajak": "2024-10-10",
+      "nama_kendaraan": "UD Trucks Quester",
+      "brand": "UD Trucks",
+      "model": "Quester",
+      "type": "CWE 280",
+      "status": 1
+    },
+    {
+      "id": 8,
+      "plat_nomor": "W 1234 SHP",
+      "expired_pajak": "2025-05-15",
+      "nama_kendaraan": "Mitsubishi Fuso",
+      "brand": "Mitsubishi",
+      "model": "Fuso",
+      "type": "FN 517 ML2",
+      "status": 2
+    },
+    {
+      "id": 9,
+      "plat_nomor": "S 5678 TRN",
+      "expired_pajak": "2024-07-20",
+      "nama_kendaraan": "Hino 500 Series",
+      "brand": "Hino",
+      "model": "500 Series",
+      "type": "FG 235 JP",
+      "status": 1
+    },
+    {
+      "id": 10,
+      "plat_nomor": "A 9012 FRG",
+      "expired_pajak": "2025-01-31",
+      "nama_kendaraan": "Isuzu FVR",
+      "brand": "Isuzu",
+      "model": "FVR",
+      "type": "34 P",
+      "status": 1
+    },
+    {
+      "id": 11,
+      "plat_nomor": "B 3456 CRR",
+      "expired_pajak": "2024-08-15",
+      "nama_kendaraan": "UD Trucks Kuzer",
+      "brand": "UD Trucks",
+      "model": "Kuzer",
+      "type": "RKE 150",
+      "status": 1
+    },
+    {
+      "id": 12,
+      "plat_nomor": "D 7890 VAN",
+      "expired_pajak": "2025-04-30",
+      "nama_kendaraan": "Daihatsu Gran Max",
+      "brand": "Daihatsu",
+      "model": "Gran Max",
+      "type": "1.5 D PS",
+      "status": 2
+    },
+    {
+      "id": 13,
+      "plat_nomor": "F 2345 BOX",
+      "expired_pajak": "2024-12-20",
+      "nama_kendaraan": "Mitsubishi L300",
+      "brand": "Mitsubishi",
+      "model": "L300",
+      "type": "Pick Up",
+      "status": 1
+    },
+    {
+      "id": 14,
+      "plat_nomor": "T 6789 LRY",
+      "expired_pajak": "2025-07-10",
+      "nama_kendaraan": "Suzuki Carry",
+      "brand": "Suzuki",
+      "model": "Carry",
+      "type": "Pick Up FD",
+      "status": 1
+    },
+    {
+      "id": 15,
+      "plat_nomor": "L 1234 HVY",
+      "expired_pajak": "2024-09-30",
+      "nama_kendaraan": "Hino 700 Series",
+      "brand": "Hino",
+      "model": "700 Series",
+      "type": "SG 260 TI",
+      "status": 2
+    },
+    {
+      "id": 16,
+      "plat_nomor": "N 5678 PUP",
+      "expired_pajak": "2025-02-28",
+      "nama_kendaraan": "Toyota Hilux",
+      "brand": "Toyota",
+      "model": "Hilux",
+      "type": "Single Cabin 2.4 DSL",
+      "status": 1
+    },
+    {
+      "id": 17,
+      "plat_nomor": "R 9012 TRL",
+      "expired_pajak": "2024-11-15",
+      "nama_kendaraan": "Isuzu NQR",
+      "brand": "Isuzu",
+      "model": "NQR",
+      "type": "71 HD 5.8",
+      "status": 1
+    },
+    {
+      "id": 18,
+      "plat_nomor": "W 3456 RFR",
+      "expired_pajak": "2025-06-20",
+      "nama_kendaraan": "Mitsubishi Colt Diesel",
+      "brand": "Mitsubishi",
+      "model": "Colt Diesel",
+      "type": "FE 84G BC",
+      "status": 2
+    },
+    {
+      "id": 19,
+      "plat_nomor": "S 7890 TKR",
+      "expired_pajak": "2024-08-31",
+      "nama_kendaraan": "UD Trucks Croner",
+      "brand": "UD Trucks",
+      "model": "Croner",
+      "type": "PKE 250",
+      "status": 1
+    },
+    {
+      "id": 20,
+      "plat_nomor": "A 2345 CTN",
+      "expired_pajak": "2025-03-15",
+      "nama_kendaraan": "Hino Dutro Cargo",
+      "brand": "Hino",
+      "model": "Dutro Cargo",
+      "type": "110 SDL",
+      "status": 1
+    },
+    {
+      "id": 21,
+      "plat_nomor": "B 6789 FLT",
+      "expired_pajak": "2024-10-25",
+      "nama_kendaraan": "Isuzu FTR",
+      "brand": "Isuzu",
+      "model": "FTR",
+      "type": "90 S",
+      "status": 2
+    },
+    {
+      "id": 22,
+      "plat_nomor": "D 1234 TNK",
+      "expired_pajak": "2025-05-10",
+      "nama_kendaraan": "Mitsubishi Fuso Tank",
+      "brand": "Mitsubishi",
+      "model": "Fuso Tank",
+      "type": "FN 527 ML",
+      "status": 1
+    },
+    {
+      "id": 23,
+      "plat_nomor": "F 5678 DMP",
+      "expired_pajak": "2024-12-05",
+      "nama_kendaraan": "Hino Dump Truck",
+      "brand": "Hino",
+      "model": "Dump Truck",
+      "type": "FM 260 JD",
+      "status": 1
+    },
+    {
+      "id": 24,
+      "plat_nomor": "T 9012 MXR",
+      "expired_pajak": "2025-07-20",
+      "nama_kendaraan": "Isuzu Concrete Mixer",
+      "brand": "Isuzu",
+      "model": "Concrete Mixer",
+      "type": "FVZ 34 T",
+      "status": 2
+    },
+    {
+      "id": 25,
+      "plat_nomor": "L 3456 RFT",
+      "expired_pajak": "2024-09-30",
+      "nama_kendaraan": "UD Trucks Refrigerated",
+      "brand": "UD Trucks",
+      "model": "Refrigerated",
+      "type": "MKE 210",
+      "status": 1
+    },
+    {
+      "id": 26,
+      "plat_nomor": "N 7890 LDR",
+      "expired_pajak": "2025-04-15",
+      "nama_kendaraan": "Mitsubishi Fuso Loader",
+      "brand": "Mitsubishi",
+      "model": "Fuso Loader",
+      "type": "FJ 2523",
+      "status": 1
+    },
+    {
+      "id": 27,
+      "plat_nomor": "R 2345 TWT",
+      "expired_pajak": "2024-11-30",
+      "nama_kendaraan": "Hino Tractor Head",
+      "brand": "Hino",
+      "model": "Tractor Head",
+      "type": "SG 260 TH",
+      "status": 2
+    },
+    {
+      "id": 28,
+      "plat_nomor": "W 6789 CMP",
+      "expired_pajak": "2025-06-10",
+      "nama_kendaraan": "Isuzu Compactor",
+      "brand": "Isuzu",
+      "model": "Compactor",
+      "type": "FVR 34 UF",
+      "status": 1
+    },
+    {
+      "id": 29,
+      "plat_nomor": "S 1234 WNG",
+      "expired_pajak": "2024-08-20",
+      "nama_kendaraan": "UD Trucks Wing Box",
+      "brand": "UD Trucks",
+      "model": "Wing Box",
+      "type": "PKE 280",
+      "status": 1
+    },
+    {
+      "id": 30,
+      "plat_nomor": "A 5678 BLK",
+      "expired_pajak": "2025-03-25",
+      "nama_kendaraan": "Mitsubishi Fuso Bulk",
+      "brand": "Mitsubishi",
+      "model": "Fuso Bulk",
+      "type": "FN 527 ML",
+      "status": 2
+    },
+    {
+      "id": 31,
+      "plat_nomor": "B 9012 CRN",
+      "expired_pajak": "2024-10-15",
+      "nama_kendaraan": "Hino Crane Truck",
+      "brand": "Hino",
+      "model": "Crane Truck",
+      "type": "FL 235 JW",
+      "status": 1
+    },
+    {
+      "id": 32,
+      "plat_nomor": "D 3456 LBD",
+      "expired_pajak": "2025-05-30",
+      "nama_kendaraan": "Isuzu Low Bed",
+      "brand": "Isuzu",
+      "model": "Low Bed",
+      "type": "GVR 34 H",
+      "status": 1
+    },
+    {
+      "id": 33,
+      "plat_nomor": "F 7890 SKR",
+      "expired_pajak": "2024-12-10",
+      "nama_kendaraan": "UD Trucks Self Loader",
+      "brand": "UD Trucks",
+      "model": "Self Loader",
+      "type": "CWE 280",
+      "status": 2
+    },
+    {
+      "id": 34,
+      "plat_nomor": "T 2345 PLT",
+      "expired_pajak": "2025-07-15",
+      "nama_kendaraan": "Mitsubishi Colt Diesel",
+      "brand": "Mitsubishi",
+      "model": "Colt Diesel",
+      "type": "FE 71 Long",
+      "status": 1
+    },
+    {
+      "id": 35,
+      "plat_nomor": "L 6789 CTR",
+      "expired_pajak": "2024-09-20",
+      "nama_kendaraan": "Hino Container",
+      "brand": "Hino",
+      "model": "Container",
+      "type": "FL 235 JN",
+      "status": 1
+    },
+    {
+      "id": 36,
+      "plat_nomor": "N 1234 TLR",
+      "expired_pajak": "2025-04-30",
+      "nama_kendaraan": "Isuzu Car Carrier",
+      "brand": "Isuzu",
+      "model": "Car Carrier",
+      "type": "FVZ 34 P",
+      "status": 2
+    },
+    {
+      "id": 37,
+      "plat_nomor": "R 5678 SWP",
+      "expired_pajak": "2024-11-25",
+      "nama_kendaraan": "UD Trucks Sweeper",
+      "brand": "UD Trucks",
+      "model": "Sweeper",
+      "type": "MK 250",
+      "status": 1
+    },
+    {
+      "id": 38,
+      "plat_nomor": "W 9012 TNK",
+      "expired_pajak": "2025-06-10",
+      "nama_kendaraan": "Mitsubishi Fuso Tanker",
+      "brand": "Mitsubishi",
+      "model": "Fuso Tanker",
+      "type": "FN 527 ML",
+      "status": 1
+    },
+    {
+      "id": 39,
+      "plat_nomor": "S 3456 CRR",
+      "expired_pajak": "2024-12-31",
+      "nama_kendaraan": "Hino Crane Truck",
+      "brand": "Hino",
+      "model": "Crane Truck",
+      "type": "FL 235 JW",
+      "status": 2
+    },
+    {
+      "id": 40,
+      "plat_nomor": "A 6789 MXR",
+      "expired_pajak": "2025-07-10",
+      "nama_kendaraan": "Isuzu Concrete Mixer",
+      "brand": "Isuzu",
+      "model": "Concrete Mixer",
+      "type": "FVZ 34 T",
+      "status": 1
+    },
+    {
+      "id": 41,
+      "plat_nomor": "B 1234 LDR",
+      "expired_pajak": "2024-11-20",
+      "nama_kendaraan": "Mitsubishi Fuso Loader",
+      "brand": "Mitsubishi",
+      "model": "Fuso Loader",
+      "type": "FJ 2523",
+      "status": 2
+    },
+    {
+      "id": 42,
+      "plat_nomor": "D 5678 TRL",
+      "expired_pajak": "2025-08-20",
+      "nama_kendaraan": "Hino Tractor Head",
+      "brand": "Hino",
+      "model": "Tractor Head",
+      "type": "SG 260 TH",
+      "status": 1
+    },
+    {
+      "id": 43,
+      "plat_nomor": "F 9012 CMP",
+      "expired_pajak": "2024-10-05",
+      "nama_kendaraan": "Isuzu Compactor",
+      "brand": "Isuzu",
+      "model": "Compactor",
+      "type": "FVR 34 UF",
+      "status": 2
+    },
+    {
+      "id": 44,
+      "plat_nomor": "T 3456 WNG",
+      "expired_pajak": "2025-06-15",
+      "nama_kendaraan": "UD Trucks Wing Box",
+      "brand": "UD Trucks",
+      "model": "Wing Box",
+      "type": "PKE 280",
+      "status": 1
+    },
+    {
+      "id": 45,
+      "plat_nomor": "L 7890 PLT",
+      "expired_pajak": "2024-11-10",
+      "nama_kendaraan": "Mitsubishi Colt Diesel",
+      "brand": "Mitsubishi",
+      "model": "Colt Diesel",
+      "type": "FE 71 Long",
+      "status": 2
+    },
+    {
+      "id": 46,
+      "plat_nomor": "N 2345 RFT",
+      "expired_pajak": "2025-09-30",
+      "nama_kendaraan": "Hino Container",
+      "brand": "Hino",
+      "model": "Container",
+      "type": "FL 235 JN",
+      "status": 1
+    },
+    {
+      "id": 47,
+      "plat_nomor": "R 6789 LDR",
+      "expired_pajak": "2024-12-25",
+      "nama_kendaraan": "Isuzu Car Carrier",
+      "brand": "Isuzu",
+      "model": "Car Carrier",
+      "type": "FVZ 34 P",
+      "status": 2
+    },
+    {
+      "id": 48,
+      "plat_nomor": "W 1234 SWP",
+      "expired_pajak": "2025-04-10",
+      "nama_kendaraan": "UD Trucks Sweeper",
+      "brand": "UD Trucks",
+      "model": "Sweeper",
+      "type": "MK 250",
+      "status": 1
+    },
+    {
+      "id": 49,
+      "plat_nomor": "S 5678 TNK",
+      "expired_pajak": "2024-08-10",
+      "nama_kendaraan": "Mitsubishi Fuso Tanker",
+      "brand": "Mitsubishi",
+      "model": "Fuso Tanker",
+      "type": "FN 527 ML",
+      "status": 2
+    },
+    {
+      "id": 50,
+      "plat_nomor": "A 9012 CRR",
+      "expired_pajak": "2025-07-05",
+      "nama_kendaraan": "Hino Crane Truck",
+      "brand": "Hino",
+      "model": "Crane Truck",
+      "type": "FL 235 JW",
+      "status": 1
+    }
+  ]
+}
