@@ -208,7 +208,7 @@ $(function () {
         });
 
         // Add "Add New Kendaraan" button after DataTable initialization
-      $('.add-new').html('<a href="form-layouts-vertical.html" class="btn btn-primary" data-bs-toggle="Add New" aria-controls="Tambah Kendaraan">Tambah Kendaraan</a>');
+         $('.add-new').html('<a href="form-layouts-vertical.html" class="btn btn-primary" data-bs-toggle="Add New" aria-controls="Tambah Kendaraan">Tambah Kendaraan</a>');
         
         // Delete record
         $('.datatables-vehicles tbody').on('click', '.delete-record', function () {
