@@ -409,12 +409,12 @@
       <!-- Content wrapper -->
       <div class="content-wrapper">
         <!-- Menu -->
-        <!-- <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
+        <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
           <div class="container-xxl d-flex h-100">
-            <ul class="menu-inner"> -->
+            <ul class="menu-inner">
 
               <!-- Dashboards -->
-              <!-- <li class="menu-item active">
+              <li class="menu-item active">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons ri-home-smile-line"></i>
                   <div data-i18n="Dashboards">Dashboards</div>
@@ -433,10 +433,10 @@
                     </a>
                   </li>
                 </ul>
-              </li> -->
+              </li>
 
               <!-- User Management -->
-              <!-- <li class="menu-item">
+              <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons ri-user-2-line"></i>
                   <div data-i18n="User Management">User Management</div>
@@ -475,10 +475,10 @@
                     </ul>
                   </li>
                 </ul>
-              </li> -->
+              </li>
 
               <!-- Driver & Vehicle Manager -->
-              <!-- <li class="menu-item">
+              <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons ri-truck-line"></i>
                   <div data-i18n="Driver & Vehicle Manager">Driver & Vehicle Manager</div>
@@ -491,7 +491,7 @@
                     </a>
                   </li>
                   <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link">
+                    <a href="app-vehicle-management.html" class="menu-link">
                       <i class="menu-icon tf-icons ri-car-line"></i>
                       <div data-i18n="Vehicle Management">Vehicle Management (CRUD)</div>
                     </a>
@@ -515,10 +515,10 @@
                     </a>
                   </li>
                 </ul>
-              </li> -->
+              </li>
 
               <!-- Warehouse Master -->
-              <!-- <li class="menu-item">
+            <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons ri-building-2-line"></i>
                   <div data-i18n="Warehouse Master">Warehouse Master</div>
@@ -539,10 +539,10 @@
                     </ul>
                   </li>
                 </ul>
-              </li> -->
+              </li>
 
               <!-- Store / Customer Locator -->
-              <!-- <li class="menu-item">
+              <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons ri-store-2-line"></i>
                   <div data-i18n="Store / Customer Locator">Store / Customer Locator</div>
@@ -563,10 +563,10 @@
                     </ul>
                   </li>
                 </ul>
-              </li> -->
+              </li>
 
               <!-- Order Management -->
-              <!-- <li class="menu-item">
+              <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons ri-file-text-line"></i>
                   <div data-i18n="Order Management">Order Management</div>
@@ -611,10 +611,10 @@
                     </a>
                   </li>
                 </ul>
-              </li> -->
+              </li>
 
               <!-- Optimization Engine Configuration -->
-              <!-- <li class="menu-item">
+              <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons ri-settings-3-line"></i>
                   <div data-i18n="Optimization Engine Configurations">Optimization Engine Configuration</div>
@@ -633,10 +633,10 @@
                     </a>
                   </li>
                 </ul>
-              </li> -->
+              </li>
 
               <!-- Delivery Monitoring -->
-              <!-- <li class="menu-item">
+              <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons ri-list-check-2"></i>
                   <div data-i18n="Delivery Monitoring">Delivery Monitoring</div>
@@ -657,10 +657,10 @@
                     </ul>
                   </li>
                 </ul>
-              </li> -->
+              </li>
 
               <!-- Configuration Services -->
-              <!-- <li class="menu-item">
+              <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons ri-settings-4-line"></i>
                   <div data-i18n="Configuration Services">Configuration Services</div>
@@ -679,10 +679,10 @@
                     </a>
                   </li>
                 </ul>
-              </li> -->
+              </li>
 
               <!-- Value Master -->
-              <!-- <li class="menu-item">
+              <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons ri-file-list-2-line"></i>
                   <div data-i18n="Value Master">Value Master</div>
@@ -699,7 +699,7 @@
 
             </ul>
           </div>
-        </aside> --> 
+        </aside> 
         <!-- / Menu -->
 
             <!-- Content -->
@@ -709,92 +709,92 @@
               <!-- Combined Vehicle Details Form -->
                 <div class="container mt-5">
                   <div class="card mb-6">
-                      <h5 class="card-header">Vehicle Details Form</h5>
+                      <h5 class="card-header">Form Detail Kendaraan</h5>
                       <form class="card-body" action="app-vehicle-management.html" method="get">
                           <div class="row g-6">
                               <div class="col-md-6">
                                   <div class="form-floating form-floating-outline">
                                       <select id="vehicle-brand" class="form-select select2" data-allow-clear="true">
-                                          <option value="">Select Vehicle Brand</option>
+                                          <option value="">Pilih Brand Kendaraan</option>
                                           <option value="Toyota">Toyota</option>
                                           <option value="Honda">Honda</option>
                                           <option value="Ford">Ford</option>
                                           <option value="BMW">BMW</option>
                                           <!-- Add more options as needed -->
                                       </select>
-                                      <label for="vehicle-brand">Vehicle Brand</label>
+                                      <label for="vehicle-brand">Brand Kendaraan</label>
                                   </div>
                               </div>
                               <div class="col-md-6">
                                   <div class="form-floating form-floating-outline">
                                       <select id="vehicle-model" class="form-select select2" data-allow-clear="true">
-                                          <option value="">Select Vehicle Model</option>
+                                          <option value="">Pilih Model Kendaraan</option>
                                           <option value="Model A">Model A</option>
                                           <option value="Model B">Model B</option>
                                           <option value="Model C">Model C</option>
                                           <!-- Add more options as needed -->
                                       </select>
-                                      <label for="vehicle-model">Vehicle Model</label>
+                                      <label for="vehicle-model">Model Kendaraan</label>
                                   </div>
                               </div>
                               <div class="col-md-6">
                                   <div class="form-floating form-floating-outline">
                                       <select id="engine-type" class="form-select select2" data-allow-clear="true">
-                                          <option value="">Select Engine Type</option>
+                                          <option value="">Pilih Bahan Bakar Kendaraan</option>
                                           <option value="Petrol">Petrol</option>
                                           <option value="Diesel">Diesel</option>
                                           <option value="Electric">Electric</option>
                                           <option value="Hybrid">Hybrid</option>
                                       </select>
-                                      <label for="engine-type">Vehicle Engine Type</label>
+                                      <label for="engine-type">Bahan Bakar Kendaraan</label>
                                   </div>
                               </div>
                               <div class="col-md-6">
                                   <div class="form-floating form-floating-outline">
                                       <select id="vehicle-type" class="form-select select2" data-allow-clear="true">
-                                          <option value="">Select Vehicle Type</option>
+                                          <option value="">Pilih Tipe Kendaraan</option>
                                           <option value="Sedan">Sedan</option>
                                           <option value="SUV">SUV</option>
                                           <option value="Truck">Truck</option>
                                           <option value="Van">Van</option>
                                       </select>
-                                      <label for="vehicle-type">Vehicle Type</label>
+                                      <label for="vehicle-type">Tipe Kendaraan</label>
                                   </div>
                               </div>
                               <div class="col-md-6">
                                   <div class="form-floating form-floating-outline">
                                       <input type="text" id="vehicle-years" class="form-control" placeholder="e.g. 2020" />
-                                      <label for="vehicle-years">Vehicle Years</label>
+                                      <label for="vehicle-years">Tahun Kendaraan</label>
                                   </div>
                               </div>
                               <div class="col-md-6">
                                   <div class="form-floating form-floating-outline">
                                       <input type="text" id="license-plate" class="form-control" placeholder="e.g. ABC1234" />
-                                      <label for="license-plate">License Plate</label>
+                                      <label for="license-plate">Nomor Plat Nomor</label>
                                   </div>
                               </div>
                               <div class="col-md-6">
                                   <div class="form-floating form-floating-outline">
                                       <input type="date" id="expired-plate" class="form-control" />
-                                      <label for="expired-plate">Expired Plate</label>
+                                      <label for="expired-plate">Pajak Plat Nomor</label>
                                   </div>
                               </div>
                               <div class="col-md-6">
                                   <div class="form-floating form-floating-outline">
                                       <select id="vehicle-group" class="form-select select2" data-allow-clear="true">
-                                          <option value="">Select Vehicle Group</option>
+                                          <option value="">Pilih Grup Kendaraan</option>
                                           <option value="Group 1">Group 1</option>
                                           <option value="Group 2">Group 2</option>
                                           <option value="Group 3">Group 3</option>
                                           <!-- Add more options as needed -->
                                       </select>
-                                      <label for="vehicle-group">Vehicle Group</label>
+                                      <label for="vehicle-group">Grup Kendaraan</label>
                                   </div>
                               </div>
                               <div class="col-md-6">
                                   <div class="form-floating form-floating-outline">
                                       <input type="file" id="vehicle-image" class="form-control" />
-                                      <label for="vehicle-image">Vehicle Image</label>
+                                      <label for="vehicle-image">Gambar Kendaraan</label>
                                   </div>
                               </div>
                               <div class="col-md-6">
