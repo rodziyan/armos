@@ -13,15 +13,8 @@ $(function () {
     var dt_vehicle_table = $('.datatables-vehicles');
     if (dt_vehicle_table.length) {
         var dt_vehicle = dt_vehicle_table.DataTable({
-            ajax: {
-                url: 'assets/json/vehicle-management.json', // Correct path to JSON file
-                dataSrc: '',
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.error('Failed to load data: ', textStatus, errorThrown);
-                }
-            },
+            ajax: assetsPath + 'json/vehicle-management.json', // JSON file to add data
             columns: [
-                { data: '' },
                 { data: 'id' },
                 { data: 'plat_nomor' },
                 { data: 'expired_pajak' },
@@ -153,13 +146,6 @@ $(function () {
                             className: 'dropdown-item'
                         }
                     ]
-                },
-                {
-                    text: 'Add New Kendaraan',
-                    action: function ( e, dt, node, config ) {
-                        window.location.href = 'form-layouts-vertical.html';
-                    },
-                    className: 'btn btn-primary'
                 }
             ],
             responsive: {
