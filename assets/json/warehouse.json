@@ -1,0 +1,940 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "nama": "Warehouse A",
+      "alamat": {
+        "nama_jalan": "Jalan Mawar",
+        "no_rumah": "12A",
+        "rt_rw": "01/02",
+        "kelurahan": "Kelurahan A",
+        "kecamatan": "Kecamatan A",
+        "kota_kabupaten": "Kota A",
+        "provinsi": "Provinsi A",
+        "kode_pos": "12345"
+      },
+      "geo_tagging": {
+        "long": 106.827153,
+        "lat": -6.175110
+      }
+    },
+    {
+      "id": 2,
+      "nama": "Warehouse B",
+      "alamat": {
+        "nama_jalan": "Jalan Melati",
+        "no_rumah": "15B",
+        "rt_rw": "02/03",
+        "kelurahan": "Kelurahan B",
+        "kecamatan": "Kecamatan B",
+        "kota_kabupaten": "Kota B",
+        "provinsi": "Provinsi B",
+        "kode_pos": "23456"
+      },
+      "geo_tagging": {
+        "long": 106.827204,
+        "lat": -6.174900
+      }
+    },
+    {
+      "id": 3,
+      "nama": "Warehouse C",
+      "alamat": {
+        "nama_jalan": "Jalan Anggrek",
+        "no_rumah": "18C",
+        "rt_rw": "03/04",
+        "kelurahan": "Kelurahan C",
+        "kecamatan": "Kecamatan C",
+        "kota_kabupaten": "Kota C",
+        "provinsi": "Provinsi C",
+        "kode_pos": "34567"
+      },
+      "geo_tagging": {
+        "long": 106.827255,
+        "lat": -6.174700
+      }
+    },
+    {
+      "id": 4,
+      "nama": "Warehouse D",
+      "alamat": {
+        "nama_jalan": "Jalan Tulip",
+        "no_rumah": "21D",
+        "rt_rw": "04/05",
+        "kelurahan": "Kelurahan D",
+        "kecamatan": "Kecamatan D",
+        "kota_kabupaten": "Kota D",
+        "provinsi": "Provinsi D",
+        "kode_pos": "45678"
+      },
+      "geo_tagging": {
+        "long": 106.827306,
+        "lat": -6.174500
+      }
+    },
+    {
+      "id": 5,
+      "nama": "Warehouse E",
+      "alamat": {
+        "nama_jalan": "Jalan Kenanga",
+        "no_rumah": "24E",
+        "rt_rw": "05/06",
+        "kelurahan": "Kelurahan E",
+        "kecamatan": "Kecamatan E",
+        "kota_kabupaten": "Kota E",
+        "provinsi": "Provinsi E",
+        "kode_pos": "56789"
+      },
+      "geo_tagging": {
+        "long": 106.827357,
+        "lat": -6.174300
+      }
+    },
+    {
+      "id": 6,
+      "nama": "Warehouse F",
+      "alamat": {
+        "nama_jalan": "Jalan Dahlia",
+        "no_rumah": "27F",
+        "rt_rw": "06/07",
+        "kelurahan": "Kelurahan F",
+        "kecamatan": "Kecamatan F",
+        "kota_kabupaten": "Kota F",
+        "provinsi": "Provinsi F",
+        "kode_pos": "67890"
+      },
+      "geo_tagging": {
+        "long": 106.827408,
+        "lat": -6.174100
+      }
+    },
+    {
+      "id": 7,
+      "nama": "Warehouse G",
+      "alamat": {
+        "nama_jalan": "Jalan Melur",
+        "no_rumah": "30G",
+        "rt_rw": "07/08",
+        "kelurahan": "Kelurahan G",
+        "kecamatan": "Kecamatan G",
+        "kota_kabupaten": "Kota G",
+        "provinsi": "Provinsi G",
+        "kode_pos": "78901"
+      },
+      "geo_tagging": {
+        "long": 106.827459,
+        "lat": -6.173900
+      }
+    },
+    {
+      "id": 8,
+      "nama": "Warehouse H",
+      "alamat": {
+        "nama_jalan": "Jalan Teratai",
+        "no_rumah": "33H",
+        "rt_rw": "08/09",
+        "kelurahan": "Kelurahan H",
+        "kecamatan": "Kecamatan H",
+        "kota_kabupaten": "Kota H",
+        "provinsi": "Provinsi H",
+        "kode_pos": "89012"
+      },
+      "geo_tagging": {
+        "long": 106.827510,
+        "lat": -6.173700
+      }
+    },
+    {
+      "id": 9,
+      "nama": "Warehouse I",
+      "alamat": {
+        "nama_jalan": "Jalan Kamboja",
+        "no_rumah": "36I",
+        "rt_rw": "09/10",
+        "kelurahan": "Kelurahan I",
+        "kecamatan": "Kecamatan I",
+        "kota_kabupaten": "Kota I",
+        "provinsi": "Provinsi I",
+        "kode_pos": "90123"
+      },
+      "geo_tagging": {
+        "long": 106.827561,
+        "lat": -6.173500
+      }
+    },
+    {
+      "id": 10,
+      "nama": "Warehouse J",
+      "alamat": {
+        "nama_jalan": "Jalan Sakura",
+        "no_rumah": "39J",
+        "rt_rw": "10/11",
+        "kelurahan": "Kelurahan J",
+        "kecamatan": "Kecamatan J",
+        "kota_kabupaten": "Kota J",
+        "provinsi": "Provinsi J",
+        "kode_pos": "01234"
+      },
+      "geo_tagging": {
+        "long": 106.827612,
+        "lat": -6.173300
+      }
+    },
+    {
+      "id": 11,
+      "nama": "Warehouse K",
+      "alamat": {
+        "nama_jalan": "Jalan Seroja",
+        "no_rumah": "42K",
+        "rt_rw": "11/12",
+        "kelurahan": "Kelurahan K",
+        "kecamatan": "Kecamatan K",
+        "kota_kabupaten": "Kota K",
+        "provinsi": "Provinsi K",
+        "kode_pos": "12345"
+      },
+      "geo_tagging": {
+        "long": 106.827663,
+        "lat": -6.173100
+      }
+    },
+    {
+      "id": 12,
+      "nama": "Warehouse L",
+      "alamat": {
+        "nama_jalan": "Jalan Matahari",
+        "no_rumah": "45L",
+        "rt_rw": "12/13",
+        "kelurahan": "Kelurahan L",
+        "kecamatan": "Kecamatan L",
+        "kota_kabupaten": "Kota L",
+        "provinsi": "Provinsi L",
+        "kode_pos": "23456"
+      },
+      "geo_tagging": {
+        "long": 106.827714,
+        "lat": -6.172900
+      }
+    },
+    {
+      "id": 13,
+      "nama": "Warehouse M",
+      "alamat": {
+        "nama_jalan": "Jalan Cempaka",
+        "no_rumah": "48M",
+        "rt_rw": "13/14",
+        "kelurahan": "Kelurahan M",
+        "kecamatan": "Kecamatan M",
+        "kota_kabupaten": "Kota M",
+        "provinsi": "Provinsi M",
+        "kode_pos": "34567"
+      },
+      "geo_tagging": {
+        "long": 106.827765,
+        "lat": -6.172700
+      }
+    },
+    {
+      "id": 14,
+      "nama": "Warehouse N",
+      "alamat": {
+        "nama_jalan": "Jalan Kembang",
+        "no_rumah": "51N",
+        "rt_rw": "14/15",
+        "kelurahan": "Kelurahan N",
+        "kecamatan": "Kecamatan N",
+        "kota_kabupaten": "Kota N",
+        "provinsi": "Provinsi N",
+        "kode_pos": "45678"
+      },
+      "geo_tagging": {
+        "long": 106.827816,
+        "lat": -6.172500
+      }
+    },
+    {
+      "id": 15,
+      "nama": "Warehouse O",
+      "alamat": {
+        "nama_jalan": "Jalan Soka",
+        "no_rumah": "54O",
+        "rt_rw": "15/16",
+        "kelurahan": "Kelurahan O",
+        "kecamatan": "Kecamatan O",
+        "kota_kabupaten": "Kota O",
+        "provinsi": "Provinsi O",
+        "kode_pos": "56789"
+      },
+      "geo_tagging": {
+        "long": 106.827867,
+        "lat": -6.172300
+      }
+    },
+    {
+      "id": 16,
+      "nama": "Warehouse P",
+      "alamat": {
+        "nama_jalan": "Jalan Mawar",
+        "no_rumah": "57P",
+        "rt_rw": "16/17",
+        "kelurahan": "Kelurahan P",
+        "kecamatan": "Kecamatan P",
+        "kota_kabupaten": "Kota P",
+        "provinsi": "Provinsi P",
+        "kode_pos": "67890"
+      },
+      "geo_tagging": {
+        "long": 106.827918,
+        "lat": -6.172100
+      }
+    },
+    {
+      "id": 17,
+      "nama": "Warehouse Q",
+      "alamat": {
+        "nama_jalan": "Jalan Melati",
+        "no_rumah": "60Q",
+        "rt_rw": "17/18",
+        "kelurahan": "Kelurahan Q",
+        "kecamatan": "Kecamatan Q",
+        "kota_kabupaten": "Kota Q",
+        "provinsi": "Provinsi Q",
+        "kode_pos": "78901"
+      },
+      "geo_tagging": {
+        "long": 106.827969,
+        "lat": -6.171900
+      }
+    },
+    {
+      "id": 18,
+      "nama": "Warehouse R",
+      "alamat": {
+        "nama_jalan": "Jalan Anggrek",
+        "no_rumah": "63R",
+        "rt_rw": "18/19",
+        "kelurahan": "Kelurahan R",
+        "kecamatan": "Kecamatan R",
+        "kota_kabupaten": "Kota R",
+        "provinsi": "Provinsi R",
+        "kode_pos": "89012"
+      },
+      "geo_tagging": {
+        "long": 106.828020,
+        "lat": -6.171700
+      }
+    },
+    {
+      "id": 19,
+      "nama": "Warehouse S",
+      "alamat": {
+        "nama_jalan": "Jalan Tulip",
+        "no_rumah": "66S",
+        "rt_rw": "19/20",
+        "kelurahan": "Kelurahan S",
+        "kecamatan": "Kecamatan S",
+        "kota_kabupaten": "Kota S",
+        "provinsi": "Provinsi S",
+        "kode_pos": "90123"
+      },
+      "geo_tagging": {
+        "long": 106.828071,
+        "lat": -6.171500
+      }
+    },
+    {
+      "id": 20,
+      "nama": "Warehouse T",
+      "alamat": {
+        "nama_jalan": "Jalan Kenanga",
+        "no_rumah": "69T",
+        "rt_rw": "20/21",
+        "kelurahan": "Kelurahan T",
+        "kecamatan": "Kecamatan T",
+        "kota_kabupaten": "Kota T",
+        "provinsi": "Provinsi T",
+        "kode_pos": "01234"
+      },
+      "geo_tagging": {
+        "long": 106.828122,
+        "lat": -6.171300
+      }
+    },
+    {
+      "id": 21,
+      "nama": "Warehouse U",
+      "alamat": {
+        "nama_jalan": "Jalan Dahlia",
+        "no_rumah": "72U",
+        "rt_rw": "21/22",
+        "kelurahan": "Kelurahan U",
+        "kecamatan": "Kecamatan U",
+        "kota_kabupaten": "Kota U",
+        "provinsi": "Provinsi U",
+        "kode_pos": "12345"
+      },
+      "geo_tagging": {
+        "long": 106.828173,
+        "lat": -6.171100
+      }
+    },
+    {
+      "id": 22,
+      "nama": "Warehouse V",
+      "alamat": {
+        "nama_jalan": "Jalan Melur",
+        "no_rumah": "75V",
+        "rt_rw": "22/23",
+        "kelurahan": "Kelurahan V",
+        "kecamatan": "Kecamatan V",
+        "kota_kabupaten": "Kota V",
+        "provinsi": "Provinsi V",
+        "kode_pos": "23456"
+      },
+      "geo_tagging": {
+        "long": 106.828224,
+        "lat": -6.170900
+      }
+    },
+    {
+      "id": 23,
+      "nama": "Warehouse W",
+      "alamat": {
+        "nama_jalan": "Jalan Teratai",
+        "no_rumah": "78W",
+        "rt_rw": "23/24",
+        "kelurahan": "Kelurahan W",
+        "kecamatan": "Kecamatan W",
+        "kota_kabupaten": "Kota W",
+        "provinsi": "Provinsi W",
+        "kode_pos": "34567"
+      },
+      "geo_tagging": {
+        "long": 106.828275,
+        "lat": -6.170700
+      }
+    },
+    {
+      "id": 24,
+      "nama": "Warehouse X",
+      "alamat": {
+        "nama_jalan": "Jalan Kamboja",
+        "no_rumah": "81X",
+        "rt_rw": "24/25",
+        "kelurahan": "Kelurahan X",
+        "kecamatan": "Kecamatan X",
+        "kota_kabupaten": "Kota X",
+        "provinsi": "Provinsi X",
+        "kode_pos": "45678"
+      },
+      "geo_tagging": {
+        "long": 106.828326,
+        "lat": -6.170500
+      }
+    },
+    {
+      "id": 25,
+      "nama": "Warehouse Y",
+      "alamat": {
+        "nama_jalan": "Jalan Sakura",
+        "no_rumah": "84Y",
+        "rt_rw": "25/26",
+        "kelurahan": "Kelurahan Y",
+        "kecamatan": "Kecamatan Y",
+        "kota_kabupaten": "Kota Y",
+        "provinsi": "Provinsi Y",
+        "kode_pos": "56789"
+      },
+      "geo_tagging": {
+        "long": 106.828377,
+        "lat": -6.170300
+      }
+    },
+    {
+      "id": 26,
+      "nama": "Warehouse Z",
+      "alamat": {
+        "nama_jalan": "Jalan Seroja",
+        "no_rumah": "87Z",
+        "rt_rw": "26/27",
+        "kelurahan": "Kelurahan Z",
+        "kecamatan": "Kecamatan Z",
+        "kota_kabupaten": "Kota Z",
+        "provinsi": "Provinsi Z",
+        "kode_pos": "67890"
+      },
+      "geo_tagging": {
+        "long": 106.828428,
+        "lat": -6.170100
+      }
+    },
+    {
+      "id": 27,
+      "nama": "Warehouse AA",
+      "alamat": {
+        "nama_jalan": "Jalan Anyelir",
+        "no_rumah": "90AA",
+        "rt_rw": "27/28",
+        "kelurahan": "Kelurahan AA",
+        "kecamatan": "Kecamatan AA",
+        "kota_kabupaten": "Kota AA",
+        "provinsi": "Provinsi AA",
+        "kode_pos": "78901"
+      },
+      "geo_tagging": {
+        "long": 106.828479,
+        "lat": -6.169900
+      }
+    },
+    {
+      "id": 28,
+      "nama": "Warehouse BB",
+      "alamat": {
+        "nama_jalan": "Jalan Bougenville",
+        "no_rumah": "93BB",
+        "rt_rw": "28/29",
+        "kelurahan": "Kelurahan BB",
+        "kecamatan": "Kecamatan BB",
+        "kota_kabupaten": "Kota BB",
+        "provinsi": "Provinsi BB",
+        "kode_pos": "89012"
+      },
+      "geo_tagging": {
+        "long": 106.828530,
+        "lat": -6.169700
+      }
+    },
+    {
+      "id": 29,
+      "nama": "Warehouse CC",
+      "alamat": {
+        "nama_jalan": "Jalan Gladiol",
+        "no_rumah": "96CC",
+        "rt_rw": "29/30",
+        "kelurahan": "Kelurahan CC",
+        "kecamatan": "Kecamatan CC",
+        "kota_kabupaten": "Kota CC",
+        "provinsi": "Provinsi CC",
+        "kode_pos": "90123"
+      },
+      "geo_tagging": {
+        "long": 106.828581,
+        "lat": -6.169500
+      }
+    },
+    {
+      "id": 30,
+      "nama": "Warehouse DD",
+      "alamat": {
+        "nama_jalan": "Jalan Flamboyan",
+        "no_rumah": "99DD",
+        "rt_rw": "30/31",
+        "kelurahan": "Kelurahan DD",
+        "kecamatan": "Kecamatan DD",
+        "kota_kabupaten": "Kota DD",
+        "provinsi": "Provinsi DD",
+        "kode_pos": "01234"
+      },
+      "geo_tagging": {
+        "long": 106.828632,
+        "lat": -6.169300
+      }
+    },
+    {
+      "id": 31,
+      "nama": "Warehouse EE",
+      "alamat": {
+        "nama_jalan": "Jalan Alamanda",
+        "no_rumah": "102EE",
+        "rt_rw": "31/32",
+        "kelurahan": "Kelurahan EE",
+        "kecamatan": "Kecamatan EE",
+        "kota_kabupaten": "Kota EE",
+        "provinsi": "Provinsi EE",
+        "kode_pos": "12345"
+      },
+      "geo_tagging": {
+        "long": 106.828683,
+        "lat": -6.169100
+      }
+    },
+    {
+      "id": 32,
+      "nama": "Warehouse FF",
+      "alamat": {
+        "nama_jalan": "Jalan Asoka",
+        "no_rumah": "105FF",
+        "rt_rw": "32/33",
+        "kelurahan": "Kelurahan FF",
+        "kecamatan": "Kecamatan FF",
+        "kota_kabupaten": "Kota FF",
+        "provinsi": "Provinsi FF",
+        "kode_pos": "23456"
+      },
+      "geo_tagging": {
+        "long": 106.828734,
+        "lat": -6.168900
+      }
+    },
+    {
+      "id": 33,
+      "nama": "Warehouse GG",
+      "alamat": {
+        "nama_jalan": "Jalan Kaktus",
+        "no_rumah": "108GG",
+        "rt_rw": "33/34",
+        "kelurahan": "Kelurahan GG",
+        "kecamatan": "Kecamatan GG",
+        "kota_kabupaten": "Kota GG",
+        "provinsi": "Provinsi GG",
+        "kode_pos": "34567"
+      },
+      "geo_tagging": {
+        "long": 106.828785,
+        "lat": -6.168700
+      }
+    },
+    {
+      "id": 34,
+      "nama": "Warehouse HH",
+      "alamat": {
+        "nama_jalan": "Jalan Bougenville",
+        "no_rumah": "111HH",
+        "rt_rw": "34/35",
+        "kelurahan": "Kelurahan HH",
+        "kecamatan": "Kecamatan HH",
+        "kota_kabupaten": "Kota HH",
+        "provinsi": "Provinsi HH",
+        "kode_pos": "45678"
+      },
+      "geo_tagging": {
+        "long": 106.828836,
+        "lat": -6.168500
+      }
+    },
+    {
+      "id": 35,
+      "nama": "Warehouse II",
+      "alamat": {
+        "nama_jalan": "Jalan Dahlia",
+        "no_rumah": "114II",
+        "rt_rw": "35/36",
+        "kelurahan": "Kelurahan II",
+        "kecamatan": "Kecamatan II",
+        "kota_kabupaten": "Kota II",
+        "provinsi": "Provinsi II",
+        "kode_pos": "56789"
+      },
+      "geo_tagging": {
+        "long": 106.828887,
+        "lat": -6.168300
+      }
+    },
+    {
+      "id": 36,
+      "nama": "Warehouse JJ",
+      "alamat": {
+        "nama_jalan": "Jalan Teratai",
+        "no_rumah": "117JJ",
+        "rt_rw": "36/37",
+        "kelurahan": "Kelurahan JJ",
+        "kecamatan": "Kecamatan JJ",
+        "kota_kabupaten": "Kota JJ",
+        "provinsi": "Provinsi JJ",
+        "kode_pos": "67890"
+      },
+      "geo_tagging": {
+        "long": 106.828938,
+        "lat": -6.168100
+      }
+    },
+    {
+      "id": 37,
+      "nama": "Warehouse KK",
+      "alamat": {
+        "nama_jalan": "Jalan Matahari",
+        "no_rumah": "120KK",
+        "rt_rw": "37/38",
+        "kelurahan": "Kelurahan KK",
+        "kecamatan": "Kecamatan KK",
+        "kota_kabupaten": "Kota KK",
+        "provinsi": "Provinsi KK",
+        "kode_pos": "78901"
+      },
+      "geo_tagging": {
+        "long": 106.828989,
+        "lat": -6.167900
+      }
+    },
+    {
+      "id": 38,
+      "nama": "Warehouse LL",
+      "alamat": {
+        "nama_jalan": "Jalan Kamboja",
+        "no_rumah": "123LL",
+        "rt_rw": "38/39",
+        "kelurahan": "Kelurahan LL",
+        "kecamatan": "Kecamatan LL",
+        "kota_kabupaten": "Kota LL",
+        "provinsi": "Provinsi LL",
+        "kode_pos": "89012"
+      },
+      "geo_tagging": {
+        "long": 106.829040,
+        "lat": -6.167700
+      }
+    },
+    {
+      "id": 39,
+      "nama": "Warehouse MM",
+      "alamat": {
+        "nama_jalan": "Jalan Melur",
+        "no_rumah": "126MM",
+        "rt_rw": "39/40",
+        "kelurahan": "Kelurahan MM",
+        "kecamatan": "Kecamatan MM",
+        "kota_kabupaten": "Kota MM",
+        "provinsi": "Provinsi MM",
+        "kode_pos": "90123"
+      },
+      "geo_tagging": {
+        "long": 106.829091,
+        "lat": -6.167500
+      }
+    },
+    {
+      "id": 40,
+      "nama": "Warehouse NN",
+      "alamat": {
+        "nama_jalan": "Jalan Anyelir",
+        "no_rumah": "129NN",
+        "rt_rw": "40/41",
+        "kelurahan": "Kelurahan NN",
+        "kecamatan": "Kecamatan NN",
+        "kota_kabupaten": "Kota NN",
+        "provinsi": "Provinsi NN",
+        "kode_pos": "01234"
+      },
+      "geo_tagging": {
+        "long": 106.829142,
+        "lat": -6.167300
+      }
+    },
+    {
+      "id": 41,
+      "nama": "Warehouse OO",
+      "alamat": {
+        "nama_jalan": "Jalan Sakura",
+        "no_rumah": "132OO",
+        "rt_rw": "41/42",
+        "kelurahan": "Kelurahan OO",
+        "kecamatan": "Kecamatan OO",
+        "kota_kabupaten": "Kota OO",
+        "provinsi": "Provinsi OO",
+        "kode_pos": "12345"
+      },
+      "geo_tagging": {
+        "long": 106.829193,
+        "lat": -6.167100
+      }
+    },
+    {
+      "id": 42,
+      "nama": "Warehouse PP",
+      "alamat": {
+        "nama_jalan": "Jalan Bougenville",
+        "no_rumah": "135PP",
+        "rt_rw": "42/43",
+        "kelurahan": "Kelurahan PP",
+        "kecamatan": "Kecamatan PP",
+        "kota_kabupaten": "Kota PP",
+        "provinsi": "Provinsi PP",
+        "kode_pos": "23456"
+      },
+      "geo_tagging": {
+        "long": 106.829244,
+        "lat": -6.166900
+      }
+    },
+    {
+      "id": 43,
+      "nama": "Warehouse QQ",
+      "alamat": {
+        "nama_jalan": "Jalan Anggrek",
+        "no_rumah": "138QQ",
+        "rt_rw": "43/44",
+        "kelurahan": "Kelurahan QQ",
+        "kecamatan": "Kecamatan QQ",
+        "kota_kabupaten": "Kota QQ",
+        "provinsi": "Provinsi QQ",
+        "kode_pos": "34567"
+      },
+      "geo_tagging": {
+        "long": 106.829295,
+        "lat": -6.166700
+      }
+    },
+    {
+      "id": 44,
+      "nama": "Warehouse RR",
+      "alamat": {
+        "nama_jalan": "Jalan Flamboyan",
+        "no_rumah": "141RR",
+        "rt_rw": "44/45",
+        "kelurahan": "Kelurahan RR",
+        "kecamatan": "Kecamatan RR",
+        "kota_kabupaten": "Kota RR",
+        "provinsi": "Provinsi RR",
+        "kode_pos": "45678"
+      },
+      "geo_tagging": {
+        "long": 106.829346,
+        "lat": -6.166500
+      }
+    },
+    {
+      "id": 45,
+      "nama": "Warehouse SS",
+      "alamat": {
+        "nama_jalan": "Jalan Mawar",
+        "no_rumah": "144SS",
+        "rt_rw": "45/46",
+        "kelurahan": "Kelurahan SS",
+        "kecamatan": "Kecamatan SS",
+        "kota_kabupaten": "Kota SS",
+        "provinsi": "Provinsi SS",
+        "kode_pos": "56789"
+      },
+      "geo_tagging": {
+        "long": 106.829397,
+        "lat": -6.166300
+      }
+    },
+    {
+      "id": 46,
+      "nama": "Warehouse TT",
+      "alamat": {
+        "nama_jalan": "Jalan Melati",
+        "no_rumah": "147TT",
+        "rt_rw": "46/47",
+        "kelurahan": "Kelurahan TT",
+        "kecamatan": "Kecamatan TT",
+        "kota_kabupaten": "Kota TT",
+        "provinsi": "Provinsi TT",
+        "kode_pos": "67890"
+      },
+      "geo_tagging": {
+        "long": 106.829448,
+        "lat": -6.166100
+      }
+    },
+    {
+      "id": 47,
+      "nama": "Warehouse UU",
+      "alamat": {
+        "nama_jalan": "Jalan Alamanda",
+        "no_rumah": "150UU",
+        "rt_rw": "47/48",
+        "kelurahan": "Kelurahan UU",
+        "kecamatan": "Kecamatan UU",
+        "kota_kabupaten": "Kota UU",
+        "provinsi": "Provinsi UU",
+        "kode_pos": "78901"
+      },
+      "geo_tagging": {
+        "long": 106.829499,
+        "lat": -6.165900
+      }
+    },
+    {
+      "id": 48,
+      "nama": "Warehouse VV",
+      "alamat": {
+        "nama_jalan": "Jalan Matahari",
+        "no_rumah": "153VV",
+        "rt_rw": "48/49",
+        "kelurahan": "Kelurahan VV",
+        "kecamatan": "Kecamatan VV",
+        "kota_kabupaten": "Kota VV",
+        "provinsi": "Provinsi VV",
+        "kode_pos": "89012"
+      },
+      "geo_tagging": {
+        "long": 106.829550,
+        "lat": -6.165700
+      }
+    },
+    {
+      "id": 49,
+      "nama": "Warehouse WW",
+      "alamat": {
+        "nama_jalan": "Jalan Kamboja",
+        "no_rumah": "156WW",
+        "rt_rw": "49/50",
+        "kelurahan": "Kelurahan WW",
+        "kecamatan": "Kecamatan WW",
+        "kota_kabupaten": "Kota WW",
+        "provinsi": "Provinsi WW",
+        "kode_pos": "01234"
+      },
+      "geo_tagging": {
+        "long": 106.829601,
+        "lat": -6.165500
+      }
+    },
+    {
+      "id": 50,
+      "nama": "Warehouse XX",
+      "alamat": {
+        "nama_jalan": "Jalan Asoka",
+        "no_rumah": "159XX",
+        "rt_rw": "50/51",
+        "kelurahan": "Kelurahan XX",
+        "kecamatan": "Kecamatan XX",
+        "kota_kabupaten": "Kota XX",
+        "provinsi": "Provinsi XX",
+        "kode_pos": "12345"
+      },
+      "geo_tagging": {
+        "long": 106.829652,
+        "lat": -6.165300
+      }
+    },
+    {
+      "id": 51,
+      "nama": "Warehouse YY",
+      "alamat": {
+        "nama_jalan": "Jalan Gladiol",
+        "no_rumah": "162YY",
+        "rt_rw": "51/52",
+        "kelurahan": "Kelurahan YY",
+        "kecamatan": "Kecamatan YY",
+        "kota_kabupaten": "Kota YY",
+        "provinsi": "Provinsi YY",
+        "kode_pos": "23456"
+      },
+      "geo_tagging": {
+        "long": 106.829703,
+        "lat": -6.165100
+      }
+    },
+    {
+      "id": 52,
+      "nama": "Warehouse ZZ",
+      "alamat": {
+        "nama_jalan": "Jalan Anggrek",
+        "no_rumah": "165ZZ",
+        "rt_rw": "52/53",
+        "kelurahan": "Kelurahan ZZ",
+        "kecamatan": "Kecamatan ZZ",
+        "kota_kabupaten": "Kota ZZ",
+        "provinsi": "Provinsi ZZ",
+        "kode_pos": "34567"
+      },
+      "geo_tagging": {
+        "long": 106.829754,
+        "lat": -6.164900
+      }
+    }
+  ]
+}

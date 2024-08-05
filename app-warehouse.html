@@ -700,130 +700,37 @@
 
             <!-- Content -->
 
-            <div class="container-xxl flex-grow-1 container-p-y">
-              <div class="row g-6 mb-6">
+            <div class="container-xxxl flex-grow-2 container-p-y">
+              <div class="row g-10 mb-10">
               </div>
               <!-- Users List Table -->
               <div class="card">
-                <div class="card-header border-bottom">
-                  <h5 class="card-title mb-0">Filters</h5>
-                  <div class="d-flex justify-content-left align-items-center row gx-5 pt-4 gap-md-0">
-                    <div class="col-md-4 user_role"></div>
-                    <div class="col-md-4 user_status"></div>
-                  </div>
-                </div>
                 <div class="card-datatable table-responsive">
-                  <table class="datatables-users table">
+                  <table id="dt_warehouse_table" class="table">
                     <thead>
                       <tr>
-                        <th></th>
-                        <th></th>
-                        <th>User</th>
-                        <th>Email</th>
-                        <th>Role</th>
-                        <th>Divisi</th>
-                        <th>Tipe Karyawan</th>
-                        <th>Status</th>
-                        <th>Actions</th>
+                        <th rowspan="2"></th>
+                        <th rowspan="2">Nama</th>
+                        <th colspan="8">Alamat</th>
+                        <th colspan="2">Geo Staging</th>
+                      </tr>
+                      <tr>
+                        <th>Nama Jalan</th>
+                        <th>No Rumah</th>
+                        <th>RT / RW</th>
+                        <th>Kelurahan</th>
+                        <th>Kecamatan</th>
+                        <th>Kota / Kabupaten</th>
+                        <th>Provinsi</th>
+                        <th>Kode Pos</th>
+                        <th>Long</th>
+                        <th>Lat</th>
                       </tr>
                     </thead>
+                    <tbody>
+                      <!-- Table body content will be dynamically populated by DataTables -->
+                    </tbody>
                   </table>
-                </div>
-                <!-- Offcanvas to add new user -->
-                <div
-                  class="offcanvas offcanvas-end"
-                  tabindex="-1"
-                  id="offcanvasAddUser"
-                  aria-labelledby="offcanvasAddUserLabel">
-                  <div class="offcanvas-header border-bottom">
-                    <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Tambah Pengguna</h5>
-                    <button
-                      type="button"
-                      class="btn-close text-reset"
-                      data-bs-dismiss="offcanvas"
-                      aria-label="Close"></button>
-                  </div>
-                  <div class="offcanvas-body mx-0 flex-grow-0 h-100">
-                    <form class="add-new-user pt-0" id="addNewUserForm" onsubmit="return false">
-                      <div class="form-floating form-floating-outline mb-5">
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="add-user-fullname"
-                          placeholder="John Doe"
-                          name="userFullname"
-                          aria-label="John Doe" />
-                        <label for="add-user-fullname">Full Name</label>
-                      </div>
-                      <div class="form-floating form-floating-outline mb-5">
-                        <input
-                          type="text"
-                          id="add-user-email"
-                          class="form-control"
-                          placeholder="john.doe@example.com"
-                          aria-label="john.doe@example.com"
-                          name="userEmail" />
-                        <label for="add-user-email">Email</label>
-                      </div>
-                      <div class="form-floating form-floating-outline mb-5">
-                        <input
-                          type="text"
-                          id="add-user-alamat"
-                          class="form-control"
-                          placeholder="Jakarta Pusat"
-                          aria-label="Jakarta Pusat"
-                          name="userEmail" />
-                        <label for="add-user-alamat">Alamat</label>
-                      </div>
-                      <div class="form-floating form-floating-outline mb-5">
-                        <input
-                          type="text"
-                          id="add-user-contact"
-                          class="form-control phone-mask"
-                          placeholder="+1 (609) 988-44-11"
-                          aria-label="john.doe@example.com"
-                          name="userContact" />
-                        <label for="add-user-contact">Contact</label>
-                      </div>
-                      <div class="form-floating form-floating-outline mb-5">
-                        <select id="country" class="select2 form-select">
-                          <option value="Indonesia">Indonesia</option>
-                        </select>
-                        <label for="country">Country</label>
-                      </div>
-                      <div class="form-floating form-floating-outline mb-5">
-                        <select id="user-role" class="form-select">
-                          <option value="subscriber">Subscriber</option>
-                          <option value="editor">Editor</option>
-                          <option value="maintainer">Maintainer</option>
-                          <option value="author">Author</option>
-                          <option value="admin">Admin</option>
-                        </select>
-                        <label for="user-role">User Role</label>
-                      </div>
-                      <div class="form-floating form-floating-outline mb-5">
-                        <select id="user-divisi" class="form-select">
-                          <option value="driver">Driver</option>
-                          <option value="sales">Sales</option>
-                          <option value="marketing">Marketing</option>
-                          <option value="hr">HR</option>
-                          <option value="it">IT</option>
-                        </select>
-                        <label for="user-divisi">Divisi</label>
-                      </div>
-                      <div class="form-floating form-floating-outline mb-5">
-                        <select id="user-type" class="form-select">
-                          <option value="gpp">GPP</option>
-                          <option value="npc">NPC</option>
-                          <option value="kontrak">KONTRAK</option>
-                          <option value="intern">Intern</option>
-                        </select>
-                        <label for="user-type">Tipe Karyawan</label>
-                      </div>
-                      <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
-                      <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="offcanvas">Cancel</button>
-                    </form>
-                  </div>
                 </div>
               </div>
             </div>
@@ -876,6 +783,6 @@
     <script src="assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="assets/js/app-user-list.js"></script>
+    <script src="assets/js/warehouse.js"></script>
   </body>
 </html>
