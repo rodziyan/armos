@@ -729,6 +729,8 @@
                         <th>User</th>
                         <th>Email</th>
                         <th>Role</th>
+                        <th>Divisi</th>
+                        <th>Tipe Karyawan</th>
                         <th>Status</th>
                         <th>Actions</th>
                       </tr>
@@ -742,7 +744,7 @@
                   id="offcanvasAddUser"
                   aria-labelledby="offcanvasAddUserLabel">
                   <div class="offcanvas-header border-bottom">
-                    <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Add User</h5>
+                    <h5 id="offcanvasAddUserLabel" class="offcanvas-title">Tambah Pengguna</h5>
                     <button
                       type="button"
                       class="btn-close text-reset"
@@ -806,6 +808,25 @@
                           <option value="admin">Admin</option>
                         </select>
                         <label for="user-role">User Role</label>
+                      </div>
+                      <div class="form-floating form-floating-outline mb-5">
+                        <select id="user-divisi" class="form-select">
+                          <option value="driver">Driver</option>
+                          <option value="sales">Sales</option>
+                          <option value="marketing">Marketing</option>
+                          <option value="hr">HR</option>
+                          <option value="it">IT</option>
+                        </select>
+                        <label for="user-divisi">Divisi</label>
+                      </div>
+                      <div class="form-floating form-floating-outline mb-5">
+                        <select id="user-type" class="form-select">
+                          <option value="gpp">GPP</option>
+                          <option value="npc">NPC</option>
+                          <option value="kontrak">KONTRAK</option>
+                          <option value="intern">Intern</option>
+                        </select>
+                        <label for="user-type">Tipe Karyawan</label>
                       </div>
                       <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
                       <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="offcanvas">Cancel</button>

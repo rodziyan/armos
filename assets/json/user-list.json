@@ -8,7 +8,9 @@
       "email": "gslixby0@abc.net.au",
       "status": 3,
       "avatar": "",
-      "action": "action"
+      "action": "action",
+      "divisi": "Sales",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 2,
@@ -18,7 +20,9 @@
       "email": "hredmore1@imgur.com",
       "status": 1,
       "avatar": "10.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Marketing",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 3,
@@ -28,7 +32,9 @@
       "email": "msicely2@who.int",
       "status": 2,
       "avatar": "1.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "IT",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 4,
@@ -38,7 +44,9 @@
       "email": "crisby3@wordpress.com",
       "status": 3,
       "avatar": "9.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Logistics",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 5,
@@ -48,7 +56,9 @@
       "email": "mhurran4@yahoo.co.jp",
       "status": 1,
       "avatar": "10.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "HR",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 6,
@@ -58,7 +68,9 @@
       "email": "shalstead5@shinystat.com",
       "status": 2,
       "avatar": "",
-      "action": "action"
+      "action": "action",
+      "divisi": "Finance",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 7,
@@ -68,7 +80,9 @@
       "email": "bgallemore6@boston.com",
       "status": 1,
       "avatar": "",
-      "action": "action"
+      "action": "action",
+      "divisi": "Customer Service",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 8,
@@ -78,7 +92,9 @@
       "email": "kliger7@vinaora.com",
       "status": 1,
       "avatar": "9.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Sales",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 9,
@@ -88,7 +104,9 @@
       "email": "fscotfurth8@dailymotion.com",
       "status": 1,
       "avatar": "2.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Marketing",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 10,
@@ -98,7 +116,9 @@
       "email": "jbellany9@kickstarter.com",
       "status": 3,
       "avatar": "9.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "IT",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 11,
@@ -108,7 +128,9 @@
       "email": "jwharltona@oakley.com",
       "status": 3,
       "avatar": "4.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Logistics",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 12,
@@ -118,7 +140,9 @@
       "email": "shallamb@hugedomains.com",
       "status": 1,
       "avatar": "5.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "HR",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 13,
@@ -128,7 +152,9 @@
       "email": "ypottiec@privacy.gov.au",
       "status": 3,
       "avatar": "7.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Finance",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 14,
@@ -138,7 +164,9 @@
       "email": "mkraused@stanford.edu",
       "status": 2,
       "avatar": "9.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Customer Service",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 15,
@@ -148,7 +176,9 @@
       "email": "zmcclevertye@soundcloud.com",
       "status": 2,
       "avatar": "2.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Sales",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 16,
@@ -158,7 +188,9 @@
       "email": "bemblinf@wired.com",
       "status": 2,
       "avatar": "6.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Marketing",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 17,
@@ -168,7 +200,9 @@
       "email": "bmylesg@amazon.com",
       "status": 2,
       "avatar": "",
-      "action": "action"
+      "action": "action",
+      "divisi": "IT",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 18,
@@ -178,7 +212,9 @@
       "email": "bbinerh@mozilla.com",
       "status": 2,
       "avatar": "7.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Logistics",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 19,
@@ -188,7 +224,9 @@
       "email": "tbruntjeni@sitemeter.com",
       "status": 2,
       "avatar": "",
-      "action": "action"
+      "action": "action",
+      "divisi": "HR",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 20,
@@ -198,7 +236,9 @@
       "email": "wburlandj@uiuc.edu",
       "status": 3,
       "avatar": "6.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Finance",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 21,
@@ -208,297 +248,357 @@
       "email": "sdelamainek@who.int",
       "status": 1,
       "avatar": "1.png",
-      "action": "action"
+      "action": "action",
+      "divisi": "Customer Service",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 22,
-      "full_name": "Jameson Lyster",
-      "role": "Editor",
-      "username": "jlysterl",
-      "email": "jlysterl@guardian.co.uk",
-      "status": 3,
-      "avatar": "8.png",
-      "action": "action"
+      "full_name": "Fredra Nann",
+      "role": "Subscriber",
+      "username": "fnannl",
+      "email": "fnannl@reference.com",
+      "status": 1,
+      "avatar": "5.png",
+      "action": "action",
+      "divisi": "Sales",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 23,
-      "full_name": "Kare Skitterel",
-      "role": "Maintainer",
-      "username": "kskitterelm",
-      "email": "kskitterelm@washingtonpost.com",
+      "full_name": "Ernaline Melia",
+      "role": "Subscriber",
+      "username": "emeliam",
+      "email": "emeliam@dot.gov",
       "status": 1,
-      "avatar": "3.png",
-      "action": "action"
+      "avatar": "4.png",
+      "action": "action",
+      "divisi": "Marketing",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 24,
-      "full_name": "Cleavland Hatherleigh",
-      "role": "Admin",
-      "username": "chatherleighn",
-      "email": "chatherleighn@washington.edu",
-      "status": 1,
-      "avatar": "2.png",
-      "action": "action"
+      "full_name": "Stanford Stickells",
+      "role": "Author",
+      "username": "sstickellsn",
+      "email": "sstickellsn@blogger.com",
+      "status": 3,
+      "avatar": "",
+      "action": "action",
+      "divisi": "IT",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 25,
-      "full_name": "Adeline Micco",
+      "full_name": "Vinson Siddons",
       "role": "Admin",
-      "username": "amiccoo",
-      "email": "amiccoo@whitehouse.gov",
+      "username": "vsiddonso",
+      "email": "vsiddonso@ehow.com",
       "status": 1,
-      "avatar": "",
-      "action": "action"
+      "avatar": "8.png",
+      "action": "action",
+      "divisi": "Logistics",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 26,
-      "full_name": "Hugh Hasson",
-      "role": "Admin",
-      "username": "hhassonp",
-      "email": "hhassonp@bizjournals.com",
-      "status": 3,
-      "avatar": "4.png",
-      "action": "action"
+      "full_name": "Una Caldayrou",
+      "role": "Editor",
+      "username": "ucaldayroup",
+      "email": "ucaldayroup@archive.org",
+      "status": 2,
+      "avatar": "",
+      "action": "action",
+      "divisi": "HR",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 27,
-      "full_name": "Germain Jacombs",
-      "role": "Editor",
-      "username": "gjacombsq",
-      "email": "gjacombsq@jigsy.com",
-      "status": 2,
-      "avatar": "10.png",
-      "action": "action"
+      "full_name": "Cathlene Rubinsky",
+      "role": "Author",
+      "username": "crubinskyq",
+      "email": "crubinskyq@prnewswire.com",
+      "status": 3,
+      "avatar": "",
+      "action": "action",
+      "divisi": "Finance",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 28,
-      "full_name": "Bree Kilday",
-      "role": "Maintainer",
-      "username": "bkildayr",
-      "email": "bkildayr@mashable.com",
-      "status": 2,
-      "avatar": "",
-      "action": "action"
+      "full_name": "Faber Backwell",
+      "role": "Admin",
+      "username": "fbackwellr",
+      "email": "fbackwellr@nsw.gov.au",
+      "status": 1,
+      "avatar": "5.png",
+      "action": "action",
+      "divisi": "Customer Service",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 29,
-      "full_name": "Candice Pinyon",
-      "role": "Maintainer",
-      "username": "cpinyons",
-      "email": "cpinyons@behance.net",
-      "status": 2,
-      "avatar": "7.png",
-      "action": "action"
+      "full_name": "Josefina Iacomelli",
+      "role": "Editor",
+      "username": "jiacomellis",
+      "email": "jiacomellis@hexun.com",
+      "status": 1,
+      "avatar": "1.png",
+      "action": "action",
+      "divisi": "Sales",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 30,
-      "full_name": "Isabel Mallindine",
-      "role": "Subscriber",
-      "username": "imallindinet",
-      "email": "imallindinet@shinystat.com",
-      "status": 1,
-      "avatar": "",
-      "action": "action"
+      "full_name": "Tamar Horsell",
+      "role": "Editor",
+      "username": "thorsellt",
+      "email": "thorsellt@fotki.com",
+      "status": 2,
+      "avatar": "5.png",
+      "action": "action",
+      "divisi": "Marketing",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 31,
-      "full_name": "Gwendolyn Meineken",
-      "role": "Admin",
-      "username": "gmeinekenu",
-      "email": "gmeinekenu@hc360.com",
-      "status": 1,
-      "avatar": "1.png",
-      "action": "action"
+      "full_name": "De witt Rasher",
+      "role": "Subscriber",
+      "username": "drasheru",
+      "email": "drasheru@about.me",
+      "status": 2,
+      "avatar": "",
+      "action": "action",
+      "divisi": "IT",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 32,
-      "full_name": "Rafaellle Snowball",
+      "full_name": "Milissent Orgill",
       "role": "Editor",
-      "username": "rsnowballv",
-      "email": "rsnowballv@indiegogo.com",
+      "username": "morgillv",
+      "email": "morgillv@networkadvertising.org",
       "status": 1,
-      "avatar": "5.png",
-      "action": "action"
+      "avatar": "",
+      "action": "action",
+      "divisi": "Logistics",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 33,
-      "full_name": "Rochette Emer",
-      "role": "Admin",
-      "username": "remerw",
-      "email": "remerw@blogtalkradio.com",
-      "status": 2,
-      "avatar": "8.png",
-      "action": "action"
+      "full_name": "Valida Gerland",
+      "role": "Editor",
+      "username": "vgerlandw",
+      "email": "vgerlandw@alibaba.com",
+      "status": 3,
+      "avatar": "2.png",
+      "action": "action",
+      "divisi": "HR",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 34,
-      "full_name": "Ophelie Fibbens",
-      "role": "Subscriber",
-      "username": "ofibbensx",
-      "email": "ofibbensx@booking.com",
-      "status": 2,
-      "avatar": "4.png",
-      "action": "action"
+      "full_name": "Lamar Suppe",
+      "role": "Maintainer",
+      "username": "lsuppex",
+      "email": "lsuppex@paypal.com",
+      "status": 1,
+      "avatar": "9.png",
+      "action": "action",
+      "divisi": "Finance",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 35,
-      "full_name": "Stephen MacGilfoyle",
-      "role": "Maintainer",
-      "username": "smacgilfoyley",
-      "email": "smacgilfoyley@bigcartel.com",
-      "status": 1,
-      "avatar": "",
-      "action": "action"
+      "full_name": "Marcelle Schukraft",
+      "role": "Subscriber",
+      "username": "mschukrafty",
+      "email": "mschukrafty@vk.com",
+      "status": 2,
+      "avatar": "10.png",
+      "action": "action",
+      "divisi": "Customer Service",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 36,
-      "full_name": "Bradan Rosebotham",
-      "role": "Subscriber",
-      "username": "brosebothamz",
-      "email": "brosebothamz@tripadvisor.com",
-      "status": 3,
-      "avatar": "",
-      "action": "action"
+      "full_name": "Carlie Ivanusyev",
+      "role": "Admin",
+      "username": "civanusyevz",
+      "email": "civanusyevz@sbwire.com",
+      "status": 1,
+      "avatar": "10.png",
+      "action": "action",
+      "divisi": "Sales",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 37,
-      "full_name": "Skip Hebblethwaite",
-      "role": "Admin",
-      "username": "shebblethwaite10",
-      "email": "shebblethwaite10@arizona.edu",
-      "status": 3,
-      "avatar": "9.png",
-      "action": "action"
+      "full_name": "Cristen Legate",
+      "role": "Author",
+      "username": "clegate10",
+      "email": "clegate10@vkontakte.ru",
+      "status": 2,
+      "avatar": "",
+      "action": "action",
+      "divisi": "Marketing",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 38,
-      "full_name": "Moritz Piccard",
-      "role": "Maintainer",
-      "username": "mpiccard11",
-      "email": "mpiccard11@vimeo.com",
-      "status": 3,
-      "avatar": "1.png",
-      "action": "action"
+      "full_name": "Ash Lauret",
+      "role": "Editor",
+      "username": "alauret11",
+      "email": "alauret11@ehow.com",
+      "status": 1,
+      "avatar": "4.png",
+      "action": "action",
+      "divisi": "IT",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 39,
-      "full_name": "Tyne Widmore",
-      "role": "Subscriber",
-      "username": "twidmore12",
-      "email": "twidmore12@bravesites.com",
-      "status": 1,
-      "avatar": "",
-      "action": "action"
+      "full_name": "Sherwood Slite",
+      "role": "Editor",
+      "username": "sslite12",
+      "email": "sslite12@purevolume.com",
+      "status": 2,
+      "avatar": "2.png",
+      "action": "action",
+      "divisi": "Logistics",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 40,
-      "full_name": "Florenza Desporte",
-      "role": "Author",
-      "username": "fdesporte13",
-      "email": "fdesporte13@omniture.com",
+      "full_name": "Fransisco Rowthorn",
+      "role": "Editor",
+      "username": "frowthorn13",
+      "email": "frowthorn13@alexa.com",
       "status": 2,
-      "avatar": "6.png",
-      "action": "action"
+      "avatar": "7.png",
+      "action": "action",
+      "divisi": "HR",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 41,
-      "full_name": "Edwina Baldetti",
+      "full_name": "Burtie Harvison",
       "role": "Maintainer",
-      "username": "ebaldetti14",
-      "email": "ebaldetti14@theguardian.com",
-      "status": 1,
-      "avatar": "",
-      "action": "action"
+      "username": "bharvison14",
+      "email": "bharvison14@usda.gov",
+      "status": 2,
+      "avatar": "2.png",
+      "action": "action",
+      "divisi": "Finance",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 42,
-      "full_name": "Benedetto Rossiter",
+      "full_name": "Jone Line",
       "role": "Editor",
-      "username": "brossiter15",
-      "email": "brossiter15@craigslist.org",
-      "status": 3,
-      "avatar": "",
-      "action": "action"
+      "username": "jline15",
+      "email": "jline15@domainmarket.com",
+      "status": 2,
+      "avatar": "1.png",
+      "action": "action",
+      "divisi": "Customer Service",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 43,
-      "full_name": "Micaela McNirlan",
-      "role": "Admin",
-      "username": "mmcnirlan16",
-      "email": "mmcnirlan16@hc360.com",
-      "status": 3,
-      "avatar": "",
-      "action": "action"
+      "full_name": "Nathaniel Lough",
+      "role": "Author",
+      "username": "nlough16",
+      "email": "nlough16@hubpages.com",
+      "status": 2,
+      "avatar": "9.png",
+      "action": "action",
+      "divisi": "Sales",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 44,
-      "full_name": "Vladamir Koschek",
-      "role": "Author",
-      "username": "vkoschek17",
-      "email": "vkoschek17@abc.net.au",
-      "status": 2,
-      "avatar": "",
-      "action": "action"
+      "full_name": "Shaine Lawie",
+      "role": "Admin",
+      "username": "slawie17",
+      "email": "slawie17@about.com",
+      "status": 3,
+      "avatar": "5.png",
+      "action": "action",
+      "divisi": "Marketing",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 45,
-      "full_name": "Corrie Perot",
-      "role": "Subscriber",
-      "username": "cperot18",
-      "email": "cperot18@goo.ne.jp",
-      "status": 1,
-      "avatar": "3.png",
-      "action": "action"
+      "full_name": "Prentiss Thomesson",
+      "role": "Maintainer",
+      "username": "pthomesson18",
+      "email": "pthomesson18@cnbc.com",
+      "status": 3,
+      "avatar": "",
+      "action": "action",
+      "divisi": "IT",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 46,
-      "full_name": "Saunder Offner",
-      "role": "Maintainer",
-      "username": "soffner19",
-      "email": "soffner19@mac.com",
-      "status": 1,
-      "avatar": "",
-      "action": "action"
+      "full_name": "Rosene Wass",
+      "role": "Admin",
+      "username": "rwass19",
+      "email": "rwass19@marketwatch.com",
+      "status": 2,
+      "avatar": "6.png",
+      "action": "action",
+      "divisi": "Logistics",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 47,
-      "full_name": "Karena Courtliff",
-      "role": "Admin",
-      "username": "kcourtliff1a",
-      "email": "kcourtliff1a@bbc.co.uk",
-      "status": 2,
-      "avatar": "1.png",
-      "action": "action"
+      "full_name": "Willow MacCafferky",
+      "role": "Maintainer",
+      "username": "wmaccafferky1a",
+      "email": "wmaccafferky1a@bloglovin.com",
+      "status": 1,
+      "avatar": "",
+      "action": "action",
+      "divisi": "HR",
+      "tipe_karyawan": "NPC"
     },
     {
       "id": 48,
-      "full_name": "Onfre Wind",
+      "full_name": "Georgie Bromehed",
       "role": "Admin",
-      "username": "owind1b",
-      "email": "owind1b@yandex.ru",
-      "status": 1,
-      "avatar": "",
-      "action": "action"
+      "username": "gbromehed1b",
+      "email": "gbromehed1b@photobucket.com",
+      "status": 3,
+      "avatar": "10.png",
+      "action": "action",
+      "divisi": "Finance",
+      "tipe_karyawan": "KONTRAK"
     },
     {
       "id": 49,
-      "full_name": "Paulie Durber",
-      "role": "Subscriber",
-      "username": "pdurber1c",
-      "email": "pdurber1c@gov.uk",
-      "status": 3,
-      "avatar": "",
-      "action": "action"
+      "full_name": "Leta Knath",
+      "role": "Author",
+      "username": "lknath1c",
+      "email": "lknath1c@paypal.com",
+      "status": 1,
+      "avatar": "2.png",
+      "action": "action",
+      "divisi": "Customer Service",
+      "tipe_karyawan": "GPP"
     },
     {
       "id": 50,
-      "full_name": "Beverlie Krabbe",
-      "role": "Editor",
-      "username": "bkrabbe1d",
-      "email": "bkrabbe1d@home.pl",
-      "status": 2,
-      "avatar": "9.png",
-      "action": "action"
+      "full_name": "Arda Brooker",
+      "role": "Subscriber",
+      "username": "abrooker1d",
+      "email": "abrooker1d@cnbc.com",
+      "status": 3,
+      "avatar": "",
+      "action": "action",
+      "divisi": "Sales",
+      "tipe_karyawan": "NPC"
     }
   ]
 }

@@ -37,156 +37,169 @@ $(function () {
     });
   }
 
-  // Users datatable
-  if (dt_user_table.length) {
-    var dt_user = dt_user_table.DataTable({
-      ajax: assetsPath + 'json/user-list.json', // JSON file to add data
-      columns: [
-        // columns according to JSON
-        { data: '' },
-        { data: 'id' },
-        { data: 'full_name' },
-        { data: 'email' },
-        { data: 'role' },
-        { data: 'status' },
-        { data: 'action' }
-      ],
-      columnDefs: [
-        {
-          // For Responsive
-          className: 'control',
-          searchable: false,
-          orderable: false,
-          responsivePriority: 2,
-          targets: 0,
-          render: function (data, type, full, meta) {
-            return '';
-          }
-        },
-        {
-          // For Checkboxes
-          targets: 1,
-          orderable: false,
-          render: function () {
-            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
-          },
-          checkboxes: {
-            selectAllRender: '<input type="checkbox" class="form-check-input">'
-          }
-        },
-        {
-          // User full name and email
-          targets: 2,
-          responsivePriority: 4,
-          render: function (data, type, full, meta) {
-            var $name = full['full_name'],
-              $email = full['email'],
-              $image = full['avatar'];
-            if ($image) {
-              // For Avatar image
-              var $output =
-                '<img src="' + assetsPath + 'img/avatars/' + $image + '" alt="Avatar" class="rounded-circle">';
-            } else {
-              // For Avatar badge
-              var stateNum = Math.floor(Math.random() * 6);
-              var states = ['success', 'danger', 'warning', 'info', 'dark', 'primary', 'secondary'];
-              var $state = states[stateNum],
-                $name = full['full_name'],
-                $initials = $name.match(/\b\w/g) || [];
-              $initials = (($initials.shift() || '') + ($initials.pop() || '')).toUpperCase();
-              $output = '<span class="avatar-initial rounded-circle bg-label-' + $state + '">' + $initials + '</span>';
+      // Users datatable
+    if (dt_user_table.length) {
+      var dt_user = dt_user_table.DataTable({
+        ajax: assetsPath + 'json/user-list.json', // JSON file to add data
+        columns: [
+          { data: '' },
+          { data: 'id' },
+          { data: 'full_name' },
+          { data: 'email' },
+          { data: 'role' },
+          { data: 'divisi' },
+          { data: 'tipe_karyawan' },
+          { data: 'status' },
+          { data: 'action' }
+        ],
+        columnDefs: [
+          {
+            className: 'control',
+            searchable: false,
+            orderable: false,
+            responsivePriority: 2,
+            targets: 0,
+            render: function (data, type, full, meta) {
+              return '';
             }
-            // Creates full output for row
-            var $row_output =
-              '<div class="d-flex justify-content-start align-items-center user-name">' +
-              '<div class="avatar-wrapper">' +
-              '<div class="avatar avatar-sm me-3">' +
-              $output +
-              '</div>' +
-              '</div>' +
-              '<div class="d-flex flex-column">' +
-              '<a href="' +
-              userView +
-              '" class="text-truncate text-heading"><span class="fw-medium">' +
-              $name +
-              '</span></a>' +
-              '<small>' +
-              $email +
-              '</small>' +
-              '</div>' +
-              '</div>';
-            return $row_output;
+          },
+          {
+            targets: 1,
+            orderable: false,
+            render: function () {
+              return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+            },
+            checkboxes: {
+              selectAllRender: '<input type="checkbox" class="form-check-input">'
+            }
+          },
+          {
+            targets: 2,
+            responsivePriority: 4,
+            render: function (data, type, full, meta) {
+              var $name = full['full_name'],
+                $email = full['email'],
+                $image = full['avatar'];
+              if ($image) {
+                var $output = '<img src="' + assetsPath + 'img/avatars/' + $image + '" alt="Avatar" class="rounded-circle">';
+              } else {
+                var stateNum = Math.floor(Math.random() * 6);
+                var states = ['success', 'danger', 'warning', 'info', 'dark', 'primary', 'secondary'];
+                var $state = states[stateNum],
+                  $initials = $name.match(/\b\w/g) || [];
+                $initials = (($initials.shift() || '') + ($initials.pop() || '')).toUpperCase();
+                $output = '<span class="avatar-initial rounded-circle bg-label-' + $state + '">' + $initials + '</span>';
+              }
+              var $row_output =
+                '<div class="d-flex justify-content-start align-items-center user-name">' +
+                '<div class="avatar-wrapper">' +
+                '<div class="avatar avatar-sm me-3">' +
+                $output +
+                '</div>' +
+                '</div>' +
+                '<div class="d-flex flex-column">' +
+                '<a href="' +
+                userView +
+                '" class="text-truncate text-heading"><span class="fw-medium">' +
+                $name +
+                '</span></a>' +
+                '<small>' +
+                $email +
+                '</small>' +
+                '</div>' +
+                '</div>';
+              return $row_output;
+            }
+          },
+          {
+            targets: 3,
+            render: function (data, type, full, meta) {
+              var $email = full['email'];
+              return '<span>' + $email + '</span>';
+            }
+          },
+          {
+            targets: 4,
+            render: function (data, type, full, meta) {
+              var $role = full['role'];
+              var roleBadgeObj = {
+                Subscriber: '<i class="ri-user-line ri-22px text-success me-2"></i>',
+                Author: '<i class="ri-vip-crown-line ri-22px text-primary me-2"></i>',
+                Maintainer: '<i class="ri-pie-chart-line ri-22px text-info me-2"></i>',
+                Editor: '<i class="ri-edit-box-line ri-22px text-warning me-2"></i>',
+                Admin: '<i class="ri-computer-line ri-22px text-danger me-2"></i>'
+              };
+              return (
+                "<span class='text-truncate d-flex align-items-center text-heading'>" +
+                roleBadgeObj[$role] +
+                $role +
+                '</span>'
+              );
+            }
+          },
+          {
+            targets: 5,
+            render: function (data, type, full, meta) {
+              const divisi = full['divisi']; // Handle missing data
+              return '<span>' + divisi + '</span>';
+            }
+          },
+          {
+            targets: 6,
+            render: function (data, type, full, meta) {
+              const tipeKaryawan = full['tipe_karyawan']; // Handle missing data
+              return '<span>' + tipeKaryawan + '</span>';
+            }
+          },
+          {
+            targets: 7,
+            render: function (data, type, full, meta) {
+              var $status = full['status'];
+              var statusObj = {
+                1: { title: 'Pending', class: 'bg-label-warning' },
+                2: { title: 'Active', class: 'bg-label-success' },
+                3: { title: 'Inactive', class: 'bg-label-secondary' }
+              };
+          
+              // Pastikan statusObj[$status] ada
+              if (statusObj[$status]) {
+                return (
+                  '<span class="badge rounded-pill ' +
+                  statusObj[$status].class +
+                  ' text-capitalized">' +
+                  statusObj[$status].title +
+                  '</span>'
+                );
+              } else {
+                return '<span class="badge rounded-pill bg-label-secondary text-capitalized">Unknown</span>';
+              }
+            }
+          },
+          {
+            targets: -1,
+            title: 'Actions',
+            searchable: false,
+            orderable: false,
+            render: function (data, type, full, meta) {
+              return (
+                '<div class="d-flex align-items-center gap-50">' +
+                '<a href="javascript:;" class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect delete-record" data-bs-toggle="tooltip" title="Delete Invoice"><i class="ri-delete-bin-7-line ri-20px"></i></a>' +
+                '<a href="' +
+                userView +
+                '" class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect" data-bs-toggle="tooltip" title="Preview"><i class="ri-eye-line ri-20px"></i></a>' +
+                '<button class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ri-more-2-line ri-20px"></i></button>' +
+                '<div class="dropdown-menu dropdown-menu-end m-0">' +
+                '<a href="' +
+                userView +
+                '" class="dropdown-item"><i class="ri-eye-line me-2"></i><span>View</span></a>' +
+                '<a href="javascript:;" class="dropdown-item"><i class="ri-edit-box-line me-2"></i><span>Edit</span></a>' +
+                '<a href="javascript:;" class="dropdown-item delete-record"><i class="ri-delete-bin-7-line me-2"></i><span>Delete</span></a>' +
+                '</div>' +
+                '</div>'
+              );
+            }
           }
-        },
-        {
-          // User email
-          targets: 3,
-          render: function (data, type, full, meta) {
-            var $email = full['email'];
-            return '<span >' + $email + '</span>';
-          }
-        },
-        {
-          // User Role
-          targets: 4,
-          render: function (data, type, full, meta) {
-            var $role = full['role'];
-            var roleBadgeObj = {
-              Subscriber: '<i class="ri-user-line ri-22px text-success me-2"></i>',
-              Author: '<i class="ri-vip-crown-line ri-22px text-primary me-2"></i>',
-              Maintainer: '<i class="ri-pie-chart-line ri-22px text-info me-2"></i>',
-              Editor: '<i class="ri-edit-box-line ri-22px text-warning me-2"></i>',
-              Admin: '<i class="ri-computer-line ri-22px text-danger me-2"></i>'
-            };
-            return (
-              "<span class='text-truncate d-flex align-items-center text-heading'>" +
-              roleBadgeObj[$role] +
-              $role +
-              '</span>'
-            );
-          }
-        },
-        {
-          // User Status
-          targets: 5,
-          render: function (data, type, full, meta) {
-            var $status = full['status'];
-
-            return (
-              '<span class="badge rounded-pill ' +
-              statusObj[$status].class +
-              '" text-capitalized>' +
-              statusObj[$status].title +
-              '</span>'
-            );
-          }
-        },
-        {
-          // Actions
-          targets: -1,
-          title: 'Actions',
-          searchable: false,
-          orderable: false,
-          render: function (data, type, full, meta) {
-            return (
-              '<div class="d-flex align-items-center gap-50">' +
-              '<a href="javascript:;" class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect delete-record" data-bs-toggle="tooltip" title="Delete Invoice"><i class="ri-delete-bin-7-line ri-20px"></i></a>' +
-              '<a href="' +
-              userView +
-              '" class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect" data-bs-toggle="tooltip" title="Preview"><i class="ri-eye-line ri-20px"></i></a>' +
-              '<button class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ri-more-2-line ri-20px"></i></button>' +
-              '<div class="dropdown-menu dropdown-menu-end m-0">' +
-              '<a href="' +
-              userView +
-              '" class="dropdown-item"><i class="ri-eye-line me-2"></i><span>View</span></a>' +
-              '<a href="javascript:;" class="dropdown-item"><i class="ri-edit-box-line me-2"></i><span>Edit</span></a>' +
-              '<a href="javascript:;" class="dropdown-item delete-record"><i class="ri-delete-bin-7-line me-2"></i><span>Delete</span></a>' +
-              '</div>' +
-              '</div>'
-            );
-          }
-        }
-      ],
+        ],
       order: [[2, 'desc']],
       dom:
         '<"row"' +
@@ -392,7 +405,7 @@ $(function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
                 column.search(val ? '^' + val + '$' : '', true, false).draw();
               });
-
+      
             column
               .data()
               .unique()
@@ -401,9 +414,10 @@ $(function () {
                 select.append('<option value="' + d + '">' + d + '</option>');
               });
           });
+      
         // Adding status filter once table initialized
         this.api()
-          .columns(6)
+          .columns(7)
           .every(function () {
             var column = this;
             var select = $(
@@ -414,17 +428,18 @@ $(function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
                 column.search(val ? '^' + val + '$' : '', true, false).draw();
               });
-
+      
             column
               .data()
               .unique()
               .sort()
               .each(function (d, j) {
+                var status = statusObj[d] ? statusObj[d].title : 'Unknown';
                 select.append(
                   '<option value="' +
-                    statusObj[d].title +
+                    status +
                     '" class="text-capitalize">' +
-                    statusObj[d].title +
+                    status +
                     '</option>'
                 );
               });
@@ -432,8 +447,8 @@ $(function () {
       }
     });
     $('.add-new').html(
-      "<button class='btn btn-primary waves-effect waves-light' data-bs-toggle='offcanvas' data-bs-target='#offcanvasAddUser'><i class='ri-add-line me-0 me-sm-1 d-inline-block d-sm-none'></i><span class= 'd-none d-sm-inline-block'> Add New User </span ></button>"
-    );
+      "<button class='btn btn-primary waves-effect waves-light' data-bs-toggle='offcanvas' data-bs-target='#offcanvasAddUser'><i class='ri-add-line me-0 me-sm-1 d-inline-block d-sm-none'></i><span class='d-none d-sm-inline-block'>Tambah Pengguna</span></button>"
+    );    
   }
 
   // Delete Record
