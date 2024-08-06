@@ -716,7 +716,7 @@
                       </tr>
                       <tr>
                         <th>Nama Jalan</th>
-                        <th>No Rumah</th>
+                        <th>No</th>
                         <th>RT / RW</th>
                         <th>Kelurahan</th>
                         <th>Kecamatan</th>
@@ -731,6 +731,88 @@
                       <!-- Table body content will be dynamically populated by DataTables -->
                     </tbody>
                   </table>
+                </div>
+                <!-- Modal untuk tambah warehouse -->
+                <div class="modal fade" id="modalAddWarehouse" tabindex="-1" aria-labelledby="modalAddWarehouseLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalAddWarehouseLabel">Tambah Warehouse</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form id="addWarehouseForm">
+                          <!-- Form Fields -->
+                          <div class="mb-3">
+                            <label for="warehouseName" class="form-label">Nama Warehouse</label>
+                            <input type="text" class="form-control" id="warehouseName" placeholder="Nama Warehouse" value="Warehouse Cikini" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="streetName" class="form-label">Nama Jalan</label>
+                            <input type="text" class="form-control" id="streetName" placeholder="Nama Jalan" value="Jalan Cikini" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="houseNumber" class="form-label">Nomor Rumah</label>
+                            <input type="text" class="form-control" id="houseNumber" placeholder="Nomor Rumah" value="12" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="rtRw" class="form-label">RT/RW</label>
+                            <input type="text" class="form-control" id="rtRw" placeholder="RT/RW" value="01/02" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="kelurahan" class="form-label">Kelurahan</label>
+                            <select id="kelurahan" class="form-select select2" required>
+                              <option value="Cikini" selected>Cikini</option>
+                              <!-- Tambahkan opsi lain jika diperlukan -->
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="kecamatan" class="form-label">Kecamatan</label>
+                            <select id="kecamatan" class="form-select select2" required>
+                              <option value="Menteng" selected>Menteng</option>
+                              <!-- Tambahkan opsi lain jika diperlukan -->
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="kotaKabupaten" class="form-label">Kota/Kabupaten</label>
+                            <select id="kotaKabupaten" class="form-select select2" required>
+                              <option value="Jakarta Pusat" selected>Jakarta Pusat</option>
+                              <!-- Tambahkan opsi lain jika diperlukan -->
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="provinsi" class="form-label">Provinsi</label>
+                            <select id="provinsi" class="form-select select2" required>
+                              <option value="DKI Jakarta" selected>DKI Jakarta</option>
+                              <!-- Tambahkan opsi lain jika diperlukan -->
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="postalCode" class="form-label">Kode Pos</label>
+                            <select id="postalCode" class="form-select select2" required>
+                              <option value="10330" selected>10330</option>
+                              <!-- Tambahkan opsi lain jika diperlukan -->
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="geoLong" class="form-label">Longitude</label>
+                            <input type="text" class="form-control" id="geoLong" placeholder="Longitude" value="106.84513" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="geoLat" class="form-label">Latitude</label>
+                            <input type="text" class="form-control" id="geoLat" placeholder="Latitude" value="-6.18623" required>
+                          </div>
+                          <div class="mb-3">
+                            <div id="map" style="height: 400px; background-image: url('assets/img/geostagging.png'); background-size: cover; background-position: center;">
+                              <!-- Jika diperlukan, tambahkan konten lain di sini -->
+                            </div>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

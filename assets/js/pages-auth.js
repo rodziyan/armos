@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
           'email-username': {
             validators: {
               notEmpty: {
-                message: 'Please enter email / username'
+                message: 'Please enter username'
               },
               stringLength: {
                 min: 6,
