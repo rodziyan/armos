@@ -136,11 +136,11 @@ $(function () {
 
     // Add new button with margin top and bottom
     $('.add-new').html(
-      "<button class='btn btn-primary waves-effect waves-light mt-3 mb-3' data-bs-toggle='modal' data-bs-target='#modalAddWarehouse'>" +
+      "<a href='form-warehouse.html' class='btn btn-primary waves-effect waves-light mt-3 mb-3'>" +
       "<i class='ri-add-line me-0 me-sm-1 d-inline-block d-sm-none'></i>" +
       "<span class='d-none d-sm-inline-block'>Tambah Warehouse</span>" +
-      "</button>"
-    ); 
+      "</a>"
+    );
   }
 
   // Validation for Add New Warehouse Form
