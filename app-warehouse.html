@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Warehouse - Pages | Armos</title>
+    <title>Warehouse - Logistics | Armos</title>
 
     <meta name="description" content="" />
 
@@ -43,14 +43,11 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="assets/vendor/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/select2/select2.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/@form-validation/form-validation.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/mapbox-gl/mapbox-gl.css" />
 
     <!-- Page CSS -->
+
+    <link rel="stylesheet" href="assets/vendor/css/pages/app-logistics-fleet.css" />
 
     <!-- Helpers -->
     <script src="assets/vendor/js/helpers.js"></script>
@@ -700,41 +697,740 @@
 
             <!-- Content -->
 
-            <div class="container-xxxl flex-grow-2 container-p-y">
-              <div class="row g-10 mb-10">
-              </div>
-              <!-- Users List Table -->
-              <div class="card">
-                <div class="card-datatable table-responsive">
-                  <table id="dt_warehouse_table" class="table">
-                    <thead>
-                      <tr>
-                        <th rowspan="2"></th>
-                        <th rowspan="2">Nama</th>
-                        <th colspan="8">Alamat</th>
-                        <th colspan="2">Geo Staging</th>
-                      </tr>
-                      <tr>
-                        <th>Nama Jalan</th>
-                        <th>No</th>
-                        <th>RT / RW</th>
-                        <th>Kelurahan</th>
-                        <th>Kecamatan</th>
-                        <th>Kota / Kabupaten</th>
-                        <th>Provinsi</th>
-                        <th>Kode Pos</th>
-                        <th>Long</th>
-                        <th>Lat</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <!-- Table body content will be dynamically populated by DataTables -->
-                    </tbody>
-                  </table>
+            <div class="container-xxl flex-grow-1 container-p-y">
+
+              <div class="card overflow-hidden">
+                <!-- Map Menu Wrapper -->
+                <div class="d-flex app-logistics-fleet-wrapper">
+                  <!-- Map Menu Button when screen is < md -->
+                  <div class="flex-shrink-0 position-fixed m-6 d-md-none w-auto z-1">
+                    <button
+                      class="btn btn-white btn-white-dark-variant z-2 p-2"
+                      data-bs-toggle="sidebar"
+                      data-overlay=""
+                      data-target="#app-logistics-fleet-sidebar">
+                      <i class="ri-menu-line ri-24px"></i>
+                    </button>
+                  </div>
+
+                  <!-- Map Menu -->
+                  <div class="app-logistics-fleet-sidebar col h-100 rounded-0" id="app-logistics-fleet-sidebar">
+                    <div class="card-header border-0 pb-2 d-flex justify-content-between align-items-center">
+                      <h5 class="mb-0 card-title">Location</h5>
+                      <!-- Button Add -->
+                      <button class="btn btn-primary ms-3" id="add-location-button">Tambah</button>
+                      <!-- Sidebar close button -->
+                      <i
+                        class="ri-close-line ri-24px cursor-pointer close-sidebar d-md-none"
+                        data-bs-toggle="sidebar"
+                        data-overlay
+                        data-target="#app-logistics-fleet-sidebar"></i>
+                    </div>
+                    <!-- Sidebar when screen < md -->
+                    <div class="card-body p-0 logistics-fleet-sidebar-body">
+                      <!-- Menu Accordion -->
+                      <div
+                        class="accordion p-5 ps-0 pt-0"
+                        id="fleet"
+                        data-bs-toggle="sidebar"
+                        data-overlay
+                        data-target="#app-logistics-fleet-sidebar">
+                        <!-- Fleet 1 -->
+                        <div class="accordion-item shadow-none border-0 active my-0" id="fl-1">
+                          <div class="accordion-header border-0" id="fleetOne">
+                            <div
+                              role="button"
+                              class="accordion-button pe-0 shadow-none"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#fleet1"
+                              aria-expanded="true"
+                              aria-controls="fleet1">
+                              <div class="d-flex align-items-center">
+                                <div class="avatar-wrapper">
+                                  <div class="avatar me-4">
+                                    <span class="avatar-initial rounded-circle bg-label-secondary">
+                                      <i class="ri-building-3-line ri-24px"></i>
+                                    </span>
+                                  </div>
+                                </div>
+                                <span class="d-flex flex-column fw-normal">
+                                  <span class="text-heading mb-1">Gudang Jakarta</span>
+                                  <span class="text-body">WH 01</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="fleet1" class="accordion-collapse collapse show" data-bs-parent="#fleet">
+                            <div class="accordion-body pt-5 pb-0">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <h6 class="fw-normal my-50">Location Details</h6>
+                              </div>
+                              <ul class="timeline mb-3 ps-4 mt-3">
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase me-0">Location ID</small>
+                                    </div>
+                                    <h6 class="my-50">WH 01</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Location Name</small>
+                                    </div>
+                                    <h6 class="my-50">Gudang Jakarta</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-transparent">
+                                  <span class="timeline-indicator-advanced text-primary border-0 shadow-none">
+                                    <i class="ri-map-pin-line"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 py-0">
+                                    <div class="timeline-header">
+                                      <small class="text-primary text-uppercase">Location Type</small>
+                                    </div>
+                                    <h6 class="my-50">Gudang</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Address</small>
+                                    </div>
+                                    <h6 class="my-50">Jl. Raya Jakarta No.123, Jakarta, DKI Jakarta</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Longitude</small>
+                                    </div>
+                                    <h6 class="my-50">106.8456</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Latitude</small>
+                                    </div>
+                                    <h6 class="my-50">-6.2088</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Open Hour</small>
+                                    </div>
+                                    <h6 class="my-50">08:00 AM</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Closed Hour</small>
+                                    </div>
+                                    <h6 class="my-50">06:00 PM</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Delivery Service</small>
+                                    </div>
+                                    <h6 class="my-50">Express Delivery</h6>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>                          
+                        </div>
+                        <!-- Fleet 2 -->
+                        <div class="accordion-item shadow-none border-0 my-0" id="fl-2">
+                          <div class="accordion-header border-0" id="fleetTwo">
+                            <div
+                              role="button"
+                              class="accordion-button pe-0 collapsed shadow-none"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#fleet2"
+                              aria-expanded="true"
+                              aria-controls="fleet2">
+                              <div class="d-flex align-items-center">
+                                <div class="avatar-wrapper">
+                                  <div class="avatar me-4">
+                                    <span class="avatar-initial rounded-circle bg-label-secondary">
+                                      <i class="ri-store-line ri-24px"></i>
+                                    </span>
+                                  </div>
+                                </div>
+                                <span class="d-flex flex-column fw-normal">
+                                  <span class="text-heading mb-1">LOC-748201</span>
+                                  <span class="text-body">Gudang Jakarta, Jakarta, ID</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="fleet2" class="accordion-collapse collapse" data-bs-parent="#fleet">
+                            <div class="accordion-body pt-5 pb-0">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <h6 class="fw-normal my-50">Location Details</h6>
+                              </div>
+                              <ul class="timeline mb-3 ps-4 mt-8">
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase me-0">Location ID</small>
+                                    </div>
+                                    <h6 class="my-50">LOC-748201</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Location Name</small>
+                                    </div>
+                                    <h6 class="my-50">Gudang Jakarta</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Location Type</small>
+                                    </div>
+                                    <h6 class="my-50">Gudang</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Address</small>
+                                    </div>
+                                    <h6 class="my-50">Jl. Raya Jakarta 123, Jakarta, ID</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Longitude</small>
+                                    </div>
+                                    <h6 class="my-50">106.845</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Latitude</small>
+                                    </div>
+                                    <h6 class="my-50">-6.208</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Open Hour</small>
+                                    </div>
+                                    <h6 class="my-50">08:00 AM</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Closed Hour</small>
+                                    </div>
+                                    <h6 class="my-50">06:00 PM</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Delivery Service</small>
+                                    </div>
+                                    <h6 class="my-50">Same Day Delivery</h6>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <!-- Fleet 3 -->
+                        <div class="accordion-item shadow-none border-0 my-0" id="fl-3">
+                          <div class="accordion-header border-0" id="fleetThree">
+                            <div
+                              role="button"
+                              class="accordion-button pe-0 collapsed shadow-none"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#fleet3"
+                              aria-expanded="true"
+                              aria-controls="fleet3">
+                              <div class="d-flex align-items-center">
+                                <div class="avatar-wrapper">
+                                  <div class="avatar me-4">
+                                    <span class="avatar-initial rounded-circle bg-label-secondary">
+                                      <i class="ri-store-line ri-24px"></i>
+                                    </span>
+                                  </div>
+                                </div>
+                                <span class="d-flex flex-column fw-normal">
+                                  <span class="text-heading mb-1">LOC-392840</span>
+                                  <span class="text-body">Gudang Utara, Jakarta, ID</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="fleet3" class="accordion-collapse collapse" data-bs-parent="#fleet">
+                            <div class="accordion-body pt-5 pb-0">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <h6 class="fw-normal my-50">Location Details</h6>
+                              </div>
+                              <ul class="timeline mb-3 ps-4 mt-8">
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase me-0">Location ID</small>
+                                    </div>
+                                    <h6 class="my-50">LOC-392840</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Location Name</small>
+                                    </div>
+                                    <h6 class="my-50">Gudang Utara</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Location Type</small>
+                                    </div>
+                                    <h6 class="my-50">Gudang</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Address</small>
+                                    </div>
+                                    <h6 class="my-50">Jl. Utara No. 456, Jakarta, ID</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Longitude</small>
+                                    </div>
+                                    <h6 class="my-50">106.822</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Latitude</small>
+                                    </div>
+                                    <h6 class="my-50">-6.120</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Open Hour</small>
+                                    </div>
+                                    <h6 class="my-50">09:00 AM</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Closed Hour</small>
+                                    </div>
+                                    <h6 class="my-50">05:00 PM</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Delivery Service</small>
+                                    </div>
+                                    <h6 class="my-50">Next Day Delivery</h6>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Fleet 4 -->
+                        <div class="accordion-item shadow-none border-0 my-0" id="fl-4">
+                          <div class="accordion-header border-0" id="fleetFour">
+                            <div
+                              role="button"
+                              class="accordion-button pe-0 collapsed shadow-none"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#fleet4"
+                              aria-expanded="true"
+                              aria-controls="fleet4">
+                              <div class="d-flex align-items-center">
+                                <div class="avatar-wrapper">
+                                  <div class="avatar me-4">
+                                    <span class="avatar-initial rounded-circle bg-label-secondary">
+                                      <i class="ri-store-line ri-24px"></i>
+                                    </span>
+                                  </div>
+                                </div>
+                                <span class="d-flex flex-column fw-normal">
+                                  <span class="text-heading mb-1">LOC-582731</span>
+                                  <span class="text-body">Gudang Selatan, Jakarta, ID</span>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="fleet4" class="accordion-collapse collapse" data-bs-parent="#fleet">
+                            <div class="accordion-body pt-5 pb-0">
+                              <div class="d-flex align-items-center justify-content-between">
+                                <h6 class="fw-normal my-50">Location Details</h6>
+                              </div>
+                              <ul class="timeline mb-3 ps-4 mt-8">
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase me-0">Location ID</small>
+                                    </div>
+                                    <h6 class="my-50">LOC-582731</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Location Name</small>
+                                    </div>
+                                    <h6 class="my-50">Gudang Selatan</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Location Type</small>
+                                    </div>
+                                    <h6 class="my-50">Gudang</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Address</small>
+                                    </div>
+                                    <h6 class="my-50">Jl. Selatan No. 789, Jakarta, ID</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Longitude</small>
+                                    </div>
+                                    <h6 class="my-50">106.810</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Latitude</small>
+                                    </div>
+                                    <h6 class="my-50">-6.228</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Open Hour</small>
+                                    </div>
+                                    <h6 class="my-50">07:00 AM</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Closed Hour</small>
+                                    </div>
+                                    <h6 class="my-50">07:00 PM</h6>
+                                  </div>
+                                </li>
+                                <li class="timeline-item ps-6 border-left-dashed">
+                                  <span class="timeline-indicator-advanced text-success border-0 shadow-none">
+                                    <i class="ri-checkbox-circle-line ri-20px"></i>
+                                  </span>
+                                  <div class="timeline-event ps-0 pb-5 pt-0">
+                                    <div class="timeline-header">
+                                      <small class="text-success text-uppercase">Delivery Service</small>
+                                    </div>
+                                    <h6 class="my-50">Same Day Delivery</h6>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>                    
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Mapbox Map container -->
+                  <div class="col h-100 map-container">
+                    <!-- Map -->
+                    <div id="map" class="w-100 h-100">
+                      <img src="assets/img/maps.png" alt="Map" class="w-100 h-100 object-cover">
+                    </div>
+
+                  <!-- Overlay Hidden -->
+                  <div class="app-overlay d-none"></div>
                 </div>
               </div>
             </div>
             <!--/ Content -->
+
+
+                <!-- Modal Structure -->
+                  <div class="modal fade" id="addLocationModal" tabindex="-1" aria-labelledby="addLocationModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="addLocationModalLabel">Tambah Lokasi</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                      <div class="modal-body">
+                        <form id="locationForm">
+                          <div class="mb-3">
+                            <label for="locationID" class="form-label">Location ID</label>
+                            <input type="text" class="form-control" id="locationID" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="locationName" class="form-label">Location Name</label>
+                            <input type="text" class="form-control" id="locationName" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="locationType" class="form-label">Location Type</label>
+                            <select class="form-select" id="locationType">
+                              <option value="Gudang">Gudang</option>
+                              <option value="Order">Order</option>
+                              <option value="Pengiriman">Pengiriman</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="address" required>
+                          </div>
+                          <div class="mb-3">
+                            <label for="longitude" class="form-label">Longitude</label>
+                            <input type="text" class="form-control" id="longitude" readonly>
+                          </div>
+                          <div class="mb-3">
+                            <label for="latitude" class="form-label">Latitude</label>
+                            <input type="text" class="form-control" id="latitude" readonly>
+                          </div>
+                          <div class="mb-3">
+                            <label for="channel" class="form-label">Channel</label>
+                            <select class="form-select" id="channel">
+                              <option value="Modern Trade">Modern Trade</option>
+                              <option value="General Trade">General Trade</option>
+                              <option value="Institusi">Institusi</option>
+                              <option value="Horeka">Horeka</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="typeOutlet" class="form-label">Type Outlet</label>
+                            <select class="form-select" id="typeOutlet">
+                              <option value="Kantin">Kantin</option>
+                              <option value="Kafe">Kafe</option>
+                              <option value="Resto">Resto</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="loadingDock" class="form-label">Loading Dock</label>
+                            <input type="text" class="form-control" id="loadingDock">
+                          </div>
+                          <div class="mb-3">
+                            <label for="openHour" class="form-label">Open Hour</label>
+                            <input type="time" class="form-control" id="openHour">
+                          </div>
+                          <div class="mb-3">
+                            <label for="closedHour" class="form-label">Closed Hour</label>
+                            <input type="time" class="form-control" id="closedHour">
+                          </div>
+                          <div class="mb-3">
+                            <label for="deliveryService" class="form-label">Delivery Service</label>
+                            <input type="text" class="form-control" id="deliveryService">
+                          </div>
+                          <div class="mb-3">
+                            <label for="availability" class="form-label">Availability</label>
+                            <input type="text" class="form-control" id="availability">
+                          </div>
+                          <div class="mb-3">
+                            <label for="bongkarDuration" class="form-label">Durasi Bongkar</label>
+                            <input type="number" class="form-control" id="bongkarDuration" placeholder="Hours">
+                          </div>
+                          <div class="mb-3">
+                            <label for="availableDropDays" class="form-label">Available Drop Days</label>
+                            <input type="text" class="form-control" id="availableDropDays">
+                          </div>
+                          <div class="mb-3">
+                            <label for="frequencyDrop" class="form-label">Frequency Drop</label>
+                            <select class="form-select" id="frequencyDrop">
+                              <option value="Weekly">Weekly</option>
+                              <option value="Monthly">Monthly</option>
+                              <option value="Yearly">Yearly</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="vehicleTypeRestriction" class="form-label">Vehicle Type Restriction</label>
+                            <select class="form-select" id="vehicleTypeRestriction">
+                              <option value="Truck">Truck</option>
+                              <option value="Container">Container</option>
+                              <option value="Other">Other</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="priority" class="form-label">Priority (0 Highest, 1, 2, 3, 4, etc.)</label>
+                            <select class="form-select" id="priority">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="routeModel" class="form-label">Route Model</label>
+                            <input type="text" class="form-control" id="routeModel">
+                          </div>
+                          <div class="mb-3">
+                            <label for="area" class="form-label">Area</label>
+                            <select class="form-select" id="area">
+                              <option value="A">A</option>
+                              <option value="B">B</option>
+                              <option value="C">C</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label for="zona" class="form-label">Zona</label>
+                            <select class="form-select" id="zona">
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                            </select>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="saveLocationButton">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
             
 
@@ -770,19 +1466,12 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="assets/vendor/libs/moment/moment.js"></script>
-    <script src="assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
-    <script src="assets/vendor/libs/select2/select2.js"></script>
-    <script src="assets/vendor/libs/@form-validation/popular.js"></script>
-    <script src="assets/vendor/libs/@form-validation/bootstrap5.js"></script>
-    <script src="assets/vendor/libs/@form-validation/auto-focus.js"></script>
-    <script src="assets/vendor/libs/cleavejs/cleave.js"></script>
-    <script src="assets/vendor/libs/cleavejs/cleave-phone.js"></script>
+    <script src="assets/vendor/libs/mapbox-gl/mapbox-gl.js"></script>
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="assets/js/warehouse.js"></script>
+    <script src="assets/js/app-logistics-fleet.js"></script>
   </body>
 </html>

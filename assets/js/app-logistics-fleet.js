@@ -62,10 +62,14 @@
 
   const map = new mapboxgl.Map({
     container: 'map',
-    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/mapbox/light-v9',
     center: [-73.999024, 40.75249842],
     zoom: 12.25
+  });
+
+  // Ensure map resizes when the window is resized
+  window.addEventListener('resize', () => {
+    map.resize();
   });
 
   // Add markers to the map and thier functionality
@@ -132,4 +136,13 @@
       suppressScrollX: true
     });
   }
+  document.addEventListener('DOMContentLoaded', function () {
+    const addLocationButton = document.getElementById('add-location-button');
+    const addLocationModal = new bootstrap.Modal(document.getElementById('addLocationModal'));
+  
+    addLocationButton.addEventListener('click', function () {
+      addLocationModal.show();
+    });
+  });
+  
 })();
