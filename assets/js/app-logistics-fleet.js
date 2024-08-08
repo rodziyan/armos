@@ -5,10 +5,8 @@
 
 (function () {
   // Mapbox Access Token
-
-  //!YOUR_MAPBOX_ACCESS_TOKEN_HERE!
-  mapboxgl.accessToken =
-    '';
+  // Replace with your Mapbox access token
+  mapboxgl.accessToken = '';
 
   const geojson = {
     type: 'FeatureCollection',
@@ -72,9 +70,9 @@
     map.resize();
   });
 
-  // Add markers to the map and thier functionality
+  // Add markers to the map and their functionality
   for (const marker of geojson.features) {
-    // Create a DOM element for each marker.
+    // Create a DOM element for each marker
     const el = document.createElement('div');
     const width = marker.properties.iconSize[0];
     const height = marker.properties.iconSize[1];
@@ -82,8 +80,8 @@
     el.insertAdjacentHTML(
       'afterbegin',
       '<img src="' +
-        assetsPath +
-        'img/illustrations/fleet-car.png" alt="Fleet Car" width="20" class="rounded-3" id="carFleet-' +
+        'assets/img/illustrations/fleet-car.png' +
+        '" alt="Fleet Car" width="20" class="rounded-3" id="carFleet-' +
         marker.properties.message +
         '">'
     );
@@ -91,7 +89,7 @@
     el.style.height = `${height}px`;
     el.style.cursor = 'pointer';
 
-    // Add markers to the map.
+    // Add markers to the map
     new mapboxgl.Marker(el).setLngLat(marker.geometry.coordinates).addTo(map);
 
     // Select Accordion for respective Marker
@@ -103,33 +101,40 @@
     element.addEventListener('click', function () {
       const focusedElement = document.querySelector('.marker-focus');
 
-      if (Helpers._hasClass('active', element)) {
-        //fly to location
+      if (element.classList.contains('active')) {
+        // Fly to location
         map.flyTo({
           center: geojson.features[marker.properties.message - 1].geometry.coordinates,
           zoom: 16
         });
         // Remove marker-focus from other marked cars
-        focusedElement && Helpers._removeClass('marker-focus', focusedElement);
-        Helpers._addClass('marker-focus', car);
+        if (focusedElement) {
+          focusedElement.classList.remove('marker-focus');
+        }
+        car.classList.add('marker-focus');
       } else {
-        //remove marker-focus if not active
-        Helpers._removeClass('marker-focus', car);
+        // Remove marker-focus if not active
+        car.classList.remove('marker-focus');
       }
     });
   }
 
-  //For selecting default car location
+  // For selecting default car location
   const defCar = document.getElementById('carFleet-1');
-  Helpers._addClass('marker-focus', defCar);
+  if (defCar) {
+    defCar.classList.add('marker-focus');
+  }
 
-  //hide mapbox controls
-  document.querySelector('.mapboxgl-control-container').classList.add('d-none');
+  // Hide mapbox controls
+  const controlContainer = document.querySelector('.mapboxgl-control-container');
+  if (controlContainer) {
+    controlContainer.classList.add('d-none');
+  }
 
-  //Selecting Sidebar Accordion for perfect scroll
-  var sidebarAccordionBody = $('.logistics-fleet-sidebar-body');
+  // Selecting Sidebar Accordion for perfect scroll
+  const sidebarAccordionBody = document.querySelectorAll('.logistics-fleet-sidebar-body');
 
-  //Perfect Scrollbar for Sidebar Accordion
+  // Perfect Scrollbar for Sidebar Accordion
   if (sidebarAccordionBody.length) {
     new PerfectScrollbar(sidebarAccordionBody[0], {
       wheelPropagation: false,
@@ -146,8 +151,20 @@
     const modal = new bootstrap.Modal(addLocationModal);
 
     // Add event listener to the button
-    addLocationButton.addEventListener('click', function () {
-      modal.show();
-    });
+    if (addLocationButton) {
+      addLocationButton.addEventListener('click', function () {
+        // Show the modal
+        modal.show();
+      });
+    }
+
+    // Add event listener to the button inside the modal
+    const confirmButton = document.getElementById('confirm-add-location');
+    if (confirmButton) {
+      confirmButton.addEventListener('click', function () {
+        // Redirect to app-warehouse.html
+        window.location.href = 'form-warehouse.html';
+      });
+    }
   });
 })();
