@@ -136,13 +136,18 @@
       suppressScrollX: true
     });
   }
+
   document.addEventListener('DOMContentLoaded', function () {
+    // Get references to the button and modal
     const addLocationButton = document.getElementById('add-location-button');
-    const addLocationModal = new bootstrap.Modal(document.getElementById('addLocationModal'));
-  
+    const addLocationModal = document.getElementById('addLocationModal');
+
+    // Initialize the modal
+    const modal = new bootstrap.Modal(addLocationModal);
+
+    // Add event listener to the button
     addLocationButton.addEventListener('click', function () {
-      addLocationModal.show();
+      modal.show();
     });
   });
-  
 })();
