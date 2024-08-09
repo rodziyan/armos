@@ -17,12 +17,12 @@ $(function () {
             columns: [
                 { data: 'id' },
                 { data: 'plat_nomor' },
+                { data: 'status' },
                 { data: 'expired_pajak' },
                 { data: 'nama_kendaraan' },
                 { data: 'brand' },
                 { data: 'model' },
-                { data: 'type' },
-                { data: 'status' }
+                { data: 'type' }
             ],
             columnDefs: [
                 {
@@ -58,34 +58,6 @@ $(function () {
                 {
                     targets: 3,
                     render: function (data, type, full) {
-                        var kendaraan = full['nama_kendaraan'];
-                        return '<span>' + kendaraan + '</span>';
-                    }
-                },
-                {
-                    targets: 4,
-                    render: function (data, type, full) {
-                        var brand = full['brand'];
-                        return '<span>' + brand + '</span>';
-                    }
-                },
-                {
-                    targets: 5,
-                    render: function (data, type, full) {
-                        var model = full['model'];
-                        return '<span>' + model + '</span>';
-                    }
-                },
-                {
-                    targets: 6,
-                    render: function (data, type, full) {
-                        var type = full['type'];
-                        return '<span>' + type + '</span>';
-                    }
-                },
-                {
-                    targets: 7,
-                    render: function (data, type, full) {
                         var status = full['status'];
                         var statusObj = {
                             1: { title: 'Available', class: 'bg-label-success' },
@@ -97,8 +69,36 @@ $(function () {
                             statusObj[status].title +
                             '</span>';
                     }
+                },
+                {
+                    targets: 4,
+                    render: function (data, type, full) {
+                        var kendaraan = full['nama_kendaraan'];
+                        return '<span>' + kendaraan + '</span>';
+                    }
+                },
+                {
+                    targets: 5,
+                    render: function (data, type, full) {
+                        var brand = full['brand'];
+                        return '<span>' + brand + '</span>';
+                    }
+                },
+                {
+                    targets: 6,
+                    render: function (data, type, full) {
+                        var model = full['model'];
+                        return '<span>' + model + '</span>';
+                    }
+                },
+                {
+                    targets: 7,
+                    render: function (data, type, full) {
+                        var type = full['type'];
+                        return '<span>' + type + '</span>';
+                    }
                 }
-            ],
+            ],            
             order: [[1, 'asc']],
             dom:
                 '<"row"' +
@@ -204,11 +204,11 @@ $(function () {
         });
 
         $('#filter-nama-kendaraan').on('change', function () {
-            dt_vehicle.column(3).search(this.value).draw();
+            dt_vehicle.column(4).search(this.value).draw();
         });
 
         // Add "Add New Kendaraan" button after DataTable initialization
-         $('.add-new').html('<a href="form-layouts-vertical.html" class="btn btn-primary" data-bs-toggle="Add New" aria-controls="Tambah Kendaraan">Tambah Kendaraan</a>');
+        $('.add-new').html('<a href="form-layouts-vertical.html" class="btn btn-primary" data-bs-toggle="Add New" aria-controls="Tambah Kendaraan">Tambah Kendaraan</a>');
         
         // Delete record
         $('.datatables-vehicles tbody').on('click', '.delete-record', function () {
