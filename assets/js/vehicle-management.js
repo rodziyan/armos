@@ -9,6 +9,141 @@ $(function () {
         });
     });
 
+    function createUpdateModal() {
+        // Modal HTML structure
+        var modalHTML = `
+            <link rel="stylesheet" href="https://unpkg.com/remixicon/fonts/remixicon.css">
+              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-simple modal-edit-user">
+                  <div class="modal-content">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body p-0">
+                      <div class="text-center mb-6">
+                        <h4 class="mb-2">Perbarui Informasi Kendaraan</h4>
+                        <p class="mb-6">Memperbarui informasi kendaraan mungkin melibatkan pemeriksaan privasi.</p>
+                      </div>
+                      <form id="updateForm" class="row g-5" onsubmit="return false">
+                        <!-- Icon and Arrow -->
+                        <div class="col-12 text-center mb-3">
+                          <div class="d-flex justify-content-center align-items-center">
+                            <i class="ri-truck-fill" style="font-size: 50px; margin-right: 8px;"></i>
+                          </div>
+                        </div>
+                        <!-- Vehicle Details -->
+                        <div class="col-12">
+                          <div class="form-floating form-floating-outline">
+                            <input
+                              type="text"
+                              id="platNomor"
+                              name="platNomor"
+                              class="form-control"
+                              placeholder="Masukkan nomor plat" />
+                            <label for="platNomor">Nomor Plat</label>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-floating form-floating-outline">
+                            <input
+                              type="text"
+                              id="namaKendaraan"
+                              name="namaKendaraan"
+                              class="form-control"
+                              placeholder="Masukkan nama kendaraan" />
+                            <label for="namaKendaraan">Nama Kendaraan</label>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-floating form-floating-outline">
+                            <input
+                              type="text"
+                              id="vehicleType"
+                              name="vehicleType"
+                              class="form-control"
+                              placeholder="Masukkan jenis kendaraan" />
+                            <label for="vehicleType">Jenis Kendaraan</label>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-floating form-floating-outline">
+                            <input
+                              type="text"
+                              id="expiredPajak"
+                              name="expiredPajak"
+                              class="form-control"
+                              placeholder="Masukkan tanggal pajak kadaluarsa" />
+                            <label for="expiredPajak">Tanggal Pajak Kadaluarsa</label>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-floating form-floating-outline">
+                            <input
+                              type="text"
+                              id="brand"
+                              name="brand"
+                              class="form-control"
+                              placeholder="Masukkan merk kendaraan" />
+                            <label for="brand">Merk Kendaraan</label>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-floating form-floating-outline">
+                            <input
+                              type="text"
+                              id="model"
+                              name="model"
+                              class="form-control"
+                              placeholder="Masukkan model kendaraan" />
+                            <label for="model">Model Kendaraan</label>
+                          </div>
+                        </div>
+                        <div class="col-12 text-center d-flex flex-wrap justify-content-center gap-4 row-gap-4">
+                          <button type="submit" class="btn btn-primary">Perbarui</button>
+                          <button
+                            type="reset"
+                            class="btn btn-outline-secondary"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            Batal
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+        // Append the modal HTML to the body
+        $('body').append(modalHTML);
+    }
+    
+    // Create and append the modal when the document is ready
+    createUpdateModal();
+    
+    // Function to show the update modal with data
+    function showUpdateModal(data) {
+        $('#platNomor').val(data.plat_nomor);
+        $('#namaKendaraan').val(data.nama_kendaraan);
+        $('#vehicleType').val(data.type);
+        $('#expiredPajak').val(data.expired_pajak);
+        $('#brand').val(data.brand);
+        $('#model').val(data.model);
+        $('#updateModal').modal('show');
+    }
+    
+    // Event listener for the update button
+    $(document).on('click', '.updateModal', function() {
+        var data = {
+            plat_nomor: $(this).data('plat-nomor'),
+            nama_kendaraan: $(this).data('nama-kendaraan'),
+            type: $(this).data('type'),
+            expired_pajak: $(this).data('expired-pajak'),
+            brand: $(this).data('brand'),
+            model: $(this).data('model')
+        };
+        showUpdateModal(data);
+    });
+    
+
     // Initialize DataTable
     var dt_vehicle_table = $('.datatables-vehicles');
     if (dt_vehicle_table.length) {
@@ -22,7 +157,8 @@ $(function () {
                 { data: 'nama_kendaraan' },
                 { data: 'brand' },
                 { data: 'model' },
-                { data: 'type' }
+                { data: 'type' },
+                { data: 'action' }
             ],
             columnDefs: [
                 {
@@ -97,9 +233,28 @@ $(function () {
                         var type = full['type'];
                         return '<span>' + type + '</span>';
                     }
+                },
+                {
+                    // Actions
+                    targets: -1,
+                    title: 'Actions',
+                    orderable: false,
+                    render: function (data, type, full) {
+                        return `
+                            <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect updateModal"
+                                data-plat-nomor="${full['plat_nomor']}"
+                                data-nama-kendaraan="${full['nama_kendaraan']}"
+                                data-type="${full['type']}"
+                                data-expired-pajak="${full['expired_pajak']}"
+                                data-brand="${full['brand']}"
+                                data-model="${full['model']}">
+                                <i class="ri-pencil-line ri-20px"></i>
+                            </button>
+                        `;
+                    }
                 }
             ],            
-            order: [[1, 'asc']],
+            order: [[2, 'asc']],
             dom:
                 '<"row"' +
                 '<"col-md-6 d-flex align-items-center justify-content-start"<"dt-action-buttons"B>>' +

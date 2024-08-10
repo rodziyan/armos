@@ -8,7 +8,8 @@
       "nama_kendaraan": "Colt Diesel",
       "brand": "Mitsubishi",
       "model": "Colt Diesel",
-      "type": "FE 74 HD"
+      "type": "FE 74 HD",
+      "action": "action"
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "nama_kendaraan": "Hino Dutro",
       "brand": "Hino",
       "model": "Dutro",
-      "type": "110 SD"
+      "type": "110 SD",
+      "action": "action"
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "nama_kendaraan": "Fuso Fighter",
       "brand": "Mitsubishi",
       "model": "Fuso Fighter",
-      "type": "FM 65 FS"
+      "type": "FM 65 FS",
+      "action": "action"
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "nama_kendaraan": "Isuzu Elf",
       "brand": "Isuzu",
       "model": "Elf",
-      "type": "NMR 71"
+      "type": "NMR 71",
+      "action": "action"
     },
     {
       "id": 5,
@@ -48,7 +52,8 @@
       "nama_kendaraan": "Hino Ranger",
       "brand": "Hino",
       "model": "Ranger",
-      "type": "FC 190 J"
+      "type": "FC 190 J",
+      "action": "action"
     },
     {
       "id": 6,
@@ -58,7 +63,8 @@
       "nama_kendaraan": "Isuzu Giga",
       "brand": "Isuzu",
       "model": "Giga",
-      "type": "FVZ 34 P"
+      "type": "FVZ 34 P",
+      "action": "action"
     },
     {
       "id": 7,
@@ -68,7 +74,8 @@
       "nama_kendaraan": "UD Trucks Quester",
       "brand": "UD Trucks",
       "model": "Quester",
-      "type": "CWE 280"
+      "type": "CWE 280",
+      "action": "action"
     },
     {
       "id": 8,
@@ -78,7 +85,8 @@
       "nama_kendaraan": "Mitsubishi Fuso",
       "brand": "Mitsubishi",
       "model": "Fuso",
-      "type": "FN 517 ML2"
+      "type": "FN 517 ML2",
+      "action": "action"
     },
     {
       "id": 9,
@@ -88,7 +96,8 @@
       "nama_kendaraan": "Hino 500 Series",
       "brand": "Hino",
       "model": "500 Series",
-      "type": "FG 235 JP"
+      "type": "FG 235 JP",
+      "action": "action"
     },
     {
       "id": 10,
@@ -98,7 +107,8 @@
       "nama_kendaraan": "Isuzu FVR",
       "brand": "Isuzu",
       "model": "FVR",
-      "type": "34 P"
+      "type": "34 P",
+      "action": "action"
     },
     {
       "id": 11,
@@ -108,7 +118,8 @@
       "nama_kendaraan": "UD Trucks Kuzer",
       "brand": "UD Trucks",
       "model": "Kuzer",
-      "type": "RKE 150"
+      "type": "RKE 150",
+      "action": "action"
     },
     {
       "id": 12,
@@ -118,7 +129,8 @@
       "nama_kendaraan": "Daihatsu Gran Max",
       "brand": "Daihatsu",
       "model": "Gran Max",
-      "type": "1.5 D PS"
+      "type": "1.5 D PS",
+      "action": "action"
     },
     {
       "id": 13,
@@ -128,7 +140,8 @@
       "nama_kendaraan": "Mitsubishi L300",
       "brand": "Mitsubishi",
       "model": "L300",
-      "type": "Pick Up"
+      "type": "Pick Up",
+      "action": "action"
     },
     {
       "id": 14,
@@ -138,7 +151,8 @@
       "nama_kendaraan": "Suzuki Carry",
       "brand": "Suzuki",
       "model": "Carry",
-      "type": "Pick Up FD"
+      "type": "Pick Up FD",
+      "action": "action"
     },
     {
       "id": 15,
@@ -148,7 +162,8 @@
       "nama_kendaraan": "Hino 700 Series",
       "brand": "Hino",
       "model": "700 Series",
-      "type": "SG 260 TI"
+      "type": "SG 260 TI",
+      "action": "action"
     },
     {
       "id": 16,
@@ -158,7 +173,8 @@
       "nama_kendaraan": "Toyota Hilux",
       "brand": "Toyota",
       "model": "Hilux",
-      "type": "Single Cabin 2.4 DSL"
+      "type": "Single Cabin 2.4 DSL",
+      "action": "action"
     },
     {
       "id": 17,
@@ -168,7 +184,8 @@
       "nama_kendaraan": "Isuzu NQR",
       "brand": "Isuzu",
       "model": "NQR",
-      "type": "71 HD 5.8"
+      "type": "71 HD 5.8",
+      "action": "action"
     },
     {
       "id": 18,
@@ -178,7 +195,8 @@
       "nama_kendaraan": "Mitsubishi Colt Diesel",
       "brand": "Mitsubishi",
       "model": "Colt Diesel",
-      "type": "FE 84G BC"
+      "type": "FE 84G BC",
+      "action": "action"
     },
     {
       "id": 19,
@@ -188,7 +206,8 @@
       "nama_kendaraan": "UD Trucks Croner",
       "brand": "UD Trucks",
       "model": "Croner",
-      "type": "PKE 250"
+      "type": "PKE 250",
+      "action": "action"
     },
     {
       "id": 20,
@@ -198,7 +217,8 @@
       "nama_kendaraan": "Hino Dutro Cargo",
       "brand": "Hino",
       "model": "Dutro Cargo",
-      "type": "110 SDL"
+      "type": "110 SDL",
+      "action": "action"
     },
     {
       "id": 21,
@@ -208,7 +228,8 @@
       "nama_kendaraan": "Isuzu FTR",
       "brand": "Isuzu",
       "model": "FTR",
-      "type": "90 S"
+      "type": "90 S",
+      "action": "action"
     },
     {
       "id": 22,
@@ -218,7 +239,8 @@
       "nama_kendaraan": "Mitsubishi Fuso Tank",
       "brand": "Mitsubishi",
       "model": "Fuso Tank",
-      "type": "FN 527 ML"
+      "type": "FN 527 ML",
+      "action": "action"
     },
     {
       "id": 23,
@@ -228,7 +250,8 @@
       "nama_kendaraan": "Hino Dump Truck",
       "brand": "Hino",
       "model": "Dump Truck",
-      "type": "FM 260 JD"
+      "type": "FM 260 JD",
+      "action": "action"
     },
     {
       "id": 24,
@@ -238,7 +261,8 @@
       "nama_kendaraan": "UD Trucks Quester Mixer",
       "brand": "UD Trucks",
       "model": "Quester Mixer",
-      "type": "CWE 280"
+      "type": "CWE 280",
+      "action": "action"
     },
     {
       "id": 25,
@@ -248,7 +272,8 @@
       "nama_kendaraan": "Isuzu FVR",
       "brand": "Isuzu",
       "model": "FVR",
-      "type": "34 K"
+      "type": "34 K",
+      "action": "action"
     },
     {
       "id": 26,
@@ -258,7 +283,8 @@
       "nama_kendaraan": "Toyota Dyna",
       "brand": "Toyota",
       "model": "Dyna",
-      "type": "110 ET"
+      "type": "110 ET",
+      "action": "action"
     },
     {
       "id": 27,
@@ -268,7 +294,8 @@
       "nama_kendaraan": "Mitsubishi Fuso Tractor",
       "brand": "Mitsubishi",
       "model": "Fuso Tractor",
-      "type": "FV 517 JL"
+      "type": "FV 517 JL",
+      "action": "action"
     },
     {
       "id": 28,
@@ -278,7 +305,8 @@
       "nama_kendaraan": "Hino 500 Series Cargo",
       "brand": "Hino",
       "model": "500 Series Cargo",
-      "type": "FG 235 JJ"
+      "type": "FG 235 JJ",
+      "action": "action"
     },
     {
       "id": 29,
@@ -288,7 +316,8 @@
       "nama_kendaraan": "UD Trucks Quester Tipper",
       "brand": "UD Trucks",
       "model": "Quester Tipper",
-      "type": "CWE 280"
+      "type": "CWE 280",
+      "action": "action"
     },
     {
       "id": 30,
@@ -298,7 +327,8 @@
       "nama_kendaraan": "Mitsubishi Fuso Tanker",
       "brand": "Mitsubishi",
       "model": "Fuso Tanker",
-      "type": "FN 527 ML2"
+      "type": "FN 527 ML2",
+      "action": "action"
     }
   ]
 }
