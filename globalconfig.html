@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Permission - Apps | Armos</title>
+    <title>Dashboard - Analytics | Armos</title>
 
     <meta name="description" content="" />
 
@@ -43,12 +43,13 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="assets/vendor/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/@form-validation/form-validation.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/swiper/swiper.css" />
+    <link rel="stylesheet" href="assets/vendor/css/globalconfig.css" />
 
     <!-- Page CSS -->
+    <link rel="stylesheet" href="assets/vendor/css/pages/cards-statistics.css" />
+    <link rel="stylesheet" href="assets/vendor/css/pages/cards-analytics.css" />
 
     <!-- Helpers -->
     <script src="assets/vendor/js/helpers.js"></script>
@@ -422,399 +423,324 @@
         <div class="layout-page">
           <!-- Content wrapper -->
           <div class="content-wrapper">
-            <!-- Menu -->
-            <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
-              <div class="container-xxl d-flex h-100">
-                <ul class="menu-inner">
+           <!-- Menu -->
+        <aside id="layout-menu" class="layout-menu-horizontal menu-horizontal menu bg-menu-theme flex-grow-0">
+          <div class="container-xxl d-flex h-100">
+            <ul class="menu-inner">
 
-                  <!-- Dashboards -->
+              <!-- Dashboards -->
+              <li class="menu-item active">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons ri-home-smile-line"></i>
+                  <div data-i18n="Dashboards">Dashboards</div>
+                </a>
+                <ul class="menu-sub">
                   <li class="menu-item active">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ri-home-smile-line"></i>
-                      <div data-i18n="Dashboards">Dashboards</div>
+                    <a href="index.html" class="menu-link">
+                      <i class="menu-icon tf-icons ri-bar-chart-line"></i>
+                      <div data-i18n="Analytics">Analytics</div>
                     </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item active">
-                        <a href="index.html" class="menu-link">
-                          <i class="menu-icon tf-icons ri-bar-chart-line"></i>
-                          <div data-i18n="Analytics">Analytics</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="app-logistics-dashboard.html" class="menu-link">
-                          <i class="menu-icon tf-icons ri-truck-line"></i>
-                          <div data-i18n="Logistics">Logistics</div>
-                        </a>
-                      </li>
-                    </ul>
                   </li>
-                
-                  <!-- User Management -->
                   <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ri-user-2-line"></i>
-                      <div data-i18n="User Management">User Management</div>
-                    </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="app-emulasi.html" class="menu-link">
-                          <i class="menu-icon tf-icons ri-user-forbid-line"></i>
-                          <div data-i18n="Emulasi">Emulasi</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="app-user-list.html" class="menu-link">
-                          <i class="menu-icon tf-icons ri-user-line"></i>
-                          <div data-i18n="Users">Users</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="app-access-roles.html" class="menu-link">
-                          <i class="menu-icon tf-icons ri-user-smile-line"></i>
-                          <div data-i18n="Roles">Roles</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="app-driver-assigment.html" class="menu-link">
-                          <i class="menu-icon tf-icons ri-draft-line"></i>
-                          <div data-i18n="Driver Assignment">Driver Assignment</div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                
-                  <!-- Driver Area -->
-                  <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
+                    <a href="app-logistics-dashboard.html" class="menu-link">
                       <i class="menu-icon tf-icons ri-truck-line"></i>
-                      <div data-i18n="Driver Area">Driver Area</div>
+                      <div data-i18n="Logistics">Logistics</div>
                     </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="#" class="menu-link">
-                          <i class="menu-icon tf-icons ri-walk-line"></i>
-                          <div data-i18n="Driver Activity / History">Driver Activity / History</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="#" class="menu-link">
-                          <i class="menu-icon tf-icons ri-hand-coin-line"></i>
-                          <div data-i18n="Payout Report">Payout Report</div>
-                        </a>
-                      </li>
-                    </ul>
                   </li>
-                
-                  <!-- Master Data -->
-                  <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ri-pie-chart-line"></i>
-                      <div data-i18n="Master Data">Master Data</div>
-                    </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="app-warehouse.html" class="menu-link">
-                          <i class="menu-icon tf-icons ri-map-pin-line"></i>
-                          <div data-i18n="Master Location">Master Location</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="app-vehicle-management.html" class="menu-link">
-                          <i class="menu-icon tf-icons ri-car-line"></i>
-                          <div data-i18n="Vehicle Master">Vehicle Master</div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                
-                  <!-- Order Management -->
-                  <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ri-file-text-line"></i>
-                      <div data-i18n="Order Management">Order Management</div>
-                    </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="javascript:void(0)" class="menu-link menu-toggle">
-                          <i class="menu-icon tf-icons ri-task-line"></i>
-                          <div data-i18n="Order Processing">Order Processing</div>
-                        </a>
-                        <ul class="menu-sub">
-                          <li class="menu-item">
-                            <a href="#" class="menu-link">
-                              <i class="menu-icon tf-icons ri-file-upload-line"></i>
-                              <div data-i18n="Upload Excel">Upload Excel</div>
-                            </a>
-                          </li>
-                          <li class="menu-item">
-                            <a href="#" class="menu-link">
-                              <i class="menu-icon tf-icons ri-mind-map"></i>
-                              <div data-i18n="Integration Services">Integration Services</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="menu-item">
-                        <a href="#" class="menu-link">
-                          <i class="menu-icon tf-icons ri-find-replace-line"></i>
-                          <div data-i18n="Optimization Engine">Optimization Engine</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="#" class="menu-link">
-                          <i class="menu-icon tf-icons ri-list-check-3"></i>
-                          <div data-i18n="Optimization Result & Assignment">Optimization Result & Assignment</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="#" class="menu-link">
-                          <i class="menu-icon tf-icons ri-draft-line"></i>
-                          <div data-i18n="Master Item">Master Item</div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                
-                  <!-- Optimization Engine Configuration -->
-                  <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ri-settings-3-line"></i>
-                      <div data-i18n="Optimization Engine Configurations">Optimization Engine Configuration</div>
-                    </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="#" class="menu-link">
-                          <i class="menu-icon tf-icons ri-route-fill"></i>
-                          <div data-i18n="Route Rule Engine">Route Rule Engine</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="#" class="menu-link">
-                          <i class="menu-icon tf-icons ri-settings-3-line"></i>
-                          <div data-i18n="Optimization Rule Settings">Optimization Rule Settings</div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                
-                  <!-- Delivery Monitoring -->
-                  <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ri-list-check-2"></i>
-                      <div data-i18n="Delivery Monitoring">Delivery Monitoring</div>
-                    </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="javascript:void(0)" class="menu-link menu-toggle">
-                          <i class="menu-icon tf-icons ri-computer-line"></i>
-                          <div data-i18n="Order List Monitoring Dashboard">Order List Monitoring Dashboard</div>
-                        </a>
-                        <ul class="menu-sub">
-                          <li class="menu-item">
-                            <a href="#" class="menu-link">
-                              <i class="menu-icon tf-icons ri-map-pin-range-line"></i>
-                              <div data-i18n="Delivery Tracking">Delivery Tracking</div>
-                            </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                
-                  <!-- Configuration Services -->
-                  <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ri-settings-4-line"></i>
-                      <div data-i18n="Configuration Services">Configuration Services</div>
-                    </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="#" class="menu-link">
-                          <i class="menu-icon tf-icons ri-settings-6-line"></i>
-                          <div data-i18n="System Configuration">System Configuration</div>
-                        </a>
-                      </li>
-                      <li class="menu-item">
-                        <a href="#" class="menu-link">
-                          <i class="menu-icon tf-icons ri-key-2-line"></i>
-                          <div data-i18n="Api Key">Api Key</div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                
-                  <!-- Value Master -->
-                  <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ri-file-list-2-line"></i>
-                      <div data-i18n="Value Master">Value Master</div>
-                    </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="#" class="menu-link">
-                          <i class="menu-icon tf-icons ri-file-list-line"></i>
-                          <div data-i18n="List Of Value">List Of Value</div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                
-                  <!-- Settings -->
-                  <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                      <i class="menu-icon tf-icons ri-settings-3-line"></i>
-                      <div data-i18n="Settings">Settings</div>
-                    </a>
-                    <ul class="menu-sub">
-                      <li class="menu-item">
-                        <a href="#" class="menu-link">
-                          <i class="menu-icon tf-icons ri-user-star-line"></i>
-                          <div data-i18n="Payout Benefits Settings">Payout Benefits Settings</div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                
                 </ul>
-              </div>
-            </aside>
-            <!-- / Menu -->
+              </li>
+            
+              <!-- User Management -->
+              <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons ri-user-2-line"></i>
+                  <div data-i18n="User Management">User Management</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="app-emulasi.html" class="menu-link">
+                      <i class="menu-icon tf-icons ri-user-forbid-line"></i>
+                      <div data-i18n="Emulasi">Emulasi</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="app-user-list.html" class="menu-link">
+                      <i class="menu-icon tf-icons ri-user-line"></i>
+                      <div data-i18n="Users">Users</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="app-access-roles.html" class="menu-link">
+                      <i class="menu-icon tf-icons ri-user-smile-line"></i>
+                      <div data-i18n="Roles">Roles</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="app-driver-assigment.html" class="menu-link">
+                      <i class="menu-icon tf-icons ri-draft-line"></i>
+                      <div data-i18n="Driver Assignment">Driver Assignment</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            
+              <!-- Driver Area -->
+              <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons ri-truck-line"></i>
+                  <div data-i18n="Driver Area">Driver Area</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">
+                      <i class="menu-icon tf-icons ri-walk-line"></i>
+                      <div data-i18n="Driver Activity / History">Driver Activity / History</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">
+                      <i class="menu-icon tf-icons ri-hand-coin-line"></i>
+                      <div data-i18n="Payout Report">Payout Report</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            
+              <!-- Master Data -->
+              <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons ri-pie-chart-line"></i>
+                  <div data-i18n="Master Data">Master Data</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="app-warehouse.html" class="menu-link">
+                      <i class="menu-icon tf-icons ri-map-pin-line"></i>
+                      <div data-i18n="Master Location">Master Location</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="app-vehicle-management.html" class="menu-link">
+                      <i class="menu-icon tf-icons ri-car-line"></i>
+                      <div data-i18n="Vehicle Master">Vehicle Master</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="app-vehicle-management.html" class="menu-link">
+                      <i class="menu-icon tf-icons ri-global-line"></i>
+                      <div data-i18n="Global Config">Global Config</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            
+              <!-- Order Management -->
+              <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons ri-file-text-line"></i>
+                  <div data-i18n="Order Management">Order Management</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="javascript:void(0)" class="menu-link menu-toggle">
+                      <i class="menu-icon tf-icons ri-task-line"></i>
+                      <div data-i18n="Order Processing">Order Processing</div>
+                    </a>
+                    <ul class="menu-sub">
+                      <li class="menu-item">
+                        <a href="#" class="menu-link">
+                          <i class="menu-icon tf-icons ri-file-upload-line"></i>
+                          <div data-i18n="Upload Excel">Upload Excel</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="#" class="menu-link">
+                          <i class="menu-icon tf-icons ri-mind-map"></i>
+                          <div data-i18n="Integration Services">Integration Services</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">
+                      <i class="menu-icon tf-icons ri-find-replace-line"></i>
+                      <div data-i18n="Optimization Engine">Optimization Engine</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">
+                      <i class="menu-icon tf-icons ri-list-check-3"></i>
+                      <div data-i18n="Optimization Result & Assignment">Optimization Result & Assignment</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">
+                      <i class="menu-icon tf-icons ri-draft-line"></i>
+                      <div data-i18n="Master Item">Master Item</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            
+              <!-- Optimization Engine Configuration -->
+              <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons ri-settings-3-line"></i>
+                  <div data-i18n="Optimization Engine Configurations">Optimization Engine Configuration</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">
+                      <i class="menu-icon tf-icons ri-route-fill"></i>
+                      <div data-i18n="Route Rule Engine">Route Rule Engine</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">
+                      <i class="menu-icon tf-icons ri-settings-3-line"></i>
+                      <div data-i18n="Optimization Rule Settings">Optimization Rule Settings</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            
+              <!-- Delivery Monitoring -->
+              <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons ri-list-check-2"></i>
+                  <div data-i18n="Delivery Monitoring">Delivery Monitoring</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="javascript:void(0)" class="menu-link menu-toggle">
+                      <i class="menu-icon tf-icons ri-computer-line"></i>
+                      <div data-i18n="Order List Monitoring Dashboard">Order List Monitoring Dashboard</div>
+                    </a>
+                    <ul class="menu-sub">
+                      <li class="menu-item">
+                        <a href="#" class="menu-link">
+                          <i class="menu-icon tf-icons ri-map-pin-range-line"></i>
+                          <div data-i18n="Delivery Tracking">Delivery Tracking</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            
+              <!-- Configuration Services -->
+              <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons ri-settings-4-line"></i>
+                  <div data-i18n="Configuration Services">Configuration Services</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">
+                      <i class="menu-icon tf-icons ri-settings-6-line"></i>
+                      <div data-i18n="System Configuration">System Configuration</div>
+                    </a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">
+                      <i class="menu-icon tf-icons ri-key-2-line"></i>
+                      <div data-i18n="Api Key">Api Key</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            
+              <!-- Value Master -->
+              <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons ri-file-list-2-line"></i>
+                  <div data-i18n="Value Master">Value Master</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">
+                      <i class="menu-icon tf-icons ri-file-list-line"></i>
+                      <div data-i18n="List Of Value">List Of Value</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            
+              <!-- Settings -->
+              <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link menu-toggle">
+                  <i class="menu-icon tf-icons ri-settings-3-line"></i>
+                  <div data-i18n="Settings">Settings</div>
+                </a>
+                <ul class="menu-sub">
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">
+                      <i class="menu-icon tf-icons ri-user-star-line"></i>
+                      <div data-i18n="Payout Benefits Settings">Payout Benefits Settings</div>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            
+            </ul>
+          </div>
+        </aside>
+        <!-- / Menu -->
+        
             <!-- Content -->
-
-            <div class="container-xxl flex-grow-1 container-p-y">
-              <!-- Permission Table -->
-              <div class="card">
-                <div class="card-datatable table-responsive">
-                  <table class="datatables-permissions table">
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Assigned To</th>
-                        <th>Created Date</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                  </table>
-                </div>
+            <div id="nav-bar" class="navbar">
+              <input type="checkbox" id="nav-toggle">
+              <div id="nav-header" class="nav-header">
+                  <a id="nav-title" href="https://codepen.io" target="_blank">
+                      C<span><i class="fab fa-codepen"></i></span>DEPEN
+                  </a>
+                  <label for="nav-toggle">
+                      <span id="nav-toggle-burger"></span>
+                  </label>
+                  <hr>
               </div>
-              <!--/ Permission Table -->
-
-              <!-- Modal -->
-              <!-- Add Permission Modal -->
-              <div class="modal fade" id="addPermissionModal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-simple">
-                  <div class="modal-content p-4 p-md-12">
-                    <button
-                      type="button"
-                      class="btn-close btn-pinned"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"></button>
-                    <div class="modal-body p-md-0">
-                      <div class="text-center mb-6">
-                        <h3 class="mb-2 pb-1">Add New Permission</h3>
-                        <p>Permissions you may use and assign to your users.</p>
-                      </div>
-                      <form id="addPermissionForm" class="row" onsubmit="return false">
-                        <div class="col-12 mb-4">
-                          <div class="form-floating form-floating-outline">
-                            <input
-                              type="text"
-                              id="modalPermissionName"
-                              name="modalPermissionName"
-                              class="form-control"
-                              placeholder="Permission Name"
-                              autofocus />
-                            <label for="modalPermissionName">Permission Name</label>
-                          </div>
-                        </div>
-                        <div class="col-12 mb-2">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="corePermission" />
-                            <label class="form-check-label" for="corePermission"> Set as core permission </label>
-                          </div>
-                        </div>
-                        <div class="col-12 text-center demo-vertical-spacing">
-                          <button type="submit" class="btn btn-primary me-sm-4 me-1">Create Permission</button>
-                          <button
-                            type="reset"
-                            class="btn btn-outline-secondary"
-                            data-bs-dismiss="modal"
-                            aria-label="Close">
-                            Discard
-                          </button>
-                        </div>
-                      </form>
-                    </div>
+              <div id="nav-content" class="nav-content">
+                  <div class="nav-button">
+                      <i class="fas "></i>
+                      <span>Company Detail</span>
                   </div>
-                </div>
-              </div>
-              <!--/ Add Permission Modal -->
-
-              <!-- Edit Permission Modal -->
-              <div class="modal fade" id="editPermissionModal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-simple">
-                  <div class="modal-content p-4 p-md-12">
-                    <button
-                      type="button"
-                      class="btn-close btn-pinned"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"></button>
-                    <div class="modal-body p-md-0">
-                      <div class="text-center mb-6">
-                        <h3 class="mb-2 pb-1">Edit Permission</h3>
-                        <p>Edit permission as per your requirements.</p>
-                      </div>
-                      <div class="alert alert-warning" role="alert">
-                        <h6 class="alert-heading mb-2">Warning</h6>
-                        <p class="mb-0">
-                          By editing the permission name, you might break the system permissions functionality. Please
-                          ensure you're absolutely certain before proceeding.
-                        </p>
-                      </div>
-                      <form id="editPermissionForm" class="row pt-2" onsubmit="return false">
-                        <div class="col-sm-9 mb-4">
-                          <div class="form-floating form-floating-outline">
-                            <input
-                              type="text"
-                              id="editPermissionName"
-                              name="editPermissionName"
-                              class="form-control"
-                              placeholder="Permission Name"
-                              tabindex="-1" />
-                            <label for="editPermissionName">Permission Name</label>
-                          </div>
-                        </div>
-                        <div class="col-sm-3 mb-4">
-                          <button type="submit" class="btn btn-primary mt-1 mt-sm-0">Update</button>
-                        </div>
-                        <div class="col-12">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="editCorePermission" />
-                            <label class="form-check-label" for="editCorePermission"> Set as core permission </label>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
+                  <div class="nav-button">
+                      <i class="fas "></i>
+                      <span>System Setting</span>
                   </div>
-                </div>
+                  <div class="nav-button">
+                      <i class="fas "></i>
+                      <span>Order Management Setting</span>
+                  </div>
+                  <div class="nav-button">
+                      <i class="fas "></i>
+                      <span>Route For Me Setting</span>
+                  </div>
+                  <div class="nav-button">
+                      <i class="fas "></i>
+                      <span>WMS Integrasi Setting</span>
+                  </div>
+                  <div class="nav-button">
+                      <i class="fas "></i>
+                      <span>SQL Integrasi Setting</span>
+                  </div>
+                  <div class="nav-button">
+                      <i class="fas "></i>
+                      <span>Firebase Setting</span>
+                  </div>
+                  <hr>
+                  <div id="nav-content-highlight" class="nav-content-highlight"></div>
               </div>
-              <!--/ Edit Permission Modal -->
-
-              <!-- /Modal -->
-            </div>
+          </div>
             <!--/ Content -->
 
             <div class="content-backdrop fade"></div>
           </div>
           <!--/ Content wrapper -->
         </div>
-
         <!--/ Layout container -->
       </div>
     </div>
-
     <!-- Overlay -->
     <div class="layout-overlay layout-menu-toggle"></div>
 
@@ -838,18 +764,18 @@
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+    <script src="assets/vendor/libs/apex-charts/apexcharts.js"></script>
+    <script src="assets/vendor/libs/swiper/swiper.js"></script>
 
-    <script src="assets/vendor/libs/@form-validation/popular.js"></script>
-    <script src="assets/vendor/libs/@form-validation/bootstrap5.js"></script>
-    <script src="assets/vendor/libs/@form-validation/auto-focus.js"></script>
+     <!-- Bootstrap JS and dependencies -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="assets/js/app-access-permission.js"></script>
-    <script src="assets/js/modal-add-permission.js"></script>
-    <script src="assets/js/modal-edit-permission.js"></script>
+    <script src="assets/js/dashboards-analytics.js"></script>
   </body>
 </html>
