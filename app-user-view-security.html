@@ -89,18 +89,41 @@
 
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
               <ul class="navbar-nav flex-row align-items-center ms-auto">
-                <a href="javascript:void(0);" class="btn btn-primary me-3">
-                  <i class="sort-card-icon ri-loop-right-line "></i>
+                <a href="javascript:void(0);" class="btn btn-custom me-3">
+                  <i class="sort-card-icon ri-loop-right-line"></i>
                   <span class="sort-card-text">Optimization</span>
-                </a>
-                <a href="app-user-list.html" class="btn btn-primary me-3">
-                  <i class="sort-card-icon ri-user-line"></i>
-                  <span class="sort-card-text">Users Management</span>
-                </a>
-                <a href="javascript:void(0);" class="btn btn-primary me-3">
-                  <i class="sort-card-icon ri-computer-line"></i>
-                  <span class="sort-card-text">Order Monitoring</span>
-                </a>
+                  </a>
+                  <a href="app-user-list.html" class="btn btn-custom me-3">
+                      <i class="sort-card-icon ri-user-line"></i>
+                      <span class="sort-card-text">Users Management</span>
+                  </a>
+                  <a href="javascript:void(0);" class="btn btn-custom me-3">
+                      <i class="sort-card-icon ri-computer-line"></i>
+                      <span class="sort-card-text">Order Monitoring</span>
+                  </a>
+                  <style>
+                    .btn-custom {
+                        background-color: white; /* Latar belakang putih */
+                        border: 2px solid blue; /* Garis tepi biru */
+                        color: blue; /* Teks biru */
+                        padding: 0.5rem 1rem; /* Padding untuk tombol */
+                        text-decoration: none; /* Hapus garis bawah */
+                        display: inline-flex; /* Flexbox untuk tata letak ikon dan teks */
+                        align-items: center; /* Vertikal align center */
+                        border-radius: 4px; /* Sudut tombol yang melengkung */
+                    }
+            
+                    /* Gaya untuk ikon di dalam tombol */
+                    .btn-custom i {
+                        color: blue; /* Ikon biru */
+                        margin-right: 0.5rem; /* Spasi antara ikon dan teks */
+                    }
+            
+                    /* Ruang kanan untuk tombol */
+                    .me-3 {
+                        margin-right: 1rem;
+                    }
+                </style>
                <!-- Notification -->
                <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-4 me-xl-1">
                 <a

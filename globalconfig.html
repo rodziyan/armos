@@ -90,18 +90,41 @@
 
           <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
             <ul class="navbar-nav flex-row align-items-center ms-auto">
-              <a href="javascript:void(0);" class="btn btn-primary me-3">
-                <i class="sort-card-icon ri-loop-right-line "></i>
+                <a href="javascript:void(0);" class="btn btn-custom me-3">
+                <i class="sort-card-icon ri-loop-right-line"></i>
                 <span class="sort-card-text">Optimization</span>
-              </a>
-              <a href="app-user-list.html" class="btn btn-primary me-3">
-                <i class="sort-card-icon ri-user-line"></i>
-                <span class="sort-card-text">Users Management</span>
-              </a>
-              <a href="javascript:void(0);" class="btn btn-primary me-3">
-                <i class="sort-card-icon ri-computer-line"></i>
-                <span class="sort-card-text">Order Monitoring</span>
-              </a>
+                </a>
+                <a href="app-user-list.html" class="btn btn-custom me-3">
+                    <i class="sort-card-icon ri-user-line"></i>
+                    <span class="sort-card-text">Users Management</span>
+                </a>
+                <a href="javascript:void(0);" class="btn btn-custom me-3">
+                    <i class="sort-card-icon ri-computer-line"></i>
+                    <span class="sort-card-text">Order Monitoring</span>
+                </a>
+                <style>
+                  .btn-custom {
+                      background-color: white; /* Latar belakang putih */
+                      border: 2px solid blue; /* Garis tepi biru */
+                      color: blue; /* Teks biru */
+                      padding: 0.5rem 1rem; /* Padding untuk tombol */
+                      text-decoration: none; /* Hapus garis bawah */
+                      display: inline-flex; /* Flexbox untuk tata letak ikon dan teks */
+                      align-items: center; /* Vertikal align center */
+                      border-radius: 4px; /* Sudut tombol yang melengkung */
+                  }
+          
+                  /* Gaya untuk ikon di dalam tombol */
+                  .btn-custom i {
+                      color: blue; /* Ikon biru */
+                      margin-right: 0.5rem; /* Spasi antara ikon dan teks */
+                  }
+          
+                  /* Ruang kanan untuk tombol */
+                  .me-3 {
+                      margin-right: 1rem;
+                  }
+              </style>
               <!-- Notification -->
               <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-4 me-xl-1">
                 <a
@@ -688,414 +711,69 @@
       <!-- / Menu -->
 
             <!-- Content -->
-
             <div class="container-xxl flex-grow-1 container-p-y">
               <div class="app-email card">
                 <div class="border-0">
                   <div class="row g-0">
+                    <!-- Sidebar -->
                     <div class="col app-email-sidebar border-end flex-grow-0" id="app-email-sidebar">
                       <div class="email-filters pt-4 pb-2">
-                          <ul class="email-filter-folders list-unstyled">
-                              <li class="d-flex justify-content-between align-items-center mb-1" data-target="company">
-                                  <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('company')">
-                                      <i class="ri-20px"></i>
-                                      <span class="align-middle ms-2">Company Detail</span>
-                                  </a>
-                              </li>
-                              <li class="d-flex mb-1" data-target="system">
-                                  <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('system')">
-                                      <i class="ri-20px"></i>
-                                      <span class="align-middle ms-2">System Setting</span>
-                                  </a>
-                              </li>
-                              <li class="d-flex justify-content-between align-items-center mb-1" data-target="order">
-                                  <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('order')">
-                                      <i class="ri-20px"></i>
-                                      <span class="align-middle ms-2">Order Management Setting</span>
-                                  </a>
-                              </li>
-                              <li class="d-flex justify-content-between mb-1" data-target="route">
-                                  <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('route')">
-                                      <i class="ri-20px"></i>
-                                      <span class="align-middle ms-2">Route For Me Setting</span>
-                                  </a>
-                              </li>
-                              <li class="d-flex justify-content-between align-items-center mb-1" data-target="WMS">
-                                  <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('WMS')">
-                                      <i class="ri-20px"></i>
-                                      <span class="align-middle ms-2">WMS Integrasi Setting</span>
-                                  </a>
-                              </li>
-                              <li class="d-flex align-items-center mb-1" data-target="SQL">
-                                  <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('SQL')">
-                                      <i class="ri-20px"></i>
-                                      <span class="align-middle ms-2">SQL Integrasi Setting</span>
-                                  </a>
-                              </li>
-                              <li class="d-flex align-items-center mb-1" data-target="firebase">
-                                  <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('firebase')">
-                                      <i class="ri-20px"></i>
-                                      <span class="align-middle ms-2">Firebase Setting</span>
-                                  </a>
-                              </li>
-                          </ul>
+                        <ul class="email-filter-folders list-unstyled">
+                          <li class="d-flex justify-content-between align-items-center mb-1" data-target="company">
+                            <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('company')">
+                              <i class="ri-20px"></i>
+                              <span class="align-middle ms-2">Company Detail</span>
+                            </a>
+                          </li>
+                          <li class="d-flex mb-1" data-target="system">
+                            <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('system')">
+                              <i class="ri-20px"></i>
+                              <span class="align-middle ms-2">System Setting</span>
+                            </a>
+                          </li>
+                          <li class="d-flex justify-content-between align-items-center mb-1" data-target="order">
+                            <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('order')">
+                              <i class="ri-20px"></i>
+                              <span class="align-middle ms-2">Order Management Setting</span>
+                            </a>
+                          </li>
+                          <li class="d-flex justify-content-between mb-1" data-target="route">
+                            <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('route')">
+                              <i class="ri-20px"></i>
+                              <span class="align-middle ms-2">Route For Me Setting</span>
+                            </a>
+                          </li>
+                          <li class="d-flex justify-content-between align-items-center mb-1" data-target="wms">
+                            <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('wms')">
+                              <i class="ri-20px"></i>
+                              <span class="align-middle ms-2">WMS Integrasi Setting</span>
+                            </a>
+                          </li>
+                          <li class="d-flex align-items-center mb-1" data-target="sql">
+                            <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('sql')">
+                              <i class="ri-20px"></i>
+                              <span class="align-middle ms-2">SQL Integrasi Setting</span>
+                            </a>
+                          </li>
+                          <li class="d-flex align-items-center mb-1" data-target="firebase">
+                            <a href="javascript:void(0);" class="d-flex flex-wrap align-items-center" onclick="showSection('firebase')">
+                              <i class="ri-20px"></i>
+                              <span class="align-middle ms-2">Firebase Setting</span>
+                            </a>
+                          </li>
+                        </ul>
                       </div>
-                  </div>
-                    <!--/ Email Sidebar -->
-
-                    <!-- Company Detail -->
+                    </div>
+                    <!-- /Sidebar -->
+            
+                    <!-- Main Content Area -->
                     <div class="col app-email-content flex-grow-1">
                       <div class="container mt-5">
-                          <div id="company" class="content-section">
-                              <div class="card mb-6">
-                                  <h5 class="card-header">Detail Perusahaan</h5>
-                                  <form class="card-body" action="app-company-management.html" method="get">
-                                      <div class="row g-6">
-                                          <div class="col-md-6">
-                                              <div class="form-floating form-floating-outline">
-                                                  <input type="text" id="companyName" class="form-control" placeholder="TechNova Solutions" />
-                                                  <label for="companyName">Company Name</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <div class="form-floating form-floating-outline">
-                                                  <input type="text" id="legalName" class="form-control" placeholder="TechNova Solutions Inc." />
-                                                  <label for="legalName">Legal Name</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <div class="form-floating form-floating-outline">
-                                                  <input type="text" id="contactPerson" class="form-control" placeholder="Alex Johnson" />
-                                                  <label for="contactPerson">Contact Person</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <div class="form-floating form-floating-outline">
-                                                  <input type="text" id="companyAddress" class="form-control" placeholder="123 Innovation Drive, Suite 456" />
-                                                  <label for="companyAddress">Company Address</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <div class="form-floating form-floating-outline">
-                                                  <select id="country" class="form-select select2" data-allow-clear="true">
-                                                      <option value="">Select Country</option>
-                                                      <option>Indonesia</option>
-                                                      <option>USA</option>
-                                                      <option>Germany</option>
-                                                      <option>Japan</option>
-                                                      <option>Brazil</option>
-                                                  </select>
-                                                  <label for="country">Country</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <div class="form-floating form-floating-outline">
-                                                  <input type="text" id="city" class="form-control" placeholder="Jakarta" />
-                                                  <label for="city">City</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <div class="form-floating form-floating-outline">
-                                                  <input type="tel" id="companyPhone" class="form-control" placeholder="021-12345678" />
-                                                  <label for="companyPhone">Company Phone</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <div class="form-floating form-floating-outline">
-                                                  <input type="email" id="companyEmail" class="form-control" placeholder="info@technova.com" />
-                                                  <label for="companyEmail">Company Email</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <div class="form-floating form-floating-outline">
-                                                  <input type="url" id="companyWebsite" class="form-control" placeholder="https://www.technova.com" />
-                                                  <label for="companyWebsite">Company Website</label>
-                                              </div>
-                                          </div>
-                                          <div class="col-md-6">
-                                              <div class="form-floating form-floating-outline">
-                                                  <input type="text" id="companyVAT" class="form-control" placeholder="ID1234567890" />
-                                                  <label for="companyVAT">Company VAT</label>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="pt-6">
-                                          <a href="javascript:void(0)" class="btn btn-primary me-4">Save</a>
-                                          <a href="javascript:void(0)" class="btn btn-outline-secondary">Cancel</a>
-                                      </div>
-                                  </form>
-                              </div>
-                          </div>
-                          <!-- Add more content sections here as needed -->
+            
                       </div>
                     </div>
-                   <!-- System Setting -->
-                   <div class="container mt-5">
-                    <div id="system" class="content-section">
-                        <div class="card mb-6">
-                            <div class="card-header">
-                                <h5 class="card-header">System Setting</h5>
-                                <form>
-                                    <!-- Default Language -->
-                                    <div class="mb-6">
-                                        <label for="defaultLanguage" class="form-label">Default Language</label>
-                                        <select class="form-select" id="defaultLanguage">
-                                            <option value="en">English</option>
-                                            <option value="id">Bahasa Indonesia</option>
-                                            <!-- Tambahkan opsi lain di sini -->
-                                        </select>
-                                    </div>
-                
-                                    <!-- Locale -->
-                                    <div class="mb-6">
-                                        <label for="locale" class="form-label">Locale</label>
-                                        <select class="form-select" id="locale">
-                                            <option value="en_US">en_US</option>
-                                            <option value="id_ID">id_ID</option>
-                                            <!-- Tambahkan opsi lain di sini -->
-                                        </select>
-                                    </div>
-                
-                                    <!-- Time Zone -->
-                                    <div class="mb-6">
-                                        <label for="timeZone" class="form-label">Time Zone</label>
-                                        <select class="form-select" id="timeZone">
-                                            <option value="Asia/Jakarta">Asia/Jakarta</option>
-                                            <option value="Asia/Singapore">Asia/Singapore</option>
-                                            <!-- Tambahkan opsi lain di sini -->
-                                        </select>
-                                    </div>
-                
-                                    <!-- Default Currency -->
-                                    <div class="mb-6">
-                                        <label for="defaultCurrency" class="form-label">Default Currency</label>
-                                        <select class="form-select" id="defaultCurrency">
-                                            <option value="IDR">IDR</option>
-                                            <option value="USD">USD</option>
-                                            <!-- Tambahkan opsi lain di sini -->
-                                        </select>
-                                    </div>
-                
-                                    <!-- Default Account -->
-                                    <div class="mb-6">
-                                        <label for="defaultAccount" class="form-label">Default Account</label>
-                                        <select class="form-select" id="defaultAccount">
-                                            <option value="account1">Account 1</option>
-                                            <option value="account2">Account 2</option>
-                                            <!-- Tambahkan opsi lain di sini -->
-                                        </select>
-                                    </div>
-                
-                                    <!-- Default Payment Method -->
-                                    <div class="mb-6">
-                                        <label for="defaultPaymentMethod" class="form-label">Default Payment Method</label>
-                                        <select class="form-select" id="defaultPaymentMethod">
-                                            <option value="bank_transfer">Bank Transfer</option>
-                                            <option value="credit_card">Credit Card</option>
-                                            <!-- Tambahkan opsi lain di sini -->
-                                        </select>
-                                    </div>
-                
-                                    <!-- Attendance Report -->
-                                    <div class="mb-6">
-                                        <label for="attendanceReport" class="form-label">Attendance Report</label>
-                                        <select class="form-select" id="attendanceReport">
-                                            <option value="summary">Summary</option>
-                                            <option value="detailed">Detailed</option>
-                                            <!-- Tambahkan opsi lain di sini -->
-                                        </select>
-                                    </div>
-                
-                                    <!-- Project Details View -->
-                                    <div class="mb-6">
-                                        <label for="projectDetailsView" class="form-label">Project Details View</label>
-                                        <select class="form-select" id="projectDetailsView">
-                                            <option value="grid">Grid</option>
-                                            <option value="list">List</option>
-                                            <!-- Tambahkan opsi lain di sini -->
-                                        </select>
-                                    </div>
-                
-                                    <!-- Task Details View -->
-                                    <div class="mb-6">
-                                        <label for="taskDetailsView" class="form-label">Task Details View</label>
-                                        <select class="form-select" id="taskDetailsView">
-                                            <option value="board">Board</option>
-                                            <option value="list">List</option>
-                                            <!-- Tambahkan opsi lain di sini -->
-                                        </select>
-                                    </div>
-                
-                                    <!-- Currency Position -->
-                                    <div class="mb-6">
-                                        <label for="currencyPosition" class="form-label">Currency Position</label>
-                                        <select class="form-select" id="currencyPosition">
-                                            <option value="before">Before Amount</option>
-                                            <option value="after">After Amount</option>
-                                        </select>
-                                    </div>
-                
-                                    <!-- Default Tax -->
-                                    <div class="mb-3">
-                                        <label for="defaultTax" class="form-label">Default Tax</label>
-                                        <select class="form-select" id="defaultTax">
-                                            <option value="0">0%</option>
-                                            <option value="10">10%</option>
-                                            <!-- Tambahkan opsi lain di sini -->
-                                        </select>
-                                    </div>
-                
-                                    <!-- Table Pagination Limit -->
-                                    <div class="mb-6">
-                                        <label for="tablePaginationLimit" class="form-label">Table Pagination Limit</label>
-                                        <input type="number" class="form-control" id="tablePaginationLimit" placeholder="Enter limit">
-                                    </div>
-                
-                                    <!-- Date Format -->
-                                    <div class="mb-6">
-                                        <label for="dateFormat" class="form-label">Date Format</label>
-                                        <select class="form-select" id="dateFormat">
-                                            <option value="d/m/Y">dd/mm/yyyy</option>
-                                            <option value="m/d/Y">mm/dd/yyyy</option>
-                                        </select>
-                                    </div>
-                
-                                    <!-- Time Format -->
-                                    <div class="mb-6">
-                                        <label for="timeFormat" class="form-label">Time Format</label>
-                                        <select class="form-select" id="timeFormat">
-                                            <option value="12">12-hour</option>
-                                            <option value="24">24-hour</option>
-                                        </select>
-                                    </div>
-                
-                                    <!-- Money Format -->
-                                    <div class="mb-6">
-                                        <label for="moneyFormat" class="form-label">Money Format</label>
-                                        <select class="form-select" id="moneyFormat">
-                                            <option value="comma">1,000.00</option>
-                                            <option value="dot">1.000,00</option>
-                                        </select>
-                                    </div>
-                
-                                    <!-- Allowed Files -->
-                                    <div class="mb-6">
-                                        <label for="allowedFiles" class="form-label">Allowed Files</label>
-                                        <input type="text" class="form-control" id="allowedFiles" placeholder="Enter allowed file types">
-                                    </div>
-                
-                                    <!-- Max File Size -->
-                                    <div class="mb-6">
-                                        <label for="maxFileSize" class="form-label">Max File Size (MB)</label>
-                                        <input type="number" class="form-control" id="maxFileSize" placeholder="Enter max file size">
-                                    </div>
-                
-                                    <!-- Allow Geo Clock In -->
-                                    <div class="form-check mb-6">
-                                        <input type="checkbox" class="form-check-input" id="allowGeoClockIn">
-                                        <label class="form-check-label" for="allowGeoClockIn">Allow Geo Clock In</label>
-                                    </div>
-                
-                                    <!-- Chat Interval Time -->
-                                    <div class="mb-6">
-                                        <label for="chatIntervalTime" class="form-label">Chat Interval Time (sec)</label>
-                                        <input type="number" class="form-control" id="chatIntervalTime" placeholder="Enter interval time in seconds">
-                                    </div>
-                
-                                    <!-- Google API KEY -->
-                                    <div class="mb-6">
-                                        <label for="googleApiKey" class="form-label">Google API KEY</label>
-                                        <input type="text" class="form-control" id="googleApiKey" placeholder="Enter Google API key">
-                                    </div>
-                
-                                    <!-- Recaptcha site key -->
-                                    <div class="mb-6">
-                                        <label for="recaptchaSiteKey" class="form-label">Recaptcha site key</label>
-                                        <input type="text" class="form-control" id="recaptchaSiteKey" placeholder="Enter Recaptcha site key">
-                                    </div>
-                
-                                    <!-- Recaptcha secret key -->
-                                    <div class="mb-6">
-                                        <label for="recaptchaSecretKey" class="form-label">Recaptcha secret key</label>
-                                        <input type="text" class="form-control" id="recaptchaSecretKey" placeholder="Enter Recaptcha secret key">
-                                    </div>
-                
-                                    <!-- Auto close ticket -->
-                                    <div class="mb-6">
-                                        <label for="autoCloseTicket" class="form-label">Auto close ticket</label>
-                                        <input type="number" class="form-control" id="autoCloseTicket" placeholder="Enter time in minutes">
-                                    </div>
-                
-                                    <!-- Enable Languages -->
-                                    <div class="form-check mb-6">
-                                        <input type="checkbox" class="form-check-input" id="enableLanguages">
-                                        <label class="form-check-label" for="enableLanguages">Enable Languages</label>
-                                    </div>
-                
-                                    <!-- Allow Sub Tasks -->
-                                    <div class="form-check mb-6">
-                                        <input type="checkbox" class="form-check-input" id="allowSubTasks">
-                                        <label class="form-check-label" for="allowSubTasks">Allow Sub Tasks</label>
-                                    </div>
-                
-                                    <!-- Only Allowed IP can Clock IN/OUT -->
-                                    <div class="form-check mb-6">
-                                        <input type="checkbox" class="form-check-input" id="allowedIPClock">
-                                        <label class="form-check-label" for="allowedIPClock">Only Allowed IP can Clock IN/OUT</label>
-                                    </div>
-                
-                                    <!-- Allow Client Registration -->
-                                    <div class="form-check mb-6">
-                                        <input type="checkbox" class="form-check-input" id="allowClientRegistration">
-                                        <label class="form-check-label" for="allowClientRegistration">Allow Client Registration</label>
-                                    </div>
-                
-                                    <!-- Allow Apply job from Login -->
-                                    <div class="form-check mb-6">
-                                        <input type="checkbox" class="form-check-input" id="allowApplyJob">
-                                        <label class="form-check-label" for="allowApplyJob">Allow Apply job from Login</label>
-                                    </div>
-                
-                                    <!-- Allow weekend excluded from leave -->
-                                    <div class="form-check mb-6">
-                                        <input type="checkbox" class="form-check-input" id="allowWeekendExcluded">
-                                        <label class="form-check-label" for="allowWeekendExcluded">Allow weekend excluded from leave</label>
-                                    </div>
-                
-                                    <!-- Allow custom permission -->
-                                    <div class="form-check mb-6">
-                                        <input type="checkbox" class="form-check-input" id="allowCustomPermission">
-                                        <label class="form-check-label" for="allowCustomPermission">Allow custom permission</label>
-                                    </div>
-                
-                                    <!-- Client Default Menu -->
-                                    <div class="mb-6">
-                                        <label for="clientDefaultMenu" class="form-label">Client Default Menu *</label>
-                                        <select class="form-select" id="clientDefaultMenu">
-                                            <option value="dashboard">Dashboard</option>
-                                            <option value="projects">Projects</option>
-                                            <!-- Tambahkan opsi lain di sini -->
-                                        </select>
-                                    </div>
-                
-                                    <!-- Client Can Create Project -->
-                                    <div class="form-check mb-6">
-                                        <input type="checkbox" class="form-check-input" id="clientCanCreateProject">
-                                        <label class="form-check-label" for="clientCanCreateProject">Client Can Create Project</label>
-                                    </div>
-                
-                                    <!-- Submit Button -->
-                                    <button type="submit" class="btn btn-primary">Save Settings</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                </div>
-              </div>
-              <div class="content-backdrop fade"></div>
-          </div>
+                    <!-- /Main Content Area -->
+                  </div>
                 </div>
               </div>
             </div>
@@ -1143,6 +821,6 @@
     <script src="assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="assets/js/app-email.js"></script>
+    <script src="assets/js/globalconfig.js"></script>
   </body>
 </html>
