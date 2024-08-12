@@ -3,114 +3,93 @@
  */
 'use strict';
 
-(function () {
-  const phoneMaskList = document.querySelectorAll('.phone-mask'),
-    creditCardMask = document.querySelector('.credit-card-mask'),
-    expiryDateMask = document.querySelector('.expiry-date-mask'),
-    cvvMask = document.querySelector('.cvv-code-mask'),
-    datepickerList = document.querySelectorAll('.dob-picker'),
-    formCheckInputPayment = document.querySelectorAll('.form-check-input-payment');
+$(document).ready(function () {
+  // Define assetsPath if not already defined
+  var assetsPath = 'assets/json/warehouse.json';
 
-  // Phone Number
-  if (phoneMaskList) {
-    phoneMaskList.forEach(function (phoneMask) {
-      new Cleave(phoneMask, {
-        phone: true,
-        phoneRegionCode: 'US'
-      });
-    });
-  }
+  // Initialize DataTable
+  var dt_warehouse_table = $('.datatables-warehouse');
 
-  // Credit Card
-  if (creditCardMask) {
-    new Cleave(creditCardMask, {
-      creditCard: true,
-      onCreditCardTypeChanged: function (type) {
-        if (type != '' && type != 'unknown') {
-          document.querySelector('.card-type').innerHTML =
-            '<img src="' + assetsPath + 'img/icons/payments/' + type + '-cc.png" height="28"/>';
-        } else {
-          document.querySelector('.card-type').innerHTML = '';
+  // Check if table element exists
+  if (dt_warehouse_table.length) {
+    var dt_warehouse = dt_warehouse_table.DataTable({
+      ajax: assetsPath + 'json/warehouse.json',
+      columns: [
+        { data: 'id' },
+        { data: 'lokasi_tipe' },
+        { data: 'alamat' },
+        { data: 'longitude' },
+        { data: 'latitude' },
+        { data: 'action' }
+      ],
+      columnDefs: [
+        {
+          className: 'control',
+          searchable: false,
+          orderable: false,
+          responsivePriority: 2,
+          targets: 0,
+          render: function (data, type, full, meta) {
+            return '';
+          }
+        },
+        {
+          targets: 1,
+          orderable: false,
+          render: function () {
+            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+          },
+          checkboxes: {
+            selectAllRender: '<input type="checkbox" class="form-check-input">'
+          }
+        },
+        {
+          targets: 2,
+          orderable: false,
+          render: function () {
+            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+          },
+          checkboxes: {
+            selectAllRender: '<input type="checkbox" class="form-check-input">'
+          }
+        },
+        {
+          targets: 3,
+          render: function (data, type, full, meta) {
+            return '<span>' + full['alamat'] + '</span>';
+          }
+        },
+        {
+          targets: 4,
+          render: function (data, type, full, meta) {
+            return '<span>' + full['longitude'] + '</span>';
+          }
+        },
+        {
+          targets: 5,
+          render: function (data, type, full, meta) {
+            return '<span>' + full['latitude'] + '</span>';
+          }
+        },
+        {
+          targets: -1,
+          title: 'Actions',
+          searchable: false,
+          orderable: false,
+          render: function (data, type, full, meta) {
+            return '<button class="btn btn-sm btn-icon btn-text-danger rounded-pill waves-effect delete-record" data-bs-toggle="tooltip" title="Delete"><i class="ri-delete-bin-7-line ri-20px"></i></button>';
+          }
         }
-      }
+      ]
     });
-  }
 
-  // Expiry Date Mask
-  if (expiryDateMask) {
-    new Cleave(expiryDateMask, {
-      date: true,
-      delimiter: '/',
-      datePattern: ['m', 'y']
+    // Delete Record functionality
+    $('.datatables-users tbody').on('click', '.delete-record', function () {
+      // Remove the record from the DataTable
+      dt_user.row($(this).parents('tr')).remove().draw();
     });
-  }
-
-  // CVV
-  if (cvvMask) {
-    new Cleave(cvvMask, {
-      numeral: true,
-      numeralPositiveOnly: true
-    });
-  }
-
-  // Flat Picker Birth Date
-  if (datepickerList) {
-    datepickerList.forEach(function (datepicker) {
-      datepicker.flatpickr({
-        monthSelectorType: 'static'
-      });
-    });
-  }
-
-  // Toggle CC Payment Method based on selected option
-  if (formCheckInputPayment) {
-    formCheckInputPayment.forEach(function (paymentInput) {
-      paymentInput.addEventListener('change', function (e) {
-        const paymentInputValue = e.target.value;
-        if (paymentInputValue === 'credit-card') {
-          document.querySelector('#form-credit-card').classList.remove('d-none');
-        } else {
-          document.querySelector('#form-credit-card').classList.add('d-none');
-        }
-      });
-    });
-  }
-})();
-
-// select2 (jquery)
-$(function () {
-  // Form sticky actions
-  var topSpacing;
-  const stickyEl = $('.sticky-element');
-
-  // Init custom option check
-  window.Helpers.initCustomOptionCheck();
-
-  // Set topSpacing if the navbar is fixed
-  if (Helpers.isNavbarFixed()) {
-    topSpacing = $('.layout-navbar').height() - 3;
   } else {
-    topSpacing = 0;
-  }
-
-  // sticky element init (Sticky Layout)
-  if (stickyEl.length) {
-    stickyEl.sticky({
-      topSpacing: topSpacing,
-      zIndex: 9
-    });
-  }
-
-  // Select2 Country
-  var select2 = $('.select2');
-  if (select2.length) {
-    select2.each(function () {
-      var $this = $(this);
-      select2Focus($this);
-      $this.wrap('<div class="position-relative"></div>').select2({
-        placeholder: 'Select value',
-        dropdownParent: $this.parent()
-      });
-    });
+    // Debugging: Table not found
+    console.error('Table element not found');
   }
 });

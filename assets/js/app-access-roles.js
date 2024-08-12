@@ -21,21 +21,22 @@ $(function () {
     dt_User = dtUserTable.DataTable({
       ajax: assetsPath + 'json/user-list.json', // JSON file to add data
       columns: [
-        // columns according to JSON
-        { data: 'id' },
+        { data: '' },
         { data: 'id' },
         { data: 'full_name' },
+        { data: 'city' },
         { data: 'email' },
         { data: 'role' },
+        { data: 'divisi' },
+        { data: 'tipe_karyawan' },
         { data: 'status' },
-        { data: '' }
+        { data: 'action' }
       ],
       columnDefs: [
         {
-          // For Responsive
           className: 'control',
-          orderable: false,
           searchable: false,
+          orderable: false,
           responsivePriority: 2,
           targets: 0,
           render: function (data, type, full, meta) {
@@ -43,42 +44,35 @@ $(function () {
           }
         },
         {
-          // For Checkboxes
           targets: 1,
           orderable: false,
+          render: function () {
+            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+          },
           checkboxes: {
             selectAllRender: '<input type="checkbox" class="form-check-input">'
-          },
-          render: function () {
-            return '<input type="checkbox" class="dt-checkboxes form-check-input" >';
-          },
-          searchable: false
+          }
         },
         {
-          // User full name and email
           targets: 2,
           responsivePriority: 4,
           render: function (data, type, full, meta) {
             var $name = full['full_name'],
-              $user = full['username'],
+              $email = full['email'],
               $image = full['avatar'];
             if ($image) {
-              // For Avatar image
               var $output =
                 '<img src="' + assetsPath + 'img/avatars/' + $image + '" alt="Avatar" class="rounded-circle">';
             } else {
-              // For Avatar badge
-              var stateNum = Math.floor(Math.random() * 6) + 1;
+              var stateNum = Math.floor(Math.random() * 6);
               var states = ['success', 'danger', 'warning', 'info', 'dark', 'primary', 'secondary'];
               var $state = states[stateNum],
-                $name = full['full_name'],
                 $initials = $name.match(/\b\w/g) || [];
               $initials = (($initials.shift() || '') + ($initials.pop() || '')).toUpperCase();
               $output = '<span class="avatar-initial rounded-circle bg-label-' + $state + '">' + $initials + '</span>';
             }
-            // Creates full output for row
             var $row_output =
-              '<div class="d-flex justify-content-left align-items-center">' +
+              '<div class="d-flex justify-content-start align-items-center user-name">' +
               '<div class="avatar-wrapper">' +
               '<div class="avatar avatar-sm me-3">' +
               $output +
@@ -87,11 +81,11 @@ $(function () {
               '<div class="d-flex flex-column">' +
               '<a href="' +
               userView +
-              '" class="text-heading"><span class="fw-medium text-truncate">' +
+              '" class="text-truncate text-heading"><span class="fw-medium">' +
               $name +
               '</span></a>' +
               '<small>' +
-              $user +
+              $email +
               '</small>' +
               '</div>' +
               '</div>';
@@ -99,23 +93,28 @@ $(function () {
           }
         },
         {
-          // User email
           targets: 3,
           render: function (data, type, full, meta) {
-            var $email = full['email'];
-            return '<span >' + $email + '</span>';
+            var $city = full['city'];
+            return '<span>' + $city + '</span>';
           }
         },
         {
-          // User Role
           targets: 4,
+          render: function (data, type, full, meta) {
+            var $email = full['email'];
+            return '<span>' + $email + '</span>';
+          }
+        },
+        {
+          targets: 5,
           render: function (data, type, full, meta) {
             var $role = full['role'];
             var roleBadgeObj = {
-              Subscriber: '<i class="ri-user-line ri-22px text-primary me-2"></i>',
-              Author: '<i class="ri-vip-crown-line ri-22px text-warning me-2"></i>',
-              Maintainer: '<i class="ri-pie-chart-line ri-22px text-success me-2"></i>',
-              Editor: '<i class="ri-edit-box-line ri-22px text-info me-2"></i>',
+              Subscriber: '<i class="ri-user-line ri-22px text-success me-2"></i>',
+              Author: '<i class="ri-vip-crown-line ri-22px text-primary me-2"></i>',
+              Maintainer: '<i class="ri-pie-chart-line ri-22px text-info me-2"></i>',
+              Editor: '<i class="ri-edit-box-line ri-22px text-warning me-2"></i>',
               Admin: '<i class="ri-computer-line ri-22px text-danger me-2"></i>'
             };
             return (
@@ -127,18 +126,29 @@ $(function () {
           }
         },
         {
-          // User Status
-          targets: 5,
+          targets: 6,
+          render: function (data, type, full, meta) {
+            const divisi = full['divisi']; // Handle missing data
+            return '<span>' + (divisi || 'N/A') + '</span>';
+          }
+        },
+        {
+          targets: 7,
+          render: function (data, type, full, meta) {
+            const tipeKaryawan = full['tipe_karyawan']; // Handle missing data
+            return '<span>' + (tipeKaryawan || 'N/A') + '</span>';
+          }
+        },
+        {
+          targets: 8,
           render: function (data, type, full, meta) {
             var $status = full['status'];
-
-            return (
-              '<span class="badge rounded-pill ' +
-              statusObj[$status].class +
-              '" text-capitalized>' +
-              statusObj[$status].title +
-              '</span>'
-            );
+            var statusObj = {
+              1: { title: 'Pending', class: 'bg-label-warning' },
+              2: { title: 'Active', class: 'bg-label-success' },
+              3: { title: 'Inactive', class: 'bg-label-secondary' }
+            };
+            return '<span class="badge ' + statusObj[$status].class + '">' + statusObj[$status].title + '</span>';
           }
         },
         {
@@ -188,11 +198,10 @@ $(function () {
           buttons: [
             {
               extend: 'print',
-              text: '<i class="ri-printer-line me-1" ></i>Print',
+              text: '<i class="ri-printer-line me-1"></i>Print',
               className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5],
-                // prevent avatar to be print
                 format: {
                   body: function (inner, coldex, rowdex) {
                     if (inner.length <= 0) return inner;
@@ -208,28 +217,14 @@ $(function () {
                     return result;
                   }
                 }
-              },
-              customize: function (win) {
-                //customize print view for dark
-                $(win.document.body)
-                  .css('color', headingColor)
-                  .css('border-color', borderColor)
-                  .css('background-color', bodyBg);
-                $(win.document.body)
-                  .find('table')
-                  .addClass('compact')
-                  .css('color', 'inherit')
-                  .css('border-color', 'inherit')
-                  .css('background-color', 'inherit');
               }
             },
             {
               extend: 'csv',
-              text: '<i class="ri-file-text-line me-1" ></i>Csv',
+              text: '<i class="ri-file-download-line me-1"></i>CSV',
               className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5],
-                // prevent avatar to be display
                 format: {
                   body: function (inner, coldex, rowdex) {
                     if (inner.length <= 0) return inner;
@@ -249,11 +244,10 @@ $(function () {
             },
             {
               extend: 'excel',
-              text: '<i class="ri-file-excel-line me-1"></i>Excel',
+              text: '<i class="ri-file-excel-2-line me-1"></i>Excel',
               className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5],
-                // prevent avatar to be display
                 format: {
                   body: function (inner, coldex, rowdex) {
                     if (inner.length <= 0) return inner;
@@ -277,7 +271,6 @@ $(function () {
               className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5],
-                // prevent avatar to be display
                 format: {
                   body: function (inner, coldex, rowdex) {
                     if (inner.length <= 0) return inner;
@@ -301,7 +294,6 @@ $(function () {
               className: 'dropdown-item',
               exportOptions: {
                 columns: [1, 2, 3, 4, 5],
-                // prevent avatar to be display
                 format: {
                   body: function (inner, coldex, rowdex) {
                     if (inner.length <= 0) return inner;
@@ -322,7 +314,6 @@ $(function () {
           ]
         }
       ],
-      // For responsive popup
       responsive: {
         details: {
           display: $.fn.dataTable.Responsive.display.modal({
@@ -334,7 +325,7 @@ $(function () {
           type: 'column',
           renderer: function (api, rowIdx, columns) {
             var data = $.map(columns, function (col, i) {
-              return col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
+              return col.title !== '' // Do not show row in modal popup if title is blank (for check box)
                 ? '<tr data-dt-row="' +
                     col.rowIndex +
                     '" data-dt-column="' +
@@ -362,7 +353,7 @@ $(function () {
           .every(function () {
             var column = this;
             var select = $(
-              '<select id="UserRole" class="form-select text-capitalize form-select-sm"><option value=""> Select Role </option></select>'
+              '<select id="UserRole" class="form-select text-capitalize"><option value=""> Select Role </option></select>'
             )
               .appendTo('.user_role')
               .on('change', function () {
@@ -380,16 +371,74 @@ $(function () {
           });
       }
     });
-    $('.add-new').html(
-      "<button class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#editUser'><i class='ri-add-line me-0 me-sm-1'></i><span class= 'd-none d-sm-inline-block'> Add User </span ></button>"
-    );
   }
+
+  // Add New User button
+  setTimeout(function () {
+    $('.add-new').html(
+      "<button class='btn btn-primary waves-effect waves-light' data-bs-toggle='offcanvas' data-bs-target='#offcanvasAddUser'><i class='ri-add-line me-1'></i>Tambah Pengguna</button>"
+    );
+  });
 
   // Delete Record
   $('.datatables-users tbody').on('click', '.delete-record', function () {
     dt_User.row($(this).parents('tr')).remove().draw();
   });
 });
+
+// Validation & Phone mask
+(function () {
+  const phoneMaskList = document.querySelectorAll('.phone-mask'),
+    addNewUserForm = document.getElementById('addNewUserForm');
+
+  // Phone Number
+  if (phoneMaskList) {
+    phoneMaskList.forEach(function (phoneMask) {
+      new Cleave(phoneMask, {
+        phone: true,
+        phoneRegionCode: 'US'
+      });
+    });
+  }
+
+  // Add New User Form Validation
+  const fv = FormValidation.formValidation(addNewUserForm, {
+    fields: {
+      userFullname: {
+        validators: {
+          notEmpty: {
+            message: 'Please enter fullname '
+          }
+        }
+      },
+      userEmail: {
+        validators: {
+          notEmpty: {
+            message: 'Please enter your email'
+          },
+          emailAddress: {
+            message: 'The value is not a valid email address'
+          }
+        }
+      }
+    },
+    plugins: {
+      trigger: new FormValidation.plugins.Trigger(),
+      bootstrap5: new FormValidation.plugins.Bootstrap5({
+        // Use this for enabling/changing valid/invalid class
+        eleValidClass: '',
+        rowSelector: function (field, ele) {
+          // field is the field name & ele is the field element
+          return '.mb-5';
+        }
+      }),
+      submitButton: new FormValidation.plugins.SubmitButton(),
+      // Submit the form when all fields are valid
+      // defaultSubmit: new FormValidation.plugins.DefaultSubmit(),
+      autoFocus: new FormValidation.plugins.AutoFocus()
+    }
+  });
+})();
 
 (function () {
   // On edit role click, update text

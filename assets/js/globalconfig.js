@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const orderManagementHTML = `
   <div id="order" class="content-section" style.display = "none">
-    <div class="card mb-4" style="max-height: 480px; overflow-y: auto;">
+    <div class="card mb-4" style="max-height: 450px; overflow-y: auto;">
       <h5 class="card-header">Order Management Settings</h5>
       <form class="card-body" action="app-company-management.html" method="get">
         <div class="row g-4">

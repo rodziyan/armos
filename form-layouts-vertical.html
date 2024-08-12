@@ -710,13 +710,19 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              
+              <div class="row">
               <!-- Combined Vehicle Details Form -->
-                <div class="container mt-5">
+                <div class="container mt-4">
                   <div class="card mb-6">
                       <h5 class="card-header">Form Detail Kendaraan</h5>
                       <form class="card-body" action="app-vehicle-management.html" method="get">
                           <div class="row g-6">
+                                <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="text" id="vehicle-name" class="form-control" placeholder="Hino Dutro Cargo" />
+                                      <label for="vehicle-name">Nama Kendaraan</label>
+                                  </div>
+                              </div>
                               <div class="col-md-6">
                                   <div class="form-floating form-floating-outline">
                                       <select id="vehicle-brand" class="form-select select2" data-allow-clear="true">
@@ -843,6 +849,7 @@
             <div class="content-backdrop fade"></div>
           </div>
           <!--/ Content wrapper -->
+        </div>
         </div>
 
         <!--/ Layout container -->
