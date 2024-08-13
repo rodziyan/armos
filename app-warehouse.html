@@ -746,12 +746,12 @@
                       <!-- Button Add -->
                       <!-- Button to redirect to the form page -->
                       <div class="d-flex justify-content-end">
-                        <a href="#" class="btn btn-primary btn-sm me-2" 
+                        <button type="button" class="btn btn-primary btn-sm me-2" 
                           style="font-size: 1.1rem; padding: 0.2rem 0.5rem;"
                           data-bs-toggle="modal" 
-                          data-bs-target="#editWarehouseModal">
+                          data-bs-target="#addWarehouseModal">
                           Tambah
-                        </a>
+                        </button>
                         <button class="btn btn-white btn-sm" style="font-size: 1.1rem; padding: 0.2rem 0.5rem; color: #0d6efd; border: 1px solid #0d6efd;">
                         <i class="ri-refresh-line"></i>
                         </button>
@@ -1384,39 +1384,39 @@
     </div>
 
     <!-- Modal Tambah -->
-    <div class="modal fade" id="editWarehouseModal" tabindex="-1" aria-labelledby="editWarehouseModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
+    <div class="modal fade" id="addWarehouseModal" tabindex="-1" aria-labelledby="addWarehouseModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editWarehouseModalLabel">Tambah Master Lokasi</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="warehouseForm">
-              <div class="mb-3">
-                <label for="locationId" class="form-label">Master Lokasi ID</label>
-                <input type="text" class="form-control" id="locationId" placeholder="Enter location ID">
-              </div>
-              <div class="mb-3">
-                <label for="locationName" class="form-label">Nama Master Lokasi</label>
-                <input type="text" class="form-control" id="locationName" placeholder="Enter location name">
-              </div>
-              <div class="mb-3">
-                <label for="locationType" class="form-label">Tipe Master Lokasi</label>
-                <select id="locationType" class="form-select">
-                  <option value="warehouse">Gudang</option>
-                  <option value="order">Order</option>
-                  <option value="delivery">Pengiriman</option>
-                </select>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
+            <div class="modal-header">
+                <h5 class="modal-title" id="addWarehouseModalLabel">Tambah Master Lokasi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="warehouseForm">
+                    <div class="mb-3">
+                        <label for="locationId" class="form-label">Master Lokasi ID</label>
+                        <input type="text" class="form-control" id="locationId" placeholder="Enter location ID">
+                    </div>
+                    <div class="mb-3">
+                        <label for="locationName" class="form-label">Nama Master Lokasi</label>
+                        <input type="text" class="form-control" id="locationName" placeholder="Enter location name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="locationType" class="form-label">Tipe Master Lokasi</label>
+                        <select id="locationType" class="form-select">
+                            <option value="warehouse">Gudang</option>
+                            <option value="order">Order</option>
+                            <option value="delivery">Pengiriman</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
-      </div>
+    </div>
     </div>
     <!-- Bootstrap JS (include this before your custom scripts) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1428,6 +1428,9 @@
         var editButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
         
         editButtons.forEach(function (button) {
+          // Skip buttons that are not supposed to redirect
+          if (button.getAttribute('data-bs-target') === '#addWarehouseModal') return;
+    
           button.addEventListener('click', function () {
             // Collect data attributes
             var data = {
@@ -1460,11 +1463,12 @@
               .join('&');
     
             // Redirect to the form with query parameters
-            window.location.href = 'form-edit-warehouse.html?' + queryString;
+            window.location.href = 'form-warehouse.html?' + queryString;
           });
         });
       });
     </script>
+    
     
 
     <script>
