@@ -4,6 +4,28 @@
 
 'use strict';
 
+// Menambahkan CSS ke dalam halaman melalui JavaScript
+$(document).ready(function () {
+  var css = `
+    .user_role {
+      display: flex;
+      align-items: center;
+      gap: 0px; /* Jarak antara dropdown dan tombol */
+    }
+
+    #UserRole {
+      width: 150px; /* Atur lebar dropdown sesuai kebutuhan */
+      height: 42px;
+    }
+
+    .add-new {
+      margin-left: 0px; /* Jarak antara dropdown dan tombol */
+    }
+  `;
+
+  var style = $('<style>').text(css);
+  $('head').append(style);
+});
 // Datatable (jquery)
 $(function () {
   var dtUserTable = $('.datatables-users'),
@@ -346,16 +368,29 @@ $(function () {
           }
         }
       },
+      drawCallback: function () {
+        // Add 'Add New User' button beside role filter dropdown
+        var filterRoleDropdown = $('.user_role');
+        if ($('.add-new').length === 0) {
+          filterRoleDropdown.after('<button class="btn btn-primary add-new">Add New User</button>');
+        }
+
+        // Handle 'Add New User' button click event
+        $('.add-new').on('click', function () {
+          // Fetch and show the offcanvas
+          $('#offcanvasAddUser').offcanvas('show');
+        });
+      },
       initComplete: function () {
         // Adding role filter once table initialized
         this.api()
-          .columns(4)
+          .columns(5) // Pastikan kolom ini sesuai dengan index kolom "Role" dalam tabel Anda
           .every(function () {
             var column = this;
             var select = $(
               '<select id="UserRole" class="form-select text-capitalize"><option value=""> Select Role </option></select>'
             )
-              .appendTo('.user_role')
+              .appendTo('.user_role') // Elemen ini harus ada di HTML untuk menampilkan dropdown
               .on('change', function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
                 column.search(val ? '^' + val + '$' : '', true, false).draw();
@@ -366,19 +401,21 @@ $(function () {
               .unique()
               .sort()
               .each(function (d, j) {
-                select.append('<option value="' + d + '" class="text-capitalize">' + d + '</option>');
+                if (d) {
+                  select.append('<option value="' + d + '" class="text-capitalize">' + d + '</option>');
+                }
               });
           });
       }
     });
   }
 
-  // Add New User button
-  setTimeout(function () {
-    $('.add-new').html(
-      "<button class='btn btn-primary waves-effect waves-light' data-bs-toggle='offcanvas' data-bs-target='#offcanvasAddUser'><i class='ri-add-line me-1'></i>Tambah Pengguna</button>"
-    );
-  });
+  // // Add New User button
+  // setTimeout(function () {
+  //   $('.add-new').html(
+  //     "<button class='btn btn-primary waves-effect waves-light' data-bs-toggle='offcanvas' data-bs-target='#offcanvasAddUser'><i class='ri-add-line me-1'></i>Tambah Pengguna</button>"
+  //   );
+  // });
 
   // Delete Record
   $('.datatables-users tbody').on('click', '.delete-record', function () {
