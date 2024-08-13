@@ -1421,281 +1421,51 @@
     <!-- Bootstrap JS (include this before your custom scripts) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Modal Structure -->
-    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="editModalLabel">Tambah Lokasi</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <form id="locationForm" action="app-warehouse.html" method="post">
-              <div class="card-body">
-                <div class="row">
-                  <!-- Left Column -->
-                  <div class="col-md-6">
-                    <!-- Location ID -->
-                    <div class="mb-3">
-                      <label for="locationID" class="form-label">Location ID</label>
-                      <input type="text" class="form-control" id="locationID" required>
-                    </div>
-
-                    <!-- Location Name -->
-                    <div class="mb-3">
-                      <label for="locationName" class="form-label">Location Name</label>
-                      <input type="text" class="form-control" id="locationName" required>
-                    </div>
-
-                    <!-- Location Type -->
-                    <div class="mb-3">
-                      <label for="locationType" class="form-label">Location Type</label>
-                      <select class="form-select" id="locationType">
-                        <option value="Gudang">Gudang</option>
-                        <option value="Order">Order</option>
-                        <option value="Pengiriman">Pengiriman</option>
-                      </select>
-                    </div>
-
-                    <!-- Channel -->
-                    <div class="mb-3">
-                      <label for="channel" class="form-label">Channel</label>
-                      <select class="form-select" id="channel">
-                        <option value="Modern Trade">Modern Trade</option>
-                        <option value="General Trade">General Trade</option>
-                        <option value="Institusi">Institusi</option>
-                        <option value="Horeka">Horeka</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-
-                    <!-- Type Outlet -->
-                    <div class="mb-3">
-                      <label for="typeOutlet" class="form-label">Type Outlet</label>
-                      <select class="form-select" id="typeOutlet">
-                        <option value="Kantin">Kantin</option>
-                        <option value="Kafe">Kafe</option>
-                        <option value="Resto">Resto</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-
-                    <!-- Loading Dock -->
-                    <div class="mb-3">
-                      <label for="loadingDock" class="form-label">Loading Dock</label>
-                      <input type="text" class="form-control" id="loadingDock">
-                    </div>
-
-                    <!-- Open Hour -->
-                    <div class="mb-3">
-                      <label for="openHour" class="form-label">Open Hour</label>
-                      <input type="time" class="form-control" id="openHour">
-                    </div>
-
-                    <!-- Closed Hour -->
-                    <div class="mb-3">
-                      <label for="closedHour" class="form-label">Closed Hour</label>
-                      <input type="time" class="form-control" id="closedHour">
-                    </div>
-
-                    <!-- Delivery Service -->
-                    <div class="mb-3">
-                      <label for="deliveryService" class="form-label">Delivery Service</label>
-                      <input type="text" class="form-control" id="deliveryService">
-                    </div>
-                  </div>
-
-                  <!-- Right Column -->
-                  <div class="col-md-6">
-                    <!-- Availability -->
-                    <div class="mb-3">
-                      <label for="availability" class="form-label">Availability</label>
-                      <input type="text" class="form-control" id="availability">
-                    </div>
-
-                    <!-- Bongkar Duration -->
-                    <div class="mb-3">
-                      <label for="bongkarDuration" class="form-label">Durasi Bongkar</label>
-                      <input type="number" class="form-control" id="bongkarDuration" placeholder="Hours">
-                    </div>
-
-                    <!-- Available Drop Days -->
-                    <div class="mb-3">
-                      <label for="availableDropDays" class="form-label">Available Drop Days</label>
-                      <input type="text" class="form-control" id="availableDropDays">
-                    </div>
-
-                    <!-- Frequency Drop -->
-                    <div class="mb-3">
-                      <label for="frequencyDrop" class="form-label">Frequency Drop</label>
-                      <select class="form-select" id="frequencyDrop">
-                        <option value="Weekly">Weekly</option>
-                        <option value="Monthly">Monthly</option>
-                        <option value="Yearly">Yearly</option>
-                      </select>
-                    </div>
-
-                    <!-- Vehicle Type Restriction -->
-                    <div class="mb-3">
-                      <label for="vehicleTypeRestriction" class="form-label">Vehicle Type Restriction</label>
-                      <select class="form-select" id="vehicleTypeRestriction">
-                        <option value="Truck">Truck</option>
-                        <option value="Container">Container</option>
-                        <option value="Other">Other</option>
-                      </select>
-                    </div>
-
-                    <!-- Priority -->
-                    <div class="mb-3">
-                      <label for="priority" class="form-label">Priority (0 Highest, 1, 2, 3, 4, etc.)</label>
-                      <select class="form-select" id="priority">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select>
-                    </div>
-
-                    <!-- Route Model -->
-                    <div class="mb-3">
-                      <label for="routeModel" class="form-label">Route Model</label>
-                      <input type="text" class="form-control" id="routeModel">
-                    </div>
-
-                    <!-- Area -->
-                    <div class="mb-3">
-                      <label for="area" class="form-label">Area</label>
-                      <select class="form-select" id="area">
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                      </select>
-                    </div>
-
-                    <!-- Zona -->
-                    <div class="mb-3">
-                      <label for="zona" class="form-label">Zona</label>
-                      <select class="form-select" id="zona">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <!-- Address -->
-                  <div class="col-12">
-                    <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control form-control-tall" id="address" required>
-                  </div>
-
-                  <!-- Longitude and Latitude with Checkbox -->
-                  <div class="row mt-3">
-                    <!-- Longitude -->
-                    <div class="col-md-4">
-                      <div class="mb-3">
-                        <label for="longitude" class="form-label">Longitude</label>
-                        <input type="text" class="form-control" id="longitude" readonly>
-                      </div>
-                    </div>
-
-                    <!-- Latitude -->
-                    <div class="col-md-4">
-                      <div class="mb-3">
-                        <label for="latitude" class="form-label">Latitude</label>
-                        <input type="text" class="form-control" id="latitude" readonly>
-                      </div>
-                    </div>
-
-                    <!-- Checkbox to enable manual input -->
-                    <div class="col-md-4 d-flex align-items-center">
-                      <div class="mt-4 me-5">
-                        <button type="button" class="btn btn-primary" id="enableManualInput">
-                          Check
-                        </button>
-                      </div>
-                      <div class="mt-4 me-5">
-                        <button type="submit" class="btn btn-primary">
-                          Tambah
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Map Section -->
-                  <div class="col-md-12 mt-3 mb-5 d-flex justify-content-center">
-                    <div id="map" style="height: 380px; width: 100%; max-width: 1200px; background-image: url('assets/img/geostagging.png'); background-size: cover; background-position: center;">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary">Save</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Include Bootstrap JS (optional) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         var editButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
-    
+        
         editButtons.forEach(function (button) {
           button.addEventListener('click', function () {
-            var id = this.getAttribute('data-id');
-            var name = this.getAttribute('data-name');
-            var address = this.getAttribute('data-address');
-            var openTime = this.getAttribute('data-open-time');
-            var closeTime = this.getAttribute('data-close-time');
-            var delivery = this.getAttribute('data-delivery');
-            var locationType = this.getAttribute('data-location-type');
-            var channel = this.getAttribute('data-channel');
-            var typeOutlet = this.getAttribute('data-type-outlet');
-            var loadingDock = this.getAttribute('data-loading-dock');
-            var availability = this.getAttribute('data-availability');
-            var bongkarDuration = this.getAttribute('data-bongkar-duration');
-            var availableDropDays = this.getAttribute('data-available-drop-days');
-            var frequencyDrop = this.getAttribute('data-frequency-drop');
-            var vehicleTypeRestriction = this.getAttribute('data-vehicle-type-restriction');
-            var priority = this.getAttribute('data-priority');
-            var routeModel = this.getAttribute('data-route-model');
-            var area = this.getAttribute('data-area');
-            var zona = this.getAttribute('data-zona');
-            var longitude = this.getAttribute('data-longitude');
-            var latitude = this.getAttribute('data-latitude');
+            // Collect data attributes
+            var data = {
+              id: this.getAttribute('data-id'),
+              name: this.getAttribute('data-name'),
+              address: this.getAttribute('data-address'),
+              openTime: this.getAttribute('data-open-time'),
+              closeTime: this.getAttribute('data-close-time'),
+              delivery: this.getAttribute('data-delivery'),
+              locationType: this.getAttribute('data-location-type'),
+              channel: this.getAttribute('data-channel'),
+              typeOutlet: this.getAttribute('data-type-outlet'),
+              loadingDock: this.getAttribute('data-loading-dock'),
+              availability: this.getAttribute('data-availability'),
+              bongkarDuration: this.getAttribute('data-bongkar-duration'),
+              availableDropDays: this.getAttribute('data-available-drop-days'),
+              frequencyDrop: this.getAttribute('data-frequency-drop'),
+              vehicleTypeRestriction: this.getAttribute('data-vehicle-type-restriction'),
+              priority: this.getAttribute('data-priority'),
+              routeModel: this.getAttribute('data-route-model'),
+              area: this.getAttribute('data-area'),
+              zona: this.getAttribute('data-zona'),
+              longitude: this.getAttribute('data-longitude'),
+              latitude: this.getAttribute('data-latitude')
+            };
     
-            var modal = document.getElementById('editModal');
-            modal.querySelector('#locationID').value = id;
-            modal.querySelector('#locationName').value = name;
-            modal.querySelector('#address').value = address;
-            modal.querySelector('#openHour').value = openTime;
-            modal.querySelector('#closedHour').value = closeTime;
-            modal.querySelector('#deliveryService').value = delivery;
-            modal.querySelector('#locationType').value = locationType;
-            modal.querySelector('#channel').value = channel;
-            modal.querySelector('#typeOutlet').value = typeOutlet;
-            modal.querySelector('#loadingDock').value = loadingDock;
-            modal.querySelector('#availability').value = availability;
-            modal.querySelector('#bongkarDuration').value = bongkarDuration;
-            modal.querySelector('#availableDropDays').value = availableDropDays;
-            modal.querySelector('#frequencyDrop').value = frequencyDrop;
-            modal.querySelector('#vehicleTypeRestriction').value = vehicleTypeRestriction;
-            modal.querySelector('#priority').value = priority;
-            modal.querySelector('#routeModel').value = routeModel;
-            modal.querySelector('#area').value = area;
-            modal.querySelector('#zona').value = zona;
-            modal.querySelector('#longitude').value = longitude;
-            modal.querySelector('#latitude').value = latitude;
+            // Construct query parameters
+            var queryString = Object.keys(data)
+              .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+              .join('&');
+    
+            // Redirect to the form with query parameters
+            window.location.href = 'form-edit-warehouse.html?' + queryString;
           });
         });
       });
-    </script>    
+    </script>
+    
 
     <script>
       // Function to get query parameters from the URL
