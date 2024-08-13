@@ -1,82 +1,82 @@
 [
   {
     "id": 1,
-    "Lokasi Tipe": "Kantor",
-    "Alamat": "Jl. Merdeka No. 1, RT 01/RW 02, Kelurahan Kebon Jeruk, Kecamatan Kebon Jeruk, Jakarta Barat, DKI Jakarta",
-    "Longitude": "106.786445",
-    "Latitude": "-6.196879",
+    "lokasi_tipe": "Kantor",
+    "alamat": "Jl. Merdeka No. 1, RT 01/RW 02, Kelurahan Kebon Jeruk, Kecamatan Kebon Jeruk, Jakarta Barat, DKI Jakarta",
+    "longitude": "106.786445",
+    "latitude": "-6.196879",
     "action": "action"
   },
   {
     "id": 2,
-    "Lokasi Tipe": "Rumah",
-    "Alamat": "Jl. Sudirman No. 20, RT 05/RW 03, Kelurahan Menteng, Kecamatan Menteng, Jakarta Pusat, DKI Jakarta",
-    "Longitude": "106.819344",
-    "Latitude": "-6.208763",
+    "lokasi_tipe": "Rumah",
+    "alamat": "Jl. Sudirman No. 20, RT 05/RW 03, Kelurahan Menteng, Kecamatan Menteng, Jakarta Pusat, DKI Jakarta",
+    "longitude": "106.819344",
+    "latitude": "-6.208763",
     "action": "action"
   },
   {
     "id": 3,
-    "Lokasi Tipe": "Toko",
-    "Alamat": "Jl. Gatot Subroto No. 5, RT 02/RW 04, Kelurahan Setiabudi, Kecamatan Setiabudi, Jakarta Selatan, DKI Jakarta",
-    "Longitude": "106.825657",
-    "Latitude": "-6.224383",
+    "lokasi_tipe": "Toko",
+    "alamat": "Jl. Gatot Subroto No. 5, RT 02/RW 04, Kelurahan Setiabudi, Kecamatan Setiabudi, Jakarta Selatan, DKI Jakarta",
+    "longitude": "106.825657",
+    "latitude": "-6.224383",
     "action": "action"
   },
   {
     "id": 4,
-    "Lokasi Tipe": "Gudang",
-    "Alamat": "Jl. Raya Bogor No. 15, RT 03/RW 02, Kelurahan Cililitan, Kecamatan Kramat Jati, Jakarta Timur, DKI Jakarta",
-    "Longitude": "106.864861",
-    "Latitude": "-6.253569",
+    "lokasi_tipe": "Gudang",
+    "alamat": "Jl. Raya Bogor No. 15, RT 03/RW 02, Kelurahan Cililitan, Kecamatan Kramat Jati, Jakarta Timur, DKI Jakarta",
+    "longitude": "106.864861",
+    "latitude": "-6.253569",
     "action": "action"
   },
   {
     "id": 5,
-    "Lokasi Tipe": "Pabrik",
-    "Alamat": "Jl. Industri No. 8, RT 01/RW 01, Kelurahan Cikupa, Kecamatan Cikupa, Kabupaten Tangerang, Banten",
-    "Longitude": "106.518187",
-    "Latitude": "-6.247126",
+    "lokasi_tipe": "Pabrik",
+    "alamat": "Jl. Industri No. 8, RT 01/RW 01, Kelurahan Cikupa, Kecamatan Cikupa, Kabupaten Tangerang, Banten",
+    "longitude": "106.518187",
+    "latitude": "-6.247126",
     "action": "action"
   },
   {
     "id": 6,
-    "Lokasi Tipe": "Sekolah",
-    "Alamat": "Jl. Pendidikan No. 3, RT 05/RW 02, Kelurahan Pondok Labu, Kecamatan Cilandak, Jakarta Selatan, DKI Jakarta",
-    "Longitude": "106.793223",
-    "Latitude": "-6.293052",
+    "lokasi_tipe": "Sekolah",
+    "alamat": "Jl. Pendidikan No. 3, RT 05/RW 02, Kelurahan Pondok Labu, Kecamatan Cilandak, Jakarta Selatan, DKI Jakarta",
+    "longitude": "106.793223",
+    "latitude": "-6.293052",
     "action": "action"
   },
   {
     "id": 7,
-    "Lokasi Tipe": "Restoran",
-    "Alamat": "Jl. Kemang Raya No. 12, RT 02/RW 03, Kelurahan Kemang, Kecamatan Mampang Prapatan, Jakarta Selatan, DKI Jakarta",
-    "Longitude": "106.815474",
-    "Latitude": "-6.264605",
+    "lokasi_tipe": "Restoran",
+    "alamat": "Jl. Kemang Raya No. 12, RT 02/RW 03, Kelurahan Kemang, Kecamatan Mampang Prapatan, Jakarta Selatan, DKI Jakarta",
+    "longitude": "106.815474",
+    "latitude": "-6.264605",
     "action": "action"
   },
   {
     "id": 8,
-    "Lokasi Tipe": "Mall",
-    "Alamat": "Jl. Margonda Raya No. 88, RT 03/RW 04, Kelurahan Depok, Kecamatan Pancoran Mas, Kota Depok, Jawa Barat",
-    "Longitude": "106.832103",
-    "Latitude": "-6.386629",
+    "lokasi_tipe": "Mall",
+    "alamat": "Jl. Margonda Raya No. 88, RT 03/RW 04, Kelurahan Depok, Kecamatan Pancoran Mas, Kota Depok, Jawa Barat",
+    "longitude": "106.832103",
+    "latitude": "-6.386629",
     "action": "action"
   },
   {
     "id": 9,
-    "Lokasi Tipe": "Hotel",
-    "Alamat": "Jl. Thamrin No. 9, RT 04/RW 05, Kelurahan Gondangdia, Kecamatan Menteng, Jakarta Pusat, DKI Jakarta",
-    "Longitude": "106.823479",
-    "Latitude": "-6.190043",
+    "lokasi_tipe": "Hotel",
+    "alamat": "Jl. Thamrin No. 9, RT 04/RW 05, Kelurahan Gondangdia, Kecamatan Menteng, Jakarta Pusat, DKI Jakarta",
+    "longitude": "106.823479",
+    "latitude": "-6.190043",
     "action": "action"
   },
   {
     "id": 10,
-    "Lokasi Tipe": "Klinik",
-    "Alamat": "Jl. Cendrawasih No. 7, RT 01/RW 01, Kelurahan Cilandak, Kecamatan Cilandak, Jakarta Selatan, DKI Jakarta",
-    "Longitude": "106.787964",
-    "Latitude": "-6.293912",
+    "lokasi_tipe": "Klinik",
+    "alamat": "Jl. Cendrawasih No. 7, RT 01/RW 01, Kelurahan Cilandak, Kecamatan Cilandak, Jakarta Selatan, DKI Jakarta",
+    "longitude": "106.787964",
+    "latitude": "-6.293912",
     "action": "action"
   }
 ]
