@@ -733,9 +733,9 @@
                                 <!-- Left Column -->
                                 <div class="col-md-6">
                                     <!-- Location ID -->
-                                      <div class="mb-3">
-                                        <label for="locationID" class="form-label">Location ID</label>
-                                        <input type="text" class="form-control" id="locationID" required>
+                                    <div class="mb-3">
+                                      <label for="locationID" class="form-label">Location ID</label>
+                                      <input type="text" class="form-control" id="locationID" required>
                                     </div>
 
                                     <!-- Location Name -->
@@ -957,6 +957,25 @@
     <div class="drag-target"></div>
 
     <!--/ Layout wrapper -->
+
+  <!-- Include Bootstrap JS (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Function to get query parameters from the URL
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    // When the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      const locationID = getQueryParam('id');
+      if (locationID) {
+        // Set the value of the Location ID input field
+        document.getElementById('locationID').value = locationID;
+      }
+    });
+  </script>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
