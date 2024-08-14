@@ -372,7 +372,7 @@ $(function () {
         // Add 'Add New User' button beside role filter dropdown
         var filterRoleDropdown = $('.user_role');
         if ($('.add-new').length === 0) {
-          filterRoleDropdown.after('<button class="btn btn-primary add-new">Add New User</button>');
+          filterRoleDropdown.after('<button class="btn btn-primary add-new">Tambah Pengguna</button>');
         }
 
         // Handle 'Add New User' button click event
