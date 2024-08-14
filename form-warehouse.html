@@ -734,13 +734,13 @@
 
                                     <!-- Location Name -->
                                     <div class="mb-3">
-                                        <label for="locationName" class="form-label">Location Name</label>
+                                        <label for="locationName" class="form-label">Nama Lokasi</label>
                                         <input type="text" class="form-control" id="locationName" required>
                                     </div>
 
                                     <!-- Location Type -->
                                     <div class="mb-3">
-                                        <label for="locationType" class="form-label">Location Type</label>
+                                        <label for="locationType" class="form-label">Tipe Lokasi</label>
                                         <select class="form-select" id="locationType">
                                             <option value="Gudang">Gudang</option>
                                             <option value="Order">Order</option>
@@ -762,7 +762,7 @@
 
                                     <!-- Type Outlet -->
                                     <div class="mb-3">
-                                        <label for="typeOutlet" class="form-label">Type Outlet</label>
+                                        <label for="typeOutlet" class="form-label">Tipe Outlet</label>
                                         <select class="form-select" id="typeOutlet">
                                             <option value="Kantin">Kantin</option>
                                             <option value="Kafe">Kafe</option>
@@ -779,18 +779,18 @@
 
                                     <!-- Open Hour -->
                                     <div class="mb-3">
-                                        <label for="openHour" class="form-label">Open Hour</label>
+                                        <label for="openHour" class="form-label">Jam Buka</label>
                                         <input type="time" class="form-control" id="openHour">
                                     </div>
 
                                     <!-- Closed Hour -->
                                     <div class="mb-3">
-                                        <label for="closedHour" class="form-label">Closed Hour</label>
+                                        <label for="closedHour" class="form-label">Jam Tutup</label>
                                         <input type="time" class="form-control" id="closedHour">
                                     </div>
                                      <!-- Delivery Service -->
                                      <div class="mb-3">
-                                      <label for="deliveryService" class="form-label">Delivery Service</label>
+                                      <label for="deliveryService" class="form-label">Layanan Pengiriman</label>
                                       <input type="text" class="form-control" id="deliveryService">
                                   </div>
 
@@ -801,9 +801,12 @@
                                    
                                     <!-- Availability -->
                                     <div class="mb-3">
-                                        <label for="availability" class="form-label">Availability</label>
-                                        <input type="text" class="form-control" id="availability">
-                                    </div>
+                                      <label for="availability" class="form-label">Availability</label>
+                                      <select class="form-select" id="availability">
+                                          <option value="available">Available</option>
+                                          <option value="unavailable">Unavailable</option>
+                                      </select>
+                                  </div>                                  
 
                                     <!-- Bongkar Duration -->
                                     <div class="mb-3">
@@ -813,23 +816,31 @@
 
                                     <!-- Available Drop Days -->
                                     <div class="mb-3">
-                                        <label for="availableDropDays" class="form-label">Available Drop Days</label>
-                                        <input type="text" class="form-control" id="availableDropDays">
-                                    </div>
+                                      <label for="availableDropDays" class="form-label">Hari Pengiriman yang Tersedia</label>
+                                      <select class="form-select" id="availableDropDays">
+                                          <option value="senin">Senin</option>
+                                          <option value="selasa">Selasa</option>
+                                          <option value="rabu">Rabu</option>
+                                          <option value="kamis">Kamis</option>
+                                          <option value="jumat">Jumat</option>
+                                          <option value="sabtu">Sabtu</option>
+                                          <option value="minggu">Minggu</option>
+                                      </select>
+                                  </div>                                  
 
                                     <!-- Frequency Drop -->
                                     <div class="mb-3">
                                         <label for="frequencyDrop" class="form-label">Frequency Drop</label>
                                         <select class="form-select" id="frequencyDrop">
-                                            <option value="Weekly">Weekly</option>
-                                            <option value="Monthly">Monthly</option>
-                                            <option value="Yearly">Yearly</option>
+                                            <option value="Weekly">Mingguan</option>
+                                            <option value="Monthly">Bulanan</option>
+                                            <option value="Yearly">Tahunan</option>
                                         </select>
                                     </div>
 
                                     <!-- Vehicle Type Restriction -->
                                     <div class="mb-3">
-                                        <label for="vehicleTypeRestriction" class="form-label">Vehicle Type Restriction</label>
+                                        <label for="vehicleTypeRestriction" class="form-label">Jenis Kendaraan</label>
                                         <select class="form-select" id="vehicleTypeRestriction">
                                             <option value="Truck">Truck</option>
                                             <option value="Container">Container</option>
@@ -882,7 +893,7 @@
                                   }
                                 </style>
                                 <div class="col-mb-12">
-                                  <label for="address" class="form-label">Address</label>
+                                  <label for="address" class="form-label">Alamat</label>
                                   <input type="text" class="form-control form-control-tall" id="address" required>
                                 </div>
 
