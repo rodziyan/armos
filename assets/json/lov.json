@@ -1,0 +1,204 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "lov_code": "V001",
+      "lov_value": "Vehicle",
+      "lov_parent": "no parent",
+      "status": 1,
+      "action": "edit"
+    },
+    {
+      "id": 2,
+      "lov_code": "U002",
+      "lov_value": "User",
+      "lov_parent": "no parent",
+      "status": 2,
+      "action": "edit"
+    },
+    {
+      "id": 3,
+      "lov_code": "L003",
+      "lov_value": "Location",
+      "lov_parent": "no parent",
+      "status": 1,
+      "action": "edit"
+    },
+    {
+      "id": 4,
+      "lov_code": "D004",
+      "lov_value": "Driver",
+      "lov_parent": "vehicle",
+      "status": 2,
+      "action": "edit"
+    },
+    {
+      "id": 5,
+      "lov_code": "R005",
+      "lov_value": "Roles",
+      "lov_parent": "no parent",
+      "status": 1,
+      "action": "edit"
+    },
+    {
+      "id": 6,
+      "lov_code": "U001",
+      "lov_value": "Admin",
+      "lov_parent": "user",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "id": 7,
+      "lov_code": "U002",
+      "lov_value": "Manager",
+      "lov_parent": "user",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "id": 8,
+      "lov_code": "U003",
+      "lov_value": "Employee",
+      "lov_parent": "user",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "id": 9,
+      "lov_code": "U004",
+      "lov_value": "Intern",
+      "lov_parent": "user",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "id": 10,
+      "lov_code": "U005",
+      "lov_value": "Guest",
+      "lov_parent": "user",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "id": 11,
+      "lov_code": "L001",
+      "lov_value": "Warehouse",
+      "lov_parent": "location",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "id": 12,
+      "lov_code": "L002",
+      "lov_value": "Office",
+      "lov_parent": "location",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "id": 13,
+      "lov_code": "L003",
+      "lov_value": "Store",
+      "lov_parent": "location",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "id": 14,
+      "lov_code": "L004",
+      "lov_value": "Park",
+      "lov_parent": "location",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "id": 15,
+      "lov_code": "L005",
+      "lov_value": "Garage",
+      "lov_parent": "location",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "id": 16,
+      "lov_code": "D001",
+      "lov_value": "Driver 1",
+      "lov_parent": "driver",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "id": 17,
+      "lov_code": "D002",
+      "lov_value": "Driver 2",
+      "lov_parent": "driver",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "id": 18,
+      "lov_code": "D003",
+      "lov_value": "Driver 3",
+      "lov_parent": "driver",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "id": 19,
+      "lov_code": "D004",
+      "lov_value": "Driver 4",
+      "lov_parent": "driver",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "id": 20,
+      "lov_code": "D005",
+      "lov_value": "Driver 5",
+      "lov_parent": "driver",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "id": 21,
+      "lov_code": "R001",
+      "lov_value": "Admin Role",
+      "lov_parent": "roles",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "id": 22,
+      "lov_code": "R002",
+      "lov_value": "User Role",
+      "lov_parent": "roles",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "id": 23,
+      "lov_code": "R003",
+      "lov_value": "Manager Role",
+      "lov_parent": "roles",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "id": 24,
+      "lov_code": "R004",
+      "lov_value": "Driver Role",
+      "lov_parent": "roles",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "id": 25,
+      "lov_code": "R005",
+      "lov_value": "Guest Role",
+      "lov_parent": "roles",
+      "status": 1,
+      "action": "action"
+    }
+  ]
+}

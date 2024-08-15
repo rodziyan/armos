@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard - Logistics | Armos</title>
+    <title>Lov - Apps | Armos</title>
 
     <meta name="description" content="" />
 
@@ -43,14 +43,12 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="assets/vendor/libs/typeahead-js/typeahead.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css" />
     <link rel="stylesheet" href="assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
     <link rel="stylesheet" href="assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
     <link rel="stylesheet" href="assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/@form-validation/form-validation.css" />
 
     <!-- Page CSS -->
-
-    <link rel="stylesheet" href="assets/vendor/css/pages/app-logistics-dashboard.css" />
 
     <!-- Helpers -->
     <script src="assets/vendor/js/helpers.js"></script>
@@ -96,8 +94,8 @@
                   <span class="sort-card-text">Optimization</span>
                   </a>
                   <a href="app-access-roles.html" class="btn btn-custom me-3">
-                    <i class="sort-card-icon ri-user-line"></i>
-                    <span class="sort-card-text">Users Management</span>
+                      <i class="sort-card-icon ri-user-line"></i>
+                      <span class="sort-card-text">Users Management</span>
                   </a>
                   <a href="javascript:void(0);" class="btn btn-custom me-3">
                       <i class="sort-card-icon ri-computer-line"></i>
@@ -710,7 +708,7 @@
               </div>
             </aside>
             <!-- / Menu -->
-
+             
             <!-- Content -->
             <style>
               .container-xxxl {
@@ -727,730 +725,257 @@
               }
           </style>
             <div class="container-xxxl flex-grow-1 container-p-y">
-              <!-- Card Border Shadow -->
-              <div class="row g-6 mt-8">
-                <div class="col-sm-6 col-lg-3">
-                  <div class="card card-border-shadow-primary h-100">
-                    <div class="card-body">
-                      <div class="d-flex align-items-center mb-2">
-                        <div class="avatar me-4">
-                          <span class="avatar-initial rounded-3 bg-label-primary"
-                            ><i class="ri-car-line ri-24px"></i
-                          ></span>
-                        </div>
-                        <h4 class="mb-0">42</h4>
-                      </div>
-                      <h6 class="mb-0 fw-normal">Kendaraan dalam perjalanan</h6>
-                      <p class="mb-0">
-                        <span class="me-1 fw-medium">+18.2%</span>
-                        <small class="text-muted">dari minggu lalu</small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                  <div class="card card-border-shadow-warning h-100">
-                    <div class="card-body">
-                      <div class="d-flex align-items-center mb-2">
-                        <div class="avatar me-4">
-                          <span class="avatar-initial rounded-3 bg-label-warning"
-                            ><i class="ri-alert-line ri-24px"></i
-                          ></span>
-                        </div>
-                        <h4 class="mb-0">8</h4>
-                      </div>
-                      <h6 class="mb-0 fw-normal">Kendaraan yang mengalami kerusakan</h6>
-                      <p class="mb-0">
-                        <span class="me-1 fw-medium">-8.7%</span>
-                        <small class="text-muted">dari minggu lalu</small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                  <div class="card card-border-shadow-danger h-100">
-                    <div class="card-body">
-                      <div class="d-flex align-items-center mb-2">
-                        <div class="avatar me-4">
-                          <span class="avatar-initial rounded-3 bg-label-danger"
-                            ><i class="ri-route-line ri-24px"></i
-                          ></span>
-                        </div>
-                        <h4 class="mb-0">27</h4>
-                      </div>
-                      <h6 class="mb-0 fw-normal">Menyimpang dari rute</h6>
-                      <p class="mb-0">
-                        <span class="me-1 fw-medium">+4.3%</span>
-                        <small class="text-muted">dari minggu lalu</small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-6 col-lg-3">
-                  <div class="card card-border-shadow-info h-100">
-                    <div class="card-body">
-                      <div class="d-flex align-items-center mb-2">
-                        <div class="avatar me-4">
-                          <span class="avatar-initial rounded-3 bg-label-info"
-                            ><i class="ri-time-line ri-24px"></i
-                          ></span>
-                        </div>
-                        <h4 class="mb-0">13</h4>
-                      </div>
-                      <h6 class="mb-0 fw-normal">Kendaraan yang terlambat</h6>
-                      <p class="mb-0">
-                        <span class="me-1 fw-medium">-2.5%</span>
-                        <small class="text-muted">dari minggu lalu</small>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <!--/ Card Border Shadow -->
-
-                <!-- Vehicles overview -->
-                <div class="col-xxl-6 order-5 order-xxl-0">
-                  <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                      <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">Overview kendaraan</h5>
-                      </div>
-                      <div class="dropdown">
-                        <button
-                          class="btn btn-text-secondary rounded-pill text-muted border-0 p-1"
-                          type="button"
-                          id="deliveryExceptions"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false">
-                          <i class="ri-more-2-line ri-20px"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="deliveryExceptions">
-                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body pb-2">
-                      <div class="d-none d-lg-flex vehicles-progress-labels mb-5">
-                        <div class="vehicles-progress-label on-the-way-text" style="width: 39.7%">On the way</div>
-                        <div class="vehicles-progress-label unloading-text" style="width: 28.3%">Unloading</div>
-                        <div class="vehicles-progress-label loading-text" style="width: 17.4%">Loading</div>
-                        <div class="vehicles-progress-label waiting-text" style="width: 14.6%">Waiting</div>
-                      </div>
-                      <div
-                        class="vehicles-overview-progress progress rounded-4 bg-transparent mb-2"
-                        style="height: 46px">
-                        <div
-                          class="progress-bar small fw-medium text-start rounded-start bg-lighter text-heading px-1 px-lg-4"
-                          role="progressbar"
-                          style="width: 39.7%"
-                          aria-valuenow="39.7"
-                          aria-valuemin="0"
-                          aria-valuemax="100">
-                          39.7%
-                        </div>
-                        <div
-                          class="progress-bar small fw-medium text-start bg-primary px-1 px-lg-4"
-                          role="progressbar"
-                          style="width: 28.3%"
-                          aria-valuenow="28.3"
-                          aria-valuemin="0"
-                          aria-valuemax="100">
-                          28.3%
-                        </div>
-                        <div
-                          class="progress-bar small fw-medium text-start text-bg-info px-1 px-lg-4"
-                          role="progressbar"
-                          style="width: 17.4%"
-                          aria-valuenow="17.4"
-                          aria-valuemin="0"
-                          aria-valuemax="100">
-                          17.4%
-                        </div>
-                        <div
-                          class="progress-bar small fw-medium text-start rounded-end bg-gray-900 px-1 px-lg-4"
-                          role="progressbar"
-                          style="width: 14.6%"
-                          aria-valuenow="14.6"
-                          aria-valuemin="0"
-                          aria-valuemax="100">
-                          14.6%
-                        </div>
-                      </div>
-                      <div class="table-responsive">
-                        <table class="table card-table">
-                          <tbody class="table-border-bottom-0">
-                            <tr>
-                              <td class="w-75 ps-0">
-                                <div class="d-flex justify-content-start align-items-center">
-                                  <div class="me-2">
-                                    <i class="text-heading ri-car-line ri-24px"></i>
-                                  </div>
-                                  <h6 class="mb-0 fw-normal">On the way</h6>
-                                </div>
-                              </td>
-                              <td class="text-end pe-0 text-nowrap">
-                                <h6 class="mb-0">2hr 10min</h6>
-                              </td>
-                              <td class="text-end pe-0 ps-6">
-                                <span>39.7%</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="w-75 ps-0">
-                                <div class="d-flex justify-content-start align-items-center">
-                                  <div class="me-2">
-                                    <i class="text-heading ri-download-line ri-24px"></i>
-                                  </div>
-                                  <h6 class="mb-0 fw-normal">Unloading</h6>
-                                </div>
-                              </td>
-                              <td class="text-end pe-0 text-nowrap">
-                                <h6 class="mb-0">3hr 15min</h6>
-                              </td>
-                              <td class="text-end pe-0 ps-6">
-                                <span>28.3%</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="w-75 ps-0">
-                                <div class="d-flex justify-content-start align-items-center">
-                                  <div class="me-2">
-                                    <i class="text-heading ri-upload-line ri-24px"></i>
-                                  </div>
-                                  <h6 class="mb-0 fw-normal">Loading</h6>
-                                </div>
-                              </td>
-                              <td class="text-end pe-0 text-nowrap">
-                                <h6 class="mb-0">1hr 24min</h6>
-                              </td>
-                              <td class="text-end pe-0 ps-6">
-                                <span>17.4%</span>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="w-75 ps-0">
-                                <div class="d-flex justify-content-start align-items-center">
-                                  <div class="me-2">
-                                    <i class="text-heading ri-time-line ri-24px"></i>
-                                  </div>
-                                  <h6 class="mb-0 fw-normal">Waiting</h6>
-                                </div>
-                              </td>
-                              <td class="text-end pe-0 text-nowrap">
-                                <h6 class="mb-0">5hr 19min</h6>
-                              </td>
-                              <td class="text-end pe-0 ps-6">
-                                <span>14.6%</span>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--/ Vehicles overview -->
-                <!-- Shipment statistics-->
-                <div class="col-lg-6 col-xxl-6 order-3 order-xxl-1">
-                  <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                      <div class="card-title mb-0">
-                        <h5 class="m-0 me-2 mb-1">Statistik pengiriman</h5>
-                        <p class="card-subtitle mb-0">Total jumlah pengiriman 23.8k</p>
-                      </div>
-                      <div class="btn-group">
-                        <button type="button" class="btn btn-outline-primary">January</button>
-                        <button
-                          type="button"
-                          class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
-                          data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                          data-bs-reference="parent">
-                          <span class="visually-hidden">Toggle Dropdown</span>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="javascript:void(0);">January</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">February</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">March</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">April</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">May</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">June</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">July</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">August</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">September</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">October</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">November</a></li>
-                          <li><a class="dropdown-item" href="javascript:void(0);">December</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div id="shipmentStatisticsChart"></div>
-                    </div>
-                  </div>
-                </div>
-                <!--/ Shipment statistics -->
-                <!-- Delivery Performance -->
-                <div class="col-lg-6 col-xxl-4 order-2 order-xxl-2">
-                  <div class="card h-100">
-                    <div class="card-header d-flex justify-content-between">
-                      <div>
-                        <h5 class="card-title mb-1">Kinerja Pengiriman</h5>
-                        <p class="card-subtitle mb-0">12% peningkatan di bulan ini</p>
-                      </div>
-                      <div class="dropdown">
-                        <button
-                          class="btn btn-text-secondary rounded-pill text-muted border-0 p-1"
-                          type="button"
-                          id="deliveryPerformance"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false">
-                          <i class="ri-more-2-line ri-20px"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="deliveryPerformance">
-                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <ul class="p-0 m-0">
-                        <li class="d-flex mb-6 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded-3 bg-label-primary"
-                              ><i class="ri-gift-line ri-24px"></i
-                            ></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0 fw-normal">Paket dalam pengiriman</h6>
-                              <small class="text-success fw-normal d-block">
-                                <i class="ri-arrow-up-s-line ri-24px"></i>
-                                25.8%
-                              </small>
-                            </div>
-                            <div class="user-progress">
-                              <h6 class="mb-0">10k</h6>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-6 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded-3 bg-label-info"
-                              ><i class="ri-car-line ri-24px"></i
-                            ></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0 fw-normal">Paket keluar untuk pengiriman</h6>
-                              <small class="text-success fw-normal d-block">
-                                <i class="ri-arrow-up-s-line ri-24px"></i>
-                                4.3%
-                              </small>
-                            </div>
-                            <div class="user-progress">
-                              <h6 class="mb-0">5k</h6>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-6 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded-3 bg-label-success"
-                              ><i class="ri-check-line text-success ri-24px"></i
-                            ></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0 fw-normal">Paket yang dikirim</h6>
-                              <small class="text-danger fw-normal d-block">
-                                <i class="ri-arrow-down-s-line ri-24px"></i>
-                                12.5
-                              </small>
-                            </div>
-                            <div class="user-progress">
-                              <h6 class="mb-0">15k</h6>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-6 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded-3 bg-label-warning"
-                              ><i class="ri-home-line ri-24px"></i
-                            ></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0 fw-normal">Tingkat keberhasilan pengiriman</h6>
-                              <small class="text-success fw-normal d-block">
-                                <i class="ri-arrow-up-s-line ri-24px"></i>
-                                35.6%
-                              </small>
-                            </div>
-                            <div class="user-progress">
-                              <h6 class="mb-0">95%</h6>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex mb-6 pb-1">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded-3 bg-label-secondary"
-                              ><i class="ri-timer-line ri-24px"></i
-                            ></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0 fw-normal">Rata-rata waktu pengiriman</h6>
-                              <small class="text-danger fw-normal d-block">
-                                <i class="ri-arrow-down-s-line ri-24px"></i>
-                                2.15
-                              </small>
-                            </div>
-                            <div class="user-progress">
-                              <h6 class="mb-0">2.5 Days</h6>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="d-flex">
-                          <div class="avatar flex-shrink-0 me-3">
-                            <span class="avatar-initial rounded-3 bg-label-danger"
-                              ><i class="ri-user-line ri-24px"></i
-                            ></span>
-                          </div>
-                          <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                            <div class="me-2">
-                              <h6 class="mb-0 fw-normal">Kepuasan pelanggan</h6>
-                              <small class="text-success fw-normal d-block">
-                                <i class="ri-arrow-up-s-line ri-24px"></i>
-                                5.7%
-                              </small>
-                            </div>
-                            <div class="user-progress">
-                              <h6 class="mb-0">4.5/5</h6>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <!--/ Delivery Performance -->
-                <!-- Reasons for delivery exceptions -->
-                <div class="col-md-6 col-xxl-4 order-1 order-xxl-3">
-                  <div class="card h-100">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                      <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">Alasan untuk pengecualian pengiriman</h5>
-                      </div>
-                      <div class="dropdown">
-                        <button
-                          class="btn btn-text-secondary rounded-pill text-muted border-0 p-1"
-                          type="button"
-                          id="deliveryExceptionsReasons"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false">
-                          <i class="ri-more-2-line ri-20px"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="deliveryExceptionsReasons">
-                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div id="deliveryExceptionsChart"></div>
-                    </div>
-                  </div>
-                </div>
-                <!--/ Reasons for delivery exceptions -->
-                <!-- Orders by Countries -->
-                <div class="col-md-6 col-xxl-4 order-0 order-xxl-4">
-                  <div class="card h-100">
-                    <div class="card-header d-flex justify-content-between">
-                      <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">Pesanan berdasarkan Negara</h5>
-                        <span class="text-body mb-0">62 pengiriman sedang dalam proses</span>
-                      </div>
-                      <div class="dropdown">
-                        <button
-                          class="btn btn-text-secondary rounded-pill text-muted border-0 p-1"
-                          type="button"
-                          id="ordersCountries"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false">
-                          <i class="ri-more-2-line ri-20px"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="ordersCountries">
-                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-body p-0">
-                      <div class="nav-align-top">
-                        <ul class="nav nav-tabs nav-fill" role="tablist">
-                          <li class="nav-item">
-                            <button
-                              type="button"
-                              class="nav-link active"
-                              role="tab"
-                              data-bs-toggle="tab"
-                              data-bs-target="#navs-justified-new"
-                              aria-controls="navs-justified-new"
-                              aria-selected="true">
-                              Baru
-                            </button>
-                          </li>
-                          <li class="nav-item">
-                            <button
-                              type="button"
-                              class="nav-link"
-                              role="tab"
-                              data-bs-toggle="tab"
-                              data-bs-target="#navs-justified-link-preparing"
-                              aria-controls="navs-justified-link-preparing"
-                              aria-selected="false">
-                              Persiapan
-                            </button>
-                          </li>
-                          <li class="nav-item">
-                            <button
-                              type="button"
-                              class="nav-link"
-                              role="tab"
-                              data-bs-toggle="tab"
-                              data-bs-target="#navs-justified-link-shipping"
-                              aria-controls="navs-justified-link-shipping"
-                              aria-selected="false">
-                              Pengiriman
-                            </button>
-                          </li>
-                        </ul>
-                        <div class="tab-content border-0 pb-0 px-6 mx-1">
-                          <div class="tab-pane fade show active" id="navs-justified-new" role="tabpanel">
-                            <ul class="timeline mb-0">
-                              <li class="timeline-item ps-6 border-left-dashed">
-                                <span class="timeline-indicator-advanced text-success border-0 shadow-none">
-                                  <i class="ri-checkbox-circle-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-success text-uppercase">sender</small>
-                                  </div>
-                                  <h6 class="my-50">Myrtle Ullrich</h6>
-                                  <p class="mb-0 small">101 Boulder, California(CA), 95959</p>
-                                </div>
-                              </li>
-                              <li class="timeline-item ps-6 border-transparent">
-                                <span class="timeline-indicator-advanced text-primary border-0 shadow-none">
-                                  <i class="ri-map-pin-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-primary text-uppercase">Receiver</small>
-                                  </div>
-                                  <h6 class="my-50">Barry Schowalter</h6>
-                                  <p class="mb-0 small">939 Orange, California(CA), 92118</p>
-                                </div>
-                              </li>
-                            </ul>
-                            <div class="border-1 border-light border-top border-dashed mb-2"></div>
-                            <ul class="timeline mb-0">
-                              <li class="timeline-item ps-6 border-left-dashed">
-                                <span class="timeline-indicator-advanced text-success border-0 shadow-none">
-                                  <i class="ri-checkbox-circle-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-success text-uppercase">sender</small>
-                                  </div>
-                                  <h6 class="my-50">Veronica Herman</h6>
-                                  <p class="mb-0 small">162 Windsor, California(CA), 95492</p>
-                                </div>
-                              </li>
-                              <li class="timeline-item ps-6 border-transparent">
-                                <span class="timeline-indicator-advanced text-primary border-0 shadow-none">
-                                  <i class="ri-map-pin-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-primary text-uppercase">Receiver</small>
-                                  </div>
-                                  <h6 class="my-50">Helen Jacobs</h6>
-                                  <p class="mb-0 small">487 Sunset, California(CA), 94043</p>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="tab-pane fade" id="navs-justified-link-preparing" role="tabpanel">
-                            <ul class="timeline mb-0">
-                              <li class="timeline-item ps-6 border-left-dashed">
-                                <span class="timeline-indicator-advanced text-success border-0 shadow-none">
-                                  <i class="ri-checkbox-circle-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-success text-uppercase">sender</small>
-                                  </div>
-                                  <h6 class="my-50">Barry Schowalter</h6>
-                                  <p class="mb-0 small">939 Orange, California(CA), 92118</p>
-                                </div>
-                              </li>
-                              <li class="timeline-item ps-6 border-transparent border-left-dashed">
-                                <span class="timeline-indicator-advanced text-primary border-0 shadow-none">
-                                  <i class="ri-map-pin-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-primary text-uppercase">Receiver</small>
-                                  </div>
-                                  <h6 class="my-50">Myrtle Ullrich</h6>
-                                  <p class="mb-0 small">101 Boulder, California(CA), 95959</p>
-                                </div>
-                              </li>
-                            </ul>
-                            <div class="border-1 border-light border-top border-dashed mb-2"></div>
-                            <ul class="timeline mb-0">
-                              <li class="timeline-item ps-6 border-left-dashed">
-                                <span class="timeline-indicator-advanced text-success border-0 shadow-none">
-                                  <i class="ri-checkbox-circle-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-success text-uppercase">sender</small>
-                                  </div>
-                                  <h6 class="my-50">Veronica Herman</h6>
-                                  <p class="mb-0 small">162 Windsor, California(CA), 95492</p>
-                                </div>
-                              </li>
-                              <li class="timeline-item ps-6 border-transparent">
-                                <span class="timeline-indicator-advanced text-primary border-0 shadow-none">
-                                  <i class="ri-map-pin-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-primary text-uppercase">Receiver</small>
-                                  </div>
-                                  <h6 class="my-50">Helen Jacobs</h6>
-                                  <p class="mb-0 small">487 Sunset, California(CA), 94043</p>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="tab-pane fade" id="navs-justified-link-shipping" role="tabpanel">
-                            <ul class="timeline mb-0">
-                              <li class="timeline-item ps-6 border-left-dashed">
-                                <span class="timeline-indicator-advanced text-success border-0 shadow-none">
-                                  <i class="ri-checkbox-circle-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-success text-uppercase">sender</small>
-                                  </div>
-                                  <h6 class="my-50">Veronica Herman</h6>
-                                  <p class="mb-0 small">101 Boulder, California(CA), 95959</p>
-                                </div>
-                              </li>
-                              <li class="timeline-item ps-6 border-transparent">
-                                <span class="timeline-indicator-advanced text-primary border-0 shadow-none">
-                                  <i class="ri-map-pin-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-primary text-uppercase">Receiver</small>
-                                  </div>
-                                  <h6 class="my-50">Barry Schowalter</h6>
-                                  <p class="mb-0 small">939 Orange, California(CA), 92118</p>
-                                </div>
-                              </li>
-                            </ul>
-                            <div class="border-1 border-light border-top border-dashed mb-2"></div>
-                            <ul class="timeline mb-0">
-                              <li class="timeline-item ps-6 border-left-dashed">
-                                <span class="timeline-indicator-advanced text-success border-0 shadow-none">
-                                  <i class="ri-checkbox-circle-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-success text-uppercase">sender</small>
-                                  </div>
-                                  <h6 class="my-50">Myrtle Ullrich</h6>
-                                  <p class="mb-0 small">162 Windsor, California(CA), 95492</p>
-                                </div>
-                              </li>
-                              <li class="timeline-item ps-6 border-transparent">
-                                <span class="timeline-indicator-advanced text-primary border-0 shadow-none">
-                                  <i class="ri-map-pin-line ri-20px"></i>
-                                </span>
-                                <div class="timeline-event ps-1">
-                                  <div class="timeline-header">
-                                    <small class="text-primary text-uppercase">Receiver</small>
-                                  </div>
-                                  <h6 class="my-50">Helen Jacobs</h6>
-                                  <p class="mb-0 small">487 Sunset, California(CA), 94043</p>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!--/ Orders by Countries -->
-                <!-- On route vehicles Table -->
-                <div class="col-12 order-5">
+              <h4 class="mb-1 mt-10">List Of Values</h4>
+              <p class="mb-6">
+                Peran menyediakan akses ke menu dan fitur yang telah ditentukan sehingga tergantung pada peran yang ditetapkan, seorang
+                administrator dapat memiliki akses ke apa yang dibutuhkan pengguna.
+              </p>
+              <!-- Role cards -->
+              <div class="row g-6">
+                <div class="col-xl-3 col-lg-4 col-md-4">
                   <div class="card">
-                    <div class="card-header d-flex align-items-center justify-content-between">
-                      <div class="card-title mb-0">
-                        <h5 class="m-0 me-2">Kendaraan dalam perjalanan</h5>
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-4">
+                        <p class="mb-0">Total 5 Vehicles</p>
                       </div>
-                      <div class="dropdown">
-                        <button
-                          class="btn btn-text-secondary rounded-pill text-muted border-0 p-1"
-                          type="button"
-                          id="routeVehicles"
-                          data-bs-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false">
-                          <i class="ri-more-2-line ri-20px"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="routeVehicles">
-                          <a class="dropdown-item" href="javascript:void(0);">Select All</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-                          <a class="dropdown-item" href="javascript:void(0);">Share</a>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="role-heading">
+                          <h5 class="mb-1">Vehicle</h5>
+                        </div>
+                        <!-- Icon Mata Biru -->
+                        <div>
+                          <i class="ri-eye-line" style="font-size: 24px; color: blue;"></i>
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+                
+                <!-- User Role Card -->
+                <div class="col-xl-3 col-lg-4 col-md-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-4">
+                        <p class="mb-0">Total 5 Users</p>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="role-heading">
+                          <h5 class="mb-1">User</h5>
+                        </div>
+                        <!-- Icon Mata Biru -->
+                        <div>
+                          <i class="ri-eye-line" style="font-size: 24px; color: blue;"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            
+                <!-- Location Role Card -->
+                <div class="col-xl-3 col-lg-4 col-md-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-4">
+                        <p class="mb-0">Total 5 Locations</p>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="role-heading">
+                          <h5 class="mb-1">Location</h5>
+                        </div>
+                        <!-- Icon Mata Biru -->
+                        <div>
+                          <i class="ri-eye-line" style="font-size: 24px; color: blue;"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            
+                <!-- Driver Role Card -->
+                <div class="col-xl-3 col-lg-4 col-md-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-4">
+                        <p class="mb-0">Total 5 Drivers</p>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="role-heading">
+                          <h5 class="mb-1">Driver</h5>
+                        </div>
+                        <!-- Icon Mata Biru -->
+                        <div>
+                          <i class="ri-eye-line" style="font-size: 24px; color: blue;"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            
+                <!-- Roles Role Card -->
+                <div class="col-xl-3 col-lg-4 col-md-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-4">
+                        <p class="mb-0">Total 5 Roles</p>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="role-heading">
+                          <h5 class="mb-1">Roles</h5>
+                          </a>
+                        </div>
+                        <!-- Icon Mata Biru -->
+                        <div>
+                          <i class="ri-eye-line" style="font-size: 24px; color: blue;"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-12">
+                  <!-- Role Table -->
+                  <div class="card">
+                    <!-- Add New Button -->
                     <div class="card-datatable table-responsive">
-                      <table class="dt-route-vehicles table">
+                      <table class="datatables-users table">
                         <thead>
                           <tr>
                             <th></th>
                             <th></th>
-                            <th>lokasi</th>
-                            <th>rute awal</th>
-                            <th>rute akhir</th>
-                            <th>peringatan</th>
-                            <th class="w-20">progress</th>
+                            <th>Lov Code</th>
+                            <th>Lov Value</th>
+                            <th>Lov Parent</th>
+                            <th>Status</th>
+                            <th>Actions</th>
                           </tr>
                         </thead>
                       </table>
                     </div>
                   </div>
+                  <!--/ Role Table -->
+                  <!-- Modal View/Edit -->
+                    <!-- Modal -->
+              
+              <!-- Add Role Modal -->
+              <!-- Add Role Modal -->
+              <div class="modal fade" id="addRoleModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-simple modal-dialog-centered modal-add-new-role">
+                  <div class="modal-content">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body p-0">
+                      <div class="text-center mb-6">
+                        <h4 class="role-title mb-2 pb-0">Tambah LOV</h4>
+                        <p>Set LOV details</p>
+                      </div>
+                      <!-- Add LOV form -->
+                      <form id="addLovForm" class="row g-3" onsubmit="return false">
+                        <div class="col-12 mb-3">
+                          <div class="form-floating form-floating-outline">
+                            <input
+                              type="text"
+                              id="modalLovCode"
+                              name="modalLovCode"
+                              class="form-control"
+                              placeholder="Enter LOV code"
+                              tabindex="-1" />
+                            <label for="modalLovCode">LOV Code</label>
+                          </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                          <div class="form-floating form-floating-outline">
+                            <input
+                              type="text"
+                              id="modalLovValue"
+                              name="modalLovValue"
+                              class="form-control"
+                              placeholder="Enter LOV value"
+                              tabindex="-1" />
+                            <label for="modalLovValue">LOV Value</label>
+                          </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                          <div class="form-floating form-floating-outline">
+                            <select id="modalLovParent" name="modalLovParent" class="form-select">
+                              <option value="">No Parent</option>
+                              <option value="vehicle">Vehicle</option>
+                              <option value="user">User</option>
+                              <option value="location">Location</option>
+                              <option value="driver">Driver</option>
+                              <option value="roles">Roles</option>
+                            </select>
+                            <label for="modalLovParent">LOV Parent</label>
+                          </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                          <label class="form-label">Status</label>
+                          <div class="d-flex align-items-center">
+                            <div class="form-check me-4">
+                              <input class="form-check-input" type="radio" name="status" id="statusActive" value="active" checked />
+                              <label class="form-check-label" for="statusActive"> Active </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="status" id="statusInactive" value="inactive" />
+                              <label class="form-check-label" for="statusInactive"> Inactive </label>
+                            </div>
+                          </div>
+                        </div>                        
+                        <div class="col-12 d-flex flex-wrap justify-content-center gap-4 row-gap-4">
+                          <button type="submit" class="btn btn-primary">Save</button>
+                          <button
+                            type="reset"
+                            class="btn btn-outline-secondary"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                            Cancel
+                          </button>
+                        </div>
+                      </form>
+                      <!--/ Add LOV form -->
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--/ On route vehicles Table -->
+              <div class="modal fade" id="actionModal" tabindex="-1" aria-labelledby="actionModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog modal-lg modal-simple modal-dialog-centered modal-ve">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="actionModalLabel">Record Details</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="actionForm">
+                        <div class="mb-3">
+                          <label for="lov_code" class="form-label">Lov Code</label>
+                          <input type="text" class="form-control" id="lov_code" readonly>
+                        </div>
+                        <div class="mb-3">
+                          <label for="lov_value" class="form-label">Lov Value</label>
+                          <input type="text" class="form-control" id="lov_value" readonly>
+                        </div>
+                        <div class="mb-3">
+                          <label for="lov_parent" class="form-label">Lov Parent</label>
+                          <input type="text" class="form-control" id="lov_parent" readonly>
+                        </div>
+                        <div class="mb-3">
+                          <label for="status" class="form-label">Status</label>
+                          <input type="text" class="form-control" id="status" readonly>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" id="saveChanges">Save Changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--/ Add Role Modal -->
+
+              <!-- / Add Role Modal -->
             </div>
             <!--/ Content -->
-
+            <!-- Modal View/Edit -->
             <div class="content-backdrop fade"></div>
           </div>
           <!--/ Content wrapper -->
@@ -1481,15 +1006,18 @@
     <script src="assets/vendor/js/menu.js"></script>
 
     <!-- endbuild -->
-
     <!-- Vendors JS -->
-    <script src="assets/vendor/libs/apex-charts/apexcharts.js"></script>
     <script src="assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+
+    <script src="assets/vendor/libs/@form-validation/popular.js"></script>
+    <script src="assets/vendor/libs/@form-validation/bootstrap5.js"></script>
+    <script src="assets/vendor/libs/@form-validation/auto-focus.js"></script>
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="assets/js/app-logistics-dashboard.js"></script>
+    <script src="assets/js/lov.js"></script>
+    <script src="assets/js/modal-add-lov.js"></script>
   </body>
 </html>
