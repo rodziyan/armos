@@ -1,5 +1,86 @@
 'use strict';
 
+/* CSS for dropdown */
+const css = `
+  .form-select {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+.bg-label-success {
+  background-color: #ffffff !important;
+  color: #155724 !important;
+}
+
+.bg-label-secondary {
+  background-color: #ffffff !important;
+  color: #6c757d !important;
+}
+
+.form-select option {
+  background-color: #fff !important;
+  color: #000 !important;
+`;
+
+document.querySelectorAll('#status option').forEach(option => {
+  if (option.dataset.color) {
+    option.classList.add(`bg-label-${option.dataset.color}`);
+  }
+});
+
+function createUpdateModal() {
+  return `
+  <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="updateModalLabel">Update Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="lov_code" class="form-label">Code</label>
+              <input type="text" class="form-control" id="lov_code" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="lov_value" class="form-label">Value</label>
+              <input type="text" class="form-control" id="lov_value" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="lov_parent" class="form-label">Parent</label>
+              <input type="text" class="form-control" id="lov_parent" readonly>
+            </div>
+            <div class="mb-3">
+            <label for="status" class="form-label">Status</label>
+            <select class="form-select" id="status">
+              <option value="1" data-color="success">Active</option>
+              <option value="2" data-color="secondary">Inactive</option>
+            </select>
+          </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  `;
+}
+
+// Function to append the modal to the body
+function appendModalToBody() {
+  // Append modal HTML to the body if it doesn't already exist
+  if (!document.getElementById('updateModal')) {
+    document.body.insertAdjacentHTML('beforeend', createUpdateModal());
+  }
+}
+
+// Call this function to ensure the modal is added to the DOM
+appendModalToBody();
+
 // Menambahkan CSS ke dalam halaman melalui JavaScript
 $(document).ready(function () {
   var css = `
@@ -102,14 +183,48 @@ $(function () {
           orderable: false,
           render: function (data, type, full, meta) {
             return (
-              '<div class="d-flex align-items-center gap-50">' +
-              '<a href="javascript:void(0);" class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect waves-light modal-ve" data-id="' +
-              full['id'] +
-              '" title="View"><i class="ri-eye-line ri-20px"></i></a>' +
-              '<a href="javascript:void(0);" class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect waves-light modal-ve" data-id="' +
-              full['id'] +
-              '" title="Edit"><i class="ri-pencil-line ri-20px"></i></a>' +
-              '</div>'
+              '<button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect modalTrigger updateModal" ' +
+              'style="border: none;" ' +
+              'data-id="' +
+              full.id +
+              '" ' +
+              'data-lov_code="' +
+              full.lov_code +
+              '" ' +
+              'data-lov_value="' +
+              full.lov_value +
+              '" ' +
+              'data-lov_parent="' +
+              full.lov_parent +
+              '" ' +
+              'data-status="' +
+              full.status +
+              '" ' +
+              'data-bs-toggle="tooltip" ' +
+              'title="Update">' +
+              '<i class="ri-pencil-line ri-20px"></i>' +
+              '</button>' +
+              '<button type="button" class="btn btn-sm btn-info btn-icon rounded-pill waves-effect modalTrigger updateModal" ' +
+              'style="border: none;" ' +
+              'data-id="' +
+              full.id +
+              '" ' +
+              'data-lov_code="' +
+              full.lov_code +
+              '" ' +
+              'data-lov_value="' +
+              full.lov_value +
+              '" ' +
+              'data-lov_parent="' +
+              full.lov_parent +
+              '" ' +
+              'data-status="' +
+              full.status +
+              '" ' +
+              'data-bs-toggle="tooltip" ' +
+              'title="View">' +
+              '<i class="ri-eye-line ri-20px"></i>' +
+              '</button>'
             );
           }
         }
@@ -149,16 +264,36 @@ $(function () {
 });
 
 $(document).ready(function () {
-  $('#dtUserTable').on('click', 'modal-ve', function () {
+  $('body').on('click', '.updateModal', function () {
     var id = $(this).data('id');
-    var rowData = dt_User.row($(this).closest('tr')).data();
+    var lovCode = $(this).data('lov_code');
+    var lovValue = $(this).data('lov_value');
+    var lovParent = $(this).data('lov_parent');
+    var status = $(this).data('status');
 
-    $('#lov_code').val(rowData.lov_code);
-    $('#lov_value').val(rowData.lov_value);
-    $('#lov_parent').val(rowData.lov_parent);
-    $('#status').val(rowData.status);
+    // Set input values
+    $('#lov_code').val(lovCode);
+    $('#lov_value').val(lovValue);
+    $('#lov_parent').val(lovParent);
 
-    var myModal = new bootstrap.Modal(document.getElementById('actionModal'));
+    // Define status mappings
+    var statusMap = {
+      1: { title: 'Active', class: 'bg-label-success' },
+      2: { title: 'Inactive', class: 'bg-label-secondary' }
+    };
+
+    // Update status dropdown
+    var $statusDropdown = $('#status');
+    $statusDropdown.val(status);
+
+    // Update class for dropdown based on selected status
+    $statusDropdown.removeClass('bg-label-success bg-label-secondary');
+    if (statusMap[status]) {
+      $statusDropdown.addClass(statusMap[status].class);
+    }
+
+    // Show the modal
+    var myModal = new bootstrap.Modal(document.getElementById('updateModal'));
     myModal.show();
   });
 });
