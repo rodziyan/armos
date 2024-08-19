@@ -244,6 +244,31 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 `;
 
+  const driverPayoutHTML = `
+  <div id="driver" class="content-section">
+    <div class="card mb-5">
+      <h5 class="card-header">Driver Payout Settings</h5>
+      <form class="card-body" action="app-driver-payout-management.html" method="get">
+        <div class="row g-4">
+          <!-- Payout Type -->
+          <div class="col-md-12 mb-3">
+            <label for="payoutType" class="form-label">Payout Type</label>
+            <select class="form-select" id="payoutType">
+              <option value="trip">Trip</option>
+              <option value="ritase">Ritase</option>
+            </select>
+          </div>
+          <!-- Save and Cancel buttons -->
+          <div class="pt-4">
+            <a href="javascript:void(0)" class="btn btn-primary me-4" onclick="saveDriverPayoutSettings()">Save</a>
+            <a href="javascript:void(0)" class="btn btn-outline-secondary" onclick="cancelDriverPayoutSettings()">Cancel</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+`;
+
   // Function to show a section
   function showSection(sectionId) {
     const sections = document.querySelectorAll('.content-section');
@@ -269,7 +294,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Add all HTML content to the content area
   const contentArea = document.querySelector('.app-email-content .container.mt-5');
   if (contentArea) {
-    contentArea.innerHTML = companyDetailHTML + systemSettingHTML + orderManagementHTML + routeMeHTML;
+    contentArea.innerHTML =
+      companyDetailHTML + systemSettingHTML + orderManagementHTML + routeMeHTML + driverPayoutHTML;
   }
 
   // Show initial section

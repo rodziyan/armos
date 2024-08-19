@@ -1,0 +1,154 @@
+{
+  "data": [
+    {
+      "trip_id": 1,
+      "faktur_number": "F001",
+      "tanggal": "2024-08-01",
+      "status": 1
+    },
+    {
+      "trip_id": 2,
+      "faktur_number": "F002",
+      "tanggal": "2024-08-02",
+      "status": 2
+    },
+    {
+      "trip_id": 3,
+      "faktur_number": "F003",
+      "tanggal": "2024-08-03",
+      "status": 1
+    },
+    {
+      "trip_id": 4,
+      "faktur_number": "F004",
+      "tanggal": "2024-08-04",
+      "status": 2
+    },
+    {
+      "trip_id": 5,
+      "faktur_number": "F005",
+      "tanggal": "2024-08-05",
+      "status": 1
+    },
+    {
+      "trip_id": 6,
+      "faktur_number": "F006",
+      "tanggal": "2024-08-06",
+      "status": 2
+    },
+    {
+      "trip_id": 7,
+      "faktur_number": "F007",
+      "tanggal": "2024-08-07",
+      "status": 1
+    },
+    {
+      "trip_id": 8,
+      "faktur_number": "F008",
+      "tanggal": "2024-08-08",
+      "status": 2
+    },
+    {
+      "trip_id": 9,
+      "faktur_number": "F009",
+      "tanggal": "2024-08-09",
+      "status": 1
+    },
+    {
+      "trip_id": 10,
+      "faktur_number": "F010",
+      "tanggal": "2024-08-10",
+      "status": 2
+    },
+    {
+      "trip_id": 11,
+      "faktur_number": "F011",
+      "tanggal": "2024-08-11",
+      "status": 1
+    },
+    {
+      "trip_id": 12,
+      "faktur_number": "F012",
+      "tanggal": "2024-08-12",
+      "status": 2
+    },
+    {
+      "trip_id": 13,
+      "faktur_number": "F013",
+      "tanggal": "2024-08-13",
+      "status": 1
+    },
+    {
+      "trip_id": 14,
+      "faktur_number": "F014",
+      "tanggal": "2024-08-14",
+      "status": 2
+    },
+    {
+      "trip_id": 15,
+      "faktur_number": "F015",
+      "tanggal": "2024-08-15",
+      "status": 1
+    },
+    {
+      "trip_id": 16,
+      "faktur_number": "F016",
+      "tanggal": "2024-08-16",
+      "status": 2
+    },
+    {
+      "trip_id": 17,
+      "faktur_number": "F017",
+      "tanggal": "2024-08-17",
+      "status": 1
+    },
+    {
+      "trip_id": 18,
+      "faktur_number": "F018",
+      "tanggal": "2024-08-18",
+      "status": 2
+    },
+    {
+      "trip_id": 19,
+      "faktur_number": "F019",
+      "tanggal": "2024-08-19",
+      "status": 1
+    },
+    {
+      "trip_id": 20,
+      "faktur_number": "F020",
+      "tanggal": "2024-08-20",
+      "status": 2
+    },
+    {
+      "trip_id": 21,
+      "faktur_number": "F021",
+      "tanggal": "2024-08-21",
+      "status": 1
+    },
+    {
+      "trip_id": 22,
+      "faktur_number": "F022",
+      "tanggal": "2024-08-22",
+      "status": 2
+    },
+    {
+      "trip_id": 23,
+      "faktur_number": "F023",
+      "tanggal": "2024-08-23",
+      "status": 1
+    },
+    {
+      "trip_id": 24,
+      "faktur_number": "F024",
+      "tanggal": "2024-08-24",
+      "status": 2
+    },
+    {
+      "trip_id": 25,
+      "faktur_number": "F025",
+      "tanggal": "2024-08-25",
+      "status": 1
+    }
+  ]
+}

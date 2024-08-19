@@ -1,0 +1,229 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "tanggal": "2024-08-14",
+      "total_drop_hari_ini": 150,
+      "status": 1,
+      "nama_toko": "Toko A",
+      "total_barang": 300,
+      "action": "action"
+    },
+    {
+      "id": 2,
+      "tanggal": "2024-08-16",
+      "total_drop_hari_ini": 200,
+      "status": 2,
+      "nama_toko": "Toko B",
+      "total_barang": 450,
+      "action": "action"
+    },
+    {
+      "id": 3,
+      "tanggal": "2024-08-13",
+      "total_drop_hari_ini": 175,
+      "status": 1,
+      "nama_toko": "Toko C",
+      "total_barang": 320,
+      "action": "action"
+    },
+    {
+      "id": 4,
+      "tanggal": "2024-08-15",
+      "total_drop_hari_ini": 190,
+      "status": 1,
+      "nama_toko": "Toko D",
+      "total_barang": 400,
+      "action": "action"
+    },
+    {
+      "id": 5,
+      "tanggal": "2024-08-12",
+      "total_drop_hari_ini": 160,
+      "status": 2,
+      "nama_toko": "Toko E",
+      "total_barang": 350,
+      "action": "action"
+    },
+    {
+      "id": 6,
+      "tanggal": "2024-08-18",
+      "total_drop_hari_ini": 210,
+      "status": 1,
+      "nama_toko": "Toko F",
+      "total_barang": 500,
+      "action": "action"
+    },
+    {
+      "id": 7,
+      "tanggal": "2024-08-10",
+      "total_drop_hari_ini": 130,
+      "status": 2,
+      "nama_toko": "Toko G",
+      "total_barang": 270,
+      "action": "action"
+    },
+    {
+      "id": 8,
+      "tanggal": "2024-08-11",
+      "total_drop_hari_ini": 145,
+      "status": 1,
+      "nama_toko": "Toko H",
+      "total_barang": 295,
+      "action": "action"
+    },
+    {
+      "id": 9,
+      "tanggal": "2024-08-17",
+      "total_drop_hari_ini": 185,
+      "status": 2,
+      "nama_toko": "Toko I",
+      "total_barang": 430,
+      "action": "action"
+    },
+    {
+      "id": 10,
+      "tanggal": "2024-08-09",
+      "total_drop_hari_ini": 120,
+      "status": 1,
+      "nama_toko": "Toko J",
+      "total_barang": 250,
+      "action": "action"
+    },
+    {
+      "id": 11,
+      "tanggal": "2024-08-20",
+      "total_drop_hari_ini": 225,
+      "status": 2,
+      "nama_toko": "Toko K",
+      "total_barang": 520,
+      "action": "action"
+    },
+    {
+      "id": 12,
+      "tanggal": "2024-08-19",
+      "total_drop_hari_ini": 195,
+      "status": 1,
+      "nama_toko": "Toko L",
+      "total_barang": 480,
+      "action": "action"
+    },
+    {
+      "id": 13,
+      "tanggal": "2024-08-08",
+      "total_drop_hari_ini": 110,
+      "status": 2,
+      "nama_toko": "Toko M",
+      "total_barang": 230,
+      "action": "action"
+    },
+    {
+      "id": 14,
+      "tanggal": "2024-08-21",
+      "total_drop_hari_ini": 240,
+      "status": 1,
+      "nama_toko": "Toko N",
+      "total_barang": 550,
+      "action": "action"
+    },
+    {
+      "id": 15,
+      "tanggal": "2024-08-07",
+      "total_drop_hari_ini": 105,
+      "status": 1,
+      "nama_toko": "Toko O",
+      "total_barang": 215,
+      "action": "action"
+    },
+    {
+      "id": 16,
+      "tanggal": "2024-08-22",
+      "total_drop_hari_ini": 260,
+      "status": 2,
+      "nama_toko": "Toko P",
+      "total_barang": 600,
+      "action": "action"
+    },
+    {
+      "id": 17,
+      "tanggal": "2024-08-06",
+      "total_drop_hari_ini": 95,
+      "status": 1,
+      "nama_toko": "Toko Q",
+      "total_barang": 190,
+      "action": "action"
+    },
+    {
+      "id": 18,
+      "tanggal": "2024-08-23",
+      "total_drop_hari_ini": 275,
+      "status": 2,
+      "nama_toko": "Toko R",
+      "total_barang": 650,
+      "action": "action"
+    },
+    {
+      "id": 19,
+      "tanggal": "2024-08-05",
+      "total_drop_hari_ini": 85,
+      "status": 1,
+      "nama_toko": "Toko S",
+      "total_barang": 175,
+      "action": "action"
+    },
+    {
+      "id": 20,
+      "tanggal": "2024-08-24",
+      "total_drop_hari_ini": 290,
+      "status": 1,
+      "nama_toko": "Toko T",
+      "total_barang": 700,
+      "action": "action"
+    },
+    {
+      "id": 21,
+      "tanggal": "2024-08-04",
+      "total_drop_hari_ini": 75,
+      "status": 2,
+      "nama_toko": "Toko U",
+      "total_barang": 150,
+      "action": "action"
+    },
+    {
+      "id": 22,
+      "tanggal": "2024-08-25",
+      "total_drop_hari_ini": 305,
+      "status": 1,
+      "nama_toko": "Toko V",
+      "total_barang": 750,
+      "action": "action"
+    },
+    {
+      "id": 23,
+      "tanggal": "2024-08-03",
+      "total_drop_hari_ini": 70,
+      "status": 2,
+      "nama_toko": "Toko W",
+      "total_barang": 140,
+      "action": "action"
+    },
+    {
+      "id": 24,
+      "tanggal": "2024-08-26",
+      "total_drop_hari_ini": 320,
+      "status": 1,
+      "nama_toko": "Toko X",
+      "total_barang": 800,
+      "action": "action"
+    },
+    {
+      "id": 25,
+      "tanggal": "2024-08-02",
+      "total_drop_hari_ini": 65,
+      "status": 2,
+      "nama_toko": "Toko Y",
+      "total_barang": 130,
+      "action": "action"
+    }
+  ]
+}

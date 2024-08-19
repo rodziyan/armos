@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Driver Assignment - Pages | Armos</title>
+    <title>Payout - Pages | Armos</title>
 
     <meta name="description" content="" />
 
@@ -39,6 +39,9 @@
     <link rel="stylesheet" href="assets/vendor/css/rtl/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="assets/vendor/css/rtl/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="assets/css/demo.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
@@ -710,57 +713,58 @@
           </div>
         </aside>
         <!-- / Menu -->
+        <style>
+          .container-xxxl {
+              padding-left: 15px; 
+              padding-right: 15px; 
+          }
+          .row {
+              margin-left: -15px; 
+              margin-right: -15px; 
+          }
+          .row > .col {
+              padding-left: 15px; 
+              padding-right: 15px; 
+          }
+      </style>
+             <!-- Content -->
+              <div class="container-xxxl flex-grow-1 container-p-y">
+                <div class="row g-6 mb-6 mt-8"></div>
 
-            <!-- Content -->
-            <style>
-              .container-xxxl {
-                  padding-left: 15px; 
-                  padding-right: 15px; 
-              }
-              .row {
-                  margin-left: -15px; 
-                  margin-right: -15px; 
-              }
-              .row > .col {
-                  padding-left: 15px; 
-                  padding-right: 15px; 
-              }
-          </style>
-            <div class="container-xxxl flex-grow-1 container-p-y">
-              <div class="row g-6 mb-6 mt-8">
-              </div>
-              <!-- Users List Table -->
-              <div class="card">
-                <div class="card-header border-bottom">
-                  <h5 class="card-title mb-0">Filters</h5>
-                  <div class="d-flex justify-content-left align-items-center row gx-5 pt-4 gap-md-0">
-                    <div class="col-md-4 user_driver"></div>
-                    <div class="col-md-4 user_status"></div>
-                  </div>
+                <!-- Users List Table -->
+                <div class="card">
+                  <div class="card-header border-bottom">
+                    <h5 class="card-title mb-0">Filters</h5>
+                    <div class="d-flex justify-content-left align-items-center row gx-5 pt-4 gap-md-0">
+                      <div class="col-md-4">
+                        <input type="text" id="date-range" class="form-control" placeholder="Select Date Range" />
+                      </div>                                                                                      
+                        <div class="col-md-4">
+                            <select id="filter-nama-kendaraan" class="form-select select2" placeholder="Select 2">
+                                <option value="">Select 2</option>
+                                <option value="">Paid</option>
+                                <option value="">Unpaid</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-datatable table-responsive">
-                  <table class="datatables-users table">
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <th>ID</th>
-                        <th>Driver</th>
-                        <th>Kendaraan</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                      </tr>
-                    </thead>
-                  </table>
-                </div>                
+                
+                    <div class="card-datatable table-responsive">
+                        <table class="datatables-payout table">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Trip Id</th>
+                                    <th>No Faktur</th>
+                                    <th>Tanggal</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
               </div>
-            </div>
             <!--/ Content -->
-
-
-            <div class="content-backdrop fade"></div>
-          </div>
-          <!--/ Content wrapper -->
-        </div>
 
         <!--/ Layout container -->
       </div>
@@ -773,6 +777,22 @@
     <div class="drag-target"></div>
 
     <!--/ Layout wrapper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        flatpickr('#date-range', {
+          mode: 'range',
+          dateFormat: 'Y-m-d',
+          onChange: function (selectedDates, dateStr, instance) {
+            console.log('Selected Dates:', selectedDates);
+            console.log('Date Range String:', dateStr);
+            // Add filtering logic here if needed
+          }
+        });
+      });
+    </script>
+
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -802,6 +822,6 @@
     <script src="assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="assets/js/app-driver-assigment.js"></script>
+    <script src="assets/js/payout.js"></script>
   </body>
 </html>
