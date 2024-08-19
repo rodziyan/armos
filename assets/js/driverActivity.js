@@ -144,8 +144,8 @@ $(document).ready(function () {
               full.status +
               '" ' +
               'data-bs-toggle="tooltip" ' +
-              'title="Edit">' +
-              '<i class="ri-pencil-line ri-20px"></i>' +
+              'title="View">' +
+              '<i class="ri-eye-line ri-20px"></i>' +
               '</button>'
             );
           }
