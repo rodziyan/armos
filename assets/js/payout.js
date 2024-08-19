@@ -7,7 +7,7 @@ $(function () {
     dt_payout_table.DataTable({
       ajax: assetsPath + 'json/payout.json',
       columns: [
-        { data: null },
+        { data: null, defaultContent: '' }, // Use null and set defaultContent to avoid errors
         { data: 'trip_id' },
         { data: 'faktur_number' },
         { data: 'tanggal' },
@@ -28,31 +28,24 @@ $(function () {
         },
         {
           targets: 1,
-          orderable: false,
-          render: function () {
-            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
-          }
-        },
-        {
-          targets: 2,
           render: function (data, type, full) {
             return '<span>' + full['trip_id'] + '</span>';
           }
         },
         {
-          targets: 3,
+          targets: 2,
           render: function (data, type, full) {
             return '<span>' + full['faktur_number'] + '</span>';
           }
         },
         {
-          targets: 4,
+          targets: 3,
           render: function (data, type, full) {
             return '<span>' + full['tanggal'] + '</span>';
           }
         },
         {
-          targets: 5,
+          targets: 4,
           render: function (data, type, full) {
             var statusObj = {
               1: { title: 'Paid', class: 'bg-label-success' },
@@ -68,7 +61,7 @@ $(function () {
           }
         }
       ],
-      order: [[4, 'desc']], // Default sorting on Tanggal column
+      order: [[3, 'desc']], // Default sorting on Tanggal column
       dom:
         '<"row"' +
         '<"col-md-6 d-flex align-items-center justify-content-start"<"dt-action-buttons"B>>' +

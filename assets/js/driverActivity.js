@@ -129,7 +129,7 @@ $(document).ready(function () {
               '</span>';
 
             return (
-              '<button type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect modalTrigger" ' +
+              '<button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect modalTrigger" ' +
               'style="border: none;" ' +
               'data-trip-id="' +
               full.id + // Changed from full.trip_id to full.id
