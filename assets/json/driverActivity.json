@@ -7,6 +7,7 @@
       "status": 1,
       "nama_toko": "Toko A",
       "total_barang": 300,
+      "faktur_number": "F0001",
       "action": "action"
     },
     {
@@ -16,6 +17,7 @@
       "status": 2,
       "nama_toko": "Toko B",
       "total_barang": 450,
+      "faktur_number": "F0002",
       "action": "action"
     },
     {
@@ -25,6 +27,7 @@
       "status": 1,
       "nama_toko": "Toko C",
       "total_barang": 320,
+      "faktur_number": "F0003",
       "action": "action"
     },
     {
@@ -34,6 +37,7 @@
       "status": 1,
       "nama_toko": "Toko D",
       "total_barang": 400,
+      "faktur_number": "F0004",
       "action": "action"
     },
     {
@@ -43,6 +47,7 @@
       "status": 2,
       "nama_toko": "Toko E",
       "total_barang": 350,
+      "faktur_number": "F0005",
       "action": "action"
     },
     {
@@ -52,6 +57,7 @@
       "status": 1,
       "nama_toko": "Toko F",
       "total_barang": 500,
+      "faktur_number": "F0006",
       "action": "action"
     },
     {
@@ -61,6 +67,7 @@
       "status": 2,
       "nama_toko": "Toko G",
       "total_barang": 270,
+      "faktur_number": "F0007",
       "action": "action"
     },
     {
@@ -70,6 +77,7 @@
       "status": 1,
       "nama_toko": "Toko H",
       "total_barang": 295,
+      "faktur_number": "F0008",
       "action": "action"
     },
     {
@@ -79,6 +87,7 @@
       "status": 2,
       "nama_toko": "Toko I",
       "total_barang": 430,
+      "faktur_number": "F0009",
       "action": "action"
     },
     {
@@ -88,6 +97,7 @@
       "status": 1,
       "nama_toko": "Toko J",
       "total_barang": 250,
+      "faktur_number": "F0010",
       "action": "action"
     },
     {
@@ -97,6 +107,7 @@
       "status": 2,
       "nama_toko": "Toko K",
       "total_barang": 520,
+      "faktur_number": "F0011",
       "action": "action"
     },
     {
@@ -106,6 +117,7 @@
       "status": 1,
       "nama_toko": "Toko L",
       "total_barang": 480,
+      "faktur_number": "F0012",
       "action": "action"
     },
     {
@@ -115,6 +127,7 @@
       "status": 2,
       "nama_toko": "Toko M",
       "total_barang": 230,
+      "faktur_number": "F0013",
       "action": "action"
     },
     {
@@ -124,6 +137,7 @@
       "status": 1,
       "nama_toko": "Toko N",
       "total_barang": 550,
+      "faktur_number": "F0014",
       "action": "action"
     },
     {
@@ -133,6 +147,7 @@
       "status": 1,
       "nama_toko": "Toko O",
       "total_barang": 215,
+      "faktur_number": "F0015",
       "action": "action"
     },
     {
@@ -142,6 +157,7 @@
       "status": 2,
       "nama_toko": "Toko P",
       "total_barang": 600,
+      "faktur_number": "F0016",
       "action": "action"
     },
     {
@@ -151,6 +167,7 @@
       "status": 1,
       "nama_toko": "Toko Q",
       "total_barang": 190,
+      "faktur_number": "F0017",
       "action": "action"
     },
     {
@@ -160,6 +177,7 @@
       "status": 2,
       "nama_toko": "Toko R",
       "total_barang": 650,
+      "faktur_number": "F0018",
       "action": "action"
     },
     {
@@ -169,6 +187,7 @@
       "status": 1,
       "nama_toko": "Toko S",
       "total_barang": 175,
+      "faktur_number": "F0019",
       "action": "action"
     },
     {
@@ -178,6 +197,7 @@
       "status": 1,
       "nama_toko": "Toko T",
       "total_barang": 700,
+      "faktur_number": "F0020",
       "action": "action"
     },
     {
@@ -187,6 +207,7 @@
       "status": 2,
       "nama_toko": "Toko U",
       "total_barang": 150,
+      "faktur_number": "F0021",
       "action": "action"
     },
     {
@@ -196,6 +217,7 @@
       "status": 1,
       "nama_toko": "Toko V",
       "total_barang": 750,
+      "faktur_number": "F0022",
       "action": "action"
     },
     {
@@ -205,6 +227,7 @@
       "status": 2,
       "nama_toko": "Toko W",
       "total_barang": 140,
+      "faktur_number": "F0023",
       "action": "action"
     },
     {
@@ -214,6 +237,7 @@
       "status": 1,
       "nama_toko": "Toko X",
       "total_barang": 800,
+      "faktur_number": "F0024",
       "action": "action"
     },
     {
@@ -223,6 +247,7 @@
       "status": 2,
       "nama_toko": "Toko Y",
       "total_barang": 130,
+      "faktur_number": "F0025",
       "action": "action"
     }
   ]

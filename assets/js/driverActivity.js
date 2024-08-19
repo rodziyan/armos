@@ -46,6 +46,7 @@ $(document).ready(function () {
       columns: [
         { data: '' },
         { data: 'id' },
+        { data: 'faktur_number' },
         { data: 'tanggal' },
         { data: 'total_drop_hari_ini' },
         { data: 'status' },
@@ -76,17 +77,24 @@ $(document).ready(function () {
           targets: 2,
           responsivePriority: 4,
           render: function (data, type, full, meta) {
-            return '<span>' + (full['tanggal'] || 'N/A') + '</span>';
+            return '<span>' + (full['faktur_number'] || 'N/A') + '</span>';
           }
         },
         {
           targets: 3,
+          responsivePriority: 4,
+          render: function (data, type, full, meta) {
+            return '<span>' + (full['tanggal'] || 'N/A') + '</span>';
+          }
+        },
+        {
+          targets: 4,
           render: function (data, type, full, meta) {
             return '<span>' + (full['total_drop_hari_ini'] || 'N/A') + '</span>';
           }
         },
         {
-          targets: 4,
+          targets: 5,
           render: function (data, type, full, meta) {
             var $status = full['status'];
             var statusObj = {
@@ -115,16 +123,16 @@ $(document).ready(function () {
             };
             var statusBadge =
               '<span class="badge rounded-pill ' +
-              statusObj[full.status].class +
+              statusObj[full.status]?.class +
               '">' +
-              statusObj[full.status].title +
+              statusObj[full.status]?.title +
               '</span>';
 
             return (
               '<button type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect modalTrigger" ' +
               'style="border: none;" ' +
               'data-trip-id="' +
-              full.trip_id +
+              full.id + // Changed from full.trip_id to full.id
               '" ' +
               'data-nama-toko="' +
               full.nama_toko +
@@ -164,7 +172,11 @@ $(document).ready(function () {
         2: { title: 'Incomplete', class: 'bg-label-secondary' }
       };
       $('#modalStatus').html(
-        '<span class="badge rounded-pill ' + statusObj[status].class + '">' + statusObj[status].title + '</span>'
+        '<span class="badge rounded-pill ' +
+          (statusObj[status]?.class || 'bg-label-default') +
+          '">' +
+          (statusObj[status]?.title || 'Unknown') +
+          '</span>'
       );
 
       // Display modal
