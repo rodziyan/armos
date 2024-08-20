@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="assets/vendor/libs/select2/select2.css" />
 
     <!-- Page CSS -->
-
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- Helpers -->
     <script src="assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -729,123 +729,140 @@
                   <div class="card mb-6">
                       <h5 class="card-header">Form Detail Kendaraan</h5>
                       <form class="card-body" action="app-vehicle-management.html" method="get">
-                          <div class="row g-6">
-                                <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <input type="text" id="vehicle-name" class="form-control" placeholder="Hino Dutro Cargo" />
-                                      <label for="vehicle-name">Nama Kendaraan</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <select id="vehicle-brand" class="form-select select2" data-allow-clear="true">
-                                          <option value="">Pilih Brand Kendaraan</option>
-                                          <option value="Toyota">Toyota</option>
-                                          <option value="Honda">Honda</option>
-                                          <option value="Ford">Ford</option>
-                                          <option value="BMW">BMW</option>
-                                          <!-- Add more options as needed -->
-                                      </select>
-                                      <label for="vehicle-brand">Brand Kendaraan</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <select id="vehicle-model" class="form-select select2" data-allow-clear="true">
-                                          <option value="">Pilih Model Kendaraan</option>
-                                          <option value="Model A">Model A</option>
-                                          <option value="Model B">Model B</option>
-                                          <option value="Model C">Model C</option>
-                                          <!-- Add more options as needed -->
-                                      </select>
-                                      <label for="vehicle-model">Model Kendaraan</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <select id="engine-type" class="form-select select2" data-allow-clear="true">
-                                          <option value="">Pilih Bahan Bakar Kendaraan</option>
-                                          <option value="Petrol">Petrol</option>
-                                          <option value="Diesel">Diesel</option>
-                                          <option value="Electric">Electric</option>
-                                          <option value="Hybrid">Hybrid</option>
-                                      </select>
-                                      <label for="engine-type">Bahan Bakar Kendaraan</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <select id="vehicle-type" class="form-select select2" data-allow-clear="true">
-                                          <option value="">Pilih Tipe Kendaraan</option>
-                                          <option value="Sedan">Sedan</option>
-                                          <option value="SUV">SUV</option>
-                                          <option value="Truck">Truck</option>
-                                          <option value="Van">Van</option>
-                                      </select>
-                                      <label for="vehicle-type">Tipe Kendaraan</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <input type="text" id="vehicle-years" class="form-control" placeholder="e.g. 2020" />
-                                      <label for="vehicle-years">Tahun Kendaraan</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <input type="text" id="license-plate" class="form-control" placeholder="e.g. ABC1234" />
-                                      <label for="license-plate">Plat Nomor Kendaraan</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <input type="date" id="expired-plate" class="form-control" />
-                                      <label for="expired-plate">Pajak Plat Nomor</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <select id="vehicle-group" class="form-select select2" data-allow-clear="true">
-                                          <option value="">Pilih Grup Kendaraan</option>
-                                          <option value="Group 1">Group 1</option>
-                                          <option value="Group 2">Group 2</option>
-                                          <option value="Group 3">Group 3</option>
-                                          <!-- Add more options as needed -->
-                                      </select>
-                                      <label for="vehicle-group">Grup Kendaraan</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <input type="file" id="vehicle-image" class="form-control" />
-                                      <label for="vehicle-image">Gambar Kendaraan</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <input type="number" id="vehicle-length" class="form-control" placeholder="Length in cm" />
-                                      <label for="vehicle-length">Panjang Muatan (cm)</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <input type="number" id="vehicle-width" class="form-control" placeholder="Width in cm" />
-                                      <label for="vehicle-width">Lebar Muatan (cm)</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <input type="number" id="vehicle-height" class="form-control" placeholder="Height in cm" />
-                                      <label for="vehicle-height">Tinggi Muatan (cm)</label>
-                                  </div>
-                              </div>
-                              <div class="col-md-6">
+                        <div class="row g-6">
+                            <!-- Plat Nomor Kendaraan -->
+                            <div class="col-md-6">
                                 <div class="form-floating form-floating-outline">
-                                    <input type="number" id="vehicle-capacity" class="form-control" placeholder="Capacity in %" />
-                                    <label for="vehicle-capacity">Kapasitas Maximal (%)</label>
+                                    <input type="text" id="license-plate" class="form-control" placeholder="e.g. ABC1234" />
+                                    <label for="license-plate">Plat Nomor Kendaraan</label>
                                 </div>
                             </div>
-                          </div>
+                    
+                            <!-- Pajak Kendaraan -->
+                            <div class="col-md-6">
+                              <div class="form-floating form-floating-outline">
+                                  <input type="text" id="tax-expiration" class="form-control" placeholder="dd mm yyyy" />
+                                  <label for="tax-expiration">Pajak Kendaraan</label>
+                              </div>
+                          </div>                     
+                    
+                            <!-- Nomor STNK -->
+                            <div class="col-md-6">
+                                <div class="form-floating form-floating-outline">
+                                    <input type="text" id="stnk-number" class="form-control" placeholder="e.g. 123456789" />
+                                    <label for="stnk-number">Nomor STNK</label>
+                                </div>
+                            </div>
+                    
+                            <!-- Vehicle Tipe -->
+                            <div class="col-md-6">
+                                <div class="form-floating form-floating-outline">
+                                    <select id="vehicle-type" class="form-select select2" data-allow-clear="true">
+                                        <option value="">Pilih Tipe Kendaraan</option>
+                                        <option value="PICK UP BOX">PICK UP BOX</option>
+                                        <option value="TRUCK BOX">TRUCK BOX</option>
+                                        <option value="TRUCK BOX BAN DOUBLE">TRUCK BOX BAN DOUBLE</option>
+                                        <option value="LIGHT TRUCK BOX">LIGHT TRUCK BOX</option>
+                                        <option value="MINI BUS">MINI BUS</option>
+                                        <option value="BLIND VAN">BLIND VAN</option>
+                                        <option value="TRUCK DROOP SIDE">TRUCK DROOP SIDE</option>
+                                    </select>
+                                    <label for="vehicle-type">Vehicle Tipe</label>
+                                </div>
+                            </div>
+                    
+                            <!-- Location -->
+                            <div class="col-md-6">
+                                <div class="form-floating form-floating-outline">
+                                    <input type="text" id="location" class="form-control" placeholder="e.g. Jakarta" />
+                                    <label for="location">Location</label>
+                                </div>
+                            </div>
+                    
+                            <!-- Jenis Pelanggan Khusus -->
+                            <div class="col-md-6">
+                                <div class="form-floating form-floating-outline">
+                                    <select id="customer-type" class="form-select select2" data-allow-clear="true">
+                                        <option value="">Pilih Jenis Pelanggan Khusus</option>
+                                        <option value="Pelanggan Reguler">Pelanggan Reguler</option>
+                                        <option value="Pelanggan Premium">Pelanggan Premium</option>
+                                        <option value="Pelanggan Bisnis">Pelanggan Bisnis</option>
+                                        <option value="Pelanggan VIP">Pelanggan VIP</option>
+                                        <option value="Pelanggan Khusus">Pelanggan Khusus</option>
+                                    </select>
+                                    <label for="customer-type">Jenis Pelanggan Khusus</label>
+                                </div>
+                            </div>
+                    
+                            <!-- Area -->
+                            <div class="col-md-6">
+                                <div class="form-floating form-floating-outline">
+                                    <select id="area" class="form-select select2" data-allow-clear="true">
+                                        <option value="">Pilih Area</option>
+                                        <option value="Wilayah 1">Wilayah 1</option>
+                                        <option value="Wilayah 2">Wilayah 2</option>
+                                        <option value="Wilayah 3">Wilayah 3</option>
+                                        <option value="Wilayah 4">Wilayah 4</option>
+                                        <option value="Wilayah 5">Wilayah 5</option>
+                                    </select>
+                                    <label for="area">Area</label>
+                                </div>
+                            </div>
+                    
+                            <!-- Pelanggan -->
+                            <div class="col-md-6">
+                                <div class="form-floating form-floating-outline">
+                                    <select id="customer" class="form-select select2" data-allow-clear="true">
+                                        <option value="">Pilih Pelanggan</option>
+                                        <option value="Customer A">Customer A</option>
+                                        <option value="Customer B">Customer B</option>
+                                        <option value="Customer C">Customer C</option>
+                                        <option value="Customer D">Customer D</option>
+                                        <option value="Customer E">Customer E</option>
+                                    </select>
+                                    <label for="customer">Pelanggan</label>
+                                </div>
+                            </div>
+                    
+                            <!-- Product -->
+                            <div class="col-md-6">
+                                <div class="form-floating form-floating-outline">
+                                    <select id="product" class="form-select select2" data-allow-clear="true">
+                                        <option value="">Pilih Product</option>
+                                        <option value="Produk A">Produk A</option>
+                                        <option value="Produk B">Produk B</option>
+                                        <option value="Produk C">Produk C</option>
+                                        <option value="Produk D">Produk D</option>
+                                        <option value="Produk E">Produk E</option>
+                                    </select>
+                                    <label for="product">Product</label>
+                                </div>
+                            </div>
+                    
+                            <!-- KM/L -->
+                            <div class="col-md-6">
+                                <div class="form-floating form-floating-outline">
+                                    <input type="number" id="km-per-liter" class="form-control" placeholder="e.g. 12" />
+                                    <label for="km-per-liter">KM/L (untuk bahan bakar)</label>
+                                </div>
+                            </div>
+                            <div class="row mt-5">
+                              <!-- Start Hours -->
+                              <div class="col-md-3">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="time" id="start-hours" class="form-control" />
+                                      <label for="start-hours">Start Hours</label>
+                                  </div>
+                              </div>
+                              
+                              <!-- End Hours -->
+                              <div class="col-md-3">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="time" id="end-hours" class="form-control" />
+                                      <label for="end-hours">End Hours</label>
+                                  </div>
+                              </div>
+                          </div>               
                           <div class="col-md-6 mt-5">
                             <div class="form-check form-switch">
                                 <input type="checkbox" class="form-check-input" id="is-active" />
@@ -868,6 +885,12 @@
         <!--/ Layout container -->
       </div>
     </div>
+
+    <script>
+      flatpickr("#tax-expiration", {
+          dateFormat: "d m Y", // Format dd mm yyyy
+      });
+      </script>
 
     <!-- Overlay -->
     <div class="layout-overlay layout-menu-toggle"></div>

@@ -9,139 +9,226 @@ $(function () {
     });
   });
 
-  function createUpdateModal() {
+  function createViewModal() {
     // Modal HTML structure
     var modalHTML = `
-            <link rel="stylesheet" href="https://unpkg.com/remixicon/fonts/remixicon.css">
-              <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-simple modal-edit-user">
-                  <div class="modal-content">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-body p-0">
-                      <div class="text-center mb-6">
-                        <h4 class="mb-2">Perbarui Informasi Kendaraan</h4>
-                        <p class="mb-6">Memperbarui informasi kendaraan mungkin melibatkan pemeriksaan privasi.</p>
-                      </div>
-                      <form id="updateForm" class="row g-5" onsubmit="return false">
-                        <!-- Icon and Arrow -->
-                        <div class="col-12 text-center mb-3">
-                          <div class="d-flex justify-content-center align-items-center">
+       <link rel="stylesheet" href="https://unpkg.com/remixicon/fonts/remixicon.css">
+        <!-- Modal View -->
+        <div class="modal fade" id="showDetails" tabindex="-1" aria-labelledby="showDetailsLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-simple modal-edit-user">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body p-0">
+                <div class="text-center mb-6">
+                    <h4 class="mb-2">Informasi Kendaraan</h4>
+                </div>
+                <form id="updateForm" class="row g-5" onsubmit="return false">
+                    <!-- Icon -->
+                    <div class="col-12 text-center mb-3">
+                        <div class="d-flex justify-content-center align-items-center">
                             <i class="ri-truck-fill" style="font-size: 50px; margin-right: 8px;"></i>
-                          </div>
                         </div>
-                        <!-- Vehicle Details -->
-                        <div class="col-12">
-                          <div class="form-floating form-floating-outline">
+                    </div>
+                    
+                    <!-- Vehicle Details -->
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
                             <input
-                              type="text"
-                              id="platNomor"
-                              name="platNomor"
-                              class="form-control"
-                              placeholder="Masukkan nomor plat" />
-                            <label for="platNomor">Nomor Plat</label>
-                          </div>
+                                type="text"
+                                id="modalVehicleType"
+                                name="vehicleType"
+                                class="form-control"
+                                placeholder="Jenis Kendaraan" />
+                            <label for="modalVehicleType">Jenis Kendaraan</label>
                         </div>
-                        <div class="col-12">
-                          <div class="form-floating form-floating-outline">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
                             <input
-                              type="text"
-                              id="namaKendaraan"
-                              name="namaKendaraan"
-                              class="form-control"
-                              placeholder="Masukkan nama kendaraan" />
-                            <label for="namaKendaraan">Nama Kendaraan</label>
-                          </div>
+                                type="text"
+                                id="modalTruckHeight"
+                                name="truckHeight"
+                                class="form-control"
+                                placeholder="Tinggi Truck" />
+                            <label for="modalTruckHeight">Tinggi Truck</label>
                         </div>
-                        <div class="col-12">
-                          <div class="form-floating form-floating-outline">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
                             <input
-                              type="text"
-                              id="vehicleType"
-                              name="vehicleType"
-                              class="form-control"
-                              placeholder="Masukkan jenis kendaraan" />
-                            <label for="vehicleType">Jenis Kendaraan</label>
-                          </div>
+                                type="text"
+                                id="modalTruckWidth"
+                                name="truckWidth"
+                                class="form-control"
+                                placeholder="Lebar Truck" />
+                            <label for="modalTruckWidth">Lebar Truck</label>
                         </div>
-                        <div class="col-12">
-                          <div class="form-floating form-floating-outline">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
                             <input
-                              type="text"
-                              id="expiredPajak"
-                              name="expiredPajak"
-                              class="form-control"
-                              placeholder="Masukkan tanggal pajak kadaluarsa" />
-                            <label for="expiredPajak">Tanggal Pajak Kadaluarsa</label>
-                          </div>
+                                type="text"
+                                id="modalTruckLength"
+                                name="truckLength"
+                                class="form-control"
+                                placeholder="Panjang Truck" />
+                            <label for="modalTruckLength">Panjang Truck</label>
                         </div>
-                        <div class="col-12">
-                          <div class="form-floating form-floating-outline">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
                             <input
-                              type="text"
-                              id="brand"
-                              name="brand"
-                              class="form-control"
-                              placeholder="Masukkan merk kendaraan" />
-                            <label for="brand">Merk Kendaraan</label>
-                          </div>
+                                type="text"
+                                id="modalCargoHeight"
+                                name="cargoHeight"
+                                class="form-control"
+                                placeholder="Tinggi Cargo" />
+                            <label for="modalCargoHeight">Tinggi Cargo</label>
                         </div>
-                        <div class="col-12">
-                          <div class="form-floating form-floating-outline">
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
                             <input
-                              type="text"
-                              id="model"
-                              name="model"
-                              class="form-control"
-                              placeholder="Masukkan model kendaraan" />
-                            <label for="model">Model Kendaraan</label>
-                          </div>
+                                type="text"
+                                id="modalCargoWidth"
+                                name="cargoWidth"
+                                class="form-control"
+                                placeholder="Lebar Cargo" />
+                            <label for="modalCargoWidth">Lebar Cargo</label>
                         </div>
-                        <div class="col-12 text-center d-flex flex-wrap justify-content-center gap-4 row-gap-4">
-                          <button type="submit" class="btn btn-primary">Perbarui</button>
-                          <button
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
+                            <input
+                                type="text"
+                                id="modalCargoLength"
+                                name="cargoLength"
+                                class="form-control"
+                                placeholder="Panjang Cargo" />
+                            <label for="modalCargoLength">Panjang Cargo</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
+                            <input
+                                type="text"
+                                id="modalCargoMinVolume"
+                                name="cargoMinVolume"
+                                class="form-control"
+                                placeholder="Volume Minimum Cargo" />
+                            <label for="modalCargoMinVolume">Volume Minimum Cargo</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
+                            <input
+                                type="text"
+                                id="modalCargoMaxVolume"
+                                name="cargoMaxVolume"
+                                class="form-control"
+                                placeholder="Volume Maksimum Cargo" />
+                            <label for="modalCargoMaxVolume">Volume Maksimum Cargo</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
+                            <input
+                                type="text"
+                                id="modalCargoMinKg"
+                                name="cargoMinKg"
+                                class="form-control"
+                                placeholder="Berat Minimum Cargo" />
+                            <label for="modalCargoMinKg">Berat Minimum Cargo</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
+                            <input
+                                type="text"
+                                id="modalCargoMaxKg"
+                                name="cargoMaxKg"
+                                class="form-control"
+                                placeholder="Berat Maksimum Cargo" />
+                            <label for="modalCargoMaxKg">Berat Maksimum Cargo</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
+                            <input
+                                type="text"
+                                id="modalMinRevenue"
+                                name="minRevenue"
+                                class="form-control"
+                                placeholder="Pendapatan Minimum" />
+                            <label for="modalMinRevenue">Pendapatan Minimum</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
+                            <input
+                                type="text"
+                                id="modalProductRestriction"
+                                name="productRestriction"
+                                class="form-control"
+                                placeholder="Pembatasan Produk" />
+                            <label for="modalProductRestriction">Produk</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
+                            <input
+                                type="text"
+                                id="modalAreaRestriction"
+                                name="areaRestriction"
+                                class="form-control"
+                                placeholder="Pembatasan Wilayah" />
+                            <label for="modalAreaRestriction">Wilayah</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
+                            <input
+                                type="text"
+                                id="modalCustomerType"
+                                name="customerType"
+                                class="form-control"
+                                placeholder="Tipe Pelanggan" />
+                            <label for="modalCustomerType">Tipe Pelanggan</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
+                            <input
+                                type="text"
+                                id="modalCustomerRestriction"
+                                name="customerRestriction"
+                                class="form-control"
+                                placeholder="Pelanggan Spesific" />
+                            <label for="modalCustomerRestriction">Pembatasan Pelanggan</label>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center d-flex flex-wrap justify-content-center gap-4 row-gap-4">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button
                             type="reset"
                             class="btn btn-outline-secondary"
                             data-bs-dismiss="modal"
                             aria-label="Close">
                             Batal
-                          </button>
-                        </div>
-                      </form>
+                        </button>
                     </div>
-                  </div>
-                </div>
-              </div>
-            `;
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+    `;
     // Append the modal HTML to the body
     $('body').append(modalHTML);
   }
 
   // Create and append the modal when the document is ready
-  createUpdateModal();
-
-  // Function to show the update modal with data
-  function showUpdateModal(data) {
-    $('#platNomor').val(data.plat_nomor);
-    $('#namaKendaraan').val(data.nama_kendaraan);
-    $('#vehicleType').val(data.type);
-    $('#expiredPajak').val(data.expired_pajak);
-    $('#brand').val(data.brand);
-    $('#model').val(data.model);
-    $('#updateModal').modal('show');
-  }
-
-  // Event listener for the update button
-  $(document).on('click', '.updateModal', function () {
-    var data = {
-      plat_nomor: $(this).data('plat-nomor'),
-      nama_kendaraan: $(this).data('nama-kendaraan'),
-      type: $(this).data('type'),
-      expired_pajak: $(this).data('expired-pajak'),
-      brand: $(this).data('brand'),
-      model: $(this).data('model')
-    };
-    showUpdateModal(data);
-  });
+  createViewModal();
 
   // Initialize DataTable
   var dt_vehicle_table = $('.datatables-vehicles');
@@ -150,13 +237,22 @@ $(function () {
       ajax: assetsPath + 'json/vehicle-management.json', // JSON file to add data
       columns: [
         { data: 'id' },
-        { data: 'plat_nomor' },
-        { data: 'status' },
-        { data: 'expired_pajak' },
-        { data: 'nama_kendaraan' },
-        { data: 'brand' },
-        { data: 'model' },
-        { data: 'type' },
+        { data: 'vehicle_type' },
+        { data: 'truck_height' },
+        { data: 'truck_width' },
+        { data: 'truck_length' },
+        { data: 'cargo_height' },
+        { data: 'cargo_width' },
+        { data: 'cargo_length' },
+        { data: 'cargo_min_volume' },
+        { data: 'cargo_max_volume' },
+        { data: 'cargo_min_kg' },
+        { data: 'cargo_max_kg' },
+        { data: 'min_revenue' },
+        { data: 'product_restriction' },
+        { data: 'area_restriction' },
+        { data: 'customer_type' },
+        { data: 'customer_restriction' },
         { data: 'action' }
       ],
       columnDefs: [
@@ -166,13 +262,6 @@ $(function () {
           orderable: false,
           targets: 0,
           render: function () {
-            return '';
-          }
-        },
-        {
-          targets: 1,
-          orderable: false,
-          render: function () {
             return '<input type="checkbox" class="dt-checkboxes form-check-input">';
           },
           checkboxes: {
@@ -180,61 +269,115 @@ $(function () {
           }
         },
         {
+          targets: 1,
+          render: function (data, type, full) {
+            var vehicleType = full['vehicle_type'];
+            return '<span>' + vehicleType + '</span>';
+          }
+        },
+        {
           targets: 2,
           render: function (data, type, full) {
-            var plateNumber = full['plat_nomor'];
-            var expiredPajak = full['expired_pajak'];
-            return (
-              '<div>' +
-              '<span class="d-block fw-bold">' +
-              plateNumber +
-              '</span>' +
-              '<small class="d-block text-muted">' +
-              expiredPajak +
-              '</small>' +
-              '</div>'
-            );
+            var truckHeight = full['truck_height'];
+            return '<span>' + truckHeight + '</span>';
           }
         },
         {
           targets: 3,
           render: function (data, type, full) {
-            var status = full['status'];
-            var statusObj = {
-              1: { title: 'Available', class: 'bg-label-success' },
-              2: { title: 'Unavailable', class: 'bg-label-secondary' }
-            };
-            return (
-              '<span class="badge rounded-pill ' + statusObj[status].class + '">' + statusObj[status].title + '</span>'
-            );
+            var truckWidth = full['truck_width'];
+            return '<span>' + truckWidth + '</span>';
           }
         },
         {
           targets: 4,
           render: function (data, type, full) {
-            var kendaraan = full['nama_kendaraan'];
-            return '<span>' + kendaraan + '</span>';
+            var truckLength = full['truck_length'];
+            return '<span>' + truckLength + '</span>';
           }
         },
         {
           targets: 5,
           render: function (data, type, full) {
-            var brand = full['brand'];
-            return '<span>' + brand + '</span>';
+            var cargoHeight = full['cargo_height'];
+            return '<span>' + cargoHeight + '</span>';
           }
         },
         {
           targets: 6,
           render: function (data, type, full) {
-            var model = full['model'];
-            return '<span>' + model + '</span>';
+            var cargoWidth = full['cargo_width'];
+            return '<span>' + cargoWidth + '</span>';
           }
         },
         {
           targets: 7,
           render: function (data, type, full) {
-            var type = full['type'];
-            return '<span>' + type + '</span>';
+            var cargoLength = full['cargo_length'];
+            return '<span>' + cargoLength + '</span>';
+          }
+        },
+        {
+          targets: 8,
+          render: function (data, type, full) {
+            var cargoMinVolume = full['cargo_min_volume'];
+            return '<span>' + cargoMinVolume + '</span>';
+          }
+        },
+        {
+          targets: 9,
+          render: function (data, type, full) {
+            var cargoMaxVolume = full['cargo_max_volume'];
+            return '<span>' + cargoMaxVolume + '</span>';
+          }
+        },
+        {
+          targets: 10,
+          render: function (data, type, full) {
+            var cargoMinKg = full['cargo_min_kg'];
+            return '<span>' + cargoMinKg + '</span>';
+          }
+        },
+        {
+          targets: 11,
+          render: function (data, type, full) {
+            var cargoMaxKg = full['cargo_max_kg'];
+            return '<span>' + cargoMaxKg + '</span>';
+          }
+        },
+        {
+          targets: 12,
+          render: function (data, type, full) {
+            var minRevenue = full['min_revenue'];
+            return '<span>' + minRevenue + '</span>';
+          }
+        },
+        {
+          targets: 13,
+          render: function (data, type, full) {
+            var productRestriction = full['product_restriction'];
+            return '<span>' + productRestriction + '</span>';
+          }
+        },
+        {
+          targets: 14,
+          render: function (data, type, full) {
+            var areaRestriction = full['area_restriction'];
+            return '<span>' + areaRestriction + '</span>';
+          }
+        },
+        {
+          targets: 15,
+          render: function (data, type, full) {
+            var customerType = full['customer_type'];
+            return '<span>' + customerType + '</span>';
+          }
+        },
+        {
+          targets: 16,
+          render: function (data, type, full) {
+            var customerRestriction = full['customer_restriction'];
+            return '<span>' + customerRestriction + '</span>';
           }
         },
         {
@@ -244,16 +387,26 @@ $(function () {
           orderable: false,
           render: function (data, type, full) {
             return `
-                            <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect updateModal"
-                                data-plat-nomor="${full['plat_nomor']}"
-                                data-nama-kendaraan="${full['nama_kendaraan']}"
-                                data-type="${full['type']}"
-                                data-expired-pajak="${full['expired_pajak']}"
-                                data-brand="${full['brand']}"
-                                data-model="${full['model']}">
-                                <i class="ri-pencil-line ri-20px"></i>
-                            </button>
-                        `;
+            <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect showDetails"
+                data-vehicle-type="${full['vehicle_type']}"
+                data-truck-height="${full['truck_height']}"
+                data-truck-width="${full['truck_width']}"
+                data-truck-length="${full['truck_length']}"
+                data-cargo-height="${full['cargo_height']}"
+                data-cargo-width="${full['cargo_width']}"
+                data-cargo-length="${full['cargo_length']}"
+                data-cargo-min-volume="${full['cargo_min_volume']}"
+                data-cargo-max-volume="${full['cargo_max_volume']}"
+                data-cargo-min-kg="${full['cargo_min_kg']}"
+                data-cargo-max-kg="${full['cargo_max_kg']}"
+                data-min-revenue="${full['min_revenue']}"
+                data-product-restriction="${full['product_restriction']}"
+                data-area-restriction="${full['area_restriction']}"
+                data-customer-type="${full['customer_type']}"
+                data-customer-restriction="${full['customer_restriction']}">
+                <i class="ri-pencil-line ri-20px"></i>
+            </button>
+            `;
           }
         }
       ],
@@ -337,6 +490,48 @@ $(function () {
           }
         }
       }
+    });
+
+    // Event delegation to handle dynamically added buttons
+    $(document).on('click', '.showDetails', function () {
+      // Get data attributes from the button
+      var vehicleType = $(this).data('vehicle-type');
+      var truckHeight = $(this).data('truck-height');
+      var truckWidth = $(this).data('truck-width');
+      var truckLength = $(this).data('truck-length');
+      var cargoHeight = $(this).data('cargo-height');
+      var cargoWidth = $(this).data('cargo-width');
+      var cargoLength = $(this).data('cargo-length');
+      var cargoMinVolume = $(this).data('cargo-min-volume');
+      var cargoMaxVolume = $(this).data('cargo-max-volume');
+      var cargoMinKg = $(this).data('cargo-min-kg');
+      var cargoMaxKg = $(this).data('cargo-max-kg');
+      var minRevenue = $(this).data('min-revenue');
+      var productRestriction = $(this).data('product-restriction');
+      var areaRestriction = $(this).data('area-restriction');
+      var customerType = $(this).data('customer-type');
+      var customerRestriction = $(this).data('customer-restriction');
+
+      // Set modal content
+      $('#modalVehicleType').val(vehicleType);
+      $('#modalTruckHeight').val(truckHeight);
+      $('#modalTruckWidth').val(truckWidth);
+      $('#modalTruckLength').val(truckLength);
+      $('#modalCargoHeight').val(cargoHeight);
+      $('#modalCargoWidth').val(cargoWidth);
+      $('#modalCargoLength').val(cargoLength);
+      $('#modalCargoMinVolume').val(cargoMinVolume);
+      $('#modalCargoMaxVolume').val(cargoMaxVolume);
+      $('#modalCargoMinKg').val(cargoMinKg);
+      $('#modalCargoMaxKg').val(cargoMaxKg);
+      $('#modalMinRevenue').val(minRevenue);
+      $('#modalProductRestriction').val(productRestriction);
+      $('#modalAreaRestriction').val(areaRestriction);
+      $('#modalCustomerType').val(customerType);
+      $('#modalCustomerRestriction').val(customerRestriction);
+
+      var updateModal = new bootstrap.Modal(document.getElementById('showDetails'));
+      updateModal.show();
     });
 
     // Populate dropdowns with unique values from data

@@ -59,6 +59,7 @@
     <script src="assets/vendor/js/template-customizer.js"></script>
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="assets/js/config.js"></script>
+  
   </head>
 
   <body>
@@ -729,7 +730,17 @@
                 <div class="row g-6 mb-6 mt-8"></div>
 
                 <!-- Users List Table -->
-                <div class="card">
+                <div class="button-container">
+                  <!-- Tombol 2: Mengarah ke app-vehicle-management.html -->
+                  <a href="app-vehicle-management.html" class="btn btn-custom me-3">
+                    <span class="sort-card-text">Master Vehicle</span>
+                </a>
+                  <!-- Tombol 1: Mengarah ke vehicle-type.html -->
+                  <a href="vehicle-type.html" class="btn btn-custom me-3">
+                      <span class="sort-card-text">Vehicle Type</span>
+                  </a>
+              </div>  
+                <div class="card mt-3">              
                   <div class="card-header border-bottom">
                     <h5 class="card-title mb-0">Filters</h5>
                     <div class="d-flex justify-content-left align-items-center row gx-5 pt-4 gap-md-0">
@@ -745,20 +756,28 @@
                         </div>
                     </div>
                 </div>
-                
-
+              
                     <div class="card-datatable table-responsive">
                         <table class="datatables-vehicles table">
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th></th>
-                                    <th>Plat Nomor</th>
-                                    <th>Status</th>
-                                    <th>Nama Kendaraan</th>
-                                    <th>Brand</th>
-                                    <th>Model</th>
-                                    <th>Type</th>
+                                    <th>Tipe Kendaraan</th>
+                                    <th>Tinggi Kendaraan (CM)</th>
+                                    <th>Lebar Kendaraan (CM)</th>
+                                    <th>Panjang Kendaraan (CM)</th>
+                                    <th>Tinggi Kargo (CM)</th>
+                                    <th>Lebar Kargo (CM)</th>
+                                    <th>Panjang Kargo (CM)</th>
+                                    <th>Volume min Kargo (CCM)</th>
+                                    <th>Volume max Kargo (CCM)</th>
+                                    <th>min Kargo (KG)</th>
+                                    <th>max Kargo (KG)</th>
+                                    <th>Pendapatan (IDR)</th>
+                                    <th>Product</th>
+                                    <th>Area</th>
+                                    <th>Customer Type</th>
+                                    <th>Customer Specific</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -779,7 +798,7 @@
     <div class="drag-target"></div>
 
     <!--/ Layout wrapper -->
-
+    
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
     <script src="assets/vendor/libs/jquery/jquery.js"></script>
