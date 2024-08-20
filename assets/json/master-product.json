@@ -1,0 +1,184 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "product_SKU": "SKU1001",
+      "Product_height": "15 cm",
+      "product_width": "10 cm",
+      "product_length": "8 cm",
+      "product_restrictions": "Fragile",
+      "action": "action"
+    },
+    {
+      "id": "2",
+      "product_SKU": "SKU1002",
+      "Product_height": "20 cm",
+      "product_width": "15 cm",
+      "product_length": "12 cm",
+      "product_restrictions": "Heat",
+      "action": "action"
+    },
+    {
+      "id": "3",
+      "product_SKU": "SKU1003",
+      "Product_height": "25 cm",
+      "product_width": "20 cm",
+      "product_length": "15 cm",
+      "product_restrictions": "Care",
+      "action": "action"
+    },
+    {
+      "id": "4",
+      "product_SKU": "SKU1004",
+      "Product_height": "30 cm",
+      "product_width": "25 cm",
+      "product_length": "20 cm",
+      "product_restrictions": "Dry",
+      "action": "action"
+    },
+    {
+      "id": "5",
+      "product_SKU": "SKU1005",
+      "Product_height": "35 cm",
+      "product_width": "30 cm",
+      "product_length": "25 cm",
+      "product_restrictions": "Sunlight",
+      "action": "action"
+    },
+    {
+      "id": "6",
+      "product_SKU": "SKU1006",
+      "Product_height": "40 cm",
+      "product_width": "35 cm",
+      "product_length": "30 cm",
+      "product_restrictions": "Cool",
+      "action": "action"
+    },
+    {
+      "id": "7",
+      "product_SKU": "SKU1007",
+      "Product_height": "10 cm",
+      "product_width": "5 cm",
+      "product_length": "5 cm",
+      "product_restrictions": "Children",
+      "action": "action"
+    },
+    {
+      "id": "8",
+      "product_SKU": "SKU1008",
+      "Product_height": "15 cm",
+      "product_width": "10 cm",
+      "product_length": "10 cm",
+      "product_restrictions": "None",
+      "action": "action"
+    },
+    {
+      "id": "9",
+      "product_SKU": "SKU1009",
+      "Product_height": "20 cm",
+      "product_width": "15 cm",
+      "product_length": "15 cm",
+      "product_restrictions": "Fragile",
+      "action": "action"
+    },
+    {
+      "id": "10",
+      "product_SKU": "SKU1010",
+      "Product_height": "25 cm",
+      "product_width": "20 cm",
+      "product_length": "20 cm",
+      "product_restrictions": "Moisture",
+      "action": "action"
+    },
+    {
+      "id": "11",
+      "product_SKU": "SKU1011",
+      "Product_height": "30 cm",
+      "product_width": "25 cm",
+      "product_length": "25 cm",
+      "product_restrictions": "None",
+      "action": "action"
+    },
+    {
+      "id": "12",
+      "product_SKU": "SKU1012",
+      "Product_height": "35 cm",
+      "product_width": "30 cm",
+      "product_length": "30 cm",
+      "product_restrictions": "Stack",
+      "action": "action"
+    },
+    {
+      "id": "13",
+      "product_SKU": "SKU1013",
+      "Product_height": "40 cm",
+      "product_width": "35 cm",
+      "product_length": "35 cm",
+      "product_restrictions": "Gloves",
+      "action": "action"
+    },
+    {
+      "id": "14",
+      "product_SKU": "SKU1014",
+      "Product_height": "10 cm",
+      "product_width": "7 cm",
+      "product_length": "6 cm",
+      "product_restrictions": "Temperature",
+      "action": "action"
+    },
+    {
+      "id": "15",
+      "product_SKU": "SKU1015",
+      "Product_height": "12 cm",
+      "product_width": "8 cm",
+      "product_length": "8 cm",
+      "product_restrictions": "Care",
+      "action": "action"
+    },
+    {
+      "id": "16",
+      "product_SKU": "SKU1016",
+      "Product_height": "18 cm",
+      "product_width": "12 cm",
+      "product_length": "12 cm",
+      "product_restrictions": "Sunlight",
+      "action": "action"
+    },
+    {
+      "id": "17",
+      "product_SKU": "SKU1017",
+      "Product_height": "22 cm",
+      "product_width": "16 cm",
+      "product_length": "16 cm",
+      "product_restrictions": "Cool",
+      "action": "action"
+    },
+    {
+      "id": "18",
+      "product_SKU": "SKU1018",
+      "Product_height": "28 cm",
+      "product_width": "20 cm",
+      "product_length": "20 cm",
+      "product_restrictions": "None",
+      "action": "action"
+    },
+    {
+      "id": "19",
+      "product_SKU": "SKU1019",
+      "Product_height": "32 cm",
+      "product_width": "24 cm",
+      "product_length": "24 cm",
+      "product_restrictions": "Moisture",
+      "action": "action"
+    },
+    {
+      "id": "20",
+      "product_SKU": "SKU1020",
+      "Product_height": "36 cm",
+      "product_width": "28 cm",
+      "product_length": "28 cm",
+      "product_restrictions": "Care",
+      "action": "action"
+    }
+  ]
+}

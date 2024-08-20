@@ -54,9 +54,16 @@ $(function () {
                 </div>
                 <div class="col-12">
                   <div class="form-floating form-floating-outline">
+                  <input type="text" class="form-select" id="plat_no_full" name="plat_no_full" readonly>
+                  <label for="plat_no_full" class="form-label">Vehicle</label>
+                </div>
+                </div>
+                <!--
+                <div class="col-12">
+                  <div class="form-floating form-floating-outline">
                     <select
-                      id="vehicleSelect"
-                      name="vehicleSelect"
+                      id="plat_no"
+                      name="plat_no"
                       class="form-select"
                       aria-label="Select Vehicle">
                       <option value="" selected>Select Vehicle</option>
@@ -72,11 +79,10 @@ $(function () {
                       <option value="Truk box CDD">Truk box CDD</option>
                       <option value="Truk wingbox">Truk wingbox</option>
                     </select>
-                    <label for="vehicleSelect">Vehicle</label>
+                    <label for="plat_no">Vehicle</label>
                   </div>
                 </div>
-
-
+                -->
                 <div class="col-12 text-center d-flex flex-wrap justify-content-center gap-4 row-gap-4">
                   <button type="submit" class="btn btn-primary">Update</button>
                   <button
@@ -128,131 +134,137 @@ $(function () {
       2: { title: 'Inactive', class: 'bg-label-secondary' }
     };
 
-if (select2.length) {
-  var $this = select2;
-  select2Focus($this);
-  $this.wrap('<div class="position-relative"></div>').select2({
-    placeholder: 'Select Country',
-    dropdownParent: $this.parent()
-  });
-}
+  if (select2.length) {
+    var $this = select2;
+    select2Focus($this);
+    $this.wrap('<div class="position-relative"></div>').select2({
+      placeholder: 'Select Country',
+      dropdownParent: $this.parent()
+    });
+  }
 
-// Users datatable
-if (dt_user_table.length) {
-  var dt_user = dt_user_table.DataTable({
-    ajax: assetsPath + 'json/driver-list.json', // JSON file to add data
-    columns: [
-      // columns according to JSON
-      { data: '' },
-      { data: 'id' },
-      { data: 'full_name' },
-      { data: 'kendaraan' },
-      { data: 'status' },
-      { data: 'action' }
-    ],
-    columnDefs: [
-      {
-        // For Responsive
-        className: 'control',
-        searchable: false,
-        orderable: false,
-        responsivePriority: 2,
-        targets: 0,
-        render: function (data, type, full, meta) {
-          return '';
-        }
-      },
-      {
-        // For Checkboxes
-        targets: 1,
-        orderable: false,
-        render: function () {
-          return '<input type="checkbox" class="dt-checkboxes form-check-input">';
-        },
-        checkboxes: {
-          selectAllRender: '<input type="checkbox" class="form-check-input">'
-        }
-      },
-      {
-        // User full name and kendaraan
-        targets: 2,
-        responsivePriority: 4,
-        render: function (data, type, full, meta) {
-          var $name = full['full_name'],
-              $image = full['avatar'];
-          if ($image) {
-            // For Avatar image
-            var $output =
-              '<img src="' + assetsPath + 'img/avatars/' + $image + '" alt="Avatar" class="rounded-circle">';
-          } else {
-            // For Avatar badge
-            var stateNum = Math.floor(Math.random() * 6);
-            var states = ['success', 'danger', 'warning', 'info', 'dark', 'primary', 'secondary'];
-            var $state = states[stateNum],
-                $initials = $name.match(/\b\w/g) || [];
-            $initials = (($initials.shift() || '') + ($initials.pop() || '')).toUpperCase();
-            $output = '<span class="avatar-initial rounded-circle bg-label-' + $state + '">' + $initials + '</span>';
+  // Users datatable
+  if (dt_user_table.length) {
+    var dt_user = dt_user_table.DataTable({
+      ajax: assetsPath + 'json/driver-list.json', // JSON file to add data
+      columns: [
+        // columns according to JSON
+        { data: '' },
+        { data: 'id' },
+        { data: 'full_name' },
+        { data: 'kendaraan' },
+        { data: 'status' },
+        { data: 'action' }
+      ],
+      columnDefs: [
+        {
+          // For Responsive
+          className: 'control',
+          searchable: false,
+          orderable: false,
+          responsivePriority: 2,
+          targets: 0,
+          render: function (data, type, full, meta) {
+            return '';
           }
-          // Creates full output for row
-          var $row_output =
-            '<div class="d-flex justify-content-start align-items-center user-name">' +
-            '<div class="avatar-wrapper">' +
-            '<div class="avatar avatar-sm me-3">' +
-            $output +
-            '</div>' +
-            '</div>' +
-            '<div class="d-flex flex-column">' +
-            '<a href="' +
-            userView +
-            '" class="text-truncate text-heading"><span class="fw-medium">' +
-            $name +
-            '</span></a>' +
-            '</div>' +
-            '</div>';
-          return $row_output;
-        }
-      },
-      {
-        // User kendaraan
-        targets: 3,
-        render: function (data, type, full, meta) {
-          var $kendaraan = full['kendaraan'];
-          return '<span >' + $kendaraan + '</span>';
-        }
-      },
-      {
-        // User Status
-        targets: 4,
-        render: function (data, type, full, meta) {
-          var $status = full['status'];
+        },
+        {
+          // For Checkboxes
+          targets: 1,
+          orderable: false,
+          render: function () {
+            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
+          },
+          checkboxes: {
+            selectAllRender: '<input type="checkbox" class="form-check-input">'
+          }
+        },
+        {
+          // User full name and kendaraan
+          targets: 2,
+          responsivePriority: 4,
+          render: function (data, type, full, meta) {
+            var $name = full['full_name'],
+              $image = full['avatar'];
+            if ($image) {
+              // For Avatar image
+              var $output =
+                '<img src="' + assetsPath + 'img/avatars/' + $image + '" alt="Avatar" class="rounded-circle">';
+            } else {
+              // For Avatar badge
+              var stateNum = Math.floor(Math.random() * 6);
+              var states = ['success', 'danger', 'warning', 'info', 'dark', 'primary', 'secondary'];
+              var $state = states[stateNum],
+                $initials = $name.match(/\b\w/g) || [];
+              $initials = (($initials.shift() || '') + ($initials.pop() || '')).toUpperCase();
+              $output = '<span class="avatar-initial rounded-circle bg-label-' + $state + '">' + $initials + '</span>';
+            }
+            // Creates full output for row
+            var $row_output =
+              '<div class="d-flex justify-content-start align-items-center user-name">' +
+              '<div class="avatar-wrapper">' +
+              '<div class="avatar avatar-sm me-3">' +
+              $output +
+              '</div>' +
+              '</div>' +
+              '<div class="d-flex flex-column">' +
+              '<a href="' +
+              userView +
+              '" class="text-truncate text-heading"><span class="fw-medium">' +
+              $name +
+              '</span></a>' +
+              '</div>' +
+              '</div>';
+            return $row_output;
+          }
+        },
+        {
+          // User kendaraan
+          targets: 3,
+          render: function (data, type, full, meta) {
+            var $kendaraan = full['kendaraan'];
+            return '<span >' + $kendaraan + '</span>';
+          }
+        },
+        {
+          // User Status
+          targets: 4,
+          render: function (data, type, full, meta) {
+            var $status = full['status'];
 
-          return (
-            '<span class="badge rounded-pill ' +
-            statusObj[$status].class +
-            '" text-capitalized>' +
-            statusObj[$status].title +
-            '</span>'
-          );
+            return (
+              '<span class="badge rounded-pill ' +
+              statusObj[$status].class +
+              '" text-capitalized>' +
+              statusObj[$status].title +
+              '</span>'
+            );
+          }
+        },
+        {
+          // Actions
+          targets: -1,
+          title: 'Actions',
+          searchable: false,
+          orderable: false,
+          render: function (data, type, full, meta) {
+            return (
+              '<button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect updateModal" ' +
+              'data-id="' +
+              full.id +
+              '" ' +
+              'data-name="' +
+              full.full_name +
+              '" ' +
+              'data-vehicle="' +
+              full.plat_no +
+              '" ' +
+              'data-bs-toggle="tooltip" title="Update">' +
+              '<i class="ri-pencil-line ri-20px"></i>' +
+              '</button>'
+            );
+          }
         }
-      },
-      {
-        // Actions
-        targets: -1,
-        title: 'Actions',
-        searchable: false,
-        orderable: false,
-        render: function (data, type, full, meta) {
-          return (
-            '<button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect updateModal" ' +
-            'data-id="' + full.id + '" ' +
-            'data-name="' + full.full_name + '" ' +
-            'data-vehicle="' + full.kendaraan + '" ' +
-            'data-bs-toggle="tooltip" title="Update">' +
-            '<i class="ri-pencil-line ri-20px"></i>' +
-            '</button>'
-          );
-        }
-      }           
       ],
       order: [[2, 'desc']],
       dom:
@@ -447,38 +459,38 @@ if (dt_user_table.length) {
       },
       initComplete: function () {
         // Adding status filter once table initialized
-            this.api()
-            .columns(6)
-            .every(function () {
-              var column = this;
-              var select = $(
-                '<select id="FilterTransaction" class="form-select text-capitalize"><option value=""> Select Status </option><option value="1">Active</option><option value="2">Inactive</option></select>'
-              )
-                .appendTo('.user_status')
-                .on('change', function () {
-                  var val = $.fn.dataTable.util.escapeRegex($(this).val());
-                  column.search(val ? '^' + val + '$' : '', true, false).draw();
-                });
-            });
-          // Adding driver filter once table initialized
-          this.api()
-            .columns(5)
-            .every(function () {
-              var column = this;
-              var select = $(
-                '<select id="FilterDriver" class="form-select text-capitalize"><option value="">Select Driver</option><option value="0">Semua</option><option value="1">Memiliki Kendaraan</option><option value="2">Tidak Memiliki Kendaraan</option></select>'
-              )
-                .appendTo('.user_driver')
-                .on('change', function () {
-                  var val = $(this).val();
-                  if (val === "1") {
-                    column.search("^(?!No Vehicle$).*", true, false).draw(); // Matches all except "No Vehicle"
-                  } else if (val === "0") {
-                    column.search("^No Vehicle$", true, false).draw(); // Matches only "No Vehicle"
-                  } else {
-                    column.search("").draw(); // Resets the search
-                  }
-                });
+        this.api()
+          .columns(6)
+          .every(function () {
+            var column = this;
+            var select = $(
+              '<select id="FilterTransaction" class="form-select text-capitalize"><option value=""> Select Status </option><option value="1">Active</option><option value="2">Inactive</option></select>'
+            )
+              .appendTo('.user_status')
+              .on('change', function () {
+                var val = $.fn.dataTable.util.escapeRegex($(this).val());
+                column.search(val ? '^' + val + '$' : '', true, false).draw();
+              });
+          });
+        // Adding driver filter once table initialized
+        this.api()
+          .columns(5)
+          .every(function () {
+            var column = this;
+            var select = $(
+              '<select id="FilterDriver" class="form-select text-capitalize"><option value="">Select Driver</option><option value="0">Semua</option><option value="1">Memiliki Kendaraan</option><option value="2">Tidak Memiliki Kendaraan</option></select>'
+            )
+              .appendTo('.user_driver')
+              .on('change', function () {
+                var val = $(this).val();
+                if (val === '1') {
+                  column.search('^(?!No Vehicle$).*', true, false).draw(); // Matches all except "No Vehicle"
+                } else if (val === '0') {
+                  column.search('^No Vehicle$', true, false).draw(); // Matches only "No Vehicle"
+                } else {
+                  column.search('').draw(); // Resets the search
+                }
+              });
 
             column
               .data()
@@ -504,8 +516,8 @@ if (dt_user_table.length) {
   });
 });
 
- // Show Update Modal on button click
- $('body').on('click', '.updateModal', function () {
+// Show Update Modal on button click
+$('body').on('click', '.updateModal', function () {
   var userId = $(this).data('id');
   // Fetch user data based on userId (if needed) and fill the form fields
   $('#updateModal').modal('show');
@@ -515,14 +527,22 @@ if (dt_user_table.length) {
 $('body').on('click', '.updateModal', function () {
   var userId = $(this).data('id');
   var driverName = $(this).data('name');
-  var vehicle = $(this).data('vehicle');
-  
-  // Fill the form fields with the data
+  var plat_no = $(this).data('vehicle');
+
+  // Set nilai ke form
   $('#driverName').val(driverName);
-  $('#vehicleSelect').val(vehicle);
-  
+  $('#plat_no_full').val(plat_no); // Set nilai penuh ke <input>
+
+  // Ekstrak jenis kendaraan dari plat_no
+  var vehicleType = plat_no.split(' - ')[1] || ''; // Mengambil bagian setelah ' - ' jika ada
+
+  // Set nilai untuk <select> berdasarkan vehicleType
+  $('#vehicleSelect').val(vehicleType).change(); // .change() untuk memastikan tampilan diperbarui
+
+  // Tampilkan modal
   $('#updateModal').modal('show');
 });
+
 // Validation & Phone mask
 (function () {
   const phoneMaskList = document.querySelectorAll('.phone-mask'),
@@ -538,15 +558,15 @@ $('body').on('click', '.updateModal', function () {
     });
   }
   // Function to dynamically include Remix Icon stylesheet
-    function includeRemixIcon() {
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = 'assets/vendor/fonts/remixicon/remixicon.css'; 
-      document.head.appendChild(link);
-    }
+  function includeRemixIcon() {
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'assets/vendor/fonts/remixicon/remixicon.css';
+    document.head.appendChild(link);
+  }
 
-    // Call the function to include Remix Icon stylesheet
-    includeRemixIcon();
+  // Call the function to include Remix Icon stylesheet
+  includeRemixIcon();
   // Add New User Form Validation
   const fv = FormValidation.formValidation(addNewUserForm, {
     fields: {
