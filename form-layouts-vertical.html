@@ -760,89 +760,52 @@
                                 </div>
                             </div>
                     
-                            <!-- Vehicle Tipe -->
+                            <!-- Vehicle Type -->
                             <div class="col-md-6">
-                                <div class="form-floating form-floating-outline">
-                                    <select id="vehicle-type" class="form-select select2" data-allow-clear="true">
-                                        <option value="">Pilih Tipe Kendaraan</option>
-                                        <option value="PICK UP BOX">PICK UP BOX</option>
-                                        <option value="TRUCK BOX">TRUCK BOX</option>
-                                        <option value="TRUCK BOX BAN DOUBLE">TRUCK BOX BAN DOUBLE</option>
-                                        <option value="LIGHT TRUCK BOX">LIGHT TRUCK BOX</option>
-                                        <option value="MINI BUS">MINI BUS</option>
-                                        <option value="BLIND VAN">BLIND VAN</option>
-                                        <option value="TRUCK DROOP SIDE">TRUCK DROOP SIDE</option>
-                                    </select>
-                                    <label for="vehicle-type">Vehicle Tipe</label>
-                                </div>
+                              <div class="form-floating form-floating-outline">
+                                  <input id="vehicle-type" class="form-control" type="text" placeholder="Pilih Tipe Kendaraan" />
+                                  <label for="vehicle-type">Tipe Kendaraan</label>
+                              </div>
                             </div>
                     
                             <!-- Location -->
                             <div class="col-md-6">
                                 <div class="form-floating form-floating-outline">
                                     <input type="text" id="location" class="form-control" placeholder="e.g. Jakarta" />
-                                    <label for="location">Location</label>
+                                    <label for="Lokasi">Lokasi</label>
                                 </div>
                             </div>
                     
                             <!-- Jenis Pelanggan Khusus -->
                             <div class="col-md-6">
-                                <div class="form-floating form-floating-outline">
-                                    <select id="customer-type" class="form-select select2" data-allow-clear="true">
-                                        <option value="">Pilih Jenis Pelanggan Khusus</option>
-                                        <option value="Pelanggan Reguler">Pelanggan Reguler</option>
-                                        <option value="Pelanggan Premium">Pelanggan Premium</option>
-                                        <option value="Pelanggan Bisnis">Pelanggan Bisnis</option>
-                                        <option value="Pelanggan VIP">Pelanggan VIP</option>
-                                        <option value="Pelanggan Khusus">Pelanggan Khusus</option>
-                                    </select>
-                                    <label for="customer-type">Jenis Pelanggan Khusus</label>
-                                </div>
+                              <div class="form-floating form-floating-outline">
+                                  <input id="customer-type" class="form-control" type="text" placeholder="Pilih Jenis Pelanggan Khusus" />
+                                  <label for="customer-type">Jenis Pelanggan Khusus</label>
+                              </div>
                             </div>
-                    
+
                             <!-- Area -->
                             <div class="col-md-6">
-                                <div class="form-floating form-floating-outline">
-                                    <select id="area" class="form-select select2" data-allow-clear="true">
-                                        <option value="">Pilih Area</option>
-                                        <option value="Wilayah 1">Wilayah 1</option>
-                                        <option value="Wilayah 2">Wilayah 2</option>
-                                        <option value="Wilayah 3">Wilayah 3</option>
-                                        <option value="Wilayah 4">Wilayah 4</option>
-                                        <option value="Wilayah 5">Wilayah 5</option>
-                                    </select>
-                                    <label for="area">Area</label>
-                                </div>
+                              <div class="form-floating form-floating-outline">
+                                  <input id="area" class="form-control" type="text" placeholder="Pilih Area" />
+                                  <label for="area">Area</label>
+                              </div>
                             </div>
-                    
+
                             <!-- Pelanggan -->
                             <div class="col-md-6">
-                                <div class="form-floating form-floating-outline">
-                                    <select id="customer" class="form-select select2" data-allow-clear="true">
-                                        <option value="">Pilih Pelanggan</option>
-                                        <option value="Customer A">Customer A</option>
-                                        <option value="Customer B">Customer B</option>
-                                        <option value="Customer C">Customer C</option>
-                                        <option value="Customer D">Customer D</option>
-                                        <option value="Customer E">Customer E</option>
-                                    </select>
-                                    <label for="customer">Pelanggan</label>
-                                </div>
+                              <div class="form-floating form-floating-outline">
+                                  <input id="customer" class="form-control" type="text" placeholder="Pilih Pelanggan" />
+                                  <label for="customer">Pelanggan</label>
+                              </div>
                             </div>
-                    
+
                             <!-- Product -->
                             <div class="col-md-6">
-                                <div class="form-floating form-floating-outline">
-                                    <select id="product" class="form-select select2" data-allow-clear="true">
-                                        <option value="">Pilih Product</option>
-                                        <option value="Produk A">Produk A</option>
-                                        <option value="Produk B">Produk B</option>
-                                        <option value="Produk C">Produk C</option>
-                                        <option value="Produk D">Produk D</option>
-                                        <option value="Produk E">Produk E</option>
-                                    </select>
-                                    <label for="product">Product</label>
-                                </div>
+                              <div class="form-floating form-floating-outline">
+                                  <input id="product" class="form-control" type="text" placeholder="Pilih Product" />
+                                  <label for="Produk">Produk</label>
+                              </div>
                             </div>
                     
                             <!-- KM/L -->
@@ -857,7 +820,7 @@
                               <div class="col-md-3">
                                   <div class="form-floating form-floating-outline">
                                       <input type="time" id="start-hours" class="form-control" />
-                                      <label for="start-hours">Start Hours</label>
+                                      <label for="start-hours">Jam Buka</label>
                                   </div>
                               </div>
                               
@@ -865,7 +828,7 @@
                               <div class="col-md-3">
                                   <div class="form-floating form-floating-outline">
                                       <input type="time" id="end-hours" class="form-control" />
-                                      <label for="end-hours">End Hours</label>
+                                      <label for="end-hours">Jam Tutup</label>
                                   </div>
                               </div>
                           </div>               

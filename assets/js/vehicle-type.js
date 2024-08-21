@@ -607,7 +607,7 @@ $(function () {
 
     // Add "Add New Kendaraan" button after DataTable initialization
     $('.add-new').html(
-      '<a href="form-vehicle-type.html" class="btn btn-primary" data-bs-toggle="Add New" aria-controls="Tambah Kendaraan">Tambah Kendaraan</a>'
+      '<a href="form-vehicle-type.html" class="btn btn-primary" data-bs-toggle="Add New" aria-controls="Tambah Tipe">Tambah Tipe</a>'
     );
 
     // Delete record
