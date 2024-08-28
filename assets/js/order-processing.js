@@ -86,7 +86,6 @@ $(document).ready(function () {
         {
           targets: -1,
           title: 'Actions',
-          searchable: false,
           orderable: false,
           render: function (data, type, full) {
             var $tanggal = full['tanggal'] || 'N/A';

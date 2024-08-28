@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Order Processing - Apps | Armos</title>
+    <title>Order Approval - Apps | Armos</title>
 
     <meta name="description" content="" />
 
@@ -712,193 +712,15 @@
               }
           </style>
             <div class="container-xxxl flex-grow-1 container-p-y">
-              <h4 class="mb-1 mt-10">Order Processing</h4>
-              <p class="mb-6">
-                Proses pemesanan melibatkan pengelolaan dan pengaturan pesanan pelanggan mulai dari penerimaan pesanan hingga pengiriman produk.
-              </p>
-              <!-- Role cards -->
-              <div class="row g-6">
-                <style>
-                  .test {
-                      max-width: 1200px; /* Lebar maksimum sesuai kebutuhan */
-                      width: 100%; /* Memastikan elemen mengambil lebar penuh dari kontainer yang lebih kecil */
-                      padding: 0; /* Menghapus padding default */
-                      box-sizing: border-box; /* Memastikan padding dan border termasuk dalam lebar total */
-                      display: flex;
-                      justify-content: center; /* Mengatur konten di tengah horizontal dalam kolom */
-                      margin: 0 auto; /* Memastikan kolom berada di tengah halaman */
-                  }
-              
-                  .test2 {
-                      border: 1px solid #ddd;
-                      border-radius: 8px;
-                      background-color: #fff;
-                      padding: 20px;
-                      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                      width: 400%; /* Memastikan card mengisi lebar kolom */
-                  }
-              
-                  .upload-container {
-                      padding: 20px;
-                      text-align: center;
-                      border: 1px dashed #ccc;
-                      border-radius: 8px;
-                      background-color: #f8f9fa;
-                      height: 100%; /* Menempati seluruh tinggi kolom */
-                      display: flex;
-                      flex-direction: column;
-                      justify-content: space-between; /* Mendistribusikan konten secara vertikal */
-                  }
-              
-                  .upload-body {
-                      flex-grow: 1; /* Membuat upload-body menempati ruang yang tersedia */
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      border: 1px dashed #ddd;
-                      border-radius: 8px;
-                      padding: 30px;
-                      background-color: #fff;
-                      margin-top: 15px;
-                  }
-              
-                  .upload-dropzone {
-                      display: flex;
-                      flex-direction: column;
-                      align-items: center;
-                      width: 100%;
-                      height: 100%;
-                  }
-              
-                  .upload-icon {
-                      font-size: 32px;
-                      color: #6c757d;
-                  }
-              
-                  .upload-instructions {
-                      margin-top: 10px;
-                  }
-              
-                  .upload-instructions p {
-                      margin: 0;
-                      font-weight: bold;
-                  }
-              
-                  .upload-instructions small {
-                      color: #6c757d;
-                  }
-              
-                  .upload-input {
-                      opacity: 0;
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      right: 0;
-                      bottom: 0;
-                      width: 100%;
-                      height: 100%;
-                      cursor: pointer;
-                  }
-                  .button-container {
-                      text-align: center; /* Mengatur tombol agar berada di tengah horizontal */
-                      margin-top: 20px; /* Jarak antara upload-container dan tombol */
-                  }
-
-                  .button {
-                      display: inline-block;
-                      padding: 10px 20px;
-                      border: none;
-                      border-radius: 5px;
-                      color: #fff;
-                      font-size: 16px;
-                      text-align: center;
-                      cursor: pointer;
-                      text-decoration: none; /* Menghapus garis bawah pada tombol jika menggunakan link */
-                      margin: 5px; /* Jarak antar tombol */
-                  }
-
-                  .button-red {
-                      background-color: #ff4d4d; /* Warna merah terang */
-                      color: #fff; /* Warna teks putih untuk kontras yang baik */
-                      border: none; /* Menghapus border default */
-                      padding: 10px 20px; /* Padding untuk ukuran tombol */
-                      border-radius: 4px; /* Sudut membulat untuk desain modern */
-                      font-size: 16px; /* Ukuran font yang sesuai */
-                      cursor: pointer; /* Menunjukkan bahwa tombol dapat diklik */
-                      text-align: center; /* Menyusun teks di tengah tombol */
-                      text-decoration: none; /* Menghapus garis bawah dari link */
-                      display: inline-block; /* Mengatur tombol sebagai elemen blok inline */
-                      transition: background-color 0.3s; /* Transisi halus saat hover */
-                    }
-
-                    .button-red:hover {
-                      background-color: #e60000; /* Warna merah lebih gelap saat hover */
-                    }
-
-                    .button-red:active {
-                      background-color: #c70000; /* Warna merah lebih gelap saat ditekan */
-                    }
-
-                  .button-blue {
-                      background-color: #007bff; /* Warna biru */
-                  }
-
-                  .button-blue:hover {
-                      background-color: #0056b3; /* Warna biru lebih gelap saat hover */
-                  }
-              </style>
-              <div class="test">
-                <div class="test2">
-                    <div class="upload-container">
-                        <div class="upload-header">
-                            <h5 class="upload-title">Upload files</h5>
-                            <p class="upload-subtitle">Select and upload the files of your choice</p>
-                        </div>
-                        <div class="upload-body">
-                            <div class="upload-dropzone">
-                                <div class="upload-icon">
-                                    <i class="ri-upload-cloud-line"></i> <!-- Remix Icon -->
-                                </div>
-                                <div class="upload-instructions">
-                                    <p>Choose a file or drag & drop it here</p>
-                                    <small>JPEG, PNG, PDF, and MP4 formats, up to 50MB</small>
-                                </div>
-                                <input type="file" class="upload-input" id="fileUpload" name="fileUpload">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="button-container mt-2">
-              <button class="button button-red">Dowwnload Template</button>
-              <button class="button button-blue">Submit</button>
-          </div>
-               
-
-                  <div class="col-12">
-                    <h4 class="mt-6 mb-1">Total File dan Statusnya</h4>
-                    <p class="mb-0">
+              <div class="col-12">
+                    <h4 class="mt-10 mb-1">Total File dan Statusnya</h4>
+                    <p class="mb-3">
                         Lihat semua file yang diunggah beserta statusnya.
                     </p>
                 </div>      
                 <div class="col-12">
                   <!-- Role Table -->
                   <div class="card">
-                    <div class="card-header border-bottom">
-                      <h5 class="card-title mb-0">Filters</h5>
-                      <div class="d-flex justify-content-left align-items-center row gx-5 pt-4 gap-md-0">
-                        <div class="col-md-4">
-                          <input type="text" id="date-range" class="form-control" placeholder="Select Date Range" />
-                        </div>
-                        <div class="col-md-4">
-                          <select id="filter-nama-kendaraan" class="form-select select2" placeholder="Status">
-                            <option value="">Status</option>
-                            <option value="1">Uploaded</option>
-                            <option value="2">Pending</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
                     <!-- Add New Button -->
                     <div class="card-datatable table-responsive">
                       <table class="datatables-users table">
@@ -983,7 +805,7 @@
     <script src="assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="assets/js/order-processing.js"></script>
+    <script src="assets/js/order-approval.js"></script>
     <script src="assets/js/modal-add-role.js"></script>
   </body>
 </html>
