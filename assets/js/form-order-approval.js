@@ -10,7 +10,6 @@ $(document).ready(function () {
       columns: [
         { data: '' },
         { data: 'id' },
-        { data: 'priority' },
         { data: 'faktur_no' },
         { data: 'nama_customer' },
         { data: 'lokasi_customer' },
@@ -56,31 +55,14 @@ $(document).ready(function () {
           }
         },
         {
-          targets: 5,
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
           targets: -1,
           title: 'Actions',
           orderable: false,
-          render: function (data, type, full) {
-            var $tanggal = full['tanggal'] || 'N/A';
-            var $batch = full['batch'] || 'N/A';
-            var $fileName = full['file_name'] || 'N/A';
-            var $dibuatOleh = full['dibuat_oleh'] || 'N/A';
-            var $status = full['status'];
-
-            const statusObj = {
-              1: 'Uploaded',
-              2: 'Pending'
-            };
-            var $statusText = statusObj[$status] || 'Unknown';
-
+          render: function () {
             return `
-               <button type="button" class="btn btn-sm btn-icon rounded-pill waves-effect">
-                  <i class="ri-arrow-up-down-line ri-20px"></i>
+               <button type="button" class="btn btn-sm btn-icon waves-effect">
+                  <i class="ri-arrow-up-fill ri-20px"></i>
+                  <i class="ri-arrow-down-fill ri-20px"></i>
               </button>
             `;
           }
