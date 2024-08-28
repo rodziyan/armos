@@ -1,0 +1,49 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "priority": "High",
+      "faktur_no": "F123456",
+      "nama_customer": "Budi Santoso",
+      "lokasi_customer": "Gubeng, Surabaya",
+      "action": "action",
+      "driver_vehicle": "Vehicle 1 - Driver A"
+    },
+    {
+      "id": 2,
+      "priority": "Medium",
+      "faktur_no": "F234567",
+      "nama_customer": "Siti Aminah",
+      "lokasi_customer": "Kenjeran, Surabaya",
+      "action": "action",
+      "driver_vehicle": "Vehicle 2 - Driver B"
+    },
+    {
+      "id": 3,
+      "priority": "Low",
+      "faktur_no": "F345678",
+      "nama_customer": "Andi Pratama",
+      "lokasi_customer": "Rungkut, Surabaya",
+      "action": "action",
+      "driver_vehicle": "Vehicle 3 - Driver C"
+    },
+    {
+      "id": 4,
+      "priority": "High",
+      "faktur_no": "F456789",
+      "nama_customer": "Rina Yuliana",
+      "lokasi_customer": "Tandes, Surabaya",
+      "action": "action",
+      "driver_vehicle": "Vehicle 4 - Driver D"
+    },
+    {
+      "id": 5,
+      "priority": "Medium",
+      "faktur_no": "F567890",
+      "nama_customer": "Joko Widodo",
+      "lokasi_customer": "Samarinda, Surabaya",
+      "action": "action",
+      "driver_vehicle": "Vehicle 5 - Driver E"
+    }
+  ]
+}

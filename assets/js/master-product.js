@@ -208,7 +208,7 @@ $(function () {
       language: {
         sLengthMenu: 'Show _MENU_',
         search: '',
-        searchPlaceholder: 'Cari Kendaraan'
+        searchPlaceholder: 'Cari Produk'
       },
       buttons: [
         {

@@ -6,16 +6,14 @@ $(document).ready(function () {
   // Initialize DataTable
   if ($('.datatables-users').length) {
     dt_User = $('.datatables-users').DataTable({
-      ajax: assetsPath + 'json/order-approval.json',
+      ajax: assetsPath + 'json/form-order-approval.json',
       columns: [
         { data: '' },
         { data: 'id' },
-        { data: 'no_order' },
-        { data: 'tanggal' },
-        { data: 'batch' },
-        { data: 'file_name' },
-        { data: 'dibuat_oleh' },
-        { data: 'status' },
+        { data: 'priority' },
+        { data: 'faktur_no' },
+        { data: 'nama_customer' },
+        { data: 'lokasi_customer' },
         { data: 'action' }
       ],
       columnDefs: [
@@ -64,28 +62,6 @@ $(document).ready(function () {
           }
         },
         {
-          targets: 6,
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 7,
-          render: function (data) {
-            const statusObj = {
-              1: { title: 'Uploaded', class: 'bg-label-success' },
-              2: { title: 'Pending', class: 'bg-label-warning' }
-            };
-            return (
-              '<span class="badge ' +
-              (statusObj[data]?.class || 'bg-label-secondary') +
-              '">' +
-              (statusObj[data]?.title || 'Unknown') +
-              '</span>'
-            );
-          }
-        },
-        {
           targets: -1,
           title: 'Actions',
           orderable: false,
@@ -103,10 +79,9 @@ $(document).ready(function () {
             var $statusText = statusObj[$status] || 'Unknown';
 
             return `
-                <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal" 
-                        onclick="window.location.href='form-order-approval.html'">
-                        <i class="ri-eye-line ri-20px"></i>
-                </button>
+               <button type="button" class="btn btn-sm btn-icon rounded-pill waves-effect">
+                  <i class="ri-arrow-up-down-line ri-20px"></i>
+              </button>
             `;
           }
         }
@@ -120,7 +95,7 @@ $(document).ready(function () {
   }
   // Load the JSON data using AJAX
   $.ajax({
-    url: assetsPath + 'json/order-approval.json',
+    url: assetsPath + 'json/form-order-approval.json',
     method: 'GET',
     dataType: 'json',
     success: function (response) {
