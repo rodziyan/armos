@@ -265,6 +265,9 @@ $(function () {
                       data-driver-pairing="${full['driver_pairing']}">
                       <i class="ri-eye-line ri-20px"></i>
                   </button>
+                  <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" style="border: none;">
+                  <i class="ri-delete-bin-6-line ri-20px"></i>
+                  </button>
               `;
           }
         }

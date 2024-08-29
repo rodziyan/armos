@@ -406,6 +406,9 @@ $(function () {
                 data-customer-restriction="${full['customer_restriction']}">
                 <i class="ri-pencil-line ri-20px"></i>
             </button>
+            <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" style="border: none;">
+            <i class="ri-delete-bin-6-line ri-20px"></i>
+            </button>
             `;
           }
         }
