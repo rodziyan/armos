@@ -7,7 +7,9 @@
       "nama_customer": "Budi Santoso",
       "lokasi_customer": "Gubeng, Surabaya",
       "action": "action",
-      "driver_vehicle": "Vehicle 1 - Driver A"
+      "driver_vehicle": "Vehicle 1 - Driver A",
+      "total_barang": 10,
+      "total": "Rp.1000000"
     },
     {
       "id": 2,
@@ -16,7 +18,9 @@
       "nama_customer": "Siti Aminah",
       "lokasi_customer": "Kenjeran, Surabaya",
       "action": "action",
-      "driver_vehicle": "Vehicle 2 - Driver B"
+      "driver_vehicle": "Vehicle 2 - Driver B",
+      "total_barang": 5,
+      "total": "Rp.500000"
     },
     {
       "id": 3,
@@ -25,7 +29,9 @@
       "nama_customer": "Andi Pratama",
       "lokasi_customer": "Rungkut, Surabaya",
       "action": "action",
-      "driver_vehicle": "Vehicle 3 - Driver C"
+      "driver_vehicle": "Vehicle 3 - Driver C",
+      "total_barang": 8,
+      "total": "Rp.800000"
     },
     {
       "id": 4,
@@ -34,7 +40,9 @@
       "nama_customer": "Rina Yuliana",
       "lokasi_customer": "Tandes, Surabaya",
       "action": "action",
-      "driver_vehicle": "Vehicle 4 - Driver D"
+      "driver_vehicle": "Vehicle 4 - Driver D",
+      "total_barang": 12,
+      "total": "Rp.1200000"
     },
     {
       "id": 5,
@@ -43,7 +51,9 @@
       "nama_customer": "Joko Widodo",
       "lokasi_customer": "Samarinda, Surabaya",
       "action": "action",
-      "driver_vehicle": "Vehicle 5 - Driver E"
+      "driver_vehicle": "Vehicle 5 - Driver E",
+      "total_barang": 7,
+      "total": "Rp.700000"
     }
   ]
 }

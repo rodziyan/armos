@@ -13,6 +13,8 @@ $(document).ready(function () {
         { data: 'faktur_no' },
         { data: 'nama_customer' },
         { data: 'lokasi_customer' },
+        { data: 'total_barang' },
+        { data: 'total' },
         { data: 'action' }
       ],
       columnDefs: [
@@ -50,6 +52,18 @@ $(document).ready(function () {
         },
         {
           targets: 4,
+          render: function (data) {
+            return '<span>' + data + '</span>';
+          }
+        },
+        {
+          targets: 5,
+          render: function (data) {
+            return '<span>' + data + '</span>';
+          }
+        },
+        {
+          targets: 6,
           render: function (data) {
             return '<span>' + data + '</span>';
           }
