@@ -73,8 +73,10 @@ $(document).ready(function () {
           targets: 7,
           render: function (data) {
             const statusObj = {
-              1: { title: 'Uploaded', class: 'bg-label-success' },
-              2: { title: 'Pending', class: 'bg-label-warning' }
+              1: { title: 'Approved', class: 'bg-label-success' },
+              2: { title: 'Waiting', class: 'bg-label-warning' },
+              3: { title: 'Hold', class: 'bg-label-info' },
+              4: { title: 'Cancel', class: 'bg-label-danger' }
             };
             return (
               '<span class="badge ' +
@@ -97,8 +99,10 @@ $(document).ready(function () {
             var $status = full['status'];
 
             const statusObj = {
-              1: 'Uploaded',
-              2: 'Pending'
+              1: { title: 'Approved', class: 'bg-label-success' },
+              2: { title: 'Waiting', class: 'bg-label-warning' },
+              3: { title: 'Hold', class: 'bg-label-info' },
+              4: { title: 'Cancel', class: 'bg-label-danger' }
             };
             var $statusText = statusObj[$status] || 'Unknown';
 

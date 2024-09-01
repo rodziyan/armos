@@ -9,7 +9,13 @@
       "status": 1,
       "action": "action",
       "driver_vehicle": "Vehicle 1 - Driver A",
-      "no_order": "01082024"
+      "no_order": "01082024",
+      "priority": "Low",
+      "faktur_no": "F345678",
+      "nama_customer": "Andi Pratama",
+      "lokasi_customer": "Rungkut, Surabaya",
+      "total_barang": 8,
+      "total": "Rp.800000"
     },
     {
       "id": 2,
@@ -17,10 +23,16 @@
       "batch": "Batch 2",
       "file_name": "file2.png",
       "dibuat_oleh": "User B",
-      "status": 1,
+      "status": 2,
       "action": "action",
       "driver_vehicle": "Vehicle 2 - Driver B",
-      "no_order": "02082024"
+      "no_order": "02082024",
+      "priority": "Low",
+      "faktur_no": "F345679",
+      "nama_customer": "Budi Santoso",
+      "lokasi_customer": "Gubeng, Surabaya",
+      "total_barang": 10,
+      "total": "Rp.1000000"
     },
     {
       "id": 3,
@@ -28,10 +40,16 @@
       "batch": "Batch 3",
       "file_name": "file3.mp4",
       "dibuat_oleh": "User C",
-      "status": 1,
+      "status": 3,
       "action": "action",
       "driver_vehicle": "Vehicle 3 - Driver C",
-      "no_order": "03082024"
+      "no_order": "03082024",
+      "priority": "Medium",
+      "faktur_no": "F345680",
+      "nama_customer": "Charlie Wijaya",
+      "lokasi_customer": "Ketintang, Surabaya",
+      "total_barang": 5,
+      "total": "Rp.500000"
     },
     {
       "id": 4,
@@ -39,10 +57,16 @@
       "batch": "Batch 4",
       "file_name": "file4.jpeg",
       "dibuat_oleh": "User D",
-      "status": 1,
+      "status": 4,
       "action": "action",
       "driver_vehicle": "Vehicle 4 - Driver D",
-      "no_order": "04082024"
+      "no_order": "04082024",
+      "priority": "High",
+      "faktur_no": "F345681",
+      "nama_customer": "Dewi Anggraini",
+      "lokasi_customer": "Manyar, Surabaya",
+      "total_barang": 12,
+      "total": "Rp.1200000"
     },
     {
       "id": 5,
@@ -53,7 +77,13 @@
       "status": 1,
       "action": "action",
       "driver_vehicle": "Vehicle 5 - Driver E",
-      "no_order": "05082024"
+      "no_order": "05082024",
+      "priority": "Low",
+      "faktur_no": "F345682",
+      "nama_customer": "Eko Prasetyo",
+      "lokasi_customer": "Darmo, Surabaya",
+      "total_barang": 7,
+      "total": "Rp.700000"
     },
     {
       "id": 6,
@@ -61,10 +91,16 @@
       "batch": "Batch 6",
       "file_name": "file6.pdf",
       "dibuat_oleh": "User F",
-      "status": 1,
+      "status": 2,
       "action": "action",
       "driver_vehicle": "Vehicle 6 - Driver F",
-      "no_order": "06082024"
+      "no_order": "06082024",
+      "priority": "Medium",
+      "faktur_no": "F345683",
+      "nama_customer": "Feni Arum",
+      "lokasi_customer": "Kebon Jeruk, Surabaya",
+      "total_barang": 6,
+      "total": "Rp.600000"
     },
     {
       "id": 7,
@@ -72,10 +108,16 @@
       "batch": "Batch 7",
       "file_name": "file7.png",
       "dibuat_oleh": "User G",
-      "status": 1,
+      "status": 3,
       "action": "action",
       "driver_vehicle": "Vehicle 7 - Driver G",
-      "no_order": "07082024"
+      "no_order": "07082024",
+      "priority": "High",
+      "faktur_no": "F345684",
+      "nama_customer": "Gina Sari",
+      "lokasi_customer": "Tegalsari, Surabaya",
+      "total_barang": 9,
+      "total": "Rp.900000"
     },
     {
       "id": 8,
@@ -83,10 +125,16 @@
       "batch": "Batch 8",
       "file_name": "file8.mp4",
       "dibuat_oleh": "User H",
-      "status": 1,
+      "status": 4,
       "action": "action",
       "driver_vehicle": "Vehicle 8 - Driver H",
-      "no_order": "08082024"
+      "no_order": "08082024",
+      "priority": "Low",
+      "faktur_no": "F345685",
+      "nama_customer": "Hadi Prabowo",
+      "lokasi_customer": "Bubutan, Surabaya",
+      "total_barang": 11,
+      "total": "Rp.1100000"
     },
     {
       "id": 9,
@@ -97,7 +145,13 @@
       "status": 1,
       "action": "action",
       "driver_vehicle": "Vehicle 9 - Driver I",
-      "no_order": "09082024"
+      "no_order": "09082024",
+      "priority": "Medium",
+      "faktur_no": "F345686",
+      "nama_customer": "Ika Maharani",
+      "lokasi_customer": "Pabean, Surabaya",
+      "total_barang": 8,
+      "total": "Rp.800000"
     },
     {
       "id": 10,
@@ -105,10 +159,16 @@
       "batch": "Batch 10",
       "file_name": "file10.docx",
       "dibuat_oleh": "User J",
-      "status": 1,
+      "status": 2,
       "action": "action",
       "driver_vehicle": "Vehicle 10 - Driver J",
-      "no_order": "10082024"
+      "no_order": "10082024",
+      "priority": "High",
+      "faktur_no": "F345687",
+      "nama_customer": "Joko Susanto",
+      "lokasi_customer": "Gubeng, Surabaya",
+      "total_barang": 10,
+      "total": "Rp.1000000"
     },
     {
       "id": 11,
@@ -116,10 +176,16 @@
       "batch": "Batch 11",
       "file_name": "file11.pdf",
       "dibuat_oleh": "User K",
-      "status": 1,
+      "status": 3,
       "action": "action",
       "driver_vehicle": "Vehicle 11 - Driver K",
-      "no_order": "11082024"
+      "no_order": "11082024",
+      "priority": "Low",
+      "faktur_no": "F345688",
+      "nama_customer": "Krisna Dwi",
+      "lokasi_customer": "Tegalsari, Surabaya",
+      "total_barang": 12,
+      "total": "Rp.1200000"
     },
     {
       "id": 12,
@@ -127,10 +193,16 @@
       "batch": "Batch 12",
       "file_name": "file12.png",
       "dibuat_oleh": "User L",
-      "status": 1,
+      "status": 4,
       "action": "action",
       "driver_vehicle": "Vehicle 12 - Driver L",
-      "no_order": "12082024"
+      "no_order": "12082024",
+      "priority": "Medium",
+      "faktur_no": "F345689",
+      "nama_customer": "Lala Maharani",
+      "lokasi_customer": "Darmo, Surabaya",
+      "total_barang": 9,
+      "total": "Rp.900000"
     },
     {
       "id": 13,
@@ -141,7 +213,13 @@
       "status": 1,
       "action": "action",
       "driver_vehicle": "Vehicle 13 - Driver M",
-      "no_order": "13082024"
+      "no_order": "13082024",
+      "priority": "High",
+      "faktur_no": "F345690",
+      "nama_customer": "Maya Fitria",
+      "lokasi_customer": "Rungkut, Surabaya",
+      "total_barang": 7,
+      "total": "Rp.700000"
     },
     {
       "id": 14,
@@ -149,10 +227,16 @@
       "batch": "Batch 14",
       "file_name": "file14.jpeg",
       "dibuat_oleh": "User N",
-      "status": 1,
+      "status": 2,
       "action": "action",
       "driver_vehicle": "Vehicle 14 - Driver N",
-      "no_order": "14082024"
+      "no_order": "14082024",
+      "priority": "Low",
+      "faktur_no": "F345691",
+      "nama_customer": "Nina Hidayat",
+      "lokasi_customer": "Manyar, Surabaya",
+      "total_barang": 8,
+      "total": "Rp.800000"
     },
     {
       "id": 15,
@@ -160,10 +244,16 @@
       "batch": "Batch 15",
       "file_name": "file15.docx",
       "dibuat_oleh": "User O",
-      "status": 1,
+      "status": 3,
       "action": "action",
       "driver_vehicle": "Vehicle 15 - Driver O",
-      "no_order": "15082024"
+      "no_order": "15082024",
+      "priority": "Medium",
+      "faktur_no": "F345692",
+      "nama_customer": "Oka Sari",
+      "lokasi_customer": "Ketintang, Surabaya",
+      "total_barang": 10,
+      "total": "Rp.1000000"
     },
     {
       "id": 16,
@@ -171,10 +261,16 @@
       "batch": "Batch 16",
       "file_name": "file16.pdf",
       "dibuat_oleh": "User P",
-      "status": 1,
+      "status": 4,
       "action": "action",
       "driver_vehicle": "Vehicle 16 - Driver P",
-      "no_order": "16082024"
+      "no_order": "16082024",
+      "priority": "High",
+      "faktur_no": "F345693",
+      "nama_customer": "Prita Yuli",
+      "lokasi_customer": "Bubutan, Surabaya",
+      "total_barang": 11,
+      "total": "Rp.1100000"
     },
     {
       "id": 17,
@@ -185,7 +281,13 @@
       "status": 1,
       "action": "action",
       "driver_vehicle": "Vehicle 17 - Driver Q",
-      "no_order": "17082024"
+      "no_order": "17082024",
+      "priority": "Low",
+      "faktur_no": "F345694",
+      "nama_customer": "Qori Alamsyah",
+      "lokasi_customer": "Gubeng, Surabaya",
+      "total_barang": 6,
+      "total": "Rp.600000"
     },
     {
       "id": 18,
@@ -193,10 +295,16 @@
       "batch": "Batch 18",
       "file_name": "file18.mp4",
       "dibuat_oleh": "User R",
-      "status": 1,
+      "status": 2,
       "action": "action",
       "driver_vehicle": "Vehicle 18 - Driver R",
-      "no_order": "18082024"
+      "no_order": "18082024",
+      "priority": "Medium",
+      "faktur_no": "F345695",
+      "nama_customer": "Rani Harlina",
+      "lokasi_customer": "Kebon Jeruk, Surabaya",
+      "total_barang": 8,
+      "total": "Rp.800000"
     },
     {
       "id": 19,
@@ -204,10 +312,16 @@
       "batch": "Batch 19",
       "file_name": "file19.jpeg",
       "dibuat_oleh": "User S",
-      "status": 1,
+      "status": 3,
       "action": "action",
       "driver_vehicle": "Vehicle 19 - Driver S",
-      "no_order": "19082024"
+      "no_order": "19082024",
+      "priority": "High",
+      "faktur_no": "F345696",
+      "nama_customer": "Sinta Wulandari",
+      "lokasi_customer": "Pabean, Surabaya",
+      "total_barang": 12,
+      "total": "Rp.1200000"
     },
     {
       "id": 20,
@@ -215,10 +329,16 @@
       "batch": "Batch 20",
       "file_name": "file20.docx",
       "dibuat_oleh": "User T",
-      "status": 1,
+      "status": 4,
       "action": "action",
       "driver_vehicle": "Vehicle 20 - Driver T",
-      "no_order": "20082024"
+      "no_order": "20082024",
+      "priority": "Low",
+      "faktur_no": "F345697",
+      "nama_customer": "Tono Setiawan",
+      "lokasi_customer": "Rungkut, Surabaya",
+      "total_barang": 10,
+      "total": "Rp.1000000"
     }
   ]
 }

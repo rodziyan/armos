@@ -716,6 +716,10 @@
               <div class="col-12">
                 <!-- Role Table -->
                 <div class="card">
+                  <div class="col-3 form-group mt-5" style="padding-left: 30px; padding-right: 30px;">
+                    <label>Status:</label>
+                    <div id="status-container"></div>
+                  </div>       
                   <div class="col-12 form-group mt-5" style="padding-left: 30px; padding-right: 30px;">
                     <label for="driver-vehicle">Driver Vehicle</label>
                     <select id="driver-vehicle" class="form-select">
@@ -739,10 +743,11 @@
                         </thead>
                       </table>
                       <!-- Button Group -->
-                      <div class="d-flex justify-content-end mt-3"style="padding-right: 15px;">
-                        <button type="button" class="btn btn-primary me-2" onclick="window.location.href='order-approval.html'">Save</button>
-                        <button type="button" class="btn btn-secondary" onclick="window.location.href='order-approval.html'">Cancel</button>
-                      </div>
+                      <div class="d-flex justify-content-end mt-3" style="padding-right: 15px;">
+                        <button type="button" class="btn btn-success me-2" onclick="handleAction('approved')">Approved</button>
+                        <button type="button" class="btn btn-info me-2" onclick="handleAction('hold')">Hold</button>
+                        <button type="button" class="btn btn-danger" onclick="handleAction('cancel')">Cancel</button>
+                      </div>                      
                     </div>
                   </div>
                   <!--/ Role Table -->
