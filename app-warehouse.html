@@ -709,9 +709,61 @@
                   padding-right: 15px; 
               }
           </style>
-            <div class="container-xxxl flex-grow-1 container-p-y">
+          <!-- Initialize DataTable and Apply Filter -->
+            <script>
+              $(document).ready(function() {
+                // Initialize DataTable
+                var dt_vehicle = $('').DataTable();
 
+                // Apply filters
+                $('#filter-parent').on('change', function() {
+                  dt_warehouse.column(1).search(this.value).draw();
+                });
+              });
+            </script>
+            
+            <div class="container-xxxl flex-grow-1 container-p-y">
               <div class="card overflow-hidden mt-10">
+                <div class="col-md-12 d-flex align-items-center justify-content-md-end justify-content-center mt-5 mb-5">
+                  <div class="d-flex align-items-center me-3 flex-grow-1">
+                    <!-- Search Input -->
+                    <div class="d-flex align-items-center ms-4">
+                      <input type="text" id="search" class="form-control" placeholder="Search" style="max-width: 200px;">
+                    </div>
+                    
+                    <!-- Filters Section -->
+                    <div class="d-flex align-items-center ms-3">
+                      <label for="filter-parent" class="form-label mb-0 me-2">Filters</label>
+                      <select id="filter-parent" class="form-select" placeholder="Select 1" style="max-width: 200px;">
+                        <option value="">Select 1</option>
+                      </select>
+                    </div>
+                  </div>                                   
+                  
+                  <!-- Export Button Dropdown -->
+                  <div class="d-flex align-items-center me-3">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span class="d-flex align-items-center">
+                        <i class="ri-upload-2-line ri-16px me-2"></i>
+                        <span class="d-none d-sm-inline-block">Export</span>
+                      </span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" id="export-print"><i class="ri-printer-line me-1"></i>Print</a></li>
+                      <li><a class="dropdown-item" id="export-csv"><i class="ri-file-text-line me-1"></i>CSV</a></li>
+                      <li><a class="dropdown-item" id="export-excel"><i class="ri-file-excel-line me-1"></i>Excel</a></li>
+                      <li><a class="dropdown-item" id="export-pdf"><i class="ri-file-pdf-line me-1"></i>PDF</a></li>
+                      <li><a class="dropdown-item" id="export-copy"><i class="ri-file-copy-line me-1"></i>Copy</a></li>
+                    </ul>
+                  </div>
+                  
+                  <!-- Import Section -->
+                  <div class="d-flex align-items-center me-3">
+                    <input type="file" id="import-file" class="form-control me-2" style="max-width: 300px;" />
+                    <button type="button" id="import-btn" class="btn btn-primary">Import</button>
+                  </div>                  
+                </div>                
+                
                 <!-- Map Menu Wrapper -->
                 <div class="d-flex app-logistics-fleet-wrapper">
                   <!-- Map Menu Button when screen is < md -->
@@ -1390,9 +1442,8 @@
                     <div class="mb-3">
                         <label for="locationType" class="form-label">Tipe Master Lokasi</label>
                         <select id="locationType" class="form-select">
-                            <option value="warehouse">Gudang</option>
-                            <option value="order">Order</option>
-                            <option value="delivery">Pengiriman</option>
+                            <option value="warehouse">Warehouse</option>
+                            <option value="Customer">Customer</option>
                         </select>
                     </div>
                 </form>

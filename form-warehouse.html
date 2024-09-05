@@ -712,7 +712,7 @@
               <div class="row mt-8">
               <div class="container mt-5">
                 <div class="card mb-6">
-                    <h5 class="card-header">Tambah Lokasi</h5>
+                    <h5 class="card-header">Tambah Customer</h5>
                     <form id="locationForm" action="app-warehouse.html" method="post">
                         <div class="card-body">
                             <div class="row">
@@ -804,7 +804,10 @@
                                       <label for="deliveryService" class="form-label">Layanan Pengiriman</label>
                                       <input type="text" class="form-control" id="deliveryService">
                                   </div>
-
+                                  <div class="md-3">
+                                      <label for="Pickup" class="form-label">Pickup</label>
+                                        <input type="text" id="Pickup" class="form-control tagify" placeholder="Pilih atau ketik produk">
+                                </div>
                                 </div>
 
                                 <!-- Right Column -->
@@ -972,6 +975,75 @@
     </div>
     <!-- Overlay -->
     <div class="layout-overlay layout-menu-toggle"></div>
+
+    <style>
+      .tagify {
+          --tag-bg: #007bff !important; /* Warna latar belakang tag biru */
+          --tag-hover: #0056b3 !important; /* Warna latar belakang tag saat hover biru lebih gelap */
+          --tag-text-color: #fff !important; /* Warna teks tag putih */
+          --tag-remove-bg: #0056b3 !important; /* Warna latar belakang tombol hapus saat tidak hover */
+          --tag-remove-hover: #003d7a !important; /* Warna latar belakang tombol hapus saat hover */
+      }
+  
+      .tagify__tag {
+          background-color: var(--tag-bg) !important;
+          color: var(--tag-text-color) !important;
+          border-radius: 3px !important;
+          padding: 2px 4px !important; /* Kurangi padding untuk memperkecil ukuran tag */
+          margin: 1px !important; /* Kurangi margin antara tag */
+          font-size: 0.6rem !important; /* Kurangi ukuran font jika diperlukan */
+      }
+  
+      .tagify__tag:hover {
+          background-color: var(--tag-hover) !important;
+      }
+  
+      .tagify__tag__removeBtn {
+          background-color: var(--tag-remove-bg) !important;
+          color: var(--tag-text-color) !important;
+          font-size: 0.6rem !important; /* Kurangi ukuran font tombol hapus jika diperlukan */
+      }
+  
+      .tagify__tag__removeBtn:hover {
+          background-color: var(--tag-remove-hover) !important;
+      }
+  
+      /* Pastikan lebar container tagify tidak melebihi batas kolom */
+      .tagify-container {
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+          overflow: hidden !important;
+      }
+  
+      .tagify {
+          overflow-x: auto !important; /* Izinkan scroll horizontal jika tag melebihi lebar */
+      }
+  
+      .tagify__dropdown {
+          max-width: 100% !important;
+          box-sizing: border-box !important;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
+    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          const tagifyInputs = document.querySelectorAll('.tagify');
+          tagifyInputs.forEach(input => {
+              new Tagify(input, {
+                  whitelist: [
+                      'WH01', 'WH02', 'WH03', 'WH04', 'WH04' ],
+                  maxTags: 10,
+                  dropdown: {
+                      maxItems: 20,
+                      classname: 'tags-look',
+                      enabled: 0,
+                      closeOnSelect: false
+                  }
+              });
+          });
+      });
+  </script>
 
     <!-- Drag Target Area To SlideIn Menu On Small Screens -->
     <div class="drag-target"></div>
