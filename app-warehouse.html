@@ -529,7 +529,7 @@
                 </a>
                 <ul class="menu-sub">
                   <li class="menu-item">
-                    <a href="app-warehouse.html" class="menu-link">
+                    <a href="app-warehouse2.html" class="menu-link">
                       <i class="menu-icon tf-icons ri-map-pin-line"></i>
                       <div data-i18n="Master Location">Master Location</div>
                     </a>
@@ -822,45 +822,62 @@
             <div class="container-xxxl flex-grow-1 container-p-y">
                   <!-- Filters Section -->
                   <div class="card overflow-hidden mt-10">
-                    <div class="col-md-12 d-flex align-items-center justify-content-end mt-5 mb-5">
-                      <!-- Search Input -->
-                      <div class="d-flex align-items-center me-3">
-                        <input type="text" id="search" class="form-control" placeholder="Search" style="max-width: 200px;">
-                      </div>
+                    <div class="d-flex justify-content-between align-items-center flex-wrap mt-5 mb-5">
+                      <div class="d-flex align-items-center justify-content-start ms-4">
+                        <!-- Search Input -->
+                        <div class="d-flex align-items-center me-3">
+                          <input type="text" id="search" class="form-control" placeholder="Search" style="max-width: 200px; height: 38px;">
+                        </div>
                     
-                      <!-- Filter and Select Button -->
-                      <div class="d-flex align-items-center me-3">
-                        <select id="filter-parent" class="form-select" placeholder="Select" style="max-width: 200px;">
-                          <option value="">Select 1</option>
-                          <option value="">Select 2</option>
-                        </select>
-                        <button type="button" class="btn btn-primary ms-2">Pilih</button>
-                      </div>
+                        <!-- Filter and Select Button -->
+                        <div class="d-flex align-items-center me-3">
+                          <select id="filter-parent" class="form-select" style="max-width: 200px; height: 40px;">
+                            <option value="">Select 1</option>
+                            <option value="">Select 2</option>
+                          </select>
+                          <button type="button" class="btn btn-primary ms-2" style="height: 38px;">Pilih</button>
+                        </div>
                     
-                      <!-- Dropdown Button for Export and Import -->
-                      <div class="d-flex align-items-center me-5">
-                        <div class="dropdown">
-                          <button type="button" class="btn btn-primary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            Actions
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <!-- Export Dropdown -->
-                            <li class="dropdown-submenu">
-                              <a class="dropdown-item dropdown-toggle" href="#">Export</a>
-                              <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" id="export-print"><i class="ri-printer-line me-1"></i>Print</a></li>
-                                <li><a class="dropdown-item" id="export-csv"><i class="ri-file-text-line me-1"></i>CSV</a></li>
-                                <li><a class="dropdown-item" id="export-excel"><i class="ri-file-excel-line me-1"></i>Excel</a></li>
-                                <li><a class="dropdown-item" id="export-pdf"><i class="ri-file-pdf-line me-1"></i>PDF</a></li>
-                                <li><a class="dropdown-item" id="export-copy"><i class="ri-file-copy-line me-1"></i>Copy</a></li>
-                              </ul>
-                            </li>
-                            <!-- Import Option -->
-                            <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#importFilesModal" data-no-redirect="true">Import</a></li>
-                          </ul>
+                        <!-- Dropdown Button for Export and Import -->
+                        <div class="d-flex align-items-center me-5">
+                          <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="height: 38px;">
+                              Actions
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <!-- Export Dropdown -->
+                              <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Export</a>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" id="export-print"><i class="ri-printer-line me-1"></i>Print</a></li>
+                                  <li><a class="dropdown-item" id="export-csv"><i class="ri-file-text-line me-1"></i>CSV</a></li>
+                                  <li><a class="dropdown-item" id="export-excel"><i class="ri-file-excel-line me-1"></i>Excel</a></li>
+                                  <li><a class="dropdown-item" id="export-pdf"><i class="ri-file-pdf-line me-1"></i>PDF</a></li>
+                                  <li><a class="dropdown-item" id="export-copy"><i class="ri-file-copy-line me-1"></i>Copy</a></li>
+                                </ul>
+                              </li>
+                              <!-- Import Option -->
+                              <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#importFilesModal" data-no-redirect="true">Import</a></li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
-                    </div>                                   
+                    
+                      <div class="d-flex align-items-center justify-content-end me-4">
+                        <!-- List View Button -->
+                        <div class="d-flex align-items-center me-2">
+                          <a href="app-warehouse2.html">
+                            <button type="button" class="btn btn-primary" style="height: 38px;">List View</button>
+                          </a>
+                        </div>                        
+                        <!-- Territory Settings Button -->
+                        <div class="d-flex align-items-center me-4">
+                          <button type="button" class="btn btn-primary" style="height: 38px;">Territory Settings</button>
+                        </div>
+                      </div>
+                    </div>
+                    
+                                                                
                 
                 <!-- Map Menu Wrapper -->
                 <div class="d-flex app-logistics-fleet-wrapper">
@@ -937,7 +954,7 @@
                                 <button class="btn btn-link text-danger p-0 me-3">
                                   <i class="ri-delete-bin-line ri-lg"></i>
                                 </button>
-                                <a href="form-warehouse.html?id=WH01" class="btn btn-link text-primary p-0">
+                                <a href="form-warehouse2.html?id=WH 01" class="btn btn-link text-primary p-0">
                                   <i class="ri-add-line ri-lg"></i>
                                 </a>                                
                               </div>                              
@@ -970,8 +987,7 @@
                                         <i class="ri-delete-bin-line ri-lg"></i>
                                       </button>
                                       <button class="btn btn-link p-0 ms-2"
-                                          data-bs-toggle="modal"
-                                          data-bs-target="#editModal"
+                                          onclick="window.location.href='form-warehouse2.html'"
                                           data-id="WH 01"
                                           data-name="Gudang Jakarta 1"
                                           data-address="Jl. Raya Jakarta No.10, Jakarta Selatan"
@@ -1022,9 +1038,8 @@
                                       <button class="btn btn-link p-0 text-danger ms-2">
                                         <i class="ri-delete-bin-line ri-lg"></i>
                                       </button>
-                                      <button class="btn btn-link p-0 ms-2" 
-                                            data-bs-toggle="modal" 
-                                            data-bs-target="#editModal" 
+                                      <button class="btn btn-link p-0 ms-2"
+                                            onclick="window.location.href='form-warehouse2.html'"
                                             data-id="WH 01"
                                             data-name="Gudang Jakarta 2" 
                                             data-address="Jl. Merdeka No.45, Jakarta Timur" 
@@ -1086,7 +1101,7 @@
                                 <button class="btn btn-link text-danger p-0 me-3">
                                   <i class="ri-delete-bin-line ri-lg"></i>
                                 </button>
-                                <a href="form-warehouse.html?id=WH02" class="btn btn-link text-primary p-0">
+                                <a href="form-warehouse2.html?id=WH 02" class="btn btn-link text-primary p-0">
                                   <i class="ri-add-line ri-lg"></i>
                                 </a> 
                               </div>                              
@@ -1119,8 +1134,7 @@
                                         <i class="ri-delete-bin-line ri-lg"></i>
                                       </button>
                                       <button class="btn btn-link p-0 ms-2" 
-                                              data-bs-toggle="modal" 
-                                              data-bs-target="#editModal"
+                                              onclick="window.location.href='form-warehouse2.html'"
                                               data-id="WH 02"
                                               data-name="Gudang Bogor 1" 
                                               data-address="Jl. Raya Puncak No.10, Bogor"
@@ -1172,8 +1186,7 @@
                                         <i class="ri-delete-bin-line ri-lg"></i>
                                       </button>
                                       <button class="btn btn-link p-0 ms-2" 
-                                              data-bs-toggle="modal" 
-                                              data-bs-target="#editModal" 
+                                              onclick="window.location.href='form-warehouse2.html'"
                                               data-id="WH 02"
                                               data-name="Gudang Deramaga 2" 
                                               data-address="Jl. Deramaga No.45, Bogor"
@@ -1226,8 +1239,8 @@
                                   </div>
                                 </div>
                                 <span class="d-flex flex-column fw-normal">
-                                  <span class="text-heading mb-1">Gudang Semarang</span>
-                                  <span class="text-body">WH 03</span>
+                                  <span class="text-heading mb-1">PT.ABC</span>
+                                  <span class="text-body">CLI202123</span>
                                 </span>
                               </div>
                               <!-- Right Side: Action Buttons -->
@@ -1235,7 +1248,7 @@
                                 <button class="btn btn-link text-danger p-0 me-3">
                                   <i class="ri-delete-bin-line ri-lg"></i>
                                 </button>
-                                <a href="form-warehouse.html?id=WH03" class="btn btn-link text-primary p-0">
+                                <a href="form-warehouse.html?id=CLI202123" class="btn btn-link text-primary p-0">
                                   <i class="ri-add-line ri-lg"></i>
                                 </a> 
                               </div>                              
@@ -1258,7 +1271,7 @@
                                       </div>
                                     </div>
                                     <span class="d-flex flex-column fw-normal">
-                                      <span class="text-heading mb-1">Gudang Semarang 1</span>
+                                      <span class="text-heading mb-1">PT.ABC A</span>
                                       <span class="text-body">Jl. Raya Semarang No.10, Semarang</span>
                                       <span class="text-body">08:00 - 18:00</span>
                                       <span class="text-body">Express Delivery</span>
@@ -1270,8 +1283,8 @@
                                       <button class="btn btn-link p-0 ms-2" 
                                               data-bs-toggle="modal" 
                                               data-bs-target="#editModal" 
-                                              data-id="WH 03"
-                                              data-name="Gudang Semarang 1" 
+                                              data-id="CLI202123"
+                                              data-name="PT.ABC A" 
                                               data-address="Jl. Raya Semarang No.10, Semarang"
                                               data-open-time="08:00" 
                                               data-close-time="18:00" 
@@ -1309,7 +1322,7 @@
                                       </div>
                                     </div>
                                     <span class="d-flex flex-column fw-normal">
-                                      <span class="text-heading mb-1">Gudang Semarang 2</span>
+                                      <span class="text-heading mb-1">PT.ABC B</span>
                                       <span class="text-body">Jl. Merdeka No.45, Semarang</span>
                                       <span class="text-body">09:00 - 17:00</span>
                                       <span class="text-body">Same Day Delivery</span>
@@ -1321,8 +1334,8 @@
                                       <button class="btn btn-link p-0 ms-2" 
                                               data-bs-toggle="modal" 
                                               data-bs-target="#editModal" 
-                                              data-id="WH 03"
-                                              data-name="Gudang Semarang 2" 
+                                              data-id="CLI202123"
+                                              data-name="PT.ABC B" 
                                               data-address="Jl. Merdeka No.45, Semarang"
                                               data-open-time="09:00" 
                                               data-close-time="17:00" 
@@ -1370,8 +1383,8 @@
                                   </div>
                                 </div>
                                 <span class="d-flex flex-column fw-normal">
-                                  <span class="text-heading mb-1">Gudang Surabaya</span>
-                                  <span class="text-body">WH 04</span>
+                                  <span class="text-heading mb-1">PT.EFG</span>
+                                  <span class="text-body">CLI202124</span>
                                 </span>
                               </div>
                               <!-- Right Side: Action Buttons -->
@@ -1379,7 +1392,7 @@
                                 <button class="btn btn-link text-danger p-0 me-3">
                                   <i class="ri-delete-bin-line ri-lg"></i>
                                 </button>
-                                <a href="form-warehouse.html?id=WH04" class="btn btn-link text-primary p-0">
+                                <a href="form-warehouse.html?id=CLI202124" class="btn btn-link text-primary p-0">
                                   <i class="ri-add-line ri-lg"></i>
                                 </a> 
                               </div>                              
@@ -1402,7 +1415,7 @@
                                       </div>
                                     </div>
                                     <span class="d-flex flex-column fw-normal">
-                                      <span class="text-heading mb-1">Gudang Surabaya 1</span>
+                                      <span class="text-heading mb-1">PT.EFG A</span>
                                       <span class="text-body">Jl. Raya Surabaya No.10, Surabaya</span>
                                       <span class="text-body">08:00 - 18:00</span>
                                       <span class="text-body">Express Delivery</span>
@@ -1414,8 +1427,8 @@
                                       <button class="btn btn-link p-0 ms-2" 
                                               data-bs-toggle="modal" 
                                               data-bs-target="#editModal" 
-                                              data-id="WH 04"
-                                              data-name="Gudang Surabaya 1" 
+                                              data-id="CLI202124"
+                                              data-name="PT.EFG A" 
                                               data-address="Jl. Raya Surabaya No.10, Surabaya"
                                               data-open-time="08:00" 
                                               data-close-time="18:00" 
@@ -1453,7 +1466,7 @@
                                       </div>
                                     </div>
                                     <span class="d-flex flex-column fw-normal">
-                                      <span class="text-heading mb-1">Gudang Surabaya 2</span>
+                                      <span class="text-heading mb-1">PT.EFG B</span>
                                       <span class="text-body">Jl. Merdeka No.45, Surabaya</span>
                                       <span class="text-body">09:00 - 17:00</span>
                                       <span class="text-body">Same Day Delivery</span>
@@ -1465,8 +1478,8 @@
                                       <button class="btn btn-link p-0 ms-2" 
                                               data-bs-toggle="modal" 
                                               data-bs-target="#editModal" 
-                                              data-id="WH 04"
-                                              data-name="Gudang Surabaya 2" 
+                                              data-id="CLI202124"
+                                              data-name="PT.EFG B" 
                                               data-address="Jl. Merdeka No.45, Surabaya"
                                               data-open-time="09:00" 
                                               data-close-time="17:00" 
