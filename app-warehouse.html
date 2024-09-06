@@ -820,50 +820,47 @@
             </script>
             
             <div class="container-xxxl flex-grow-1 container-p-y">
-              <div class="card overflow-hidden mt-10">
-                <div class="col-md-12 d-flex align-items-center justify-content-md-end justify-content-center mt-5 mb-5">
-                  <div class="d-flex align-items-center me-3 flex-grow-1">
-                    <!-- Search Input -->
-                    <div class="d-flex align-items-center ms-4">
-                      <input type="text" id="search" class="form-control" placeholder="Search" style="max-width: 200px;">
-                    </div>
-                  </div>                                   
-                  
-                  
                   <!-- Filters Section -->
-                  <div class="d-flex align-items-center me-3">
-                    <select id="filter-parent" class="form-select" placeholder="Select" style="max-width: 200px;">
-                      <option value="">Select 1</option>
-                      <option value="">Select 2</option>
-                    </select>
-                    <button type="button" class="btn btn-primary ms-2">Pilih</button>
-                  </div>                  
-                  <!-- Export Button Dropdown -->
-                  <div class="d-flex align-items-center me-3">
-                    <button type="button" class="btn btn-outline-secondary dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" aria-expanded="false">
-                      <span class="d-flex align-items-center">
-                        <i class="ri-upload-2-line ri-16px me-2"></i>
-                        <span class="d-none d-sm-inline-block">Export</span>
-                      </span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" id="export-print"><i class="ri-printer-line me-1"></i>Print</a></li>
-                      <li><a class="dropdown-item" id="export-csv"><i class="ri-file-text-line me-1"></i>CSV</a></li>
-                      <li><a class="dropdown-item" id="export-excel"><i class="ri-file-excel-line me-1"></i>Excel</a></li>
-                      <li><a class="dropdown-item" id="export-pdf"><i class="ri-file-pdf-line me-1"></i>PDF</a></li>
-                      <li><a class="dropdown-item" id="export-copy"><i class="ri-file-copy-line me-1"></i>Copy</a></li>
-                    </ul>
-                  </div>
-                  
-                  <!-- Import Section -->
-                  <button type="button" class="btn btn-primary btn-sm me-2" 
-                    style="font-size: 1.1rem; padding: 0.2rem 0.5rem;"
-                    data-bs-toggle="modal" 
-                    data-bs-target="#importFilesModal"
-                    data-no-redirect="true"> 
-                    Import
-                  </button>                               
-                </div>                
+                  <div class="card overflow-hidden mt-10">
+                    <div class="col-md-12 d-flex align-items-center justify-content-end mt-5 mb-5">
+                      <!-- Search Input -->
+                      <div class="d-flex align-items-center me-3">
+                        <input type="text" id="search" class="form-control" placeholder="Search" style="max-width: 200px;">
+                      </div>
+                    
+                      <!-- Filter and Select Button -->
+                      <div class="d-flex align-items-center me-3">
+                        <select id="filter-parent" class="form-select" placeholder="Select" style="max-width: 200px;">
+                          <option value="">Select 1</option>
+                          <option value="">Select 2</option>
+                        </select>
+                        <button type="button" class="btn btn-primary ms-2">Pilih</button>
+                      </div>
+                    
+                      <!-- Dropdown Button for Export and Import -->
+                      <div class="d-flex align-items-center me-5">
+                        <div class="dropdown">
+                          <button type="button" class="btn btn-primary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            Actions
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <!-- Export Dropdown -->
+                            <li class="dropdown-submenu">
+                              <a class="dropdown-item dropdown-toggle" href="#">Export</a>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" id="export-print"><i class="ri-printer-line me-1"></i>Print</a></li>
+                                <li><a class="dropdown-item" id="export-csv"><i class="ri-file-text-line me-1"></i>CSV</a></li>
+                                <li><a class="dropdown-item" id="export-excel"><i class="ri-file-excel-line me-1"></i>Excel</a></li>
+                                <li><a class="dropdown-item" id="export-pdf"><i class="ri-file-pdf-line me-1"></i>PDF</a></li>
+                                <li><a class="dropdown-item" id="export-copy"><i class="ri-file-copy-line me-1"></i>Copy</a></li>
+                              </ul>
+                            </li>
+                            <!-- Import Option -->
+                            <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#importFilesModal" data-no-redirect="true">Import</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>                                   
                 
                 <!-- Map Menu Wrapper -->
                 <div class="d-flex app-logistics-fleet-wrapper">
@@ -1543,9 +1540,10 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn" style="background-color: #28a745; color: white; border: none;" data-bs-dismiss="modal">Download Template</button>
             <button type="button" class="btn btn-primary" id="importFilesButton">Import</button>
-          </div>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>          
         </div>
       </div>
     </div>    
