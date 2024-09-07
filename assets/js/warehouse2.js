@@ -21,15 +21,16 @@ $(document).ready(function () {
         {
           targets: 0, // Kolom yang akan berisi checkbox
           orderable: false, // Menonaktifkan pengurutan untuk kolom ini
-          render: function () {
-            // Mengembalikan HTML kosong
-            return '';
+          render: function (data, type, row) {
+            // Mengembalikan checkbox dengan ID dari baris data
+            return '<input type="checkbox" class="form-check-input" data-id="' + row.id + '">';
           }
         },
         {
-          targets: 1,
-          checkboxes: {
-            selectAllRender: '<input type="checkbox" class="form-check-input">'
+          targets: 1, // Kolom yang akan menampilkan ID
+          data: 'id', // Ambil ID dari data
+          render: function (data, type, row) {
+            return data; // Menampilkan ID
           }
         },
         {
