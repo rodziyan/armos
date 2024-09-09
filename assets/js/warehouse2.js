@@ -164,23 +164,22 @@ $(document).ready(function () {
         d._children.forEach(function (child) {
           childRows +=
             '<tr>' +
-            '<td></td>' +
-            '<td></td>' +
+            '<td style="width:260px"></td>' +
             '<td>' +
-            '<span class="child-name">' +
+            '<span style="width:280px">' +
             child.name +
             '</span>' +
             '</td>' +
-            '<td>' +
+            '<td style="width:240px">' +
             child.address +
             '</td>' +
-            '<td>' +
+            '<td style="width:160px">' +
             child.availability +
             '</td>' +
-            '<td>' +
+            '<td style="width:100px">' +
             child.area +
             '</td>' +
-            '<td>' +
+            '<td style="width:105px">' +
             child.zona +
             '</td>' +
             '<td>' +
