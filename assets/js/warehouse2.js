@@ -46,6 +46,10 @@ $(document).ready(function () {
           render: function (data, type, row) {
             if (row._children) {
               return `
+                <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect addModal" 
+                        onclick="confirmAdd()">
+                        <i class="ri-add-line ri-20px"></i>
+                </button>
                 <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal" 
                         onclick="window.location.href='form-warehouse2.html'">
                         <i class="ri-pencil-line ri-20px"></i>
@@ -125,7 +129,11 @@ $(document).ready(function () {
               return '';
             } else {
               return `
-                <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal" 
+                <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect addModal" 
+                        onclick="confirmAdd()">
+                        <i class="ri-add-line ri-20px"></i>
+                </button>
+               <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal" 
                         onclick="window.location.href='form-warehouse2.html'">
                         <i class="ri-pencil-line ri-20px"></i>
                 </button>
