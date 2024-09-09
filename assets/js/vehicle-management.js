@@ -12,129 +12,195 @@ $(function () {
   function createViewModal() {
     // Modal HTML structure
     var modalHTML = `
-       <link rel="stylesheet" href="https://unpkg.com/remixicon/fonts/remixicon.css">
-        <!-- Modal View -->
-        <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-simple modal-edit-user">
-                <div class="modal-content">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="modal-body p-0">
-                        <div class="text-center mb-6">
-                            <h4 class="mb-2">Perbarui Informasi Kendaraan</h4>
-                            <p class="mb-6">Memperbarui detail kendaraan.</p>
-                        </div>
-                        <form id="updateForm" class="row g-5" onsubmit="return false">
-                            <!-- Icon -->
-                            <div class="col-12 text-center mb-3">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <i class="ri-truck-fill" style="font-size: 50px; margin-right: 8px;"></i>
-                                </div>
-                            </div>
-                            <!-- Vehicle Details -->
-                            <div class="col-12">
-                                <div class="form-floating form-floating-outline">
-                                    <input
-                                        type="text"
-                                        id="platNomor"
-                                        name="platNomor"
-                                        class="form-control"
-                                        placeholder="Masukkan nomor plat" />
-                                    <label for="platNomor">Nomor Plat</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating form-floating-outline">
-                                    <input
-                                        type="text"
-                                        id="status"
-                                        name="status"
-                                        class="form-control"
-                                        placeholder="Masukkan status" />
-                                    <label for="status">Status</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating form-floating-outline">
-                                    <input
-                                        type="text"
-                                        id="expiredPajak"
-                                        name="expiredPajak"
-                                        class="form-control"
-                                        placeholder="Masukkan tanggal pajak kadaluarsa" />
-                                    <label for="expiredPajak">Tanggal Pajak Kadaluarsa</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating form-floating-outline">
-                                    <input
-                                        type="text"
-                                        id="vehicleType"
-                                        name="vehicleType"
-                                        class="form-control"
-                                        placeholder="Masukkan jenis kendaraan" />
-                                    <label for="vehicleType">Jenis Kendaraan</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating form-floating-outline">
-                                    <input
-                                        type="text"
-                                        id="areaRestriction"
-                                        name="areaRestriction"
-                                        class="form-control"
-                                        placeholder="Masukkan wilayah" />
-                                    <label for="areaRestriction">Wilayah</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating form-floating-outline">
-                                    <input
-                                        type="text"
-                                        id="customerRestriction"
-                                        name="customerRestriction"
-                                        class="form-control"
-                                        placeholder="Masukkan jenis pelanggan" />
-                                    <label for="customerRestriction">Jenis Pelanggan</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating form-floating-outline">
-                                    <input
-                                        type="text"
-                                        id="productRestriction"
-                                        name="productRestriction"
-                                        class="form-control"
-                                        placeholder="Masukkan jenis produk" />
-                                    <label for="productRestriction">Jenis Produk</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating form-floating-outline">
-                                    <input
-                                        type="text"
-                                        id="driverPairing"
-                                        name="driverPairing"
-                                        class="form-control"
-                                        placeholder="Masukkan pengemudi" />
-                                    <label for="driverPairing">Pengemudi</label>
-                                </div>
-                            </div>
-                            <div class="col-12 text-center d-flex flex-wrap justify-content-center gap-4 row-gap-4">
-                                <button type="submit" class="btn btn-primary">Update</button>
-                                <button
-                                    type="reset"
-                                    class="btn btn-outline-secondary"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close">
-                                    Batal
-                                </button>
-                            </div>
-                        </form>
+    <link rel="stylesheet" href="https://unpkg.com/remixicon/fonts/remixicon.css">
+    <!-- Modal View -->
+    <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-simple modal-edit-user">
+            <div class="modal-content">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-body p-0">
+                    <div class="text-center mb-6">
+                        <h4 class="mb-2">Perbarui Informasi Kendaraan</h4>
+                        <p class="mb-6">Memperbarui detail kendaraan.</p>
                     </div>
+                    <form id="updateForm" class="row g-5" onsubmit="return false">
+                        <!-- Icon -->
+                        <div class="col-12 text-center mb-3">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <i class="ri-truck-fill" style="font-size: 50px; margin-right: 8px;"></i>
+                            </div>
+                        </div>
+                        <!-- Vehicle Details -->
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="platNomor"
+                                    name="platNomor"
+                                    class="form-control"
+                                    placeholder="Masukkan nomor plat" />
+                                <label for="platNomor">Nomor Plat</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="nomorStnk"
+                                    name="nomorStnk"
+                                    class="form-control"
+                                    placeholder="Masukkan nomor STNK" />
+                                <label for="nomorStnk">Nomor STNK</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="status"
+                                    name="status"
+                                    class="form-control"
+                                    placeholder="Masukkan status" />
+                                <label for="status">Status</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="expiredPajak"
+                                    name="expiredPajak"
+                                    class="form-control"
+                                    placeholder="Masukkan tanggal pajak kadaluarsa" />
+                                <label for="expiredPajak">Tanggal Pajak Kadaluarsa</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="vehicleType"
+                                    name="vehicleType"
+                                    class="form-control"
+                                    placeholder="Masukkan jenis kendaraan" />
+                                <label for="vehicleType">Jenis Kendaraan</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="kmPerL"
+                                    name="kmPerL"
+                                    class="form-control"
+                                    placeholder="Masukkan KM/L kendaraan" />
+                                <label for="kmPerL">KM/L Kendaraan</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="areaRestriction"
+                                    name="areaRestriction"
+                                    class="form-control"
+                                    placeholder="Masukkan Area" />
+                                <label for="areaRestriction">Area</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="customerRestriction"
+                                    name="customerRestriction"
+                                    class="form-control"
+                                    placeholder="Masukkan jenis pelanggan" />
+                                <label for="customerRestriction">Jenis Pelanggan</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="customerType"
+                                    name="customerType"
+                                    class="form-control"
+                                    placeholder="Masukkan tipe pelanggan" />
+                                <label for="customerType">Tipe Pelanggan</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="productRestriction"
+                                    name="productRestriction"
+                                    class="form-control"
+                                    placeholder="Masukkan jenis produk" />
+                                <label for="productRestriction">Jenis Produk</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="driverPairing"
+                                    name="driverPairing"
+                                    class="form-control"
+                                    placeholder="Masukkan pengemudi" />
+                                <label for="driverPairing">Pengemudi</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="lokasi"
+                                    name="lokasi"
+                                    class="form-control"
+                                    placeholder="Masukkan lokasi" />
+                                <label for="lokasi">Lokasi</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="jamBuka"
+                                    name="jamBuka"
+                                    class="form-control"
+                                    placeholder="Masukkan jam buka" />
+                                <label for="jamBuka">Jam Buka</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating form-floating-outline">
+                                <input
+                                    type="text"
+                                    id="jamTutup"
+                                    name="jamTutup"
+                                    class="form-control"
+                                    placeholder="Masukkan jam tutup" />
+                                <label for="jamTutup">Jam Tutup</label>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center d-flex flex-wrap justify-content-center gap-4 row-gap-4">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button
+                                type="reset"
+                                class="btn btn-outline-secondary"
+                                data-bs-dismiss="modal"
+                                aria-label="Close">
+                                Batal
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    `;
+    </div>
+`;
     // Append the modal HTML to the body
     $('body').append(modalHTML);
   }
@@ -363,6 +429,12 @@ $(function () {
       var customerRestriction = $(this).data('customer-restriction');
       var productRestriction = $(this).data('product-restriction');
       var driverPairing = $(this).data('driver-pairing');
+      var nomorStnk = $(this).data('nomor-stnk'); // New field
+      var kmPerL = $(this).data('km-l'); // New field
+      var lokasi = $(this).data('lokasi'); // New field
+      var jamBuka = $(this).data('jam-buka'); // New field
+      var jamTutup = $(this).data('jam-tutup'); // New field
+      var customerType = $(this).data('customer-type'); // New field
 
       // Define status options
       var statusObj = {
@@ -382,6 +454,12 @@ $(function () {
       $('#customerRestriction').val(customerRestriction);
       $('#productRestriction').val(productRestriction);
       $('#driverPairing').val(driverPairing);
+      $('#nomorStnk').val(nomorStnk); // Update new field
+      $('#kmPerL').val(kmPerL); // Update new field
+      $('#lokasi').val(lokasi); // Update new field
+      $('#jamBuka').val(jamBuka); // Update new field
+      $('#jamTutup').val(jamTutup); // Update new field
+      $('#customerType').val(customerType); // Update new field
 
       var updateModal = new bootstrap.Modal(document.getElementById('viewModal'));
       updateModal.show();

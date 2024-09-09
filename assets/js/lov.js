@@ -203,28 +203,6 @@ $(function () {
               'data-bs-toggle="tooltip" ' +
               'title="Update">' +
               '<i class="ri-pencil-line ri-20px"></i>' +
-              '</button>' +
-              '<button type="button" class="btn btn-sm btn-info btn-icon rounded-pill waves-effect modalTrigger updateModal" ' +
-              'style="border: none;" ' +
-              'data-id="' +
-              full.id +
-              '" ' +
-              'data-lov_code="' +
-              full.lov_code +
-              '" ' +
-              'data-lov_value="' +
-              full.lov_value +
-              '" ' +
-              'data-lov_parent="' +
-              full.lov_parent +
-              '" ' +
-              'data-status="' +
-              full.status +
-              '" ' +
-              'data-bs-toggle="tooltip" ' +
-              'title="View">' +
-              '<i class="ri-eye-line ri-20px"></i>' +
-              '</button>' +
               '<button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" style="border: none;">' +
               '<i class="ri-delete-bin-6-line ri-20px"></i>' +
               '</button>'

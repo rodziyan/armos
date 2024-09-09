@@ -71,7 +71,7 @@ $(document).ready(function () {
             return `
               <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal" 
                       onclick="window.location.href='form-warehouse2.html'">
-                      <i class="ri-eye-line ri-20px"></i>
+                      <i class="ri-pencil-line ri-20px"></i>
               </button>
               <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect deleteModal" 
                       onclick="confirmDelete()">
