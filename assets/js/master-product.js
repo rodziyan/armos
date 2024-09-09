@@ -189,7 +189,7 @@ $(function () {
                       data-product-width="${full['product_width']}"
                       data-product-length="${full['product_length']}"
                       data-product-restrictions="${full['product_restrictions']}">
-                      <i class="ri-eye-line ri-20px"></i>
+                      <i class="ri-edit-line ri-20px"></i>
                   </button>
                   <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" style="border: none;">
                   <i class="ri-delete-bin-6-line ri-20px"></i>
