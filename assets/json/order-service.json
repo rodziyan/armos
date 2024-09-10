@@ -1,0 +1,204 @@
+{
+  "data": [
+    {
+      "driver_id": "D001",
+      "vehicle_id": "V001",
+      "desc": "Macet di jalan raya akibat kemacetan parah",
+      "foto": "traffic_jam.jpg",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "driver_id": "D002",
+      "vehicle_id": "V002",
+      "desc": "Mogok mesin di tengah perjalanan",
+      "foto": "broken_down.png",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "driver_id": "D003",
+      "vehicle_id": "V003",
+      "desc": "Kecelakaan ringan dengan kendaraan lain",
+      "foto": "accident.img",
+      "status": 3,
+      "action": "action"
+    },
+    {
+      "driver_id": "D004",
+      "vehicle_id": "V004",
+      "desc": "Toko tutup sehingga tidak dapat mengirim barang",
+      "foto": "store_closed.jpg",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "driver_id": "D005",
+      "vehicle_id": "V005",
+      "desc": "Kendaraan mengalami kerusakan pada sistem kelistrikan",
+      "foto": "electrical_issue.png",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "driver_id": "D006",
+      "vehicle_id": "V006",
+      "desc": "Ban bocor dan harus diganti",
+      "foto": "flat_tire.jpg",
+      "status": 3,
+      "action": "action"
+    },
+    {
+      "driver_id": "D007",
+      "vehicle_id": "V007",
+      "desc": "Kendaraan terjebak di genangan air",
+      "foto": "water_trap.png",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "driver_id": "D008",
+      "vehicle_id": "V008",
+      "desc": "Kecelakaan dengan kendaraan parkir",
+      "foto": "parked_accident.jpg",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "driver_id": "D009",
+      "vehicle_id": "V009",
+      "desc": "Kendaraan kehabisan bahan bakar",
+      "foto": "out_of_fuel.png",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "driver_id": "D010",
+      "vehicle_id": "V010",
+      "desc": "Kunci mobil hilang di dalam kendaraan",
+      "foto": "locked_out.jpg",
+      "status": 3,
+      "action": "action"
+    },
+    {
+      "driver_id": "D011",
+      "vehicle_id": "V011",
+      "desc": "Masalah dengan sistem pendingin",
+      "foto": "cooling_issue.png",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "driver_id": "D012",
+      "vehicle_id": "V012",
+      "desc": "Kendaraan terjebak di jalan yang rusak",
+      "foto": "damaged_road.jpg",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "driver_id": "D013",
+      "vehicle_id": "V013",
+      "desc": "Perawatan rutin kendaraan diperlukan",
+      "foto": "routine_maintenance.png",
+      "status": 3,
+      "action": "action"
+    },
+    {
+      "driver_id": "D014",
+      "vehicle_id": "V014",
+      "desc": "Masalah dengan sistem rem",
+      "foto": "brake_issue.jpg",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "driver_id": "D015",
+      "vehicle_id": "V015",
+      "desc": "Kendaraan terjebak di area konstruksi",
+      "foto": "construction_site.png",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "driver_id": "D016",
+      "vehicle_id": "V016",
+      "desc": "Kendaraan terlalu panas",
+      "foto": "overheating.jpg",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "driver_id": "D017",
+      "vehicle_id": "V017",
+      "desc": "Sistem navigasi mengalami gangguan",
+      "foto": "navigation_issue.png",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "driver_id": "D018",
+      "vehicle_id": "V018",
+      "desc": "Kendaraan terlalu banyak muatan",
+      "foto": "overloaded.jpg",
+      "status": 3,
+      "action": "action"
+    },
+    {
+      "driver_id": "D019",
+      "vehicle_id": "V019",
+      "desc": "Ganti oli mesin diperlukan",
+      "foto": "oil_change.png",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "driver_id": "D020",
+      "vehicle_id": "V020",
+      "desc": "Masalah dengan sistem pengapian",
+      "foto": "ignition_issue.jpg",
+      "status": 3,
+      "action": "action"
+    },
+    {
+      "driver_id": "D021",
+      "vehicle_id": "V021",
+      "desc": "Kendaraan terperosok ke dalam lubang",
+      "foto": "hole_trap.png",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "driver_id": "D022",
+      "vehicle_id": "V022",
+      "desc": "Masalah dengan sistem transmisi",
+      "foto": "transmission_issue.jpg",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "driver_id": "D023",
+      "vehicle_id": "V023",
+      "desc": "Kendaraan mengalami kerusakan pada suspensi",
+      "foto": "suspension_issue.png",
+      "status": 1,
+      "action": "action"
+    },
+    {
+      "driver_id": "D024",
+      "vehicle_id": "V024",
+      "desc": "Kendaraan kehilangan daya tarik",
+      "foto": "lost_power.jpg",
+      "status": 2,
+      "action": "action"
+    },
+    {
+      "driver_id": "D025",
+      "vehicle_id": "V025",
+      "desc": "Perlu mengganti baterai kendaraan",
+      "foto": "battery_change.png",
+      "status": 3,
+      "action": "action"
+    }
+  ]
+}
