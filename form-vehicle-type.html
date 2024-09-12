@@ -804,11 +804,16 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="text" id="region-restriction" class="form-control tagify" placeholder="Pilih atau ketik wilayah">
-                                        <label for="region-restriction">Pembatasan Wilayah</label>
-                                    </div>
-                                </div>
+                                  <div class="form-floating form-floating-outline">
+                                      <select id="region-restriction" class="form-select" aria-label="Pembatasan Wilayah">
+                                          <option value="" selected>Pilih wilayah</option>
+                                          <option value="wilayah1">Wilayah 1</option>
+                                          <option value="wilayah2">Wilayah 2</option>
+                                          <option value="wilayah3">Wilayah 3</option>
+                                      </select>
+                                      <label for="region-restriction">Pembatasan Wilayah</label>
+                                  </div>
+                              </div>                              
                                 <div class="col-md-6">
                                     <div class="form-floating form-floating-outline">
                                         <input type="text" id="customer-type-restriction" class="form-control tagify" placeholder="Pilih atau ketik jenis pelanggan">
