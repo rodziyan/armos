@@ -15,63 +15,81 @@ $(document).ready(function () {
       columns: [
         { data: '' },
         { data: 'id' },
-        { data: 'tanggal' },
-        { data: 'batch' },
-        { data: 'file_name' },
-        { data: 'dibuat_oleh' },
+        { data: 'toko' },
+        { data: 'tipe_outlet' },
+        { data: 'faktur_id' },
+        { data: 'faktur_date' },
+        { data: 'delivery_date' },
+        { data: 'qty' },
+        { data: 'value' },
         { data: 'status' },
+        { data: 'scheduled_optimization_date' },
+        { data: 'scheduled_optimization_time' },
+        { data: 'delivery_type' },
         { data: 'action' }
       ],
       columnDefs: [
         {
-          className: 'control',
-          searchable: false,
-          orderable: false,
-          responsivePriority: 2,
           targets: 0,
+          orderable: false,
           render: function () {
-            return '';
+            return null; // atau return '';
           }
         },
         {
-          targets: 1,
+          targets: 1, // Target kolom pertama
           orderable: false,
           render: function () {
             return '<input type="checkbox" class="dt-checkboxes form-check-input">';
-          },
-          checkboxes: {
-            selectAllRender: '<input type="checkbox" class="form-check-input">'
           }
         },
         {
-          targets: 2,
+          targets: 2, // Toko
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 3,
+          targets: 3, // Tipe Outlet
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 4,
+          targets: 4, // Faktur ID
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 5,
+          targets: 5, // Faktur Date
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 6,
+          targets: 6, // Delivery Date
+          render: function (data) {
+            return '<span>' + data + '</span>';
+          }
+        },
+        {
+          targets: 7, // Qty
+          render: function (data) {
+            return '<span>' + data + '</span>';
+          }
+        },
+        {
+          targets: 8, // Value
+          render: function (data) {
+            return '<span>' + data + '</span>';
+          }
+        },
+        {
+          targets: 9, // Status
           render: function (data) {
             const statusObj = {
-              1: { title: 'Uploaded', class: 'bg-label-success' },
+              1: { title: 'New', class: 'bg-label-blue' },
               2: { title: 'Pending', class: 'bg-label-warning' }
             };
             return (
@@ -84,38 +102,110 @@ $(document).ready(function () {
           }
         },
         {
-          targets: -1,
+          targets: 10, // Scheduled Optimization Date
+          render: function (data) {
+            return '<span>' + data + '</span>';
+          }
+        },
+        {
+          targets: 11, // Scheduled Optimization Time
+          render: function (data) {
+            return '<span>' + data + '</span>';
+          }
+        },
+        {
+          targets: 12, // Delivery Type
+          render: function (data) {
+            return '<span>' + data + '</span>';
+          }
+        },
+        {
+          targets: -1, // Actions
           title: 'Actions',
           orderable: false,
           render: function (data, type, full) {
-            var $tanggal = full['tanggal'] || 'N/A';
-            var $batch = full['batch'] || 'N/A';
-            var $fileName = full['file_name'] || 'N/A';
-            var $dibuatOleh = full['dibuat_oleh'] || 'N/A';
+            var $id = full['id'] || 'N/A';
+            var $toko = full['toko'] || 'N/A';
+            var $tipeOutlet = full['tipe_outlet'] || 'N/A';
+            var $fakturId = full['faktur_id'] || 'N/A';
+            var $fakturDate = full['faktur_date'] || 'N/A';
+            var $deliveryDate = full['delivery_date'] || 'N/A';
+            var $qty = full['qty'] || 'N/A';
+            var $value = full['value'] || 'N/A';
             var $status = full['status'];
+            var $scheduledOptimizationDate = full['scheduled_optimization_date'] || 'N/A';
+            var $scheduledOptimizationTime = full['scheduled_optimization_time'] || 'N/A';
+            var $deliveryType = full['delivery_type'] || 'N/A';
 
             const statusObj = {
-              1: 'Uploaded',
+              1: 'New',
               2: 'Pending'
             };
             var $statusText = statusObj[$status] || 'Unknown';
 
             return `
-                <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
-                  data-tanggal="${$tanggal}"
-                  data-batch="${$batch}"
-                  data-file_name="${$fileName}"
-                  data-dibuat_oleh="${$dibuatOleh}"
-                  data-status="${$statusText}">
-                  <i class="ri-eye-line ri-20px"></i>
-                </button>
-                <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" style="border: none;">
-                  <i class="ri-delete-bin-6-line ri-20px"></i>
-                  </button>
-            `;
+                    <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
+                      data-id="${$id}"
+                      data-toko="${$toko}"
+                      data-tipe_outlet="${$tipeOutlet}"
+                      data-faktur_id="${$fakturId}"
+                      data-faktur_date="${$fakturDate}"
+                      data-delivery_date="${$deliveryDate}"
+                      data-qty="${$qty}"
+                      data-value="${$value}"
+                      data-status="${$statusText}"
+                      data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+                      data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+                      data-delivery_type="${$deliveryType}">
+                      <i class="ri-eye-line ri-20px"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect updateModal"
+                      data-id="${$id}"
+                      data-toko="${$toko}"
+                      data-tipe_outlet="${$tipeOutlet}"
+                      data-faktur_id="${$fakturId}"
+                      data-faktur_date="${$fakturDate}"
+                      data-delivery_date="${$deliveryDate}"
+                      data-qty="${$qty}"
+                      data-value="${$value}"
+                      data-status="${$statusText}"
+                      data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+                      data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+                      data-delivery_type="${$deliveryType}">
+                      <i class="ri-edit-line ri-20px"></i>
+                    </button>
+                `;
           }
         }
-      ]
+      ],
+      dom: '<"top"<"d-flex justify-content-end mt-5 mb-5 me-5"<"dropdown-container">>>rt<"bottom"lp><"clear">'
+    });
+
+    // Append the custom dropdown button to the container
+    $('div.dropdown-container').html(`
+      <div>
+      <button type="button" class="btn btn-primary" id="selectAllBtn">
+          Select
+      </button>
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+          Action
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" id="proceedOptimization">Proceed to Optimization</a></li>
+          <li><a class="dropdown-item" href="#" id="holdAction">Hold</a></li>
+        </ul>
+      </div>
+    `);
+
+    // Show modal on Hold click
+    $('#holdAction').on('click', function (e) {
+      e.preventDefault();
+      $('#holdModal').modal('show');
+    });
+    // Toggle checkbox visibility
+    $('#toggleCheckboxes').on('click', function () {
+      const checkboxColumn = dt_User.column(0);
+      checkboxColumn.visible(!checkboxColumn.visible()); // Toggle visibility
     });
 
     // Delete Record
@@ -124,43 +214,59 @@ $(document).ready(function () {
     });
   }
 
-  // Deklarasi objek status dengan string sebagai kunci
-  var statusObj = {
-    Uploaded: { title: 'Uploaded', class: 'bg-label-success' },
-    Pending: { title: 'Pending', class: 'bg-label-warning' }
-  };
+  // Tambahkan event listener pada tombol View dan Update
+  $(document).on('click', '.viewModal, .updateModal', function () {
+    // Ambil data dari atribut data-* tombol yang diklik
+    var $this = $(this);
+    var id = $this.data('id');
+    var toko = $this.data('toko');
+    var tipeOutlet = $this.data('tipe_outlet');
+    var fakturId = $this.data('faktur_id');
+    var fakturDate = $this.data('faktur_date');
+    var deliveryDate = $this.data('delivery_date');
+    var qty = $this.data('qty');
+    var value = $this.data('value');
+    var status = $this.data('status');
+    var scheduledOptimizationDate = $this.data('scheduled_optimization_date');
+    var scheduledOptimizationTime = $this.data('scheduled_optimization_time');
+    var deliveryType = $this.data('delivery_type');
 
-  // Event listener untuk tombol viewModal
-  $(document).on('click', '.viewModal', function () {
-    var tanggal = $(this).data('tanggal');
-    var batch = $(this).data('batch');
-    var fileName = $(this).data('file_name');
-    var dibuatOleh = $(this).data('dibuat_oleh');
-    var status = $(this).data('status');
-
-    // Debugging
-    console.log('Received Status:', status);
-    console.log('Status Object:', statusObj[status]);
-
-    // Mendapatkan status dari statusObj
-    var statusInfo = statusObj[status] || { title: 'Unknown', class: 'bg-label-secondary' };
-
-    // Debugging
-    console.log('Status Info:', statusInfo);
-
-    // Set data di modal
-    $('#viewModal #tanggal').val(tanggal);
-    $('#viewModal #batch').val(batch);
-    $('#viewModal #fileName').val(fileName);
-    $('#viewModal #dibuatOleh').val(dibuatOleh);
-
-    // Update status dengan class yang sesuai
-    $('#viewModal #status').val(statusInfo.title).attr('class', `form-control ${statusInfo.class}`);
+    // Isi modal dengan data
+    $('#viewModal #toko').val(toko);
+    $('#viewModal #tipeOutlet').val(tipeOutlet);
+    $('#viewModal #fakturId').val(fakturId);
+    $('#viewModal #fakturDate').val(fakturDate);
+    $('#viewModal #deliveryDate').val(deliveryDate);
+    $('#viewModal #qty').val(qty);
+    $('#viewModal #value').val(value);
+    $('#viewModal #status').val(status);
+    $('#viewModal #scheduledOptimizationDate').val(scheduledOptimizationDate);
+    $('#viewModal #scheduledOptimizationTime').val(scheduledOptimizationTime);
+    $('#viewModal #deliveryType').val(deliveryType);
 
     // Tampilkan modal
-    var updateModal = new bootstrap.Modal(document.getElementById('viewModal'));
-    updateModal.show();
+    $('#viewModal').modal('show');
   });
+});
+
+// Event listener for the selectAllBtn
+document.getElementById('selectAllBtn').addEventListener('click', function () {
+  // Get all rows in the DataTable
+  const rows = dt_User.rows().nodes();
+  // Get the current state of the select all button
+  const isChecked = this.classList.contains('selected');
+
+  // Toggle the selection state of all checkboxes
+  rows.each(function (row) {
+    const checkbox = $(row).find('.dt-checkboxes');
+    checkbox.prop('checked', !isChecked); // Toggle the checked state
+  });
+
+  // Toggle the class to track the selection state
+  this.classList.toggle('selected');
+
+  // Update DataTable select state
+  dt_User.rows().select();
 });
 
 // Fungsi untuk membuat modal
@@ -176,41 +282,71 @@ function createViewModal() {
                         <h4 class="mb-2">Detail Order Processing</h4>
                     </div>
                     <form id="viewForm" class="row g-5" onsubmit="return false">
-                        <!-- Icon -->
-                        <div class="col-12 text-center mb-3">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <i class="" style="font-size: 50px; margin-right: 8px;"></i>
-                            </div>
-                        </div>
                         <!-- Order Details -->
                         <div class="col-12">
                             <div class="form-floating form-floating-outline">
-                                <input type="text" id="tanggal" name="tanggal" class="form-control" placeholder="Masukkan tanggal" />
-                                <label for="tanggal">Tanggal</label>
+                                <input type="text" id="toko" name="toko" class="form-control" placeholder="Masukkan nama toko" readonly />
+                                <label for="toko">Toko</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating form-floating-outline">
-                                <input type="text" id="batch" name="batch" class="form-control" placeholder="Masukkan batch" />
-                                <label for="batch">Batch</label>
+                                <input type="text" id="tipeOutlet" name="tipeOutlet" class="form-control" placeholder="Masukkan tipe outlet" readonly />
+                                <label for="tipeOutlet">Tipe Outlet</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating form-floating-outline">
-                                <input type="text" id="fileName" name="fileName" class="form-control" placeholder="Masukkan nama file" />
-                                <label for="fileName">Nama File</label>
+                                <input type="text" id="fakturId" name="fakturId" class="form-control" placeholder="Masukkan ID faktur" readonly />
+                                <label for="fakturId">Faktur ID</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating form-floating-outline">
-                                <input type="text" id="dibuatOleh" name="dibuatOleh" class="form-control" placeholder="Masukkan dibuat oleh" />
-                                <label for="dibuatOleh">Dibuat Oleh</label>
+                                <input type="text" id="fakturDate" name="fakturDate" class="form-control" placeholder="Masukkan tanggal faktur" readonly />
+                                <label for="fakturDate">Tanggal Faktur</label>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating form-floating-outline">
-                                <input type="text" id="status" name="status" class="form-control" placeholder="Masukkan status" />
+                                <input type="text" id="deliveryDate" name="deliveryDate" class="form-control" placeholder="Masukkan tanggal pengiriman" readonly />
+                                <label for="deliveryDate">Tanggal Pengiriman</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input type="text" id="qty" name="qty" class="form-control" placeholder="Masukkan jumlah" readonly />
+                                <label for="qty">Qty</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input type="text" id="value" name="value" class="form-control" placeholder="Masukkan nilai" readonly />
+                                <label for="value">Value</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input type="text" id="status" name="status" class="form-control" placeholder="Masukkan status" readonly />
                                 <label for="status">Status</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input type="text" id="scheduledOptimizationDate" name="scheduledOptimizationDate" class="form-control" placeholder="Masukkan tanggal optimasi yang dijadwalkan" readonly />
+                                <label for="scheduledOptimizationDate">Tanggal Optimasi yang Dijadwalkan</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input type="text" id="scheduledOptimizationTime" name="scheduledOptimizationTime" class="form-control" placeholder="Masukkan waktu optimasi yang dijadwalkan" readonly />
+                                <label for="scheduledOptimizationTime">Waktu Optimasi yang Dijadwalkan</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating form-floating-outline">
+                                <input type="text" id="deliveryType" name="deliveryType" class="form-control" placeholder="Masukkan tipe pengiriman" readonly />
+                                <label for="deliveryType">Tipe Pengiriman</label>
                             </div>
                         </div>
                     </form>
@@ -222,3 +358,20 @@ function createViewModal() {
   // Tambahkan modal ke DOM
   $('body').append(modalHTML);
 }
+const style = document.createElement('style');
+style.innerHTML = `
+  .bg-label-blue {
+    background-color: #0000FF; /* Warna Biru */
+    color: white; /* Warna teks putih agar kontras dengan latar belakang biru */
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+    .bg-label-warning {
+    background-color: #DC3545; /* Merah */
+    color: white; /* Warna teks putih agar kontras dengan latar belakang merah */
+    padding: 5px 10px;
+    border-radius: 4px;
+  }`;
+
+// Menambahkan elemen style ke head
+document.head.appendChild(style);

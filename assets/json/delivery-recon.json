@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "driver_name": "Andi",
+      "driver_status": 1,
+      "route_id": "R001",
+      "drop_completion": "3/5",
+      "jumlah_faktur": "1/2",
+      "jumlah_qty": "5/10",
+      "action": "action"
+    },
+    {
+      "driver_name": "Budi",
+      "driver_status": 2,
+      "route_id": "R002",
+      "drop_completion": "2/3",
+      "jumlah_faktur": "2/3",
+      "jumlah_qty": "8/12",
+      "action": "action"
+    },
+    {
+      "driver_name": "Cindy",
+      "driver_status": 3,
+      "route_id": "R003",
+      "drop_completion": "4/4",
+      "jumlah_faktur": "1/1",
+      "jumlah_qty": "8/8",
+      "action": "action"
+    }
+  ]
+}

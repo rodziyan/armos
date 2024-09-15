@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Order Approval - Apps | Armos</title>
+    <title>Review Route - Apps | Armos</title>
 
     <meta name="description" content="" />
 
@@ -573,19 +573,47 @@
                       <li class="menu-item">
                         <a href="order-processing.html" class="menu-link">
                           <i class="menu-icon tf-icons ri-task-line"></i>
-                          <div data-i18n="Order Processing">Order Processing</div>
+                          <div data-i18n="Outstanding Order">Outstanding Order</div>
                         </a>
                       </li>
                       <li class="menu-item">
                         <a href="order-approval.html" class="menu-link">
-                          <i class="menu-icon tf-icons ri-find-replace-line"></i>
-                          <div data-i18n="Order List & Approval">Order List & Approval</div>
+                          <i class="menu-icon tf-icons ri-map-pin-line"></i>
+                          <div data-i18n="Review Route">Review Route</div>
                         </a>
                       </li>
                       <li class="menu-item">
                         <a href="order-service.html" class="menu-link">
-                          <i class="menu-icon tf-icons ri-notification-3-line"></i>
-                          <div data-i18n="Order Service">Order Service</div>
+                          <i class="menu-icon tf-icons ri-truck-line"></i>
+                          <div data-i18n="Ready To Pickup">Ready To Pickup</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="in-delivery.html" class="menu-link">
+                          <i class="menu-icon tf-icons ri-road-map-line"></i>
+                          <div data-i18n="In-Delivery">In-Delivery</div>
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="delivery-reconciliation.html" class="menu-link">
+                          <i class="menu-icon tf-icons ri-file-list-line"></i>
+                          <div data-i18n="Delivery Reconciliation">Delivery Reconciliation</div>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <!-- Return Management -->
+                  <li class="menu-item">
+                    <a href="javascript:void(0)" class="menu-link menu-toggle">
+                      <i class="menu-icon tf-icons ri-recycle-line"></i>
+                      <div data-i18n="Return Management">Return Management</div>
+                    </a>
+                    <ul class="menu-sub">
+                      <li class="menu-item">
+                        <a href="return.html" class="menu-link">
+                          <i class="menu-icon tf-icons ri-list-check-line"></i>
+                          <div data-i18n="Return List">Return List</div>
                         </a>
                       </li>
                     </ul>
@@ -697,44 +725,78 @@
             <!-- / Menu -->
              
             <!-- Content -->
-            <style>
-              .container-xxxl {
-                  padding-left: 15px; 
-                  padding-right: 15px; 
-              }
-              .row {
-                  margin-left: -15px; 
-                  margin-right: -15px; 
-              }
-              .row > .col {
-                  padding-left: 15px; 
-                  padding-right: 15px; 
-              }
-          </style>
-            <div class="container-xxxl flex-grow-1 container-p-y">
-              <div class="col-12">
-                    <h4 class="mt-10 mb-1">Total File dan Statusnya</h4>
-                    <p class="mb-3">
-                        Lihat semua file yang diunggah beserta statusnya.
-                    </p>
-                </div>      
+             <div class="container-xxxl flex-grow-1 container-p-y">
+              <!-- Role cards -->
+              <div class="row g-6">
+              <div class="test mt-5">
                 <div class="col-12">
                   <!-- Role Table -->
                   <div class="card">
+                    <!-- Display Today's Date -->
+                    <h4 class="mb-2 mt-5 ms-5"><strong>Tanggal Hari Ini:</strong> <span id="currentDate"></span></h4>
+                      <div class="card-header border-bottom">
+                          <h5 class="card-title mb-0">Filters</h5>
+                          <div class="d-flex flex-wrap align-items-center gap-3 pt-4">
+                            <!-- Filter by Route ID -->
+                            <div class="col-md">
+                              <input type="text" id="filter-route" class="form-control" placeholder="Filter by Route ID" />
+                            </div>
+                            <!-- Filter by Driver & Vehicle -->
+                            <div class="col-md">
+                              <input type="text" id="filter-driver-vehicle" class="form-control" placeholder="Filter by Driver & Vehicle" />
+                            </div>
+                            <!-- Filter by Delivery Type -->
+                            <div class="col-md">
+                              <input type="text" id="filter-delivery-tipe" class="form-control" placeholder="Filter by Delivery Type" />
+                            </div>
+                            <!-- Filter by Location Name -->
+                            <div class="col-md">
+                              <input type="text" id="filter-location-name" class="form-control" placeholder="Filter by Location Name" />
+                            </div>
+                            <!-- Filter by DO Number -->
+                            <div class="col-md">
+                              <input type="text" id="filter-do-number" class="form-control" placeholder="Filter by DO Number" />
+                            </div>
+                            <!-- Filter by Faktur ID -->
+                            <div class="col-md">
+                              <input type="text" id="filter-faktur-id" class="form-control" placeholder="Filter by Faktur ID" />
+                            </div>
+                            <!-- Buttons -->
+                            <div class="col-md-auto">
+                              <div class="d-flex">
+                                <!-- Search Button -->
+                                <button type="button" class="btn btn-primary me-2">
+                                  <i class="ri-search-line"></i>
+                                </button>
+                                <!-- Clear Button -->
+                                <button type="button" class="btn btn-danger">
+                                  <i class="ri-close-line"></i>
+                                </button>
+                              </div>
+                            </div>
+                          </div>                                               
+                      </div>
                     <!-- Add New Button -->
                     <div class="card-datatable table-responsive">
                       <table class="datatables-users table">
                         <thead>
                           <tr>
-                            <th></th>
-                            <th></th>
-                            <th>No Order</th>
-                            <th>Tanggal </th>
-                            <th>Batch</th>
-                            <th>Nama File</th>
-                            <th>Dibuat Oleh</th>
-                            <th>Status</th>
-                            <th>Actions</th>
+                            <th>Route ID</th>
+                            <th>Driver - Vehicle</th>
+                            <th>% Capacity</th>
+                            <th>Total Value</th>
+                            <th>Total Trip Time</th>
+                            <th>Seq</th>
+                            <th>Delivery Type</th>
+                            <th>Location Name</th>
+                            <th>DO Number</th>
+                            <th>Faktur ID</th>
+                            <th>Qty</th>
+                            <th>Value</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Trip Time</th>
+                            <th>Action</th>
                           </tr>
                         </thead>
                       </table>
@@ -758,6 +820,68 @@
       </div>
     </div>
 
+    <!-- Modal HTML -->
+    <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="viewModalLabel">Order Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <strong>Sequence:</strong> <span id="modal-seq"></span>
+            </div>
+            <div class="mb-3">
+              <strong>DO Number:</strong> <span id="modal-do-number"></span>
+            </div>
+            <div class="mb-3">
+              <strong>Delivery Type:</strong> <span id="modal-delivery-type"></span>
+            </div>
+            <div class="mb-3">
+              <strong>Location:</strong> <span id="modal-location"></span>
+            </div>
+            <div class="mb-3">
+              <strong>Faktur ID:</strong> <span id="modal-faktur-id"></span>
+            </div>
+            <div class="mb-3">
+              <strong>Total Value:</strong> <span id="modal-total-value"></span>
+            </div>
+
+            <!-- Table -->
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Produk</th>
+                  <th>QTY</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="modal-table-body">
+                <!-- Data will be populated by JavaScript -->
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      /* Add some padding and border to the table cells */
+table.dataTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Center the text */
+table.dataTable td, table.dataTable th {
+    text-align: center;
+    vertical-align: middle;
+}
+    </style>
     <!-- Overlay -->
     <div class="layout-overlay layout-menu-toggle"></div>
 
@@ -766,20 +890,12 @@
 
     <!--/ Layout wrapper -->
 
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      flatpickr('#date-range', {
-        mode: 'range',
-        dateFormat: 'Y-m-d',
-        onChange: function (selectedDates, dateStr, instance) {
-          console.log('Selected Dates:', selectedDates);
-          console.log('Date Range String:', dateStr);
-          // Add filtering logic here if needed
-        }
-      });
-    });
+    <script>
+      // Display current date
+      document.getElementById('currentDate').innerText = new Date().toLocaleDateString('id-ID');
   </script>
+<!-- Bootstrap JavaScript Bundle with Popper -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

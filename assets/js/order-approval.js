@@ -3,151 +3,511 @@ let dt_User;
 
 // Create and append the modal when the document is ready
 $(document).ready(function () {
+  // Create and append the modal HTML
+  $('body').append(`
+    <div class="modal fade" id="viewModal" tabindex="1" aria-labelledby="viewModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="viewModalLabel">Order Details</h5>
+        <!-- Hapus tombol close -->
+      </div>
+      <div class="modal-body">
+        <!-- Informasi dengan tata letak kanan-kiri -->
+        <div class="d-flex flex-wrap">
+          <!-- Kolom Kiri -->
+          <div class="flex-fill mb-3 me-3">
+            <strong>Sequence:</strong> <span id="modal-seq">1</span>
+          </div>
+          <div class="flex-fill mb-3 me-3">
+            <strong>DO Number:</strong> <span id="modal-do-number">DO12345</span>
+          </div>
+          <div class="flex-fill mb-3 me-3">
+            <strong>Delivery Type:</strong> <span id="modal-delivery-type">Standard</span>
+          </div>
+          <div class="flex-fill mb-3 me-3">
+            <strong>Location:</strong> <span id="modal-location">Rungkut, Surabaya</span>
+          </div>
+          <!-- Kolom Kanan -->
+          <div class="flex-fill mb-3 me-3">
+            <strong>Faktur ID:</strong> <span id="modal-faktur-id">F345678</span>
+          </div>
+          <div class="flex-fill mb-3 me-3">
+            <strong>Total Value:</strong> <span id="modal-total-value">Rp.500,000</span>
+          </div>
+        </div>
+
+        <!-- Tabel -->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Produk</th>
+              <th>QTY</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody id="modal-table-body">
+            <tr>
+              <td>Product A</td>
+              <td>2</td>
+              <td>Rp.200,000</td>
+            </tr>
+            <tr>
+              <td>Product B</td>
+              <td>3</td>
+              <td>Rp.300,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+  
+<!-- Modal Edit Route -->
+  <div class="modal fade" id="editRoute" tabindex="2" aria-labelledby="editRouteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editRouteModalLabel">Edit Route</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Form Edit Route -->
+          <form id="edit-route-form">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <h6 class="mb-2">Route Details</h6>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Sequence</th>
+                      <th>Delivery Type</th>
+                      <th>Location</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- Start of table row for each data entry -->
+                    <tr>
+                      <td>
+                        <!-- Checkbox for Sequence -->
+                        <input type="checkbox" id="sequence-checkbox-1" name="sequence-checkbox">
+                      </td>
+                      <td>
+                        <span>Standard</span> <!-- delivery_type -->
+                      </td>
+                      <td>
+                        <span>Rungkut, Surabaya</span> <!-- location_name -->
+                      </td>
+                    </tr>
+                    <!-- Repeat the above <tr> block for each entry in your data -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Footer with Save and Cancel Buttons -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Modal Change Vehicle -->
+<div class="modal fade" id="changeVehicleModal" tabindex="3" aria-labelledby="changeVehicleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="changeVehicleModalLabel">Change Vehicle</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="change-vehicle-form">
+           <div class="mb-2">
+                  <label for="driver" class="col-md-4 col-form-label">Driver: Andi</label>
+                </div>
+                <div class="mb-2">
+                  <label for="vehicle" class="col-md-4 col-form-label">Kendaraan: Double XT</label>
+                </div>
+                <div class="mb-2">
+                  <label for="plate" class="col-md-4 col-form-label">Plat Nomor: F 1234 ABC</label>
+                </div>
+          <div class="mb-3">
+            <label for="change-to" class="form-label">Diubah ke</label>
+             <select class="form-select" id="change-to" name="change-to">
+              <option value="" disabled selected>Select Driver & Vehicle</option>
+              <option value="budi_heavy_duty_xz_5678_def">Budi Heavy Duty XZ 5678 DEF</option>
+              <option value="cindy_light_truck_a_9012_ghi">Cindy Light Truck A 9012 GHI</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary" id="saveChanges">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Cancel Route -->
+<div class="modal fade" id="cancelRoute" tabindex="4" aria-labelledby="cancelRouteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <!-- Warning Icon -->
+        <div class="text-danger mb-3">
+          <i class="bi bi-exclamation-circle" style="font-size: 3rem;"></i>
+        </div>
+        <!-- Warning Message -->
+        <h5 class="text-danger">Apakah Anda yakin untuk menghapus rute ini?</h5>
+        <p>Data yang Anda hapus akan kembali ke menu Outstanding Order.</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteRoute">Ya, Hapus Rute</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Cancel Order -->
+  <div class="modal fade" id="cancelOrder" tabindex="5" aria-labelledby="editRouteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+       <div class="modal-header">
+                <h5 class="modal-title" id="cancelOrderModalLabel">Cancel Order</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Route ID -->
+                <div class="mb-3">
+                    <h5 class="modal-title" id="cancelOrderModalLabel">Route 001</h5>
+                </div>
+        <div class="modal-body">
+          <!-- Form Edit Route -->
+          <form id="edit-route-form">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <h6 class="mb-2">Route Details</h6>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Cancel Order</th>
+                      <th>Delivery Type</th>
+                      <th>Location</th>
+                      <th>Faktur Id</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <!-- Checkbox for Sequence -->
+                        <input type="checkbox" id="sequence-checkbox" name="sequence-checkbox">
+                      </td>
+                          <td>
+                        <span>Standard</span> <!-- delivery_type -->
+                      </td>
+                      <td>
+                        <span>Rungkut, Surabaya</span> <!-- location_name -->
+                      </td>
+                      <td>
+                        <span>F345678</span> <!-- faktur_id -->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Footer with Save and Cancel Buttons -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" id="confirmDeleteRoute">Cancel Order</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+`);
+
   // Initialize DataTable
   if ($('.datatables-users').length) {
     dt_User = $('.datatables-users').DataTable({
       ajax: assetsPath + 'json/order-approval.json',
       columns: [
-        { data: '' },
-        { data: 'id' },
-        { data: 'no_order' },
-        { data: 'tanggal' },
-        { data: 'batch' },
-        { data: 'file_name' },
-        { data: 'dibuat_oleh' },
-        { data: 'status' },
-        { data: 'action' }
+        { data: 'route_id' }, // Route ID
+        { data: 'driver_vehicle' }, // Driver Vehicle
+        { data: 'capacity_percent' }, // Capacity Percent
+        { data: 'total_value' }, // Total Value
+        { data: 'total_trip_time' }, // Total Trip Time
+        { data: 'seq' }, // Seq
+        { data: 'delivery_type' }, // Delivery Type
+        { data: 'location_name' }, // Location Name
+        { data: 'do_number' }, // DO Number
+        { data: 'faktur_id' }, // Faktur ID
+        { data: 'qty' }, // Quantity
+        { data: 'value' }, // Value
+        { data: 'start_time' }, // Start Time
+        { data: 'end_time' }, // End Time
+        { data: 'trip_time' }, // Trip Time
+        { data: 'action' } // Action
       ],
+      order: [[5, 'asc']],
+      rowCallback: function (row, data, index) {
+        // Calculate group size (e.g., 3 rows per group)
+        var groupSize = 2;
+
+        // Check if this is the first row of the group
+        if (index % groupSize === 0) {
+          // Apply rowspan to Route ID, Driver - Vehicle, % Capacity, Total Value, Total Trip Time, and Action columns
+          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(15)'].forEach(function (selector) {
+            $(selector, row).attr('rowspan', groupSize).css({
+              'vertical-align': 'middle',
+              'text-align': 'center'
+            });
+          });
+        } else {
+          // Hide the cells for rows 2 and 3 of the group
+          $(row).find('td:lt(5)').hide(); // Hide first five columns (route_id, driver_vehicle, etc.)
+          $(row).find('td:eq(15)').hide(); // Hide action column
+        }
+      },
       columnDefs: [
-        {
-          className: 'control',
-          searchable: false,
-          orderable: false,
-          responsivePriority: 2,
-          targets: 0,
-          render: function () {
-            return '';
-          }
-        },
-        {
-          targets: 1,
-          orderable: false,
-          render: function () {
-            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
-          },
-          checkboxes: {
-            selectAllRender: '<input type="checkbox" class="form-check-input">'
-          }
-        },
-        {
-          targets: 2,
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 3,
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 4,
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 5,
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 6,
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 7,
-          render: function (data) {
-            const statusObj = {
-              1: { title: 'Approved', class: 'bg-label-success' },
-              2: { title: 'Waiting', class: 'bg-label-warning' },
-              3: { title: 'Hold', class: 'bg-label-info' },
-              4: { title: 'Cancel', class: 'bg-label-danger' }
-            };
-            return (
-              '<span class="badge ' +
-              (statusObj[data]?.class || 'bg-label-secondary') +
-              '">' +
-              (statusObj[data]?.title || 'Unknown') +
-              '</span>'
-            );
-          }
-        },
         {
           targets: -1,
           title: 'Actions',
           orderable: false,
           render: function (data, type, full) {
-            var $tanggal = full['tanggal'] || 'N/A';
-            var $batch = full['batch'] || 'N/A';
-            var $fileName = full['file_name'] || 'N/A';
-            var $dibuatOleh = full['dibuat_oleh'] || 'N/A';
-            var $status = full['status'];
-
-            const statusObj = {
-              1: { title: 'Approved', class: 'bg-label-success' },
-              2: { title: 'Waiting', class: 'bg-label-warning' },
-              3: { title: 'Hold', class: 'bg-label-info' },
-              4: { title: 'Cancel', class: 'bg-label-danger' }
-            };
-            var $statusText = statusObj[$status] || 'Unknown';
-
+            console.log('Rendering data:', data, type, full);
             return `
-                <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal" 
-                        onclick="window.location.href='form-order-approval.html'">
-                        <i class="ri-eye-line ri-20px"></i>
+              <div class="dropdown">
+                <button 
+                  class="btn btn-sm btn-icon rounded-pill waves-effect dropdown-toggle d-flex align-items-center justify-content-center" 
+                  type="button" 
+                  id="dropdownMenuButton" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false"
+                  style="border: 2px solid blue; background-color: blue; padding: 0; color: white;">
+                  <i class="ri-more-2-fill" style="font-size: 20px;"></i>
                 </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item viewModal" href="#">View</a></li>
+                  <li><a class="dropdown-item editRoute" href="#">Edit Route</a></li>
+                  <li><a class="dropdown-item changeVehicleModal" href="#">Change Vehicle</a></li>
+                  <li><a class="dropdown-item cancelRoute" href="#">Cancel Route</a></li>
+                  <li><a class="dropdown-item cancelOrder" href="#">Cancel Order</a></li>
+                </ul>
+              </div>
             `;
+          }
+        }
+      ],
+      // Remove the default search box
+      dom: '<"d-flex justify-content-end align-items-end mt-2 mb-2 me-4"B>t',
+      // Add custom buttons
+      buttons: [
+        {
+          text: 'List View',
+          className: 'btn btn-primary me-2',
+          action: function (e, dt, node, config) {
+            // Add your logic to switch to list view
+            window.location.href = 'order-approval.html';
+          }
+        },
+        {
+          text: 'Maps View',
+          className: 'btn btn-secondary',
+          action: function (e, dt, node, config) {
+            // Add your logic to switch to maps view
+            window.location.href = 'order-approval-maps.html';
           }
         }
       ]
     });
-
-    // Delete Record
-    $('.datatables-users tbody').on('click', '.delete-record', function () {
-      dt_User.row($(this).parents('tr')).remove().draw();
-    });
   }
-  // Load the JSON data using AJAX
-  $.ajax({
-    url: assetsPath + 'json/order-approval.json',
-    method: 'GET',
-    dataType: 'json',
-    success: function (response) {
-      // Assuming the JSON response has the same structure as orderApprovalData
-      const orderApprovalData = response;
-      const driverVehicleSelect = document.getElementById('driver-vehicle');
 
-      if (driverVehicleSelect) {
-        // Populate the dropdown with driver_vehicle data
-        orderApprovalData.data.forEach(item => {
-          if (item.driver_vehicle) {
-            const option = document.createElement('option');
-            option.value = item.driver_vehicle;
-            option.textContent = item.driver_vehicle;
-            driverVehicleSelect.appendChild(option);
-          }
+  // Show Modal with data
+  $('.datatables-users tbody').on('click', '.viewModal', function () {
+    const tr = $(this).closest('tr');
+    const row = dt_User.row(tr).data();
+
+    // Populate modal with data
+    $('#modal-seq').text(row.seq);
+    $('#modal-do-number').text(row.do_number);
+    $('#modal-delivery-type').text(row.delivery_type);
+    $('#modal-location').text(row.location_name);
+    $('#modal-faktur-id').text(row.faktur_id);
+    $('#modal-total-value').text(row.total_value);
+
+    // Populate table in the modal (replace with actual data if available)
+    const tableBody = $('#modal-table-body');
+    tableBody.empty(); // Clear existing data
+
+    // Example data, replace with actual data if available
+    const products = [
+      { name: 'Product A', qty: 2, total: 'Rp.200,000' },
+      { name: 'Product B', qty: 3, total: 'Rp.300,000' }
+    ];
+
+    products.forEach(product => {
+      tableBody.append(`
+          <tr>
+              <td>${product.name}</td>
+              <td>${product.qty}</td>
+              <td>${product.total}</td>
+          </tr>
+      `);
+    });
+
+    $('#viewModal').modal('show');
+  });
+
+  $(document).ready(function () {
+    // Initialize DataTable (assuming dt_User is your DataTable instance)
+    var dt_User = $('.datatables-users').DataTable();
+
+    // Show Modal with data
+    $('.datatables-users tbody').on('click', '.editRoute', function () {
+      const tr = $(this).closest('tr');
+      const row = dt_User.row(tr).data();
+
+      // Populate modal with data
+      $('#editRoute #sequence-checkbox').prop('checked', row.seq_checkbox); // Example for checkbox, adjust if necessary
+      $('#editRoute #delivery').text(row.delivery); // Set delivery text
+      $('#editRoute #location').text(row.location); // Set location text
+
+      // Show the modal
+      $('#editRoute').modal('show');
+    });
+
+    // Handle form submission (optional, based on your needs)
+    $('#edit-route-form').on('submit', function (event) {
+      event.preventDefault();
+
+      // Extract updated data
+      const updatedData = {
+        sequence: $('#editRoute #sequence-checkbox').is(':checked'),
+        delivery: $('#editRoute #delivery').text(),
+        location: $('#editRoute #location').text()
+      };
+
+      // Update DataTable with new data (this part is just an example, adjust as needed)
+      const tr = $('.datatables-users tbody tr.selected'); // Assuming you have a way to identify the row
+      dt_User.row(tr).data(updatedData).draw();
+
+      // Close the modal
+      $('#editRoute').modal('hide');
+    });
+  });
+  $(document).ready(function () {
+    // Initialize DataTable (assuming dt_User is your DataTable instance)
+    var dt_User = $('.datatables-users').DataTable();
+
+    // Show Modal with data
+    $('.datatables-users tbody').on('click', '.changeVehicleModal', function () {
+      const tr = $(this).closest('tr');
+      const row = dt_User.row(tr).data();
+
+      // Populate modal with data
+      $('#changeVehicleModal #driver').text(row.driver); // Set driver text
+      $('#changeVehicleModal #vehicle').text(row.vehicle); // Set vehicle text
+      $('#changeVehicleModal #plate').text(row.plate); // Set plate text
+
+      // Show the modal
+      $('#changeVehicleModal').modal('show');
+    });
+
+    // Handle form submission
+    $('#change-vehicle-form').on('submit', function (event) {
+      event.preventDefault();
+
+      // Extract updated data
+      const updatedData = {
+        driver: $('#changeVehicleModal #driver').text(),
+        vehicle: $('#changeVehicleModal #vehicle').text(),
+        plate: $('#changeVehicleModal #plate').text(),
+        changeTo: $('#changeVehicleModal #change-to').val() // Get selected value
+      };
+
+      // Find the row that was edited
+      const tr = $('.datatables-users tbody tr.selected'); // Ensure you have a way to identify the row
+
+      // Update DataTable with new data
+      dt_User
+        .row(tr)
+        .data({
+          ...dt_User.row(tr).data(),
+          driver: updatedData.driver,
+          vehicle: updatedData.vehicle,
+          plate: updatedData.plate,
+          changeTo: updatedData.changeTo
+        })
+        .draw();
+
+      // Close the modal
+      $('#changeVehicleModal').modal('hide');
+    });
+
+    $(document).ready(function () {
+      // Show Modal when "Cancel Route" is clicked
+      $('.cancelRoute').on('click', function (e) {
+        e.preventDefault();
+        $('#cancelRoute').modal('show');
+      });
+
+      // Handle "Ya, Hapus Rute" button click
+      $('#confirmDeleteRoute').on('click', function () {
+        // Perform the route cancellation logic here
+        // For example, you might want to remove the route from a list, send an AJAX request, etc.
+
+        // Log message for demonstration
+        console.log('Rute berhasil dihapus. Data akan kembali ke menu Outstanding Order.');
+
+        // Hide the modal
+        $('#cancelRoute').modal('hide');
+      });
+    });
+
+    $(document).ready(function () {
+      // Show Modal when "Cancel Order" is clicked
+      $('.cancelOrder').on('click', function (e) {
+        e.preventDefault();
+
+        // Get Route ID from the clicked element or the corresponding table row
+        const tr = $(this).closest('tr');
+        const routeId = tr.find('.route-id-cell').text(); // Assume there is a cell with the class .route-id-cell containing the Route ID
+
+        // Set Route ID in the modal
+        $('#cancelOrder #route-id').text(routeId);
+
+        // Show the modal
+        $('#cancelOrder').modal('show');
+      });
+
+      // Handle form submission
+      $('#edit-route-form').on('submit', function (e) {
+        e.preventDefault();
+
+        // Collect data from the form
+        const routeId = $('#cancelOrder #route-id').text();
+        const isCancelChecked = $('#sequence-checkbox').is(':checked');
+        const deliveryType = $('#delivery').text();
+        const location = $('#location').text();
+        const fakturId = $('#faktur-id').text();
+
+        // Log or send the data (replace with actual logic)
+        console.log({
+          routeId: routeId,
+          cancelOrder: isCancelChecked,
+          deliveryType: deliveryType,
+          location: location,
+          fakturId: fakturId
         });
-      } else {
-        console.error('Element with id="driver-vehicle" not found.');
-      }
-    },
-    error: function (xhr, status, error) {
-      console.error('Failed to load order-approval.json:', error);
-    }
+
+        // Close the modal
+        $('#cancelOrder').modal('hide');
+      });
+    });
   });
 });
