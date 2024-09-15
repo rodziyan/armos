@@ -87,18 +87,25 @@ $(document).ready(function () {
         },
         {
           targets: 9, // Status
-          render: function (data) {
-            const statusObj = {
+          render: function (data, type, full, meta) {
+            var $status = full['status'];
+            var statusObj = {
               1: { title: 'New', class: 'bg-label-blue' },
               2: { title: 'Pending', class: 'bg-label-warning' }
             };
-            return (
-              '<span class="badge ' +
-              (statusObj[data]?.class || 'bg-label-secondary') +
-              '">' +
-              (statusObj[data]?.title || 'Unknown') +
-              '</span>'
-            );
+
+            // Pastikan statusObj[$status] ada
+            if (statusObj[$status]) {
+              return (
+                '<span class="badge rounded-pill ' +
+                statusObj[$status].class +
+                ' text-capitalized">' +
+                statusObj[$status].title +
+                '</span>'
+              );
+            } else {
+              return '<span class="badge rounded-pill bg-label-secondary text-capitalized">Unknown</span>';
+            }
           }
         },
         {
