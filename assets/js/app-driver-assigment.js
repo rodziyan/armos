@@ -261,13 +261,6 @@ $(function () {
               '" ' +
               'data-bs-toggle="tooltip" title="Update">' +
               '<i class="ri-pencil-line ri-20px"></i>' +
-              '</button>' +
-              '<button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect deleteModal" ' +
-              'data-id="' +
-              full.id +
-              '" ' +
-              'data-bs-toggle="tooltip" title="Delete">' +
-              '<i class="ri-delete-bin-line ri-20px"></i>' +
               '</button>'
             );
           }
