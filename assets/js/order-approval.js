@@ -354,7 +354,7 @@ $(document).ready(function () {
                   <li><a class="dropdown-item editRoute" href="#">Edit Route</a></li>
                   <li><a class="dropdown-item changeVehicleModal" href="#">Change Vehicle</a></li>
                   <li><a class="dropdown-item cancelRoute" href="#">Cancel Route</a></li>
-                  <li><a class="dropdown-item cancelOrder" href="#">Cancel Order</a></li>
+                  <li><a class="dropdown-item " onclick="openModals(event)" href="#">Cancel Order</a></li>
                 </ul>
               </div>
             `;
@@ -569,3 +569,17 @@ $(document).ready(function () {
     });
   });
 });
+
+function openModals(e) {
+  e.preventDefault();
+
+  // Get Route ID from the clicked element or the corresponding table row
+  const tr = $(this).closest('tr');
+  const routeId = tr.find('.route-id-cell').text(); // Assume there is a cell with the class .route-id-cell containing the Route ID
+
+  // Set Route ID in the modal
+  $('#cancelOrder #route-id').text(routeId);
+
+  // Show the modal
+  $('#cancelOrder').modal('show');
+}
