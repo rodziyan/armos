@@ -583,16 +583,3 @@ function openModals(e) {
   // Show the modal
   $('#cancelOrder').modal('show');
 }
-function openModals(e) {
-  e.preventDefault();
-
-  // Get Route ID from the clicked element or the corresponding table row
-  const tr = $(this).closest('tr');
-  const routeId = tr.find('.route-id-cell').text(); // Assume there is a cell with the class .route-id-cell containing the Route ID
-
-  // Set Route ID in the modal
-  $('#cancelRoute #route-id').text(routeId);
-
-  // Show the modal
-  $('#cancelRoute').modal('show');
-}
