@@ -892,56 +892,57 @@
     </div>
     
     <!-- Modal View -->
+<!-- Modal View -->
 <div class="modal fade" id="modalView" tabindex="-1" aria-labelledby="modalViewLabel" aria-hidden="true">
-  <div class="custom-modal-dialog modal-dialog" role="document">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
-          <div class="modal-header">
-              <h5 class="modal-title" id="viewModalLabel">Delivery Reconciliation</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="custom-modal-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="item">
-                        <img src="assets/img/Ktoko.png" alt="Konfirmasi Toko">
-                        <div class="description">
-                            <strong>Konfirmasi Toko</strong><br>
-                            Created at: [Date]
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="item">
-                        <img src="assets/img/Ptoko.png" alt="Konfirmasi PIC Toko">
-                        <div class="description">
-                            <strong>Konfirmasi PIC Toko</strong><br>
-                            Created at: [Date]
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="item">
-                        <img src="assets/img/parkir.png" alt="Biaya Parkir">
-                        <div class="description">
-                            <strong>Biaya Parkir</strong><br>
-                            Nominal: [Amount]
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="item">
-                        <img src="assets/img/BBM.png" alt="Biaya BBM">
-                        <div class="description">
-                            <strong>Biaya BBM</strong><br>
-                            KM: [Kilometers]
-                        </div>
-                    </div>
-                </div>
+      <div class="modal-header">
+        <h5 class="modal-title" id="viewModalLabel">Delivery Reconciliation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row text-center">
+          <div class="col-md-6 mb-3">
+            <div class="item">
+              <img src="assets/img/Ktoko.png" alt="Konfirmasi Toko" class="img-fluid" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
+              <div class="description mt-2">
+                <strong>Konfirmasi Toko</strong><br>
+                <small>Created at: [Date]</small>
+              </div>
             </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="item">
+              <img src="assets/img/Ptoko.png" alt="Konfirmasi PIC Toko" class="img-fluid" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
+              <div class="description mt-2">
+                <strong>Konfirmasi PIC Toko</strong><br>
+                <small>Created at: [Date]</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="item">
+              <img src="assets/img/parkir.png" alt="Biaya Parkir" class="img-fluid" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
+              <div class="description mt-2">
+                <strong>Biaya Parkir</strong><br>
+                <small>Nominal: [Amount]</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="item">
+              <img src="assets/img/BBM.png" alt="Biaya BBM" class="img-fluid" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
+              <div class="description mt-2">
+                <strong>Biaya BBM</strong><br>
+                <small>KM: [Kilometers]</small>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-
 
 <!-- Modal Return Confirmation -->
 <div class="modal fade" id="returnModal" tabindex="-1" aria-labelledby="returnModalLabel" aria-hidden="true">
@@ -1027,6 +1028,12 @@
       function showModal(modalId) {
         var modal = new bootstrap.Modal(document.getElementById(modalId));
         modal.show();
+    
+        // Listen for when the modal is fully hidden
+        document.getElementById(modalId).addEventListener('hidden.bs.modal', function () {
+          // Redirect to the homepage
+          window.location.href = 'delivery-reconciliation.html'; // Change '/' to your desired homepage URL if different
+        });
       }
       
       // Function to set up modal triggers
@@ -1046,7 +1053,8 @@
         setupModalTriggers('[data-bs-target="#returnModal"]', 'returnModal');
         setupModalTriggers('[data-bs-target="#WMSModal"]', 'WMSModal');
       });
-      </script>
+    </script>
+    
     <!-- Drag Target Area To SlideIn Menu On Small Screens -->
     <div class="drag-target"></div>
 

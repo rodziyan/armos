@@ -18,11 +18,11 @@ function createModals() {
         <table class="table">
           <thead>
             <tr>
-              <th>Sequence</th>
-              <th>Delivery Type</th>
-              <th>Location</th>
-              <th>Faktur ID</th>
-              <th>Qty</th>
+              <th style="background-color: #004d00; color: white;">Sequence</th>
+              <th style="background-color: #004d00; color: white;">Delivery Type</th>
+              <th style="background-color: #004d00; color: white;">Location</th>
+              <th style="background-color: #004d00; color: white;">Faktur ID</th>
+              <th style="background-color: #004d00; color: white;">Qty</th>
             </tr>
           </thead>
           <tbody id="modal-table-body">
@@ -66,10 +66,10 @@ function createModals() {
         <table class="table">
           <thead>
             <tr>
-              <th>Sequence</th>
-              <th>Location</th>
-              <th>Faktur Id</th>
-              <th>Status</th>
+              <th style="background-color: #004d00; color: white;">Sequence</th>
+              <th style="background-color: #004d00; color: white;">Location</th>
+              <th style="background-color: #004d00; color: white;">Faktur Id</th>
+              <th style="background-color: #004d00; color: white;">Status</th>
             </tr>
           </thead>
           <tbody id="modal-table-body">
@@ -122,16 +122,16 @@ function createModals() {
         <table class="table">
           <thead>
             <tr>
-              <th>Location</th>
-              <th>Faktur ID</th>
-              <th>Product Name</th>
-              <th>Faktur QTY</th>
-              <th>Scan-out QTY</th>
-              <th>Delivery QTY</th>
-              <th>Retur QTY</th>
-              <th>Truck QTY</th>
-              <th>Delivery Status</th>
-              <th>Additional Note</th>
+              <th style="background-color: #004d00; color: white;">Location</th>
+              <th style="background-color: #004d00; color: white;">Faktur ID</th>
+              <th style="background-color: #004d00; color: white;">Product Name</th>
+              <th style="background-color: #004d00; color: white;">Faktur QTY</th>
+              <th style="background-color: #004d00; color: white;">Scan-out QTY</th>
+              <th style="background-color: #004d00; color: white;">Delivery QTY</th>
+              <th style="background-color: #004d00; color: white;">Retur QTY</th>
+              <th style="background-color: #004d00; color: white;">Truck QTY</th>
+              <th style="background-color: #004d00; color: white;">Delivery Status</th>
+              <th style="background-color: #004d00; color: white;">Additional Note</th>
             </tr>
           </thead>
           <tbody id="modal-table-body">
@@ -197,12 +197,12 @@ function createModals() {
         <table class="table">
           <thead>
             <tr>
-              <th>Location</th>
-              <th>Faktur ID</th>
-              <th>Product Name</th>
-              <th>Faktur QTY</th>
-              <th>Scan-out QTY</th>
-              <th>Status</th>
+              <th style="background-color: #004d00; color: white;">Location</th>
+              <th style="background-color: #004d00; color: white;">Faktur ID</th>
+              <th style="background-color: #004d00; color: white;">Product Name</th>
+              <th style="background-color: #004d00; color: white;">Faktur QTY</th>
+              <th style="background-color: #004d00; color: white;">Scan-out QTY</th>
+              <th style="background-color: #004d00; color: white;">Status</th>
             </tr>
           </thead>
           <tbody id="modal-table-body">

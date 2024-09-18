@@ -5,71 +5,102 @@ let dt_User;
 $(document).ready(function () {
   // Create and append the modal HTML
   $('body').append(`
-    <div class="modal fade" id="viewModal" tabindex="1" aria-labelledby="viewModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="viewModalLabel">Order Details</h5>
-        <!-- Hapus tombol close -->
-      </div>
-      <div class="modal-body">
-        <!-- Informasi dengan tata letak kanan-kiri -->
-        <div class="d-flex flex-wrap">
-          <!-- Kolom Kiri -->
-          <div class="flex-fill mb-3 me-3">
-            <strong>Sequence:</strong> <span id="modal-seq">1</span>
-          </div>
-          <div class="flex-fill mb-3 me-3">
-            <strong>DO Number:</strong> <span id="modal-do-number">DO12345</span>
-          </div>
-          <div class="flex-fill mb-3 me-3">
-            <strong>Delivery Type:</strong> <span id="modal-delivery-type">Standard</span>
-          </div>
-          <div class="flex-fill mb-3 me-3">
-            <strong>Location:</strong> <span id="modal-location">Rungkut, Surabaya</span>
-          </div>
-          <!-- Kolom Kanan -->
-          <div class="flex-fill mb-3 me-3">
-            <strong>Faktur ID:</strong> <span id="modal-faktur-id">F345678</span>
-          </div>
-          <div class="flex-fill mb-3 me-3">
-            <strong>Total Value:</strong> <span id="modal-total-value">Rp.500,000</span>
-          </div>
+    <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewModalLabel">Route-001</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- First Section -->
+                <div class="d-flex justify-content-between mb-3">
+                    <div>
+                        <p>Sequence : <strong>1</strong></p>
+                        <p>DO Number : <strong>DO001-1</strong></p>
+                        <p>Delivery Type : <strong>Delivery</strong></p>
+                    </div>
+                    <div>
+                        <p>Location : <strong>Toko A</strong></p>
+                        <p>Faktur ID : <strong>F001</strong></p>
+                        <p>Total Value : <strong>Rp80.000</strong></p>
+                    </div>
+                </div>
+                <!-- Table Section -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-success">
+                            <th>Produk</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Produk 1</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Produk 2</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Produk 3</td>
+                            <td>40</td>
+                        </tr>
+                        <tr class="table-success">
+                            <td><strong>TOTAL</strong></td>
+                            <td><strong>80</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- Second Section -->
+                <div class="d-flex justify-content-between mb-3">
+                    <div>
+                        <p>Sequence : <strong>2</strong></p>
+                        <p>DO Number : <strong>DO001-2</strong></p>
+                        <p>Delivery Type : <strong>Delivery</strong></p>
+                    </div>
+                    <div>
+                        <p>Location : <strong>Toko B</strong></p>
+                        <p>Faktur ID : <strong>F002</strong></p>
+                        <p>Total Value : <strong>Rp100.000</strong></p>
+                    </div>
+                </div>
+                <!-- Second Table Section -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-success">
+                            <th>Produk</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Produk 1</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Produk 2</td>
+                            <td>50</td>
+                        </tr>
+                        <tr class="table-success">
+                            <td><strong>TOTAL</strong></td>
+                            <td><strong>100</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
-        <!-- Tabel -->
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Produk</th>
-              <th>QTY</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody id="modal-table-body">
-            <tr>
-              <td>Product A</td>
-              <td>2</td>
-              <td>Rp.200,000</td>
-            </tr>
-            <tr>
-              <td>Product B</td>
-              <td>3</td>
-              <td>Rp.300,000</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </div>
-  </div>
 </div>
+
   
 <!-- Modal Edit Route -->
   <div class="modal fade" id="editRoute" tabindex="2" aria-labelledby="editRouteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="editRouteModalLabel">Edit Route</h5>
+          <h5 class="modal-title" id="editRouteModalLabel">Route-001</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -77,14 +108,13 @@ $(document).ready(function () {
           <form id="edit-route-form">
             <div class="row mb-3">
               <div class="col-md-12">
-                <h6 class="mb-2">Route Details</h6>
                 <table class="table table-bordered">
                   <thead>
-                    <tr>
-                      <th>Sequence</th>
-                      <th>Delivery Type</th>
-                      <th>Location</th>
-                    </tr>
+                      <tr>
+                          <th style="background-color: #004d00; color: white;">Sequence</th>
+                          <th style="background-color: #004d00; color: white;">Delivery Type</th>
+                          <th style="background-color: #004d00; color: white;">Location</th>
+                      </tr>
                   </thead>
                   <tbody>
                     <!-- Start of table row for each data entry -->
@@ -94,10 +124,22 @@ $(document).ready(function () {
                         <input type="checkbox" id="sequence-checkbox-1" name="sequence-checkbox">
                       </td>
                       <td>
-                        <span>Standard</span> <!-- delivery_type -->
+                        <span>Delivery</span> <!-- delivery_type -->
                       </td>
                       <td>
-                        <span>Rungkut, Surabaya</span> <!-- location_name -->
+                        <span>Toko A</span> <!-- location_name -->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <!-- Checkbox for Sequence -->
+                        <input type="checkbox" id="sequence-checkbox-1" name="sequence-checkbox">
+                      </td>
+                      <td>
+                        <span>Delivery</span> <!-- delivery_type -->
+                      </td>
+                      <td>
+                        <span>Toko B</span> <!-- location_name -->
                       </td>
                     </tr>
                     <!-- Repeat the above <tr> block for each entry in your data -->
@@ -107,7 +149,7 @@ $(document).ready(function () {
             </div>
             <!-- Footer with Save and Cancel Buttons -->
             <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">Save Changes</button>
+              <button type="submit" style="background-color: #004d00; color: white; border: none; padding: 10px 20px;">Save Changes</button>
             </div>
           </form>
         </div>
@@ -120,7 +162,7 @@ $(document).ready(function () {
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="changeVehicleModalLabel">Change Vehicle</h5>
+        <h5 class="modal-title" id="changeVehicleModalLabel">Route-001</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -145,7 +187,7 @@ $(document).ready(function () {
         </form>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" id="saveChanges">Save Changes</button>
+        <button type="submit" style="background-color: #004d00; color: white; border: none; padding: 10px 20px;">Save Changes</button>
       </div>
     </div>
   </div>
@@ -177,7 +219,6 @@ $(document).ready(function () {
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
        <div class="modal-header">
-                <h5 class="modal-title" id="cancelOrderModalLabel">Cancel Order</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -194,10 +235,10 @@ $(document).ready(function () {
                 <table class="table table-bordered">
                   <thead>
                     <tr>
-                      <th>Cancel Order</th>
-                      <th>Delivery Type</th>
-                      <th>Location</th>
-                      <th>Faktur Id</th>
+                      <th style="background-color: red; color: white;">Cancel Order</th>
+                      <th style="background-color: #004d00; color: white;">Delivery Type</th>
+                      <th style="background-color: #004d00; color: white;">Location</th>
+                      <th style="background-color: #004d00; color: white;">Faktur Id</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -207,13 +248,28 @@ $(document).ready(function () {
                         <input type="checkbox" id="sequence-checkbox" name="sequence-checkbox">
                       </td>
                           <td>
-                        <span>Standard</span> <!-- delivery_type -->
+                        <span>Delivery</span> <!-- delivery_type -->
                       </td>
                       <td>
-                        <span>Rungkut, Surabaya</span> <!-- location_name -->
+                        <span>Toko A</span> <!-- location_name -->
                       </td>
                       <td>
-                        <span>F345678</span> <!-- faktur_id -->
+                        <span>F001</span> <!-- faktur_id -->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <!-- Checkbox for Sequence -->
+                        <input type="checkbox" id="sequence-checkbox" name="sequence-checkbox">
+                      </td>
+                          <td>
+                        <span>Delivery</span> <!-- delivery_type -->
+                      </td>
+                      <td>
+                        <span>Toko B</span> <!-- location_name -->
+                      </td>
+                      <td>
+                        <span>F002</span> <!-- faktur_id -->
                       </td>
                     </tr>
                   </tbody>
