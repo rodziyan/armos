@@ -119,9 +119,10 @@ $(document).ready(function () {
                   <tbody>
                     <!-- Start of table row for each data entry -->
                     <tr>
-                      <td>
-                        <!-- Checkbox for Sequence -->
-                        <input type="checkbox" id="sequence-checkbox-1" name="sequence-checkbox">
+                      <td style="cursor: pointer; display: flex; flex-direction: column; align-items: center;">
+                          <input type="checkbox" id="sequence-checkbox-1" name="sequence-checkbox" style="display:none;">
+                          <i class="ri-arrow-up-s-fill" style="font-size: 24px;" onclick="toggleCheckbox()"></i>
+                          <i class="ri-arrow-down-s-fill" style="font-size: 24px;" onclick="toggleCheckbox()"></i>
                       </td>
                       <td>
                         <span>Delivery</span> <!-- delivery_type -->
@@ -131,9 +132,10 @@ $(document).ready(function () {
                       </td>
                     </tr>
                     <tr>
-                      <td>
-                        <!-- Checkbox for Sequence -->
-                        <input type="checkbox" id="sequence-checkbox-1" name="sequence-checkbox">
+                      <td style="cursor: pointer; display: flex; flex-direction: column; align-items: center;">
+                          <input type="checkbox" id="sequence-checkbox-1" name="sequence-checkbox" style="display:none;">
+                          <i class="ri-arrow-up-s-fill" style="font-size: 24px;" onclick="toggleCheckbox()"></i>
+                          <i class="ri-arrow-down-s-fill" style="font-size: 24px;" onclick="toggleCheckbox()"></i>
                       </td>
                       <td>
                         <span>Delivery</span> <!-- delivery_type -->
