@@ -84,40 +84,34 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
-    // Ensure the elements exist before adding event listeners
-    var triggerChangeVehicleModal = document.getElementById('triggerChangeVehicleModal');
-    var triggerViewDetailsModal = document.getElementById('triggerViewDetailsModal');
-    var triggerReturnModal = document.getElementById('triggerReturnModal');
-    var triggerWMSModal = document.getElementById('triggerWMSModal');
+    // Function to show a modal
+    function showModal(modalId) {
+      var modal = new bootstrap.Modal(document.getElementById(modalId));
+      modal.show();
+    }
 
-    // Add event listeners if elements are found
+    // Function to set up modal triggers
+    function setupModalTriggers(buttonSelector, modalId) {
+      var buttons = document.querySelectorAll(buttonSelector);
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+          showModal(modalId);
+        });
+      });
+    }
+
+    // Set up triggers for each modal
+    setupModalTriggers('[data-bs-target="#modalView"]', 'modalView');
+    setupModalTriggers('[data-bs-target="#returnModal"]', 'returnModal');
+    setupModalTriggers('[data-bs-target="#WMSModal"]', 'WMSModal');
+
+    // Additional setup for the main "Change Vehicle" modal if needed
+    var triggerChangeVehicleModal = document.getElementById('triggerChangeVehicleModal');
     if (triggerChangeVehicleModal) {
       triggerChangeVehicleModal.addEventListener('click', function () {
         showModal('viewModal');
       });
     }
-
-    if (triggerViewDetailsModal) {
-      triggerViewDetailsModal.addEventListener('click', function () {
-        showModal('modalView');
-      });
-    }
-
-    if (triggerReturnModal) {
-      triggerReturnModal.addEventListener('click', function () {
-        showModal('returnModal');
-      });
-    }
-
-    if (triggerWMSModal) {
-      triggerWMSModal.addEventListener('click', function () {
-        showModal('WMSModal');
-      });
-    }
   });
 });
-
-function showModal(modalId) {
-  var modal = new bootstrap.Modal(document.getElementById(modalId));
-  modal.show();
-}

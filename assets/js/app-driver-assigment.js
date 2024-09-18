@@ -261,6 +261,13 @@ $(function () {
               '" ' +
               'data-bs-toggle="tooltip" title="Update">' +
               '<i class="ri-pencil-line ri-20px"></i>' +
+              '</button>' +
+              '<button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect resetModal" ' +
+              'data-id="' +
+              full.id +
+              '" ' +
+              'data-bs-toggle="tooltip" title="Reset" style="margin-left: 8px;">' +
+              '<i class="ri-refresh-line ri-20px"></i>' +
               '</button>'
             );
           }

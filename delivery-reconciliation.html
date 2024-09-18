@@ -785,11 +785,7 @@
         <!--/ Layout container -->
       </div>
     </div>
-<!-- Example HTML for modal triggers -->
-<button id="triggerChangeVehicleModal" type="button">Change Vehicle</button>
-<button id="triggerViewDetailsModal" type="button">View Details</button>
-<button id="triggerReturnModal" type="button">Return</button>
-<button id="triggerWMSModal" type="button">WMS</button>
+
     <!-- Modal Change Vehicle -->
     <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-xl" style="max-width: 95%; width: 95%; margin: 1.75rem auto;"> <!-- Adjusted width -->
@@ -1027,25 +1023,30 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      $(document).ready(function() {
-        // Trigger modals
-        $('#triggerChangeVehicleModal').on('click', function() {
-          $('#changeVehicleModal').modal('show');
+      // Function to show a modal
+      function showModal(modalId) {
+        var modal = new bootstrap.Modal(document.getElementById(modalId));
+        modal.show();
+      }
+      
+      // Function to set up modal triggers
+      function setupModalTriggers(buttonSelector, modalId) {
+        var buttons = document.querySelectorAll(buttonSelector);
+        buttons.forEach(function (button) {
+          button.addEventListener('click', function (event) {
+            event.preventDefault();
+            showModal(modalId);
+          });
         });
-    
-        $('#triggerViewDetailsModal').on('click', function() {
-          $('#viewDetailsModal').modal('show');
-        });
-    
-        $('#triggerReturnModal').on('click', function() {
-          $('#returnModal').modal('show');
-        });
-    
-        $('#triggerWMSModal').on('click', function() {
-          $('#wmsModal').modal('show');
-        });
+      }
+      
+      // Set up triggers for each modal
+      document.addEventListener('DOMContentLoaded', function () {
+        setupModalTriggers('[data-bs-target="#modalView"]', 'modalView');
+        setupModalTriggers('[data-bs-target="#returnModal"]', 'returnModal');
+        setupModalTriggers('[data-bs-target="#WMSModal"]', 'WMSModal');
       });
-    </script>
+      </script>
     <!-- Drag Target Area To SlideIn Menu On Small Screens -->
     <div class="drag-target"></div>
 
