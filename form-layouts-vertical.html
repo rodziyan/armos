@@ -744,112 +744,150 @@
                       <h5 class="card-header">Form Detail Kendaraan</h5>
                       <form class="card-body" action="app-vehicle-management.html" method="get">
                         <div class="row g-6">
-                            <!-- Plat Nomor Kendaraan -->
-                            <div class="col-md-6">
-                                <div class="form-floating form-floating-outline">
-                                    <input type="text" id="license-plate" class="form-control" placeholder="e.g. ABC1234" />
-                                    <label for="license-plate">Plat Nomor Kendaraan</label>
+                          <div class="container">
+                            <div class="row mt-5">
+                                <!-- Plat Nomor Kendaraan -->
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline">
+                                        <input type="text" id="license-plate" class="form-control" placeholder="e.g. ABC1234" />
+                                        <label for="license-plate">Plat Nomor Kendaraan</label>
+                                    </div>
+                                </div>
+                        
+                                <!-- Pajak Kendaraan -->
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline">
+                                        <input type="text" id="tax-expiration" class="form-control" placeholder="dd mm yyyy" />
+                                        <label for="tax-expiration">Pajak Kendaraan</label>
+                                    </div>
                                 </div>
                             </div>
-                    
-                            <!-- Pajak Kendaraan -->
-                            <div class="col-md-6">
-                              <div class="form-floating form-floating-outline">
-                                  <input type="text" id="tax-expiration" class="form-control" placeholder="dd mm yyyy" />
-                                  <label for="tax-expiration">Pajak Kendaraan</label>
-                              </div>
-                          </div>                     
-                    
-                            <!-- Nomor STNK -->
-                            <div class="col-md-6">
-                                <div class="form-floating form-floating-outline">
-                                    <input type="text" id="stnk-number" class="form-control" placeholder="e.g. 123456789" />
-                                    <label for="stnk-number">Nomor STNK</label>
+                        
+                            <div class="row mt-5">
+                                <!-- Nomor STNK -->
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline">
+                                        <input type="text" id="stnk-number" class="form-control" placeholder="e.g. 123456789" />
+                                        <label for="stnk-number">Nomor STNK</label>
+                                    </div>
+                                </div>
+                        
+                                <!-- Vehicle Type -->
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline">
+                                        <input id="vehicle-type" class="form-control" type="text" placeholder="Pilih Tipe Kendaraan" />
+                                        <label for="vehicle-type">Tipe Kendaraan</label>
+                                    </div>
                                 </div>
                             </div>
-                    
-                            <!-- Vehicle Type -->
-                            <div class="col-md-6">
-                              <div class="form-floating form-floating-outline">
-                                  <input id="vehicle-type" class="form-control" type="text" placeholder="Pilih Tipe Kendaraan" />
-                                  <label for="vehicle-type">Tipe Kendaraan</label>
-                              </div>
+                        
+                            <div class="row mt-5">
+                                <!-- Location -->
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline">
+                                        <input type="text" id="location" class="form-control" placeholder="e.g. Jakarta" />
+                                        <label for="location">Lokasi</label>
+                                    </div>
+                                </div>
+                        
+                                <!-- Jenis Pelanggan Khusus -->
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline">
+                                        <input id="customer-type" class="form-control" type="text" placeholder="Pilih Jenis Pelanggan Khusus" />
+                                        <label for="customer-type">Jenis Pelanggan Khusus</label>
+                                    </div>
+                                </div> 
                             </div>
-                    
-                            <!-- Location -->
-                            <div class="col-md-6">
-                                <div class="form-floating form-floating-outline">
-                                    <input type="text" id="location" class="form-control" placeholder="e.g. Jakarta" />
-                                    <label for="Lokasi">Lokasi</label>
+                        
+                            <div class="row mt-5">
+                                <!-- Area -->
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline">
+                                        <input id="area" class="form-control" type="text" placeholder="Pilih Area" />
+                                        <label for="area">Area</label>
+                                    </div>
+                                </div>
+                        
+                                <!-- Pelanggan -->
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline">
+                                        <input id="customer" class="form-control" type="text" placeholder="Pilih Pelanggan" />
+                                        <label for="customer">Pelanggan</label>
+                                    </div>
                                 </div>
                             </div>
-                    
-                            <!-- Jenis Pelanggan Khusus -->
-                            <div class="col-md-6">
-                              <div class="form-floating form-floating-outline">
-                                  <input id="customer-type" class="form-control" type="text" placeholder="Pilih Jenis Pelanggan Khusus" />
-                                  <label for="customer-type">Jenis Pelanggan Khusus</label>
-                              </div>
-                            </div>
-
-                            <!-- Area -->
-                            <div class="col-md-6">
-                              <div class="form-floating form-floating-outline">
-                                  <input id="area" class="form-control" type="text" placeholder="Pilih Area" />
-                                  <label for="area">Area</label>
-                              </div>
-                            </div>
-
-                            <!-- Pelanggan -->
-                            <div class="col-md-6">
-                              <div class="form-floating form-floating-outline">
-                                  <input id="customer" class="form-control" type="text" placeholder="Pilih Pelanggan" />
-                                  <label for="customer">Pelanggan</label>
-                              </div>
-                            </div>
-
-                            <!-- Product -->
-                            <div class="col-md-6">
-                              <div class="form-floating form-floating-outline">
-                                  <input id="product" class="form-control" type="text" placeholder="Pilih Product" />
-                                  <label for="Produk">Produk</label>
-                              </div>
-                            </div>
-                    
-                            <!-- KM/L -->
-                            <div class="col-md-6">
-                                <div class="form-floating form-floating-outline">
-                                    <input type="number" id="km-per-liter" class="form-control" placeholder="e.g. 12" />
-                                    <label for="km-per-liter">KM/L (untuk bahan bakar)</label>
+                        
+                            <div class="row mt-5">
+                                <!-- Product -->
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline">
+                                        <input id="product" class="form-control" type="text" placeholder="Pilih Product" />
+                                        <label for="product">Produk</label>
+                                    </div>
+                                </div>
+                        
+                                <!-- KM/L -->
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline">
+                                        <input type="number" id="km-per-liter" class="form-control" placeholder="e.g. 12" />
+                                        <label for="km-per-liter">KM/L (untuk bahan bakar)</label>
+                                    </div>
                                 </div>
                             </div>
+                        
+                            <div class="row mt-5">
+                                <!-- KIR Expired Date -->
+                                <div class="col-md-6">
+                                    <div class="form-floating form-floating-outline">
+                                        <input type="date" id="KIR" class="form-control" />
+                                        <label for="KIR">KIR Expired Date</label>
+                                    </div>
+                                </div>
+                                <!-- Maximum Trip Duration -->
+                                <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline mb-3">
+                                      <input type="text" id="max-trip-duration" class="form-control" 
+                                             placeholder="00:00:00" 
+                                             value="00:30:00" 
+                                             pattern="^(?:[0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$" 
+                                             required />
+                                      <label for="max-trip-duration">Maximum Trip Duration (HH:MM:SS)</label>
+                                  </div>
+                              </div>                                                             
+                            </div>
+                        
                             <div class="row mt-5">
                               <!-- Start Hours -->
                               <div class="col-md-3">
-                                  <div class="form-floating form-floating-outline">
-                                      <input type="time" id="start-hours" class="form-control" />
-                                      <label for="start-hours">Jam Buka</label>
-                                  </div>
-                              </div>
-                              
-                              <!-- End Hours -->
-                              <div class="col-md-3">
-                                  <div class="form-floating form-floating-outline">
-                                      <input type="time" id="end-hours" class="form-control" />
-                                      <label for="end-hours">Jam Tutup</label>
-                                  </div>
-                              </div>
-                          </div>               
-                          <div class="col-md-6 mt-5">
-                            <div class="form-check form-switch">
-                                <input type="checkbox" class="form-check-input" id="is-active" />
-                                <label class="form-check-label" for="is-active">Is Active</label>
+                                <div class="form-floating form-floating-outline">
+                                    <input type="time" id="start-hours" class="form-control" />
+                                    <label for="start-hours">Jam Buka</label>
+                                </div>
                             </div>
-                        </div>
-                          <div class="pt-6">
-                              <button type="submit" class="btn btn-primary me-4">Submit</button>
-                              <a href="app-vehicle-management.html" class="btn btn-outline-secondary">Cancel</a>
-                          </div>
+                            
+                            <!-- End Hours -->
+                            <div class="col-md-3">
+                                <div class="form-floating form-floating-outline">
+                                    <input type="time" id="end-hours" class="form-control" />
+                                    <label for="end-hours">Jam Tutup</label>
+                                </div>
+                            </div>
+                          </div>                          
+
+                            <div class="row mt-5">
+                                <div class="col-md-6">
+                                    <div class="form-check form-switch">
+                                        <input type="checkbox" class="form-check-input" id="is-active" />
+                                        <label class="form-check-label" for="is-active">Is Active</label>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="pt-6">
+                                <button type="submit" class="btn btn-primary me-4">Submit</button>
+                                <a href="app-vehicle-management.html" class="btn btn-outline-secondary">Cancel</a>
+                            </div>
+                        </div>                        
                       </form>
                   </div>
                 </div>

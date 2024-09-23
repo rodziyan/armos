@@ -5,7 +5,7 @@ let dt_User;
 $(document).ready(function () {
   // Create and append the modal HTML
   $('body').append(`
-    <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -350,10 +350,10 @@ $(document).ready(function () {
                   <i class="ri-more-2-fill" style="font-size: 20px;"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item viewModal" href="#">View</a></li>
+                  <li><a class="dropdown-item view" href="#">View</a></li>
                   <li><a class="dropdown-item editRoute" href="#">Edit Route</a></li>
                   <li><a class="dropdown-item changeVehicleModal" href="#">Change Vehicle</a></li>
-                  <li><a class="dropdown-item cancelRoute" href="#">Cancel Route</a></li>
+                  <li><a class="dropdown-item " onclick="openRoute(event)" href="#">Cancel Route</a></li>
                   <li><a class="dropdown-item " onclick="openModals(event)" href="#">Cancel Order</a></li>
                 </ul>
               </div>
@@ -385,40 +385,9 @@ $(document).ready(function () {
     });
   }
 
-  // Show Modal with data
-  $('.datatables-users tbody').on('click', '.viewModal', function () {
-    const tr = $(this).closest('tr');
-    const row = dt_User.row(tr).data();
-
-    // Populate modal with data
-    $('#modal-seq').text(row.seq);
-    $('#modal-do-number').text(row.do_number);
-    $('#modal-delivery-type').text(row.delivery_type);
-    $('#modal-location').text(row.location_name);
-    $('#modal-faktur-id').text(row.faktur_id);
-    $('#modal-total-value').text(row.total_value);
-
-    // Populate table in the modal (replace with actual data if available)
-    const tableBody = $('#modal-table-body');
-    tableBody.empty(); // Clear existing data
-
-    // Example data, replace with actual data if available
-    const products = [
-      { name: 'Product A', qty: 2, total: 'Rp.200,000' },
-      { name: 'Product B', qty: 3, total: 'Rp.300,000' }
-    ];
-
-    products.forEach(product => {
-      tableBody.append(`
-          <tr>
-              <td>${product.name}</td>
-              <td>${product.qty}</td>
-              <td>${product.total}</td>
-          </tr>
-      `);
-    });
-
-    $('#viewModal').modal('show');
+  // Show the modal
+  $('.datatables-users tbody').on('click', '.view', function () {
+    $('#view').modal('show');
   });
 
   $(document).ready(function () {
@@ -466,11 +435,6 @@ $(document).ready(function () {
     $('.datatables-users tbody').on('click', '.changeVehicleModal', function () {
       const tr = $(this).closest('tr');
       const row = dt_User.row(tr).data();
-
-      // Populate modal with data
-      $('#changeVehicleModal #driver').text(row.driver); // Set driver text
-      $('#changeVehicleModal #vehicle').text(row.vehicle); // Set vehicle text
-      $('#changeVehicleModal #plate').text(row.plate); // Set plate text
 
       // Show the modal
       $('#changeVehicleModal').modal('show');
@@ -582,4 +546,17 @@ function openModals(e) {
 
   // Show the modal
   $('#cancelOrder').modal('show');
+}
+function openRoute(e) {
+  e.preventDefault();
+
+  // Get Route ID from the clicked element or the corresponding table row
+  const tr = $(this).closest('tr');
+  const routeId = tr.find('.route-id-cell').text(); // Assume there is a cell with the class .route-id-cell containing the Route ID
+
+  // Set Route ID in the modal
+  $('#cancelRoute #route-id').text(routeId);
+
+  // Show the modal
+  $('#cancelRoute').modal('show');
 }
