@@ -744,48 +744,63 @@
                       <h5 class="card-header">Form Produk</h5>
                       <form class="card-body" action="master-product.html" method="get">
                         <div class="row">
-                            <!-- Kiri -->
-                            <div class="col-md-6">
-                                <!-- SKU Produk -->
-                                <div class="form-floating form-floating-outline mt-5">
-                                    <input type="text" id="product-sku" class="form-control" placeholder="e.g. ABC1234" />
-                                    <label for="product-sku">SKU Produk</label>
+                          <!-- Kiri -->
+                          <div class="col-md-6">
+                              <!-- Tipe Produk -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                  <select class="form-select" id="product-type" aria-label="Tipe Produk">
+                                      <option value="" disabled selected>Pilih Tipe Produk</option>
+                                      <option value="type1">Tipe 1</option>
+                                      <option value="type2">Tipe 2</option>
+                                      <option value="type3">Tipe 3</option>
+                                  </select>
+                                  <label for="product-type">Tipe Produk</label>
+                              </div>
+                      
+                              <!-- Nama Produk -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                  <input type="text" id="product-name" class="form-control" placeholder="e.g. Nama Produk" />
+                                  <label for="product-name">Nama Produk</label>
+                              </div>
+                      
+                              <!-- SKU Produk -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                  <input type="text" id="product-sku" class="form-control" placeholder="e.g. ABC1234" />
+                                  <label for="product-sku">SKU Produk</label>
+                              </div>
+                               <!-- Harga Produk -->
+                               <div class="form-floating form-floating-outline mt-5">
+                                <div class="input-group">
+                                    <span class="input-group-text">Rp.</span>
+                                    <input type="number" id="product-price" class="form-control" placeholder="e.g. 10000" aria-label="Harga Produk" />
                                 </div>
-                    
-                                <!-- Tinggi Produk (in CM) -->
-                                <div class="form-floating form-floating-outline mt-5">
-                                    <input type="number" id="product-height" class="form-control" placeholder="e.g. 150" />
-                                    <label for="product-height">Tinggi Produk (in CM)</label>
-                                </div>
-                    
-                                <!-- Lebar Produk (in CM) -->
-                                <div class="form-floating form-floating-outline mt-5">
-                                    <input type="number" id="product-width" class="form-control" placeholder="e.g. 50" />
-                                    <label for="product-width">Lebar Produk (in CM)</label>
-                                </div>
+                                <label for="product-price" class="visually-hidden">Harga Produk</label>
                             </div>
-                    
-                            <!-- Kanan -->
-                            <div class="col-md-6">
-                                <!-- Panjang Produk (in CM) -->
-                                <div class="form-floating form-floating-outline mt-5">
-                                    <input type="number" id="product-length" class="form-control" placeholder="e.g. 100" />
-                                    <label for="product-length">Panjang Produk (in CM)</label>
-                                </div>
-                    
-                                <!-- Restrictions Produk -->
-                                <div class="form-floating form-floating-outline mt-5">
-                                    <select id="product-restrictions" class="form-select select2" data-allow-clear="true">
-                                        <option value="">Pilih Restrictions Produk</option>
-                                        <option value="Produk A">Produk A</option>
-                                        <option value="Produk B">Produk B</option>
-                                        <option value="Produk C">Produk C</option>
-                                        <option value="Produk D">Produk D</option>
-                                        <option value="Produk E">Produk E</option>
-                                    </select>
-                                    <label for="product-restrictions">Restrictions Produk</label>
-                                </div>
-                            </div>
+                          </div>
+                      
+                          <!-- Kanan -->
+                          <div class="col-md-6">
+                              <!-- Tinggi Produk (in CM) -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                  <input type="number" id="product-height" class="form-control" placeholder="e.g. 150" />
+                                  <label for="product-height">Tinggi Produk (in CM)</label>
+                              </div>
+                      
+                              <!-- Lebar Produk (in CM) -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                  <input type="number" id="product-width" class="form-control" placeholder="e.g. 50" />
+                                  <label for="product-width">Lebar Produk (in CM)</label>
+                              </div>
+                      
+                              <!-- Panjang Produk (in CM) -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                  <input type="number" id="product-length" class="form-control" placeholder="e.g. 100" />
+                                  <label for="product-length">Panjang Produk (in CM)</label>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      
                           <div class="pt-6">
                               <button type="submit" class="btn btn-primary me-4">Save</button>
                               <a href="master-product.html" class="btn btn-outline-secondary">Cancel</a>

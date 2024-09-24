@@ -798,13 +798,13 @@
                                   <div class="col-md-6">
                                       <div class="form-floating form-floating-outline">
                                           <input type="number" id="cargo-volume-min" class="form-control" placeholder="Volume Min in CCM" />
-                                          <label for="cargo-volume-min">Volume Kargo Min (CCM)</label>
+                                          <label for="cargo-volume-min">Volume Kargo Min (%)</label>
                                       </div>
                                   </div>
                                   <div class="col-md-6">
                                       <div class="form-floating form-floating-outline">
                                           <input type="number" id="cargo-volume-max" class="form-control" placeholder="Volume Max in CCM" />
-                                          <label for="cargo-volume-max">Volume Kargo Maks (CCM)</label>
+                                          <label for="cargo-volume-max">Volume Kargo Maks (%)</label>
                                       </div>
                                   </div>
                                   <div class="col-md-6">
@@ -825,36 +825,7 @@
                                           <label for="min-revenue">Min. Pendapatan (IDR)</label>
                                       </div>
                                   </div>
-                                  <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="text" id="product-restriction" class="form-control tagify" placeholder="Pilih atau ketik produk">
-                                        <label for="product-restriction">Pembatasan Jenis Produk</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                  <div class="form-floating form-floating-outline">
-                                      <select id="region-restriction" class="form-select" aria-label="Pembatasan Wilayah">
-                                          <option value="" selected>Pilih wilayah</option>
-                                          <option value="wilayah1">Wilayah 1</option>
-                                          <option value="wilayah2">Wilayah 2</option>
-                                          <option value="wilayah3">Wilayah 3</option>
-                                      </select>
-                                      <label for="region-restriction">Pembatasan Wilayah</label>
-                                  </div>
-                              </div>                              
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="text" id="customer-type-restriction" class="form-control tagify" placeholder="Pilih atau ketik jenis pelanggan">
-                                        <label for="customer-type-restriction">Pembatasan Tipe Customer</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="text" id="specific-customer-restriction" class="form-control tagify" placeholder="Pilih atau ketik pelanggan tertentu">
-                                        <label for="specific-customer-restriction">Customer Tertentu</label>
-                                    </div>
-                                </div>                                                          
-                              </div>
+                                    
                               <div class="pt-6">
                                   <button type="submit" class="btn btn-primary me-4">Submit</button>
                                   <a href="vehicle-type.html" class="btn btn-outline-secondary">Cancel</a>
@@ -945,30 +916,7 @@
     <!-- endbuild -->
 
     <!-- Tambahkan ini pada bagian <head> atau sebelum penutup </body> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
-    <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-          const tagifyInputs = document.querySelectorAll('.tagify');
-          tagifyInputs.forEach(input => {
-              new Tagify(input, {
-                  whitelist: [
-                      'Produk A', 'Produk B', 'Produk C', 'Produk D', 'Produk E',
-                      'Wilayah 1', 'Wilayah 2', 'Wilayah 3', 'Wilayah 4', 'Wilayah 5',
-                      'Pelanggan Reguler', 'Pelanggan Premium', 'Pelanggan Bisnis', 'Pelanggan VIP', 'Pelanggan Khusus',
-                      'Customer A', 'Customer B', 'Customer C', 'Customer D', 'Customer E'
-                  ],
-                  maxTags: 10,
-                  dropdown: {
-                      maxItems: 20,
-                      classname: 'tags-look',
-                      enabled: 0,
-                      closeOnSelect: false
-                  }
-              });
-          });
-      });
-  </script>
+    
 
     <!-- Vendors JS -->
     <script src="assets/vendor/libs/cleavejs/cleave.js"></script>

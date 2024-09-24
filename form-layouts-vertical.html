@@ -746,105 +746,120 @@
                         <div class="row g-6">
                           <div class="container">
                             <div class="row mt-5">
-                                <!-- Plat Nomor Kendaraan -->
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="text" id="license-plate" class="form-control" placeholder="e.g. ABC1234" />
-                                        <label for="license-plate">Plat Nomor Kendaraan</label>
-                                    </div>
-                                </div>
-                        
-                                <!-- Pajak Kendaraan -->
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="text" id="tax-expiration" class="form-control" placeholder="dd mm yyyy" />
-                                        <label for="tax-expiration">Pajak Kendaraan</label>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="row mt-5">
-                                <!-- Nomor STNK -->
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="text" id="stnk-number" class="form-control" placeholder="e.g. 123456789" />
-                                        <label for="stnk-number">Nomor STNK</label>
-                                    </div>
-                                </div>
-                        
-                                <!-- Vehicle Type -->
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input id="vehicle-type" class="form-control" type="text" placeholder="Pilih Tipe Kendaraan" />
-                                        <label for="vehicle-type">Tipe Kendaraan</label>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="row mt-5">
-                                <!-- Location -->
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="text" id="location" class="form-control" placeholder="e.g. Jakarta" />
-                                        <label for="location">Lokasi</label>
-                                    </div>
-                                </div>
-                        
-                                <!-- Jenis Pelanggan Khusus -->
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input id="customer-type" class="form-control" type="text" placeholder="Pilih Jenis Pelanggan Khusus" />
-                                        <label for="customer-type">Jenis Pelanggan Khusus</label>
-                                    </div>
-                                </div> 
-                            </div>
-                        
-                            <div class="row mt-5">
-                                <!-- Area -->
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input id="area" class="form-control" type="text" placeholder="Pilih Area" />
-                                        <label for="area">Area</label>
-                                    </div>
-                                </div>
-                        
-                                <!-- Pelanggan -->
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input id="customer" class="form-control" type="text" placeholder="Pilih Pelanggan" />
-                                        <label for="customer">Pelanggan</label>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="row mt-5">
-                                <!-- Product -->
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input id="product" class="form-control" type="text" placeholder="Pilih Product" />
-                                        <label for="product">Produk</label>
-                                    </div>
-                                </div>
-                        
-                                <!-- KM/L -->
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="number" id="km-per-liter" class="form-control" placeholder="e.g. 12" />
-                                        <label for="km-per-liter">KM/L (untuk bahan bakar)</label>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="row mt-5">
-                                <!-- KIR Expired Date -->
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="date" id="KIR" class="form-control" />
-                                        <label for="KIR">KIR Expired Date</label>
-                                    </div>
-                                </div>
-                                <!-- Maximum Trip Duration -->
-                                <div class="col-md-6">
+                              <!-- Status Availability -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <select class="form-select" id="status-availability" aria-label="Status Availability">
+                                          <option value="" disabled selected>Pilih Status</option>
+                                          <option value="available">Available</option>
+                                          <option value="unavailable">Unavailable</option>
+                                      </select>
+                                      <label for="status-availability">Status Availability</label>
+                                  </div>
+                              </div>
+                          
+                              <!-- Plat Nomor Kendaraan -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="text" id="license-plate" class="form-control" placeholder="e.g. ABC1234" />
+                                      <label for="license-plate">Plat Nomor Kendaraan</label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="row mt-5">
+                              <!-- Pajak Kendaraan -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="text" id="tax-expiration" class="form-control" placeholder="dd mm yyyy" />
+                                      <label for="tax-expiration">Pajak Kendaraan</label>
+                                  </div>
+                              </div>
+                          
+                              <!-- Nomor STNK -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="text" id="stnk-number" class="form-control" placeholder="e.g. 123456789" />
+                                      <label for="stnk-number">Nomor STNK</label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="row mt-5">
+                              <!-- Tipe Kendaraan -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input id="vehicle-type" class="form-control" type="text" placeholder="Pilih Tipe Kendaraan" />
+                                      <label for="vehicle-type">Tipe Kendaraan</label>
+                                  </div>
+                              </div>
+                          
+                              <!-- Pembatasan Jenis Produk -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="text" id="product-restriction" class="form-control tagify-product" placeholder="Pilih atau ketik produk">
+                                      <label for="product-restriction">Pembatasan Jenis Produk</label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="row mt-5">
+                              <!-- Pembatasan Wilayah -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="text" id="wilayah-type-restriction" class="form-control tagify-wilayah" placeholder="Pilih atau ketik jenis Wilayah">
+                                      <label for="wilayah-type-restriction">Pembatasan Wilayah</label>
+                                  </div>
+                              </div>
+                          
+                              <!-- Pembatasan Tipe Customer -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="text" id="customer-type-restriction" class="form-control tagify-customer-type" placeholder="Pilih atau ketik jenis pelanggan">
+                                      <label for="customer-type-restriction">Pembatasan Tipe Customer</label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="row mt-5">
+                              <!-- Customer Tertentu -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="text" id="specific-customer-restriction" class="form-control tagify-specific-customer" placeholder="Pilih atau ketik pelanggan tertentu">
+                                      <label for="specific-customer-restriction">Customer Tertentu</label>
+                                  </div>
+                              </div>
+                          
+                              <!-- Lokasi Pickup -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="text" id="lokasi-type-restriction" class="form-control tagify-lokasi" placeholder="Pilih atau ketik Lokasi">
+                                      <label for="lokasi-type-restriction">Lokasi Pickup</label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="row mt-5">
+                              <!-- KM/L -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="number" id="km-per-liter" class="form-control" placeholder="e.g. 12" />
+                                      <label for="km-per-liter">KM/L (untuk bahan bakar)</label>
+                                  </div>
+                              </div>
+                          
+                              <!-- KIR Expired Date -->
+                              <div class="col-md-6">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="date" id="KIR" class="form-control" />
+                                      <label for="KIR">KIR Expired Date</label>
+                                  </div>
+                              </div>
+                          </div>
+                          
+                          <div class="row mt-5">
+                              <!-- Maximum Trip Duration -->
+                              <div class="col-md-6">
                                   <div class="form-floating form-floating-outline mb-3">
                                       <input type="text" id="max-trip-duration" class="form-control" 
                                              placeholder="00:00:00" 
@@ -853,35 +868,25 @@
                                              required />
                                       <label for="max-trip-duration">Maximum Trip Duration (HH:MM:SS)</label>
                                   </div>
-                              </div>                                                             
-                            </div>
-                        
-                            <div class="row mt-5">
+                              </div>
+                          
                               <!-- Start Hours -->
                               <div class="col-md-3">
-                                <div class="form-floating form-floating-outline">
-                                    <input type="time" id="start-hours" class="form-control" />
-                                    <label for="start-hours">Jam Buka</label>
-                                </div>
-                            </div>
-                            
-                            <!-- End Hours -->
-                            <div class="col-md-3">
-                                <div class="form-floating form-floating-outline">
-                                    <input type="time" id="end-hours" class="form-control" />
-                                    <label for="end-hours">Jam Tutup</label>
-                                </div>
-                            </div>
-                          </div>                          
-
-                            <div class="row mt-5">
-                                <div class="col-md-6">
-                                    <div class="form-check form-switch">
-                                        <input type="checkbox" class="form-check-input" id="is-active" />
-                                        <label class="form-check-label" for="is-active">Is Active</label>
-                                    </div>
-                                </div>
-                            </div>
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="time" id="start-hours" class="form-control" />
+                                      <label for="start-hours">Jam Buka</label>
+                                  </div>
+                              </div>
+                          
+                              <!-- End Hours -->
+                              <div class="col-md-3">
+                                  <div class="form-floating form-floating-outline">
+                                      <input type="time" id="end-hours" class="form-control" />
+                                      <label for="end-hours">Jam Tutup</label>
+                                  </div>
+                              </div>
+                          </div>
+                                                  
                         
                             <div class="pt-6">
                                 <button type="submit" class="btn btn-primary me-4">Submit</button>
@@ -906,6 +911,67 @@
           dateFormat: "d m Y", // Format dd mm yyyy
       });
       </script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css">
+<script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const tagifyProduct = new Tagify(document.querySelector('.tagify-product'), {
+          whitelist: ['Produk A', 'Produk B', 'Produk C', 'Produk D', 'Produk E'],
+          maxTags: 10,
+          dropdown: {
+              maxItems: 20,
+              classname: 'tags-look',
+              enabled: 0,
+              closeOnSelect: false
+          }
+      });
+  
+      const tagifyWilayah = new Tagify(document.querySelector('.tagify-wilayah'), {
+          whitelist: ['Wilayah 1', 'Wilayah 2', 'Wilayah 3', 'Wilayah 4', 'Wilayah 5'],
+          maxTags: 10,
+          dropdown: {
+              maxItems: 20,
+              classname: 'tags-look',
+              enabled: 0,
+              closeOnSelect: false
+          }
+      });
+  
+      const tagifyCustomerType = new Tagify(document.querySelector('.tagify-customer-type'), {
+          whitelist: ['Pelanggan Reguler', 'Pelanggan Premium', 'Pelanggan Bisnis', 'Pelanggan VIP', 'Pelanggan Khusus'],
+          maxTags: 10,
+          dropdown: {
+              maxItems: 20,
+              classname: 'tags-look',
+              enabled: 0,
+              closeOnSelect: false
+          }
+      });
+  
+      const tagifySpecificCustomer = new Tagify(document.querySelector('.tagify-specific-customer'), {
+          whitelist: ['Customer A', 'Customer B', 'Customer C', 'Customer D', 'Customer E'],
+          maxTags: 10,
+          dropdown: {
+              maxItems: 20,
+              classname: 'tags-look',
+              enabled: 0,
+              closeOnSelect: false
+          }
+      });
+  
+      const tagifyLokasi = new Tagify(document.querySelector('.tagify-lokasi'), {
+          whitelist: ['Lokasi 1', 'Lokasi 2', 'Lokasi 3', 'Lokasi 4', 'Lokasi 5'],
+          maxTags: 10,
+          dropdown: {
+              maxItems: 20,
+              classname: 'tags-look',
+              enabled: 0,
+              closeOnSelect: false
+          }
+      });
+  });
+  </script>
 
     <!-- Overlay -->
     <div class="layout-overlay layout-menu-toggle"></div>

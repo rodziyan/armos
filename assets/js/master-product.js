@@ -25,78 +25,78 @@ $(function () {
                           <p class="mb-6">Memperbarui detail produk.</p>
                       </div>
                       <form id="updateForm" class="row g-5" onsubmit="return false">
-                          <!-- Icon -->
-                          <div class="col-12 text-center mb-3">
-                              <div class="d-flex justify-content-center align-items-center">
-                              </div>
-                          </div>
-                          <!-- Product Details -->
-                          <div class="col-12">
-                              <div class="form-floating form-floating-outline">
-                                  <input
-                                      type="text"
-                                      id="modalProductSKU"
-                                      name="productSKU"
-                                      class="form-control"
-                                      placeholder="Masukkan SKU produk" />
-                                  <label for="modalProductSKU">SKU Produk</label>
-                              </div>
-                          </div>
-                          <div class="col-12">
-                              <div class="form-floating form-floating-outline">
-                                  <input
-                                      type="text"
-                                      id="modalProductHeight"
-                                      name="productHeight"
-                                      class="form-control"
-                                      placeholder="Masukkan tinggi produk" />
-                                  <label for="modalProductHeight">Tinggi Produk (in CM)</label>
-                              </div>
-                          </div>
-                          <div class="col-12">
-                              <div class="form-floating form-floating-outline">
-                                  <input
-                                      type="text"
-                                      id="modalProductWidth"
-                                      name="productWidth"
-                                      class="form-control"
-                                      placeholder="Masukkan lebar produk" />
-                                  <label for="modalProductWidth">Lebar Produk (in CM)</label>
-                              </div>
-                          </div>
-                          <div class="col-12">
-                              <div class="form-floating form-floating-outline">
-                                  <input
-                                      type="text"
-                                      id="modalProductLength"
-                                      name="productLength"
-                                      class="form-control"
-                                      placeholder="Masukkan panjang produk" />
-                                  <label for="modalProductLength">Panjang Produk (in CM)</label>
-                              </div>
-                          </div>
-                          <div class="col-12">
-                              <div class="form-floating form-floating-outline">
-                                  <input
-                                      type="text"
-                                      id="modalProductRestrictions"
-                                      name="productRestrictions"
-                                      class="form-control"
-                                      placeholder="Masukkan restrictions produk" />
-                                  <label for="modalProductRestrictions">Restrictions Produk</label>
-                              </div>
-                          </div>
-                          <div class="col-12 text-center d-flex flex-wrap justify-content-center gap-4 row-gap-4">
-                              <button type="submit" class="btn btn-primary">Update</button>
-                              <button
-                                  type="reset"
-                                  class="btn btn-outline-secondary"
-                                  data-bs-dismiss="modal"
-                                  aria-label="Close">
-                                  Batal
-                              </button>
-                          </div>
-                      </form>
+                        <!-- Icon -->
+                        <div class="col-12 text-center mb-3">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <!-- Add any icon here if needed -->
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <!-- Kiri -->
+                            <div class="col-md-6">
+                                <!-- Tipe Produk -->
+                                <div class="form-floating form-floating-outline mt-5">
+                                    <select class="form-select" id="product-type" aria-label="Tipe Produk" required>
+                                        <option value="" disabled selected>Pilih Tipe Produk</option>
+                                        <option value="type1">Tipe 1</option>
+                                        <option value="type2">Tipe 2</option>
+                                        <option value="type3">Tipe 3</option>
+                                    </select>
+                                    <label for="product-type">Tipe Produk</label>
+                                </div>
+
+                                <!-- Nama Produk -->
+                                <div class="form-floating form-floating-outline mt-5">
+                                    <input type="text" id="product-name" class="form-control" placeholder="e.g. Nama Produk" required />
+                                    <label for="product-name">Nama Produk</label>
+                                </div>
+
+                                <!-- SKU Produk -->
+                                <div class="form-floating form-floating-outline mt-5">
+                                    <input type="text" id="modalProductSKU" name="productSKU" class="form-control" placeholder="e.g. ABC1234" required />
+                                    <label for="modalProductSKU">SKU Produk</label>
+                                </div>
+
+                                <!-- Harga Produk -->
+                                <div class="form-floating form-floating-outline mt-5">
+                                    <div class="input-group">
+                                        <span class="input-group-text">Rp.</span>
+                                        <input type="number" id="product-price" class="form-control" placeholder="e.g. 10000" aria-label="Harga Produk" required />
+                                    </div>
+                                    <label for="product-price" class="visually-hidden">Harga Produk</label>
+                                </div>
+                            </div>
+                            
+                            <!-- Kanan -->
+                            <div class="col-md-6">
+                                <!-- Tinggi Produk (in CM) -->
+                                <div class="form-floating form-floating-outline mt-5">
+                                    <input type="number" id="modalProductHeight" name="productHeight" class="form-control" placeholder="e.g. 150" required />
+                                    <label for="modalProductHeight">Tinggi Produk (in CM)</label>
+                                </div>
+
+                                <!-- Lebar Produk (in CM) -->
+                                <div class="form-floating form-floating-outline mt-5">
+                                    <input type="number" id="modalProductWidth" name="productWidth" class="form-control" placeholder="e.g. 50" required />
+                                    <label for="modalProductWidth">Lebar Produk (in CM)</label>
+                                </div>
+
+                                <!-- Panjang Produk (in CM) -->
+                                <div class="form-floating form-floating-outline mt-5">
+                                    <input type="number" id="modalProductLength" name="productLength" class="form-control" placeholder="e.g. 100" required />
+                                    <label for="modalProductLength">Panjang Produk (in CM)</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-center d-flex flex-wrap justify-content-center gap-4 row-gap-4">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                            <button type="reset" class="btn btn-outline-secondary" data-bs-dismiss="modal" aria-label="Close">
+                                Batal
+                            </button>
+                        </div>
+                    </form>
                   </div>
               </div>
           </div>
@@ -115,65 +115,63 @@ $(function () {
     var dt_vehicle = dt_vehicle_table.DataTable({
       ajax: assetsPath + 'json/master-product.json', // JSON file to add data
       columns: [
-        { data: '' },
-        { data: 'id' },
-        { data: 'product_SKU' },
-        { data: 'Product_height' },
+        { data: 'product_type' },
+        { data: 'product_name' },
+        { data: 'product_sku' },
+        { data: 'product_price' },
+        { data: 'product_height' },
         { data: 'product_width' },
         { data: 'product_length' },
-        { data: 'product_restrictions' },
         { data: 'action' }
       ],
       columnDefs: [
         {
-          className: 'control',
-          searchable: false,
-          orderable: false,
-          responsivePriority: 2,
-          targets: 0,
-          render: function (data, type, full, meta) {
-            return '';
-          }
-        },
-        {
-          targets: 1,
-          orderable: false,
-          render: function () {
-            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
-          },
-          checkboxes: {
-            selectAllRender: '<input type="checkbox" class="form-check-input">'
-          }
-        },
-        {
-          targets: 2, // Target 'product_SKU' column
-          orderable: false,
+          targets: 0, // product_name column
+          orderable: true, // Assuming you want to make this column orderable
           render: function (data, type, full) {
-            return '<span>' + full['product_SKU'] + '</span>';
+            return '<span>' + full['product_type'] + '</span>';
           }
         },
         {
-          targets: 3, // Target 'Product_height' column
+          targets: 1, // product_name column
+          orderable: true, // Assuming you want to make this column orderable
           render: function (data, type, full) {
-            return '<span>' + data + '</span>';
+            return '<span>' + full['product_name'] + '</span>';
           }
         },
         {
-          targets: 4, // Target 'product_width' column
+          targets: 2, // product_sku column
+          orderable: true,
           render: function (data, type, full) {
-            return '<span>' + data + '</span>';
+            return '<span>' + full['product_sku'] + '</span>';
           }
         },
         {
-          targets: 5, // Target 'product_length' column
+          targets: 3, // product_price column
+          orderable: true,
           render: function (data, type, full) {
-            return '<span>' + data + '</span>';
+            return '<span>' + full['product_price'] + '</span>';
           }
         },
         {
-          targets: 6, // Target 'product_restrictions' column
+          targets: 4, // product_height column
+          orderable: true,
           render: function (data, type, full) {
-            return '<span>' + data + '</span>';
+            return '<span>' + full['product_height'] + '</span>';
+          }
+        },
+        {
+          targets: 5, // product_width column
+          orderable: true,
+          render: function (data, type, full) {
+            return '<span>' + full['product_width'] + '</span>';
+          }
+        },
+        {
+          targets: 6, // product_length column
+          orderable: true,
+          render: function (data, type, full) {
+            return '<span>' + full['product_length'] + '</span>';
           }
         },
         {
@@ -184,11 +182,13 @@ $(function () {
           render: function (data, type, full) {
             return `
                   <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
-                      data-product-sku="${full['product_SKU']}"
-                      data-product-height="${full['Product_height']}"
-                      data-product-width="${full['product_width']}"
-                      data-product-length="${full['product_length']}"
-                      data-product-restrictions="${full['product_restrictions']}">
+                      data-product-type="${full['product_type']}"
+                      data-product-name="${full['product_name']}"
+                      data-modal-product-sku="${full['product_sku']}"
+                      data-product-price="${full['product_price']}"
+                      data-modal-product-height="${full['product_height']}"
+                      data-modal-product-width="${full['product_width']}"
+                      data-modal-product-length="${full['product_length']}">
                       <i class="ri-edit-line ri-20px"></i>
                   </button>
                   <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" style="border: none;">
