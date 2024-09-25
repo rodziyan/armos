@@ -287,6 +287,37 @@ $(document).ready(function () {
       </div>
     </div>
   </div>
+
+<div class="modal fade" id="approvalModal" tabindex="-1" aria-labelledby="approvalModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center p-5">
+        <!-- Icon Truck -->
+        <i class="ri-truck-fill" style="font-size: 80px; color: #004d00;"></i>
+        
+        <!-- Title Text -->
+        <h4 class="mt-4 mb-3" style="color: #004d00;">
+          Apakah Anda yakin untuk memberikan persetujuan bahwa pengantaran rute ini sudah siap?
+        </h4>
+        
+        <!-- Subtext -->
+        <p class="mb-4" style="color: #004d00;">
+          Data approval akan terkirim ke menu Ready to Pickup.
+        </p>
+        
+        <!-- Buttons -->
+        <div class="d-flex justify-content-center gap-3">
+          <button type="button" class="btn btn-success" style="background-color: #004d00; border-color: #004d00;">
+            Ya, Approval Route
+          </button>
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+            Batal
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `);
 
   // Initialize DataTable
@@ -355,6 +386,7 @@ $(document).ready(function () {
                   <li><a class="dropdown-item changeVehicleModal" href="#">Change Vehicle</a></li>
                   <li><a class="dropdown-item " onclick="openRoute(event)" href="#">Cancel Route</a></li>
                   <li><a class="dropdown-item " onclick="openModals(event)" href="#">Cancel Order</a></li>
+                  <li><a class="dropdown-item " onclick="openApproval(event)" href="#">Approval</a></li>
                 </ul>
               </div>
             `;
@@ -493,6 +525,23 @@ $(document).ready(function () {
 
     $(document).ready(function () {
       // Show Modal when "Cancel Order" is clicked
+      $('.approvalModal').on('click', function (e) {
+        e.preventDefault();
+
+        // Get Route ID from the clicked element or the corresponding table row
+        const tr = $(this).closest('tr');
+        const routeId = tr.find('.route-id-cell').text(); // Assume there is a cell with the class .route-id-cell containing the Route ID
+
+        // Set Route ID in the modal
+        $('#approvalModal #route-id').text(routeId);
+
+        // Show the modal
+        $('#approvalModal').modal('show');
+      });
+    });
+
+    $(document).ready(function () {
+      // Show Modal when "Cancel Order" is clicked
       $('.cancelOrder').on('click', function (e) {
         e.preventDefault();
 
@@ -559,4 +608,17 @@ function openRoute(e) {
 
   // Show the modal
   $('#cancelRoute').modal('show');
+}
+function openApproval(e) {
+  e.preventDefault();
+
+  // Get Route ID from the clicked element or the corresponding table row
+  const tr = $(this).closest('tr');
+  const routeId = tr.find('.route-id-cell').text(); // Assume there is a cell with the class .route-id-cell containing the Route ID
+
+  // Set Route ID in the modal
+  $('#approvalModal #route-id').text(routeId);
+
+  // Show the modal
+  $('#approvalModal').modal('show');
 }

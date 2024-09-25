@@ -3,9 +3,13 @@ let dt_User;
 
 // Create and append the modal when the document is ready
 $(document).ready(function () {
-  // Cek apakah modal sudah ada di DOM
+  // Cek apakah modal view dan unhold sudah ada di DOM, jika belum buat
   if ($('#viewModal').length === 0) {
-    createViewModal();
+    createViewModal(); // Fungsi untuk membuat viewModal
+  }
+
+  if ($('#unholdModal').length === 0) {
+    createUnholdModal(); // Fungsi untuk membuat unholdModal
   }
 
   // Initialize DataTable
@@ -13,7 +17,6 @@ $(document).ready(function () {
     dt_User = $('.datatables-users').DataTable({
       ajax: assetsPath + 'json/order-processing.json',
       columns: [
-        { data: '' },
         { data: 'id' },
         { data: 'toko' },
         { data: 'tipe_outlet' },
@@ -37,56 +40,49 @@ $(document).ready(function () {
           }
         },
         {
-          targets: 1, // Target kolom pertama
-          orderable: false,
-          render: function () {
-            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
-          }
-        },
-        {
-          targets: 2, // Toko
+          targets: 1, // Toko
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 3, // Tipe Outlet
+          targets: 2, // Tipe Outlet
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 4, // Faktur ID
+          targets: 3, // Faktur ID
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 5, // Faktur Date
+          targets: 4, // Faktur Date
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 6, // Delivery Date
+          targets: 5, // Delivery Date
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 7, // Qty
+          targets: 6, // Qty
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 8, // Value
+          targets: 7, // Value
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 9, // Status
+          targets: 8, // Status
           render: function (data, type, full, meta) {
             var $status = full['status'];
             var statusObj = {
@@ -109,19 +105,19 @@ $(document).ready(function () {
           }
         },
         {
-          targets: 10, // Scheduled Optimization Date
+          targets: 9, // Scheduled Optimization Date
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 11, // Scheduled Optimization Time
+          targets: 10, // Scheduled Optimization Time
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 12, // Delivery Type
+          targets: 11, // Delivery Type
           render: function (data) {
             return '<span>' + data + '</span>';
           }
@@ -181,6 +177,9 @@ $(document).ready(function () {
                       data-delivery_type="${$deliveryType}">
                       <i class="ri-edit-line ri-20px"></i>
                     </button>
+                     <button type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect unholdModal">
+                                <i class="ri-error-warning-line ri-20px"></i>
+                              </button>
                 `;
           }
         }
@@ -198,21 +197,27 @@ $(document).ready(function () {
           Action
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#" id="proceedOptimization">Proceed to Optimization</a></li>
+          <li><a class="dropdown-item" href="#" id="RoutingModal">Manual Routing</a></li>
           <li><a class="dropdown-item" href="#" id="holdAction">Hold</a></li>
         </ul>
       </div>
     `);
 
-    // Show modal on Hold click
-    $('#holdAction').on('click', function (e) {
+    // Function to show modal
+    function showModal(modalId) {
+      $(modalId).modal('show');
+    }
+
+    // Show holdModal on holdAction click
+    $(document).on('click', '#holdAction', function (e) {
       e.preventDefault();
-      $('#holdModal').modal('show');
+      showModal('#holdModal');
     });
-    // Toggle checkbox visibility
-    $('#toggleCheckboxes').on('click', function () {
-      const checkboxColumn = dt_User.column(0);
-      checkboxColumn.visible(!checkboxColumn.visible()); // Toggle visibility
+
+    // Show manualRoutingModal on manualRoutingAction click
+    $(document).on('click', '#RoutingAction', function (e) {
+      e.preventDefault();
+      showModal('#RoutingModal');
     });
 
     // Delete Record
@@ -220,6 +225,12 @@ $(document).ready(function () {
       dt_User.row($(this).parents('tr')).remove().draw();
     });
   }
+
+  // Tambahkan event listener pada tombol View dan Update
+  $(document).on('click', '.unholdModal', function () {
+    // Tampilkan modal
+    $('#unholdModal').modal('show');
+  });
 
   // Tambahkan event listener pada tombol View dan Update
   $(document).on('click', '.viewModal, .updateModal', function () {
@@ -254,26 +265,6 @@ $(document).ready(function () {
     // Tampilkan modal
     $('#viewModal').modal('show');
   });
-});
-
-// Event listener for the selectAllBtn
-document.getElementById('selectAllBtn').addEventListener('click', function () {
-  // Get all rows in the DataTable
-  const rows = dt_User.rows().nodes();
-  // Get the current state of the select all button
-  const isChecked = this.classList.contains('selected');
-
-  // Toggle the selection state of all checkboxes
-  rows.each(function (row) {
-    const checkbox = $(row).find('.dt-checkboxes');
-    checkbox.prop('checked', !isChecked); // Toggle the checked state
-  });
-
-  // Toggle the class to track the selection state
-  this.classList.toggle('selected');
-
-  // Update DataTable select state
-  dt_User.rows().select();
 });
 
 // Fungsi untuk membuat modal
@@ -361,6 +352,60 @@ function createViewModal() {
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="unholdModal" tabindex="-1" aria-labelledby="unholdModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="unholdModalLabel">Unhold Order</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <i class="ri-calendar-line" style="font-size: 30px; color: #2e7d32;"></i>
+                <p style="color: #2e7d32;">Apakah Anda ingin membatalkan hold order dan order akan diproses ke Route Optimization?</p>
+                <p>Data ini akan teroptimisasi pada Selasa, 2 Januari 2024 jam 10:00 WIB</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div class="modal fade" id="RoutingModal" tabindex="-1" aria-labelledby="RoutingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="manualRoutingModalLabel">Manual Routing</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <div class="row">
+          <!-- External Expedition -->
+          <div class="col-6">
+            <button id="externalExpedition" class="btn btn-light btn-select">
+              <i class="ri-truck-line" style="font-size: 40px;"></i>
+              <p>External Expedition</p>
+            </button>
+          </div>
+          <!-- Available Driver -->
+          <div class="col-6">
+            <button id="availableDriver" class="btn btn-light btn-select">
+              <i class="ri-steering-2-line" style="font-size: 40px;"></i>
+              <p>Available Driver</p>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" id="nextBtn" disabled>Next</button>
+      </div>
+    </div>
+  </div>
+</div>
   `;
   // Tambahkan modal ke DOM
   $('body').append(modalHTML);
@@ -378,7 +423,27 @@ style.innerHTML = `
     color: white; /* Warna teks putih agar kontras dengan latar belakang merah */
     padding: 5px 10px;
     border-radius: 4px;
-  }`;
+  }
+  .btn-select {
+  border: 1px solid #d1d1d1;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
+}
+
+.btn-select:hover {
+  border-color: #007bff;
+  background-color: #f0f8ff;
+}
+
+.btn-select.active {
+  border-color: #007bff;
+  background-color: #e0f0ff;
+}
+  
+  `;
 
 // Menambahkan elemen style ke head
 document.head.appendChild(style);

@@ -8,7 +8,8 @@
       "kendaraan": "Truk pick up",
       "avatar": "1.png",
       "action": "action",
-      "plat_no": "B 1234 XY - Truk pick up"
+      "plat_no": "B 1234 XY - Truk pick up",
+      "kernet": "John Doe"
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "kendaraan": "Truk pick up",
       "avatar": "10.png",
       "action": "action",
-      "plat_no": "B 5678 ZY - Truk pick up"
+      "plat_no": "B 5678 ZY - Truk pick up",
+      "kernet": "Jane Doe"
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "kendaraan": "Truk Fuso",
       "avatar": "1.png",
       "action": "action",
-      "plat_no": "B 9012 WX - Truk Fuso"
+      "plat_no": "B 9012 WX - Truk Fuso",
+      "kernet": "Sam Smith"
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "kendaraan": "Truk box CDE",
       "avatar": "2.png",
       "action": "action",
-      "plat_no": "B 3456 TY - Truk box CDE"
+      "plat_no": "B 3456 TY - Truk box CDE",
+      "kernet": "Michael Angelo"
     },
     {
       "id": 5,
@@ -48,7 +52,8 @@
       "kendaraan": "Motor",
       "avatar": "10.png",
       "action": "action",
-      "plat_no": "B 7890 QW - Motor"
+      "plat_no": "B 7890 QW - Motor",
+      "kernet": "N/A"
     },
     {
       "id": 6,
@@ -58,247 +63,8 @@
       "kendaraan": "Truk",
       "avatar": "",
       "action": "action",
-      "plat_no": "B 1234 RZ - Truk"
-    },
-    {
-      "id": 7,
-      "full_name": "Breena Gallemore",
-      "status": 1,
-      "driver": "bgallemore6",
-      "kendaraan": "Truk pick up",
-      "avatar": "",
-      "action": "action",
-      "plat_no": "B 5678 AS - Truk pick up"
-    },
-    {
-      "id": 8,
-      "full_name": "Kathryne Liger",
-      "status": 1,
-      "driver": "kliger7",
-      "kendaraan": "Truk box CDE",
-      "avatar": "9.png",
-      "action": "action",
-      "plat_no": "B 9012 DF - Truk box CDE"
-    },
-    {
-      "id": 9,
-      "full_name": "Elena Wright",
-      "status": 2,
-      "driver": "ewright8",
-      "kendaraan": "Truk CDD long box",
-      "avatar": "3.png",
-      "action": "action",
-      "plat_no": "B 3456 EG - Truk CDD long box"
-    },
-    {
-      "id": 10,
-      "full_name": "Victor Hugo",
-      "status": 1,
-      "driver": "vhugo9",
-      "kendaraan": "Kontainer",
-      "avatar": "4.png",
-      "action": "action",
-      "plat_no": "B 7890 FH - Kontainer"
-    },
-    {
-      "id": 11,
-      "full_name": "Ada Lovelace",
-      "status": 1,
-      "driver": "alovelace10",
-      "kendaraan": "Truk box CDD",
-      "avatar": "5.png",
-      "action": "action",
-      "plat_no": "B 1234 GJ - Truk box CDD"
-    },
-    {
-      "id": 12,
-      "full_name": "Seth Hallam",
-      "status": 1,
-      "driver": "shallamb",
-      "kendaraan": "Truk box CDD",
-      "avatar": "5.png",
-      "action": "action",
-      "plat_no": "B 5678 HK - Truk box CDD"
-    },
-    {
-      "id": 13,
-      "full_name": "Benedict Cumberbatch",
-      "status": 2,
-      "driver": "bcumberbatch11",
-      "kendaraan": "Truk Fuso",
-      "avatar": "6.png",
-      "action": "action",
-      "plat_no": "B 9012 IL - Truk Fuso"
-    },
-    {
-      "id": 14,
-      "full_name": "Maximilianus Krause",
-      "status": 2,
-      "driver": "mkraused",
-      "kendaraan": "Kontainer",
-      "avatar": "9.png",
-      "action": "action",
-      "plat_no": "B 3456 JM - Kontainer"
-    },
-    {
-      "id": 15,
-      "full_name": "Zsazsa McCleverty",
-      "status": 2,
-      "driver": "zmcclevertye",
-      "kendaraan": "Motor",
-      "avatar": "2.png",
-      "action": "action",
-      "plat_no": "B 7890 KN - Motor"
-    },
-    {
-      "id": 16,
-      "full_name": "Bentlee Emblin",
-      "status": 2,
-      "driver": "bemblinf",
-      "kendaraan": "Truk Fuso",
-      "avatar": "6.png",
-      "action": "action",
-      "plat_no": "B 1234 LO - Truk Fuso"
-    },
-    {
-      "id": 17,
-      "full_name": "Brockie Myles",
-      "status": 2,
-      "driver": "bmylesg",
-      "kendaraan": "Mobil van",
-      "avatar": "",
-      "action": "action",
-      "plat_no": "B 5678 MP - Mobil van"
-    },
-    {
-      "id": 18,
-      "full_name": "Bertha Biner",
-      "status": 2,
-      "driver": "bbinerh",
-      "kendaraan": "Mobil van",
-      "avatar": "7.png",
-      "action": "action",
-      "plat_no": "B 9012 NQ - Mobil van"
-    },
-    {
-      "id": 19,
-      "full_name": "Travus Bruntjen",
-      "status": 2,
-      "driver": "tbruntjeni",
-      "kendaraan": "Motor",
-      "avatar": "",
-      "action": "action",
-      "plat_no": "B 3456 OR - Motor"
-    },
-    {
-      "id": 20,
-      "full_name": "Julius Caesar",
-      "status": 1,
-      "driver": "jcaesar12",
-      "kendaraan": "Truk box CDE",
-      "avatar": "8.png",
-      "action": "action",
-      "plat_no": "B 7890 PS - Truk box CDE"
-    },
-    {
-      "id": 21,
-      "full_name": "Stu Delamaine",
-      "status": 1,
-      "driver": "sdelamainek",
-      "kendaraan": "Truk box CDE",
-      "avatar": "1.png",
-      "action": "action",
-      "plat_no": "B 1234 QT - Truk box CDE"
-    },
-    {
-      "id": 22,
-      "full_name": "Natalie Portman",
-      "status": 2,
-      "driver": "nportman13",
-      "kendaraan": "Truk pick up",
-      "avatar": "9.png",
-      "action": "action",
-      "plat_no": "B 5678 RU - Truk pick up"
-    },
-    {
-      "id": 23,
-      "full_name": "Kare Skitterel",
-      "status": 1,
-      "driver": "kskitterelm",
-      "kendaraan": "Motor",
-      "avatar": "3.png",
-      "action": "action",
-      "plat_no": "B 9012 SV - Motor"
-    },
-    {
-      "id": 24,
-      "full_name": "Cleavland Hatherleigh",
-      "status": 1,
-      "driver": "chatherleighn",
-      "kendaraan": "Motor",
-      "avatar": "2.png",
-      "action": "action",
-      "plat_no": "B 3456 TW - Motor"
-    },
-    {
-      "id": 25,
-      "full_name": "George Washington",
-      "status": 2,
-      "driver": "gwashington14",
-      "kendaraan": "Truk trintin",
-      "avatar": "10.png",
-      "action": "action",
-      "plat_no": "B 7890 UX - Truk trintin"
-    },
-    {
-      "id": 26,
-      "full_name": "Eleanor Roosevelt",
-      "status": 1,
-      "driver": "eroosevelt15",
-      "kendaraan": "Truk CDD long box",
-      "avatar": "11.png",
-      "action": "action",
-      "plat_no": "B 1234 VY - Truk CDD long box"
-    },
-    {
-      "id": 27,
-      "full_name": "Germain Jacombs",
-      "status": 2,
-      "driver": "gjacombsq",
-      "kendaraan": "Truk pick up",
-      "avatar": "12.png",
-      "action": "action",
-      "plat_no": "B 5678 WZ - Truk pick up"
-    },
-    {
-      "id": 28,
-      "full_name": "Celestina Barris",
-      "status": 1,
-      "driver": "cbarrisr",
-      "kendaraan": "Kontainer",
-      "avatar": "6.png",
-      "action": "action",
-      "plat_no": "B 9012 XY - Kontainer"
-    },
-    {
-      "id": 29,
-      "full_name": "Arthur Hoggard",
-      "status": 1,
-      "driver": "ahoggards",
-      "kendaraan": "Truk Fuso",
-      "avatar": "2.png",
-      "action": "action",
-      "plat_no": "B 3456 YZ - Truk Fuso"
-    },
-    {
-      "id": 30,
-      "full_name": "Hester Nelson",
-      "status": 2,
-      "driver": "hnelson16",
-      "kendaraan": "Motor",
-      "avatar": "10.png",
-      "action": "action",
-      "plat_no": "B 7890 ZA - Motor"
+      "plat_no": "B 1234 RZ - Truk",
+      "kernet": "Henry Hudson"
     }
   ]
 }

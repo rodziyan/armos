@@ -237,6 +237,7 @@ $(function () {
       ajax: assetsPath + 'json/vehicle-management.json', // JSON file to add data
       columns: [
         { data: 'id' },
+        { data: 'seq' },
         { data: 'vehicle_type' },
         { data: 'truck_height' },
         { data: 'truck_width' },
@@ -271,110 +272,117 @@ $(function () {
         {
           targets: 1,
           render: function (data, type, full) {
+            var seq = full['seq'];
+            return '<span>' + seq + '</span>';
+          }
+        },
+        {
+          targets: 2,
+          render: function (data, type, full) {
             var vehicleType = full['vehicle_type'];
             return '<span>' + vehicleType + '</span>';
           }
         },
         {
-          targets: 2,
+          targets: 3,
           render: function (data, type, full) {
             var truckHeight = full['truck_height'];
             return '<span>' + truckHeight + '</span>';
           }
         },
         {
-          targets: 3,
+          targets: 4,
           render: function (data, type, full) {
             var truckWidth = full['truck_width'];
             return '<span>' + truckWidth + '</span>';
           }
         },
         {
-          targets: 4,
+          targets: 5,
           render: function (data, type, full) {
             var truckLength = full['truck_length'];
             return '<span>' + truckLength + '</span>';
           }
         },
         {
-          targets: 5,
+          targets: 6,
           render: function (data, type, full) {
             var cargoHeight = full['cargo_height'];
             return '<span>' + cargoHeight + '</span>';
           }
         },
         {
-          targets: 6,
+          targets: 7,
           render: function (data, type, full) {
             var cargoWidth = full['cargo_width'];
             return '<span>' + cargoWidth + '</span>';
           }
         },
         {
-          targets: 7,
+          targets: 8,
           render: function (data, type, full) {
             var cargoLength = full['cargo_length'];
             return '<span>' + cargoLength + '</span>';
           }
         },
         {
-          targets: 8,
+          targets: 9,
           render: function (data, type, full) {
             var cargoMinVolume = full['cargo_min_volume'];
             return '<span>' + cargoMinVolume + '</span>';
           }
         },
         {
-          targets: 9,
+          targets: 10,
           render: function (data, type, full) {
             var cargoMaxVolume = full['cargo_max_volume'];
             return '<span>' + cargoMaxVolume + '</span>';
           }
         },
         {
-          targets: 10,
+          targets: 11,
           render: function (data, type, full) {
             var cargoMinKg = full['cargo_min_kg'];
             return '<span>' + cargoMinKg + '</span>';
           }
         },
         {
-          targets: 11,
+          targets: 12,
           render: function (data, type, full) {
             var cargoMaxKg = full['cargo_max_kg'];
             return '<span>' + cargoMaxKg + '</span>';
           }
         },
         {
-          targets: 12,
+          targets: 13,
           render: function (data, type, full) {
             var minRevenue = full['min_revenue'];
             return '<span>' + minRevenue + '</span>';
           }
         },
         {
-          targets: 13,
+          targets: 14,
           render: function (data, type, full) {
             var productRestriction = full['product_restriction'];
             return '<span>' + productRestriction + '</span>';
           }
         },
         {
-          targets: 14,
+          targets: 15,
           render: function (data, type, full) {
             var areaRestriction = full['area_restriction'];
             return '<span>' + areaRestriction + '</span>';
           }
         },
         {
-          targets: 15,
+          targets: 16,
           render: function (data, type, full) {
             var customerType = full['customer_type'];
             return '<span>' + customerType + '</span>';
           }
         },
         {
-          targets: 16,
+          targets: 17,
           render: function (data, type, full) {
             var customerRestriction = full['customer_restriction'];
             return '<span>' + customerRestriction + '</span>';

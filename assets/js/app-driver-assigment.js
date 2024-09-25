@@ -52,13 +52,7 @@ $(function () {
                     <label for="driverName">Driver Name</label>
                   </div>
                 </div>
-                <div class="col-12">
-                  <div class="form-floating form-floating-outline">
-                  <input type="text" class="form-select" id="plat_no_full" name="plat_no_full" readonly>
-                  <label for="plat_no_full" class="form-label">Vehicle</label>
-                </div>
-                </div>
-                <!--
+                
                 <div class="col-12">
                   <div class="form-floating form-floating-outline">
                     <select
@@ -82,7 +76,24 @@ $(function () {
                     <label for="plat_no">Vehicle</label>
                   </div>
                 </div>
-                -->
+                <div class="col-12">
+                  <div class="form-floating form-floating-outline">
+                    <select
+                      id="kernet"
+                      name="kernet"
+                      class="form-select"
+                      aria-label="Select Kernet">
+                      <option value="" selected>Select Kernet</option>
+                      <option value="Kernet A">Kernet A</option>
+                      <option value="Kernet B">Kernet B</option>
+                      <option value="Kernet C">Kernet C</option>
+                      <option value="Kernet D">Kernet D</option>
+                      <option value="Kernet E">Kernet E</option>
+                    </select>
+                    <label for="plat_no">Kernet</label>
+                  </div>
+                </div>
+                
                 <div class="col-12 text-center d-flex flex-wrap justify-content-center gap-4 row-gap-4">
                   <button type="submit" class="btn btn-primary">Update</button>
                   <button
@@ -152,6 +163,7 @@ $(function () {
         { data: '' },
         { data: 'id' },
         { data: 'full_name' },
+        { data: 'kernet' },
         { data: 'kendaraan' },
         { data: 'status' },
         { data: 'action' }
@@ -180,8 +192,16 @@ $(function () {
           }
         },
         {
-          // User full name and kendaraan
+          // User kendaraan
           targets: 2,
+          render: function (data, type, full, meta) {
+            var $kendaraan = full['kendaraan'];
+            return '<span >' + $kendaraan + '</span>';
+          }
+        },
+        {
+          // User full name and kendaraan
+          targets: 3,
           responsivePriority: 4,
           render: function (data, type, full, meta) {
             var $name = full['full_name'],
@@ -219,16 +239,16 @@ $(function () {
           }
         },
         {
-          // User kendaraan
-          targets: 3,
+          // User Kernet
+          targets: 4,
           render: function (data, type, full, meta) {
-            var $kendaraan = full['kendaraan'];
-            return '<span >' + $kendaraan + '</span>';
+            var $kernet = full['kernet'];
+            return '<span >' + $kernet + '</span>';
           }
         },
         {
           // User Status
-          targets: 4,
+          targets: 5,
           render: function (data, type, full, meta) {
             var $status = full['status'];
 

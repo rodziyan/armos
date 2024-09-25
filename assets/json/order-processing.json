@@ -55,24 +55,9 @@
       "qty": 25,
       "value": 250000,
       "status": 2,
-      "scheduled_optimization_date": "2024-08-09",
-      "scheduled_optimization_time": "03:00 PM",
+      "scheduled_optimization_date": "",
+      "scheduled_optimization_time": "",
       "delivery_type": "Express",
-      "action": "action"
-    },
-    {
-      "id": 5,
-      "toko": "Toko E",
-      "tipe_outlet": "Retail",
-      "faktur_id": "F005",
-      "faktur_date": "2024-08-05",
-      "delivery_date": "2024-08-10",
-      "qty": 30,
-      "value": 300000,
-      "status": 1,
-      "scheduled_optimization_date": "2024-08-11",
-      "scheduled_optimization_time": "09:00 AM",
-      "delivery_type": "Standard",
       "action": "action"
     }
   ]
