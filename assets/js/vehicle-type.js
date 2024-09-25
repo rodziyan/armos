@@ -249,11 +249,11 @@ $(function () {
         { data: 'cargo_max_volume' },
         { data: 'cargo_min_kg' },
         { data: 'cargo_max_kg' },
-        { data: 'min_revenue' },
-        { data: 'product_restriction' },
-        { data: 'area_restriction' },
-        { data: 'customer_type' },
-        { data: 'customer_restriction' },
+        // { data: 'min_revenue' },
+        // { data: 'product_restriction' },
+        // { data: 'area_restriction' },
+        // { data: 'customer_type' },
+        // { data: 'customer_restriction' },
         { data: 'action' }
       ],
       columnDefs: [
@@ -353,41 +353,41 @@ $(function () {
             return '<span>' + cargoMaxKg + '</span>';
           }
         },
-        {
-          targets: 13,
-          render: function (data, type, full) {
-            var minRevenue = full['min_revenue'];
-            return '<span>' + minRevenue + '</span>';
-          }
-        },
-        {
-          targets: 14,
-          render: function (data, type, full) {
-            var productRestriction = full['product_restriction'];
-            return '<span>' + productRestriction + '</span>';
-          }
-        },
-        {
-          targets: 15,
-          render: function (data, type, full) {
-            var areaRestriction = full['area_restriction'];
-            return '<span>' + areaRestriction + '</span>';
-          }
-        },
-        {
-          targets: 16,
-          render: function (data, type, full) {
-            var customerType = full['customer_type'];
-            return '<span>' + customerType + '</span>';
-          }
-        },
-        {
-          targets: 17,
-          render: function (data, type, full) {
-            var customerRestriction = full['customer_restriction'];
-            return '<span>' + customerRestriction + '</span>';
-          }
-        },
+        // {
+        //   targets: 13,
+        //   render: function (data, type, full) {
+        //     var minRevenue = full['min_revenue'];
+        //     return '<span>' + minRevenue + '</span>';
+        //   }
+        // },
+        // {
+        //   targets: 14,
+        //   render: function (data, type, full) {
+        //     var productRestriction = full['product_restriction'];
+        //     return '<span>' + productRestriction + '</span>';
+        //   }
+        // },
+        // {
+        //   targets: 15,
+        //   render: function (data, type, full) {
+        //     var areaRestriction = full['area_restriction'];
+        //     return '<span>' + areaRestriction + '</span>';
+        //   }
+        // },
+        // {
+        //   targets: 16,
+        //   render: function (data, type, full) {
+        //     var customerType = full['customer_type'];
+        //     return '<span>' + customerType + '</span>';
+        //   }
+        // },
+        // {
+        //   targets: 17,
+        //   render: function (data, type, full) {
+        //     var customerRestriction = full['customer_restriction'];
+        //     return '<span>' + customerRestriction + '</span>';
+        //   }
+        // },
         {
           // Actions
           targets: -1,
