@@ -95,72 +95,98 @@ $(document).ready(function () {
 </div>
 
   
-<!-- Modal Edit Route -->
-  <div class="modal fade" id="editRoute" tabindex="2" aria-labelledby="editRouteModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editRouteModalLabel">Route-001</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- Form Edit Route -->
-          <form id="edit-route-form">
-            <div class="row mb-3">
-              <div class="col-md-12">
+<!-- Modal Edit Faktur -->
+  <div class="modal fade" id="editFaktur" tabindex="2" aria-labelledby="editRouteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="viewModalLabel">Route-001</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- First Section -->
+                <div class="d-flex justify-content-between mb-3">
+                    <div>
+                        <p>Sequence: <strong>1</strong></p>
+                        <p>DO Number: <strong>DO001-1</strong></p>
+                        <p>Delivery Type: <strong>Delivery</strong></p>
+                    </div>
+                    <div>
+                        <p>Location: <strong>Toko A</strong></p>
+                        <p>Faktur ID: <input type="text" value="F001" class="form-control" /></p>
+                        <p>Total Value: <strong>Rp80.000</strong></p>
+                    </div>
+                </div>
+                <!-- Table Section -->
                 <table class="table table-bordered">
-                  <thead>
-                      <tr>
-                          <th style="background-color: #004d00; color: white;">Sequence</th>
-                          <th style="background-color: #004d00; color: white;">Delivery Type</th>
-                          <th style="background-color: #004d00; color: white;">Location</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                    <!-- Start of table row for each data entry -->
-                    <tr>
-                      <td style="cursor: pointer; display: flex; flex-direction: column; align-items: center;">
-                          <input type="checkbox" id="sequence-checkbox-1" name="sequence-checkbox" style="display:none;">
-                          <i class="ri-arrow-up-s-fill" style="font-size: 24px;" onclick="toggleCheckbox()"></i>
-                          <i class="ri-arrow-down-s-fill" style="font-size: 24px;" onclick="toggleCheckbox()"></i>
-                      </td>
-                      <td>
-                        <span>Delivery</span> <!-- delivery_type -->
-                      </td>
-                      <td>
-                        <span>Toko A</span> <!-- location_name -->
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="cursor: pointer; display: flex; flex-direction: column; align-items: center;">
-                          <input type="checkbox" id="sequence-checkbox-1" name="sequence-checkbox" style="display:none;">
-                          <i class="ri-arrow-up-s-fill" style="font-size: 24px;" onclick="toggleCheckbox()"></i>
-                          <i class="ri-arrow-down-s-fill" style="font-size: 24px;" onclick="toggleCheckbox()"></i>
-                      </td>
-                      <td>
-                        <span>Delivery</span> <!-- delivery_type -->
-                      </td>
-                      <td>
-                        <span>Toko B</span> <!-- location_name -->
-                      </td>
-                    </tr>
-                    <!-- Repeat the above <tr> block for each entry in your data -->
-                  </tbody>
+                    <thead>
+                        <tr class="table-success">
+                            <th>Produk</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Produk 1</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Produk 2</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Produk 3</td>
+                            <td>40</td>
+                        </tr>
+                        <tr class="table-success">
+                            <td><strong>TOTAL</strong></td>
+                            <td><strong>80</strong></td>
+                        </tr>
+                    </tbody>
                 </table>
-              </div>
+                <!-- Second Section -->
+                <div class="d-flex justify-content-between mb-3">
+                    <div>
+                        <p>Sequence: <strong>2</strong></p>
+                        <p>DO Number: <strong>DO001-2</strong></p>
+                        <p>Delivery Type: <strong>Delivery</strong></p>
+                    </div>
+                    <div>
+                        <p>Location: <strong>Toko B</strong></p>
+                        <p>Faktur ID: <input type="text" value="F002" class="form-control" /></p>
+                        <p>Total Value: <strong>Rp100.000</strong></p>
+                    </div>
+                </div>
+                <!-- Second Table Section -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-success">
+                            <th>Produk</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Produk 1</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Produk 2</td>
+                            <td>50</td>
+                        </tr>
+                        <tr class="table-success">
+                            <td><strong>TOTAL</strong></td>
+                            <td><strong>100</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <!-- Footer with Save and Cancel Buttons -->
-            <div class="modal-footer">
-              <button type="submit" style="background-color: #004d00; color: white; border: none; padding: 10px 20px;">Save Changes</button>
-            </div>
-          </form>
         </div>
-      </div>
     </div>
   </div>
 
 <!-- Modal Change Vehicle -->
-<div class="modal fade" id="changeVehicleModal" tabindex="3" aria-labelledby="changeVehicleModalLabel" aria-hidden="true">
+<div class="modal fade" id="changeKendaraan" tabindex="3" aria-labelledby="changeVehicleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -190,6 +216,49 @@ $(document).ready(function () {
       </div>
       <div class="modal-footer">
         <button type="submit" style="background-color: #004d00; color: white; border: none; padding: 10px 20px;">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Change Driver & Kernet -->
+<div class="modal fade" id="changeDriver" tabindex="3" aria-labelledby="changeDriverModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="changeDriverModalLabel">Route-001</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="change-vehicle-form">
+          <div class="mb-2">
+          <label for="current-driver-kernet" class="col-md-4 col-form-label">Driver & Kernet: Andi & Ibnu</label>
+        </div>
+        <div class="mb-2">
+          <label for="current-vehicle" class="col-md-4 col-form-label">Kendaraan: Double XT F 1234 ABC</label>
+        </div>
+          <div class="mb-3">
+            <label for="driver-select" class="form-label">Select Driver</label>
+            <select class="form-select" id="driver-select" name="driver-select">
+              <option value="" disabled selected>Select a Driver</option>
+              <option value="andi">Andi</option>
+              <option value="budi">Budi</option>
+              <option value="cindy">Cindy</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="kernet-select" class="form-label">Select Kernet</label>
+            <select class="form-select" id="kernet-select" name="kernet-select">
+              <option value="" disabled selected>Select a Kernet</option>
+              <option value="kernet1">Kernet 1</option>
+              <option value="kernet2">Kernet 2</option>
+              <option value="kernet3">Kernet 3</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" form="change-vehicle-form" style="background-color: #004d00; color: white; border: none; padding: 10px 20px;">Save Changes</button>
       </div>
     </div>
   </div>
@@ -288,36 +357,7 @@ $(document).ready(function () {
     </div>
   </div>
 
-<div class="modal fade" id="approvalModal" tabindex="-1" aria-labelledby="approvalModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body text-center p-5">
-        <!-- Icon Truck -->
-        <i class="ri-truck-fill" style="font-size: 80px; color: #004d00;"></i>
-        
-        <!-- Title Text -->
-        <h4 class="mt-4 mb-3" style="color: #004d00;">
-          Apakah Anda yakin untuk memberikan persetujuan bahwa pengantaran rute ini sudah siap?
-        </h4>
-        
-        <!-- Subtext -->
-        <p class="mb-4" style="color: #004d00;">
-          Data approval akan terkirim ke menu Ready to Pickup.
-        </p>
-        
-        <!-- Buttons -->
-        <div class="d-flex justify-content-center gap-3">
-          <button type="button" class="btn btn-success" style="background-color: #004d00; border-color: #004d00;">
-            Ya, Approval Route
-          </button>
-          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-            Batal
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 `);
 
   // Initialize DataTable
@@ -382,11 +422,11 @@ $(document).ready(function () {
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li><a class="dropdown-item view" href="#">View</a></li>
-                  <li><a class="dropdown-item editRoute" href="#">Edit Route</a></li>
-                  <li><a class="dropdown-item changeVehicleModal" href="#">Change Vehicle</a></li>
+                  <li><a class="dropdown-item editFaktur" href="#">Edit Faktur</a></li>
+                  <li><a class="dropdown-item changeKendaraan" href="#">Change Vehicle</a></li>
+                  <li><a class="dropdown-item " onclick="changeDriver(event)" href="#">Change Driver & Kernet</a></li>
                   <li><a class="dropdown-item " onclick="openRoute(event)" href="#">Cancel Route</a></li>
                   <li><a class="dropdown-item " onclick="openModals(event)" href="#">Cancel Order</a></li>
-                  <li><a class="dropdown-item " onclick="openApproval(event)" href="#">Approval</a></li>
                 </ul>
               </div>
             `;
@@ -427,36 +467,12 @@ $(document).ready(function () {
     var dt_User = $('.datatables-users').DataTable();
 
     // Show Modal with data
-    $('.datatables-users tbody').on('click', '.editRoute', function () {
+    $('.datatables-users tbody').on('click', '.editFaktur', function () {
       const tr = $(this).closest('tr');
       const row = dt_User.row(tr).data();
 
-      // Populate modal with data
-      $('#editRoute #sequence-checkbox').prop('checked', row.seq_checkbox); // Example for checkbox, adjust if necessary
-      $('#editRoute #delivery').text(row.delivery); // Set delivery text
-      $('#editRoute #location').text(row.location); // Set location text
-
       // Show the modal
-      $('#editRoute').modal('show');
-    });
-
-    // Handle form submission (optional, based on your needs)
-    $('#edit-route-form').on('submit', function (event) {
-      event.preventDefault();
-
-      // Extract updated data
-      const updatedData = {
-        sequence: $('#editRoute #sequence-checkbox').is(':checked'),
-        delivery: $('#editRoute #delivery').text(),
-        location: $('#editRoute #location').text()
-      };
-
-      // Update DataTable with new data (this part is just an example, adjust as needed)
-      const tr = $('.datatables-users tbody tr.selected'); // Assuming you have a way to identify the row
-      dt_User.row(tr).data(updatedData).draw();
-
-      // Close the modal
-      $('#editRoute').modal('hide');
+      $('#editFaktur').modal('show');
     });
   });
   $(document).ready(function () {
@@ -464,12 +480,12 @@ $(document).ready(function () {
     var dt_User = $('.datatables-users').DataTable();
 
     // Show Modal with data
-    $('.datatables-users tbody').on('click', '.changeVehicleModal', function () {
+    $('.datatables-users tbody').on('click', '.changeKendaraan', function () {
       const tr = $(this).closest('tr');
       const row = dt_User.row(tr).data();
 
       // Show the modal
-      $('#changeVehicleModal').modal('show');
+      $('#changeKendaraan').modal('show');
     });
 
     // Handle form submission
@@ -478,10 +494,10 @@ $(document).ready(function () {
 
       // Extract updated data
       const updatedData = {
-        driver: $('#changeVehicleModal #driver').text(),
-        vehicle: $('#changeVehicleModal #vehicle').text(),
-        plate: $('#changeVehicleModal #plate').text(),
-        changeTo: $('#changeVehicleModal #change-to').val() // Get selected value
+        driver: $('#changeKendaraan #driver').text(),
+        vehicle: $('#changeKendaraan #vehicle').text(),
+        plate: $('#changeKendaraan #plate').text(),
+        changeTo: $('#changeKendaraan #change-to').val() // Get selected value
       };
 
       // Find the row that was edited
@@ -500,7 +516,7 @@ $(document).ready(function () {
         .draw();
 
       // Close the modal
-      $('#changeVehicleModal').modal('hide');
+      $('#changeKendaraan').modal('hide');
     });
 
     $(document).ready(function () {
@@ -525,23 +541,6 @@ $(document).ready(function () {
 
     $(document).ready(function () {
       // Show Modal when "Cancel Order" is clicked
-      $('.approvalModal').on('click', function (e) {
-        e.preventDefault();
-
-        // Get Route ID from the clicked element or the corresponding table row
-        const tr = $(this).closest('tr');
-        const routeId = tr.find('.route-id-cell').text(); // Assume there is a cell with the class .route-id-cell containing the Route ID
-
-        // Set Route ID in the modal
-        $('#approvalModal #route-id').text(routeId);
-
-        // Show the modal
-        $('#approvalModal').modal('show');
-      });
-    });
-
-    $(document).ready(function () {
-      // Show Modal when "Cancel Order" is clicked
       $('.cancelOrder').on('click', function (e) {
         e.preventDefault();
 
@@ -554,6 +553,20 @@ $(document).ready(function () {
 
         // Show the modal
         $('#cancelOrder').modal('show');
+      });
+
+      $('.cancelOrder').on('click', function (e) {
+        e.preventDefault();
+
+        // Get Route ID from the clicked element or the corresponding table row
+        const tr = $(this).closest('tr');
+        const routeId = tr.find('.route-id-cell').text(); // Assume there is a cell with the class .route-id-cell containing the Route ID
+
+        // Set Route ID in the modal
+        $('#changeDriver #route-id').text(routeId);
+
+        // Show the modal
+        $('#changeDriver').modal('show');
       });
 
       // Handle form submission
@@ -609,7 +622,7 @@ function openRoute(e) {
   // Show the modal
   $('#cancelRoute').modal('show');
 }
-function openApproval(e) {
+function changeDriver(e) {
   e.preventDefault();
 
   // Get Route ID from the clicked element or the corresponding table row
@@ -617,8 +630,8 @@ function openApproval(e) {
   const routeId = tr.find('.route-id-cell').text(); // Assume there is a cell with the class .route-id-cell containing the Route ID
 
   // Set Route ID in the modal
-  $('#approvalModal #route-id').text(routeId);
+  $('#changeDriver #route-id').text(routeId);
 
   // Show the modal
-  $('#approvalModal').modal('show');
+  $('#changeDriver').modal('show');
 }

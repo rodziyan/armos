@@ -878,15 +878,77 @@
                                           </select>
                                       </div>
                               
-                                      <div id="bulanan-container" class="hidden col-md-6 mb-3">
-                                          <label for="inputTanggal">Bulanan (input tanggal)</label>
-                                          <input type="number" id="inputTanggal" min="1" max="29" class="form-control">
-                                      </div>
+                                      <div id="bulanan-container" class="col-md-6 mb-3">
+                                        <label for="inputTanggal">Bulanan (input tanggal)</label>
+                                        <input type="number" id="inputTanggal" min="1" max="29" class="form-control" placeholder="Pilih Tanggal (1-29)">
+                                        <p id="error-msg" style="color: red; display: none;">Tanggal tidak boleh lebih dari 29.</p>
+                                      </div>                                      
                               
-                                      <div id="tahunan-container" class="hidden col-md-6 mb-3">
-                                          <label for="inputTanggalTahunan">Tahunan</label>
-                                          <input type="date" id="inputTanggalTahunan" class="form-control">
-                                      </div>
+                                      <div id="tahunan-container" class="col-md-6 mb-3">
+                                        <label for="inputDayMonth">Tahunan</label>
+                                        
+                                        <!-- Row for Day and Month -->
+                                        <div class="row">
+                                            <!-- Day dropdown -->
+                                            <div class="col-md-6">
+                                                <select id="inputDay" class="form-control" aria-label="Select Day">
+                                                    <option value="" disabled selected>Select Hari</option>
+                                                    <!-- Generate options for 1 to 31 -->
+                                                    <option value="01">1</option>
+                                                    <option value="02">2</option>
+                                                    <option value="03">3</option>
+                                                    <option value="04">4</option>
+                                                    <option value="05">5</option>
+                                                    <option value="06">6</option>
+                                                    <option value="07">7</option>
+                                                    <option value="08">8</option>
+                                                    <option value="09">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                    <option value="24">24</option>
+                                                    <option value="25">25</option>
+                                                    <option value="26">26</option>
+                                                    <option value="27">27</option>
+                                                    <option value="28">28</option>
+                                                    <option value="29">29</option>
+                                                    <option value="30">30</option>
+                                                    <option value="31">31</option>
+                                                </select>
+                                            </div>
+                                    
+                                            <!-- Month dropdown -->
+                                            <div class="col-md-6">
+                                                <select id="inputMonth" class="form-control" aria-label="Select Month">
+                                                    <option value="" disabled selected>Select Bulan</option>
+                                                    <option value="01">Januari</option>
+                                                    <option value="02">Februari</option>
+                                                    <option value="03">Maret</option>
+                                                    <option value="04">April</option>
+                                                    <option value="05">Mei</option>
+                                                    <option value="06">Juni</option>
+                                                    <option value="07">Juli</option>
+                                                    <option value="08">Agustus</option>
+                                                    <option value="09">September</option>
+                                                    <option value="10">Oktober</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">Desember</option>
+                                                </select>
+                                            </div>
+                                            <small>Format: Hari - Bulan (e.g., 10 - Januari)</small>
+                                        </div>
+                                    </div>                                                                                                                                     
                                   </div>
 
                                     <!-- Vehicle Type Restriction -->
@@ -1114,6 +1176,26 @@
               });
           });
       });
+      document.addEventListener('DOMContentLoaded', function() {
+  const tanggalInput = document.getElementById('inputTanggal');
+  const errorMsg = document.getElementById('error-msg');
+
+  // Add event listener to validate input on change
+  tanggalInput.addEventListener('input', function() {
+    const value = parseInt(tanggalInput.value, 10);
+
+    // Validate if the value is within 1 and 29
+    if (value > 29) {
+      tanggalInput.value = 29; // Reset to max 29
+      errorMsg.style.display = 'block'; // Show error message
+    } else if (value < 1) {
+      tanggalInput.value = 1; // Reset to min 1
+      errorMsg.style.display = 'block'; // Show error message
+    } else {
+      errorMsg.style.display = 'none'; // Hide error message
+    }
+  });
+});
   </script>
 
     <!-- Drag Target Area To SlideIn Menu On Small Screens -->
