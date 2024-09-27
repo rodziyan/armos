@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setupModalTriggers('[data-bs-target="#modalView"]', 'modalView');
     setupModalTriggers('[data-bs-target="#returnModal"]', 'returnModal');
     setupModalTriggers('[data-bs-target="#WMSModal"]', 'WMSModal');
+    setupModalTriggers('[data-bs-target="#profileModal"]', 'profileModal');
 
     // Additional setup for the main "Change Vehicle" modal if needed
     var triggerChangeVehicleModal = document.getElementById('triggerChangeVehicleModal');

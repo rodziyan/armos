@@ -16,31 +16,46 @@ function createModals() {
         </div>
         <!-- Table -->
         <table class="table">
-          <thead>
-            <tr>
-              <th style="background-color: #004d00; color: white;">Sequence</th>
-              <th style="background-color: #004d00; color: white;">Delivery Type</th>
-              <th style="background-color: #004d00; color: white;">Location</th>
-              <th style="background-color: #004d00; color: white;">Faktur ID</th>
-              <th style="background-color: #004d00; color: white;">Qty</th>
-            </tr>
-          </thead>
-          <tbody id="modal-table-body">
-            <tr>
-              <td>1</td>
-              <td>Standard</td>
-              <td>New York</td>
-              <td>123456</td>
-              <td>10</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Express</td>
-              <td>Los Angeles</td>
-              <td>789012</td>
-              <td>5</td>
-            </tr>
-          </tbody>
+            <thead>
+                <tr>
+                    <th style="background-color: #004d00; color: white;">Sequence</th>
+                    <th style="background-color: #004d00; color: white;">Delivery Type</th>
+                    <th style="background-color: #004d00; color: white;">Location</th>
+                    <th style="background-color: #004d00; color: white;">Faktur ID</th>
+                    <th style="background-color: #004d00; color: white;">Faktur Qty</th>
+                    <th style="background-color: #004d00; color: white;">WMS Qty</th>
+                    <th style="background-color: #004d00; color: white;">Delivery Qty</th>
+                </tr>
+            </thead>
+            <tbody id="modal-table-body">
+                <tr>
+                    <td>1</td>
+                    <td>Delivery</td>
+                    <td>Toko A</td>
+                    <td>F001</td>
+                    <td>20</td>
+                    <td>18</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Delivery</td>
+                    <td>Toko B</td>
+                    <td>F002</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Delivery</td>
+                    <td>Toko C</td>
+                    <td>F003</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                </tr>
+            </tbody>
         </table>
       </div>
       <div class="modal-footer">
@@ -242,7 +257,24 @@ function createModals() {
 </div>
 
 
-    <!-- Repeat similar HTML for status2Modal, status3Modal, and status4Modal -->
+<!-- Modal -->
+<div class="modal fade" id="approvalModal" tabindex="-1" role="dialog" aria-labelledby="approvalModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header justify-content-center">
+              <h5 class="modal-title text-center" style="flex: 1;">
+                  <i class="ri-truck-line" style="color: #2C3E50; font-size: 45px;"></i>
+              </h5>
+          </div>
+          <div class="modal-body text-center" style="color: #2C3E50;">
+              <h5 style="color: #28a745;">Apakah Anda yakin untuk memberikan approval pengantaran ini?</h5>
+          </div>
+          <div class="modal-footer justify-content-end">
+              <button type="button" class="btn btn-success" style="background-color: #28a745; border-color: #28a745;">Ya, Approval Start Delivery</button>
+          </div>
+      </div>
+    </div>
+</div>
   `;
 
   // Append the modals HTML to the body
@@ -345,30 +377,40 @@ $(document).ready(function () {
             console.log('Modal ID:', modalId);
             var deliveries = full['deliveries'] ? JSON.stringify(full['deliveries']) : '[]'; // Ensure deliveries is a JSON string
 
-            return (
-              '<div class="text-center">' +
-              '<button class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect helpdesk-btn" ' +
-              'style="border: 1px solid #007bff;" ' +
-              'data-driver-name="' +
-              full['driver_name'] +
-              '" ' +
-              'data-driver-status="' +
-              full['driver_status'] +
-              '" ' +
-              "data-deliveries='" +
-              deliveries +
-              "' " + // Use single quotes to wrap the JSON string
-              'data-bs-toggle="modal" data-bs-target="' +
-              modalId +
-              '">' +
-              '<i class="ri-eye-line ri-20px" style="color: #007bff;"></i>' +
-              '</button>' +
-              '</div>'
-            );
+            return `
+            <div class="text-center">
+              <button class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect helpdesk-btn"
+                style="border: 1px solid #007bff;"
+                data-driver-name="${full['driver_name']}"
+                data-driver-status="${full['driver_status']}"
+                data-deliveries='${deliveries}'
+                data-bs-toggle="modal" data-bs-target="${modalId}">
+                <i class="ri-eye-line ri-20px" style="color: #007bff;"></i>
+              </button>
+              <button class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect approvalModal" style="border: 1px solid #28a745; margin-left: 5px;" data-toggle="modal" data-target="#approvalModal">
+                  <i class="ri-check-line ri-20px" style="color: #28a745;"></i>
+              </button>
+            </div>
+          `;
           }
         }
       ],
       searching: false
     });
   }
+  // Event untuk membuka modal
+  $(document).on('click', '.approvalModal', function () {
+    $('#approvalModal').modal('show');
+  });
+
+  // Event untuk menutup modal
+  $(document).on('click', '#closeModalBtn, #closeModalBtn2', function () {
+    $('#approvalModal').modal('hide');
+  });
+
+  // Event untuk menyetujui pengantaran
+  $(document).on('click', '#approveBtn', function () {
+    alert('Pengantaran disetujui!');
+    $('#approvalModal').modal('hide');
+  });
 });

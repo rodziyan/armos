@@ -4,9 +4,9 @@
       "driver_name": "Andi",
       "driver_status": 1,
       "route_id": "R001",
-      "total_drop": 5,
-      "jumlah_faktur": 1,
-      "jumlah_qty": 5,
+      "total_drop": 3,
+      "jumlah_faktur": 3,
+      "jumlah_qty": 10,
       "action": "action"
     },
     {
@@ -14,7 +14,7 @@
       "driver_status": 2,
       "route_id": "R002",
       "total_drop": 3,
-      "jumlah_faktur": 2,
+      "jumlah_faktur": 3,
       "jumlah_qty": 10,
       "action": "action"
     },
@@ -22,18 +22,18 @@
       "driver_name": "Cindy",
       "driver_status": 3,
       "route_id": "R003",
-      "total_drop": 4,
-      "jumlah_faktur": 1,
-      "jumlah_qty": 8,
+      "total_drop": 3,
+      "jumlah_faktur": 3,
+      "jumlah_qty": 10,
       "action": "action"
     },
     {
       "driver_name": "Dedi",
       "driver_status": 4,
       "route_id": "R004",
-      "total_drop": 2,
+      "total_drop": 3,
       "jumlah_faktur": 3,
-      "jumlah_qty": 6,
+      "jumlah_qty": 10,
       "action": "action"
     }
   ]
