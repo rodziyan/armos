@@ -784,6 +784,7 @@
                       <table class="datatables-users table">
                           <thead>
                               <tr>
+                                  <th></th>
                                   <th>Toko</th>
                                   <th>Tipe Outlet</th>
                                   <th>Faktur ID</th>
@@ -821,7 +822,7 @@
 
     <!-- Modal HTML -->
 <div class="modal fade" id="holdModal" tabindex="-1" aria-labelledby="holdModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="holdModalLabel">Hold Details</h5>
@@ -855,6 +856,96 @@
     </div>
   </div>
 </div>
+
+    <!-- Modal Manual Routing -->
+    <div class="modal fade" id="routingModal" tabindex="-1" role="dialog" aria-labelledby="routingModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="routingModalLabel">Manual Routing</h5>
+          </div>
+              <div class="modal-body">
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label for="expeditionType">Jenis Ekspedisi</label>
+                          <select id="expeditionType" class="form-control">
+                              <option value="" disabled selected>Pilih Jenis Ekspedisi</option>
+                              <option value="internal">Internal</option>
+                              <option value="eksternal">Eksternal</option>
+                              <option value="other">Other</option>
+                          </select>
+                      </div>
+  
+                      <div id="internal-container" class="hidden col-md-6 mb-3">
+                          <label for="availableDriver">Driver Tersedia</label>
+                          <select id="availableDriver" class="form-control">
+                              <option value="" disabled selected>Pilih Driver</option>
+                              <option value="driver1">Driver 1 & Kernet 1 - Mobil A B1234XYZ</option>
+                              <option value="driver2">Driver 2 & Kernet 2 - Mobil B C5678ABC</option>
+                              <!-- Tambahkan driver lainnya sesuai kebutuhan -->
+                          </select>
+                      </div>
+  
+                      <div id="eksternal-container" class="hidden col-md-6 mb-3">
+                          <label for="externalExpedition">Ekspedisi Eksternal</label>
+                          <select id="externalExpedition" class="form-control">
+                              <option value="" disabled selected>Pilih Ekspedisi</option>
+                              <option value="jne">JNE</option>
+                              <option value="jnt">J&T</option>
+                              <option value="paxel">Paxel</option>
+                          </select>
+                          <label for="resiNumber" class="mt-2">No. Resi</label>
+                          <input type="text" id="resiNumber" class="form-control" placeholder="Masukkan No. Resi">
+                      </div>
+  
+                      <div id="other-container" class="hidden col-md-6 mb-3">
+                          <label for="toBeDeliveredBy">To be delivered by:</label>
+                          <input type="text" id="toBeDeliveredBy" class="form-control" placeholder="Masukkan cara pengiriman">
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-custom-success" id="saveDataBtn">Simpan Data</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script>
+    // Event listener for expedition type dropdown
+    document.getElementById('expeditionType').addEventListener('change', function () {
+        const internalContainer = document.getElementById('internal-container');
+        const eksternalContainer = document.getElementById('eksternal-container');
+        const otherContainer = document.getElementById('other-container');
+
+        internalContainer.classList.add('hidden');
+        eksternalContainer.classList.add('hidden');
+        otherContainer.classList.add('hidden');
+
+        if (this.value === 'internal') {
+            internalContainer.classList.remove('hidden');
+        } else if (this.value === 'eksternal') {
+            eksternalContainer.classList.remove('hidden');
+        } else if (this.value === 'other') {
+            otherContainer.classList.remove('hidden');
+        }
+    });
+</script>
+
+<style>
+    .hidden {
+        display: none;
+    }
+    .btn-custom-success {
+        background-color: #005F3d; /* Hijau tua */
+        color: white; /* Warna teks putih */
+        border: none; /* Menghapus border default */
+    }
+
+    .btn-custom-success:hover {
+        background-color: #004d30; /* Warna saat hover */
+    }
+</style>
 
     <!-- Overlay -->
     <div class="layout-overlay layout-menu-toggle"></div>

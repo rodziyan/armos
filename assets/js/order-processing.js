@@ -8,10 +8,6 @@ $(document).ready(function () {
     createViewModal(); // Fungsi untuk membuat viewModal
   }
 
-  if ($('#unholdModal').length === 0) {
-    createUnholdModal(); // Fungsi untuk membuat unholdModal
-  }
-
   // Initialize DataTable
   if ($('.datatables-users').length) {
     dt_User = $('.datatables-users').DataTable({
@@ -136,8 +132,8 @@ $(document).ready(function () {
             var $qty = full['qty'] || 'N/A';
             var $value = full['value'] || 'N/A';
             var $status = full['status'];
-            var $scheduledOptimizationDate = full['scheduled_optimization_date'] || 'N/A';
-            var $scheduledOptimizationTime = full['scheduled_optimization_time'] || 'N/A';
+            var $scheduledOptimizationDate = full['scheduled_optimization_date'];
+            var $scheduledOptimizationTime = full['scheduled_optimization_time'];
             var $deliveryType = full['delivery_type'] || 'N/A';
 
             const statusObj = {
@@ -145,6 +141,9 @@ $(document).ready(function () {
               2: 'Pending'
             };
             var $statusText = statusObj[$status] || 'Unknown';
+            // Cek kondisi dan tampilkan button jika kedua variabel null
+            const optimizationButtonDisplay =
+              !$scheduledOptimizationDate && !$scheduledOptimizationTime ? 'block' : 'hide';
 
             return `
                     <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
@@ -177,9 +176,9 @@ $(document).ready(function () {
                       data-delivery_type="${$deliveryType}">
                       <i class="ri-edit-line ri-20px"></i>
                     </button>
-                     <button type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect unholdModal">
-                                <i class="ri-error-warning-line ri-20px"></i>
-                              </button>
+                    <button id="optimizationButton" type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect unholdModal" style="display: ${optimizationButtonDisplay};">
+                        <i class="ri-error-warning-line ri-20px"></i>
+                    </button>
                 `;
           }
         }
@@ -196,41 +195,20 @@ $(document).ready(function () {
         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
           Action
         </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#" id="RoutingModal">Manual Routing</a></li>
-          <li><a class="dropdown-item" href="#" id="holdAction">Hold</a></li>
-        </ul>
+       <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#" id="RoutingModal" data-bs-toggle="modal" data-bs-target="#routingModal">Manual Routing</a></li>
+          <li><a class="dropdown-item" href="#" id="holdAction" data-bs-toggle="modal" data-bs-target="#holdModal">Hold</a></li>
+      </ul>
       </div>
     `);
 
-    // Function to show modal
-    function showModal(modalId) {
-      $(modalId).modal('show');
-    }
-
-    // Show holdModal on holdAction click
-    $(document).on('click', '#holdAction', function (e) {
-      e.preventDefault();
-      showModal('#holdModal');
-    });
-
-    // Show manualRoutingModal on manualRoutingAction click
-    $(document).on('click', '#RoutingAction', function (e) {
-      e.preventDefault();
-      showModal('#RoutingModal');
-    });
-
-    // Delete Record
-    $('.datatables-users tbody').on('click', '.delete-record', function () {
-      dt_User.row($(this).parents('tr')).remove().draw();
+    // Event listener untuk unhold modal
+    $(document).on('click', '.unholdModal', function () {
+      var id = $(this).data('id'); // Ambil data ID jika diperlukan
+      console.log($('#unholdModal')); // Debug log
+      $('#unholdModal').modal('show'); // Tampilkan modal
     });
   }
-
-  // Tambahkan event listener pada tombol View dan Update
-  $(document).on('click', '.unholdModal', function () {
-    // Tampilkan modal
-    $('#unholdModal').modal('show');
-  });
 
   // Tambahkan event listener pada tombol View dan Update
   $(document).on('click', '.viewModal, .updateModal', function () {
@@ -355,7 +333,7 @@ function createViewModal() {
 
     <!-- Modal -->
 <div class="modal fade" id="unholdModal" tabindex="-1" aria-labelledby="unholdModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="unholdModalLabel">Unhold Order</h5>
@@ -372,40 +350,6 @@ function createViewModal() {
         </div>
     </div>
 </div>
-
-<!-- Modal Structure -->
-<div class="modal fade" id="RoutingModal" tabindex="-1" aria-labelledby="RoutingModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="manualRoutingModalLabel">Manual Routing</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body text-center">
-        <div class="row">
-          <!-- External Expedition -->
-          <div class="col-6">
-            <button id="externalExpedition" class="btn btn-light btn-select">
-              <i class="ri-truck-line" style="font-size: 40px;"></i>
-              <p>External Expedition</p>
-            </button>
-          </div>
-          <!-- Available Driver -->
-          <div class="col-6">
-            <button id="availableDriver" class="btn btn-light btn-select">
-              <i class="ri-steering-2-line" style="font-size: 40px;"></i>
-              <p>Available Driver</p>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" id="nextBtn" disabled>Next</button>
-      </div>
-    </div>
-  </div>
-</div>
   `;
   // Tambahkan modal ke DOM
   $('body').append(modalHTML);
@@ -418,32 +362,29 @@ style.innerHTML = `
     padding: 5px 10px;
     border-radius: 4px;
   }
-    .bg-label-warning {
+  .bg-label-warning {
     background-color: #DC3545; /* Merah */
     color: white; /* Warna teks putih agar kontras dengan latar belakang merah */
     padding: 5px 10px;
     border-radius: 4px;
   }
   .btn-select {
-  border: 1px solid #d1d1d1;
-  padding: 20px;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s;
-}
-
-.btn-select:hover {
-  border-color: #007bff;
-  background-color: #f0f8ff;
-}
-
-.btn-select.active {
-  border-color: #007bff;
-  background-color: #e0f0ff;
-}
-  
-  `;
+    border: 1px solid #d1d1d1;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+  }
+  .btn-select:hover {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+  }
+  .btn-select.active {
+    border-color: #007bff;
+    background-color: #e0f0ff;
+  }
+`;
 
 // Menambahkan elemen style ke head
 document.head.appendChild(style);
