@@ -113,7 +113,7 @@ $(document).ready(function () {
                     </div>
                     <div>
                         <p>Location: <strong>Toko A</strong></p>
-                        <p>Faktur ID: <input type="text" value="F001" class="form-control" /></p>
+                        <p>Faktur ID: <input type="text" value="F001" class="form-control" style="display: inline-block; width: 150px; height: 30px;" /></p>
                         <p>Total Value: <strong>Rp80.000</strong></p>
                     </div>
                 </div>
@@ -153,7 +153,7 @@ $(document).ready(function () {
                     </div>
                     <div>
                         <p>Location: <strong>Toko B</strong></p>
-                        <p>Faktur ID: <input type="text" value="F002" class="form-control" /></p>
+                        <p>Faktur ID: <input type="text" value="F002" class="form-control" style="display: inline-block; width: 150px; height: 30px;" /></p>
                         <p>Total Value: <strong>Rp100.000</strong></p>
                     </div>
                 </div>
