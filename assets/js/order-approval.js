@@ -366,8 +366,8 @@ $(document).ready(function () {
       ajax: assetsPath + 'json/order-approval.json',
       columns: [
         { data: 'route_id' }, // Route ID
-        { data: 'driver_vehicle' }, // Driver Vehicle
-        { data: 'capacity_percent' }, // Capacity Percent
+        { data: 'driver_vehicle' }, // Driver - Vehicle
+        { data: 'capacity_percent' }, // % Capacity
         { data: 'total_value' }, // Total Value
         { data: 'total_trip_time' }, // Total Trip Time
         { data: 'seq' }, // Seq
@@ -375,22 +375,25 @@ $(document).ready(function () {
         { data: 'location_name' }, // Location Name
         { data: 'do_number' }, // DO Number
         { data: 'faktur_id' }, // Faktur ID
-        { data: 'qty' }, // Quantity
+        { data: 'faktur_qty' }, // Faktur Qty
+        { data: 'wms_qty' }, // WMS Qty
+        { data: 'delivery_qty' }, // Delivery Qty
         { data: 'value' }, // Value
         { data: 'start_time' }, // Start Time
         { data: 'end_time' }, // End Time
         { data: 'trip_time' }, // Trip Time
+        { data: 'notes' }, // Notes
         { data: 'action' } // Action
       ],
       order: [[5, 'asc']],
       rowCallback: function (row, data, index) {
-        // Calculate group size (e.g., 3 rows per group)
+        // Calculate group size (e.g., 2 rows per group)
         var groupSize = 2;
 
         // Check if this is the first row of the group
         if (index % groupSize === 0) {
           // Apply rowspan to Route ID, Driver - Vehicle, % Capacity, Total Value, Total Trip Time, and Action columns
-          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(15)'].forEach(function (selector) {
+          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(18)'].forEach(function (selector) {
             $(selector, row).attr('rowspan', groupSize).css({
               'vertical-align': 'middle',
               'text-align': 'center'
@@ -399,7 +402,7 @@ $(document).ready(function () {
         } else {
           // Hide the cells for rows 2 and 3 of the group
           $(row).find('td:lt(5)').hide(); // Hide first five columns (route_id, driver_vehicle, etc.)
-          $(row).find('td:eq(15)').hide(); // Hide action column
+          $(row).find('td:eq(18)').hide(); // Hide action column
         }
       },
       columnDefs: [

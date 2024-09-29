@@ -3,9 +3,6 @@
     {
       "route_id": "R001",
       "driver_vehicle": "Andi Double XT F 1234 ABC",
-      "driver": "Andi",
-      "kendaraan": "Double XT",
-      "plate": "F 1234 ABC",
       "capacity_percent": "90%",
       "total_value": "Rp.180,000",
       "total_trip_time": "01:30:00",
@@ -14,19 +11,19 @@
       "location_name": "Toko A",
       "do_number": "DO0001-1",
       "faktur_id": "F001",
-      "qty": 80,
+      "faktur_qty": 80,
+      "wms_qty": 60,
+      "delivery_qty": 60,
       "value": "Rp.80,000",
       "start_time": "08:00",
       "end_time": "08:45",
       "trip_time": "00:15:00",
-      "action": ""
+      "notes": null,
+      "action": null
     },
     {
       "route_id": null,
       "driver_vehicle": null,
-      "driver": null,
-      "kendaraan": null,
-      "plate": null,
       "capacity_percent": null,
       "total_value": null,
       "total_trip_time": null,
@@ -35,12 +32,15 @@
       "location_name": "Toko B",
       "do_number": "DO0001-2",
       "faktur_id": "F002",
-      "qty": 100,
+      "faktur_qty": 100,
+      "wms_qty": 100,
+      "delivery_qty": 100,
       "value": "Rp.100,000",
       "start_time": "08:45",
       "end_time": "09:30",
       "trip_time": "00:15:00",
-      "action": ""
+      "notes": null,
+      "action": null
     }
   ]
 }

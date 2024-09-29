@@ -955,7 +955,9 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn" id="saveChanges" style="background-color: #006400; color: white; border: none;">Reconciliation completed</button>
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmationModal" style="background-color: #006400; color: white; border: none;">
+              Reconciliation completed
+          </button>          
           </div>
         </div>
       </div>
@@ -1072,13 +1074,35 @@
           <div class="modal-body text-center">
               <i class="ri-box-3-line" style="font-size: 3rem; color: #004d00;"></i>
               <h4 style="color: #004d00;">
-                  Apakah terdapat barang hilang yaitu Product (nama) sejumlah (delivery qty dikurang received qty)?
+                Apakah terdapat barang hilang yaitu Product F sejumlah 1pcs?
               </h4>
           </div>
           <div class="modal-footer">
               <button type="button" class="btn" style="background-color: #004d00; color: #ffffff;">Ya, Proses ke Document Reconciliation</button>
           </div>
       </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+          <div style="margin-bottom: 15px;">
+              <i class="ri-truck-fill icon" style="font-size: 50px;"></i> <!-- Adjust font size as needed -->
+          </div>
+          <h4 style="color: #4C8A2A;">Apakah Anda yakin pengiriman ini sudah sesuai prosedur?</h4>
+          <p>Data approval akan terkirim ke menu Cost Reconciliation.</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+          <button type="button" class="btn" style="background-color: #4C8A2A; color: white;" onclick="completeReconciliation()">Ya, Reconciliation Completed</button>
+      </div>
+  </div>  
   </div>
 </div>
 
@@ -1144,6 +1168,7 @@
         setupModalTriggers('[data-bs-target="#returnModal"]', 'returnModal');
         setupModalTriggers('[data-bs-target="#WMSModal"]', 'WMSModal');
         setupModalTriggers('[data-bs-target="#profileModal"]', 'profileModal');
+        setupModalTriggers('[data-bs-target="#confirmationModal"]', 'confirmationModal');
       });
     </script>
     

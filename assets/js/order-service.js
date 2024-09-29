@@ -270,6 +270,7 @@ function createModals() {
               <h5 style="color: #28a745;">Apakah Anda yakin untuk memberikan approval pengantaran ini?</h5>
           </div>
           <div class="modal-footer justify-content-end">
+              <button type="button" class="btn btn-danger" style="background-color: #dc3545; border-color: #dc3545;" data-dismiss="modal">Cancel</button>
               <button type="button" class="btn btn-success" style="background-color: #28a745; border-color: #28a745;">Ya, Approval Start Delivery</button>
           </div>
       </div>
@@ -316,7 +317,7 @@ $(document).ready(function () {
           targets: 2,
           render: function (data, type, full) {
             var statusObj = {
-              1: { title: 'Ready to Pick Up', class: 'bg-label-success' },
+              1: { title: 'Ready to Deliver', class: 'bg-label-success' },
               2: { title: 'In Delivery', class: 'bg-label-primary' },
               3: { title: 'Delivery Reconciliation', class: 'bg-label-warning' },
               4: { title: 'Loading', class: 'bg-label-info' }

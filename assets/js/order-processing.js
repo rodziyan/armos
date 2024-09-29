@@ -141,45 +141,51 @@ $(document).ready(function () {
               2: 'Pending'
             };
             var $statusText = statusObj[$status] || 'Unknown';
-            // Cek kondisi dan tampilkan button jika kedua variabel null
-            const optimizationButtonDisplay =
-              !$scheduledOptimizationDate && !$scheduledOptimizationTime ? 'block' : 'hide';
 
-            return `
-                    <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
-                      data-id="${$id}"
-                      data-toko="${$toko}"
-                      data-tipe_outlet="${$tipeOutlet}"
-                      data-faktur_id="${$fakturId}"
-                      data-faktur_date="${$fakturDate}"
-                      data-delivery_date="${$deliveryDate}"
-                      data-qty="${$qty}"
-                      data-value="${$value}"
-                      data-status="${$statusText}"
-                      data-scheduled_optimization_date="${$scheduledOptimizationDate}"
-                      data-scheduled_optimization_time="${$scheduledOptimizationTime}"
-                      data-delivery_type="${$deliveryType}">
-                      <i class="ri-eye-line ri-20px"></i>
-                    </button>
-                    <button type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect updateModal"
-                      data-id="${$id}"
-                      data-toko="${$toko}"
-                      data-tipe_outlet="${$tipeOutlet}"
-                      data-faktur_id="${$fakturId}"
-                      data-faktur_date="${$fakturDate}"
-                      data-delivery_date="${$deliveryDate}"
-                      data-qty="${$qty}"
-                      data-value="${$value}"
-                      data-status="${$statusText}"
-                      data-scheduled_optimization_date="${$scheduledOptimizationDate}"
-                      data-scheduled_optimization_time="${$scheduledOptimizationTime}"
-                      data-delivery_type="${$deliveryType}">
-                      <i class="ri-edit-line ri-20px"></i>
-                    </button>
-                    <button id="optimizationButton" type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect unholdModal" style="display: ${optimizationButtonDisplay};">
-                        <i class="ri-error-warning-line ri-20px"></i>
-                    </button>
-                `;
+            // Build the base buttons (view and update)
+            var buttons = `
+              <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
+                data-id="${$id}"
+                data-toko="${$toko}"
+                data-tipe_outlet="${$tipeOutlet}"
+                data-faktur_id="${$fakturId}"
+                data-faktur_date="${$fakturDate}"
+                data-delivery_date="${$deliveryDate}"
+                data-qty="${$qty}"
+                data-value="${$value}"
+                data-status="${$statusText}"
+                data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+                data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+                data-delivery_type="${$deliveryType}">
+                <i class="ri-eye-line ri-20px"></i>
+              </button>
+              <button type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect updateModal"
+                data-id="${$id}"
+                data-toko="${$toko}"
+                data-tipe_outlet="${$tipeOutlet}"
+                data-faktur_id="${$fakturId}"
+                data-faktur_date="${$fakturDate}"
+                data-delivery_date="${$deliveryDate}"
+                data-qty="${$qty}"
+                data-value="${$value}"
+                data-status="${$statusText}"
+                data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+                data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+                data-delivery_type="${$deliveryType}">
+                <i class="ri-edit-line ri-20px"></i>
+              </button>
+            `;
+
+            // Only append the optimization button for 'Toko D'
+            if ($toko === 'Toko D') {
+              buttons += `
+                <button id="optimizationButton" type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect unholdModal">
+                  <i class="ri-error-warning-line ri-20px"></i>
+                </button>
+              `;
+            }
+
+            return buttons;
           }
         }
       ],
