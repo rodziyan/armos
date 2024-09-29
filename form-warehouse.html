@@ -881,7 +881,7 @@
                                       <div id="bulanan-container" class="col-md-6 mb-3">
                                         <label for="inputTanggal">Bulanan (input tanggal)</label>
                                         <input type="number" id="inputTanggal" min="1" max="29" class="form-control" placeholder="Pilih Tanggal (1-29)">
-                                        <p id="error-msg" style="color: red; display: none;">Tanggal tidak boleh lebih dari 29.</p>
+                                        <p id="error-msg" style="color: red; display: none;">Tanggal tidak boleh lebih dari 28.</p>
                                       </div>                                      
                               
                                       <div id="tahunan-container" class="col-md-6 mb-3">
@@ -1185,8 +1185,8 @@
     const value = parseInt(tanggalInput.value, 10);
 
     // Validate if the value is within 1 and 29
-    if (value > 29) {
-      tanggalInput.value = 29; // Reset to max 29
+    if (value > 28) {
+      tanggalInput.value = 28; // Reset to max 29
       errorMsg.style.display = 'block'; // Show error message
     } else if (value < 1) {
       tanggalInput.value = 1; // Reset to min 1
