@@ -740,17 +740,21 @@
               <div class="row mt-8">
               <div class="container mt-5">
                 <div class="card mb-6">
-                    <h5 class="card-header">Tambah Warehouse</h5>
+                    <h4 class="card-header">Tambah Warehouse</h4>
                     <form id="locationForm" action="app-warehouse.html" method="post">
                         <div class="card-body">
                             <div class="row">
-                                <!-- Left Column -->
-                                <div class="col-md-6">
-                                    <!-- Location ID -->
-                                    <div class="mb-3">
-                                      <label for="locationID" class="form-label">Location ID</label>
-                                      <input type="text" class="form-control" id="locationID" required>
-                                    </div>
+                               <!-- Left Column -->
+                               <div class="col-md-6">
+                                <!-- Availability -->
+                                <div class="mb-3">
+                                  <label for="availability" class="form-label">Ketersediaan</label>
+                                  <select class="form-select" id="availability">
+                                      <option value="available">Tersedia</option>
+                                      <option value="unavailable">Tidak Tersedia</option>
+                                  </select>
+                              </div> 
+                              </div>
 
                                     <!-- Location Name -->
                                     <div class="mb-3">

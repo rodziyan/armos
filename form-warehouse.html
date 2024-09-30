@@ -740,240 +740,117 @@
               <div class="row mt-8">
               <div class="container mt-5">
                 <div class="card mb-6">
-                    <h5 class="card-header">Tambah Customer</h5>
+                    <h4 class="card-header">Tambah Customer</h4>
                     <form id="locationForm" action="app-warehouse.html" method="post">
                         <div class="card-body">
                             <div class="row">
                                 <!-- Left Column -->
                                 <div class="col-md-6">
-                                    <!-- Location ID -->
-                                    <div class="mb-3">
-                                      <label for="locationID" class="form-label">Location ID</label>
-                                      <input type="text" class="form-control" id="locationID" required>
-                                    </div>
-
-                                    <!-- Location Name -->
-                                    <div class="mb-3">
-                                        <label for="locationName" class="form-label">Nama Lokasi</label>
-                                        <input type="text" class="form-control" id="locationName" required>
-                                    </div>
-
-                                    <!-- Location Type -->
-                                    <div class="mb-3">
-                                        <label for="locationType" class="form-label">Tipe Lokasi</label>
-                                        <select class="form-select" id="locationType">
-                                            <option value="Pengiriman">Pengiriman</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Channel -->
-                                    <div class="mb-3">
-                                        <label for="channel" class="form-label">Channel</label>
-                                        <select class="form-select" id="channel">
-                                            <option value="Modern Trade">Modern Trade</option>
-                                            <option value="General Trade">General Trade</option>
-                                            <option value="Institusi">Institusi</option>
-                                            <option value="Horeka">Horeka</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Type Outlet -->
-                                    <div class="mb-3">
-                                        <label for="typeOutlet" class="form-label">Tipe Outlet</label>
-                                        <select class="form-select" id="typeOutlet">
-                                            <option value="Kantin">Kantin</option>
-                                            <option value="Kafe">Kafe</option>
-                                            <option value="Resto">Resto</option>
-                                            <option value="Other">NKA</option>
-                                            <option value="Other">Retail Snack</option>
-                                            <option value="Other">Retail Minuman</option>
-                                            <option value="Other">Retail Sembako</option>
-                                            <option value="Other">Retail Kosmetik</option>
-                                            <option value="Other">Grosir Snack</option>
-                                            <option value="Other">Grosir Sembako</option>
-                                            <option value="Other">Grosir Minuman</option>
-                                            <option value="Other">Grosir Kosmetik</option>
-                                            <option value="Other">Retail Kelontong</option>
-                                            <option value="Other">Grosir Kelontong</option>
-                                            <option value="Other">Tobaku</option>
-                                            <option value="Other">Baby Shop</option>
-                                            <option value="Other">Koperasi</option>
-                                            <option value="Other">Kantor</option>
-                                            <option value="Other">Pabrik</option>
-                                            <option value="Other">End User</option>
-                                            <option value="Other">OL Shop</option>
-                                            <option value="Other">Luar Pulau</option>
-                                            <option value="Other">Apotik</option>
-                                            <option value="Other">Hotel</option>
-                                        </select>
-                                    </div>
-
-                                    <!-- Loading Dock -->
-                                    <div class="mb-3">
-                                        <label for="loadingDock" class="form-label">Loading Dock</label>
-                                        <input type="text" class="form-control" id="loadingDock">
-                                    </div>
-
-                                    <!-- Open Hour -->
-                                    <div class="mb-3">
-                                        <label for="openHour" class="form-label">Jam Buka</label>
-                                        <input type="time" class="form-control" id="openHour">
-                                    </div>
-
-                                    <!-- Closed Hour -->
-                                    <div class="mb-3">
-                                        <label for="closedHour" class="form-label">Jam Tutup</label>
-                                        <input type="time" class="form-control" id="closedHour">
-                                    </div>
+                                  <!-- Availability -->
+                                  <div class="mb-3">
+                                    <label for="availability" class="form-label">Ketersediaan</label>
+                                    <select class="form-select" id="availability">
+                                        <option value="available">Tersedia</option>
+                                        <option value="unavailable">Tidak Tersedia</option>
+                                    </select>
+                                </div> 
                                 </div>
-
-                                <!-- Right Column -->
-                                <div class="col-md-6">
-                                   
-                                    <!-- Availability -->
-                                    <div class="mb-3">
-                                      <label for="availability" class="form-label">Availability</label>
-                                      <select class="form-select" id="availability">
-                                          <option value="available">Available</option>
-                                          <option value="unavailable">Unavailable</option>
-                                      </select>
-                                  </div>                                  
-
-                                    <!-- Bongkar Duration -->
-                                    <div class="mb-3">
-                                        <label for="bongkarDuration" class="form-label">Durasi Bongkar</label>
-                                        <input type="number" class="form-control" id="bongkarDuration" placeholder="Hours">
-                                    </div>
-
-                                    <div class="row">
+                                <div class="mb-4">
+                                  <h4>Data Lokasi</h4>
+                                  <div class="row">
                                       <div class="col-md-6 mb-3">
-                                          <label for="frekuensi">Frekuensi Pengantaran</label>
-                                          <select id="frekuensi" class="form-control">
-                                              <option value="harian">Harian</option>
-                                              <option value="mingguan">Mingguan</option>
-                                              <option value="bulanan">Bulanan</option>
-                                              <option value="tahunan">Tahunan</option>
+                                          <label for="locationID" class="form-label">Location ID</label>
+                                          <input type="text" class="form-control" id="locationID" required>
+                                      </div>
+                                      <div class="col-md-6 mb-3">
+                                          <label for="locationName" class="form-label">Nama Lokasi</label>
+                                          <input type="text" class="form-control" id="locationName" required>
+                                      </div>
+                                      <div class="col-md-6 mb-3">
+                                          <label for="locationType" class="form-label">Tipe Lokasi</label>
+                                          <select class="form-select" id="locationType">
+                                              <option value="Pengiriman">Pengiriman</option>
                                           </select>
                                       </div>
-                              
-                                      <div id="harian-container" class="hidden col-md-6 mb-3">
-                                          <label for="hariPengirimanHarian">Harian</label>
-                                          <input id="hariPengirimanHarian" class="form-control" placeholder="Ketik untuk memilih hari...">
-                                      </div>
-                              
-                                      <div id="mingguan-container" class="hidden col-md-6 mb-3">
-                                          <label for="hariPengirimanMingguan">Mingguan</label>
-                                          <select id="hariPengirimanMingguan" class="form-control">
-                                              <option value="senin">Senin</option>
-                                              <option value="selasa">Selasa</option>
-                                              <option value="rabu">Rabu</option>
-                                              <option value="kamis">Kamis</option>
-                                              <option value="jumat">Jumat</option>
-                                              <option value="sabtu">Sabtu</option>
-                                              <option value="minggu">Minggu</option>
+                                      <div class="col-md-6 mb-3">
+                                          <label for="channel" class="form-label">Channel</label>
+                                          <select class="form-select" id="channel">
+                                              <option value="Modern Trade">Modern Trade</option>
+                                              <option value="General Trade">General Trade</option>
+                                              <option value="Institusi">Institusi</option>
+                                              <option value="Horeka">Horeka</option>
                                           </select>
                                       </div>
-                              
-                                      <div id="bulanan-container" class="col-md-6 mb-3">
-                                        <label for="inputTanggal">Bulanan (input tanggal)</label>
-                                        <input type="number" id="inputTanggal" min="1" max="29" class="form-control" placeholder="Pilih Tanggal (1-28)">
-                                        <p id="error-msg" style="color: red; display: none;">Tanggal tidak boleh lebih dari 28.</p>
-                                      </div>                                      
-                              
-                                      <div id="tahunan-container" class="col-md-6 mb-3">
-                                        <label for="inputDayMonth">Tahunan</label>
-                                        
-                                        <!-- Row for Day and Month -->
-                                        <div class="row">
-                                            <!-- Day dropdown -->
-                                            <div class="col-md-6">
-                                                <select id="inputDay" class="form-control" aria-label="Select Day">
-                                                    <option value="" disabled selected>Select Hari</option>
-                                                    <!-- Generate options for 1 to 31 -->
-                                                    <option value="01">1</option>
-                                                    <option value="02">2</option>
-                                                    <option value="03">3</option>
-                                                    <option value="04">4</option>
-                                                    <option value="05">5</option>
-                                                    <option value="06">6</option>
-                                                    <option value="07">7</option>
-                                                    <option value="08">8</option>
-                                                    <option value="09">9</option>
-                                                    <option value="10">10</option>
-                                                    <option value="11">11</option>
-                                                    <option value="12">12</option>
-                                                    <option value="13">13</option>
-                                                    <option value="14">14</option>
-                                                    <option value="15">15</option>
-                                                    <option value="16">16</option>
-                                                    <option value="17">17</option>
-                                                    <option value="18">18</option>
-                                                    <option value="19">19</option>
-                                                    <option value="20">20</option>
-                                                    <option value="21">21</option>
-                                                    <option value="22">22</option>
-                                                    <option value="23">23</option>
-                                                    <option value="24">24</option>
-                                                    <option value="25">25</option>
-                                                    <option value="26">26</option>
-                                                    <option value="27">27</option>
-                                                    <option value="28">28</option>
-                                                    <option value="29">29</option>
-                                                    <option value="30">30</option>
-                                                    <option value="31">31</option>
-                                                </select>
-                                            </div>
-                                    
-                                            <!-- Month dropdown -->
-                                            <div class="col-md-6">
-                                                <select id="inputMonth" class="form-control" aria-label="Select Month">
-                                                    <option value="" disabled selected>Select Bulan</option>
-                                                    <option value="01">Januari</option>
-                                                    <option value="02">Februari</option>
-                                                    <option value="03">Maret</option>
-                                                    <option value="04">April</option>
-                                                    <option value="05">Mei</option>
-                                                    <option value="06">Juni</option>
-                                                    <option value="07">Juli</option>
-                                                    <option value="08">Agustus</option>
-                                                    <option value="09">September</option>
-                                                    <option value="10">Oktober</option>
-                                                    <option value="11">November</option>
-                                                    <option value="12">Desember</option>
-                                                </select>
-                                            </div>
-                                            <small>Format: Hari - Bulan (e.g., 10 - Januari)</small>
-                                        </div>
-                                    </div>                                                                                                                                     
+                                      <div class="col-md-6 mb-3">
+                                          <label for="typeOutlet" class="form-label">Tipe Outlet</label>
+                                          <select class="form-select" id="typeOutlet">
+                                              <option value="Kantin">Kantin</option>
+                                              <option value="Kafe">Kafe</option>
+                                              <option value="Resto">Resto</option>
+                                              <option value="Other">NKA</option>
+                                              <option value="Other">Retail Snack</option>
+                                              <option value="Other">Retail Minuman</option>
+                                              <option value="Other">Retail Sembako</option>
+                                              <option value="Other">Retail Kosmetik</option>
+                                              <option value="Other">Grosir Snack</option>
+                                              <option value="Other">Grosir Sembako</option>
+                                              <option value="Other">Grosir Minuman</option>
+                                              <option value="Other">Grosir Kosmetik</option>
+                                              <option value="Other">Retail Kelontong</option>
+                                              <option value="Other">Grosir Kelontong</option>
+                                              <option value="Other">Tobaku</option>
+                                              <option value="Other">Baby Shop</option>
+                                              <option value="Other">Koperasi</option>
+                                              <option value="Other">Kantor</option>
+                                              <option value="Other">Pabrik</option>
+                                              <option value="Other">End User</option>
+                                              <option value="Other">OL Shop</option>
+                                              <option value="Other">Luar Pulau</option>
+                                              <option value="Other">Apotik</option>
+                                              <option value="Other">Hotel</option>
+                                          </select>
+                                      </div>
+                                      <!-- Priority -->
+                                    <div class="col-md-6 mb-3">
+                                      <label for="priority" class="form-label">Priority (0 Highest, 1, 2, 3, 4, etc.)</label>
+                                      <select class="form-select" id="priority">
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                      </select>
                                   </div>
-
-                                    <!-- Vehicle Type Restriction -->
-                                    <div class="mb-3">
-                                        <label for="vehicleTypeRestriction" class="form-label">Jenis Kendaraan</label>
-                                        <select class="form-select" id="vehicleTypeRestriction">
-                                            <option value="PICK UP BOX">PICK UP BOX</option>
-                                            <option value="TRUCK BOX">TRUCK BOX</option>
-                                            <option value="TRUCK BOX BAN DOUBLE">TRUCK BOX BAN DOUBLE</option>
-                                            <option value="LIGHT TRUCK BOX">LIGHT TRUCK BOX</option>
-                                            <option value="MINI BUS">MINI BUS</option>
-                                            <option value="BLIND VAN">BLIND VAN</option>
-                                            <option value="TRUCK DROOP SIDE">TRUCK DROOP SIDE</option>
-                                        </select>
+                                      <div class="col-md-6 mb-3">
+                                          <label for="openHour" class="form-label">Jam Buka</label>
+                                          <input type="time" class="form-control" id="openHour">
+                                      </div>
+                                      <div class="col-md-6 mb-3">
+                                          <label for="closedHour" class="form-label">Jam Tutup</label>
+                                          <input type="time" class="form-control" id="closedHour">
+                                      </div>
+                                  </div>
+                              </div>
+                              
+                              <div class="mb-4">
+                                <h4>Detail Lokasi</h4>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="address" class="form-label">Alamat</label>
+                                        <input type="text" class="form-control form-control-tall" id="address" required>
                                     </div>
-
-                                    <!-- Priority -->
-                                    <div class="mb-3">
-                                        <label for="priority" class="form-label">Priority (0 Highest, 1, 2, 3, 4, etc.)</label>
-                                        <select class="form-select" id="priority">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                        </select>
+                                
+                                    <div class="col-md-4 mb-3">
+                                        <label for="longitude" class="form-label">Longitude</label>
+                                        <input type="text" class="form-control" id="longitude" readonly>
                                     </div>
-
-                                    <!-- Area -->
-                                    <div class="mb-3">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="latitude" class="form-label">Latitude</label>
+                                        <input type="text" class="form-control" id="latitude" readonly>
+                                    </div>
+                                  </div>
+                            
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
                                         <label for="area" class="form-label">Area</label>
                                         <select class="form-select" id="area">
                                             <option value="A">A</option>
@@ -981,9 +858,7 @@
                                             <option value="C">C</option>
                                         </select>
                                     </div>
-
-                                    <!-- Zona -->
-                                    <div class="mb-3">
+                                    <div class="col-md-6 mb-3">
                                         <label for="zona" class="form-label">Zona</label>
                                         <select class="form-select" id="zona">
                                             <option value="1">1</option>
@@ -991,45 +866,149 @@
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                         </select>
-                                      </div>
-                                      <div class="md-3">
-                                        <label for="Pickup" class="form-label">Pickup</label>
-                                          <input type="text" id="Pickup" class="form-control tagify" placeholder="Pilih atau ketik produk">
-                                  </div>
+                                    </div>
                                 </div>
-                                <!-- Address -->
-                                <style>
-                                  .form-control-tall {
-                                    height: 100px; /* Sesuaikan tinggi sesuai keinginan Anda */
-                                  }
-                                </style>
-                                <div class="col-mb-12">
-                                  <label for="address" class="form-label">Alamat</label>
-                                  <input type="text" class="form-control form-control-tall" id="address" required>
-                                </div>
-
-                                <div class="row">
-                                  <div class="col-md-6">
-                                      <div class="mb-3">
-                                          <label for="longitude" class="form-label">Longitude</label>
-                                          <input type="text" class="form-control" id="longitude" readonly>
-                                      </div>
-                                  </div>
-                              
-                                  <div class="col-md-6">
-                                      <div class="mb-3">
-                                          <label for="latitude" class="form-label">Latitude</label>
-                                          <input type="text" class="form-control" id="latitude" readonly>
-                                      </div>
-                                  </div>
-                              </div>                              
-
                                 <!-- Map Section -->
                                 <div class="col-md-12 mt-3 mb-5 d-flex justify-content-center">
-                                    <div id="map" style="height: 380px; width: 100%; max-width: 1200px; background-image: url('assets/img/geostagging.png'); background-size: cover; background-position: center;">
-                                    </div>
-                                    
-                                </div>
+                                  <div id="map" style="height: 380px; width: 100%; max-width: 1200px; background-image: url('assets/img/geostagging.png'); background-size: cover; background-position: center;">
+                                  </div>
+                              </div>
+                            </div>
+                            
+                            
+                                
+                                                                    
+
+                            <div class="mb-4">
+                              <h4>Detail Pengantaran</h4>
+                              <div class="row">
+                                <div class="row">
+                                  <div class="col-md-6 mb-3">
+                                      <label for="frekuensi">Frekuensi Pengantaran</label>
+                                      <select id="frekuensi" class="form-control">
+                                          <option value="harian">Harian</option>
+                                          <option value="mingguan">Mingguan</option>
+                                          <option value="bulanan">Bulanan</option>
+                                          <option value="tahunan">Tahunan</option>
+                                      </select>
+                                  </div>
+                      
+                                  <div id="harian-container" class="hidden col-md-6 mb-3">
+                                      <label for="hariPengirimanHarian">Harian</label>
+                                      <input id="hariPengirimanHarian" class="form-control" placeholder="Ketik untuk memilih hari...">
+                                  </div>
+                      
+                                  <div id="mingguan-container" class="hidden col-md-6 mb-3">
+                                      <label for="hariPengirimanMingguan">Mingguan</label>
+                                      <select id="hariPengirimanMingguan" class="form-control">
+                                          <option value="senin">Senin</option>
+                                          <option value="selasa">Selasa</option>
+                                          <option value="rabu">Rabu</option>
+                                          <option value="kamis">Kamis</option>
+                                          <option value="jumat">Jumat</option>
+                                          <option value="sabtu">Sabtu</option>
+                                          <option value="minggu">Minggu</option>
+                                      </select>
+                                  </div>
+                      
+                                  <div id="bulanan-container" class="col-md-6 mb-3">
+                                      <label for="inputTanggal">Bulanan (input tanggal)</label>
+                                      <input type="number" id="inputTanggal" min="1" max="28" class="form-control" placeholder="Pilih Tanggal (1-28)">
+                                      <p id="error-msg" style="color: red; display: none;">Tanggal tidak boleh lebih dari 28.</p>
+                                  </div>
+                      
+                                  <div id="tahunan-container" class="col-md-6 mb-3">
+                                      <label for="inputDayMonth">Tahunan</label>
+                                      <div class="row">
+                                          <div class="col-md-6 mb-3">
+                                              <select id="inputDay" class="form-control" aria-label="Select Day">
+                                                  <option value="" disabled selected>Select Tanggal</option>
+                                                  <option value="01">1</option>
+                                                  <option value="02">2</option>
+                                                  <option value="03">3</option>
+                                                  <option value="04">4</option>
+                                                  <option value="05">5</option>
+                                                  <option value="06">6</option>
+                                                  <option value="07">7</option>
+                                                  <option value="08">8</option>
+                                                  <option value="09">9</option>
+                                                  <option value="10">10</option>
+                                                  <option value="11">11</option>
+                                                  <option value="12">12</option>
+                                                  <option value="13">13</option>
+                                                  <option value="14">14</option>
+                                                  <option value="15">15</option>
+                                                  <option value="16">16</option>
+                                                  <option value="17">17</option>
+                                                  <option value="18">18</option>
+                                                  <option value="19">19</option>
+                                                  <option value="20">20</option>
+                                                  <option value="21">21</option>
+                                                  <option value="22">22</option>
+                                                  <option value="23">23</option>
+                                                  <option value="24">24</option>
+                                                  <option value="25">25</option>
+                                                  <option value="26">26</option>
+                                                  <option value="27">27</option>
+                                                  <option value="28">28</option>
+                                              </select>
+                                          </div>
+                      
+                                          <div class="col-md-6 mb-3">
+                                              <select id="inputMonth" class="form-control" aria-label="Select Month">
+                                                  <option value="" disabled selected>Select Bulan</option>
+                                                  <option value="01">Januari</option>
+                                                  <option value="02">Februari</option>
+                                                  <option value="03">Maret</option>
+                                                  <option value="04">April</option>
+                                                  <option value="05">Mei</option>
+                                                  <option value="06">Juni</option>
+                                                  <option value="07">Juli</option>
+                                                  <option value="08">Agustus</option>
+                                                  <option value="09">September</option>
+                                                  <option value="10">Oktober</option>
+                                                  <option value="11">November</option>
+                                                  <option value="12">Desember</option>
+                                              </select>
+                                          </div>
+                                      </div>
+                                      <small>Format: Hari - Bulan (e.g., 10 - Januari)</small>
+                                  </div>
+                              </div>
+
+                                  <div class="col-md-6 mb-3">
+                                      <label for="bongkarDuration" class="form-label">Durasi Bongkar</label>
+                                      <input type="number" class="form-control" id="bongkarDuration" placeholder="Hours">
+                                  </div>
+                          
+                                  <div class="col-md-6 mb-3">
+                                      <label for="vehicleTypeRestriction" class="form-label">Jenis Kendaraan (Max)</label>
+                                      <select class="form-select" id="vehicleTypeRestriction">
+                                          <option value="PICK UP BOX">PICK UP BOX</option>
+                                          <option value="TRUCK BOX">TRUCK BOX</option>
+                                          <option value="TRUCK BOX BAN DOUBLE">TRUCK BOX BAN DOUBLE</option>
+                                          <option value="LIGHT TRUCK BOX">LIGHT TRUCK BOX</option>
+                                          <option value="MINI BUS">MINI BUS</option>
+                                          <option value="BLIND VAN">BLIND VAN</option>
+                                          <option value="TRUCK DROOP SIDE">TRUCK DROOP SIDE</option>
+                                      </select>
+                                  </div>
+                          
+                                  
+                          
+                                  <div class="col-md-6 mb-3">
+                                      <label for="loadingDock" class="form-label">Tempat Pemuatan</label>
+                                      <input type="text" class="form-control" id="loadingDock">
+                                  </div>
+                          
+                                  <div class="col-md-6 mb-3">
+                                      <label for="Pickup" class="form-label">Pickup</label>
+                                      <input type="text" id="Pickup" class="form-control tagify" placeholder="Pilih atau ketik produk">
+                                  </div>
+                              </div>
+                          </div>
+                          
+                                
                     <!-- Submit and Cancel Buttons -->
                     <div class="text-end mt-5">
                       <button type="submit" class="btn btn-primary me-4">Save</button>
