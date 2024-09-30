@@ -741,7 +741,7 @@
                   <!-- Combined Vehicle Details Form -->
                   <div class="container mt-4">
                       <div class="card mb-6">
-                          <h5 class="card-header">Form Tipe Kendaraan</h5>
+                          <h4 class="card-header">Form Tipe Kendaraan</h4>
                           <form class="card-body" action="vehicle-type.html" method="get">
                               <div class="row g-6">
                                   <div class="col-md-6">
@@ -756,66 +756,74 @@
                                         <label for="sequence-number">Sequence</label>
                                     </div>
                                 </div>                                
-                                  <div class="col-md-6">
-                                      <div class="form-floating form-floating-outline">
-                                          <input type="number" id="truck-height" class="form-control" placeholder="Height in cm" />
-                                          <label for="truck-height">Tinggi Truk (cm)</label>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <div class="form-floating form-floating-outline">
-                                          <input type="number" id="truck-width" class="form-control" placeholder="Width in cm" />
-                                          <label for="truck-width">Lebar Truk (cm)</label>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <div class="form-floating form-floating-outline">
-                                          <input type="number" id="truck-length" class="form-control" placeholder="Length in cm" />
-                                          <label for="truck-length">Panjang Truk (cm)</label>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <div class="form-floating form-floating-outline">
-                                          <input type="number" id="cargo-height" class="form-control" placeholder="Height in cm" />
-                                          <label for="cargo-height">Tinggi Kargo (cm)</label>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <div class="form-floating form-floating-outline">
-                                          <input type="number" id="cargo-width" class="form-control" placeholder="Width in cm" />
-                                          <label for="cargo-width">Lebar Kargo (cm)</label>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <div class="form-floating form-floating-outline">
-                                          <input type="number" id="cargo-length" class="form-control" placeholder="Length in cm" />
-                                          <label for="cargo-length">Panjang Kargo (cm)</label>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="number" id="cargo-volume-min" class="form-control" placeholder="Volume Min (%)" min="0" max="100" step="0.01" />
-                                        <label for="cargo-volume-min">Volume Kargo Min (%)</label>
+                                <h4>Ukuran Kendaraan</h4>
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="number" id="truck-height" class="form-control" placeholder="Height in cm" />
+                                            <label for="truck-height">Tinggi Truk (cm)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="number" id="truck-width" class="form-control" placeholder="Width in cm" />
+                                            <label for="truck-width">Lebar Truk (cm)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="number" id="truck-length" class="form-control" placeholder="Length in cm" />
+                                            <label for="truck-length">Panjang Truk (cm)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="number" id="cargo-height" class="form-control" placeholder="Height in cm" />
+                                            <label for="cargo-height">Tinggi Kargo (cm)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="number" id="cargo-width" class="form-control" placeholder="Width in cm" />
+                                            <label for="cargo-width">Lebar Kargo (cm)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="number" id="cargo-length" class="form-control" placeholder="Length in cm" />
+                                            <label for="cargo-length">Panjang Kargo (cm)</label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="number" id="cargo-volume-max" class="form-control" placeholder="Volume Max (%)" min="0" max="100" step="0.01" />
-                                        <label for="cargo-volume-max">Volume Kargo Maks (%)</label>
+                                
+                                <h4>Muatan Kendaraan</h4>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="number" id="cargo-volume-min" class="form-control" placeholder="Volume Min (%)" min="0" max="100" step="0.01" />
+                                            <label for="cargo-volume-min">Volume Kargo Min (%)</label>
+                                        </div>
                                     </div>
-                                </div>                                
-                                  <div class="col-md-6">
-                                      <div class="form-floating form-floating-outline">
-                                          <input type="number" id="cargo-min-kg" class="form-control" placeholder="Min in KG" />
-                                          <label for="cargo-min-kg">Kargo Min (KG)</label>
-                                      </div>
-                                  </div>
-                                  <div class="col-md-6">
-                                      <div class="form-floating form-floating-outline">
-                                          <input type="number" id="cargo-max-kg" class="form-control" placeholder="Max in KG" />
-                                          <label for="cargo-max-kg">Kargo Maks (KG)</label>
-                                      </div>
-                                  </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="number" id="cargo-volume-max" class="form-control" placeholder="Volume Max (%)" min="0" max="100" step="0.01" />
+                                            <label for="cargo-volume-max">Volume Kargo Maks (%)</label>
+                                        </div>
+                                    </div>                                
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="number" id="cargo-min-kg" class="form-control" placeholder="Min in KG" />
+                                            <label for="cargo-min-kg">Kargo Min (KG)</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-floating form-floating-outline">
+                                            <input type="number" id="cargo-max-kg" class="form-control" placeholder="Max in KG" />
+                                            <label for="cargo-max-kg">Kargo Maks (KG)</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                                   <!-- <div class="col-md-6">
                                       <div class="form-floating form-floating-outline">
                                           <input type="number" id="min-revenue" class="form-control" placeholder="Min Revenue in IDR" />
