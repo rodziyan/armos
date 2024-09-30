@@ -825,10 +825,6 @@
                                         <label for="closedHour" class="form-label">Jam Tutup</label>
                                         <input type="time" class="form-control" id="closedHour">
                                     </div>
-                                  <div class="md-3">
-                                      <label for="Pickup" class="form-label">Pickup</label>
-                                        <input type="text" id="Pickup" class="form-control tagify" placeholder="Pilih atau ketik produk">
-                                </div>
                                 </div>
 
                                 <!-- Right Column -->
@@ -976,12 +972,6 @@
                                         </select>
                                     </div>
 
-                                    <!-- Route Model -->
-                                    <div class="mb-3">
-                                        <label for="routeModel" class="form-label">Route Model</label>
-                                        <input type="text" class="form-control" id="routeModel">
-                                    </div>
-
                                     <!-- Area -->
                                     <div class="mb-3">
                                         <label for="area" class="form-label">Area</label>
@@ -1002,6 +992,10 @@
                                             <option value="4">4</option>
                                         </select>
                                       </div>
+                                      <div class="md-3">
+                                        <label for="Pickup" class="form-label">Pickup</label>
+                                          <input type="text" id="Pickup" class="form-control tagify" placeholder="Pilih atau ketik produk">
+                                  </div>
                                 </div>
                                 <!-- Address -->
                                 <style>
@@ -1014,38 +1008,21 @@
                                   <input type="text" class="form-control form-control-tall" id="address" required>
                                 </div>
 
-                              <!-- Longitude and Latitude with Checkbox -->
-                              <div class="row mt-3">
-                                <!-- Longitude -->
-                                <div class="col-md-4">
-                                    <div class="mb-3">
-                                        <label for="longitude" class="form-label">Longitude</label>
-                                        <input type="text" class="form-control" id="longitude" readonly>
-                                    </div>
-                                </div>
-
-                                <!-- Latitude -->
-                                <div class="col-md-4">
-                                    <div class="mb-3">
-                                        <label for="latitude" class="form-label">Latitude</label>
-                                        <input type="text" class="form-control" id="latitude" readonly>
-                                    </div>
-                                </div>
-
-                                <!-- Checkbox to enable manual input -->
-                                <div class="col-md-4 d-flex align-items-center">
-                                  <div class="mt-4 me-5">
-                                  <button class="btn btn-primary" id="enableManualInput">
-                                      Check
-                                  </button>
-                                </div>
-                                <div class="mt-4 me-5">
-                                  <button class="btn btn-primary" id="enableManualInput">
-                                      Tambah
-                                  </button>
-                                </div>
-                              </div>
-                              </div>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                      <div class="mb-3">
+                                          <label for="longitude" class="form-label">Longitude</label>
+                                          <input type="text" class="form-control" id="longitude" readonly>
+                                      </div>
+                                  </div>
+                              
+                                  <div class="col-md-6">
+                                      <div class="mb-3">
+                                          <label for="latitude" class="form-label">Latitude</label>
+                                          <input type="text" class="form-control" id="latitude" readonly>
+                                      </div>
+                                  </div>
+                              </div>                              
 
                                 <!-- Map Section -->
                                 <div class="col-md-12 mt-3 mb-5 d-flex justify-content-center">
