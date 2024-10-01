@@ -9,90 +9,109 @@ $(document).ready(function () {
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="viewModalLabel">Route-001</h5>
+                <h5 class="modal-title" id="viewModalLabel">Toko A</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <!-- First Section -->
-                <div class="d-flex justify-content-between mb-3">
-                    <div>
-                        <p>Sequence : <strong>1</strong></p>
-                        <p>DO Number : <strong>DO001-1</strong></p>
-                        <p>Delivery Type : <strong>Delivery</strong></p>
-                    </div>
-                    <div>
-                        <p>Location : <strong>Toko A</strong></p>
-                        <p>Faktur ID : <strong>F001</strong></p>
-                        <p>Total Value : <strong>Rp80.000</strong></p>
-                    </div>
+                <div class="d-flex flex-column mb-3">
+                    <p>Location: <strong>Toko A</strong></p>
+                    <p>Faktur ID: <strong>F001</strong></p>
+                    <p>Delivery Type: <strong>Delivery</strong></p>
+                    <p>Total Value: <strong>Rp80.000</strong></p>
                 </div>
-                <!-- Table Section -->
-                <table class="table table-bordered">
-                    <thead>
-                        <tr class="table-success">
-                            <th>Produk</th>
-                            <th>Qty</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Produk 1</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Produk 2</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Produk 3</td>
-                            <td>40</td>
-                        </tr>
-                        <tr class="table-success">
-                            <td><strong>TOTAL</strong></td>
-                            <td><strong>80</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!-- Second Section -->
-                <div class="d-flex justify-content-between mb-3">
-                    <div>
-                        <p>Sequence : <strong>2</strong></p>
-                        <p>DO Number : <strong>DO001-2</strong></p>
-                        <p>Delivery Type : <strong>Delivery</strong></p>
-                    </div>
-                    <div>
-                        <p>Location : <strong>Toko B</strong></p>
-                        <p>Faktur ID : <strong>F002</strong></p>
-                        <p>Total Value : <strong>Rp100.000</strong></p>
-                    </div>
-                </div>
-                <!-- Second Table Section -->
-                <table class="table table-bordered">
-                    <thead>
-                        <tr class="table-success">
-                            <th>Produk</th>
-                            <th>Qty</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Produk 1</td>
-                            <td>50</td>
-                        </tr>
-                        <tr>
-                            <td>Produk 2</td>
-                            <td>50</td>
-                        </tr>
-                        <tr class="table-success">
-                            <td><strong>TOTAL</strong></td>
-                            <td><strong>100</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
 </div>
+
+//     <div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+//     <div class="modal-dialog">
+//         <div class="modal-content">
+//             <div class="modal-header">
+//                 <h5 class="modal-title" id="viewModalLabel">Route-001</h5>
+//                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+//             </div>
+//             <div class="modal-body">
+//                 <!-- First Section -->
+//                 <div class="d-flex justify-content-between mb-3">
+//                     <div>
+//                         <p>Sequence : <strong>1</strong></p>
+//                         <p>DO Number : <strong>DO001-1</strong></p>
+//                         <p>Delivery Type : <strong>Delivery</strong></p>
+//                     </div>
+//                     <div>
+//                         <p>Location : <strong>Toko A</strong></p>
+//                         <p>Faktur ID : <strong>F001</strong></p>
+//                         <p>Total Value : <strong>Rp80.000</strong></p>
+//                     </div>
+//                 </div>
+//                 <!-- Table Section -->
+//                 <table class="table table-bordered">
+//                     <thead>
+//                         <tr class="table-success">
+//                             <th>Produk</th>
+//                             <th>Qty</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+//                         <tr>
+//                             <td>Produk 1</td>
+//                             <td>20</td>
+//                         </tr>
+//                         <tr>
+//                             <td>Produk 2</td>
+//                             <td>20</td>
+//                         </tr>
+//                         <tr>
+//                             <td>Produk 3</td>
+//                             <td>40</td>
+//                         </tr>
+//                         <tr class="table-success">
+//                             <td><strong>TOTAL</strong></td>
+//                             <td><strong>80</strong></td>
+//                         </tr>
+//                     </tbody>
+//                 </table>
+//                 <!-- Second Section -->
+//                 <div class="d-flex justify-content-between mb-3">
+//                     <div>
+//                         <p>Sequence : <strong>2</strong></p>
+//                         <p>DO Number : <strong>DO001-2</strong></p>
+//                         <p>Delivery Type : <strong>Delivery</strong></p>
+//                     </div>
+//                     <div>
+//                         <p>Location : <strong>Toko B</strong></p>
+//                         <p>Faktur ID : <strong>F002</strong></p>
+//                         <p>Total Value : <strong>Rp100.000</strong></p>
+//                     </div>
+//                 </div>
+//                 <!-- Second Table Section -->
+//                 <table class="table table-bordered">
+//                     <thead>
+//                         <tr class="table-success">
+//                             <th>Produk</th>
+//                             <th>Qty</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+//                         <tr>
+//                             <td>Produk 1</td>
+//                             <td>50</td>
+//                         </tr>
+//                         <tr>
+//                             <td>Produk 2</td>
+//                             <td>50</td>
+//                         </tr>
+//                         <tr class="table-success">
+//                             <td><strong>TOTAL</strong></td>
+//                             <td><strong>100</strong></td>
+//                         </tr>
+//                     </tbody>
+//                 </table>
+//             </div>
+//         </div>
+//     </div>
+// </div>
 
   
 <!-- Modal Edit Faktur -->
@@ -376,8 +395,7 @@ $(document).ready(function () {
         { data: 'seq' }, // Seq
         { data: 'delivery_type' }, // Delivery Type
         { data: 'location_name' }, // Location Name
-        { data: 'do_number' }, // DO Number
-        { data: 'faktur_id' }, // Faktur ID
+        { data: 'do_number' }, // Faktur ID
         { data: 'faktur_qty' }, // Faktur Qty
         { data: 'wms_qty' }, // WMS Qty
         { data: 'delivery_qty' }, // Delivery Qty
@@ -390,23 +408,49 @@ $(document).ready(function () {
       ],
       order: [[5, 'asc']],
       rowCallback: function (row, data, index) {
-        // Calculate group size (e.g., 2 rows per group)
         var groupSize = 2;
 
         // Check if this is the first row of the group
         if (index % groupSize === 0) {
-          // Apply rowspan to Route ID, Driver - Vehicle, % Capacity, Total Value, Total Trip Time, and Action columns
-          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(18)'].forEach(function (selector) {
+          var mapIcon = $(`
+            <span class="ri-map-pin-line" style="color: white; background-color: green; display: inline-block; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 5px;"></span>
+        `);
+
+          $('td:eq(0)', row).prepend(mapIcon);
+
+          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(17)'].forEach(function (selector) {
             $(selector, row).attr('rowspan', groupSize).css({
               'vertical-align': 'middle',
               'text-align': 'center'
             });
           });
         } else {
-          // Hide the cells for rows 2 and 3 of the group
-          $(row).find('td:lt(5)').hide(); // Hide first five columns (route_id, driver_vehicle, etc.)
-          $(row).find('td:eq(18)').hide(); // Hide action column
+          $(row).find('td:lt(5)').hide();
+          $(row).find('td:eq(17)').hide();
         }
+
+        // Create the button for do_number in all rows
+        var doNumberCell = $('td:eq(8)', row); // Assuming do_number is in the 9th column
+        var doNumberButton;
+
+        // Check if do_number is 2 and create the button with an alert icon inside
+        if (data.do_number == 2) {
+          doNumberButton = $(
+            `<button class="do-number-button view" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;" 
+                    onclick="view">
+                <span class="ri-alert-line" style="color: black; background-color: yellow; border-radius: 50%; padding: 5px; margin-right: 5px;"></span>
+                ${data.do_number}
+            </button>`
+          );
+        } else {
+          doNumberButton = $(
+            `<button class="do-number-button" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;">
+                ${data.do_number}
+            </button>`
+          );
+        }
+
+        doNumberCell.empty().append(doNumberButton);
       },
       columnDefs: [
         {
@@ -427,7 +471,6 @@ $(document).ready(function () {
                   <i class="ri-more-2-fill" style="font-size: 20px;"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item view" href="#">View</a></li>
                   <li><a class="dropdown-item editFaktur" href="#">Edit Faktur</a></li>
                   <li><a class="dropdown-item changeKendaraan" href="#">Change Vehicle</a></li>
                   <li><a class="dropdown-item " onclick="changeDriver(event)" href="#">Change Driver & Kernet</a></li>

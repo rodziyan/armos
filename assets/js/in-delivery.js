@@ -65,16 +65,20 @@ $(document).ready(function () {
     columns: [
       { data: 'route_id' }, // Route ID
       { data: 'driver_vehicle' }, // Driver Vehicle
-      { data: 'capacity_percent' }, // % Capacity
-      { data: 'total_value' }, // Total Value
+      { data: 'capacity_percent' }, // Total Value
+      { data: 'total_value_trip' }, // Total Value Trip
       { data: 'total_trip_time' }, // Total Trip Time
       { data: 'seq' }, // Seq
       { data: 'delivery_type' }, // Delivery Type
       { data: 'location_name' }, // Location Name
       { data: 'location_type' }, // Location Type
       { data: 'do_number' }, // DO Number
-      { data: 'faktur_id' }, // Faktur ID
-      { data: 'qty' }, // Quantity
+      { data: 'faktur_qty' }, // Faktur Quantity
+      { data: 'wms_qty' }, // WMS Quantity
+      { data: 'delivery_qty' }, // Delivery Quantity
+      { data: 'received_qty' }, // Received Quantity
+      { data: 'retur_qty' }, // Return Quantity
+      { data: 'truk_qty' }, // Truck Quantity
       { data: 'value' }, // Value
       { data: 'planned_start_time' }, // Planned Start Time
       { data: 'planned_end_time' }, // Planned End Time
@@ -92,8 +96,14 @@ $(document).ready(function () {
 
       // Check if this is the first row of the group
       if (index % groupSize === 0) {
-        // Apply rowspan to Route ID, Driver - Vehicle, % Capacity, Total Value, Total Trip Time, and Action columns
-        ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(20)'].forEach(function (selector) {
+        // Create and prepend the map icon
+        var mapIcon = $(`
+      <span class="ri-map-pin-line" style="color: white; background-color: green; display: inline-block; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 5px;"></span>
+    `);
+        $('td:eq(0)', row).prepend(mapIcon);
+
+        // Apply rowspan to specified columns
+        ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(24)'].forEach(function (selector) {
           $(selector, row).attr('rowspan', groupSize).css({
             'vertical-align': 'middle',
             'text-align': 'center'
@@ -102,13 +112,13 @@ $(document).ready(function () {
       } else {
         // Hide the cells for rows 2 and 3 of the group
         $(row).find('td:lt(5)').hide(); // Hide first five columns (route_id, driver_vehicle, etc.)
-        $(row).find('td:eq(20)').hide(); // Hide action column
+        $(row).find('td:eq(24)').hide(); // Hide the specific column (e.g., action column)
       }
     },
     columnDefs: [
       // Your existing columnDefs here, with render functions
       {
-        targets: 19,
+        targets: 23,
         render: function (data, type, full) {
           var statusObj = {
             1: { title: 'Completed', class: 'bg-label-success' },
