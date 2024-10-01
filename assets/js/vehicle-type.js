@@ -35,6 +35,17 @@ $(function () {
                         <div class="form-floating form-floating-outline">
                             <input
                                 type="text"
+                                id="sequenceType"
+                                name="vehicleType"
+                                class="form-control"
+                                placeholder="Sequence" />
+                            <label for="sequenceType">Sequence</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating form-floating-outline">
+                            <input
+                                type="text"
                                 id="modalVehicleType"
                                 name="vehicleType"
                                 class="form-control"
@@ -161,50 +172,6 @@ $(function () {
                                 class="form-control"
                                 placeholder="Pendapatan Minimum" />
                             <label for="modalMinRevenue">Pendapatan Minimum</label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-floating form-floating-outline">
-                            <input
-                                type="text"
-                                id="modalProductRestriction"
-                                name="productRestriction"
-                                class="form-control"
-                                placeholder="Pembatasan Produk" />
-                            <label for="modalProductRestriction">Produk</label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-floating form-floating-outline">
-                            <input
-                                type="text"
-                                id="modalAreaRestriction"
-                                name="areaRestriction"
-                                class="form-control"
-                                placeholder="Pembatasan Wilayah" />
-                            <label for="modalAreaRestriction">Wilayah</label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-floating form-floating-outline">
-                            <input
-                                type="text"
-                                id="modalCustomerType"
-                                name="customerType"
-                                class="form-control"
-                                placeholder="Tipe Pelanggan" />
-                            <label for="modalCustomerType">Tipe Pelanggan</label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-floating form-floating-outline">
-                            <input
-                                type="text"
-                                id="modalCustomerRestriction"
-                                name="customerRestriction"
-                                class="form-control"
-                                placeholder="Pelanggan Spesific" />
-                            <label for="modalCustomerRestriction">Pembatasan Pelanggan</label>
                         </div>
                     </div>
                     <div class="col-12 text-center d-flex flex-wrap justify-content-center gap-4 row-gap-4">
@@ -396,6 +363,7 @@ $(function () {
           render: function (data, type, full) {
             return `
             <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect showDetails"
+                data-sequence-type="${full['seq']}"
                 data-vehicle-type="${full['vehicle_type']}"
                 data-truck-height="${full['truck_height']}"
                 data-truck-width="${full['truck_width']}"
@@ -506,6 +474,7 @@ $(function () {
     // Event delegation to handle dynamically added buttons
     $(document).on('click', '.showDetails', function () {
       // Get data attributes from the button
+      var sequenceType = $(this).data('sequence-type');
       var vehicleType = $(this).data('vehicle-type');
       var truckHeight = $(this).data('truck-height');
       var truckWidth = $(this).data('truck-width');
@@ -524,6 +493,7 @@ $(function () {
       var customerRestriction = $(this).data('customer-restriction');
 
       // Set modal content
+      $('#sequenceType').val(sequenceType);
       $('#modalVehicleType').val(vehicleType);
       $('#modalTruckHeight').val(truckHeight);
       $('#modalTruckWidth').val(truckWidth);

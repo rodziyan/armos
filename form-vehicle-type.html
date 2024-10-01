@@ -743,19 +743,27 @@
                       <div class="card mb-6">
                           <h4 class="card-header">Form Tipe Kendaraan</h4>
                           <form class="card-body" action="vehicle-type.html" method="get">
-                              <div class="row g-6">
-                                  <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                      <input type="text" id="vehicle-type" class="form-control" placeholder="Tipe Kendaraan" />
-                                      <label for="vehicle-type">Tipe Kendaraan</label>
-                                  </div>                                  
-                                  </div>
-                                  <div class="col-md-6">
-                                    <div class="form-floating form-floating-outline">
-                                        <input type="number" id="sequence-number" class="form-control" placeholder="Sequence" />
-                                        <label for="sequence-number">Sequence</label>
-                                    </div>
-                                </div>                                
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="form-floating form-floating-outline">
+                                  <input type="text" id="vehicle-type" class="form-control" placeholder="Tipe Kendaraan" />
+                                  <label for="vehicle-type">Tipe Kendaraan</label>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-floating form-floating-outline">
+                                  <input type="number" id="sequence-number" class="form-control" placeholder="Sequence" />
+                                  <label for="sequence-number">Sequence</label>
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-floating form-floating-outline">
+                                  <input type="number" id="min-revenue" class="form-control" placeholder="Min Revenue in IDR" />
+                                  <label for="min-revenue">Min. Pendapatan (IDR)</label>
+                                </div>
+                              </div>
+                            </div>
+                                                           
                                 <h4>Ukuran Kendaraan</h4>
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
@@ -824,12 +832,7 @@
                                     </div>
                                 </div>
                                 
-                                  <!-- <div class="col-md-6">
-                                      <div class="form-floating form-floating-outline">
-                                          <input type="number" id="min-revenue" class="form-control" placeholder="Min Revenue in IDR" />
-                                          <label for="min-revenue">Min. Pendapatan (IDR)</label>
-                                      </div>
-                                  </div> -->
+                                  
                                     
                               <div class="pt-6">
                                   <button type="submit" class="btn btn-primary me-4">Submit</button>
