@@ -130,7 +130,7 @@ $('body').append(`
           <div class="mb-3">
               <label for="approvalBy" class="form-label">Status</label>
               <select class="form-select" id="approvalBy">
-                  <option value="" disabled selected>Pilih Status Approval</option>
+                  <option value="" disabled selected>Pilih Status Retur</option>
                   <option value="planned">Planned</option>
                   <option value="already_processed_wms">Already Processed WMS</option>
               </select>
