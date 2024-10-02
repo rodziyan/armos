@@ -7,7 +7,7 @@ $(document).ready(function () {
   $('body').append(`
     <!-- Modal Pertama -->
 <div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="max-width: 40%; width: auto; max-height: 80vh;">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="viewModalLabel">Toko A</h5>
@@ -59,7 +59,7 @@ $(document).ready(function () {
 
 <!-- Modal Kedua -->
 <div class="modal fade" id="liat" tabindex="-1" aria-labelledby="liatModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog" style="max-width: 40%; width: auto; max-height: 80vh;">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="liatModalLabel">Toko B</h5>

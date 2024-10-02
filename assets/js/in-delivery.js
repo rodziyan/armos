@@ -60,7 +60,7 @@ $('body').append(`
 
 <!-- Modal Route -->
 <div class="modal fade" id="mapsModal" tabindex="-1" aria-labelledby="mapsModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 35%; width: auto; max-height: 150vh;">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="mapsModalLabel">Route - 001</h5>
