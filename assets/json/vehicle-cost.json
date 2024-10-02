@@ -1,0 +1,15 @@
+{
+  "data": [
+    {
+      "cost_order_id": "BBM-001",
+      "plat_no_kendaraan": "ABC123",
+      "nama_supir": "Supir A",
+      "cost_request_type": "BBM",
+      "status": 1,
+      "req_date": "2024-09-01",
+      "total_cost": "",
+      "action_date": "",
+      "action": "Action"
+    }
+  ]
+}

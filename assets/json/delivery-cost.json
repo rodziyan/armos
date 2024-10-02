@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "driver_name": "Andi",
+      "driver_status": 1,
+      "route_id": "R001",
+      "drop_completion": "3/3",
+      "jumlah_faktur": "3/3",
+      "jumlah_qty": "10/10",
+      "action": "action",
+      "total_biaya": "Rp.20.000"
+    },
+    {
+      "driver_name": "Budi",
+      "driver_status": 1,
+      "route_id": "R002",
+      "drop_completion": "3/3",
+      "jumlah_faktur": "3/3",
+      "jumlah_qty": "9/10",
+      "action": "action",
+      "total_biaya": "Rp.20.000"
+    },
+    {
+      "driver_name": "Cindy",
+      "driver_status": 1,
+      "route_id": "R001",
+      "drop_completion": "2/3",
+      "jumlah_faktur": "2/3",
+      "jumlah_qty": "23/30",
+      "action": "action",
+      "total_biaya": "Rp.40.000"
+    }
+  ]
+}
