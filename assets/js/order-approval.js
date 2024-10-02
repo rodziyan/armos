@@ -5,24 +5,110 @@ let dt_User;
 $(document).ready(function () {
   // Create and append the modal HTML
   $('body').append(`
-    <div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <!-- Modal Pertama -->
+<div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="viewModalLabel">Toko A</h5>
+                <h5 class="modal-title" id="viewModalLabel">Route-001</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <div class="d-flex flex-column mb-3">
-                    <p>Location: <strong>Toko A</strong></p>
-                    <p>Faktur ID: <strong>F001</strong></p>
-                    <p>Delivery Type: <strong>Delivery</strong></p>
-                    <p>Total Value: <strong>Rp80.000</strong></p>
+                <!-- First Section -->
+                <div class="d-flex justify-content-between mb-3">
+                    <div>
+                        <p>Sequence : <strong>1</strong></p>
+                        <p>DO Number : <strong>DO001-1</strong></p>
+                        <p>Delivery Type : <strong>Delivery</strong></p>
+                    </div>
+                    <div>
+                        <p>Location : <strong>Toko A</strong></p>
+                        <p>Faktur ID : <strong>F001</strong></p>
+                        <p>Total Value : <strong>Rp80.000</strong></p>
+                    </div>
                 </div>
+                <!-- Table Section -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-success">
+                            <th>Produk</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Produk 1</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Produk 2</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Produk 3</td>
+                            <td>40</td>
+                        </tr>
+                        <tr class="table-success">
+                            <td><strong>TOTAL</strong></td>
+                            <td><strong>80</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Modal Kedua -->
+<div class="modal fade" id="liat" tabindex="-1" aria-labelledby="liatModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="liatModalLabel">Route-001</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Second Section -->
+                <div class="d-flex justify-content-between mb-3">
+                    <div>
+                        <p>Sequence : <strong>2</strong></p>
+                        <p>DO Number : <strong>DO001-2</strong></p>
+                        <p>Delivery Type : <strong>Delivery</strong></p>
+                    </div>
+                    <div>
+                        <p>Location : <strong>Toko B</strong></p>
+                        <p>Faktur ID : <strong>F002</strong></p>
+                        <p>Total Value : <strong>Rp100.000</strong></p>
+                    </div>
+                </div>
+                <!-- Second Table Section -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-success">
+                            <th>Produk</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Produk 1</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Produk 2</td>
+                            <td>50</td>
+                        </tr>
+                        <tr class="table-success">
+                            <td><strong>TOTAL</strong></td>
+                            <td><strong>100</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 //     <div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
 //     <div class="modal-dialog">
@@ -286,6 +372,23 @@ $(document).ready(function () {
   </div>
 </div>
 
+<!-- Modal Route -->
+<div class="modal fade" id="mapsModal" tabindex="-1" aria-labelledby="mapsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mapsModalLabel">Route - 001</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <!-- Gambar Peta -->
+        <img src="assets/img/petaG.png" alt="Peta Route" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <!-- Modal Cancel Route -->
 <div class="modal fade" id="cancelRoute" tabindex="4" aria-labelledby="cancelRouteModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -413,7 +516,9 @@ $(document).ready(function () {
         // Check if this is the first row of the group
         if (index % groupSize === 0) {
           var mapIcon = $(`
+            <button class="map-button mapsModal" style="background: none; border: none; padding: 0;">
             <span class="ri-map-pin-line" style="color: white; background-color: green; display: inline-block; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 5px;"></span>
+        </button>
         `);
 
           $('td:eq(0)', row).prepend(mapIcon);
@@ -444,7 +549,7 @@ $(document).ready(function () {
           );
         } else {
           doNumberButton = $(
-            `<button class="do-number-button" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;">
+            `<button class="do-number-button liat" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;">
                 ${data.do_number}
             </button>`
           );
@@ -509,6 +614,12 @@ $(document).ready(function () {
   // Show the modal
   $('.datatables-users tbody').on('click', '.view', function () {
     $('#view').modal('show');
+  });
+  $('.datatables-users tbody').on('click', '.liat', function () {
+    $('#liat').modal('show');
+  });
+  $('.datatables-users tbody').on('click', '.mapsModal', function () {
+    $('#mapsModal').modal('show');
   });
 
   $(document).ready(function () {

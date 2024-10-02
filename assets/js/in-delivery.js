@@ -57,6 +57,22 @@ $('body').append(`
     </div>
   </div>
 </div>
+
+<!-- Modal Route -->
+<div class="modal fade" id="mapsModal" tabindex="-1" aria-labelledby="mapsModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mapsModalLabel">Route - 001</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <!-- Gambar Peta -->
+        <img src="assets/img/petaG.png" alt="Peta Route" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
 `);
 
 $(document).ready(function () {
@@ -98,7 +114,9 @@ $(document).ready(function () {
       if (index % groupSize === 0) {
         // Create and prepend the map icon
         var mapIcon = $(`
-      <span class="ri-map-pin-line" style="color: white; background-color: green; display: inline-block; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 5px;"></span>
+        <button class="map-button mapsModal" style="background: none; border: none; padding: 0;">
+            <span class="ri-map-pin-line" style="color: white; background-color: green; display: inline-block; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 5px;"></span>
+        </button>
     `);
         $('td:eq(0)', row).prepend(mapIcon);
 
@@ -189,6 +207,9 @@ $(document).ready(function () {
         }
       }
     ]
+  });
+  $('.datatables-users tbody').on('click', '.mapsModal', function () {
+    $('#mapsModal').modal('show');
   });
   // Show Modal with data
   $('.datatables-users tbody').on('click', '.orderTransfer', function () {

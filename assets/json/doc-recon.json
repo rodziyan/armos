@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "status": 1,
+      "tipe": "Revisi Faktur",
+      "document_id": "Faktur ID -001",
+      "document_ref": "",
+      "req_date": "Req.Date",
+      "completed_date": "",
+      "action": "action"
+    },
+    {
+      "status": 1,
+      "tipe": "Barang Hilang",
+      "document_id": "Faktur ID -001",
+      "document_ref": "",
+      "req_date": "Req.Date",
+      "completed_date": "",
+      "action": "action"
+    },
+    {
+      "status": 1,
+      "tipe": "Koreksi Jual",
+      "document_id": "Faktur ID -001",
+      "document_ref": "",
+      "req_date": "Req.Date",
+      "completed_date": "",
+      "action": "action"
+    },
+    {
+      "status": 1,
+      "tipe": "Tukar Faktur",
+      "document_id": "Faktur ID -001",
+      "document_ref": "",
+      "req_date": "Req.Date",
+      "completed_date": "",
+      "action": "action"
+    }
+  ]
+}
