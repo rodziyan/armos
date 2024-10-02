@@ -207,16 +207,14 @@ $(document).ready(function () {
           console.log('Rendering data:', data, type, full);
           return `
              <div class="button-group">
-              <button class="btn btn-sm btn-icon rounded-pill waves-effect" 
+              <button class="btn btn-sm btn-icon rounded-pill waves-effect viewModal" 
                       type="button" 
-                      onclick="viewModal(event)" 
                       style="border: 2px solid green; background-color: green; padding: 0; color: white;">
                 <i class="ri-eye-fill" style="font-size: 20px;"></i>
               </button>
               
-              <button class="btn btn-sm btn-icon rounded-pill waves-effect" 
-                      type="button" 
-                      onclick="updateModal(event)" 
+              <button class="btn btn-sm btn-icon rounded-pill waves-effect updateModal" 
+                      type="button"
                       style="border: 2px solid orange; background-color: orange; padding: 0; color: white;">
                 <i class="ri-pencil-fill" style="font-size: 20px;"></i>
               </button>
@@ -246,19 +244,12 @@ $(document).ready(function () {
     ]
   });
 
-  // Event listeners
-  $(document).on('click', '.viewModal', function () {
-    viewModal($(this));
+  // Show the modal
+  $('.datatables-users tbody').on('click', '.updateModal', function () {
+    $('#updateModal').modal('show');
   });
-
-  $(document).on('click', '.updateModal', function () {
-    updateModal($(this));
+  // Show the modal
+  $('.datatables-users tbody').on('click', '.viewModal', function () {
+    $('#viewModal').modal('show');
   });
 });
-
-function viewModal() {
-  $('#viewModal').modal('show');
-}
-function updateModal() {
-  $('#updateModal').modal('show');
-}

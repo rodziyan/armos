@@ -10,19 +10,17 @@ $(document).ready(function () {
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="viewModalLabel">Route-001</h5>
+                <h5 class="modal-title" id="viewModalLabel">Toko A</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <!-- First Section -->
                 <div class="d-flex justify-content-between mb-3">
                     <div>
-                        <p>Sequence : <strong>1</strong></p>
-                        <p>DO Number : <strong>DO001-1</strong></p>
+                        <p>Location : <strong>Toko A</strong></p>
                         <p>Delivery Type : <strong>Delivery</strong></p>
                     </div>
                     <div>
-                        <p>Location : <strong>Toko A</strong></p>
                         <p>Faktur ID : <strong>F001</strong></p>
                         <p>Total Value : <strong>Rp80.000</strong></p>
                     </div>
@@ -64,19 +62,17 @@ $(document).ready(function () {
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="liatModalLabel">Route-001</h5>
+                <h5 class="modal-title" id="liatModalLabel">Toko B</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <!-- Second Section -->
                 <div class="d-flex justify-content-between mb-3">
                     <div>
-                        <p>Sequence : <strong>2</strong></p>
-                        <p>DO Number : <strong>DO001-2</strong></p>
+                        <p>Location : <strong>Toko B</strong></p>
                         <p>Delivery Type : <strong>Delivery</strong></p>
                     </div>
                     <div>
-                        <p>Location : <strong>Toko B</strong></p>
                         <p>Faktur ID : <strong>F002</strong></p>
                         <p>Total Value : <strong>Rp100.000</strong></p>
                     </div>
@@ -374,7 +370,7 @@ $(document).ready(function () {
 
 <!-- Modal Route -->
 <div class="modal fade" id="mapsModal" tabindex="-1" aria-labelledby="mapsModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered" style="max-width: 35%; width: auto; max-height: 150vh;">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="mapsModalLabel">Route - 001</h5>
