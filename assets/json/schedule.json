@@ -10,7 +10,8 @@
       "request_by": "User A",
       "approval_date": "2024-09-02",
       "approval_by": "Manager X",
-      "action": "action"
+      "action": "action",
+      "vendor": "Vendor 1"
     },
     {
       "no_plat_kendaraan": "DEF456",
@@ -22,7 +23,8 @@
       "request_by": "User B",
       "approval_date": "2024-09-03",
       "approval_by": "Manager Y",
-      "action": "action"
+      "action": "action",
+      "vendor": "Vendor 2"
     },
     {
       "no_plat_kendaraan": "GHI789",
@@ -34,7 +36,8 @@
       "request_by": "User C",
       "approval_date": "2024-09-05",
       "approval_by": "Manager Z",
-      "action": "action"
+      "action": "action",
+      "vendor": "Vendor 3"
     },
     {
       "no_plat_kendaraan": "JKL012",
@@ -46,7 +49,8 @@
       "request_by": "User D",
       "approval_date": "2024-09-06",
       "approval_by": "Manager W",
-      "action": "action"
+      "action": "action",
+      "vendor": "Vendor 4"
     }
   ]
 }
