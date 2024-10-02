@@ -1,0 +1,52 @@
+{
+  "data": [
+    {
+      "no_plat_kendaraan": "ABC123",
+      "tipe_off_time": "Morning",
+      "start_off_date": "2024-09-10",
+      "end_off_date": "2024-09-10",
+      "status": 1,
+      "request_date": "2024-09-01",
+      "request_by": "User A",
+      "approval_date": "2024-09-02",
+      "approval_by": "Manager X",
+      "action": "action"
+    },
+    {
+      "no_plat_kendaraan": "DEF456",
+      "tipe_off_time": "Afternoon",
+      "start_off_date": "2024-09-11",
+      "end_off_date": "2024-09-11",
+      "status": 2,
+      "request_date": "2024-09-02",
+      "request_by": "User B",
+      "approval_date": "2024-09-03",
+      "approval_by": "Manager Y",
+      "action": "action"
+    },
+    {
+      "no_plat_kendaraan": "GHI789",
+      "tipe_off_time": "Evening",
+      "start_off_date": "2024-09-12",
+      "end_off_date": "2024-09-12",
+      "status": 2,
+      "request_date": "2024-09-04",
+      "request_by": "User C",
+      "approval_date": "2024-09-05",
+      "approval_by": "Manager Z",
+      "action": "action"
+    },
+    {
+      "no_plat_kendaraan": "JKL012",
+      "tipe_off_time": "Morning",
+      "start_off_date": "2024-09-13",
+      "end_off_date": "2024-09-13",
+      "status": 1,
+      "request_date": "2024-09-05",
+      "request_by": "User D",
+      "approval_date": "2024-09-06",
+      "approval_by": "Manager W",
+      "action": "action"
+    }
+  ]
+}

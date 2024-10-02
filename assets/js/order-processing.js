@@ -31,8 +31,8 @@ $(document).ready(function () {
         {
           targets: 0,
           orderable: false,
-          render: function () {
-            return null; // atau return '';
+          render: function (data, type, row) {
+            return '<input type="checkbox" class="select-checkbox" style="display:none;">';
           }
         },
         {
@@ -196,7 +196,7 @@ $(document).ready(function () {
     $('div.dropdown-container').html(`
       <div>
       <button type="button" class="btn btn-primary" id="selectAllBtn">
-          Select
+        Select
       </button>
         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
           Action
@@ -207,6 +207,13 @@ $(document).ready(function () {
       </ul>
       </div>
     `);
+
+    // Toggle checkboxes on button click
+    $('#selectAllBtn').on('click', function () {
+      $('.select-checkbox').each(function () {
+        $(this).toggle(); // Tampilkan atau sembunyikan checkbox
+      });
+    });
 
     // Event listener untuk unhold modal
     $(document).on('click', '.unholdModal', function () {

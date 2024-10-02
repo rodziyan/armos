@@ -582,27 +582,6 @@ $(document).ready(function () {
             `;
           }
         }
-      ],
-      // Remove the default search box
-      dom: '<"d-flex justify-content-end align-items-end mt-2 mb-2 me-4"B>t',
-      // Add custom buttons
-      buttons: [
-        {
-          text: 'List View',
-          className: 'btn btn-primary me-2',
-          action: function (e, dt, node, config) {
-            // Add your logic to switch to list view
-            window.location.href = 'order-approval.html';
-          }
-        },
-        {
-          text: 'Maps View',
-          className: 'btn btn-secondary',
-          action: function (e, dt, node, config) {
-            // Add your logic to switch to maps view
-            window.location.href = 'order-approval-maps.html';
-          }
-        }
       ]
     });
   }

@@ -177,35 +177,6 @@ $(document).ready(function () {
             `;
         }
       }
-    ],
-    // Remove the default search box
-    dom: '<"d-flex justify-content-end align-items-end mt-2 mb-2 me-4"B>t',
-    // Add custom buttons
-    buttons: [
-      {
-        text: 'List View',
-        className: 'btn btn-primary me-2',
-        action: function (e, dt, node, config) {
-          // Logic to switch to list view
-          window.location.href = 'in-delivery.html';
-        }
-      },
-      {
-        text: 'Maps View',
-        className: 'btn btn-secondary me-2',
-        action: function (e, dt, node, config) {
-          // Logic to switch to maps view
-          window.location.href = 'in-delivery-maps.html';
-        }
-      },
-      {
-        text: 'Milestone',
-        className: 'btn btn-success',
-        action: function (e, dt, node, config) {
-          // Logic for milestone action
-          window.location.href = 'in-delivery-milestone.html';
-        }
-      }
     ]
   });
   $('.datatables-users tbody').on('click', '.mapsModal', function () {
