@@ -72,6 +72,11 @@ $('body').append(`
             <label for="kmPerLiter" class="form-label">KM/L</label>
             <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM/L" disabled>
           </div>
+          <div class="mb-3">
+            <div class="item">
+              <img src="assets/img/BBM.png" alt="Biaya BBM" class="img-fluid" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
+              </div>
+          </div>
         </form>
       </div>
     </div>
@@ -108,6 +113,11 @@ $('body').append(`
           <div class="mb-3">
             <label for="kmPerLiter" class="form-label">KM/L</label>
             <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM/L">
+          </div>
+          <div class="mb-3">
+            <div class="item">
+              <img src="assets/img/BBM.png" alt="Biaya BBM" class="img-fluid" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
+              </div>
           </div>
         </form>
       </div>
