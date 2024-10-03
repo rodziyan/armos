@@ -25,6 +25,7 @@ $('body').append(`
             <label for="changeType" class="form-label">Tipe Dokumen</label>
             <select class="form-select" id="changeType">
               <option value="" disabled selected>Pilih Jenis Perubahan</option>
+              <option value="tukar_faktur" selected>Tukar Faktur</option>
               <option value="revisi_faktur">Revisi Faktur</option>
               <option value="koreksi_jual">Koreksi Jual</option>
               <option value="barang_hilang">Barang Hilang</option>
@@ -119,6 +120,7 @@ $('body').append(`
             <label for="changeType" class="form-label">Tipe Dokumen</label>
             <select class="form-select" id="changeType">
               <option value="" disabled>Pilih Jenis Perubahan</option>
+              <option value="tukar_faktur" selected>Tukar Faktur</option>
               <option value="revisi_faktur" selected>Revisi Faktur</option>
               <option value="koreksi_jual">Koreksi Jual</option>
               <option value="barang_hilang">Barang Hilang</option>
@@ -188,7 +190,8 @@ $(document).ready(function () {
         render: function (data, type, full) {
           // Define the updated statusObj for mapping delivery_status values
           var statusObj = {
-            1: { title: 'New', class: 'bg-label-primary' }
+            1: { title: 'New', class: 'bg-label-primary' },
+            2: { title: 'Completed', class: 'bg-label-success' }
           };
           return (
             '<span class="badge rounded-pill ' +
@@ -238,21 +241,21 @@ $(document).ready(function () {
           return `
               <div class="button-group">
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect approval" 
-                        style="border: 2px solid green; background-color: green; color: white; padding: 0; display: flex; align-items: center;">
+                        style="border: 2px solid green; background-color: green; color: white; padding: 0; display: flex; align-items: center;" justify-content: center; height: 40px;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
                         <i class="ri-eye-line" style="font-size: 20px;"></i>
                     </span>
                 </button>
                 
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect editModal" 
-                        style="border: 2px solid orange; background-color: orange; color: white; padding: 0; display: flex; align-items: center;">
+                        style="border: 2px solid orange; background-color: orange; color: white; padding: 0; display: flex; align-items: center;" justify-content: center; height: 40px;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
                         <i class="ri-pencil-line" style="font-size: 20px;"></i>
                     </span>
                 </button>
                 
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect cancelModal" 
-                        style="border: 2px solid red; background-color: red; color: white; padding: 0; display: flex; align-items: center;">
+                        style="border: 2px solid red; background-color: red; color: white; padding: 0; display: flex; align-items: center;" justify-content: center; height: 40px;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
                         <i class="ri-delete-bin-line" style="font-size: 20px;"></i>
                     </span>

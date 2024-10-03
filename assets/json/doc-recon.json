@@ -5,16 +5,7 @@
       "tipe": "Revisi Faktur",
       "document_id": "Faktur ID -001",
       "document_ref": "",
-      "req_date": "Req.Date",
-      "completed_date": "",
-      "action": "action"
-    },
-    {
-      "status": 1,
-      "tipe": "Barang Hilang",
-      "document_id": "Faktur ID -001",
-      "document_ref": "",
-      "req_date": "Req.Date",
+      "req_date": "2024-10-01",
       "completed_date": "",
       "action": "action"
     },
@@ -23,8 +14,17 @@
       "tipe": "Koreksi Jual",
       "document_id": "Faktur ID -001",
       "document_ref": "",
-      "req_date": "Req.Date",
+      "req_date": "2024-10-03",
       "completed_date": "",
+      "action": "action"
+    },
+    {
+      "status": 2,
+      "tipe": "Barang Hilang",
+      "document_id": "Faktur ID -001",
+      "document_ref": "F001R",
+      "req_date": "2024-10-02",
+      "completed_date": "2024-11-02",
       "action": "action"
     },
     {
@@ -32,7 +32,7 @@
       "tipe": "Tukar Faktur",
       "document_id": "Faktur ID -001",
       "document_ref": "",
-      "req_date": "Req.Date",
+      "req_date": "2024-10-04",
       "completed_date": "",
       "action": "action"
     }
