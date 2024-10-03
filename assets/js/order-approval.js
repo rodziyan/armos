@@ -21,12 +21,12 @@ $(document).ready(function () {
             </div>
             <div class="modal-body">
                 <!-- First Section -->
-                <div class="d-flex left-content-between mb-3">
+                <div class="d-flex left-content-between mb-3" style="text-align: left;">
                     <div>
                         <p>Location : <strong>Toko A</strong></p>
                         <p>Delivery Type : <strong>Delivery</strong></p>
                     </div>
-                    <div class="ms-12">
+                    <div class="mx-auto">
                         <p>Faktur ID : <strong>F001</strong></p>
                         <p>Total Value : <strong>Rp80.000</strong></p>
                     </div>
@@ -79,12 +79,12 @@ $(document).ready(function () {
             </div>
             <div class="modal-body">
                 <!-- Second Section -->
-                <div class="d-flex left-content-between mb-3">
+                <div class="d-flex justify-content-between mb-3" style="text-align: left;">
                     <div>
                         <p>Location : <strong>Toko B</strong></p>
                         <p>Delivery Type : <strong>Delivery</strong></p>
                     </div>
-                    <div class="ms-12">
+                    <div class="mx-auto">
                         <p>Faktur ID : <strong>F002</strong></p>
                         <p>Total Value : <strong>Rp100.000</strong></p>
                     </div>

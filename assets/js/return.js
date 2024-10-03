@@ -4,7 +4,7 @@ let dt_User;
 $('body').append(`
   <!-- Modal Edit -->
 <div class="modal fade" id="myModal" tabindex="2" aria-labelledby="myModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-lg"> 
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editModalLabel">Create Data Retur</h5>
@@ -13,29 +13,44 @@ $('body').append(`
       <div class="modal-body">
         <!-- Form Edit -->
         <form id="editForm">
-          <div class="mb-3">
-            <label for="storeName" class="form-label">Nama Toko</label>
-            <input type="text" class="form-control" id="storeName" placeholder="Masukkan Nama Toko">
+          <div class="row">
+            <!-- Nama Toko -->
+            <div class="col-md-6 mb-3">
+              <label for="storeName" class="form-label">Nama Toko</label>
+              <input type="text" class="form-control" id="storeName" placeholder="Masukkan Nama Toko">
+            </div>
+
+            <!-- Retur Document -->
+            <div class="col-md-6 mb-3">
+              <label for="returDocument" class="form-label">Retur Document</label>
+              <input type="text" class="form-control" id="returDocument" placeholder="Masukkan Dokumen Retur">
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="returDocument" class="form-label">Retur Document</label>
-            <input type="text" class="form-control" id="returDocument" placeholder="Masukkan Dokumen Retur">
+
+          <div class="row">
+            <!-- Pick Up Date -->
+            <div class="col-md-6 mb-3">
+              <label for="pickUpDate" class="form-label">Pick Up Date</label>
+              <input type="date" class="form-control" id="pickUpDate">
+            </div>
+
+            <!-- Approval By -->
+            <div class="col-md-6 mb-3">
+              <label for="approvalBy" class="form-label">Approval By</label>
+              <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama Approval">
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="pickUpDate" class="form-label">Pick Up Date</label>
-            <input type="date" class="form-control" id="pickUpDate">
-          </div>
-          <div class="mb-3">
-            <label for="approvalBy" class="form-label">Approval By</label>
-            <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama Approval">
-          </div>
-          <div class="mb-3">
-              <label for="approvalBy" class="form-label">Status</label>
-              <select class="form-select" id="approvalBy">
-                  <option value="" disabled selected>Pilih Status Retur</option>
-                  <option value="planned">Planned</option>
-                  <option value="already_processed_wms">Already Processed WMS</option>
+
+          <div class="row">
+            <!-- Status -->
+            <div class="col-md-6 mb-3">
+              <label for="status" class="form-label">Status</label>
+              <select class="form-select" id="status">
+                <option value="" disabled selected>Pilih Status Retur</option>
+                <option value="planned">Planned</option>
+                <option value="already_processed_wms">Already Processed WMS</option>
               </select>
+            </div>
           </div>
           
           <!-- Tabel Produk -->
@@ -43,25 +58,24 @@ $('body').append(`
             <thead>
               <tr>
                 <th>Product Name</th>
-                <th>Qty</th>
-                <th>Action</th>
+                <th style="width: 150px; text-align: center;">Qty</th> 
+                <th style="width: 100px; text-align: center;">Action</th>
               </tr>
             </thead>
             <tbody id="productTableBody">
-              <!-- Example row, you can dynamically add rows with JavaScript -->
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk"></td>
-                <td><input type="number" class="form-control" placeholder="Qty"></td>
+                <td><input type="text" class="form-control" placeholder="Nama Produk"></td> 
+                <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;">
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk"></td>
-                <td><input type="number" class="form-control" placeholder="Qty"></td>
+                <td><input type="text" class="form-control" placeholder="Nama Produk"></td> 
+                <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;"></td> 
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk"></td>
-                <td><input type="number" class="form-control" placeholder="Qty"></td>
+                <td><input type="text" class="form-control" placeholder="Nama Produk"></td> 
+                <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;" ></td> 
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
             </tbody>
@@ -78,6 +92,7 @@ $('body').append(`
     </div>
   </div>
 </div>
+
 
 <!-- Modal Approval -->
 <div class="modal fade" id="approval" tabindex="1" aria-labelledby="approval" aria-hidden="true">
@@ -102,7 +117,7 @@ $('body').append(`
 
 <!-- Modal Edit -->
 <div class="modal fade" id="editModal" tabindex="2" aria-labelledby="editModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editModalLabel">Edit Data Retur</h5>
@@ -111,29 +126,44 @@ $('body').append(`
       <div class="modal-body">
         <!-- Form Edit -->
         <form id="editForm">
-          <div class="mb-3">
-            <label for="storeName" class="form-label">Nama Toko</label>
-            <input type="text" class="form-control" id="storeName" placeholder="Masukkan Nama Toko">
+         <div class="row">
+            <!-- Nama Toko -->
+            <div class="col-md-6 mb-3">
+              <label for="storeName" class="form-label">Nama Toko</label>
+              <input type="text" class="form-control" id="storeName" placeholder="Masukkan Nama Toko" value="Toko ABC">
+            </div>
+
+            <!-- Retur Document -->
+            <div class="col-md-6 mb-3">
+              <label for="returDocument" class="form-label">Retur Document</label>
+              <input type="text" class="form-control" id="returDocument" placeholder="Masukkan Dokumen Retur" value="RT123456">
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="returDocument" class="form-label">Retur Document</label>
-            <input type="text" class="form-control" id="returDocument" placeholder="Masukkan Dokumen Retur">
+
+          <div class="row">
+            <!-- Pick Up Date -->
+            <div class="col-md-6 mb-3">
+              <label for="pickUpDate" class="form-label">Pick Up Date</label>
+              <input type="date" class="form-control" id="pickUpDate" value="2024-10-10">
+            </div>
+
+            <!-- Approval By -->
+            <div class="col-md-6 mb-3">
+              <label for="approvalBy" class="form-label">Approval By</label>
+              <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama Approval" value="John Doe">
+            </div>
           </div>
-          <div class="mb-3">
-            <label for="pickUpDate" class="form-label">Pick Up Date</label>
-            <input type="date" class="form-control" id="pickUpDate">
-          </div>
-          <div class="mb-3">
-            <label for="approvalBy" class="form-label">Approval By</label>
-            <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama Approval">
-          </div>
-          <div class="mb-3">
-              <label for="approvalBy" class="form-label">Status</label>
-              <select class="form-select" id="approvalBy">
-                  <option value="" disabled selected>Pilih Status Retur</option>
-                  <option value="planned">Planned</option>
-                  <option value="already_processed_wms">Already Processed WMS</option>
+
+          <div class="row">
+            <!-- Status -->
+            <div class="col-md-6 mb-3">
+              <label for="status" class="form-label">Status</label>
+              <select class="form-select" id="status">
+                <option value="" disabled>Pilih Status Retur</option>
+                <option value="planned" selected>Planned</option>
+                <option value="already_processed_wms">Already Processed WMS</option>
               </select>
+            </div>
           </div>
           
           <!-- Tabel Produk -->
@@ -141,25 +171,24 @@ $('body').append(`
             <thead>
               <tr>
                 <th>Product Name</th>
-                <th>Qty</th>
-                <th>Action</th>
+                <th style="width: 150px; text-align: center;">Qty</th> 
+                <th style="width: 100px; text-align: center;">Action</th>
               </tr>
             </thead>
             <tbody id="productTableBody">
-              <!-- Example row, you can dynamically add rows with JavaScript -->
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk"></td>
-                <td><input type="number" class="form-control" placeholder="Qty"></td>
+                <td><input type="text" class="form-control" placeholder="Nama Produk" value="Produk A"></td> 
+                <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;" value="5"></td> 
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk"></td>
-                <td><input type="number" class="form-control" placeholder="Qty"></td>
+                <td><input type="text" class="form-control" placeholder="Nama Produk" value="Produk B"></td> 
+                <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;" value="3"></td> 
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk"></td>
-                <td><input type="number" class="form-control" placeholder="Qty"></td>
+                <td><input type="text" class="form-control" placeholder="Nama Produk" value="Produk C"></td> 
+                <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;" value="8"></td> 
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
             </tbody>
@@ -171,11 +200,98 @@ $('body').append(`
       </div>
       <!-- Modal Footer with Save Changes Button -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" id="saveChanges" style="background-color: #004d00; border-color: #004d00;">Save Changes</button>
+        <button type="button" class="btn btn-success" id="saveChanges" style="background-color: #004d00; border-color: #004d00;">Save</button>
       </div>
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="viewModal" tabindex="2" aria-labelledby="viewModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="viewModalLabel">View Data Retur</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Form Edit -->
+        <form id="editForm">
+         <div class="row">
+            <!-- Nama Toko -->
+            <div class="col-md-6 mb-3">
+              <label for="storeName" class="form-label">Nama Toko</label>
+              <input type="text" class="form-control" id="storeName" placeholder="Masukkan Nama Toko" value="Toko ABC" readonly>
+            </div>
+
+            <!-- Retur Document -->
+            <div class="col-md-6 mb-3">
+              <label for="returDocument" class="form-label">Retur Document</label>
+              <input type="text" class="form-control" id="returDocument" placeholder="Masukkan Dokumen Retur" value="RT123456" readonly>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Pick Up Date -->
+            <div class="col-md-6 mb-3">
+              <label for="pickUpDate" class="form-label">Pick Up Date</label>
+              <input type="date" class="form-control" id="pickUpDate" value="2024-10-10" readonly>
+            </div>
+
+            <!-- Approval By -->
+            <div class="col-md-6 mb-3">
+              <label for="approvalBy" class="form-label">Approval By</label>
+              <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama Approval" value="John Doe" readonly>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Status -->
+            <div class="col-md-6 mb-3">
+              <label for="status" class="form-label">Status</label>
+              <select class="form-select" id="status" disabled>
+                <option value="" disabled>Pilih Status Retur</option>
+                <option value="planned" selected>Planned</option>
+                <option value="already_processed_wms">Already Processed WMS</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Tabel Produk -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th style="width: 150px; text-align: center;">Qty</th> 
+                <th style="width: 100px; text-align: center;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="productTableBody">
+              <tr>
+                <td><input type="text" class="form-control" placeholder="Nama Produk" value="Produk A" readonly></td> 
+                <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;" value="5" readonly></td> 
+                <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" placeholder="Nama Produk" value="Produk B" readonly></td> 
+                <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;" value="3" readonly></td> 
+                <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
+              </tr>
+              <tr>
+                <td><input type="text" class="form-control" placeholder="Nama Produk" value="Produk C" readonly></td> 
+                <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;" value="8" readonly></td> 
+                <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
+              </tr>
+            </tbody>
+          </table>
+          
+          <!-- Button Tambah Data Product -->
+          <button type="button" class="btn btn-success w-100" id="addProduct" style="background-color: #004d00; border-color: #004d00;">Tambah Data Product</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Cancel Modal -->
 <div class="modal fade" id="cancelModal" tabindex="-1" aria-labelledby="cancelModa" aria-hidden="true">
@@ -277,8 +393,9 @@ $(document).ready(function () {
                   <i class="ri-more-2-fill" style="font-size: 20px;"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item approval" href="#">Approval</a></li>
+                  <li><a class="dropdown-item viewModal" href="#">View</a></li>
                   <li><a class="dropdown-item editModal" href="#">Edit</a></li>
+                  <li><a class="dropdown-item approval" href="#">Approval</a></li>
                   <li><a class="dropdown-item cancelModal" href="#">Cancel</a></li>
                 </ul>
               </div>
@@ -304,6 +421,10 @@ $(document).ready(function () {
   // Show Cancel Route Modal
   $('.datatables-users tbody').on('click', '.approval', function () {
     $('#approval').modal('show');
+  });
+  // Show Cancel Route Modal
+  $('.datatables-users tbody').on('click', '.viewModal', function () {
+    $('#viewModal').modal('show');
   });
   // Show Cancel Route Modal
   $('.datatables-users tbody').on('click', '.editModal', function () {

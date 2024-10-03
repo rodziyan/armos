@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
             targets: 2,
             render: function (data, type, full) {
               var statusObj = {
-                1: { title: 'Reconciled', class: 'bg-label-primary' }
+                1: { title: 'Reconciled', class: 'bg-label-primary' },
+                2: { title: 'Skip', class: 'bg-label-success' }
               };
               return (
                 '<span class="badge rounded-pill ' +
@@ -77,11 +78,17 @@ document.addEventListener('DOMContentLoaded', function () {
           {
             targets: -1,
             render: function (data, type, full) {
-              return `
-               <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal" data-bs-toggle="modal" data-bs-target="#viewModal">
-                  <i class="ri-eye-line"></i>
-              </button>
-          `;
+              let buttons = '';
+              // Pastikan untuk memeriksa driver_status dari objek 'full'
+              if (full['driver_status'] === 1) {
+                // 1 untuk status "Reconciled"
+                buttons += `
+                  <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal" data-bs-toggle="modal" data-bs-target="#viewModal">
+                    <i class="ri-eye-line"></i>
+                  </button>
+                `;
+              }
+              return buttons;
             }
           }
         ],

@@ -722,7 +722,7 @@
                                 <th>Trip Status</th>
                                 <th>Route ID</th>
                                 <th>Drop Completion</th>
-                                <th>Jumlah Faktur</th>
+                                <th>Jumlah Dokumen</th>
                                 <th>Jumlah Qty</th>
                                 <th>Total Biaya</th>
                                 <th>Action</th>
@@ -752,11 +752,12 @@
               <tr>
                 <th>Location Name</th>
                 <th>Faktur ID</th>
-                <th>Product Name</th>
-                <th>Faktur QTY</th>
-                <th>Scan-Out QTY</th>
-                <th>Delivery QTY</th>
-                <th>Truck QTY</th>
+                <th>Total Faktur QTY</th>
+                <th>Total WMS QTY</th>
+                <th>Total Delivery QTY</th>
+                <th>Total Received  QTY</th>
+                <th>Total Retur QTY</th>
+                <th>Total Truck QTY</th>
                 <th>Delivery Status</th>
                 <th>Cost</th>
                 <th>Action</th>
@@ -766,7 +767,8 @@
               <tr>
                 <td>Toko A</td>
                 <td>F001</td>
-                <td>Beng-beng</td>
+                <td>10</td>
+                <td>10</td>
                 <td>10</td>
                 <td>10</td>
                 <td>10</td>
@@ -782,8 +784,9 @@
               <tr>
                 <td>Toko B</td>
                 <td>F002</td>
-                <td>Aqua</td>
                 <td>10</td>
+                <td>8</td>
+                <td>8</td>
                 <td>8</td>
                 <td>8</td>
                 <td>0</td>
@@ -798,9 +801,10 @@
               <tr>
                 <td>Toko C</td>
                 <td>F003</td>
-                <td>Aqua</td>
                 <td>10</td>
                 <td>12</td>
+                <td>0</td>
+                <td>0</td>
                 <td>0</td>
                 <td>12</td>
                 <td style="color: red;">Skip</td>
@@ -825,95 +829,26 @@
 </div>
 
     
-    <!-- Modal View -->
 <!-- Modal View -->
 <div class="modal fade" id="modalView" tabindex="-1" aria-labelledby="modalViewLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+  <div class="modal-dialog modal-md"> 
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="viewModalLabel">Delivery Cost</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="text-center">
+        <div class="modal-body d-flex justify-content-center align-items-center" style="height: 400px;">
           <div class="mb-3">
             <div class="item">
-              <img src="assets/img/parkir.png" alt="Biaya Parkir" class="img-fluid" style="max-height: 300px; max-width: 300px; object-fit: cover; border-radius: 10px;">
-              </div>
+              <img src="assets/img/parkir.png" alt="Biaya Parkir" class="img-fluid" style="max-height: 500px; max-width: 500px; object-fit: cover; border-radius: 10px;"> 
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- Modal Return Confirmation -->
-<!-- <div class="modal fade" id="returnModal" tabindex="-1" aria-labelledby="returnModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header" style="background-color: #004d00;">
-      <h5 class="modal-title" id="returnModalLabel" style="color: #ffffff;">Return Confirmation</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-      <div class="text-center mb-4">
-        <i class="ri-truck-line" style="font-size: 3rem; color: #004d00;"></i>
-        <i class="ri-home-4-line" style="font-size: 3rem; color: #004d00; margin-left: 1rem;"></i>
-      </div>
-      <p style="color: #004d00;">Apakah Anda yakin untuk melanjutkan proses retur barang ke Warehouse?</p>
-      <p>Data akan terkirim ke Warehouse Management System (WMS) untuk proses inbound.</p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn" style="background-color: #004d00; color: #ffffff;" data-bs-dismiss="modal">Batal</button>
-      <button type="button" class="btn" style="background-color: #004d00; color: #ffffff;">Ya, Proses Retur ke WMS</button>
-    </div>
-  </div>
-</div>
-</div> -->
-
-<!-- Modal WMS Confirmation -->
-<!-- <div class="modal fade" id="WMSModal" tabindex="-1" aria-labelledby="WMSModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered">
-  <div class="modal-content">
-    <div class="modal-header" style="background-color: #004d00;">
-      <h5 class="modal-title" id="WMSModalLabel" style="color: #ffffff;">Confirmation</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-      <div class="text-center mb-4">
-        <i class="ri-truck-line" style="font-size: 3rem; color: #004d00;"></i>
-      </div>
-      <p style="color: #004d00; text-align: center;">Apakah Anda yakin untuk mengalihkan proses pengantaran ke Selasa, 2 Januari 2024?
-        </p>
-      <p style="text-align: center;">Data akan terkirim ke menu Review Route
-        </p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn" style="background-color: #004d00; color: #ffffff;">Ya, Next Day Delivery</button>
-    </div>
-  </div>
-</div>
-</div> -->
-
-<!-- Modal profile -->
-<!-- <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-          <div class="modal-header" style="background-color: #004d00;">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-center">
-              <i class="ri-box-3-line" style="font-size: 3rem; color: #004d00;"></i>
-              <h4 style="color: #004d00;">
-                Apakah terdapat barang hilang yaitu Product F sejumlah 1pcs?
-              </h4>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn" style="background-color: #004d00; color: #ffffff;">Ya, Proses ke Document Reconciliation</button>
-          </div>
-      </div>
-  </div>
-</div> -->
 
 <!-- Modal -->
 <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">

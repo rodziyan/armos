@@ -4,7 +4,7 @@
       "nama_toko": "Warehouse 1",
       "retur_document": "DO12345",
       "request_pick_up_date": "2024-09-10",
-      "product_name": "Product A",
+      "product_name": 10,
       "qty": 50,
       "status": 1,
       "action": "action"
@@ -13,7 +13,7 @@
       "nama_toko": "Retail Store 3",
       "retur_document": "DO12346",
       "request_pick_up_date": "2024-09-11",
-      "product_name": "Product B",
+      "product_name": 5,
       "qty": 30,
       "status": 2,
       "action": "action"
@@ -22,7 +22,7 @@
       "nama_toko": "Office 7",
       "retur_document": "DO12347",
       "request_pick_up_date": "2024-09-12",
-      "product_name": "Product C",
+      "product_name": 15,
       "qty": 15,
       "status": 1,
       "action": "action"
@@ -31,7 +31,7 @@
       "nama_toko": "Warehouse 2",
       "retur_document": "DO12348",
       "request_pick_up_date": "2024-09-13",
-      "product_name": "Product D",
+      "product_name": 20,
       "qty": 40,
       "status": 1,
       "action": "action"
@@ -40,7 +40,7 @@
       "nama_toko": "Retail Store 4",
       "retur_document": "DO12349",
       "request_pick_up_date": "2024-09-14",
-      "product_name": "Product E",
+      "product_name": 25,
       "qty": 25,
       "status": 2,
       "action": "action"

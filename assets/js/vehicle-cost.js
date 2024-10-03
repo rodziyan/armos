@@ -45,7 +45,7 @@ $('body').append(`
 
 
 <div class="modal fade" id="approval" tabindex="2" aria-labelledby="approval" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-lg"> 
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editModalLabel">Cost</h5>
@@ -54,28 +54,43 @@ $('body').append(`
       <div class="modal-body">
         <!-- Form Edit -->
         <form id="editForm">
-          <div class="mb-3">
-            <label for="driverName" class="form-label">Nama Supir</label>
-            <input type="text" class="form-control" id="driverName" placeholder="Masukkan Nama Supir" value="Supir A" disabled>
-          </div>
-          <div class="mb-3">
-            <label for="vehiclePlate" class="form-label">Plat Nomor Kendaraan</label>
-            <input type="text" class="form-control" id="vehiclePlate" placeholder="Masukkan Plat Nomor" value="ABC123" disabled>
-          </div>
-          <div class="mb-3">
-            <label for="costRequestType" class="form-label">Cost Request Type</label>
-            <select class="form-select" id="costRequestType" disabled>
-              <option value="bbm" selected>BBM</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="kmPerLiter" class="form-label">KM/L</label>
-            <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM/L" disabled>
-          </div>
-          <div class="mb-3">
-            <div class="item">
-              <img src="assets/img/BBM.png" alt="Biaya BBM" class="img-fluid" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
+          <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="driverName" class="form-label">Nama Supir</label>
+                <input type="text" class="form-control" id="driverName" placeholder="Masukkan Nama Supir" value="Supir A" disabled>
               </div>
+              <div class="mb-3">
+                <label for="vehiclePlate" class="form-label">Plat Nomor Kendaraan</label>
+                <input type="text" class="form-control" id="vehiclePlate" placeholder="Masukkan Plat Nomor" value="ABC123" disabled>
+              </div>
+              <div class="mb-3">
+                <label for="costRequestType" class="form-label">Cost Request Type</label>
+                <select class="form-select" id="costRequestType" disabled>
+                  <option value="bbm" selected>BBM</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="kmPerLiter" class="form-label">KM/L</label>
+                <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM/L" disabled>
+              </div>
+            </div>
+
+           <div class="col-md-6" id="biayaBBM" style="display: none;">
+              <div class="mb-3">
+                <div class="item">
+                  <img src="assets/img/BBM.png" alt="Biaya BBM" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" id="maintenance" style="display: none;">
+              <div class="mb-3">
+                <div class="item">
+                  <img src="assets/img/maintenance.png" alt="Biaya Maintenance" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
+                </div>
+              </div>
+            </div>
           </div>
         </form>
       </div>
@@ -86,7 +101,7 @@ $('body').append(`
 
 
 <div class="modal fade" id="editModal" tabindex="2" aria-labelledby="editModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-dialog-centered modal-lg"> 
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editModalLabel">Cost</h5>
@@ -95,29 +110,43 @@ $('body').append(`
       <div class="modal-body">
         <!-- Form Edit -->
         <form id="editForm">
-          <div class="mb-3">
-            <label for="driverName" class="form-label">Nama Supir</label>
-            <input type="text" class="form-control" id="driverName" placeholder="Masukkan Nama Supir" value="Supir A">
-          </div>
-          <div class="mb-3">
-            <label for="vehiclePlate" class="form-label">Plat Nomor Kendaraan</label>
-            <input type="text" class="form-control" id="vehiclePlate" placeholder="Masukkan Plat Nomor" value="ABC123">
-          </div>
-          <div class="mb-3">
-            <label for="costRequestType" class="form-label">Cost Request Type</label>
-            <select class="form-select" id="costRequestType">
-              <option value="" disabled>Pilih Tipe Cost Request</option>
-              <option value="bbm" selected>BBM</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="kmPerLiter" class="form-label">KM/L</label>
-            <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM/L">
-          </div>
-          <div class="mb-3">
-            <div class="item">
-              <img src="assets/img/BBM.png" alt="Biaya BBM" class="img-fluid" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
+          <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="driverName" class="form-label">Nama Supir</label>
+                <input type="text" class="form-control" id="driverName" placeholder="Masukkan Nama Supir" value="Supir A">
               </div>
+              <div class="mb-3">
+                <label for="vehiclePlate" class="form-label">Plat Nomor Kendaraan</label>
+                <input type="text" class="form-control" id="vehiclePlate" placeholder="Masukkan Plat Nomor" value="ABC123">
+              </div>
+              <div class="mb-3">
+                <label for="costRequestType" class="form-label">Cost Request Type</label>
+                <select class="form-select" id="costRequestType">
+                  <option value="bbm" selected>BBM</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="kmPerLiter" class="form-label">KM/L</label>
+                <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM/L">
+              </div>
+            </div>
+
+            <div class="col-md-6" id="biayaBBM" style="display: none;">
+              <div class="mb-3">
+                <div class="item">
+                  <img src="assets/img/BBM.png" alt="Biaya BBM" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" id="maintenance" style="display: none;">
+              <div class="mb-3">
+                <div class="item">
+                  <img src="assets/img/maintenance.png" alt="Biaya Maintenance" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
+                </div>
+              </div>
+            </div>
           </div>
         </form>
       </div>
@@ -129,7 +158,6 @@ $('body').append(`
     </div>
   </div>
 </div>
-
 
 
 <!-- Delete Confirmation Modal -->
@@ -200,7 +228,8 @@ $(document).ready(function () {
         render: function (data, type, full) {
           // Define the updated statusObj for mapping delivery_status values
           var statusObj = {
-            1: { title: 'Requested', class: 'bg-label-primary' }
+            1: { title: 'Requested', class: 'bg-label-primary' },
+            2: { title: 'Completed', class: 'bg-label-success' }
           };
 
           // Fallback if status is not in statusObj
@@ -286,5 +315,22 @@ $(document).ready(function () {
   // Show Cancel Route Modal
   $('.datatables-users tbody').on('click', '.cancelModal', function () {
     $('#cancelModal').modal('show');
+  });
+
+  $('.datatables-users tbody').on('click', 'tr', function () {
+    var rowData = dt_User.row(this).data();
+    var status = rowData.status;
+    var costRequestType = rowData.cost_request_type;
+
+    if (status === 2 && costRequestType === 'BBM') {
+      document.getElementById('biayaBBM').style.display = 'block';
+      document.getElementById('maintenance').style.display = 'none';
+    } else if (status === 2 && costRequestType === 'Maintenance') {
+      document.getElementById('maintenance').style.display = 'block';
+      document.getElementById('biayaBBM').style.display = 'none';
+    } else {
+      document.getElementById('biayaBBM').style.display = 'none';
+      document.getElementById('maintenance').style.display = 'none';
+    }
   });
 });
