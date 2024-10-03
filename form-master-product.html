@@ -729,14 +729,32 @@
                                   <input type="text" id="product-sku" class="form-control" placeholder="e.g. ABC1234" />
                                   <label for="product-sku">SKU Produk</label>
                               </div>
-                               <!-- Harga Produk -->
-                               <div class="form-floating form-floating-outline mt-5">
-                                <div class="input-group">
-                                    <span class="input-group-text">Rp.</span>
-                                    <input type="number" id="product-price" class="form-control" placeholder="e.g. 10000" aria-label="Harga Produk" />
-                                </div>
-                                <label for="product-price" class="visually-hidden">Harga Produk</label>
-                            </div>
+                      
+                              <!-- Harga Produk -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                  <div class="input-group">
+                                      <span class="input-group-text">Rp.</span>
+                                      <input type="number" id="product-price" class="form-control" placeholder="e.g. 10000" aria-label="Harga Produk" />
+                                  </div>
+                                  <label for="product-price" class="visually-hidden">Harga Produk</label>
+                              </div>
+                              
+                              <!-- Kategori Produk -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                  <select class="form-select" id="product-category" aria-label="Kategori Produk">
+                                      <option value="" disabled selected>Pilih Kategori Produk</option>
+                                      <option value="category1">Kategori 1</option>
+                                      <option value="category2">Kategori 2</option>
+                                      <option value="category3">Kategori 3</option>
+                                  </select>
+                                  <label for="product-category">Kategori Produk</label>
+                              </div>
+                      
+                              <!-- Stok Produk -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                  <input type="number" id="product-stock" class="form-control" placeholder="e.g. 100" />
+                                  <label for="product-stock">Stok Produk</label>
+                              </div>
                           </div>
                       
                           <!-- Kanan -->
@@ -758,9 +776,28 @@
                                   <input type="number" id="product-length" class="form-control" placeholder="e.g. 100" />
                                   <label for="product-length">Panjang Produk (in CM)</label>
                               </div>
-                          </div>
-                      </div>
                       
+                              <!-- Gambar Produk -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                  <input type="file" id="product-image" class="form-control" />
+                                  <label for="product-image">Unggah Gambar Produk</label>
+                              </div>
+                      
+                              <!-- Status Produk -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                  <select class="form-select" id="product-status" aria-label="Status Produk">
+                                      <option value="" disabled selected>Pilih Status Produk</option>
+                                      <option value="active">Aktif</option>
+                                      <option value="inactive">Tidak Aktif</option>
+                                  </select>
+                                  <label for="product-status">Status Produk</label>
+                              </div>
+                              <!-- Deskripsi Produk -->
+                              <div class="form-floating form-floating-outline mt-5">
+                                <textarea id="product-description" class="form-control" placeholder="Deskripsi produk"></textarea>
+                                <label for="product-description">Deskripsi Produk</label>
+                            </div>
+                            </div>
                       
                           <div class="pt-6">
                               <button type="submit" class="btn btn-primary me-4">Save</button>

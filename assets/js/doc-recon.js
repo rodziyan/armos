@@ -67,7 +67,7 @@ $('body').append(`
         <form id="viewForm">
           <div class="mb-3">
             <label for="documentId" class="form-label">Document ID</label>
-            <input type="text" class="form-control" id="documentId" placeholder="Masukkan Document ID" value="Faktur ID -001" readonly>
+            <input type="text" class="form-control" id="documentId" placeholder="Masukkan Document ID" value="Faktur ID -001" disabled>
           </div>
           <div class="mb-3">
             <label for="documentRef" class="form-label">Document Ref</label>
@@ -85,7 +85,7 @@ $('body').append(`
           </div>
           <div class="mb-3">
             <label for="supportingDocument" class="form-label">Upload / Download Dokumen Pendukung</label>
-            <input type="file" class="form-control" id="supportingDocument" disabled>
+            <input type="file" class="form-control" id="supportingDocument" readonly>
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Deskripsi</label>
@@ -110,7 +110,7 @@ $('body').append(`
         <form id="editForm">
           <div class="mb-3">
             <label for="documentId" class="form-label">Document ID</label>
-            <input type="text" class="form-control" id="documentId" placeholder="Masukkan Document ID" value="Faktur ID -001">
+            <input type="text" class="form-control" id="documentId" placeholder="Masukkan Document ID" value="Faktur ID -001" disabled>
           </div>
           <div class="mb-3">
             <label for="documentRef" class="form-label">Document Ref</label>
@@ -243,21 +243,21 @@ $(document).ready(function () {
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect approval" 
                         style="border: 2px solid green; background-color: green; color: white; padding: 0; display: flex; align-items: center;" justify-content: center; height: 40px;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-eye-line" style="font-size: 20px;"></i>
+                        <i class="ri-eye-line ms-3" style="font-size: 20px;"></i>
                     </span>
                 </button>
                 
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect editModal" 
                         style="border: 2px solid orange; background-color: orange; color: white; padding: 0; display: flex; align-items: center;" justify-content: center; height: 40px;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-pencil-line" style="font-size: 20px;"></i>
+                        <i class="ri-pencil-line ms-3" style="font-size: 20px;"></i>
                     </span>
                 </button>
                 
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect cancelModal" 
                         style="border: 2px solid red; background-color: red; color: white; padding: 0; display: flex; align-items: center;" justify-content: center; height: 40px;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-delete-bin-line" style="font-size: 20px;"></i>
+                        <i class="ri-delete-bin-line ms-3" style="font-size: 20px;"></i>
                     </span>
                 </button>
             </div>

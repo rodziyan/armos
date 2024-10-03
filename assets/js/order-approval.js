@@ -119,13 +119,13 @@ $(document).ready(function () {
 
 <!-- Modal -->
 <div class="modal fade" id="modalView" tabindex="-1" aria-labelledby="modalViewLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <label for="actionSelect" class="form-label">Pilih:</label>
+                <label for="actionSelect" class="form-label">Document Reconciliation</label>
                 <select class="form-select" id="actionSelect">
                     <option value="" disabled selected>Pilih salah satu...</option>
                     <option value="revisiFaktur">Revisi Faktur</option>
