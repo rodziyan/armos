@@ -7,7 +7,7 @@ $(function () {
     dt_payout_table.DataTable({
       ajax: assetsPath + 'json/payout.json',
       columns: [
-        { data: null, defaultContent: '' }, // Use null and set defaultContent to avoid errors
+        { data: null, defaultContent: '' },
         { data: 'trip_id' },
         { data: 'faktur_number' },
         { data: 'tanggal' },
@@ -20,10 +20,7 @@ $(function () {
           orderable: false,
           targets: 0,
           render: function () {
-            return '<input type="checkbox" class="dt-checkboxes form-check-input">';
-          },
-          checkboxes: {
-            selectAllRender: '<input type="checkbox" class="form-check-input">'
+            return '';
           }
         },
         {

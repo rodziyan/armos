@@ -13,6 +13,12 @@ $(document).ready(function () {
                 <h5 class="modal-title" id="viewModalLabel">Toko A</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="ms-auto me-4 mt-3">
+                <button type="button" class="btn btn-primary me-2" 
+                data-bs-toggle="modal" data-bs-target="#modalView">
+                    Document Reconciliation
+                </button>
+            </div>
             <div class="modal-body">
                 <!-- First Section -->
                 <div class="d-flex justify-content-between mb-3">
@@ -20,7 +26,7 @@ $(document).ready(function () {
                         <p>Location : <strong>Toko A</strong></p>
                         <p>Delivery Type : <strong>Delivery</strong></p>
                     </div>
-                    <div>
+                    <div class="me-4">
                         <p>Faktur ID : <strong>F001</strong></p>
                         <p>Total Value : <strong>Rp80.000</strong></p>
                     </div>
@@ -65,6 +71,12 @@ $(document).ready(function () {
                 <h5 class="modal-title" id="liatModalLabel">Toko B</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <div class="ms-auto me-4 mt-3">
+                <button type="button" class="btn btn-primary me-2" 
+                data-bs-toggle="modal" data-bs-target="#modalView">
+                    Document Reconciliation
+                </button>
+            </div>
             <div class="modal-body">
                 <!-- Second Section -->
                 <div class="d-flex justify-content-between mb-3">
@@ -72,7 +84,7 @@ $(document).ready(function () {
                         <p>Location : <strong>Toko B</strong></p>
                         <p>Delivery Type : <strong>Delivery</strong></p>
                     </div>
-                    <div>
+                    <div class="me-4">
                         <p>Faktur ID : <strong>F002</strong></p>
                         <p>Total Value : <strong>Rp100.000</strong></p>
                     </div>
@@ -105,6 +117,31 @@ $(document).ready(function () {
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="modalView" tabindex="-1" aria-labelledby="modalViewLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="actionSelect" class="form-label">Pilih:</label>
+                <select class="form-select" id="actionSelect">
+                    <option value="" disabled selected>Pilih salah satu...</option>
+                    <option value="revisiFaktur">Revisi Faktur</option>
+                    <option value="koreksiJual">Koreksi Jual</option>
+                    <option value="barangHilang">Barang Hilang</option>
+                    <option value="tukarFaktur">Tukar Faktur</option>
+                    <option value="lainnya">Lainnya</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 //     <div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
 //     <div class="modal-dialog">
@@ -572,7 +609,6 @@ $(document).ready(function () {
                   <i class="ri-more-2-fill" style="font-size: 20px;"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item editFaktur" href="#">Edit Faktur</a></li>
                   <li><a class="dropdown-item changeKendaraan" href="#">Change Vehicle</a></li>
                   <li><a class="dropdown-item " onclick="changeDriver(event)" href="#">Change Driver & Kernet</a></li>
                   <li><a class="dropdown-item " onclick="openRoute(event)" href="#">Cancel Route</a></li>
