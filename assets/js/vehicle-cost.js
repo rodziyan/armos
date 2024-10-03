@@ -238,21 +238,21 @@ $(document).ready(function () {
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect approval" 
                         style="border: 2px solid green; background-color: green; color: white; padding: 0; display: flex; align-items: center;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-eye-line" style="font-size: 20px;"></i>
+                        <i class="ri-eye-line ms-3" style="font-size: 20px;"></i>
                     </span>
                 </button>
                 
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect editModal" 
                         style="border: 2px solid orange; background-color: orange; color: white; padding: 0; display: flex; align-items: center;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-pencil-line" style="font-size: 20px;"></i>
+                        <i class="ri-pencil-line ms-3" style="font-size: 20px;"></i>
                     </span>
                 </button>
                 
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect cancelModal" 
                         style="border: 2px solid red; background-color: red; color: white; padding: 0; display: flex; align-items: center;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-close-circle-line" style="font-size: 20px;"></i>
+                        <i class="ri-close-circle-line ms-3" style="font-size: 20px;"></i>
                     </span>
                 </button>
             </div>

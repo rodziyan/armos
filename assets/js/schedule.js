@@ -30,11 +30,11 @@ $('body').append(`
           </div>
           <div class="row mb-3">
             <div class="col-md-6">
-              <label for="startOffTime" class="form-label">Start Off Time</label>
+              <label for="startOffTime" class="form-label">Start Off Date</label>
               <input type="time" class="form-control" id="startOffTime">
             </div>
             <div class="col-md-6">
-              <label for="endOffTime" class="form-label">End Off Time</label>
+              <label for="endOffTime" class="form-label">End Off Date</label>
               <input type="time" class="form-control" id="endOffTime">
             </div>
           </div>
@@ -71,7 +71,7 @@ $('body').append(`
               <input type="date" class="form-control" id="approvalDate">
             </div>
             <div class="col-md-6">
-              <label for="approvalBy" class="form-label">Approval By</label>
+              <label for="approvalBy" class="form-label">Approved By</label>
               <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama">
             </div>
           </div>
@@ -110,7 +110,7 @@ $('body').append(`
             <div class="col-md-6">
               <label for="offTimeType" class="form-label">Tipe Off Time</label>
               <select class="form-select" id="offTimeType" disabled>
-                <option value="Morning" selected>Morning</option>
+                <option value="Maintenance" selected>Maintenance</option>
                 <option value="maintenance">Maintenance</option>
                 <option value="perpanjang_dokumen">Perpanjang Dokument</option>
                 <option value="lainnya">Lainnya</option>
@@ -119,11 +119,11 @@ $('body').append(`
           </div>
           <div class="row mb-3">
             <div class="col-md-6">
-              <label for="startOffTime" class="form-label">Start Off Time</label>
+              <label for="startOffTime" class="form-label">Start Off Date</label>
               <input type="date" class="form-control" id="startOffTime" value="2024-09-13" readonly>
             </div>
             <div class="col-md-6">
-              <label for="endOffTime" class="form-label">End Off Time</label>
+              <label for="endOffTime" class="form-label">End Off Date</label>
               <input type="date" class="form-control" id="endOffTime" value="2024-09-13" readonly>
             </div>
           </div>
@@ -131,7 +131,7 @@ $('body').append(`
             <div class="col-md-6">
               <label for="status" class="form-label">Status</label>
               <select class="form-select" id="status" disabled>
-                <option value="1" selected>Approval</option>
+                <option value="1" selected>Approved</option>
                 <option value="new">New</option>
               </select>
             </div>
@@ -160,7 +160,7 @@ $('body').append(`
               <input type="date" class="form-control" id="approvalDate" value="2024-09-06" readonly>
             </div>
             <div class="col-md-6">
-              <label for="approvalBy" class="form-label">Approval By</label>
+              <label for="approvalBy" class="form-label">Approved By</label>
               <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama" value="Manager W" readonly>
             </div>
           </div>
@@ -199,17 +199,17 @@ $('body').append(`
                 <option value="maintenance">Maintenance</option>
                 <option value="perpanjang_dokumen">Perpanjang Dokument</option>
                 <option value="lainnya">Lainnya</option>
-                <option value="Morning" selected>Morning</option> <!-- Pre-selected -->
+                <option value="Maintenance" selected>Maintenance</option> <!-- Pre-selected -->
               </select>
             </div>
           </div>
           <div class="row mb-3">
             <div class="col-md-6">
-              <label for="startOffTime" class="form-label">Start Off Time</label>
+              <label for="startOffTime" class="form-label">Start Off Date</label>
               <input type="date" class="form-control" id="startOffTime" value="2024-09-13">
             </div>
             <div class="col-md-6">
-              <label for="endOffTime" class="form-label">End Off Time</label>
+              <label for="endOffTime" class="form-label">End Off Date</label>
               <input type="date" class="form-control" id="endOffTime" value="2024-09-13">
             </div>
           </div>
@@ -219,7 +219,7 @@ $('body').append(`
               <select class="form-select" id="status">
                 <option value="" disabled>Pilih Status</option>
                 <option value="new">New</option>
-                <option value="approval" selected>Approval</option> <!-- Pre-selected -->
+                <option value="approved" selected>Approval</option> <!-- Pre-selected -->
               </select>
             </div>
             <div class="col-md-6">
@@ -248,7 +248,7 @@ $('body').append(`
               <input type="date" class="form-control" id="approvalDate" value="2024-09-06">
             </div>
             <div class="col-md-6">
-              <label for="approvalBy" class="form-label">Approval By</label>
+              <label for="approvalBy" class="form-label">Approved By</label>
               <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama" value="Manager W">
             </div>
           </div>
@@ -263,7 +263,7 @@ $('body').append(`
       <!-- Modal Footer with Cancel and Save Buttons -->
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-success" id="saveChanges" style="background-color: #004d00; border-color: #004d00;">Approve</button>
+        <button type="button" class="btn btn-success" id="saveChanges" style="background-color: #004d00; border-color: #004d00;">Save</button>
       </div>
     </div>
   </div>
@@ -340,7 +340,7 @@ $(document).ready(function () {
           // Define the updated statusObj for mapping delivery_status values
           var statusObj = {
             1: { title: 'New', class: 'bg-label-primary' },
-            2: { title: 'Approval', class: 'bg-label-success' }
+            2: { title: 'Approved', class: 'bg-label-success' }
           };
 
           // Fallback if status is not in statusObj
@@ -390,21 +390,21 @@ $(document).ready(function () {
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect approval" 
                         style="border: 2px solid green; background-color: green; color: white; padding: 0; display: flex; align-items: center;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-eye-line" style="font-size: 20px;"></i>
+                        <i class="ri-eye-line ms-3" style="font-size: 20px;"></i>
                     </span>
                 </button>
                 
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect editModal" 
                         style="border: 2px solid orange; background-color: orange; color: white; padding: 0; display: flex; align-items: center;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-pencil-line" style="font-size: 20px;"></i>
+                        <i class="ri-pencil-line ms-3" style="font-size: 20px;"></i>
                     </span>
                 </button>
                 
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect cancelModal" 
                         style="border: 2px solid red; background-color: red; color: white; padding: 0; display: flex; align-items: center;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-delete-bin-line" style="font-size: 20px;"></i>
+                        <i class="ri-delete-bin-line ms-3" style="font-size: 20px;"></i>
                     </span>
                 </button>
             </div>

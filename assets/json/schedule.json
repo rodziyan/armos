@@ -2,7 +2,7 @@
   "data": [
     {
       "no_plat_kendaraan": "ABC123",
-      "tipe_off_time": "Morning",
+      "tipe_off_time": "Maintenance",
       "start_off_date": "2024-09-10",
       "end_off_date": "2024-09-10",
       "status": 1,
@@ -15,7 +15,7 @@
     },
     {
       "no_plat_kendaraan": "DEF456",
-      "tipe_off_time": "Afternoon",
+      "tipe_off_time": "Perpanjangan Dokumen",
       "start_off_date": "2024-09-11",
       "end_off_date": "2024-09-11",
       "status": 2,
@@ -28,7 +28,7 @@
     },
     {
       "no_plat_kendaraan": "GHI789",
-      "tipe_off_time": "Evening",
+      "tipe_off_time": "Maintenance",
       "start_off_date": "2024-09-12",
       "end_off_date": "2024-09-12",
       "status": 2,
@@ -41,7 +41,7 @@
     },
     {
       "no_plat_kendaraan": "JKL012",
-      "tipe_off_time": "Morning",
+      "tipe_off_time": "Lainnya",
       "start_off_date": "2024-09-13",
       "end_off_date": "2024-09-13",
       "status": 1,
