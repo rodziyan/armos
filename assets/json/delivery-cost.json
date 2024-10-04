@@ -12,13 +12,13 @@
     },
     {
       "driver_name": "Budi",
-      "driver_status": 2,
+      "driver_status": 1,
       "route_id": "R002",
       "drop_completion": "3/3",
       "jumlah_faktur": "3/3",
       "jumlah_qty": "9/10",
       "action": "action",
-      "total_biaya": ""
+      "total_biaya": "Rp.30.000"
     },
     {
       "driver_name": "Cindy",

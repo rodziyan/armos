@@ -65,16 +65,31 @@ $('body').append(`
                 <label for="vehiclePlate" class="form-label">Plat Nomor Kendaraan</label>
                 <input type="text" class="form-control" id="vehiclePlate" placeholder="Masukkan Plat Nomor" value="ABC123" disabled>
               </div>
-              <div class="mb-3">
+
+              <div class="mb-3" id="BBM" style="display: none;">
                 <label for="costRequestType" class="form-label">Cost Request Type</label>
                 <select class="form-select" id="costRequestType" disabled>
                   <option value="bbm" selected>BBM</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <label for="kmPerLiter" class="form-label">KM/L</label>
-                <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM/L" disabled>
+
+              <div class="mb-3" id="MaintenanceView" style="display: none;">
+                <label for="costRequestType" class="form-label">Cost Request Type</label>
+                <select class="form-select" id="MaintenaceInput" disabled>
+                  <option value="Maintenance" selected>Maintenance</option>
+                </select>
               </div>
+
+              <div class="mb-3" id="KML" style="display: none;">
+                <label for="kmPerLiter" class="form-label">KM/L</label>
+                <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM/L" value="15 KM/L" disabled>
+              </div>
+
+              <div class="mb-3" id="Vendor" style="display: none;">
+                <label for="vendor" class="form-label">Vendor</label>
+                <input type="text" class="form-control" id="vendorInput" placeholder="Vendor" value="Vendor A" disabled>
+              </div>
+
             </div>
 
            <div class="col-md-6" id="biayaBBM" style="display: none;">
@@ -121,26 +136,39 @@ $('body').append(`
                 <label for="vehiclePlate" class="form-label">Plat Nomor Kendaraan</label>
                 <input type="text" class="form-control" id="vehiclePlate" placeholder="Masukkan Plat Nomor" value="ABC123">
               </div>
-              <div class="mb-3">
-                <label for="costRequestType" class="form-label">Cost Request Type</label>
-                <select class="form-select" id="costRequestType">
+              <div class="mb-3" id="BBMSection" style="display: none;">
+                <label for="costRequestTypeBBM" class="form-label">Cost Request Type</label>
+                <select class="form-select" id="costRequestTypeBBM">
                   <option value="bbm" selected>BBM</option>
                 </select>
               </div>
-              <div class="mb-3">
-                <label for="kmPerLiter" class="form-label">KM/L</label>
-                <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM/L">
+
+              <div class="mb-3" id="KMLSection" style="display: none;">
+                <label for="kmPerLiterBBM" class="form-label">KM/L</label>
+                <input type="text" class="form-control" id="kmPerLiterBBM" placeholder="Masukkan KM/L" value="15 KM/L">
+              </div>
+
+              <div class="mb-3" id="MaintenanceViewSection" style="display: none;">
+                <label for="costRequestTypeMaintenance" class="form-label">Cost Request Type</label>
+                <select class="form-select" id="costRequestTypeMaintenance">
+                  <option value="maintenance" selected>Maintenance</option>
+                </select>
+              </div>
+
+              <div class="mb-3" id="VendorSection" style="display: none;">
+                <label for="maintenanceVendor" class="form-label">Vendor</label>
+                <input type="text" class="form-control" id="maintenanceVendor" placeholder="Masukkan Vendor" value="Vendor A">
               </div>
             </div>
 
-            <div class="col-md-6" id="biayaBBM" style="display: none;">
+            <div class="col-md-6" id="biayaBBMSection" style="display: none;">
               <div class="mb-3">
                 <div class="item">
                   <img src="assets/img/BBM.png" alt="Biaya BBM" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
                 </div>
               </div>
             </div>
-            <div class="col-md-6" id="maintenance" style="display: none;">
+            <div class="col-md-6" id="maintenanceSection" style="display: none;">
               <div class="mb-3">
                 <div class="item">
                   <img src="assets/img/maintenance.png" alt="Biaya Maintenance" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
@@ -317,20 +345,67 @@ $(document).ready(function () {
     $('#cancelModal').modal('show');
   });
 
+  // Fungsi untuk menyembunyikan elemen-elemen tertentu
+  function hideElements() {
+    const elementsToHide = [
+      'BBM',
+      'MaintenanceView',
+      'KML',
+      'Vendor',
+      'biayaBBM',
+      'maintenance',
+      'BBMSection',
+      'KMLSection',
+      'MaintenanceViewSection',
+      'VendorSection',
+      'biayaBBMSection',
+      'maintenanceSection'
+    ];
+
+    elementsToHide.forEach(function (id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.style.display = 'none';
+      } else {
+        console.error("Element with ID '" + id + "' not found!");
+      }
+    });
+  }
+
+  // Fungsi untuk menangani klik pada baris tabel
   $('.datatables-users tbody').on('click', 'tr', function () {
     var rowData = dt_User.row(this).data();
     var status = rowData.status;
     var costRequestType = rowData.cost_request_type;
 
+    // Sembunyikan elemen-elemen terlebih dahulu
+    hideElements();
+
+    // Menampilkan elemen-elemen berdasarkan kondisi
     if (status === 2 && costRequestType === 'BBM') {
+      document.getElementById('BBM').style.display = 'block';
+      document.getElementById('KML').style.display = 'block';
       document.getElementById('biayaBBM').style.display = 'block';
-      document.getElementById('maintenance').style.display = 'none';
+      document.getElementById('BBMSection').style.display = 'block';
+      document.getElementById('KMLSection').style.display = 'block';
+      document.getElementById('biayaBBMSection').style.display = 'block';
     } else if (status === 2 && costRequestType === 'Maintenance') {
+      document.getElementById('MaintenanceView').style.display = 'block';
+      document.getElementById('Vendor').style.display = 'block';
       document.getElementById('maintenance').style.display = 'block';
-      document.getElementById('biayaBBM').style.display = 'none';
-    } else {
-      document.getElementById('biayaBBM').style.display = 'none';
-      document.getElementById('maintenance').style.display = 'none';
+      document.getElementById('MaintenanceViewSection').style.display = 'block';
+      document.getElementById('VendorSection').style.display = 'block';
+      document.getElementById('maintenanceSection').style.display = 'block';
+    } else if (status === 1 && costRequestType === 'BBM') {
+      document.getElementById('BBM').style.display = 'block';
+      document.getElementById('KML').style.display = 'block';
+      document.getElementById('BBMSection').style.display = 'block';
+      document.getElementById('KMLSection').style.display = 'block';
+    } else if (status === 1 && costRequestType === 'Maintenance') {
+      document.getElementById('MaintenanceView').style.display = 'block';
+      document.getElementById('Vendor').style.display = 'block';
+      document.getElementById('MaintenanceViewSection').style.display = 'block';
+      document.getElementById('VendorSection').style.display = 'block';
     }
   });
 });

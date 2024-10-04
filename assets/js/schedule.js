@@ -4,7 +4,7 @@ let dt_User;
 $('body').append(`
  <!-- Modal Edit -->
 <div class="modal fade" id="myModal" tabindex="2" aria-labelledby="myModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editModalLabel">Schedule Off Time</h5>
@@ -15,8 +15,8 @@ $('body').append(`
         <form id="editForm">
           <div class="row mb-3">
             <div class="col-md-6">
-              <label for="planNo" class="form-label">Plan No</label>
-              <input type="text" class="form-control" id="planNo" placeholder="Masukkan Plan No">
+              <label for="planNo" class="form-label">Plat No</label>
+              <input type="text" class="form-control" id="planNo" placeholder="Masukkan Plat No">
             </div>
             <div class="col-md-6">
               <label for="offTimeType" class="form-label">Tipe Off Time</label>
@@ -31,11 +31,11 @@ $('body').append(`
           <div class="row mb-3">
             <div class="col-md-6">
               <label for="startOffTime" class="form-label">Start Off Date</label>
-              <input type="time" class="form-control" id="startOffTime">
+              <input type="date" class="form-control" id="startOffTime">
             </div>
             <div class="col-md-6">
               <label for="endOffTime" class="form-label">End Off Date</label>
-              <input type="time" class="form-control" id="endOffTime">
+              <input type="date" class="form-control" id="endOffTime">
             </div>
           </div>
           <div class="row mb-3">
@@ -93,7 +93,7 @@ $('body').append(`
 </div>
 
 <div class="modal fade" id="approval" tabindex="2" aria-labelledby="approval" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editModalLabel">Schedule Off Time</h5>
@@ -178,7 +178,7 @@ $('body').append(`
 
 
 <div class="modal fade" id="editModal" tabindex="2" aria-labelledby="editModal" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editModalLabel">Schedule Off Time</h5>
