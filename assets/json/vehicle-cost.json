@@ -27,7 +27,7 @@
       "plat_no_kendaraan": "ABC123",
       "nama_supir": "Supir C",
       "cost_request_type": "Maintenance",
-      "status": 1,
+      "status": 3,
       "req_date": "2024-10-01",
       "total_cost": "",
       "action_date": "",

@@ -254,10 +254,10 @@ $(document).ready(function () {
       {
         targets: 4,
         render: function (data, type, full) {
-          // Define the updated statusObj for mapping delivery_status values
           var statusObj = {
-            1: { title: 'Requested', class: 'bg-label-primary' },
-            2: { title: 'Completed', class: 'bg-label-success' }
+            1: { title: 'Requested', class: 'bg-label-danger' },
+            2: { title: 'Completed', class: 'bg-label-success' },
+            3: { title: 'Approved', class: 'bg-label-primary' }
           };
 
           // Fallback if status is not in statusObj
@@ -401,7 +401,7 @@ $(document).ready(function () {
       document.getElementById('KML').style.display = 'block';
       document.getElementById('BBMSection').style.display = 'block';
       document.getElementById('KMLSection').style.display = 'block';
-    } else if (status === 1 && costRequestType === 'Maintenance') {
+    } else if (status === 3 && costRequestType === 'Maintenance') {
       document.getElementById('MaintenanceView').style.display = 'block';
       document.getElementById('Vendor').style.display = 'block';
       document.getElementById('MaintenanceViewSection').style.display = 'block';
