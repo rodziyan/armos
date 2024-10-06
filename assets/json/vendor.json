@@ -4,61 +4,71 @@
       "vendor_name": "Vendor 1",
       "vendor_type": 1,
       "vendor_address": "Alamat Vendor 1",
-      "vendor_status": 1
+      "vendor_status": 1,
+      "action": "action"
     },
     {
       "vendor_name": "Vendor 2",
       "vendor_type": 2,
       "vendor_address": "Alamat Vendor 2",
-      "vendor_status": 1
+      "vendor_status": 1,
+      "action": "action"
     },
     {
       "vendor_name": "Vendor 3",
       "vendor_type": 1,
       "vendor_address": "Alamat Vendor 3",
-      "vendor_status": 2
+      "vendor_status": 2,
+      "action": "action"
     },
     {
       "vendor_name": "Vendor 4",
       "vendor_type": 2,
       "vendor_address": "Alamat Vendor 4",
-      "vendor_status": 1
+      "vendor_status": 1,
+      "action": "action"
     },
     {
       "vendor_name": "Vendor 5",
       "vendor_type": 1,
       "vendor_address": "Alamat Vendor 5",
-      "vendor_status": 2
+      "vendor_status": 2,
+      "action": "action"
     },
     {
       "vendor_name": "Vendor 6",
       "vendor_type": 2,
       "vendor_address": "Alamat Vendor 6",
-      "vendor_status": 1
+      "vendor_status": 1,
+      "action": "action"
     },
     {
       "vendor_name": "Vendor 7",
       "vendor_type": 1,
       "vendor_address": "Alamat Vendor 7",
-      "vendor_status": 1
+      "vendor_status": 1,
+      "action": "action"
     },
     {
       "vendor_name": "Vendor 8",
       "vendor_type": 2,
       "vendor_address": "Alamat Vendor 8",
-      "vendor_status": 2
+      "vendor_status": 2,
+      "action": "action"
     },
     {
       "vendor_name": "Vendor 9",
       "vendor_type": 1,
       "vendor_address": "Alamat Vendor 9",
-      "vendor_status": 1
+      "vendor_status": 1,
+      "action": "action"
     },
     {
       "vendor_name": "Vendor 10",
       "vendor_type": 2,
       "vendor_address": "Alamat Vendor 10",
-      "vendor_status": 1
+      "vendor_status": 1,
+      "action": "action"
     }
   ]
 }
