@@ -43,6 +43,28 @@
       "total_cost": "Rp.50.000",
       "action_date": "2024-11-01",
       "action": "Action"
+    },
+    {
+      "cost_order_id": "BBM-003",
+      "plat_no_kendaraan": "ABC123",
+      "nama_supir": "Supir B",
+      "cost_request_type": "BBM",
+      "status": 4,
+      "req_date": "2024-10-01",
+      "total_cost": "",
+      "action_date": "",
+      "action": "Action"
+    },
+    {
+      "cost_order_id": "Maintenance-003",
+      "plat_no_kendaraan": "ABC123",
+      "nama_supir": "Supir D",
+      "cost_request_type": "Maintenance",
+      "status": 4,
+      "req_date": "2024-10-01",
+      "total_cost": "",
+      "action_date": "",
+      "action": "Action"
     }
   ]
 }

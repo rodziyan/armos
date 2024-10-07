@@ -255,9 +255,10 @@ $(document).ready(function () {
         targets: 4,
         render: function (data, type, full) {
           var statusObj = {
-            1: { title: 'Requested', class: 'bg-label-danger' },
+            1: { title: 'Requested', class: 'bg-label-secondary' },
             2: { title: 'Completed', class: 'bg-label-success' },
-            3: { title: 'Approved', class: 'bg-label-primary' }
+            3: { title: 'Approved', class: 'bg-label-primary' },
+            4: { title: 'Canceled', class: 'bg-label-danger' }
           };
 
           // Fallback if status is not in statusObj
@@ -402,6 +403,16 @@ $(document).ready(function () {
       document.getElementById('BBMSection').style.display = 'block';
       document.getElementById('KMLSection').style.display = 'block';
     } else if (status === 3 && costRequestType === 'Maintenance') {
+      document.getElementById('MaintenanceView').style.display = 'block';
+      document.getElementById('Vendor').style.display = 'block';
+      document.getElementById('MaintenanceViewSection').style.display = 'block';
+      document.getElementById('VendorSection').style.display = 'block';
+    } else if (status === 4 && costRequestType === 'BBM') {
+      document.getElementById('BBM').style.display = 'block';
+      document.getElementById('KML').style.display = 'block';
+      document.getElementById('BBMSection').style.display = 'block';
+      document.getElementById('KMLSection').style.display = 'block';
+    } else if (status === 4 && costRequestType === 'Maintenance') {
       document.getElementById('MaintenanceView').style.display = 'block';
       document.getElementById('Vendor').style.display = 'block';
       document.getElementById('MaintenanceViewSection').style.display = 'block';
