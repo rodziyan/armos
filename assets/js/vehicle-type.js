@@ -189,6 +189,27 @@ $(function () {
         </div>
     </div>
 </div>
+
+<!-- Modal Delete Product -->
+<div class="modal fade" id="deleteVehicleModal" tabindex="-1" aria-labelledby="deleteVehicleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteVehicleModalLabel" style="flex: 1; display: flex; justify-content: center; align-items: center;">
+            <i class="ri-alert-fill" style="color: red; font-size: 100px;"></i>
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Apakah Anda yakin ingin menghapus kendaraan ini?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteVehicle">Hapus</button>
+      </div>
+    </div>
+  </div>
+</div>
     `;
     // Append the modal HTML to the body
     $('body').append(modalHTML);
@@ -382,9 +403,9 @@ $(function () {
                 data-customer-restriction="${full['customer_restriction']}">
                 <i class="ri-pencil-line ri-20px"></i>
             </button>
-            <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" style="border: none;">
-            <i class="ri-delete-bin-6-line ri-20px"></i>
-            </button>
+            <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect deleteVehicleModal" data-vehicle-id="123">
+                    <i class="ri-delete-bin-6-line ri-20px"></i>
+                  </button>
             `;
           }
         }
@@ -596,4 +617,23 @@ $(function () {
       dt_vehicle.row($(this).parents('tr')).remove().draw();
     });
   }
+  // Store the vehicle ID for deletion
+  let vehicleIdToDelete = null;
+
+  // Show the modal when the delete button is clicked
+  $('.datatables-vehicles tbody').on('click', '.deleteVehicleModal', function () {
+    // Get the vehicle ID from the button's data attribute
+    vehicleIdToDelete = $(this).data('vehicle-id');
+
+    // Show the delete modal
+    $('#deleteVehicleModal').modal('show');
+  });
+
+  // Handle delete confirmation
+  $(document).on('click', '#deleteVehicleModal .btn-danger', function () {
+    if (vehicleIdToDelete !== null) {
+      console.log('Deleting vehicle with ID:', vehicleIdToDelete);
+      $('#deleteVehicleModal').modal('hide');
+    }
+  });
 });

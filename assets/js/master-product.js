@@ -129,6 +129,27 @@ $(function () {
         </div>
     </div>
 
+    <!-- Modal Delete Product -->
+<div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteProductModalLabel" style="flex: 1; display: flex; justify-content: center; align-items: center;">
+            <i class="ri-alert-fill" style="color: red; font-size: 100px;"></i>
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Apakah anda yakin ingin menghapus produk ini?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-danger">Hapus</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   `;
     // Append the modal HTML to the body
     $('body').append(modalHTML);
@@ -259,8 +280,9 @@ $(function () {
                       data-modal-product-length="${full['product_length']}">
                       <i class="ri-edit-line ri-20px"></i>
                   </button>
-                  <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" style="border: none;">
-                  <i class="ri-delete-bin-6-line ri-20px"></i>
+                  <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect deleteProductModal" 
+                      data-product-sku="${full['product_sku']}">
+                      <i class="ri-delete-bin-6-line ri-20px"></i>
                   </button>
               `;
           }
@@ -378,4 +400,24 @@ $(function () {
       dt_vehicle.row($(this).parents('tr')).remove().draw();
     });
   }
+  // Show delete product modal
+  $('.datatables-vehicles tbody').on('click', '.deleteProductModal', function () {
+    var productSKU = $(this).data('product-sku'); // Ambil SKU dari data attribute
+    $('#deleteProductModal .modal-body').text(`Apakah anda yakin ingin menghapus produk ${productSKU} ini?`);
+
+    // Tampilkan modal delete
+    $('#deleteProductModal').modal('show');
+  });
+
+  // Handle delete confirmation
+  $(document).on('click', '#deleteProductModal .btn-danger', function () {
+    var productSKU = $('#deleteProductModal .modal-body')
+      .text()
+      .match(/produk (.*) ini/)[1]; // Ekstrak SKU dari teks modal
+    console.log(`Deleting product with SKU: ${productSKU}`);
+
+    // Tambahkan logika penghapusan di sini, misalnya panggil AJAX untuk menghapus produk
+    // Tutup modal setelah penghapusan
+    $('#deleteProductModal').modal('hide');
+  });
 });

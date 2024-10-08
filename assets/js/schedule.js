@@ -104,8 +104,8 @@ $('body').append(`
         <form id="editForm">
           <div class="row mb-3">
             <div class="col-md-6">
-              <label for="planNo" class="form-label">Plan No</label>
-              <input type="text" class="form-control" id="planNo" placeholder="Masukkan Plan No" value="JKL012" readonly>
+              <label for="planNo" class="form-label">Plat No</label>
+              <input type="text" class="form-control" id="planNo" placeholder="Masukkan Plat No" value="JKL012" readonly>
             </div>
             <div class="col-md-6">
               <label for="offTimeType" class="form-label">Tipe Off Time</label>
@@ -189,8 +189,8 @@ $('body').append(`
         <form id="editForm">
           <div class="row mb-3">
             <div class="col-md-6">
-              <label for="planNo" class="form-label">Plan No</label>
-              <input type="text" class="form-control" id="planNo" placeholder="Masukkan Plan No" value="JKL012">
+              <label for="planNo" class="form-label">Plat No</label>
+              <input type="text" class="form-control" id="planNo" placeholder="Masukkan Plat No" value="JKL012">
             </div>
             <div class="col-md-6">
               <label for="offTimeType" class="form-label">Tipe Off Time</label>
