@@ -712,8 +712,15 @@
                       </div>
                       <!-- Filter by Driver & Vehicle -->
                       <div class="col-md">
-                        <input type="text" id="filter-driver-vehicle" class="form-control" placeholder="Filter by Driver Status" />
-                      </div>
+                        <label for="filter-driver-vehicle" class="form-label">Filter by Driver Status</label>
+                        <select id="filter-driver-vehicle" class="form-control">
+                          <option value="">Select Driver Status</option>
+                          <option value="ready-to-deliver">Ready to Deliver</option>
+                          <option value="in-delivery">In Delivery</option>
+                          <option value="delivery-reconciliation">Delivery Reconciliation</option>
+                          <option value="loading">Loading</option>
+                        </select>
+                      </div>                      
                       <!-- Filter by Delivery Type -->
                       <div class="col-md">
                         <input type="text" id="filter-delivery-tipe" class="form-control" placeholder="Filter by Route ID" />
