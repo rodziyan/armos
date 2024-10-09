@@ -3,54 +3,74 @@
 const modalHTML = `
 
 <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" style="max-width: 40%; width: auto; max-height: 80vh;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 80%; width: auto; max-height: 80vh;">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <!-- First Section -->
-                <div class="d-flex left-content-between mb-3" style="text-align: left;">
-                    <div>
-                        <p>Location : <strong>Toko A</strong></p>
-                        <p>Delivery Type : <strong>Delivery</strong></p>
-                    </div>
-                    <div class="mx-auto">
-                        <p>Faktur ID : <strong>F001</strong></p>
-                        <p>Total Value : <strong>Rp80.000</strong></p>
-                    </div>
+                <!-- Combined Table for All Stores -->
+                <div class="mb-4">
+                    <table class="table table-bordered">
+                        <thead class="table-success">
+                            <tr>
+                                <th>Toko</th>
+                                <th>Jumlah Dokumen</th>
+                                <th>Total Faktur Qty</th>
+                                <th>Total WMS Qty</th>
+                                <th>Total Delivery Qty</th>
+                                <th>Total Received Qty</th>
+                                <th>Total Retur Qty</th>
+                                <th>Total Truck Qty</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Toko A -->
+                            <tr>
+                                <td>Toko A</td>
+                                <td>3</td>
+                                <td>60</td>
+                                <td>55</td>
+                                <td>50</td>
+                                <td>45</td>
+                                <td>5</td>
+                                <td>40</td>
+                                <td><span class="badge bg-success">Completed</span></td>
+                            </tr>
+                            <!-- Toko B -->
+                            <tr>
+                                <td>Toko B</td>
+                                <td>2</td>
+                                <td>50</td>
+                                <td>45</td>
+                                <td>42</td>
+                                <td>40</td>
+                                <td>2</td>
+                                <td>38</td>
+                                <td><span class="badge bg-warning">In Progress</span></td>
+                            </tr>
+                            <!-- Toko C -->
+                            <tr>
+                                <td>Toko C</td>
+                                <td>4</td>
+                                <td>80</td>
+                                <td>75</td>
+                                <td>70</td>
+                                <td>68</td>
+                                <td>2</td>
+                                <td>65</td>
+                                <td><span class="badge bg-danger">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <!-- Table Section -->
-                <table class="table table-bordered">
-                    <thead>
-                        <tr class="table-success">
-                            <th>Produk</th>
-                            <th>Qty</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Produk 1</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Produk 2</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Produk 3</td>
-                            <td>40</td>
-                        </tr>
-                        <tr class="table-success">
-                            <td><strong>TOTAL</strong></td>
-                            <td><strong>80</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
 </div>
+
+
 `;
 
 $(document).ready(function () {
