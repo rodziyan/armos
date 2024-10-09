@@ -15,10 +15,16 @@ $('body').append(`
         <form id="editForm">
           <div class="row">
             <!-- Nama Toko -->
-            <div class="col-md-6 mb-3">
-              <label for="storeName" class="form-label">Nama Toko</label>
-              <input type="text" class="form-control" id="storeName" placeholder="Masukkan Nama Toko">
-            </div>
+              <div class="col-md-6 mb-3">
+                <label for="storeName" class="form-label">Nama Toko</label>
+                <select class="form-control" id="storeName">
+                  <option value="" disabled selected>Pilih Nama Toko</option>
+                  <option value="toko1">Toko 1</option>
+                  <option value="toko2">Toko 2</option>
+                  <option value="toko3">Toko 3</option>
+                  <option value="toko4">Toko 4</option>
+                </select>
+              </div>
 
             <!-- Retur Document -->
             <div class="col-md-6 mb-3">
@@ -35,10 +41,16 @@ $('body').append(`
             </div>
 
             <!-- Approval By -->
-            <div class="col-md-6 mb-3">
-              <label for="approvalBy" class="form-label">Approval By</label>
-              <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama Approval">
-            </div>
+              <div class="col-md-6 mb-3">
+                <label for="approvalBy" class="form-label">Approval By</label>
+                <select class="form-control" id="approvalBy">
+                  <option value="" disabled selected>Pilih Nama Approval</option>
+                  <option value="finance1">Finance User 1</option>
+                  <option value="finance2">Finance User 2</option>
+                  <option value="finance3">Finance User 3</option>
+                  <option value="finance4">Finance User 4</option>
+                </select>
+              </div>
           </div>
 
           <div class="row">
@@ -64,17 +76,44 @@ $('body').append(`
             </thead>
             <tbody id="productTableBody">
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk"></td> 
+                <td>
+                  <select class="form-control">
+                    <option value="" disabled selected>Pilih Nama Produk</option>
+                    <option value="produk1">Produk 1</option>
+                    <option value="produk2">Produk 2</option>
+                    <option value="produk3">Produk 3</option>
+                    <option value="produk4">Produk 4</option>
+                    <!-- Tambahkan opsi produk lainnya sesuai kebutuhan -->
+                  </select>
+                </td>
                 <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;">
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk"></td> 
+                <td>
+                  <select class="form-control">
+                    <option value="" disabled selected>Pilih Nama Produk</option>
+                    <option value="produk1">Produk 1</option>
+                    <option value="produk2">Produk 2</option>
+                    <option value="produk3">Produk 3</option>
+                    <option value="produk4">Produk 4</option>
+                    <!-- Tambahkan opsi produk lainnya sesuai kebutuhan -->
+                  </select>
+                </td>
                 <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;"></td> 
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk"></td> 
+                <td>
+                  <select class="form-control">
+                    <option value="" disabled selected>Pilih Nama Produk</option>
+                    <option value="produk1">Produk 1</option>
+                    <option value="produk2">Produk 2</option>
+                    <option value="produk3">Produk 3</option>
+                    <option value="produk4">Produk 4</option>
+                    <!-- Tambahkan opsi produk lainnya sesuai kebutuhan -->
+                  </select>
+                </td>
                 <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;" ></td> 
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
@@ -130,7 +169,14 @@ $('body').append(`
             <!-- Nama Toko -->
             <div class="col-md-6 mb-3">
               <label for="storeName" class="form-label">Nama Toko</label>
-              <input type="text" class="form-control" id="storeName" placeholder="Masukkan Nama Toko" value="Toko ABC">
+              <select class="form-control" id="storeName">
+                <option value="" disabled selected>Pilih Nama Toko</option>
+                <option value="tokoABC" selected>Toko ABC</option>
+                <option value="tokoXYZ">Toko XYZ</option>
+                <option value="tokoDEF">Toko DEF</option>
+                <option value="tokoGHI">Toko GHI</option>
+                <!-- Tambahkan opsi toko lainnya sesuai kebutuhan -->
+              </select>
             </div>
 
             <!-- Retur Document -->
@@ -150,7 +196,13 @@ $('body').append(`
             <!-- Approval By -->
             <div class="col-md-6 mb-3">
               <label for="approvalBy" class="form-label">Approval By</label>
-              <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama Approval" value="John Doe">
+              <select class="form-control" id="approvalBy">
+                <option value="" disabled selected>Pilih Nama Approval</option>
+                <option value="financeUser1">John Doe</option>
+                <option value="financeUser2">Jane Smith</option>
+                <option value="financeUser3">Alice Johnson</option>
+                <option value="financeUser4">Robert Brown</option>
+              </select>
             </div>
           </div>
 
@@ -177,17 +229,41 @@ $('body').append(`
             </thead>
             <tbody id="productTableBody">
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk" value="Produk A"></td> 
+                <td>
+                  <select class="form-control">
+                    <option value="produkA" selected>Produk A</option>
+                    <option value="produkB">Produk B</option>
+                    <option value="produkC">Produk C</option>
+                    <option value="produkD">Produk D</option>
+                    <!-- Tambahkan opsi produk lainnya sesuai kebutuhan -->
+                  </select>
+                </td>
                 <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;" value="5"></td> 
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk" value="Produk B"></td> 
+                <td>
+                  <select class="form-control">
+                    <option value="produkA" selected>Produk B</option>
+                    <option value="produkB">Produk A</option>
+                    <option value="produkC">Produk C</option>
+                    <option value="produkD">Produk D</option>
+                    <!-- Tambahkan opsi produk lainnya sesuai kebutuhan -->
+                  </select>
+                </td> 
                 <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;" value="3"></td> 
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
               <tr>
-                <td><input type="text" class="form-control" placeholder="Nama Produk" value="Produk C"></td> 
+                <td>
+                  <select class="form-control">
+                    <option value="produkA" selected>Produk C</option>
+                    <option value="produkB">Produk B</option>
+                    <option value="produkC">Produk A</option>
+                    <option value="produkD">Produk D</option>
+                    <!-- Tambahkan opsi produk lainnya sesuai kebutuhan -->
+                  </select>
+                </td> 
                 <td><input type="number" class="form-control" placeholder="Qty" style="width: 100px;" value="8"></td> 
                 <td><button type="button" class="btn btn-danger ri-delete-bin-6-line" aria-label="Delete"></button></td>
               </tr>
