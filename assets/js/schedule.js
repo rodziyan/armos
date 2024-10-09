@@ -16,7 +16,13 @@ $('body').append(`
           <div class="row mb-3">
             <div class="col-md-6">
               <label for="planNo" class="form-label">Plat No</label>
-              <input type="text" class="form-control" id="planNo" placeholder="Masukkan Plat No">
+              <select class="form-select" id="planNo">
+                <option value="" disabled selected>Pilih Plat No</option>
+                <option value="B 1234 XYZ">B 1234 XYZ</option>
+                <option value="D 5678 ABC">D 5678 ABC</option>
+                <option value="L 9101 DEF">L 9101 DEF</option>
+                <option value="F 2345 GHI">F 2345 GHI</option>
+              </select>
             </div>
             <div class="col-md-6">
               <label for="offTimeType" class="form-label">Tipe Off Time</label>
@@ -62,7 +68,13 @@ $('body').append(`
             </div>
             <div class="col-md-6">
               <label for="requestedBy" class="form-label">Requested By</label>
-              <input type="text" class="form-control" id="requestedBy" placeholder="Masukkan Nama">
+              <select class="form-select" id="requestedBy">
+                <option value="" disabled selected>Pilih Nama</option>
+                <option value="John Doe">John Doe</option>
+                <option value="Jane Smith">Jane Smith</option>
+                <option value="Michael Johnson">Michael Johnson</option>
+                <option value="Sarah Lee">Sarah Lee</option>
+              </select>
             </div>
           </div>
           <div class="row mb-3">
@@ -72,7 +84,13 @@ $('body').append(`
             </div>
             <div class="col-md-6">
               <label for="approvalBy" class="form-label">Approved By</label>
-              <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama">
+              <select class="form-select" id="approvalBy">
+                <option value="" disabled selected>Pilih Nama</option>
+                <option value="Alice Williams">Alice Williams</option>
+                <option value="David Brown">David Brown</option>
+                <option value="Emily Davis">Emily Davis</option>
+                <option value="James Wilson">James Wilson</option>
+              </select>
             </div>
           </div>
           <div class="row mb-3">
@@ -190,7 +208,13 @@ $('body').append(`
           <div class="row mb-3">
             <div class="col-md-6">
               <label for="planNo" class="form-label">Plat No</label>
-              <input type="text" class="form-control" id="planNo" placeholder="Masukkan Plat No" value="JKL012">
+              <select class="form-select" id="planNo">
+                <option value="" disabled selected>Pilih Plat No</option>
+                <option value="JKL012" selected>JKL012</option>
+                <option value="B 1234 XYZ">B 1234 XYZ</option>
+                <option value="D 5678 ABC">D 5678 ABC</option>
+                <option value="L 9101 DEF">L 9101 DEF</option>
+              </select>
             </div>
             <div class="col-md-6">
               <label for="offTimeType" class="form-label">Tipe Off Time</label>
@@ -239,7 +263,13 @@ $('body').append(`
             </div>
             <div class="col-md-6">
               <label for="requestedBy" class="form-label">Requested By</label>
-              <input type="text" class="form-control" id="requestedBy" placeholder="Masukkan Nama" value="User D">
+              <select class="form-select" id="requestedBy">
+                <option value="" disabled selected>Pilih Nama</option>
+                <option value="User A">User A</option>
+                <option value="User B">User B</option>
+                <option value="User C">User C</option>
+                <option value="User D" selected>User D</option>
+              </select>
             </div>
           </div>
           <div class="row mb-3">
@@ -249,7 +279,13 @@ $('body').append(`
             </div>
             <div class="col-md-6">
               <label for="approvalBy" class="form-label">Approved By</label>
-              <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama" value="Manager W">
+              <select class="form-select" id="approvalBy">
+                <option value="" disabled selected>Pilih Nama</option>
+                <option value="Manager A">Manager A</option>
+                <option value="Manager B">Manager B</option>
+                <option value="Manager C">Manager C</option>
+                <option value="Manager W" selected>Manager W</option>
+              </select>
             </div>
           </div>
           <div class="row mb-3">
