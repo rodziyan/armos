@@ -1,33 +1,55 @@
 'use strict';
 
 const modalHTML = `
-<!-- Modal -->
+
 <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="updateModalLabel">Detail Information</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="mb-3">
-          <label for="modalNamaToko" class="form-label">Nama Toko</label>
-          <input type="text" class="form-control" id="modalNamaToko" readonly>
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 40%; width: auto; max-height: 80vh;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- First Section -->
+                <div class="d-flex left-content-between mb-3" style="text-align: left;">
+                    <div>
+                        <p>Location : <strong>Toko A</strong></p>
+                        <p>Delivery Type : <strong>Delivery</strong></p>
+                    </div>
+                    <div class="mx-auto">
+                        <p>Faktur ID : <strong>F001</strong></p>
+                        <p>Total Value : <strong>Rp80.000</strong></p>
+                    </div>
+                </div>
+                <!-- Table Section -->
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="table-success">
+                            <th>Produk</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Produk 1</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Produk 2</td>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <td>Produk 3</td>
+                            <td>40</td>
+                        </tr>
+                        <tr class="table-success">
+                            <td><strong>TOTAL</strong></td>
+                            <td><strong>80</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div class="mb-3">
-          <label for="modalTotalBarang" class="form-label">Total Barang</label>
-          <input type="text" class="form-control" id="modalTotalBarang" readonly>
-        </div>
-        <div class="mb-3">
-          <label for="modalStatus" class="form-label">Status</label>
-          <div id="modalStatus"></div>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id="modalActionButton">Cancel</button>
-      </div>
     </div>
-  </div>
 </div>
 `;
 
@@ -40,61 +62,46 @@ $(document).ready(function () {
   if (dtRouteVehiclesTable.length) {
     dtRouteVehiclesTable.DataTable({
       ajax: {
-        url: assetsPath + 'json/driverActivity.json', // JSON file to add data
-        dataSrc: 'data' // Adjust if needed based on your JSON structure
+        url: assetsPath + 'json/driverActivity.json',
+        dataSrc: 'data'
       },
       columns: [
-        { data: '' },
-        { data: 'id' },
-        { data: 'faktur_number' },
-        { data: 'tanggal' },
-        { data: 'total_drop_hari_ini' },
+        { data: 'RouteID' },
+        { data: 'Driver' },
+        { data: 'DeliveryDate' },
+        { data: 'TotalDrop' },
         { data: 'status' },
         { data: 'action' }
       ],
       columnDefs: [
         {
-          className: 'control',
-          searchable: false,
-          orderable: false,
-          responsivePriority: 2,
           targets: 0,
+          responsivePriority: 4,
           render: function (data, type, full, meta) {
-            return '';
+            return '<span>' + (full['RouteID'] || 'N/A') + '</span>';
           }
         },
         {
           targets: 1,
-          orderable: false,
-          render: function (data, type, full) {
-            return '<input type="checkbox" class="dt-checkboxes form-check-input" data-id="' + full['id'] + '">';
-          },
-          checkboxes: {
-            selectAllRender: '<input type="checkbox" class="form-check-input">'
+          responsivePriority: 4,
+          render: function (data, type, full, meta) {
+            return '<span>' + (full['Driver'] || 'N/A') + '</span>';
           }
         },
         {
           targets: 2,
-          responsivePriority: 4,
           render: function (data, type, full, meta) {
-            return '<span>' + (full['faktur_number'] || 'N/A') + '</span>';
+            return '<span>' + (full['DeliveryDate'] || 'N/A') + '</span>';
           }
         },
         {
           targets: 3,
-          responsivePriority: 4,
           render: function (data, type, full, meta) {
-            return '<span>' + (full['tanggal'] || 'N/A') + '</span>';
+            return '<span>' + (full['TotalDrop'] || 'N/A') + '</span>';
           }
         },
         {
           targets: 4,
-          render: function (data, type, full, meta) {
-            return '<span>' + (full['total_drop_hari_ini'] || 'N/A') + '</span>';
-          }
-        },
-        {
-          targets: 5,
           render: function (data, type, full, meta) {
             var $status = full['status'];
             var statusObj = {

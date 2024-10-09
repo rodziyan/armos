@@ -1,254 +1,204 @@
 {
   "data": [
     {
-      "id": 1,
-      "tanggal": "2024-08-14",
-      "total_drop_hari_ini": 150,
-      "status": 1,
-      "nama_toko": "Toko A",
-      "total_barang": 300,
-      "faktur_number": "F0001",
-      "action": "action"
+      "RouteID": 1,
+      "Driver": "Toko A",
+      "DeliveryDate": "2024-08-14",
+      "TotalDrop": 150,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 2,
-      "tanggal": "2024-08-16",
-      "total_drop_hari_ini": 200,
-      "status": 2,
-      "nama_toko": "Toko B",
-      "total_barang": 450,
-      "faktur_number": "F0002",
-      "action": "action"
+      "RouteID": 2,
+      "Driver": "Toko B",
+      "DeliveryDate": "2024-08-16",
+      "TotalDrop": 200,
+      "status": "1",
+      "Action": "action"
     },
     {
-      "id": 3,
-      "tanggal": "2024-08-13",
-      "total_drop_hari_ini": 175,
-      "status": 1,
-      "nama_toko": "Toko C",
-      "total_barang": 320,
-      "faktur_number": "F0003",
-      "action": "action"
+      "RouteID": 3,
+      "Driver": "Toko C",
+      "DeliveryDate": "2024-08-13",
+      "TotalDrop": 175,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 4,
-      "tanggal": "2024-08-15",
-      "total_drop_hari_ini": 190,
-      "status": 1,
-      "nama_toko": "Toko D",
-      "total_barang": 400,
-      "faktur_number": "F0004",
-      "action": "action"
+      "RouteID": 4,
+      "Driver": "Toko D",
+      "DeliveryDate": "2024-08-15",
+      "TotalDrop": 190,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 5,
-      "tanggal": "2024-08-12",
-      "total_drop_hari_ini": 160,
-      "status": 2,
-      "nama_toko": "Toko E",
-      "total_barang": 350,
-      "faktur_number": "F0005",
-      "action": "action"
+      "RouteID": 5,
+      "Driver": "Toko E",
+      "DeliveryDate": "2024-08-12",
+      "TotalDrop": 160,
+      "status": "1",
+      "Action": "action"
     },
     {
-      "id": 6,
-      "tanggal": "2024-08-18",
-      "total_drop_hari_ini": 210,
-      "status": 1,
-      "nama_toko": "Toko F",
-      "total_barang": 500,
-      "faktur_number": "F0006",
-      "action": "action"
+      "RouteID": 6,
+      "Driver": "Toko F",
+      "DeliveryDate": "2024-08-18",
+      "TotalDrop": 210,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 7,
-      "tanggal": "2024-08-10",
-      "total_drop_hari_ini": 130,
-      "status": 2,
-      "nama_toko": "Toko G",
-      "total_barang": 270,
-      "faktur_number": "F0007",
-      "action": "action"
+      "RouteID": 7,
+      "Driver": "Toko G",
+      "DeliveryDate": "2024-08-10",
+      "TotalDrop": 130,
+      "status": "1",
+      "Action": "action"
     },
     {
-      "id": 8,
-      "tanggal": "2024-08-11",
-      "total_drop_hari_ini": 145,
-      "status": 1,
-      "nama_toko": "Toko H",
-      "total_barang": 295,
-      "faktur_number": "F0008",
-      "action": "action"
+      "RouteID": 8,
+      "Driver": "Toko H",
+      "DeliveryDate": "2024-08-11",
+      "TotalDrop": 145,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 9,
-      "tanggal": "2024-08-17",
-      "total_drop_hari_ini": 185,
-      "status": 2,
-      "nama_toko": "Toko I",
-      "total_barang": 430,
-      "faktur_number": "F0009",
-      "action": "action"
+      "RouteID": 9,
+      "Driver": "Toko I",
+      "DeliveryDate": "2024-08-17",
+      "TotalDrop": 185,
+      "status": "1",
+      "Action": "action"
     },
     {
-      "id": 10,
-      "tanggal": "2024-08-09",
-      "total_drop_hari_ini": 120,
-      "status": 1,
-      "nama_toko": "Toko J",
-      "total_barang": 250,
-      "faktur_number": "F0010",
-      "action": "action"
+      "RouteID": 10,
+      "Driver": "Toko J",
+      "DeliveryDate": "2024-08-09",
+      "TotalDrop": 120,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 11,
-      "tanggal": "2024-08-20",
-      "total_drop_hari_ini": 225,
-      "status": 2,
-      "nama_toko": "Toko K",
-      "total_barang": 520,
-      "faktur_number": "F0011",
-      "action": "action"
+      "RouteID": 11,
+      "Driver": "Toko K",
+      "DeliveryDate": "2024-08-20",
+      "TotalDrop": 225,
+      "status": "1",
+      "Action": "action"
     },
     {
-      "id": 12,
-      "tanggal": "2024-08-19",
-      "total_drop_hari_ini": 195,
-      "status": 1,
-      "nama_toko": "Toko L",
-      "total_barang": 480,
-      "faktur_number": "F0012",
-      "action": "action"
+      "RouteID": 12,
+      "Driver": "Toko L",
+      "DeliveryDate": "2024-08-19",
+      "TotalDrop": 195,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 13,
-      "tanggal": "2024-08-08",
-      "total_drop_hari_ini": 110,
-      "status": 2,
-      "nama_toko": "Toko M",
-      "total_barang": 230,
-      "faktur_number": "F0013",
-      "action": "action"
+      "RouteID": 13,
+      "Driver": "Toko M",
+      "DeliveryDate": "2024-08-08",
+      "TotalDrop": 110,
+      "status": "1",
+      "Action": "action"
     },
     {
-      "id": 14,
-      "tanggal": "2024-08-21",
-      "total_drop_hari_ini": 240,
-      "status": 1,
-      "nama_toko": "Toko N",
-      "total_barang": 550,
-      "faktur_number": "F0014",
-      "action": "action"
+      "RouteID": 14,
+      "Driver": "Toko N",
+      "DeliveryDate": "2024-08-21",
+      "TotalDrop": 240,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 15,
-      "tanggal": "2024-08-07",
-      "total_drop_hari_ini": 105,
-      "status": 1,
-      "nama_toko": "Toko O",
-      "total_barang": 215,
-      "faktur_number": "F0015",
-      "action": "action"
+      "RouteID": 15,
+      "Driver": "Toko O",
+      "DeliveryDate": "2024-08-07",
+      "TotalDrop": 105,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 16,
-      "tanggal": "2024-08-22",
-      "total_drop_hari_ini": 260,
-      "status": 2,
-      "nama_toko": "Toko P",
-      "total_barang": 600,
-      "faktur_number": "F0016",
-      "action": "action"
+      "RouteID": 16,
+      "Driver": "Toko P",
+      "DeliveryDate": "2024-08-22",
+      "TotalDrop": 260,
+      "status": "1",
+      "Action": "action"
     },
     {
-      "id": 17,
-      "tanggal": "2024-08-06",
-      "total_drop_hari_ini": 95,
-      "status": 1,
-      "nama_toko": "Toko Q",
-      "total_barang": 190,
-      "faktur_number": "F0017",
-      "action": "action"
+      "RouteID": 17,
+      "Driver": "Toko Q",
+      "DeliveryDate": "2024-08-06",
+      "TotalDrop": 95,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 18,
-      "tanggal": "2024-08-23",
-      "total_drop_hari_ini": 275,
-      "status": 2,
-      "nama_toko": "Toko R",
-      "total_barang": 650,
-      "faktur_number": "F0018",
-      "action": "action"
+      "RouteID": 18,
+      "Driver": "Toko R",
+      "DeliveryDate": "2024-08-23",
+      "TotalDrop": 275,
+      "status": "1",
+      "Action": "action"
     },
     {
-      "id": 19,
-      "tanggal": "2024-08-05",
-      "total_drop_hari_ini": 85,
-      "status": 1,
-      "nama_toko": "Toko S",
-      "total_barang": 175,
-      "faktur_number": "F0019",
-      "action": "action"
+      "RouteID": 19,
+      "Driver": "Toko S",
+      "DeliveryDate": "2024-08-05",
+      "TotalDrop": 85,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 20,
-      "tanggal": "2024-08-24",
-      "total_drop_hari_ini": 290,
-      "status": 1,
-      "nama_toko": "Toko T",
-      "total_barang": 700,
-      "faktur_number": "F0020",
-      "action": "action"
+      "RouteID": 20,
+      "Driver": "Toko T",
+      "DeliveryDate": "2024-08-24",
+      "TotalDrop": 290,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 21,
-      "tanggal": "2024-08-04",
-      "total_drop_hari_ini": 75,
-      "status": 2,
-      "nama_toko": "Toko U",
-      "total_barang": 150,
-      "faktur_number": "F0021",
-      "action": "action"
+      "RouteID": 21,
+      "Driver": "Toko U",
+      "DeliveryDate": "2024-08-04",
+      "TotalDrop": 75,
+      "status": "1",
+      "Action": "action"
     },
     {
-      "id": 22,
-      "tanggal": "2024-08-25",
-      "total_drop_hari_ini": 305,
-      "status": 1,
-      "nama_toko": "Toko V",
-      "total_barang": 750,
-      "faktur_number": "F0022",
-      "action": "action"
+      "RouteID": 22,
+      "Driver": "Toko V",
+      "DeliveryDate": "2024-08-25",
+      "TotalDrop": 305,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 23,
-      "tanggal": "2024-08-03",
-      "total_drop_hari_ini": 70,
-      "status": 2,
-      "nama_toko": "Toko W",
-      "total_barang": 140,
-      "faktur_number": "F0023",
-      "action": "action"
+      "RouteID": 23,
+      "Driver": "Toko W",
+      "DeliveryDate": "2024-08-03",
+      "TotalDrop": 70,
+      "status": "1",
+      "Action": "action"
     },
     {
-      "id": 24,
-      "tanggal": "2024-08-26",
-      "total_drop_hari_ini": 320,
-      "status": 1,
-      "nama_toko": "Toko X",
-      "total_barang": 800,
-      "faktur_number": "F0024",
-      "action": "action"
+      "RouteID": 24,
+      "Driver": "Toko X",
+      "DeliveryDate": "2024-08-26",
+      "TotalDrop": 320,
+      "status": "2",
+      "Action": "action"
     },
     {
-      "id": 25,
-      "tanggal": "2024-08-02",
-      "total_drop_hari_ini": 65,
-      "status": 2,
-      "nama_toko": "Toko Y",
-      "total_barang": 130,
-      "faktur_number": "F0025",
-      "action": "action"
+      "RouteID": 25,
+      "Driver": "Toko Y",
+      "DeliveryDate": "2024-08-02",
+      "TotalDrop": 65,
+      "status": "1",
+      "Action": "action"
     }
   ]
 }
