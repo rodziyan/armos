@@ -48,7 +48,7 @@ const modalHTML = `
                                 <td>40</td>
                                 <td>2</td>
                                 <td>38</td>
-                                <td><span class="badge bg-warning">In Progress</span></td>
+                                <td><span class="badge bg-success">Completed</span></td>
                             </tr>
                             <!-- Toko C -->
                             <tr>
@@ -60,7 +60,7 @@ const modalHTML = `
                                 <td>68</td>
                                 <td>2</td>
                                 <td>65</td>
-                                <td><span class="badge bg-danger">Pending</span></td>
+                                <td><span class="badge bg-success">Completed</span></td>
                             </tr>
                         </tbody>
                     </table>
