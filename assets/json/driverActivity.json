@@ -39,46 +39,6 @@
       "TotalDrop": 4,
       "status": "1",
       "Action": "action"
-    },
-    {
-      "RouteID": "R006",
-      "Driver": "Toko F",
-      "DeliveryDate": "2024-08-18",
-      "TotalDrop": 3,
-      "status": "2",
-      "Action": "action"
-    },
-    {
-      "RouteID": "R007",
-      "Driver": "Toko G",
-      "DeliveryDate": "2024-08-10",
-      "TotalDrop": 7,
-      "status": "1",
-      "Action": "action"
-    },
-    {
-      "RouteID": "R008",
-      "Driver": "Toko H",
-      "DeliveryDate": "2024-08-11",
-      "TotalDrop": 4,
-      "status": "2",
-      "Action": "action"
-    },
-    {
-      "RouteID": "R009",
-      "Driver": "Toko I",
-      "DeliveryDate": "2024-08-17",
-      "TotalDrop": 10,
-      "status": "1",
-      "Action": "action"
-    },
-    {
-      "RouteID": "R010",
-      "Driver": "Toko J",
-      "DeliveryDate": "2024-08-09",
-      "TotalDrop": 8,
-      "status": "2",
-      "Action": "action"
     }
   ]
 }

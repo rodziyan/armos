@@ -126,7 +126,7 @@ $(document).ready(function () {
             var $status = full['status'];
             var statusObj = {
               1: { title: 'Complete', class: 'bg-label-success' },
-              2: { title: 'Incomplete', class: 'bg-label-secondary' }
+              2: { title: 'In Progress', class: 'bg-label-secondary' }
             };
             return (
               '<span class="badge ' +
@@ -146,7 +146,7 @@ $(document).ready(function () {
           render: function (data, type, full) {
             var statusObj = {
               1: { title: 'Complete', class: 'bg-label-success' },
-              2: { title: 'Incomplete', class: 'bg-label-secondary' }
+              2: { title: 'In Progress', class: 'bg-label-secondary' }
             };
             var statusBadge =
               '<span class="badge rounded-pill ' +
