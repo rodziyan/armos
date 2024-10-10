@@ -432,12 +432,12 @@ $(document).ready(function () {
           <i class="bi bi-exclamation-circle" style="font-size: 3rem;"></i>
         </div>
         <!-- Warning Message -->
-        <h5 class="text-danger">Apakah Anda yakin untuk menghapus rute ini?</h5>
+        <h5 class="text-danger">Apakah Anda yakin untuk Membatalkan rute ini?</h5>
         <p>Data yang Anda hapus akan kembali ke menu Outstanding Order.</p>
       </div>
       <div class="modal-footer justify-content-center">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-danger" id="confirmDeleteRoute">Ya, Hapus Rute</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteRoute">Ya, Batalkan Rute</button>
       </div>
     </div>
   </div>
