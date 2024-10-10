@@ -112,8 +112,8 @@ $(document).ready(function () {
           render: function (data, type, full, meta) {
             var $invStatus = full['inv_status'];
             var invStatusObj = {
-              1: { title: 'Available', class: 'bg-label-success' }, // Full inventory
-              2: { title: 'Not Available', class: 'bg-label-danger' } // Inventory not full
+              1: { title: 'Full Fill', class: 'bg-label-success' }, // Full inventory
+              2: { title: 'Not Full Fill', class: 'bg-label-danger' } // Inventory not full
             };
 
             // Ensure invStatusObj[$invStatus] exists
