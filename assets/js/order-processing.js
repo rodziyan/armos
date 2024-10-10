@@ -20,16 +20,17 @@ $(document).ready(function () {
         { data: 'faktur_date' },
         { data: 'delivery_date' },
         { data: 'qty' },
+        { data: 'wms_qty' },
         { data: 'value' },
         { data: 'status' },
+        { data: 'inv_status' },
         { data: 'scheduled_optimization_date' },
         { data: 'scheduled_optimization_time' },
-        { data: 'delivery_type' },
         { data: 'action' }
       ],
       columnDefs: [
         {
-          targets: 0,
+          targets: 0, // Checkbox in first column
           orderable: false,
           render: function (data, type, row) {
             return '<input type="checkbox" class="select-checkbox" style="display:none;">';
@@ -72,13 +73,19 @@ $(document).ready(function () {
           }
         },
         {
-          targets: 7, // Value
+          targets: 7, // WMS Qty
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 8, // Status
+          targets: 8, // Value
+          render: function (data) {
+            return '<span>' + data + '</span>';
+          }
+        },
+        {
+          targets: 9, // Status
           render: function (data, type, full, meta) {
             var $status = full['status'];
             var statusObj = {
@@ -86,7 +93,7 @@ $(document).ready(function () {
               2: { title: 'Pending', class: 'bg-label-warning' }
             };
 
-            // Pastikan statusObj[$status] ada
+            // Ensure statusObj[$status] exists
             if (statusObj[$status]) {
               return (
                 '<span class="badge rounded-pill ' +
@@ -101,19 +108,36 @@ $(document).ready(function () {
           }
         },
         {
-          targets: 9, // Scheduled Optimization Date
+          targets: 10, // Inventory Status
+          render: function (data, type, full, meta) {
+            var $invStatus = full['inv_status'];
+            var invStatusObj = {
+              1: { title: 'Available', class: 'bg-label-success' }, // Full inventory
+              2: { title: 'Not Available', class: 'bg-label-danger' } // Inventory not full
+            };
+
+            // Ensure invStatusObj[$invStatus] exists
+            if (invStatusObj[$invStatus]) {
+              return (
+                '<span class="badge rounded-pill ' +
+                invStatusObj[$invStatus].class +
+                ' text-capitalized">' +
+                invStatusObj[$invStatus].title +
+                '</span>'
+              );
+            } else {
+              return '<span class="badge rounded-pill bg-label-secondary text-capitalized">Unknown</span>';
+            }
+          }
+        },
+        {
+          targets: 11, // Scheduled Optimization Date
           render: function (data) {
             return '<span>' + data + '</span>';
           }
         },
         {
-          targets: 10, // Scheduled Optimization Time
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 11, // Delivery Type
+          targets: 12, // Scheduled Optimization Time
           render: function (data) {
             return '<span>' + data + '</span>';
           }
