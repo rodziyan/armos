@@ -529,8 +529,8 @@ $(document).ready(function () {
         { data: 'total_value' }, // Total Value
         { data: 'total_trip_time' }, // Total Trip Time
         { data: 'seq' }, // Seq
-        { data: 'delivery_type' }, // Delivery Type
-        { data: 'location_name' }, // Location Name
+        { data: 'location_name' },
+        { data: 'delivery_type' },
         { data: 'do_number' }, // Faktur ID
         { data: 'faktur_qty' }, // Faktur Qty
         { data: 'wms_qty' }, // WMS Qty
