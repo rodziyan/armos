@@ -112,14 +112,6 @@ $(document).ready(function () {
 
       // Check if this is the first row of the group
       if (index % groupSize === 0) {
-        // Create and prepend the map icon
-        var mapIcon = $(`
-        <button class="map-button mapsModal" style="background: none; border: none; padding: 0;">
-            <span class="ri-map-pin-line" style="color: white; background-color: green; display: inline-block; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 5px;"></span>
-        </button>
-    `);
-        $('td:eq(0)', row).prepend(mapIcon);
-
         // Apply rowspan to specified columns
         ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(24)'].forEach(function (selector) {
           $(selector, row).attr('rowspan', groupSize).css({
@@ -171,7 +163,6 @@ $(document).ready(function () {
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li><a class="dropdown-item orderTransfer" href="#">Order Transfer</a></li>
-                  <li><a class="dropdown-item approval" href="#">Approval</a></li>
                 </ul>
               </div>
             `;

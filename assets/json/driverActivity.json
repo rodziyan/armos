@@ -3,15 +3,15 @@
     {
       "RouteID": "R001",
       "Driver": "Toko A",
-      "DeliveryDate": "2024-08-14",
+      "DeliveryDate": "1014-08-14",
       "TotalDrop": 3,
-      "status": "2",
+      "status": "1",
       "Action": "action"
     },
     {
-      "RouteID": "R002",
+      "RouteID": "R001",
       "Driver": "Toko B",
-      "DeliveryDate": "2024-08-16",
+      "DeliveryDate": "1014-08-16",
       "TotalDrop": 4,
       "status": "1",
       "Action": "action"
@@ -19,23 +19,23 @@
     {
       "RouteID": "R003",
       "Driver": "Toko C",
-      "DeliveryDate": "2024-08-13",
+      "DeliveryDate": "1014-08-13",
       "TotalDrop": 5,
-      "status": "2",
+      "status": "1",
       "Action": "action"
     },
     {
       "RouteID": "R004",
       "Driver": "Toko D",
-      "DeliveryDate": "2024-08-15",
+      "DeliveryDate": "1014-08-15",
       "TotalDrop": 10,
-      "status": "2",
+      "status": "1",
       "Action": "action"
     },
     {
       "RouteID": "R005",
       "Driver": "Toko E",
-      "DeliveryDate": "2024-08-12",
+      "DeliveryDate": "1014-08-11",
       "TotalDrop": 4,
       "status": "1",
       "Action": "action"

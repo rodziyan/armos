@@ -700,25 +700,27 @@
                     <div class="d-flex flex-wrap align-items-center gap-3 pt-4 mt-3">
                       <!-- Filter by Route ID -->
                       <div class="col-md">
-                        <input type="text" id="filter-route" class="form-control" placeholder="Filter by Driver Name" />
+                        <label for="filter-route" class="form-label">Filter by Route ID</label>
+                        <input type="text" id="filter-route" class="form-control" placeholder="Filter by Route ID" />
                       </div>
-                      <!-- Filter by Driver & Vehicle -->
+
+                      <!-- Filter by Driver Status -->
                       <div class="col-md">
                         <label for="filter-driver-vehicle" class="form-label">Filter by Driver Status</label>
                         <select id="filter-driver-vehicle" class="form-control">
-                          <option value="">Select Driver Status</option>
-                          <option value="ready-to-deliver">Ready to Deliver</option>
-                          <option value="in-delivery">In Delivery</option>
-                          <option value="delivery-reconciliation">Delivery Reconciliation</option>
-                          <option value="loading">Loading</option>
+                            <option value="">Select Driver Status</option>
+                            <option value="ready-to-deliver">Ready to Deliver</option>
+                            <option value="loading">Loading</option>
                         </select>
-                      </div>                      
+                      </div>
+
                       <!-- Filter by Delivery Type -->
                       <div class="col-md">
-                        <input type="text" id="filter-delivery-tipe" class="form-control" placeholder="Filter by Route ID" />
+                        <label for="filter-delivery-type" class="form-label">Filter by Delivery Type</label>
+                        <input type="text" id="filter-delivery-type" class="form-control" placeholder="Filter by Delivery Type" />
                       </div>
                       <!-- Buttons -->
-                      <div class="col-md-auto">
+                      <div class="col-md-auto mt-6">
                         <div class="d-flex">
                           <!-- Search Button -->
                           <button type="button" class="btn btn-primary me-2">
@@ -740,9 +742,11 @@
                                 <th>Driver Name</th>
                                 <th>Driver Status</th>
                                 <th>Route ID</th>
+                                <th>Dokumen ID</th>
                                 <th>Total Drop</th>
-                                <th>Jumlah Faktur</th>
-                                <th>Jumlah Qty</th>
+                                <th>Faktur QTY</th>
+                                <th>WMS QTY</th>
+                                <th>Delivery QTY</th>
                                 <th>Action</th>
                               </tr>
                             </thead>

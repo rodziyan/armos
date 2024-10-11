@@ -5,63 +5,124 @@ let dt_User;
 $(document).ready(function () {
   // Create and append the modal HTML
   $('body').append(`
-    <!-- Modal Pertama -->
-<div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="max-width: 40%; width: auto; max-height: 80vh;">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="viewModalLabel">Toko A</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="ms-auto me-4 mt-3">
-                <button type="button" class="btn btn-primary me-2" 
-                data-bs-toggle="modal" data-bs-target="#modalView">
-                    Document Reconciliation
-                </button>
-            </div>
             <div class="modal-body">
                 <!-- First Section -->
                 <div class="d-flex left-content-between mb-3" style="text-align: left;">
+                  <div>
+                      <p>Delivery Type : <strong>Delivery</strong></p>
+                      <p>Faktur ID : <strong>F001</strong></p>
+                      <p>Total Value : <strong>Rp80.000</strong></p>
+                  </div>
+              </div>
+                <!-- Table Section -->
+                <table class="table table-bordered">
+                  <thead>
+                      <tr class="table-success">
+                          <th>Faktur Qty</th>
+                          <th>WMS Qty</th>
+                          <th>Delivery Qty</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>20</td>
+                          <td>18</td>
+                          <td>18</td>
+                      </tr>
+                      <tr>
+                          <td>30</td>
+                          <td>28</td>
+                          <td>28</td>
+                      </tr>
+                      <tr>
+                          <td>40</td>
+                          <td>38</td>
+                          <td>38</td>
+                      </tr>
+                      <tr class="table-success">
+                          <td><strong>90</strong></td>
+                          <td><strong>84</strong></td>
+                          <td><strong>84</strong></td>
+                      </tr>
+                  </tbody>
+                  <div class="text-end mb-3">
+                      <!-- Document Reconciliation Button -->
+                    <button type="button" class="btn btn-sm btn-secondary rounded-pill waves-effect" 
+                        data-bs-toggle="modal" data-bs-target="#modalView">
+                        <i class="ri-file-check-line"></i> Document Reconciliation
+                    </button>
+
+                    <!-- Batalkan Order Button with the same styling -->
+                    <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
+                        <i class="ri-close-line"></i> Batalkan Order
+                    </button>
+                  </div>
+              </table>
+
+              <!-- Second Section -->
+                <div class="d-flex left-content-between mb-3 mt-3" style="text-align: left;">
                     <div>
-                        <p>Location : <strong>Toko A</strong></p>
                         <p>Delivery Type : <strong>Delivery</strong></p>
-                    </div>
-                    <div class="mx-auto">
-                        <p>Faktur ID : <strong>F001</strong></p>
-                        <p>Total Value : <strong>Rp80.000</strong></p>
+                        <p>Faktur ID : <strong>F002</strong></p>
+                        <p>Total Value : <strong>Rp100.000</strong></p>
                     </div>
                 </div>
                 <!-- Table Section -->
                 <table class="table table-bordered">
-                    <thead>
-                        <tr class="table-success">
-                            <th>Produk</th>
-                            <th>Qty</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Produk 1</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Produk 2</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>Produk 3</td>
-                            <td>40</td>
-                        </tr>
-                        <tr class="table-success">
-                            <td><strong>TOTAL</strong></td>
-                            <td><strong>80</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
+                  <thead>
+                      <tr class="table-success">
+                          <th>Faktur Qty</th>
+                          <th>WMS Qty</th>
+                          <th>Delivery Qty</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>20</td>
+                          <td>18</td>
+                          <td>18</td>
+                      </tr>
+                      <tr>
+                          <td>30</td>
+                          <td>28</td>
+                          <td>28</td>
+                      </tr>
+                      <tr>
+                          <td>40</td>
+                          <td>38</td>
+                          <td>38</td>
+                      </tr>
+                      <tr class="table-success">
+                          <td><strong>90</strong></td>
+                          <td><strong>84</strong></td>
+                          <td><strong>84</strong></td>
+                      </tr>
+                  </tbody>
+                  <div class="text-end mb-3">
+                  <!-- Document Reconciliation Button -->
+                  <button type="button" class="btn btn-sm btn-secondary rounded-pill waves-effect" 
+                      data-bs-toggle="modal" data-bs-target="#modalView">
+                      <i class="ri-file-check-line"></i> Document Reconciliation
+                  </button>
+
+                  <!-- Batalkan Order Button with the same styling -->
+                  <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
+                      <i class="ri-close-line"></i> Batalkan Order
+                  </button>
+                  </div>
+              </table>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Modal Kedua -->
 <div class="modal fade" id="liat" tabindex="-1" aria-labelledby="liatModalLabel" aria-hidden="true">
@@ -71,47 +132,60 @@ $(document).ready(function () {
                 <h5 class="modal-title" id="liatModalLabel">Toko B</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="ms-auto me-4 mt-3">
-                <button type="button" class="btn btn-primary me-2" 
-                data-bs-toggle="modal" data-bs-target="#modalView">
-                    Document Reconciliation
-                </button>
-            </div>
             <div class="modal-body">
                 <!-- Second Section -->
                 <div class="d-flex justify-content-between mb-3" style="text-align: left;">
                     <div>
-                        <p>Location : <strong>Toko B</strong></p>
                         <p>Delivery Type : <strong>Delivery</strong></p>
-                    </div>
-                    <div class="mx-auto">
                         <p>Faktur ID : <strong>F002</strong></p>
                         <p>Total Value : <strong>Rp100.000</strong></p>
                     </div>
                 </div>
                 <!-- Second Table Section -->
                 <table class="table table-bordered">
-                    <thead>
-                        <tr class="table-success">
-                            <th>Produk</th>
-                            <th>Qty</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Produk 1</td>
-                            <td>50</td>
-                        </tr>
-                        <tr>
-                            <td>Produk 2</td>
-                            <td>50</td>
-                        </tr>
-                        <tr class="table-success">
-                            <td><strong>TOTAL</strong></td>
-                            <td><strong>100</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
+                  <thead>
+                      <tr class="table-success">
+                          <th>Faktur Qty</th>
+                          <th>WMS Qty</th>
+                          <th>Delivery Qty</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>20</td>
+                          <td>20</td>
+                          <td>20</td>
+                      </tr>
+                      <tr>
+                          <td>30</td>
+                          <td>30</td>
+                          <td>30</td>
+                      </tr>
+                      <tr>
+                          <td>40</td>
+                          <td>40</td>
+                          <td>40</td>
+                      </tr>
+                      <tr class="table-success">
+                          <td><strong>90</strong></td>
+                          <td><strong>90</strong></td>
+                          <td><strong>90</strong></td>
+                      </tr>
+                  </tbody>
+                  <div class="text-end mb-3">
+                  <!-- Document Reconciliation Button -->
+                  <button type="button" class="btn btn-sm btn-secondary rounded-pill waves-effect" 
+                      data-bs-toggle="modal" data-bs-target="#modalView">
+                      <i class="ri-file-check-line"></i> Document Reconciliation
+                  </button>
+
+                  <!-- Batalkan Order Button with the same styling -->
+                  <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
+                      <i class="ri-close-line"></i> Batalkan Order
+                  </button>
+
+                  </div>
+              </table>
             </div>
         </div>
     </div>
@@ -336,23 +410,64 @@ $(document).ready(function () {
       </div>
       <div class="modal-body">
         <form id="change-vehicle-form">
-           <div class="mb-2">
-                  <label for="driver" class="col-md-4 col-form-label">Driver: Andi</label>
-                </div>
-                <div class="mb-2">
-                  <label for="vehicle" class="col-md-4 col-form-label">Kendaraan: Double XT</label>
-                </div>
-                <div class="mb-2">
-                  <label for="plate" class="col-md-4 col-form-label">Plat Nomor: F 1234 ABC</label>
-                </div>
+          
+        <!-- Current Vehicle Details -->
+        <div class="mb-2">
+          <label for="current-driver" class="col-form-label">Driver:</label>
+          <span id="current-driver">Andi</span>
+        </div>
+
+        <div class="mb-2">
+          <label for="current-vehicle" class="col-form-label">Kendaraan:</label>
+          <span id="current-vehicle">Double XT</span>
+        </div>
+
+        <div class="mb-2">
+          <label for="current-plate" class="col-form-label">Plat Nomor:</label>
+          <span id="current-plate">F 1234 ABC</span>
+        </div>
+
+        <div class="mb-2">
+          <label for="current-kernet" class="col-form-label">Kernet:</label>
+          <span id="current-kernet">Sari</span>
+        </div>
+
+          
+          <!-- New Selections -->
           <div class="mb-3">
-            <label for="change-to" class="form-label">Diubah ke</label>
-             <select class="form-select" id="change-to" name="change-to">
-              <option value="" disabled selected>Select Driver & Vehicle</option>
-              <option value="budi_heavy_duty_xz_5678_def">Budi Heavy Duty XZ 5678 DEF</option>
-              <option value="cindy_light_truck_a_9012_ghi">Cindy Light Truck A 9012 GHI</option>
+            <label for="change-vehicle" class="form-label">Pilih Kendaraan</label>
+            <select class="form-select" id="change-vehicle" name="change-vehicle">
+              <option value="" disabled selected>Pilih Kendaraan</option>
+              <option value="heavy_duty_xz_5678_def">Heavy Duty XZ 5678 DEF</option>
+              <option value="light_truck_a_9012_ghi">Light Truck A 9012 GHI</option>
+              <option value="double_xt">Double XT</option>
+              <option value="pickup_truck_3456_jkl">Pickup Truck 3456 JKL</option>
             </select>
           </div>
+
+          <div class="mb-3">
+            <label for="change-driver" class="form-label">Pilih Driver</label>
+            <select class="form-select" id="change-driver" name="change-driver">
+              <option value="" disabled selected>Pilih Driver</option>
+              <option value="budi">Budi</option>
+              <option value="cindy">Cindy</option>
+              <option value="andi">Andi</option>
+              <option value="joko">Joko</option>
+            </select>
+          </div>
+          
+
+          <div class="mb-3">
+            <label for="change-kernet" class="form-label">Pilih Kernet</label>
+            <select class="form-select" id="change-kernet" name="change-kernet">
+              <option value="" disabled selected>Pilih Kernet</option>
+              <option value="rio">Rio</option>
+              <option value="sari">Sari</option>
+              <option value="dina">Dina</option>
+              <option value="novi">Novi</option>
+            </select>
+          </div>
+
         </form>
       </div>
       <div class="modal-footer">
@@ -362,48 +477,49 @@ $(document).ready(function () {
   </div>
 </div>
 
-<!-- Modal Change Driver & Kernet -->
-<div class="modal fade" id="changeDriver" tabindex="3" aria-labelledby="changeDriverModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="changeDriverModalLabel">Route-001</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="change-vehicle-form">
-          <div class="mb-2">
-          <label for="current-driver-kernet" class="col-md-4 col-form-label">Driver & Kernet: Andi & Ibnu</label>
-        </div>
-        <div class="mb-2">
-          <label for="current-vehicle" class="col-md-4 col-form-label">Kendaraan: Double XT F 1234 ABC</label>
-        </div>
-          <div class="mb-3">
-            <label for="driver-select" class="form-label">Select Driver</label>
-            <select class="form-select" id="driver-select" name="driver-select">
-              <option value="" disabled selected>Select a Driver</option>
-              <option value="andi">Andi</option>
-              <option value="budi">Budi</option>
-              <option value="cindy">Cindy</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="kernet-select" class="form-label">Select Kernet</label>
-            <select class="form-select" id="kernet-select" name="kernet-select">
-              <option value="" disabled selected>Select a Kernet</option>
-              <option value="kernet1">Kernet 1</option>
-              <option value="kernet2">Kernet 2</option>
-              <option value="kernet3">Kernet 3</option>
-            </select>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" form="change-vehicle-form" style="background-color: #004d00; color: white; border: none; padding: 10px 20px;">Save Changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+
+// <!-- Modal Change Driver & Kernet -->
+// <div class="modal fade" id="changeDriver" tabindex="3" aria-labelledby="changeDriverModalLabel" aria-hidden="true">
+//   <div class="modal-dialog modal-lg">
+//     <div class="modal-content">
+//       <div class="modal-header">
+//         <h5 class="modal-title" id="changeDriverModalLabel">Route-001</h5>
+//         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+//       </div>
+//       <div class="modal-body">
+//         <form id="change-vehicle-form">
+//           <div class="mb-2">
+//           <label for="current-driver-kernet" class="col-md-4 col-form-label">Driver & Kernet: Andi & Ibnu</label>
+//         </div>
+//         <div class="mb-2">
+//           <label for="current-vehicle" class="col-md-4 col-form-label">Kendaraan: Double XT F 1234 ABC</label>
+//         </div>
+//           <div class="mb-3">
+//             <label for="driver-select" class="form-label">Select Driver</label>
+//             <select class="form-select" id="driver-select" name="driver-select">
+//               <option value="" disabled selected>Select a Driver</option>
+//               <option value="andi">Andi</option>
+//               <option value="budi">Budi</option>
+//               <option value="cindy">Cindy</option>
+//             </select>
+//           </div>
+//           <div class="mb-3">
+//             <label for="kernet-select" class="form-label">Select Kernet</label>
+//             <select class="form-select" id="kernet-select" name="kernet-select">
+//               <option value="" disabled selected>Select a Kernet</option>
+//               <option value="kernet1">Kernet 1</option>
+//               <option value="kernet2">Kernet 2</option>
+//               <option value="kernet3">Kernet 3</option>
+//             </select>
+//           </div>
+//         </form>
+//       </div>
+//       <div class="modal-footer">
+//         <button type="submit" form="change-vehicle-form" style="background-color: #004d00; color: white; border: none; padding: 10px 20px;">Save Changes</button>
+//       </div>
+//     </div>
+//   </div>
+// </div>
 
 <!-- Modal Route -->
 <div class="modal fade" id="mapsModal" tabindex="-1" aria-labelledby="mapsModalLabel" aria-hidden="true">
@@ -444,76 +560,25 @@ $(document).ready(function () {
 </div>
 
 <!-- Modal Cancel Order -->
-  <div class="modal fade" id="cancelOrder" tabindex="5" aria-labelledby="editRouteModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-       <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <!-- Route ID -->
-                <div class="mb-3">
-                    <h5 class="modal-title" id="cancelOrderModalLabel">Route 001</h5>
-                </div>
-        <div class="modal-body">
-          <!-- Form Edit Route -->
-          <form id="edit-route-form">
-            <div class="row mb-3">
-              <div class="col-md-12">
-                <h6 class="mb-2">Route Details</h6>
-                <table class="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th style="background-color: red; color: white;">Cancel Order</th>
-                      <th style="background-color: #004d00; color: white;">Delivery Type</th>
-                      <th style="background-color: #004d00; color: white;">Location</th>
-                      <th style="background-color: #004d00; color: white;">Faktur Id</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <!-- Checkbox for Sequence -->
-                        <input type="checkbox" id="sequence-checkbox" name="sequence-checkbox">
-                      </td>
-                          <td>
-                        <span>Delivery</span> <!-- delivery_type -->
-                      </td>
-                      <td>
-                        <span>Toko A</span> <!-- location_name -->
-                      </td>
-                      <td>
-                        <span>F001</span> <!-- faktur_id -->
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <!-- Checkbox for Sequence -->
-                        <input type="checkbox" id="sequence-checkbox" name="sequence-checkbox">
-                      </td>
-                          <td>
-                        <span>Delivery</span> <!-- delivery_type -->
-                      </td>
-                      <td>
-                        <span>Toko B</span> <!-- location_name -->
-                      </td>
-                      <td>
-                        <span>F002</span> <!-- faktur_id -->
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- Footer with Save and Cancel Buttons -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" id="confirmDeleteRoute">Cancel Order</button>
-            </div>
-          </form>
+<div class="modal fade" id="cancelOrder" tabindex="4" aria-labelledby="cancelOrderModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <!-- Warning Icon -->
+        <div class="text-danger mb-3">
+          <i class="bi bi-exclamation-circle" style="font-size: 3rem;"></i>
         </div>
+        <!-- Warning Message -->
+        <h5 class="text-danger">Apakah Anda yakin untuk Membatalkan pesanan ini?</h5>
+        <p>Data yang Anda hapus akan kembali ke menu Outstanding Order.</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-danger" id="confirmCancelOrder">Ya, Batalkan Pesanan</button>
       </div>
     </div>
   </div>
+</div>
 
 
 `);
@@ -548,13 +613,12 @@ $(document).ready(function () {
 
         // Check if this is the first row of the group
         if (index % groupSize === 0) {
-          var mapIcon = $(`
-            <button class="map-button mapsModal" style="background: none; border: none; padding: 0;">
-            <span class="ri-map-pin-line" style="color: white; background-color: green; display: inline-block; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 5px;"></span>
-        </button>
-        `);
-
-          $('td:eq(0)', row).prepend(mapIcon);
+          // var mapIcon = $(`  // Commenting out mapIcon part
+          //   <button class="map-button mapsModal" style="background: none; border: none; padding: 0;">
+          //     <span class="ri-map-pin-line" style="color: white; background-color: green; display: inline-block; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 5px;"></span>
+          //   </button>
+          // `);
+          // $('td:eq(0)', row).prepend(mapIcon);  // Comment out the prepend
 
           ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(17)'].forEach(function (selector) {
             $(selector, row).attr('rowspan', groupSize).css({
@@ -573,19 +637,17 @@ $(document).ready(function () {
 
         // Check if do_number is 2 and create the button with an alert icon inside
         if (data.do_number == 2) {
-          doNumberButton = $(
-            `<button class="do-number-button view" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;" 
-                    onclick="view">
-                <span class="ri-alert-line" style="color: black; background-color: yellow; border-radius: 50%; padding: 5px; margin-right: 5px;"></span>
-                ${data.do_number}
-            </button>`
-          );
+          doNumberButton = $(`
+                <button class="do-number-button view" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;" 
+                        onclick="view">
+                    <span class="ri-alert-line" style="color: black; background-color: yellow; border-radius: 50%; padding: 5px; margin-right: 5px;"></span>
+                    ${data.do_number}
+                </button>`);
         } else {
-          doNumberButton = $(
-            `<button class="do-number-button liat" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;">
-                ${data.do_number}
-            </button>`
-          );
+          doNumberButton = $(`
+                <button class="do-number-button liat" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;">
+                    ${data.do_number}
+                </button>`);
         }
 
         doNumberCell.empty().append(doNumberButton);
@@ -610,9 +672,7 @@ $(document).ready(function () {
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li><a class="dropdown-item changeKendaraan" href="#">Change Vehicle</a></li>
-                  <li><a class="dropdown-item " onclick="changeDriver(event)" href="#">Change Driver & Kernet</a></li>
-                  <li><a class="dropdown-item " onclick="openRoute(event)" href="#">Cancel Route</a></li>
-                  <li><a class="dropdown-item " onclick="openModals(event)" href="#">Cancel Order</a></li>
+                  <li><a class="dropdown-item " onclick="openRoute(event)" href="#">Batalkan Route</a></li>
                 </ul>
               </div>
             `;

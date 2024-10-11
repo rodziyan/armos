@@ -5,36 +5,22 @@
       "driver_status": 1,
       "route_id": "R001",
       "total_drop": 3,
-      "jumlah_faktur": 3,
-      "jumlah_qty": 10,
-      "action": "action"
-    },
-    {
-      "driver_name": "Budi",
-      "driver_status": 2,
-      "route_id": "R002",
-      "total_drop": 3,
-      "jumlah_faktur": 3,
-      "jumlah_qty": 10,
-      "action": "action"
-    },
-    {
-      "driver_name": "Cindy",
-      "driver_status": 3,
-      "route_id": "R003",
-      "total_drop": 3,
-      "jumlah_faktur": 3,
-      "jumlah_qty": 10,
-      "action": "action"
+      "action": "action",
+      "faktur_id": "F001",
+      "faktur_qty": 60,
+      "wms_qty": 58,
+      "delivery_qty": 57
     },
     {
       "driver_name": "Dedi",
       "driver_status": 4,
       "route_id": "R004",
       "total_drop": 3,
-      "jumlah_faktur": 3,
-      "jumlah_qty": 10,
-      "action": "action"
+      "action": "action",
+      "faktur_id": "F002",
+      "faktur_qty": 60,
+      "wms_qty": 58,
+      "delivery_qty": 57
     }
   ]
 }

@@ -78,22 +78,6 @@ $('body').append(`
             </div>
           </div>
           <div class="row mb-3">
-            <div class="col-md-6">
-              <label for="approvalDate" class="form-label">Approval Date</label>
-              <input type="date" class="form-control" id="approvalDate">
-            </div>
-            <div class="col-md-6">
-              <label for="approvalBy" class="form-label">Approved By</label>
-              <select class="form-select" id="approvalBy">
-                <option value="" disabled selected>Pilih Nama</option>
-                <option value="Alice Williams">Alice Williams</option>
-                <option value="David Brown">David Brown</option>
-                <option value="Emily Davis">Emily Davis</option>
-                <option value="James Wilson">James Wilson</option>
-              </select>
-            </div>
-          </div>
-          <div class="row mb-3">
             <div class="col-md-12">
               <label for="notes" class="form-label">Notes</label>
               <textarea class="form-control" id="notes" rows="3" placeholder="Masukkan catatan di sini..."></textarea>
@@ -189,6 +173,9 @@ $('body').append(`
             </div>
           </div>
         </form>
+        <div class="modal-footer">
+                <button type="button" class="btn btn-success justify-end" style="background-color: #28a745; border-color: #28a745;">Ya, Approval</button>
+          </div>
       </div>
     </div>
   </div>
@@ -424,7 +411,7 @@ $(document).ready(function () {
           return `
               <div class="button-group">
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect approval" 
-                        style="border: 2px solid green; background-color: green; color: white; padding: 0; display: flex; align-items: center;">
+                        style="border: 2px solid blue; background-color: blue; color: white; padding: 0; display: flex; align-items: center;">
                     <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
                         <i class="ri-eye-line ms-3" style="font-size: 20px;"></i>
                     </span>

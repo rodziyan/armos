@@ -4,14 +4,15 @@ function createModals() {
   var modalsHTML = `
     <!-- Modal for Status 1 -->
 <div class="modal fade" id="status1Modal" tabindex="-1" aria-labelledby="status1ModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-lg" style="max-width: 50%; margin: 30px auto;">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <!-- Driver Information -->
-        <div class="mb-3">
+        <div class="mb-3 d-flex justify-content-between align-items-center">
+          <!-- Driver Information -->
           <h6 id="status1-driver-info">Driver Name - Driver Status</h6>
         </div>
         <!-- Table -->
@@ -25,6 +26,7 @@ function createModals() {
                     <th style="background-color: #004d00; color: white;">Faktur Qty</th>
                     <th style="background-color: #004d00; color: white;">WMS Qty</th>
                     <th style="background-color: #004d00; color: white;">Delivery Qty</th>
+                    <th style="background-color: #004d00; color: white;">Action</th>
                 </tr>
             </thead>
             <tbody id="modal-table-body">
@@ -36,6 +38,10 @@ function createModals() {
                     <td>20</td>
                     <td>18</td>
                     <td>17</td>
+                    <td><button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
+                              data-bs-toggle="modal" data-bs-target="#modalView">
+                        <i class="ri-file-edit-line"></i> 
+                      </button></td>
                 </tr>
                 <tr>
                     <td>2</td>
@@ -45,6 +51,10 @@ function createModals() {
                     <td>20</td>
                     <td>20</td>
                     <td>20</td>
+                    <td><button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
+                              data-bs-toggle="modal" data-bs-target="#modalView">
+                        <i class="ri-file-edit-line"></i> 
+                      </button></td>
                 </tr>
                 <tr>
                     <td>3</td>
@@ -54,12 +64,17 @@ function createModals() {
                     <td>20</td>
                     <td>20</td>
                     <td>20</td>
+                    <td><button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
+                              data-bs-toggle="modal" data-bs-target="#modalView">
+                        <i class="ri-file-edit-line"></i> 
+                      </button></td>
                 </tr>
             </tbody>
         </table>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" style="background-color: #28a745; border-color: #28a745;">Ya, Approval Start Delivery</button>
       </div>
     </div>
   </div>
@@ -197,7 +212,7 @@ function createModals() {
 </div>
 
 <!-- Modal for Status 1 -->
-<div class="modal fade" id="status4Modal" tabindex="-1" aria-labelledby="status4ModalLabel" aria-hidden="true">
+<div class="modal fade" id="" tabindex="-1" aria-labelledby="" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -214,9 +229,8 @@ function createModals() {
             <tr>
               <th style="background-color: #004d00; color: white;">Location</th>
               <th style="background-color: #004d00; color: white;">Faktur ID</th>
-              <th style="background-color: #004d00; color: white;">Product Name</th>
               <th style="background-color: #004d00; color: white;">Faktur QTY</th>
-              <th style="background-color: #004d00; color: white;">Scan-out QTY</th>
+              <th style="background-color: #004d00; color: white;">WMS QTY</th>
               <th style="background-color: #004d00; color: white;">Status</th>
             </tr>
           </thead>
@@ -225,7 +239,6 @@ function createModals() {
             <tr>
               <td>Jakarta</td>
               <td>F12345</td>
-              <td>Product A</td>
               <td>10</td>
               <td>5</td>
               <td style="color: green; font-weight: bold;">Completed</td>
@@ -233,7 +246,6 @@ function createModals() {
             <tr>
               <td>Bandung</td>
               <td>F12346</td>
-              <td>Product B</td>
               <td>15</td>
               <td>3</td>
               <td style="color: red; font-weight: bold;">Skip</td>
@@ -241,7 +253,6 @@ function createModals() {
             <tr>
               <td>Bogor</td>
               <td>F1563</td>
-              <td>Product C</td>
               <td>20</td>
               <td>7</td>
               <td style="color: orange; font-weight: bold;">In Delivery</td>
@@ -256,11 +267,91 @@ function createModals() {
   </div>
 </div>
 
+<div class="modal fade" id="status4Modal" tabindex="-1" aria-labelledby="status4ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="max-width: 50%; margin: 30px auto;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Driver Information -->
+        <div class="mb-3 d-flex justify-content-between align-items-center">
+          <!-- Driver Information -->
+          <h6 id="status1-driver-info">Driver Name - Driver Status</h6>
+        </div>
+        <!-- Table -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="background-color: #004d00; color: white;">Sequence</th>
+                    <th style="background-color: #004d00; color: white;">Delivery Type</th>
+                    <th style="background-color: #004d00; color: white;">Location</th>
+                    <th style="background-color: #004d00; color: white;">Faktur ID</th>
+                    <th style="background-color: #004d00; color: white;">Faktur Qty</th>
+                    <th style="background-color: #004d00; color: white;">WMS Qty</th>
+                    <th style="background-color: #004d00; color: white;">Delivery Qty</th>
+                    <th style="background-color: #004d00; color: white;">Action</th>
+                </tr>
+            </thead>
+            <tbody id="modal-table-body">
+                <tr>
+                    <td>1</td>
+                    <td>Delivery</td>
+                    <td>Toko A</td>
+                    <td>F001</td>
+                    <td>20</td>
+                    <td>18</td>
+                    <td>17</td>
+                    <td><button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
+                              data-bs-toggle="modal" data-bs-target="#modalView">
+                        <i class="ri-file-edit-line"></i> 
+                      </button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Delivery</td>
+                    <td>Toko B</td>
+                    <td>F002</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td><button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
+                              data-bs-toggle="modal" data-bs-target="#modalView">
+                        <i class="ri-file-edit-line"></i> 
+                      </button></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Delivery</td>
+                    <td>Toko C</td>
+                    <td>F003</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td>20</td>
+                    <td><button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
+                              data-bs-toggle="modal" data-bs-target="#modalView">
+                        <i class="ri-file-edit-line"></i> 
+                      </button></td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" style="background-color: #28a745; border-color: #28a745;">Ya, Approval Start Delivery</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="approvalModal" tabindex="-1" role="dialog" aria-labelledby="approvalModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn-close mt-3 me-3" aria-label="Close"></button>
+        </div>
+
           <div class="modal-header justify-content-center">
               <h5 class="modal-title text-center" style="flex: 1;">
                   <i class="ri-truck-line" style="color: #2C3E50; font-size: 45px;"></i>
@@ -274,6 +365,31 @@ function createModals() {
               <button type="button" class="btn btn-success" style="background-color: #28a745; border-color: #28a745;">Ya, Approval Start Delivery</button>
           </div>
       </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalView" tabindex="-1" aria-labelledby="modalViewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="actionSelect" class="form-label">Document Reconciliation</label>
+                <select class="form-select" id="actionSelect">
+                    <option value="" disabled selected>Pilih salah satu...</option>
+                    <option value="revisiFaktur">Revisi Faktur</option>
+                    <option value="koreksiJual">Koreksi Jual</option>
+                    <option value="barangHilang">Barang Hilang</option>
+                    <option value="tukarFaktur">Tukar Faktur</option>
+                    <option value="lainnya">Lainnya</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Simpan</button>
+            </div>
+        </div>
     </div>
 </div>
   `;
@@ -295,9 +411,11 @@ $(document).ready(function () {
         { data: 'driver_name' },
         { data: 'driver_status' },
         { data: 'route_id' },
+        { data: 'faktur_id' },
         { data: 'total_drop' },
-        { data: 'jumlah_faktur' },
-        { data: 'jumlah_qty' },
+        { data: 'faktur_qty' },
+        { data: 'wms_qty' },
+        { data: 'delivery_qty' },
         { data: 'action' }
       ],
       columnDefs: [
@@ -340,19 +458,31 @@ $(document).ready(function () {
         {
           targets: 4,
           render: function (data, type, full) {
-            return '<span>' + full['total_drop'] + '</span>';
+            return '<span>' + full['faktur_id'] + '</span>';
           }
         },
         {
           targets: 5,
           render: function (data, type, full) {
-            return '<span>' + full['jumlah_faktur'] + '</span>';
+            return '<span>' + full['total_drop'] + '</span>';
           }
         },
         {
           targets: 6,
           render: function (data, type, full) {
-            return '<span>' + full['jumlah_qty'] + '</span>';
+            return '<span>' + full['faktur_qty'] + '</span>';
+          }
+        },
+        {
+          targets: 7,
+          render: function (data, type, full) {
+            return '<span>' + full['wms_qty'] + '</span>';
+          }
+        },
+        {
+          targets: 8,
+          render: function (data, type, full) {
+            return '<span>' + full['delivery_qty'] + '</span>';
           }
         },
         {
@@ -379,17 +509,14 @@ $(document).ready(function () {
             var deliveries = full['deliveries'] ? JSON.stringify(full['deliveries']) : '[]'; // Ensure deliveries is a JSON string
 
             return `
-            <div class="text-center">
-              <button class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect helpdesk-btn"
+            <div class="text-start">
+              <button class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect helpdesk-btn"
                 style="border: 1px solid #007bff;"
                 data-driver-name="${full['driver_name']}"
                 data-driver-status="${full['driver_status']}"
                 data-deliveries='${deliveries}'
                 data-bs-toggle="modal" data-bs-target="${modalId}">
-                <i class="ri-eye-line ri-20px" style="color: #007bff;"></i>
-              </button>
-              <button class="btn btn-sm btn-icon btn-text-secondary rounded-pill waves-effect approvalModal" style="border: 1px solid #28a745; margin-left: 5px;" data-toggle="modal" data-target="#approvalModal">
-                  <i class="ri-check-line ri-20px" style="color: #28a745;"></i>
+                <i class="ri-eye-line ri-20px"></i>
               </button>
             </div>
           `;

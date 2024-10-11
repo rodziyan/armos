@@ -32,15 +32,22 @@ document.addEventListener('DOMContentLoaded', function () {
             targets: 2,
             render: function (data, type, full) {
               var statusObj = {
-                1: { title: 'Finish Trip', class: 'bg-label-success' },
-                2: { title: 'Partial Trip', class: 'bg-label-primary' },
-                3: { title: 'Reconciled', class: 'bg-label-warning' }
+                1: { title: 'Delivery Completed', class: 'bg-label-success' },
+                2: { title: 'Delivery Success', class: 'bg-label-danger' }
               };
+
+              // Menambahkan tanda seru kuning saat status adalah 2, di dalam label
+              var indicator =
+                full['driver_status'] == 2
+                  ? '<span class="text-warning ms-2" title="Partial Trip Indicator">⚠️</span>'
+                  : '';
+
               return (
                 '<span class="badge rounded-pill ' +
                 statusObj[full['driver_status']].class +
                 '">' +
                 statusObj[full['driver_status']].title +
+                indicator + // Memasukkan indikator ke dalam label
                 '</span>'
               );
             }

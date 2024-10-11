@@ -14,7 +14,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Review Route - Apps | Armos</title>
+    <title>In Delivery | Armos</title>
 
     <meta name="description" content="" />
 
@@ -43,14 +43,15 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <link rel="stylesheet" href="assets/vendor/libs/typeahead-js/typeahead.css" />
+    <link rel="stylesheet" href="assets/vendor/libs/apex-charts/apex-charts.css" />
     <link rel="stylesheet" href="assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css" />
     <link rel="stylesheet" href="assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
     <link rel="stylesheet" href="assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
-    <link rel="stylesheet" href="assets/vendor/libs/@form-validation/form-validation.css" />
 
     <!-- Page CSS -->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="assets/vendor/css/pages/app-logistics-dashboard.css" />
+
     <!-- Helpers -->
     <script src="assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
@@ -95,8 +96,8 @@
                   <span class="sort-card-text">Optimization</span>
                   </a>
                   <a href="app-access-roles.html" class="btn btn-custom me-3">
-                      <i class="sort-card-icon ri-user-line"></i>
-                      <span class="sort-card-text">Users Management</span>
+                    <i class="sort-card-icon ri-user-line"></i>
+                    <span class="sort-card-text">Users Management</span>
                   </a>
                   <a href="javascript:void(0);" class="btn btn-custom me-3">
                       <i class="sort-card-icon ri-computer-line"></i>
@@ -495,7 +496,6 @@
                     </ul>
                   </li>
                 
-                  
                 
                   <!-- Driver Management -->
               <li class="menu-item">
@@ -539,11 +539,11 @@
                         </a>
                       </li>
                       <li class="menu-item"></li>
-                        <a href="vendor.html" class="menu-link">
-                          <i class="menu-icon tf-icons ri-store-2-line"></i>
-                          <div data-i18n="Master vendor">Master vendor</div>
-                        </a>
-                      </li>
+                      <a href="vendor.html" class="menu-link">
+                        <i class="menu-icon tf-icons ri-store-2-line"></i>
+                        <div data-i18n="Master Vendor">Master Vendor</div>
+                      </a>
+                    </li>
                       <li class="menu-item">
                         <a href="globalconfig.html" class="menu-link">
                           <i class="menu-icon tf-icons ri-global-line"></i>
@@ -686,101 +686,66 @@
               </div>
             </aside>
             <!-- / Menu -->
-             
+
             <!-- Content -->
-             <div class="container-xxxl flex-grow-1 container-p-y">
-              <!-- Role cards -->
-              <div class="row g-6">
-              <div class="test mt-5">
-                <div class="col-12">
-                  <!-- Role Table -->
+            <style>
+              .container-xxxl {
+                  padding-left: 15px; 
+                  padding-right: 15px; 
+              }
+              .row {
+                  margin-left: -15px; 
+                  margin-right: -15px; 
+              }
+              .row > .col {
+                  padding-left: 15px; 
+                  padding-right: 15px; 
+              }
+          </style>
+            <div class="container-xxxl flex-grow-1 container-p-y">
+              <!-- Card Border Shadow -->
+              <div class="row g-6 mt-8">
+                
+                <!-- On route vehicles Table -->
+                <div class="col-12 order-5">
                   <div class="card">
-                    <!-- Display Today's Date -->
-                    <h4 class="mb-2 mt-5 ms-5"><strong>Tanggal Hari Ini:</strong> <span id="currentDate"></span></h4>
-                      <div class="card-header border-bottom">
-                          <h5 class="card-title mb-0">Filters</h5>
-                          <div class="d-flex flex-wrap align-items-center gap-3 pt-4">
-                            <!-- Filter by Route ID -->
-                            <div class="col-md">
-                              <input type="text" id="filter-route" class="form-control" placeholder="Filter by Route ID" />
-                            </div>
-                            <!-- Filter by Driver & Vehicle -->
-                            <div class="col-md">
-                              <input type="text" id="filter-driver-vehicle" class="form-control" placeholder="Filter by Driver & Vehicle" />
-                            </div>
-                            <!-- Filter by Delivery Type -->
-                            <div class="col-md">
-                              <input type="text" id="filter-delivery-tipe" class="form-control" placeholder="Filter by Delivery Type" />
-                            </div>
-                            <!-- Filter by Location Name -->
-                            <div class="col-md">
-                              <input type="text" id="filter-location-name" class="form-control" placeholder="Filter by Location Name" />
-                            </div>
-                            <!-- Filter by DO Number -->
-                            <div class="col-md">
-                              <input type="text" id="filter-do-number" class="form-control" placeholder="Filter by DO Number" />
-                            </div>
-                            <!-- Filter by Faktur ID -->
-                            <div class="col-md">
-                              <input type="text" id="filter-faktur-id" class="form-control" placeholder="Filter by Faktur ID" />
-                            </div>
-                            <!-- Buttons -->
-                            <div class="col-md-auto">
-                              <div class="d-flex">
-                                <!-- Search Button -->
-                                <button type="button" class="btn btn-primary me-2">
-                                  <i class="ri-search-line"></i>
-                                </button>
-                                <!-- Clear Button -->
-                                <button type="button" class="btn btn-danger">
-                                  <i class="ri-close-line"></i>
-                                </button>
-                              </div>
-                            </div>
-                          </div>                                               
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                      <div class="card-title mb-0">
+                        <h5 class="m-0 me-2">Kendaraan dalam perjalanan</h5>
                       </div>
-                    <!-- Add New Button -->
+                      <div class="dropdown">
+                        <button
+                          class="btn btn-text-secondary rounded-pill text-muted border-0 p-1"
+                          type="button"
+                          id="routeVehicles"
+                          data-bs-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false">
+                          <i class="ri-more-2-line ri-20px"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="routeVehicles">
+                          <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
+                        </div>
+                      </div>
+                    </div>
                     <div class="card-datatable table-responsive">
-                      <table class="datatables-users table">
+                      <table class="dt-route-vehicles table">
                         <thead>
                           <tr>
-                            <th>Route ID</th>
-                            <th>Driver - Vehicle</th>
-                            <th>% Capacity</th>
-                            <th>Total Value Trip</th>
-                            <th>Total Trip Time</th>
-                            <th>Seq</th>
-                            <th>Delivery Type</th>
-                            <th>Location Name</th>
-                            <th>Location Type</th>
-                            <th>Jumlah Dokument</th>
-                            <th>Faktur Qty</th>
-                            <th>WMS Qty</th>
-                            <th>Delivery Qty</th>
-                            <th>Received Qty</th>
-                            <th>Retur Qty</th>
-                            <th>Truk Qty</th>
-                            <th>Total Value</th>
-                            <th>Planned Start Time</th>
-                            <th>Planned End Time</th>
-                            <th>Planned Trip Time</th>
-                            <th>Actual Start Time</th>
-                            <th>Actual End Time</th>
-                            <th>Actual Trip Time</th>
-                            <th>Delivery Status</th>
-                            <th>Action</th>
-                        </tr>                        
-                      </thead>
-                      <tbody></tbody>
+                            <th></th>
+                            <th>Plat No Kendaraan</th>
+                            <th>Start Time</th>
+                            <th>Estimasi</th>
+                            <th>Lokasi Terakhir</th>
+                            <th class="w-20">progress</th>
+                          </tr>
+                        </thead>
                       </table>
                     </div>
                   </div>
-                  <!--/ Role Table -->
                 </div>
               </div>
-              <!--/ Role cards -->
-
-              
+              <!--/ On route vehicles Table -->
             </div>
             <!--/ Content -->
 
@@ -793,55 +758,6 @@
       </div>
     </div>
 
-    <!-- Modal HTML -->
-    <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="viewModalLabel">Order Details</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-              <strong>Sequence:</strong> <span id="modal-seq"></span>
-            </div>
-            <div class="mb-3">
-              <strong>DO Number:</strong> <span id="modal-do-number"></span>
-            </div>
-            <div class="mb-3">
-              <strong>Delivery Type:</strong> <span id="modal-delivery-type"></span>
-            </div>
-            <div class="mb-3">
-              <strong>Location:</strong> <span id="modal-location"></span>
-            </div>
-            <div class="mb-3">
-              <strong>Faktur ID:</strong> <span id="modal-faktur-id"></span>
-            </div>
-            <div class="mb-3">
-              <strong>Total Value:</strong> <span id="modal-total-value"></span>
-            </div>
-
-            <!-- Table -->
-            <table class="table">
-              <thead>
-                <tr>
-                  <th>Produk</th>
-                  <th>QTY</th>
-                  <th>Total</th>
-                </tr>
-              </thead>
-              <tbody id="modal-table-body">
-                <!-- Data will be populated by JavaScript -->
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Overlay -->
     <div class="layout-overlay layout-menu-toggle"></div>
 
@@ -849,25 +765,6 @@
     <div class="drag-target"></div>
 
     <!--/ Layout wrapper -->
-    <style>
-      /* Add some padding and border to the table cells */
-table.dataTable td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-/* Center the text */
-table.dataTable td, table.dataTable th {
-    text-align: center;
-    vertical-align: middle;
-}
-    </style>
-    <script>
-      // Display current date
-      document.getElementById('currentDate').innerText = new Date().toLocaleDateString('id-ID');
-  </script>
-<!-- Bootstrap JavaScript Bundle with Popper -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -884,17 +781,13 @@ table.dataTable td, table.dataTable th {
     <!-- endbuild -->
 
     <!-- Vendors JS -->
+    <script src="assets/vendor/libs/apex-charts/apexcharts.js"></script>
     <script src="assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
-
-    <script src="assets/vendor/libs/@form-validation/popular.js"></script>
-    <script src="assets/vendor/libs/@form-validation/bootstrap5.js"></script>
-    <script src="assets/vendor/libs/@form-validation/auto-focus.js"></script>
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="assets/js/in-delivery.js"></script>
-    <script src="assets/js/modal-add-role.js"></script>
+    <script src="assets/js/app-logistics-dashboardcopy.js"></script>
   </body>
 </html>

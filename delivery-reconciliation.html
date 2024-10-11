@@ -701,9 +701,11 @@
                     <div class="d-flex flex-wrap align-items-center gap-3 pt-4 mt-3">
                       <!-- Filter by Route ID -->
                       <div class="col-md">
+                        <label for="filter-route" class="form-label">Filter by Driver Name</label>
                         <input type="text" id="filter-route" class="form-control" placeholder="Filter by Driver Name" />
                       </div>
-                      <!-- Filter by Driver & Vehicle -->
+                      
+                      <!-- Filter by Driver Status -->
                       <div class="col-md">
                         <label for="filter-driver-vehicle" class="form-label">Filter by Driver Status</label>
                         <select id="filter-driver-vehicle" class="form-control">
@@ -712,13 +714,16 @@
                           <option value="partial-trip">Partial Trip</option>
                           <option value="reconciled">Reconciled</option>
                         </select>
-                      </div>                      
-                      <!-- Filter by Delivery Type -->
+                      </div>
+                      
+                      <!-- Filter by Route ID -->
                       <div class="col-md">
+                        <label for="filter-delivery-tipe" class="form-label">Filter by Route ID</label>
                         <input type="text" id="filter-delivery-tipe" class="form-control" placeholder="Filter by Route ID" />
                       </div>
+                      
                       <!-- Buttons -->
-                      <div class="col-md-auto">
+                      <div class="col-md-auto mt-6">
                         <div class="d-flex">
                           <!-- Search Button -->
                           <button type="button" class="btn btn-primary me-2">
@@ -738,7 +743,7 @@
                               <tr>
                                 <th></th>
                                 <th>Driver Name</th>
-                                <th>Driver Status</th>
+                                <th>Reconciliation Status</th>
                                 <th>Route ID</th>
                                 <th>Drop Completion</th>
                                 <th>Jumlah Dokument</th>
@@ -812,9 +817,9 @@
                       <button class="btn btn-sm" style="background-color: #fd7e14; color: white;" data-bs-toggle="modal" data-bs-target="#document">
                         <i class="ri-file-line"></i>
                       </button>                                                              
-                      <!-- <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#returnModal">
+                      <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#returnModal">
                         <i class="ri-home-2-line"></i>
-                      </button> -->
+                      </button>
                     </td>
                   </tr>
                   <tr>
@@ -945,9 +950,9 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmationModal" style="background-color: #006400; color: white; border: none;">
+            <button type="button" class="btn" style="background-color: #006400; color: white; border: none;" onclick="window.location.href='delivery-reconciliation.html';">
               Reconciliation completed
-          </button>          
+          </button>                    
           </div>
         </div>
       </div>

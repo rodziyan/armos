@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "plat_no_kendaraan": "S 123 F",
+      "waktu_mulai": "2024-10-11 08:00",
+      "estimasi": "2024-10-12 16:00",
+      "lokasi_terakhir": "Surabaya, Indonesia",
+      "progress": 49
+    },
+    {
+      "id": 2,
+      "plat_no_kendaraan": "S 456 L",
+      "waktu_mulai": "2024-10-10 12:00",
+      "estimasi": "2024-10-12 18:00",
+      "lokasi_terakhir": "Surabaya, Indonesia",
+      "progress": 24
+    }
+  ]
+}

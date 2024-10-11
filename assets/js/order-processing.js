@@ -10,141 +10,58 @@ $(document).ready(function () {
 
   // Initialize DataTable
   if ($('.datatables-users').length) {
-    dt_User = $('.datatables-users').DataTable({
-      ajax: assetsPath + 'json/order-processing.json',
+    var dt_User = $('.datatables-users').DataTable({
+      ajax: assetsPath + 'json/order-processing.json', // path to your JSON file
       columns: [
-        { data: 'id' },
+        {
+          data: null,
+          orderable: false,
+          className: 'dt-checkbox',
+          render: function (data, type, full, meta) {
+            return '<input type="checkbox" class="row-checkbox">';
+          }
+        },
+        {
+          data: null,
+          className: 'details-control',
+          orderable: false,
+          render: function (data, type, row) {
+            if (row.id === 1) {
+              return '';
+            } else {
+              return '<i class="ri-arrow-right-line"></i>';
+            }
+          }
+        },
         { data: 'toko' },
         { data: 'tipe_outlet' },
         { data: 'faktur_id' },
         { data: 'faktur_date' },
+        { data: 'delivery_type' },
         { data: 'delivery_date' },
         { data: 'qty' },
         { data: 'wms_qty' },
         { data: 'value' },
-        { data: 'status' },
-        { data: 'inv_status' },
+        {
+          data: 'status',
+          render: function (data, type, row) {
+            return data == 1
+              ? '<span class="badge bg-label-blue">New</span>'
+              : '<span class="badge bg-label-warning">Pending</span>';
+          }
+        },
+        {
+          data: 'inv_status',
+          render: function (data, type, row) {
+            return data == 1
+              ? '<span class="badge bg-label-success">Full Fill</span>'
+              : '<span class="badge bg-label-danger">Not Full Fill</span>';
+          }
+        },
         { data: 'scheduled_optimization_date' },
         { data: 'scheduled_optimization_time' },
-        { data: 'action' }
-      ],
-      columnDefs: [
         {
-          targets: 0, // Checkbox in first column
-          orderable: false,
-          render: function (data, type, row) {
-            return '<input type="checkbox" class="select-checkbox" style="display:none;">';
-          }
-        },
-        {
-          targets: 1, // Toko
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 2, // Tipe Outlet
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 3, // Faktur ID
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 4, // Faktur Date
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 5, // Delivery Date
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 6, // Qty
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 7, // WMS Qty
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 8, // Value
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 9, // Status
-          render: function (data, type, full, meta) {
-            var $status = full['status'];
-            var statusObj = {
-              1: { title: 'New', class: 'bg-label-blue' },
-              2: { title: 'Pending', class: 'bg-label-warning' }
-            };
-
-            // Ensure statusObj[$status] exists
-            if (statusObj[$status]) {
-              return (
-                '<span class="badge rounded-pill ' +
-                statusObj[$status].class +
-                ' text-capitalized">' +
-                statusObj[$status].title +
-                '</span>'
-              );
-            } else {
-              return '<span class="badge rounded-pill bg-label-secondary text-capitalized">Unknown</span>';
-            }
-          }
-        },
-        {
-          targets: 10, // Inventory Status
-          render: function (data, type, full, meta) {
-            var $invStatus = full['inv_status'];
-            var invStatusObj = {
-              1: { title: 'Full Fill', class: 'bg-label-success' }, // Full inventory
-              2: { title: 'Not Full Fill', class: 'bg-label-danger' } // Inventory not full
-            };
-
-            // Ensure invStatusObj[$invStatus] exists
-            if (invStatusObj[$invStatus]) {
-              return (
-                '<span class="badge rounded-pill ' +
-                invStatusObj[$invStatus].class +
-                ' text-capitalized">' +
-                invStatusObj[$invStatus].title +
-                '</span>'
-              );
-            } else {
-              return '<span class="badge rounded-pill bg-label-secondary text-capitalized">Unknown</span>';
-            }
-          }
-        },
-        {
-          targets: 11, // Scheduled Optimization Date
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: 12, // Scheduled Optimization Time
-          render: function (data) {
-            return '<span>' + data + '</span>';
-          }
-        },
-        {
-          targets: -1, // Actions
-          title: 'Actions',
+          data: null,
           orderable: false,
           render: function (data, type, full) {
             var $id = full['id'] || 'N/A';
@@ -166,47 +83,52 @@ $(document).ready(function () {
             };
             var $statusText = statusObj[$status] || 'Unknown';
 
-            // Build the base buttons (view and update)
             var buttons = `
-              <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
-                data-id="${$id}"
-                data-toko="${$toko}"
-                data-tipe_outlet="${$tipeOutlet}"
-                data-faktur_id="${$fakturId}"
-                data-faktur_date="${$fakturDate}"
-                data-delivery_date="${$deliveryDate}"
-                data-qty="${$qty}"
-                data-value="${$value}"
-                data-status="${$statusText}"
-                data-scheduled_optimization_date="${$scheduledOptimizationDate}"
-                data-scheduled_optimization_time="${$scheduledOptimizationTime}"
-                data-delivery_type="${$deliveryType}">
-                <i class="ri-eye-line ri-20px"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect updateModal"
-                data-id="${$id}"
-                data-toko="${$toko}"
-                data-tipe_outlet="${$tipeOutlet}"
-                data-faktur_id="${$fakturId}"
-                data-faktur_date="${$fakturDate}"
-                data-delivery_date="${$deliveryDate}"
-                data-qty="${$qty}"
-                data-value="${$value}"
-                data-status="${$statusText}"
-                data-scheduled_optimization_date="${$scheduledOptimizationDate}"
-                data-scheduled_optimization_time="${$scheduledOptimizationTime}"
-                data-delivery_type="${$deliveryType}">
-                <i class="ri-edit-line ri-20px"></i>
-              </button>
-            `;
-
-            // Only append the optimization button for 'Toko D'
-            if ($toko === 'Toko D') {
+                      <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
+                          data-id="${$id}"
+                          data-toko="${$toko}"
+                          data-tipe_outlet="${$tipeOutlet}"
+                          data-faktur_id="${$fakturId}"
+                          data-faktur_date="${$fakturDate}"
+                          data-delivery_date="${$deliveryDate}"
+                          data-qty="${$qty}"
+                          data-value="${$value}"
+                          data-status="${$statusText}"
+                          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+                          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+                          data-delivery_type="${$deliveryType}">
+                          <i class="ri-eye-line ri-20px"></i>
+                      </button>
+                      <button type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect updateModal"
+                          data-id="${$id}"
+                          data-toko="${$toko}"
+                          data-tipe_outlet="${$tipeOutlet}"
+                          data-faktur_id="${$fakturId}"
+                          data-faktur_date="${$fakturDate}"
+                          data-delivery_date="${$deliveryDate}"
+                          data-qty="${$qty}"
+                          data-value="${$value}"
+                          data-status="${$statusText}"
+                          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+                          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+                          data-delivery_type="${$deliveryType}">
+                          <i class="ri-edit-line ri-20px"></i>
+                      </button>
+                  `;
+            if (full['inv_status'] === 2) {
               buttons += `
-                <button id="optimizationButton" type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect unholdModal">
-                  <i class="ri-error-warning-line ri-20px"></i>
-                </button>
-              `;
+                      <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
+                              data-bs-toggle="modal" data-bs-target="#modalView">
+                        <i class="ri-file-edit-line"></i> 
+                      </button>
+                    `;
+            }
+            if ($toko === 'Toko C') {
+              buttons += `
+                          <button id="optimizationButton" type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect unholdModal">
+                              <i class="ri-error-warning-line ri-20px"></i>
+                          </button>
+                      `;
             }
 
             return buttons;
@@ -215,13 +137,38 @@ $(document).ready(function () {
       ],
       dom: '<"top"<"d-flex justify-content-end mt-5 mb-5 me-5"<"dropdown-container">>>rt<"bottom"lp><"clear">'
     });
+    // Handle row details click
+    $('.datatables-users tbody').on('click', 'td.details-control', function () {
+      var tr = $(this).closest('tr');
+      var row = dt_User.row(tr);
+
+      if (row.child.isShown()) {
+        row.child.hide();
+        tr.removeClass('shown');
+      } else {
+        var items = row.data().items;
+
+        if (items.length) {
+          var detailHtml = '<table class="table table-bordered">';
+          detailHtml += '<thead><tr><th>Nama Barang</th><th>Faktur Qty</th><th>WMS Qty</th></tr></thead><tbody>';
+
+          items.forEach(function (item) {
+            detailHtml +=
+              '<tr><td>' + item.nama_barang + '</td><td>' + item.qty1 + '</td><td>' + item.wms_qty1 + '</td></tr>';
+          });
+
+          detailHtml += '</tbody></table>';
+          row.child(detailHtml).show();
+        } else {
+          row.child('No items').show();
+        }
+        tr.addClass('shown');
+      }
+    });
 
     // Append the custom dropdown button to the container
     $('div.dropdown-container').html(`
       <div>
-      <button type="button" class="btn btn-primary" id="selectAllBtn">
-        Select
-      </button>
         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
           Action
         </button>
@@ -356,12 +303,6 @@ function createViewModal() {
                                 <label for="scheduledOptimizationTime">Waktu Optimasi yang Dijadwalkan</label>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="form-floating form-floating-outline">
-                                <input type="text" id="deliveryType" name="deliveryType" class="form-control" placeholder="Masukkan tipe pengiriman" readonly />
-                                <label for="deliveryType">Tipe Pengiriman</label>
-                            </div>
-                        </div>
                     </form>
                 </div>
             </div>
@@ -383,6 +324,32 @@ function createViewModal() {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" data-bs-dismiss="modal">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalView" tabindex="-1" aria-labelledby="modalViewLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <label for="actionSelect" class="form-label">Document Reconciliation</label>
+                <select class="form-select" id="actionSelect">
+                    <option value="" disabled selected>Pilih salah satu...</option>
+                    <option value="revisiFaktur">Revisi Faktur</option>
+                    <option value="koreksiJual">Koreksi Jual</option>
+                    <option value="barangHilang">Barang Hilang</option>
+                    <option value="tukarFaktur">Tukar Faktur</option>
+                    <option value="lainnya">Lainnya</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Simpan</button>
             </div>
         </div>
     </div>

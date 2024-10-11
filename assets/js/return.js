@@ -26,45 +26,39 @@ $('body').append(`
                 </select>
               </div>
 
-            <!-- Retur Document -->
             <div class="col-md-6 mb-3">
               <label for="returDocument" class="form-label">Retur Document</label>
-              <input type="text" class="form-control" id="returDocument" placeholder="Masukkan Dokumen Retur">
-            </div>
-          </div>
-
-          <div class="row">
-            <!-- Pick Up Date -->
-            <div class="col-md-6 mb-3">
-              <label for="pickUpDate" class="form-label">Pick Up Date</label>
-              <input type="date" class="form-control" id="pickUpDate">
-            </div>
-
-            <!-- Approval By -->
-              <div class="col-md-6 mb-3">
-                <label for="approvalBy" class="form-label">Approval By</label>
-                <select class="form-control" id="approvalBy">
-                  <option value="" disabled selected>Pilih Nama Approval</option>
-                  <option value="finance1">Finance User 1</option>
-                  <option value="finance2">Finance User 2</option>
-                  <option value="finance3">Finance User 3</option>
-                  <option value="finance4">Finance User 4</option>
-                </select>
-              </div>
-          </div>
-
-          <div class="row">
-            <!-- Status -->
-            <div class="col-md-6 mb-3">
-              <label for="status" class="form-label">Status</label>
-              <select class="form-select" id="status">
-                <option value="" disabled selected>Pilih Status Retur</option>
-                <option value="planned">Planned</option>
-                <option value="already_processed_wms">Already Processed WMS</option>
+              <select class="form-control" id="returDocument">
+                <option value="" disabled selected>Pilih Dokumen Retur</option>
+                <option value="doc1">Dokumen 1</option>
+                <option value="doc2">Dokumen 2</option>
+                <option value="doc3">Dokumen 3</option>
+                <option value="doc4">Dokumen 4</option>
               </select>
             </div>
           </div>
-          
+
+          <div class="row">
+            <!-- Retur Document -->
+            <div class="col-md-6 mb-3">
+              <label for="returDocument" class="form-label">Retur Document Reference</label>
+              <input type="text" class="form-control" id="returDocument" placeholder="Masukkan Dokumen Retur Reference">
+            </div>
+            <!-- Pick Up Date -->
+            <div class="col-md-6 mb-3">
+              <label for="pickUpDate" class="form-label">Request Pick Up Date</label>
+              <input type="date" class="form-control" id="pickUpDate">
+            </div>
+          </div>
+
+          <div class="row">
+          <!-- Pick Up Date -->
+            <div class="col-md-6 mb-3">
+              <label for="pickUpDate" class="form-label">Pick Up Date</label>
+              <input type="date" class="form-control" id="pickUpDate" value="" disabled>
+            </div>
+          </div>
+
           <!-- Tabel Produk -->
           <table class="table">
             <thead>
@@ -187,34 +181,23 @@ $('body').append(`
           </div>
 
           <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="returDocument" class="form-label">Retur Document Reference</label>
+              <input type="text" class="form-control" id="returDocument" value="DOC123456">
+            </div> 
+          
             <!-- Pick Up Date -->
             <div class="col-md-6 mb-3">
-              <label for="pickUpDate" class="form-label">Pick Up Date</label>
-              <input type="date" class="form-control" id="pickUpDate" value="2024-10-10">
-            </div>
-
-            <!-- Approval By -->
-            <div class="col-md-6 mb-3">
-              <label for="approvalBy" class="form-label">Approval By</label>
-              <select class="form-control" id="approvalBy">
-                <option value="" disabled selected>Pilih Nama Approval</option>
-                <option value="financeUser1">John Doe</option>
-                <option value="financeUser2">Jane Smith</option>
-                <option value="financeUser3">Alice Johnson</option>
-                <option value="financeUser4">Robert Brown</option>
-              </select>
+              <label for="pickUpDate" class="form-label">Request Pick Up Date</label>
+              <input type="date" class="form-control" id="pickUpDate" value="2024-10-10" readonly>
             </div>
           </div>
 
           <div class="row">
-            <!-- Status -->
+          <!-- Pick Up Date -->
             <div class="col-md-6 mb-3">
-              <label for="status" class="form-label">Status</label>
-              <select class="form-select" id="status">
-                <option value="" disabled>Pilih Status Retur</option>
-                <option value="planned" selected>Planned</option>
-                <option value="already_processed_wms">Already Processed WMS</option>
-              </select>
+              <label for="pickUpDate" class="form-label">Pick Up Date</label>
+              <input type="date" class="form-control" id="pickUpDate" value="2024-10-10" readonly>
             </div>
           </div>
           
@@ -301,37 +284,31 @@ $('body').append(`
 
             <!-- Retur Document -->
             <div class="col-md-6 mb-3">
-              <label for="returDocument" class="form-label">Retur Document</label>
+              <label for="returDocument" class="form-label">Request Retur Document</label>
               <input type="text" class="form-control" id="returDocument" placeholder="Masukkan Dokumen Retur" value="RT123456" readonly>
             </div>
           </div>
 
           <div class="row">
-            <!-- Pick Up Date -->
-            <div class="col-md-6 mb-3">
-              <label for="pickUpDate" class="form-label">Pick Up Date</label>
-              <input type="date" class="form-control" id="pickUpDate" value="2024-10-10" readonly>
-            </div>
+          <div class="col-md-6 mb-3">
+              <label for="returDocument" class="form-label">Retur Document Reference</label>
+              <input type="text" class="form-control" id="returDocument" value="DOC123456" readonly>
+            </div>     
 
-            <!-- Approval By -->
+             <!-- Pick Up Date -->
             <div class="col-md-6 mb-3">
-              <label for="approvalBy" class="form-label">Approval By</label>
-              <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama Approval" value="John Doe" readonly>
+              <label for="pickUpDate" class="form-label">Request Pick Up Date</label>
+              <input type="date" class="form-control" id="pickUpDate" value="2024-10-10" readonly>
             </div>
           </div>
 
           <div class="row">
-            <!-- Status -->
+          <!-- Pick Up Date -->
             <div class="col-md-6 mb-3">
-              <label for="status" class="form-label">Status</label>
-              <select class="form-select" id="status" disabled>
-                <option value="" disabled>Pilih Status Retur</option>
-                <option value="planned" selected>Planned</option>
-                <option value="already_processed_wms">Already Processed WMS</option>
-              </select>
+              <label for="pickUpDate" class="form-label">Pick Up Date</label>
+              <input type="date" class="form-control" id="pickUpDate" value="2024-10-10" readonly>
             </div>
           </div>
-          
           <!-- Tabel Produk -->
           <table class="table">
             <thead>
@@ -391,6 +368,19 @@ $('body').append(`
 
 `);
 
+const style = document.createElement('style');
+style.innerHTML = `
+  .bg-label-blue {
+    background-color: #0000FF; /* Warna Biru */
+    color: white; /* Warna teks putih agar kontras dengan latar belakang biru */
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+    `;
+
+// Menambahkan elemen style ke head
+document.head.appendChild(style);
+
 $(document).ready(function () {
   dt_User = $('.datatables-users').DataTable({
     ajax: assetsPath + 'json/return.json',
@@ -398,6 +388,7 @@ $(document).ready(function () {
       { data: 'nama_toko' },
       { data: 'retur_document' },
       { data: 'request_pick_up_date' },
+      { data: 'pick_up_date' },
       { data: 'product_name' },
       { data: 'qty' },
       { data: 'status' },
@@ -436,11 +427,18 @@ $(document).ready(function () {
       },
       {
         targets: 5,
+        render: function (data) {
+          return '<span>' + data + '</span>';
+        }
+      },
+      {
+        targets: 6,
         render: function (data, type, full) {
           // Define the updated statusObj for mapping delivery_status values
           var statusObj = {
-            1: { title: 'Already Processed WMS', class: 'bg-label-success' },
-            2: { title: 'Planned', class: 'bg-label-warning' }
+            1: { title: 'Return Completed', class: 'bg-label-success' },
+            2: { title: 'Planned', class: 'bg-label-warning' },
+            3: { title: 'New', class: 'bg-label-blue' }
           };
           return (
             '<span class="badge rounded-pill ' +
@@ -471,7 +469,6 @@ $(document).ready(function () {
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <li><a class="dropdown-item viewModal" href="#">View</a></li>
                   <li><a class="dropdown-item editModal" href="#">Edit</a></li>
-                  <li><a class="dropdown-item approval" href="#">Approval</a></li>
                   <li><a class="dropdown-item cancelModal" href="#">Cancel</a></li>
                 </ul>
               </div>

@@ -6,9 +6,10 @@
       "tipe_outlet": "Retail",
       "faktur_id": "F001",
       "faktur_date": "2024-08-01",
+      "delivery_type": "Delivery",
       "delivery_date": "2024-08-02",
       "qty": 10,
-      "wms_qty": 8,
+      "wms_qty": 10,
       "value": 100000,
       "status": 1,
       "inv_status": 1,
@@ -18,13 +19,26 @@
     },
     {
       "id": 2,
-      "toko": "Toko B",
+      "toko": "Toko A",
       "tipe_outlet": "Wholesale",
       "faktur_id": "F002",
       "faktur_date": "2024-08-02",
+      "delivery_type": "Delivery",
       "delivery_date": "2024-08-04",
-      "qty": 20,
-      "wms_qty": 15,
+      "qty": 15,
+      "wms_qty": 10,
+      "items": [
+        {
+          "nama_barang": "Barang A",
+          "qty1": 20,
+          "wms_qty1": 15
+        },
+        {
+          "nama_barang": "Barang B",
+          "qty1": 10,
+          "wms_qty1": 8
+        }
+      ],
       "value": 200000,
       "status": 2,
       "inv_status": 2,
@@ -33,30 +47,27 @@
       "action": "action"
     },
     {
-      "id": 3,
-      "toko": "Toko C",
-      "tipe_outlet": "Retail",
-      "faktur_id": "F003",
-      "faktur_date": "2024-08-03",
-      "delivery_date": "2024-08-06",
-      "qty": 15,
-      "wms_qty": 12,
-      "value": 150000,
-      "status": 1,
-      "inv_status": 1,
-      "scheduled_optimization_date": "2024-08-07",
-      "scheduled_optimization_time": "11:00 AM",
-      "action": "action"
-    },
-    {
       "id": 4,
-      "toko": "Toko D",
+      "toko": "Toko C",
       "tipe_outlet": "Wholesale",
       "faktur_id": "F004",
       "faktur_date": "2024-08-04",
+      "delivery_type": "Delivery",
       "delivery_date": "2024-08-08",
-      "qty": 25,
-      "wms_qty": 20,
+      "qty": 20,
+      "wms_qty": 15,
+      "items": [
+        {
+          "nama_barang": "Barang C",
+          "qty1": 25,
+          "wms_qty1": 20
+        },
+        {
+          "nama_barang": "Barang D",
+          "qty1": 15,
+          "wms_qty1": 10
+        }
+      ],
       "value": 250000,
       "status": 2,
       "inv_status": 2,

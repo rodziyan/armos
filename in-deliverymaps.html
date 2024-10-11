@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css" />
     <link rel="stylesheet" href="assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css" />
     <link rel="stylesheet" href="assets/vendor/libs/@form-validation/form-validation.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
     <!-- Page CSS -->
 
@@ -496,8 +497,8 @@
                   </li>
                 
                   
-
-                <!-- Driver Management -->
+                
+                  <!-- Driver Management -->
               <li class="menu-item">
                 <a href="javascript:void(0)" class="menu-link menu-toggle">
                   <i class="menu-icon tf-icons ri-dashboard-line"></i>
@@ -695,58 +696,42 @@
                 <div class="col-12">
                   <!-- Role Table -->
                   <div class="card">
+                    <div id="map"></div>
                     <!-- Display Today's Date -->
-                    <h4 class="mb-2 mt-5 ms-5"><strong>Tanggal Hari Ini:</strong> <span id="currentDate"></span></h4>
+                    <!-- <h4 class="mb-2 mt-5 ms-5"><strong>Tanggal Hari Ini:</strong> <span id="currentDate"></span></h4>
                       <div class="card-header border-bottom">
                           <h5 class="card-title mb-0">Filters</h5>
                           <div class="d-flex flex-wrap align-items-center gap-3 pt-4">
-                            <!-- Filter by Route ID -->
                             <div class="col-md">
-                              <label for="filter-route" class="form-label">Filter by Route ID</label>
                               <input type="text" id="filter-route" class="form-control" placeholder="Filter by Route ID" />
                             </div>
-                          
-                            <!-- Filter by Driver & Vehicle -->
                             <div class="col-md">
-                              <label for="filter-driver-vehicle" class="form-label">Filter by Driver & Vehicle</label>
                               <input type="text" id="filter-driver-vehicle" class="form-control" placeholder="Filter by Driver & Vehicle" />
                             </div>
-                          
-                            <!-- Filter by Delivery Type -->
                             <div class="col-md">
-                              <label for="filter-delivery-tipe" class="form-label">Filter by Delivery Type</label>
-                              <select id="filter-delivery-tipe" class="form-control">
-                                <option value="" disabled selected>Choose a delivery type</option>
-                                <option value="delivery">Delivery</option>
-                              </select>
+                              <input type="text" id="filter-delivery-tipe" class="form-control" placeholder="Filter by Delivery Type" />
                             </div>
-                          
-                            <!-- Filter by Location Name -->
                             <div class="col-md">
-                              <label for="filter-location-name" class="form-label">Filter by Location Name</label>
                               <input type="text" id="filter-location-name" class="form-control" placeholder="Filter by Location Name" />
                             </div>
-                          
-                            <!-- Filter by Faktur ID -->
                             <div class="col-md">
-                              <label for="filter-faktur-id" class="form-label">Filter by Faktur ID</label>
+                              <input type="text" id="filter-do-number" class="form-control" placeholder="Filter by DO Number" />
+                            </div>
+                            <div class="col-md">
                               <input type="text" id="filter-faktur-id" class="form-control" placeholder="Filter by Faktur ID" />
                             </div>
-                            <!-- Buttons -->
-                            <div class="col-md-auto mt-6">
+                            <div class="col-md-auto">
                               <div class="d-flex">
-                                <!-- Search Button -->
                                 <button type="button" class="btn btn-primary me-2">
                                   <i class="ri-search-line"></i>
                                 </button>
-                                <!-- Clear Button -->
                                 <button type="button" class="btn btn-danger">
                                   <i class="ri-close-line"></i>
                                 </button>
                               </div>
                             </div>
                           </div>                                               
-                      </div>
+                      </div> -->
                     <!-- Add New Button -->
                     <div class="card-datatable table-responsive">
                       <table class="datatables-users table">
@@ -755,23 +740,31 @@
                             <th>Route ID</th>
                             <th>Driver - Vehicle</th>
                             <th>% Capacity</th>
-                            <th>Total Value</th>
+                            <th>Total Value Trip</th>
                             <th>Total Trip Time</th>
                             <th>Seq</th>
-                            <th>Location Name</th>
                             <th>Delivery Type</th>
-                            <th>Jumlah Dokumen</th>
+                            <th>Location Name</th>
+                            <th>Location Type</th>
+                            <th>Jumlah Dokument</th>
                             <th>Faktur Qty</th>
                             <th>WMS Qty</th>
                             <th>Delivery Qty</th>
-                            <th>Value</th>
-                            <th>Start Time</th>
-                            <th>End Time</th>
-                            <th>Trip Time</th>
-                            <th>Notes</th>
+                            <th>Received Qty</th>
+                            <th>Retur Qty</th>
+                            <th>Truk Qty</th>
+                            <th>Total Value</th>
+                            <th>Planned Start Time</th>
+                            <th>Planned End Time</th>
+                            <th>Planned Trip Time</th>
+                            <th>Actual Start Time</th>
+                            <th>Actual End Time</th>
+                            <th>Actual Trip Time</th>
+                            <th>Delivery Status</th>
                             <th>Action</th>
                         </tr>                        
-                        </thead>
+                      </thead>
+                      <tbody></tbody>
                       </table>
                     </div>
                   </div>
@@ -842,6 +835,13 @@
       </div>
     </div>
 
+    <!-- Overlay -->
+    <div class="layout-overlay layout-menu-toggle"></div>
+
+    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+    <div class="drag-target"></div>
+
+    <!--/ Layout wrapper -->
     <style>
       /* Add some padding and border to the table cells */
 table.dataTable td {
@@ -854,15 +854,19 @@ table.dataTable td, table.dataTable th {
     text-align: center;
     vertical-align: middle;
 }
+#map {
+    height: 400px;
+    z-index: 1; /* This will keep the map behind the menu */
+}
+
+.menu-item, .menu-link {
+    z-index: 1000; /* Ensure menu items appear on top of the map */
+}
+.menu-open #map {
+    width: calc(100% - 250px); /* Adjust this value based on the width of the sidebar */
+}
+
     </style>
-    <!-- Overlay -->
-    <div class="layout-overlay layout-menu-toggle"></div>
-
-    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-    <div class="drag-target"></div>
-
-    <!--/ Layout wrapper -->
-
     <script>
       // Display current date
       document.getElementById('currentDate').innerText = new Date().toLocaleDateString('id-ID');
@@ -890,12 +894,74 @@ table.dataTable td, table.dataTable th {
     <script src="assets/vendor/libs/@form-validation/popular.js"></script>
     <script src="assets/vendor/libs/@form-validation/bootstrap5.js"></script>
     <script src="assets/vendor/libs/@form-validation/auto-focus.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+      // Membuat ikon truk
+      var truckIcon = L.divIcon({
+        className: 'leaflet-truck-icon',
+        html: '<i class="ri-truck-line" style="font-size: 24px; color: black;"></i>',
+        iconSize: [30, 30],
+        iconAnchor: [15, 30],
+        popupAnchor: [0, -30]
+      });
+      
+      // Membuat ikon toko (mall)
+      var storeIcon = L.divIcon({
+        className: 'leaflet-store-icon',
+        html: '<i class="ri-store-2-line" style="font-size: 24px; color: red;"></i>',
+        iconSize: [30, 30],
+        iconAnchor: [15, 30],
+        popupAnchor: [0, -30]
+      });
+    
+      // Inisialisasi peta dengan pusat di Surabaya
+      var map = L.map('map').setView([-7.2504, 112.7688], 15);  // Koordinat Surabaya
+      
+      // Menambahkan layer peta dari OpenStreetMap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+      
+      // Menambahkan marker untuk mall di Surabaya
+      var marker1 = L.marker([-7.2595, 112.7487], { icon: storeIcon }).addTo(map); // Tunjungan Plaza
+      marker1.bindPopup("<b>Tunjungan Plaza</b><br>Surabaya").openPopup();
+      
+      var marker2 = L.marker([-7.3062, 112.7250], { icon: storeIcon }).addTo(map); // Galaxy Mall
+      marker2.bindPopup("<b>Galaxy Mall</b><br>Surabaya").openPopup();
+      
+      var marker3 = L.marker([-7.2948, 112.7320], { icon: storeIcon }).addTo(map); // Surabaya Town Square
+      marker3.bindPopup("<b>Surabaya Town Square</b><br>Surabaya").openPopup();
+      
+      // Membuat garis yang menghubungkan marker1, marker2, dan marker3
+      var latlngs = [
+        [-7.2595, 112.7487],  // Tunjungan Plaza
+        [-7.3062, 112.7250],  // Galaxy Mall
+        [-7.2948, 112.7320]   // Surabaya Town Square
+      ];
+      
+      var polyline = L.polyline(latlngs, { color: 'red' }).addTo(map);
+      
+      // Menambahkan ikon truk di tengah antara marker1 dan marker2
+      var latLngCenter = L.latLng([
+        (marker1.getLatLng().lat + marker2.getLatLng().lat) / 2,
+        (marker1.getLatLng().lng + marker2.getLatLng().lng) / 2
+      ]);
+      
+      var truckInBetween = L.marker(latLngCenter, { icon: truckIcon }).addTo(map);
+      truckInBetween.bindPopup("<b>Truck</b><br>Between Tunjungan Plaza and Galaxy Mall").openPopup();
+      
+      // Mengatur zoom peta agar semua marker dan garis terlihat
+      map.fitBounds(polyline.getBounds());
+    </script>
+    
+    
 
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="assets/js/order-approval.js"></script>
+    <script src="assets/js/in-delivery.js"></script>
     <script src="assets/js/modal-add-role.js"></script>
   </body>
 </html>

@@ -29,8 +29,8 @@ $('body').append(`
             </select>
           </div>
           <div class="mb-3">
-            <label for="kmPerLiter" class="form-label">KM/L</label>
-            <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM/L">
+            <label for="kmPerLiter" class="form-label">KM Terakhir</label>
+            <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM Terakhir">
           </div>
         </form>
       </div>
@@ -81,8 +81,8 @@ $('body').append(`
               </div>
 
               <div class="mb-3" id="KML" style="display: none;">
-                <label for="kmPerLiter" class="form-label">KM/L</label>
-                <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM/L" value="15 KM/L" disabled>
+                <label for="kmPerLiter" class="form-label">KM Terakhir</label>
+                <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM Terakhir" value="15.000 KM" disabled>
               </div>
 
               <div class="mb-3" id="Vendor" style="display: none;">
@@ -144,8 +144,8 @@ $('body').append(`
               </div>
 
               <div class="mb-3" id="KMLSection" style="display: none;">
-                <label for="kmPerLiterBBM" class="form-label">KM/L</label>
-                <input type="text" class="form-control" id="kmPerLiterBBM" placeholder="Masukkan KM/L" value="15 KM/L">
+                <label for="kmPerLiterBBM" class="form-label">KM Terakhir</label>
+                <input type="text" class="form-control" id="kmPerLiterBBM" placeholder="Masukkan KM Terakhir" value="15.000 KM">
               </div>
 
               <div class="mb-3" id="MaintenanceViewSection" style="display: none;">

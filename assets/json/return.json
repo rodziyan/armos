@@ -4,6 +4,7 @@
       "nama_toko": "Warehouse 1",
       "retur_document": "DO12345",
       "request_pick_up_date": "2024-09-10",
+      "pick_up_date": "2024-09-12",
       "product_name": 10,
       "qty": 50,
       "status": 1,
@@ -13,6 +14,7 @@
       "nama_toko": "Retail Store 3",
       "retur_document": "DO12346",
       "request_pick_up_date": "2024-09-11",
+      "pick_up_date": "2024-09-12",
       "product_name": 5,
       "qty": 30,
       "status": 2,
@@ -22,15 +24,17 @@
       "nama_toko": "Office 7",
       "retur_document": "DO12347",
       "request_pick_up_date": "2024-09-12",
+      "pick_up_date": "",
       "product_name": 15,
       "qty": 15,
-      "status": 1,
+      "status": 3,
       "action": "action"
     },
     {
       "nama_toko": "Warehouse 2",
       "retur_document": "DO12348",
       "request_pick_up_date": "2024-09-13",
+      "pick_up_date": "2024-09-15",
       "product_name": 20,
       "qty": 40,
       "status": 1,
@@ -43,6 +47,7 @@
       "product_name": 25,
       "qty": 25,
       "status": 2,
+      "pick_up_date": "2024-09-15",
       "action": "action"
     }
   ]

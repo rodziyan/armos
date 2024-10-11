@@ -701,57 +701,77 @@
                           <h5 class="card-title mb-0">Filters</h5>
                           <div class="d-flex flex-wrap align-items-center gap-3 pt-4">
                             <!-- Filter by Toko -->
-                            <div class="flex-grow-1">
+                            <div class="flex-grow-1 d-flex flex-column">
+                              <label for="filter-toko" class="form-label">Filter by Toko</label>
                               <input type="text" id="filter-toko" class="form-control" placeholder="Filter by Toko" />
                             </div>
+                            
                             <!-- Filter by Tipe Outlet -->
-                            <div class="flex-grow-1">
+                            <div class="flex-grow-1 d-flex flex-column">
                               <label for="filter-tipe-outlet" class="form-label">Filter by Tipe Outlet</label>
                               <select id="filter-tipe-outlet" class="form-control">
                                 <option value="" disabled selected>Choose a type of outlet</option>
                                 <option value="retail">Retail</option>
                                 <option value="wholesale">Wholesale</option>
                               </select>
-                            </div>                            
+                            </div>
+                            
                             <!-- Filter by Faktur Id -->
-                            <div class="flex-grow-1">
+                            <div class="flex-grow-1 d-flex flex-column">
+                              <label for="filter-faktur-id" class="form-label">Filter by Faktur Id</label>
                               <input type="text" id="filter-faktur-id" class="form-control" placeholder="Filter by Faktur Id" />
                             </div>
+                            
                             <!-- Filter by Delivery Date -->
-                            <div class="flex-grow-1">
+                            <div class="flex-grow-1 d-flex flex-column">
                               <label for="filter-delivery-date" class="form-label">Filter by Delivery Date</label>
-                              <input type="date" id="filter-delivery-date" class="form-control" placeholder="Filter by Delivery Date" />
-                            </div>                            
+                              <input type="date" id="filter-delivery-date" class="form-control" />
+                            </div>
+                            
                             <!-- Filter by Status -->
-                            <div class="flex-grow-1">
+                            <div class="flex-grow-1 d-flex flex-column">
                               <label for="filter-status" class="form-label">Filter by Status</label>
                               <select id="filter-status" class="form-select select2">
                                 <option value="">Status</option>
                                 <option value="1">New</option>
                                 <option value="2">Pending</option>
                               </select>
-                            </div>                            
+                            </div>
+
+                            <!-- Filter by Inventory Status -->
+                            <div class="flex-grow-1 d-flex flex-column">
+                              <label for="filter-inventory-status" class="form-label">Filter by Inventory Status</label>
+                              <select id="filter-inventory-status" class="form-select select2">
+                                <option value="">Select Inventory Status</option>
+                                <option value="full_fill">Full Fill</option>
+                                <option value="not_full_fill">Not Full Fill</option>
+                              </select>
+                            </div>
+                            
                             <!-- Filter by Delivery Type -->
-                            <div class="flex-grow-1">
+                            <div class="flex-grow-1 d-flex flex-column">
                               <label for="filter-delivery-type" class="form-label">Filter by Delivery Type</label>
                               <select id="filter-delivery-type" class="form-control">
                                 <option value="" disabled selected>Choose a delivery type</option>
                                 <option value="standard">Standard</option>
                                 <option value="express">Express</option>
                               </select>
-                            </div>                            
-                            <!-- Buttons -->
-                            <div class="d-flex">
-                              <!-- Search Button -->
-                              <button type="button" class="btn btn-primary me-2">
-                                <i class="ri-search-line"></i>
-                              </button>
-                              <!-- Clear Button -->
-                              <button type="button" class="btn btn-danger">
-                                <i class="ri-close-line"></i>
-                              </button>
                             </div>
-                          </div>                          
+                            
+                            <!-- Buttons -->
+                            <div class="col-md-auto mt-6">
+                              <div class="d-flex">
+                                <!-- Search Button -->
+                                <button type="button" class="btn btn-primary me-2">
+                                  <i class="ri-search-line"></i>
+                                </button>
+                                <!-- Clear Button -->
+                                <button type="button" class="btn btn-danger">
+                                  <i class="ri-close-line"></i>
+                                </button>
+                              </div>
+                            </div>                            
+                          </div>                                                   
                       </div>
                     <!-- Add New Button -->
                     <div class="card-datatable table-responsive">
@@ -759,12 +779,14 @@
                           <thead>
                               <tr>
                                   <th></th>
+                                  <th></th>
                                   <th>Toko</th>
                                   <th>Tipe Outlet</th>
-                                  <th>Faktur ID</th>
+                                  <th>Dokumen ID</th>
                                   <th>Faktur Date</th>
+                                  <th>Delivery Type</th>
                                   <th>Delivery Date</th>
-                                  <th>Qty</th>
+                                  <th>Faktur Qty</th>
                                   <th>WMS Qty</th>
                                   <th>Value</th>
                                   <th>Status</th>
@@ -838,6 +860,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="routingModalLabel">Manual Routing</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
               <div class="modal-body">
                   <div class="row">
