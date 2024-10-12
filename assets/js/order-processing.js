@@ -176,7 +176,7 @@ $(document).ready(function () {
               // Merah: Dokumen reconciliation sudah diajukan, tapi Finance belum lengkapi
               buttons += `
                   <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" 
-                          data-bs-toggle="modal" data-bs-target="#modalView">
+                          data-bs-toggle="modal" data-bs-target="#revisiSave">
                       <i class="ri-file-edit-line"></i> 
                   </button>
               `;
@@ -484,6 +484,31 @@ function createViewModal() {
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
                 <button type="button" class="btn btn-primary">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="revisiSave" tabindex="-1" aria-labelledby="revisiSaveLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Document ID Section -->
+                <label for="documentID" class="form-label">Document ID</label>
+                <input type="text" id="documentID" class="form-control" value="F000" readonly>
+
+                <!-- Document Reconciliation Section -->
+                <label for="actionSelect" class="form-label mt-3">Document Reconciliation</label>
+                <select class="form-select" id="actionSelect">
+                    <option value="revisiFaktur" selected>Revisi Faktur</option>
+                    <option value="koreksiJual">Koreksi Jual</option>
+                    <option value="barangHilang">Barang Hilang</option>
+                    <option value="tukarFaktur">Tukar Faktur</option>
+                    <option value="lainnya">Lainnya</option>
+                </select>
             </div>
         </div>
     </div>
