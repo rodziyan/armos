@@ -11,7 +11,8 @@ $(document).ready(function () {
   // Initialize DataTable
   if ($('.datatables-users').length) {
     var dt_User = $('.datatables-users').DataTable({
-      ajax: assetsPath + 'json/order-processing.json', // path to your JSON file
+      ajax: assetsPath + 'json/order-processing.json',
+      order: [[2, 'asc']],
       columns: [
         {
           data: null,
@@ -26,40 +27,38 @@ $(document).ready(function () {
           className: 'details-control',
           orderable: false,
           render: function (data, type, row) {
-            if (row.id === 1) {
+            if (row.inv_status === 1) {
               return '';
             } else {
               return '<i class="ri-arrow-right-line"></i>';
             }
           }
         },
+        {
+          data: 'status',
+          render: function (data, type, row) {
+            return data == 1 ? '<span style="color: blue;">New</span>' : '<span style="color: red;">Pending</span>';
+          }
+        },
         { data: 'toko' },
         { data: 'tipe_outlet' },
         { data: 'faktur_id' },
         { data: 'faktur_date' },
-        { data: 'delivery_type' },
         { data: 'delivery_date' },
         { data: 'qty' },
         { data: 'wms_qty' },
-        { data: 'value' },
-        {
-          data: 'status',
-          render: function (data, type, row) {
-            return data == 1
-              ? '<span class="badge bg-label-blue">New</span>'
-              : '<span class="badge bg-label-warning">Pending</span>';
-          }
-        },
         {
           data: 'inv_status',
           render: function (data, type, row) {
             return data == 1
-              ? '<span class="badge bg-label-success">Full Fill</span>'
-              : '<span class="badge bg-label-danger">Not Full Fill</span>';
+              ? '<span style="color: green;">Full Fill</span>'
+              : '<span style="color: red;">Not Full Fill</span>';
           }
         },
+        { data: 'value' },
         { data: 'scheduled_optimization_date' },
         { data: 'scheduled_optimization_time' },
+        { data: 'document_reference' },
         {
           data: null,
           orderable: false,
@@ -99,36 +98,104 @@ $(document).ready(function () {
                           data-delivery_type="${$deliveryType}">
                           <i class="ri-eye-line ri-20px"></i>
                       </button>
-                      <button type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect updateModal"
-                          data-id="${$id}"
-                          data-toko="${$toko}"
-                          data-tipe_outlet="${$tipeOutlet}"
-                          data-faktur_id="${$fakturId}"
-                          data-faktur_date="${$fakturDate}"
-                          data-delivery_date="${$deliveryDate}"
-                          data-qty="${$qty}"
-                          data-value="${$value}"
-                          data-status="${$statusText}"
-                          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
-                          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
-                          data-delivery_type="${$deliveryType}">
-                          <i class="ri-edit-line ri-20px"></i>
-                      </button>
                   `;
-            if (full['inv_status'] === 2) {
+
+            // Check the value of 'toko' for additional conditions
+            if (full['toko'] === 'Toko A' || full['toko'] === 'Toko C') {
+              console.log('Toko A or Toko C detected');
+              // Green color if inv_status === 2, status === 2, and toko is Toko A or Toko C
               buttons += `
-                      <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
-                              data-bs-toggle="modal" data-bs-target="#modalView">
-                        <i class="ri-file-edit-line"></i> 
-                      </button>
-                    `;
+      <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect updateModal"
+          data-id="${$id}"
+          data-toko="${$toko}"
+          data-tipe_outlet="${$tipeOutlet}"
+          data-faktur_id="${$fakturId}"
+          data-faktur_date="${$fakturDate}"
+          data-delivery_date="${$deliveryDate}"
+          data-qty="${$qty}"
+          data-value="${$value}"
+          data-status="${$statusText}"
+          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+          data-delivery_type="${$deliveryType}">
+          <i class="ri-edit-line ri-20px"></i>
+      </button>
+  `;
+            } else if (full['toko'] === 'Toko I' || full['toko'] === 'Toko K') {
+              console.log('Toko A or Toko C not detected, using default gray button');
+              // Gray color if inv_status === 2, status === 2, and toko is neither Toko A nor Toko C
+              buttons += `
+      <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect updateModal"
+          data-id="${$id}"
+          data-toko="${$toko}"
+          data-tipe_outlet="${$tipeOutlet}"
+          data-faktur_id="${$fakturId}"
+          data-faktur_date="${$fakturDate}"
+          data-delivery_date="${$deliveryDate}"
+          data-qty="${$qty}"
+          data-value="${$value}"
+          data-status="${$statusText}"
+          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+          data-delivery_type="${$deliveryType}"
+          disabled>
+          <i class="ri-edit-line ri-20px"></i>
+      </button>
+  `;
+            } else if (full['toko'] === 'Toko E' || full['toko'] === 'Toko G') {
+              console.log('Toko E or Toko G detected, using blue button');
+              // Blue color if status === 2 (New status)
+              buttons += `
+      <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect updateModal"
+          data-id="${$id}"
+          data-toko="${$toko}"
+          data-tipe_outlet="${$tipeOutlet}"
+          data-faktur_id="${$fakturId}"
+          data-faktur_date="${$fakturDate}"
+          data-delivery_date="${$deliveryDate}"
+          data-qty="${$qty}"
+          data-value="${$value}"
+          data-status="${$statusText}"
+          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+          data-delivery_type="${$deliveryType}">
+          <i class="ri-edit-line ri-20px"></i>
+      </button>
+  `;
             }
-            if ($toko === 'Toko C') {
+
+            if (full['toko'] === 'Toko I' || full['toko'] === 'Toko K') {
+              // Abu-abu: Admin ekspedisi belum mengajukan dokumen reconciliation
               buttons += `
-                          <button id="optimizationButton" type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect unholdModal">
-                              <i class="ri-error-warning-line ri-20px"></i>
-                          </button>
-                      `;
+                  <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
+                          data-bs-toggle="modal" data-bs-target="#modalView" style="background-color: gray;">
+                      <i class="ri-file-edit-line"></i> 
+                  </button>
+              `;
+            } else if (full['toko'] === 'Toko A' || full['toko'] === 'Toko C') {
+              // Merah: Dokumen reconciliation sudah diajukan, tapi Finance belum lengkapi
+              buttons += `
+                  <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" 
+                          data-bs-toggle="modal" data-bs-target="#modalView">
+                      <i class="ri-file-edit-line"></i> 
+                  </button>
+              `;
+            } else if (full['toko'] === 'Toko E' || full['toko'] === 'Toko G') {
+              // Hijau: Dokumen sudah dilengkapi oleh Finance, Document Ref terisi
+              buttons += `
+                  <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect" 
+                          data-bs-toggle="modal" data-bs-target="#editFakur">
+                      <i class="ri-file-edit-line"></i> 
+                  </button>
+              `;
+            }
+
+            if ($status === 2) {
+              buttons += `
+                 <button id="optimizationButton" type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect unholdModal">
+                    <i class="ri-error-warning-line ri-20px" style="color: black;"></i>
+                </button>
+              `;
             }
 
             return buttons;
@@ -137,6 +204,7 @@ $(document).ready(function () {
       ],
       dom: '<"top"<"d-flex justify-content-end mt-5 mb-5 me-5"<"dropdown-container">>>rt<"bottom"lp><"clear">'
     });
+
     // Handle row details click
     $('.datatables-users tbody').on('click', 'td.details-control', function () {
       var tr = $(this).closest('tr');
@@ -193,121 +261,183 @@ $(document).ready(function () {
       $('#unholdModal').modal('show'); // Tampilkan modal
     });
   }
+  $(document).ready(function () {
+    // Tambahkan event listener untuk tombol View dan Update
+    $(document).on('click', '.viewModal, .updateModal', function () {
+      var $this = $(this);
 
-  // Tambahkan event listener pada tombol View dan Update
-  $(document).on('click', '.viewModal, .updateModal', function () {
-    // Ambil data dari atribut data-* tombol yang diklik
-    var $this = $(this);
-    var id = $this.data('id');
-    var toko = $this.data('toko');
-    var tipeOutlet = $this.data('tipe_outlet');
-    var fakturId = $this.data('faktur_id');
-    var fakturDate = $this.data('faktur_date');
-    var deliveryDate = $this.data('delivery_date');
-    var qty = $this.data('qty');
-    var value = $this.data('value');
-    var status = $this.data('status');
-    var scheduledOptimizationDate = $this.data('scheduled_optimization_date');
-    var scheduledOptimizationTime = $this.data('scheduled_optimization_time');
-    var deliveryType = $this.data('delivery_type');
+      // Ambil data dari atribut data-* tombol yang diklik
+      var id = $this.data('id');
+      var toko = $this.data('toko');
+      var tipeOutlet = $this.data('tipe_outlet');
+      var fakturId = $this.data('faktur_id');
+      var fakturDate = $this.data('faktur_date');
+      var deliveryDate = $this.data('delivery_date');
+      var qty = $this.data('qty');
+      var value = $this.data('value');
+      var status = $this.data('status');
+      var scheduledOptimizationDate = $this.data('scheduled_optimization_date');
+      var scheduledOptimizationTime = $this.data('scheduled_optimization_time');
+      var deliveryType = $this.data('delivery_type');
 
-    // Isi modal dengan data
-    $('#viewModal #toko').val(toko);
-    $('#viewModal #tipeOutlet').val(tipeOutlet);
-    $('#viewModal #fakturId').val(fakturId);
-    $('#viewModal #fakturDate').val(fakturDate);
-    $('#viewModal #deliveryDate').val(deliveryDate);
-    $('#viewModal #qty').val(qty);
-    $('#viewModal #value').val(value);
-    $('#viewModal #status').val(status);
-    $('#viewModal #scheduledOptimizationDate').val(scheduledOptimizationDate);
-    $('#viewModal #scheduledOptimizationTime').val(scheduledOptimizationTime);
-    $('#viewModal #deliveryType').val(deliveryType);
+      // Cek apakah tombol yang diklik adalah tombol viewModal atau updateModal
+      if ($this.hasClass('viewModal')) {
+        // Set data untuk viewModal
+        $('#viewToko').text('Toko: ' + toko);
+        $('#viewTipeOutlet').text('Tipe Outlet: ' + tipeOutlet);
+        $('#viewFakturId').text('Faktur ID: ' + fakturId);
+        $('#viewFakturDate').text('Faktur Date: ' + fakturDate);
+        $('#viewDeliveryDate').text('Delivery Date: ' + deliveryDate);
+        $('#viewQty').text('Quantity: ' + qty);
+        $('#viewValue').text('Value: ' + value);
+        $('#viewStatus').text('Status: ' + status);
+        $('#viewScheduledOptimizationDate').text('Scheduled Optimization Date: ' + scheduledOptimizationDate);
+        $('#viewScheduledOptimizationTime').text('Scheduled Optimization Time: ' + scheduledOptimizationTime);
+        $('#viewDeliveryType').text('Delivery Type: ' + deliveryType);
 
-    // Tampilkan modal
-    $('#viewModal').modal('show');
+        // Tampilkan modal viewModal saja
+        $('#viewModal').modal('show');
+      } else if ($this.hasClass('updateModal')) {
+        // Set data untuk updateModal
+        $('#updateToko').text('Toko: ' + toko);
+        $('#updateTipeOutlet').text('Tipe Outlet: ' + tipeOutlet);
+        $('#updateFakturId').text('Faktur ID: ' + fakturId);
+        $('#updateFakturDate').text('Faktur Date: ' + fakturDate);
+        $('#updateDeliveryDate').text('Delivery Date: ' + deliveryDate);
+        $('#updateQty').text('Quantity: ' + qty);
+        $('#updateValue').text('Value: ' + value);
+        $('#updateStatus').text('Status: ' + status);
+        $('#updateScheduledOptimizationDate').text('Scheduled Optimization Date: ' + scheduledOptimizationDate);
+        $('#updateScheduledOptimizationTime').text('Scheduled Optimization Time: ' + scheduledOptimizationTime);
+        $('#updateDeliveryType').text('Delivery Type: ' + deliveryType);
+
+        // Tampilkan modal updateModal saja
+        $('#updateModal').modal('show');
+      }
+    });
   });
 });
 
 // Fungsi untuk membuat modal
 function createViewModal() {
   var modalHTML = `
-    <!-- Modal View -->
-    <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-simple modal-edit-user">
-            <div class="modal-content">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="modal-body p-0">
-                    <div class="text-center mb-6">
-                        <h4 class="mb-2">Detail Order Processing</h4>
+    <!-- Modal with updated design and increased content size -->
+<div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="max-width: 80%; width: auto; max-height: 90vh;">
+        <div class="modal-content">
+            <div class="d-flex justify-content-end me-3 mt-3">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+            <div class="modal-body">
+                <!-- Top Section: Toko and Document ID -->
+                <div class="d-flex justify-content-between mb-4">
+                    <div>
+                        <p><strong>Toko:</strong> <span id="toko"></span></p>
+                        <p><strong>Document ID:</strong> <span id="fakturId"></span></p>
                     </div>
-                    <form id="viewForm" class="row g-5" onsubmit="return false">
-                        <!-- Order Details -->
-                        <div class="col-12">
-                            <div class="form-floating form-floating-outline">
-                                <input type="text" id="toko" name="toko" class="form-control" placeholder="Masukkan nama toko" readonly />
-                                <label for="toko">Toko</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating form-floating-outline">
-                                <input type="text" id="tipeOutlet" name="tipeOutlet" class="form-control" placeholder="Masukkan tipe outlet" readonly />
-                                <label for="tipeOutlet">Tipe Outlet</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating form-floating-outline">
-                                <input type="text" id="fakturId" name="fakturId" class="form-control" placeholder="Masukkan ID faktur" readonly />
-                                <label for="fakturId">Faktur ID</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating form-floating-outline">
-                                <input type="text" id="fakturDate" name="fakturDate" class="form-control" placeholder="Masukkan tanggal faktur" readonly />
-                                <label for="fakturDate">Tanggal Faktur</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating form-floating-outline">
-                                <input type="text" id="deliveryDate" name="deliveryDate" class="form-control" placeholder="Masukkan tanggal pengiriman" readonly />
-                                <label for="deliveryDate">Tanggal Pengiriman</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating form-floating-outline">
-                                <input type="text" id="qty" name="qty" class="form-control" placeholder="Masukkan jumlah" readonly />
-                                <label for="qty">Qty</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating form-floating-outline">
-                                <input type="text" id="value" name="value" class="form-control" placeholder="Masukkan nilai" readonly />
-                                <label for="value">Value</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating form-floating-outline">
-                                <input type="text" id="status" name="status" class="form-control" placeholder="Masukkan status" readonly />
-                                <label for="status">Status</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating form-floating-outline">
-                                <input type="text" id="scheduledOptimizationDate" name="scheduledOptimizationDate" class="form-control" placeholder="Masukkan tanggal optimasi yang dijadwalkan" readonly />
-                                <label for="scheduledOptimizationDate">Tanggal Optimasi yang Dijadwalkan</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating form-floating-outline">
-                                <input type="text" id="scheduledOptimizationTime" name="scheduledOptimizationTime" class="form-control" placeholder="Masukkan waktu optimasi yang dijadwalkan" readonly />
-                                <label for="scheduledOptimizationTime">Waktu Optimasi yang Dijadwalkan</label>
-                            </div>
-                        </div>
-                    </form>
+                </div>
+
+                <!-- Bottom Section: Table with Order Details -->
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-success">
+                            <tr>
+                                <th>SKU Produk</th>
+                                <th>Nama Produk</th>
+                                <th>Faktur Qty</th>
+                                <th>WMS Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example Row -->
+                            <tr>
+                                <td>SKU001</td>
+                                <td>Produk A</td>
+                                <td>20</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>SKU002</td>
+                                <td>Produk B</td>
+                                <td>30</td>
+                                <td>30</td>
+                            </tr>
+                            <tr>
+                                <td>SKU003</td>
+                                <td>Produk C</td>
+                                <td>40</td>
+                                <td>40</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<!-- Modal with updated design and increased content size -->
+<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="max-width: 80%; width: auto; max-height: 90vh;">
+        <div class="modal-content">
+            <div class="d-flex justify-content-end me-3 mt-3">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Top Section: Toko and Document ID -->
+                <div class="d-flex justify-content-between mb-4">
+                    <div>
+                        <p><strong>Toko:</strong> <span id="toko"></span></p>
+                        <p><strong>Document ID:</strong> <span id="fakturId"></span></p>
+                    </div>
+                </div>
+
+                <!-- Bottom Section: Table with Order Details -->
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-success">
+                            <tr>
+                                <th>SKU Produk</th>
+                                <th>Nama Produk</th>
+                                <th>Faktur Qty</th>
+                                <th>WMS Qty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Example Row -->
+                            <tr>
+                                <td>SKU001</td>
+                                <td>Produk A</td>
+                                <td><input type="text" class="form-control form-control-sm" value="20" id="fakturQty1"></td>
+                                <td><input type="text" class="form-control form-control-sm" value="20" id="wmsQty1"></td>
+                            </tr>
+                            <tr>
+                                <td>SKU002</td>
+                                <td>Produk B</td>
+                                <td><input type="text" class="form-control form-control-sm" value="30" id="fakturQty2"></td>
+                                <td><input type="text" class="form-control form-control-sm" value="30" id="wmsQty2"></td>
+                            </tr>
+                            <tr>
+                                <td>SKU003</td>
+                                <td>Produk C</td>
+                                <td><input type="text" class="form-control form-control-sm" value="40" id="fakturQty3"></td>
+                                <td><input type="text" class="form-control form-control-sm" value="40" id="wmsQty3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Bottom Action Section -->
+                <div class="d-flex justify-content-end mt-3">
+                    <button type="button" class="btn btn-success btn-sm rounded-pill" style="background-color: #006400; border-color: #006400;">
+                        <i class="ri-save-line"></i> Save Changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <!-- Modal -->
 <div class="modal fade" id="unholdModal" tabindex="-1" aria-labelledby="unholdModalLabel" aria-hidden="true">
@@ -337,10 +467,14 @@ function createViewModal() {
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <label for="actionSelect" class="form-label">Document Reconciliation</label>
+                <!-- Document ID Section -->
+                <label for="documentID" class="form-label">Document ID</label>
+                <input type="text" id="documentID" class="form-control" value="F000" readonly>
+
+                <!-- Document Reconciliation Section -->
+                <label for="actionSelect" class="form-label mt-3">Document Reconciliation</label>
                 <select class="form-select" id="actionSelect">
-                    <option value="" disabled selected>Pilih salah satu...</option>
-                    <option value="revisiFaktur">Revisi Faktur</option>
+                    <option value="revisiFaktur" selected>Revisi Faktur</option>
                     <option value="koreksiJual">Koreksi Jual</option>
                     <option value="barangHilang">Barang Hilang</option>
                     <option value="tukarFaktur">Tukar Faktur</option>
@@ -354,6 +488,54 @@ function createViewModal() {
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="editFakur" tabindex="-1" aria-labelledby="editFakurLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg"> 
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editFakurLabel">Revisi Faktur</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Form Edit -->
+        <form id="editForm">
+          <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="documentID" class="form-label">Document ID</label>
+                <input type="text" class="form-control" id="documentID" placeholder="Masukkan Document ID" value="F000">
+              </div>
+              <div class="mb-3">
+                <label for="documentType" class="form-label">Tipe Dokumen</label>
+                <input type="text" class="form-control" id="documentType" placeholder="Masukkan Tipe Dokumen" value="Faktur Revisi">
+              </div>
+              <div class="mb-3">
+                <label for="documentRef" class="form-label">Document Ref</label>
+                <input type="text" class="form-control" id="documentRef" placeholder="Masukkan Document Ref" value="Delivery">
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Deskripsi</label>
+                <textarea class="form-control" id="description" rows="3" placeholder="Masukkan Deskripsi">Faktur revisi untuk penyesuaian quantity.</textarea>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+              <div class="mb-3">
+                <div class="item">
+                  <img src="assets/img/KFaktur.png" alt="Foto Dokumen Revisi Faktur" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
   `;
   // Tambahkan modal ke DOM
   $('body').append(modalHTML);

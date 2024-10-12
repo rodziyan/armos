@@ -2,19 +2,20 @@
   "data": [
     {
       "id": 1,
-      "toko": "Toko A",
+      "toko": "Toko",
       "tipe_outlet": "Retail",
       "faktur_id": "F001",
-      "faktur_date": "2024-08-01",
+      "faktur_date": "01/08/2024",
       "delivery_type": "Delivery",
-      "delivery_date": "2024-08-02",
+      "delivery_date": "02/08/2024",
       "qty": 10,
       "wms_qty": 10,
-      "value": 100000,
+      "value": "Rp.100000",
       "status": 1,
       "inv_status": 1,
-      "scheduled_optimization_date": "2024-08-03",
+      "scheduled_optimization_date": "03/08/2024",
       "scheduled_optimization_time": "10:00 AM",
+      "document_reference": "Delivery",
       "action": "action"
     },
     {
@@ -22,11 +23,11 @@
       "toko": "Toko A",
       "tipe_outlet": "Wholesale",
       "faktur_id": "F002",
-      "faktur_date": "2024-08-02",
+      "faktur_date": "02/08/2024",
       "delivery_type": "Delivery",
-      "delivery_date": "2024-08-04",
+      "delivery_date": "04/08/2024",
       "qty": 15,
-      "wms_qty": 10,
+      "wms_qty": 15,
       "items": [
         {
           "nama_barang": "Barang A",
@@ -39,11 +40,30 @@
           "wms_qty1": 8
         }
       ],
-      "value": 200000,
+      "value": "Rp.200000",
       "status": 2,
       "inv_status": 2,
-      "scheduled_optimization_date": "2024-08-05",
-      "scheduled_optimization_time": "02:00 PM",
+      "scheduled_optimization_date": null,
+      "scheduled_optimization_time": null,
+      "document_reference": null,
+      "action": "action"
+    },
+    {
+      "id": 3,
+      "toko": "Toko B",
+      "tipe_outlet": "Retail",
+      "faktur_id": "F003",
+      "faktur_date": "03/08/2024",
+      "delivery_type": "Delivery",
+      "delivery_date": "05/08/2024",
+      "qty": 12,
+      "wms_qty": 12,
+      "value": "Rp.150000",
+      "status": 1,
+      "inv_status": 1,
+      "scheduled_optimization_date": "06/08/2024",
+      "scheduled_optimization_time": "09:00 AM",
+      "document_reference": "Delivery",
       "action": "action"
     },
     {
@@ -51,11 +71,11 @@
       "toko": "Toko C",
       "tipe_outlet": "Wholesale",
       "faktur_id": "F004",
-      "faktur_date": "2024-08-04",
+      "faktur_date": "04/08/2024",
       "delivery_type": "Delivery",
-      "delivery_date": "2024-08-08",
+      "delivery_date": "08/08/2024",
       "qty": 20,
-      "wms_qty": 15,
+      "wms_qty": 20,
       "items": [
         {
           "nama_barang": "Barang C",
@@ -66,13 +86,152 @@
           "nama_barang": "Barang D",
           "qty1": 15,
           "wms_qty1": 10
+        },
+        {
+          "nama_barang": "Barang E",
+          "qty1": 12,
+          "wms_qty1": 10
         }
       ],
-      "value": 250000,
+      "value": "Rp.250000",
+      "status": 2,
+      "inv_status": 2,
+      "scheduled_optimization_date": null,
+      "scheduled_optimization_time": null,
+      "document_reference": null,
+      "action": "action"
+    },
+    {
+      "id": 5,
+      "toko": "Toko D",
+      "tipe_outlet": "Retail",
+      "faktur_id": "F005",
+      "faktur_date": "05/08/2024",
+      "delivery_type": "Pickup",
+      "delivery_date": "07/08/2024",
+      "qty": 8,
+      "wms_qty": 8,
+      "value": "Rp.90000",
+      "status": 1,
+      "inv_status": 1,
+      "scheduled_optimization_date": "08/08/2024",
+      "scheduled_optimization_time": "11:00 AM",
+      "document_reference": "Pickup",
+      "action": "action"
+    },
+    {
+      "id": 6,
+      "toko": "Toko E",
+      "tipe_outlet": "Wholesale",
+      "faktur_id": "F006",
+      "faktur_date": "06/08/2024",
+      "delivery_type": "Delivery",
+      "delivery_date": "09/08/2024",
+      "qty": 25,
+      "wms_qty": 25,
+      "items": [
+        {
+          "nama_barang": "Barang F",
+          "qty1": 30,
+          "wms_qty1": 25
+        },
+        {
+          "nama_barang": "Barang G",
+          "qty1": 18,
+          "wms_qty1": 15
+        }
+      ],
+      "value": "Rp.300000",
       "status": 2,
       "inv_status": 2,
       "scheduled_optimization_date": "",
       "scheduled_optimization_time": "",
+      "document_reference": "Delivery",
+      "action": "action"
+    },
+    {
+      "id": 8,
+      "toko": "Toko G",
+      "tipe_outlet": "Wholesale",
+      "faktur_id": "F008",
+      "faktur_date": "08/08/2024",
+      "delivery_type": "Pickup",
+      "delivery_date": "11/08/2024",
+      "qty": 30,
+      "wms_qty": 30,
+      "items": [
+        {
+          "nama_barang": "Barang H",
+          "qty1": 40,
+          "wms_qty1": 35
+        },
+        {
+          "nama_barang": "Barang I",
+          "qty1": 12,
+          "wms_qty1": 10
+        }
+      ],
+      "value": "Rp.400000",
+      "status": 2,
+      "inv_status": 2,
+      "scheduled_optimization_date": "",
+      "scheduled_optimization_time": "",
+      "document_reference": "Delivery",
+      "action": "action"
+    },
+    {
+      "id": 10,
+      "toko": "Toko I",
+      "tipe_outlet": "Wholesale",
+      "faktur_id": "F010",
+      "faktur_date": "10/08/2024",
+      "delivery_type": "Delivery",
+      "delivery_date": "12/08/2024",
+      "qty": 22,
+      "wms_qty": 18,
+      "items": [
+        {
+          "nama_barang": "Barang J",
+          "qty1": 25,
+          "wms_qty1": 20
+        },
+        {
+          "nama_barang": "Barang K",
+          "qty1": 15,
+          "wms_qty1": 12
+        }
+      ],
+      "value": "Rp.280000",
+      "status": 2,
+      "inv_status": 2,
+      "scheduled_optimization_date": null,
+      "scheduled_optimization_time": null,
+      "document_reference": null,
+      "action": "action"
+    },
+    {
+      "id": 12,
+      "toko": "Toko K",
+      "tipe_outlet": "Wholesale",
+      "faktur_id": "F012",
+      "faktur_date": "12/08/2024",
+      "delivery_type": "Delivery",
+      "delivery_date": "14/08/2024",
+      "qty": 35,
+      "wms_qty": 40,
+      "items": [
+        {
+          "nama_barang": "Barang L",
+          "qty1": 40,
+          "wms_qty1": 35
+        }
+      ],
+      "value": "Rp.450000",
+      "status": 2,
+      "inv_status": 2,
+      "scheduled_optimization_date": null,
+      "scheduled_optimization_time": null,
+      "document_reference": null,
       "action": "action"
     }
   ]
