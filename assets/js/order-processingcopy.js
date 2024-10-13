@@ -95,8 +95,8 @@ $(document).ready(function () {
           targets: 9, // 'inv_status' column
           render: function (data) {
             return data == 1
-              ? '<span style="color: green;">Full Fill</span>'
-              : '<span style="color: red;">Not Full Fill</span>';
+              ? '<span style="color: green;">FulFilled</span>'
+              : '<span style="color: red;">Not FulFilled</span>';
           }
         },
         {

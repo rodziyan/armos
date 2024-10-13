@@ -15,11 +15,23 @@ $('body').append(`
         <form id="editForm">
           <div class="mb-3">
             <label for="driverName" class="form-label">Nama Supir</label>
-            <input type="text" class="form-control" id="driverName" placeholder="Masukkan Nama Supir">
+            <select class="form-select" id="driverName">
+              <option value="" disabled selected>Pilih Nama Supir</option>
+              <option value="supir1">Supir 1</option>
+              <option value="supir2">Supir 2</option>
+              <option value="supir3">Supir 3</option>
+              <!-- Tambahkan lebih banyak pilihan jika perlu -->
+            </select>
           </div>
           <div class="mb-3">
             <label for="vehiclePlate" class="form-label">Plat Nomor Kendaraan</label>
-            <input type="text" class="form-control" id="vehiclePlate" placeholder="Masukkan Plat Nomor">
+            <select class="form-select" id="vehiclePlate">
+              <option value="" disabled selected>Pilih Plat Nomor</option>
+              <option value="plat1">Plat 1</option>
+              <option value="plat2">Plat 2</option>
+              <option value="plat3">Plat 3</option>
+              <!-- Tambahkan lebih banyak pilihan jika perlu -->
+            </select>
           </div>
           <div class="mb-3">
             <label for="costRequestType" class="form-label">Cost Request Type</label>
