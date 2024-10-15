@@ -46,7 +46,7 @@ $(document).ready(function () {
         {
           targets: 1, // 'status' column
           render: function (data) {
-            return data == 1 ? '<span style="color: blue;">New</span>' : '<span style="color: red;">Pending</span>';
+            return data == 1 ? '<span style="color: blue;">New</span>' : '<span style="color: red;">Hold</span>';
           }
         },
         {
@@ -63,8 +63,12 @@ $(document).ready(function () {
         },
         {
           targets: 4, // 'id_order' column
-          render: function (data) {
-            return '<span>' + data + '</span>';
+          render: function (data, type, row) {
+            if (row.toko === 'Toko G') {
+              return '<span style="color: red;">' + data + '</span>';
+            } else {
+              return '<span>' + data + '</span>';
+            }
           }
         },
         {
@@ -94,6 +98,12 @@ $(document).ready(function () {
         {
           targets: 9, // 'inv_status' column
           render: function (data) {
+            // Jika data adalah null atau undefined, return kosong
+            if (data === null || data === undefined) {
+              return '';
+            }
+
+            // Jika data == 1, tampilkan "FulFilled" dalam warna hijau
             return data == 1
               ? '<span style="color: green;">FulFilled</span>'
               : '<span style="color: red;">Not FulFilled</span>';
@@ -171,49 +181,102 @@ $(document).ready(function () {
           `;
 
             // Check the value of 'toko' for additional conditions
-            if ($jumlah_order !== $jumlah_terkirim) {
+            if (full['toko'] === 'Toko E') {
+              console.log('Toko A or Toko C detected');
+              // Green color if inv_status === 2, status === 2, and toko is Toko A or Toko C
               buttons += `
-              <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect updateModal"
-                  data-id="${$id}"
-                  data-toko="${$toko}"
-                  data-tipe_outlet="${$tipeOutlet}"
-                  data-faktur_id="${$fakturId}"
-                  data-faktur_date="${$fakturDate}"
-                  data-delivery_date="${$deliveryDate}"
-                  data-qty="${$qty}"
-                  data-value="${$value}"
-                  data-status="${$statusText}"
-                  data-scheduled_optimization_date="${$scheduledOptimizationDate}"
-                  data-scheduled_optimization_time="${$scheduledOptimizationTime}"
-                  data-delivery_type="${$deliveryType}">
-                  <i class="ri-edit-line ri-20px"></i>
-              </button>
-            `;
+      <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect updateModal"
+          data-id="${$id}"
+          data-toko="${$toko}"
+          data-tipe_outlet="${$tipeOutlet}"
+          data-faktur_id="${$fakturId}"
+          data-faktur_date="${$fakturDate}"
+          data-delivery_date="${$deliveryDate}"
+          data-qty="${$qty}"
+          data-value="${$value}"
+          data-status="${$statusText}"
+          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+          data-delivery_type="${$deliveryType}">
+          <i class="ri-edit-line ri-20px"></i>
+      </button>
+  `;
+            } else if (null) {
+              console.log('Toko A or Toko C not detected, using default gray button');
+              // Gray color if inv_status === 2, status === 2, and toko is neither Toko A nor Toko C
+              buttons += `
+      <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect updateModal"
+          data-id="${$id}"
+          data-toko="${$toko}"
+          data-tipe_outlet="${$tipeOutlet}"
+          data-faktur_id="${$fakturId}"
+          data-faktur_date="${$fakturDate}"
+          data-delivery_date="${$deliveryDate}"
+          data-qty="${$qty}"
+          data-value="${$value}"
+          data-status="${$statusText}"
+          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+          data-delivery_type="${$deliveryType}"
+          disabled>
+          <i class="ri-edit-line ri-20px"></i>
+      </button>
+  `;
+            } else if (full['toko'] === 'Toko H') {
+              console.log('Toko E or Toko G detected, using blue button');
+              // Blue color if status === 2 (New status)
+              buttons += `
+      <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
+          data-id="${$id}"
+          data-toko="${$toko}"
+          data-tipe_outlet="${$tipeOutlet}"
+          data-faktur_id="${$fakturId}"
+          data-faktur_date="${$fakturDate}"
+          data-delivery_date="${$deliveryDate}"
+          data-qty="${$qty}"
+          data-value="${$value}"
+          data-status="${$statusText}"
+          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
+          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
+          data-delivery_type="${$deliveryType}">
+          <i class="ri-edit-line ri-20px"></i>
+      </button>
+  `;
             }
 
-            if ($jumlah_order !== $jumlah_terkirim) {
+            if (null) {
               // Abu-abu: Admin ekspedisi belum mengajukan dokumen reconciliation
               buttons += `
                   <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
-                          data-bs-toggle="modal" data-bs-target="#modalView" style="background-color: gray;">
+                          data-bs-toggle="modal" data-bs-target="#modalView" style="background-color: gray;"
+                          disabled>
                       <i class="ri-file-edit-line"></i> 
                   </button>
               `;
-            } else if ($harga === null || $harga === 'N/A') {
-              // Abu-abu: Admin ekspedisi belum mengajukan dokumen reconciliation
+            } else if (null) {
+              // Merah: Dokumen reconciliation sudah diajukan, tapi Finance belum lengkapi
               buttons += `
-                  <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
-                          data-bs-toggle="modal" data-bs-target="#modalView" style="background-color: gray;">
+                  <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" 
+                          data-bs-toggle="modal" data-bs-target="#revisiSave">
+                      <i class="ri-file-edit-line"></i> 
+                  </button>
+              `;
+            } else if (full['toko'] === 'Toko E' || full['toko'] === 'Toko H') {
+              // Hijau: Dokumen sudah dilengkapi oleh Finance, Document Ref terisi
+              buttons += `
+                  <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect" 
+                          data-bs-toggle="modal" data-bs-target="#editFakur">
                       <i class="ri-file-edit-line"></i> 
                   </button>
               `;
             }
 
-            if (($tanggal === null || $tanggal === 'N/A') && ($waktu_kirim === null || $waktu_kirim === 'N/A')) {
+            if (full['status'] === 2) {
+              // Abu-abu: Admin ekspedisi belum mengajukan dokumen reconciliation
               buttons += `
-                 <button id="optimizationButton" type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect unholdModal">
-                    <i class="ri-error-warning-line ri-20px" style="color: black;"></i>
-                </button>
+                 <button class="btn btn-warning btn-icon rounded-pill waves-effect">
+                    <i class="ri-error-warning-line" style="color: black;"></i>
+                  </button>
               `;
             }
 

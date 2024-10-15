@@ -698,27 +698,52 @@
                        <!-- Display Today's Date -->
                    <h4 class="ms-2 mt-8 ms-5"><strong>Tanggal Hari Ini:</strong> <span id="currentDate"></span></h4>
                       <div class="d-flex flex-wrap align-items-center gap-3 pt-4 mt-3">
-                        <!-- Filter by Route ID -->
+                        <!-- Filter by Toko -->
                         <div class="col-md">
-                          <label for="filter-route">Filter by Driver Name:</label>
-                          <input type="text" id="filter-route" class="form-control" placeholder="Filter by Driver Name" />
-                        </div>
-                        
-                        <!-- Filter by Driver & Vehicle -->
-                        <div class="col-md">
-                          <label for="filter-driver-vehicle">Filter by Driver Status:</label>
-                          <select id="filter-driver-vehicle" class="form-control">
-                            <option value="">Select Driver Status</option>
-                            <option value="new">New</option>
-                            <option value="planned">Planned</option>
-                            <option value="processed">Return Completed</option>
+                          <label for="filter-toko" class="form-label">Filter by Toko:</label>
+                          <select id="filter-toko" class="form-select">
+                            <option value="">Select Toko</option>
+                            <!-- Populate options dynamically, e.g. -->
+                            <option value="toko1">Toko 1</option>
+                            <option value="toko2">Toko 2</option>
+                            <option value="toko3">Toko 3</option>
                           </select>
                         </div>
-                        
-                        <!-- Filter by Delivery Type -->
+
+                        <!-- Filter by Retur Document -->
                         <div class="col-md">
-                          <label for="filter-delivery-tipe">Filter by Route ID:</label>
-                          <input type="text" id="filter-delivery-tipe" class="form-control" placeholder="Filter by Route ID" />
+                          <label for="filter-retur-doc" class="form-label">Filter by Retur Document:</label>
+                          <select id="filter-retur-doc" class="form-select">
+                            <option value="">Select Retur Document</option>
+                            <!-- Populate options dynamically, e.g. -->
+                            <option value="doc1">Document 1</option>
+                            <option value="doc2">Document 2</option>
+                            <option value="doc3">Document 3</option>
+                          </select>
+                        </div>
+
+                        <!-- Filter by Request Pickup Date -->
+                        <div class="col-md">
+                          <label for="filter-request-pickup-date" class="form-label">Filter by Request Pickup Date:</label>
+                          <input type="date" id="filter-request-pickup-date" class="form-control" />
+                        </div>
+
+                        <!-- Filter by Pickup Date -->
+                        <div class="col-md">
+                          <label for="filter-pickup-date" class="form-label">Filter by Pickup Date:</label>
+                          <input type="date" id="filter-pickup-date" class="form-control" />
+                        </div>
+
+                        <!-- Filter by Status -->
+                        <div class="col-md">
+                          <label for="filter-status" class="form-label">Filter by Status:</label>
+                          <select id="filter-status" class="form-select">
+                            <option value="">Select Status</option>
+                            <option value="return-completed">Return Completed</option>
+                            <option value="return-success">Return Success</option>
+                            <option value="planned">Planned</option>
+                            <option value="new">New</option>
+                          </select>
                         </div>
                         
                         <!-- Buttons -->
@@ -743,6 +768,7 @@
                           <tr>
                             <th>Nama Toko</th>
                             <th>Retur Document</th>
+                            <th>Retur Document Reference</th>
                             <th>Request Pick Up Date</th>
                             <th>Pick Up Date</th>
                             <th>Total Product</th>

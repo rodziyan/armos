@@ -387,6 +387,7 @@ $(document).ready(function () {
     columns: [
       { data: 'nama_toko' },
       { data: 'retur_document' },
+      { data: 'retur_document_ref' },
       { data: 'request_pick_up_date' },
       { data: 'pick_up_date' },
       { data: 'product_name' },
@@ -433,12 +434,19 @@ $(document).ready(function () {
       },
       {
         targets: 6,
+        render: function (data) {
+          return '<span>' + data + '</span>';
+        }
+      },
+      {
+        targets: 7,
         render: function (data, type, full) {
           // Define the updated statusObj for mapping delivery_status values
           var statusObj = {
-            1: { title: 'Return Completed', class: 'bg-label-success' },
-            2: { title: 'Planned', class: 'bg-label-warning' },
-            3: { title: 'New', class: 'bg-label-blue' }
+            1: { title: 'Return Completed', class: 'bg-success' },
+            2: { title: 'Return Success', class: 'bg-primary' },
+            3: { title: 'Planned', class: 'bg-warning' },
+            4: { title: 'New', class: 'bg-info' }
           };
           return (
             '<span class="badge rounded-pill ' +
@@ -476,6 +484,7 @@ $(document).ready(function () {
         }
       }
     ],
+    order: [[8, 'asc']],
     // Remove the default search box
     dom: '<"d-flex justify-content-end align-items-end mt-2 mb-2 me-4"B>t',
     // Add custom buttons

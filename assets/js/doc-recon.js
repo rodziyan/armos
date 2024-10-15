@@ -15,7 +15,13 @@ $('body').append(`
         <form id="editForm">
           <div class="mb-3">
             <label for="documentId" class="form-label">Document ID</label>
-            <input type="text" class="form-control" id="documentId" placeholder="Masukkan Document ID">
+            <select class="form-select" id="documentId">
+              <option value="">Pilih Document ID</option>
+              <option value="doc1">F001</option>
+              <option value="doc2">F002</option>
+              <option value="doc3">F003</option>
+              <!-- Tambahkan opsi lainnya sesuai kebutuhan -->
+            </select>
           </div>
           <div class="mb-3">
             <label for="documentRef" class="form-label">Document Ref</label>

@@ -4,23 +4,56 @@
       "driver_name": "Andi",
       "driver_status": 1,
       "route_id": "R001",
-      "total_drop": 3,
+      "total_drop": 1,
       "action": "action",
-      "faktur_id": "F001",
-      "faktur_qty": 60,
-      "wms_qty": 58,
-      "delivery_qty": 57
+      "faktur_id": 1,
+      "faktur_qty": 15,
+      "wms_qty": 15,
+      "delivery_qty": 15
     },
     {
       "driver_name": "Dedi",
-      "driver_status": 4,
+      "driver_status": 1,
       "route_id": "R004",
+      "total_drop": 1,
+      "action": "action",
+      "faktur_id": 2,
+      "faktur_qty": 35,
+      "wms_qty": 35,
+      "delivery_qty": 35
+    },
+    {
+      "driver_name": "Siti",
+      "driver_status": 1,
+      "route_id": "R002",
+      "total_drop": 1,
+      "action": "action",
+      "faktur_id": 2,
+      "faktur_qty": 17,
+      "wms_qty": 12,
+      "delivery_qty": 12
+    },
+    {
+      "driver_name": "Joni",
+      "driver_status": 2,
+      "route_id": "R003",
       "total_drop": 3,
       "action": "action",
-      "faktur_id": "F002",
-      "faktur_qty": 60,
-      "wms_qty": 58,
-      "delivery_qty": 57
+      "faktur_id": 3,
+      "faktur_qty": 82,
+      "wms_qty": 82,
+      "delivery_qty": 80
+    },
+    {
+      "driver_name": "Budi",
+      "driver_status": 2,
+      "route_id": "R005",
+      "total_drop": 1,
+      "action": "action",
+      "faktur_id": 1,
+      "faktur_qty": 10,
+      "wms_qty": 10,
+      "delivery_qty": 10
     }
   ]
 }

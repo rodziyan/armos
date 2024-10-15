@@ -700,25 +700,36 @@
                     <div class="d-flex flex-wrap align-items-center gap-3 pt-4 mt-3">
                       <!-- Filter by Route ID -->
                       <div class="col-md">
-                        <label for="filter-route" class="form-label">Filter by Route ID</label>
-                        <input type="text" id="filter-route" class="form-control" placeholder="Filter by Route ID" />
-                      </div>
-
-                      <!-- Filter by Driver Status -->
-                      <div class="col-md">
-                        <label for="filter-driver-vehicle" class="form-label">Filter by Driver Status</label>
-                        <select id="filter-driver-vehicle" class="form-control">
-                            <option value="">Select Driver Status</option>
-                            <option value="ready-to-deliver">Ready to Deliver</option>
-                            <option value="loading">Loading</option>
+                        <label for="filter-driver-name" class="form-label">Filter by Driver Name</label>
+                        <select id="filter-driver-name" class="form-select">
+                          <option value="">Select Driver Name</option>
+                          <!-- Add your driver options here -->
+                          <option value="john-doe">Budi</option>
+                          <option value="jane-smith">Siti</option>
                         </select>
                       </div>
-
-                      <!-- Filter by Delivery Type -->
+                      
+                      <!-- Filter by Driver Status -->
                       <div class="col-md">
-                        <label for="filter-delivery-type" class="form-label">Filter by Delivery Type</label>
-                        <input type="text" id="filter-delivery-type" class="form-control" placeholder="Filter by Delivery Type" />
+                        <label for="filter-driver-status" class="form-label">Filter by Driver Status</label>
+                        <select id="filter-driver-status" class="form-select">
+                          <option value="">Select Driver Status</option>
+                          <option value="ready-to-deliver">Ready to Deliver</option>
+                          <option value="loading">Loading</option>
+                        </select>
                       </div>
+                      
+                      <!-- Filter by Route ID -->
+                      <div class="col-md">
+                        <label for="filter-route-id" class="form-label">Filter by Route ID</label>
+                        <select id="filter-route-id" class="form-select">
+                          <option value="">Select Route ID</option>
+                          <!-- Add your route options here -->
+                          <option value="route-1">Route 1</option>
+                          <option value="route-2">Route 2</option>
+                        </select>
+                      </div>
+                      
                       <!-- Buttons -->
                       <div class="col-md-auto mt-6">
                         <div class="d-flex">
@@ -742,9 +753,9 @@
                                 <th>Driver Name</th>
                                 <th>Driver Status</th>
                                 <th>Route ID</th>
-                                <th>Jumlah Dokumen</th>
                                 <th>Total Drop</th>
-                                <th>Faktur QTY</th>
+                                <th>Jumlah Dokumen</th>
+                                <th>Faktur/Retur QTY</th>
                                 <th>WMS QTY</th>
                                 <th>Delivery QTY</th>
                                 <th>Action</th>

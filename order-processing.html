@@ -703,36 +703,66 @@
                             <!-- Filter by Toko -->
                             <div class="flex-grow-1 d-flex flex-column">
                               <label for="filter-toko" class="form-label">Filter by Toko</label>
-                              <input type="text" id="filter-toko" class="form-control" placeholder="Filter by Toko" />
+                              <select id="filter-toko" class="form-select">
+                                <option value="" disabled selected>Select Toko</option>
+                                <!-- Add your options here -->
+                                <option value="toko1">Toko 1</option>
+                                <option value="toko2">Toko 2</option>
+                                <option value="toko3">Toko 3</option>
+                              </select>
                             </div>
-                            
+
                             <!-- Filter by Tipe Outlet -->
                             <div class="flex-grow-1 d-flex flex-column">
                               <label for="filter-tipe-outlet" class="form-label">Filter by Tipe Outlet</label>
-                              <select id="filter-tipe-outlet" class="form-control">
+                              <select id="filter-tipe-outlet" class="form-select">
                                 <option value="" disabled selected>Choose a type of outlet</option>
                                 <option value="retail">Retail</option>
                                 <option value="wholesale">Wholesale</option>
                               </select>
                             </div>
-                            
-                            <!-- Filter by Faktur Id -->
+
+                            <!-- Filter by Document ID -->
                             <div class="flex-grow-1 d-flex flex-column">
-                              <label for="filter-faktur-id" class="form-label">Filter by Faktur Id</label>
-                              <input type="text" id="filter-faktur-id" class="form-control" placeholder="Filter by Faktur Id" />
+                              <label for="filter-document-id" class="form-label">Filter by Document ID</label>
+                              <select id="filter-document-id" class="form-select">
+                                <option value="" disabled selected>Select Document ID</option>
+                                <!-- Add your options here -->
+                                <option value="doc1">Doc 1</option>
+                                <option value="doc2">Doc 2</option>
+                                <option value="doc3">Doc 3</option>
+                              </select>
                             </div>
-                            
+
+                            <!-- Filter by Document Date -->
+                            <div class="flex-grow-1 d-flex flex-column">
+                              <label for="filter-document-date" class="form-label">Filter by Document Date</label>
+                              <select id="filter-document-date" class="form-select">
+                                <option value="" disabled selected>Choose Document Date</option>
+                                <!-- Add your options here -->
+                                <option value="2024-10-01">2024-10-01</option>
+                                <option value="2024-10-02">2024-10-02</option>
+                                <option value="2024-10-03">2024-10-03</option>
+                              </select>
+                            </div>
+
                             <!-- Filter by Delivery Date -->
                             <div class="flex-grow-1 d-flex flex-column">
                               <label for="filter-delivery-date" class="form-label">Filter by Delivery Date</label>
-                              <input type="date" id="filter-delivery-date" class="form-control" />
+                              <select id="filter-delivery-date" class="form-select">
+                                <option value="" disabled selected>Choose Delivery Date</option>
+                                <!-- Add your options here -->
+                                <option value="2024-10-01">2024-10-01</option>
+                                <option value="2024-10-02">2024-10-02</option>
+                                <option value="2024-10-03">2024-10-03</option>
+                              </select>
                             </div>
-                            
+
                             <!-- Filter by Status -->
                             <div class="flex-grow-1 d-flex flex-column">
                               <label for="filter-status" class="form-label">Filter by Status</label>
-                              <select id="filter-status" class="form-select select2">
-                                <option value="">Status</option>
+                              <select id="filter-status" class="form-select">
+                                <option value="" disabled selected>Choose Status</option>
                                 <option value="1">New</option>
                                 <option value="2">Pending</option>
                               </select>
@@ -741,20 +771,10 @@
                             <!-- Filter by Inventory Status -->
                             <div class="flex-grow-1 d-flex flex-column">
                               <label for="filter-inventory-status" class="form-label">Filter by Inventory Status</label>
-                              <select id="filter-inventory-status" class="form-select select2">
-                                <option value="">Select Inventory Status</option>
+                              <select id="filter-inventory-status" class="form-select">
+                                <option value="" disabled selected>Select Inventory Status</option>
                                 <option value="full_fill">Full Fill</option>
                                 <option value="not_full_fill">Not Full Fill</option>
-                              </select>
-                            </div>
-                            
-                            <!-- Filter by Delivery Type -->
-                            <div class="flex-grow-1 d-flex flex-column">
-                              <label for="filter-delivery-type" class="form-label">Filter by Delivery Type</label>
-                              <select id="filter-delivery-type" class="form-control">
-                                <option value="" disabled selected>Choose a delivery type</option>
-                                <option value="standard">Standard</option>
-                                <option value="express">Express</option>
                               </select>
                             </div>
                             

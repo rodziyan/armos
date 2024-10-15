@@ -699,28 +699,29 @@
                      <!-- Display Today's Date -->
                  <h4 class="ms-2 mt-8 ms-5"><strong>Tanggal Hari Ini:</strong> <span id="currentDate"></span></h4>
                     <div class="d-flex flex-wrap align-items-center gap-3 pt-4 mt-3">
-                      <!-- Filter by Route ID -->
-                      <div class="col-md">
-                        <label for="filter-route" class="form-label">Filter by Driver Name</label>
-                        <input type="text" id="filter-route" class="form-control" placeholder="Filter by Driver Name" />
-                      </div>
-                      
-                      <!-- Filter by Driver Status -->
-                      <div class="col-md">
-                        <label for="filter-driver-vehicle" class="form-label">Filter by Driver Status</label>
-                        <select id="filter-driver-vehicle" class="form-control">
-                          <option value="">Select Driver Status</option>
-                          <option value="finish-trip">Finish Trip</option>
-                          <option value="partial-trip">Partial Trip</option>
-                          <option value="reconciled">Reconciled</option>
-                        </select>
-                      </div>
-                      
-                      <!-- Filter by Route ID -->
-                      <div class="col-md">
-                        <label for="filter-delivery-tipe" class="form-label">Filter by Route ID</label>
-                        <input type="text" id="filter-delivery-tipe" class="form-control" placeholder="Filter by Route ID" />
-                      </div>
+                      <!-- Filter by Driver Name -->
+                        <div class="col-md">
+                          <label for="filter-driver-name" class="form-label">Filter by Driver Name</label>
+                          <select id="filter-driver-name" class="form-select">
+                            <option value="">Select Driver Name</option>
+                            <!-- Populate options dynamically, for example: -->
+                            <option value="driver1">Driver 1</option>
+                            <option value="driver2">Driver 2</option>
+                            <option value="driver3">Driver 3</option>
+                          </select>
+                        </div>
+
+                        <!-- Filter by Route ID -->
+                        <div class="col-md">
+                          <label for="filter-route-id" class="form-label">Filter by Route ID</label>
+                          <select id="filter-route-id" class="form-select">
+                            <option value="">Select Route ID</option>
+                            <!-- Populate options dynamically, for example: -->
+                            <option value="route1">Route 1</option>
+                            <option value="route2">Route 2</option>
+                            <option value="route3">Route 3</option>
+                          </select>
+                        </div>
                       
                       <!-- Buttons -->
                       <div class="col-md-auto mt-6">
@@ -747,7 +748,7 @@
                                 <th>Route ID</th>
                                 <th>Drop Completion</th>
                                 <th>Jumlah Dokument</th>
-                                <th>Jumlah Qty</th>
+                                <th>Received QTY/Delivery QTY</th>
                                 <th>Action</th>
                               </tr>
                             </thead>
@@ -762,7 +763,7 @@
     </div>
 
     <!-- Modal Change Vehicle -->
-    <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+    <div class="modal fade" id="buttonview" tabindex="-1" aria-labelledby="buttonviewLabel" aria-hidden="true">
       <div class="modal-dialog modal-xl" style="max-width: 95%; width: 95%; margin: 1.75rem auto;"> <!-- Adjusted width -->
         <div class="modal-content">
           <div class="modal-header">
@@ -950,7 +951,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn" style="background-color: #006400; color: white; border: none;" onclick="window.location.href='delivery-reconciliation.html';">
+            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmationModal" style="background-color: #006400; color: white; border: none;">
               Reconciliation completed
           </button>                    
           </div>
@@ -958,14 +959,469 @@
       </div>
     </div>
     
+    <!-- Modal Change Vehicle -->
+<div class="modal fade" id="viewButton1" tabindex="-1" aria-labelledby="viewButton1Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl" style="max-width: 95%; width: 95%; margin: 1.75rem auto;"> <!-- Adjusted width -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="change-vehicle-form">
+          <div class="mb-2">
+            <label for="driver" class="col-md-4 col-form-label">Driver: JNE</label>
+          </div>
+          <div class="mb-2">
+            <label for="vehicle" class="col-md-4 col-form-label">Kendaraan: -</label>
+          </div>
+          <div class="mb-2">
+            <label for="plate" class="col-md-4 col-form-label">Plat Kendaraan: -</label>
+          </div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Document ID</th>
+                <th>Faktur QTY</th>
+                <th>WMS QTY</th>
+                <th>Delivery QTY</th>
+                <th>Received QTY</th>
+                <th>Retur QTY</th>
+                <th>Delivery Status</th>
+                <th>Additional Notes</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Toko A</td>
+                <td>F001</td>
+                <td>40</td> 
+                <td>40</td> 
+                <td></td> 
+                <td></td> 
+                <td></td>  
+                <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
+                <td>Manual Routing</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmationModal" style="background-color: #006400; color: white; border: none;">
+          Reconciliation completed
+      </button>                      
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="viewButton2" tabindex="-1" aria-labelledby="viewButton2Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl" style="max-width: 95%; width: 95%; margin: 1.75rem auto;"> <!-- Adjusted width -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="change-vehicle-form">
+          <div class="mb-2">
+            <label for="driver" class="col-md-4 col-form-label">Driver: Sales Putra</label>
+          </div>
+          <div class="mb-2">
+            <label for="vehicle" class="col-md-4 col-form-label">Kendaraan: -</label>
+          </div>
+          <div class="mb-2">
+            <label for="plate" class="col-md-4 col-form-label">Plat Kendaraan: -</label>
+          </div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Document ID</th>
+                <th>Faktur QTY</th>
+                <th>WMS QTY</th>
+                <th>Delivery QTY</th>
+                <th>Received QTY</th>
+                <th>Retur QTY</th>
+                <th>Delivery Status</th>
+                <th>Additional Notes</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Toko A</td>
+                <td>F002</td>
+                <td>30</td> 
+                <td>30</td> 
+                <td></td> 
+                <td></td> 
+                <td></td>  
+                <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
+                <td>Manual Routing</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmationModal" style="background-color: #006400; color: white; border: none;">
+          Reconciliation completed
+      </button>                    
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="viewButton3" tabindex="-1" aria-labelledby="viewButton3Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl" style="max-width: 95%; width: 95%; margin: 1.75rem auto;"> <!-- Adjusted width -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="change-vehicle-form">
+          <div class="mb-2">
+            <label for="driver" class="col-md-4 col-form-label">Driver: Charlie</label>
+          </div>
+          <div class="mb-2">
+            <label for="vehicle" class="col-md-4 col-form-label">Kendaraan: -</label>
+          </div>
+          <div class="mb-2">
+            <label for="plate" class="col-md-4 col-form-label">Plat Kendaraan: -</label>
+          </div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Document ID</th>
+                <th>Faktur QTY</th>
+                <th>WMS QTY</th>
+                <th>Delivery QTY</th>
+                <th>Received QTY</th>
+                <th>Retur QTY</th>
+                <th>Delivery Status</th>
+                <th>Additional Notes</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Toko G</td>
+                <td>F003</td>
+                <td>15</td> 
+                <td>15</td> 
+                <td>15</td> 
+                <td>13</td> 
+                <td></td>  
+                <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
+                <td></td>
+                <td>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
+                    <i class="ri-eye-line"></i>
+                  </button>
+                  <button class="btn btn-sm" style="background-color: #9b8a8a; color: white;" data-bs-toggle="modal" data-bs-target="#document">
+                    <i class="ri-file-line"></i>
+                  </button> 
+                </td>
+              </tr>
+            </tbody>
+          </table>          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmationModal" style="background-color: #006400; color: white; border: none;">
+          Reconciliation completed
+      </button>                     
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="viewButton4" tabindex="-1" aria-labelledby="viewButton4Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl" style="max-width: 95%; width: 95%; margin: 1.75rem auto;"> <!-- Adjusted width -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="change-vehicle-form">
+          <div class="mb-2">
+            <label for="driver" class="col-md-4 col-form-label">Driver: Dedi</label>
+          </div>
+          <div class="mb-2">
+            <label for="vehicle" class="col-md-4 col-form-label">Kendaraan: -</label>
+          </div>
+          <div class="mb-2">
+            <label for="plate" class="col-md-4 col-form-label">Plat Kendaraan: -</label>
+          </div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Document ID</th>
+                <th>Faktur QTY</th>
+                <th>WMS QTY</th>
+                <th>Delivery QTY</th>
+                <th>Received QTY</th>
+                <th>Retur QTY</th>
+                <th>Delivery Status</th>
+                <th>Additional Notes</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">Toko G</td>
+                <td>F001</td>
+                <td>25</td> 
+                <td>25</td> 
+                <td>25</td> 
+                <td>25</td> 
+                <td></td>  
+                <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
+                <td></td>
+                <td>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
+                    <i class="ri-eye-line"></i>
+                  </button>
+                  <button class="btn btn-sm" style="background-color: #9b8a8a; color: white;" data-bs-toggle="modal" data-bs-target="#document">
+                    <i class="ri-file-line"></i>
+                  </button> 
+                </td>
+              </tr>
+              <tr>
+                <td>F006</td>
+                <td>10</td> 
+                <td>10</td> 
+                <td>10</td> 
+                <td>10</td> 
+                <td></td>  
+                <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
+                <td></td>
+                <td>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
+                    <i class="ri-eye-line"></i>
+                  </button>
+                  <button class="btn btn-sm" style="background-color: #9b8a8a; color: white;" data-bs-toggle="modal" data-bs-target="#document">
+                    <i class="ri-file-line"></i>
+                  </button> 
+                </td>
+              </tr>
+            </tbody>
+          </table>          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmationModal" style="background-color: #006400; color: white; border: none;">
+          Reconciliation completed
+      </button>                     
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="viewButton5" tabindex="-1" aria-labelledby="viewButton5Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl" style="max-width: 95%; width: 95%; margin: 1.75rem auto;"> <!-- Adjusted width -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="change-vehicle-form">
+          <div class="mb-2">
+            <label for="driver" class="col-md-4 col-form-label">Driver: Eva</label>
+          </div>
+          <div class="mb-2">
+            <label for="vehicle" class="col-md-4 col-form-label">Kendaraan: -</label>
+          </div>
+          <div class="mb-2">
+            <label for="plate" class="col-md-4 col-form-label">Plat Kendaraan: -</label>
+          </div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Document ID</th>
+                <th>Faktur QTY</th>
+                <th>WMS QTY</th>
+                <th>Delivery QTY</th>
+                <th>Received QTY</th>
+                <th>Retur QTY</th>
+                <th>Truk QTY</th>
+                <th>Delivery Status</th>
+                <th>Additional Notes</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">Toko B</td>
+                <td>F002</td>
+                <td>12</td> 
+                <td>12</td> 
+                <td>12</td> 
+                <td>12</td> 
+                <td>0</td> 
+                <td>0</td>  
+                <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
+                <td></td>
+                <td>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
+                    <i class="ri-eye-line"></i>
+                  </button>
+                  <button class="btn btn-sm" style="background-color: #9b8a8a; color: white;" data-bs-toggle="modal" data-bs-target="#document">
+                    <i class="ri-file-line"></i>
+                  </button> 
+                </td>
+              </tr>
+              <tr>
+                <td>F001</td>
+                <td>-</td> 
+                <td>-</td> 
+                <td>-</td> 
+                <td>-</td> 
+                <td>5</td> 
+                <td>5</td>  
+                <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
+                <td></td>
+                <td>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
+                    <i class="ri-eye-line"></i>
+                  </button>
+                  <button class="btn btn-sm" style="background-color: #9b8a8a; color: white;" data-bs-toggle="modal" data-bs-target="#document">
+                    <i class="ri-file-line"></i>
+                  </button> 
+                </td>
+              </tr>
+            </tbody>
+          </table>          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmationModal" style="background-color: #006400; color: white; border: none;">
+          Reconciliation completed
+      </button>                     
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="viewButton6" tabindex="-1" aria-labelledby="viewButton6Label" aria-hidden="true">
+  <div class="modal-dialog modal-xl" style="max-width: 95%; width: 95%; margin: 1.75rem auto;"> <!-- Adjusted width -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="change-vehicle-form">
+          <div class="mb-2">
+            <label for="driver" class="col-md-4 col-form-label">Driver: Fauzi</label>
+          </div>
+          <div class="mb-2">
+            <label for="vehicle" class="col-md-4 col-form-label">Kendaraan: -</label>
+          </div>
+          <div class="mb-2">
+            <label for="plate" class="col-md-4 col-form-label">Plat Kendaraan: -</label>
+          </div>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Location</th>
+                <th>Document ID</th>
+                <th>Faktur QTY</th>
+                <th>WMS QTY</th>
+                <th>Delivery QTY</th>
+                <th>Received QTY</th>
+                <th>Retur QTY</th>
+                <th>Truk QTY</th>
+                <th>Delivery Status</th>
+                <th>Additional Notes</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Toko C</td>
+                <td>F002</td>
+                <td>40</td> 
+                <td>40</td> 
+                <td>40</td> 
+                <td>40</td> 
+                <td>0</td> 
+                <td>0</td>  
+                <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
+                <td></td>
+                <td>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
+                    <i class="ri-eye-line"></i>
+                  </button>
+                  <button class="btn btn-sm" style="background-color: #9b8a8a; color: white;" data-bs-toggle="modal" data-bs-target="#document">
+                    <i class="ri-file-line"></i>
+                  </button> 
+                </td>
+              </tr>
+              <tr>
+                <td>Toko D</td>
+                <td>R001</td>
+                <td>25</td> 
+                <td>25</td> 
+                <td>25</td>
+                <td>0</td> 
+                <td>0</td> 
+                <td>25</td>  
+                <td style="color: red; font-weight: bold;">Skip</td> <!-- Delivery status in green -->
+                <td>1x Skip</td>
+                <td>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
+                    <i class="ri-eye-line"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>Toko E</td>
+                <td>R001</td>
+                <td>17</td> 
+                <td>17</td> 
+                <td>17</td>
+                <td>0</td> 
+                <td>0</td> 
+                <td>17</td>  
+                <td style="color: red; font-weight: bold;">Skip</td> <!-- Delivery status in green -->
+                <td>2x Skip</td>
+                <td>
+                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
+                    <i class="ri-eye-line"></i>
+                  </button>
+                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#returnModal">
+                    <i class="ri-home-2-line"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>          
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmationModal" style="background-color: #006400; color: white; border: none;">
+          Reconciliation completed
+      </button>                     
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Modal View -->
 <!-- Modal View -->
 <div class="modal fade" id="modalView" tabindex="-1" aria-labelledby="modalViewLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="viewModalLabel">Delivery Reconciliation</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" id="closeModalBtn"class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="row text-center">
@@ -1161,8 +1617,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Function to show a modal
-      function showModal(modalId) {
+     // Function to show a modal
+     function showModal(modalId) {
         var modal = new bootstrap.Modal(document.getElementById(modalId));
         modal.show();
     

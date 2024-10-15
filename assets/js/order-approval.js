@@ -6,117 +6,43 @@ $(document).ready(function () {
   // Create and append the modal HTML
   $('body').append(`
     <div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="max-width: 40%; width: auto; max-height: 80vh;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 80%; width: auto; max-height: 90vh;">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="viewModalLabel">Toko A</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <!-- First Section -->
-                <div class="d-flex left-content-between mb-3" style="text-align: left;">
-                  <div>
-                      <p>Delivery Type : <strong>Delivery</strong></p>
-                      <p>Faktur ID : <strong>F001</strong></p>
-                      <p>Total Value : <strong>Rp80.000</strong></p>
-                  </div>
-              </div>
                 <!-- Table Section -->
                 <table class="table table-bordered">
                   <thead>
                       <tr class="table-success">
-                          <th>Faktur Qty</th>
+                          <th>Delivery Type</th>
+                          <th>Document ID</th>
+                          <th>Faktur/Retur Qty</th>
                           <th>WMS Qty</th>
-                          <th>Delivery Qty</th>
+                          <th>Action</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
+                          <td>Delivery</td>
+                          <td>F001</td>
                           <td>20</td>
                           <td>18</td>
-                          <td>18</td>
-                      </tr>
-                      <tr>
-                          <td>30</td>
-                          <td>28</td>
-                          <td>28</td>
-                      </tr>
-                      <tr>
-                          <td>40</td>
-                          <td>38</td>
-                          <td>38</td>
-                      </tr>
-                      <tr class="table-success">
-                          <td><strong>90</strong></td>
-                          <td><strong>84</strong></td>
-                          <td><strong>84</strong></td>
-                      </tr>
-                  </tbody>
-                  <div class="text-end mb-3">
-                      <!-- Document Reconciliation Button -->
-                    <button type="button" class="btn btn-sm btn-secondary rounded-pill waves-effect" 
-                        data-bs-toggle="modal" data-bs-target="#modalView">
-                        <i class="ri-file-check-line"></i> Document Reconciliation
-                    </button>
-
-                    <!-- Batalkan Order Button with the same styling -->
-                    <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
+                          <td><button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
                         <i class="ri-close-line"></i> Batalkan Order
-                    </button>
-                  </div>
-              </table>
-
-              <!-- Second Section -->
-                <div class="d-flex left-content-between mb-3 mt-3" style="text-align: left;">
-                    <div>
-                        <p>Delivery Type : <strong>Delivery</strong></p>
-                        <p>Faktur ID : <strong>F002</strong></p>
-                        <p>Total Value : <strong>Rp100.000</strong></p>
-                    </div>
-                </div>
-                <!-- Table Section -->
-                <table class="table table-bordered">
-                  <thead>
-                      <tr class="table-success">
-                          <th>Faktur Qty</th>
-                          <th>WMS Qty</th>
-                          <th>Delivery Qty</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>20</td>
-                          <td>18</td>
-                          <td>18</td>
+                    </button></td>
                       </tr>
                       <tr>
+                          <td>Delivery</td>
+                          <td>F002</td>
                           <td>30</td>
                           <td>28</td>
-                          <td>28</td>
-                      </tr>
-                      <tr>
-                          <td>40</td>
-                          <td>38</td>
-                          <td>38</td>
-                      </tr>
-                      <tr class="table-success">
-                          <td><strong>90</strong></td>
-                          <td><strong>84</strong></td>
-                          <td><strong>84</strong></td>
+                          <td><button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
+                        <i class="ri-close-line"></i> Batalkan Order
+                    </button></td>
                       </tr>
                   </tbody>
-                  <div class="text-end mb-3">
-                  <!-- Document Reconciliation Button -->
-                  <button type="button" class="btn btn-sm btn-secondary rounded-pill waves-effect" 
-                      data-bs-toggle="modal" data-bs-target="#modalView">
-                      <i class="ri-file-check-line"></i> Document Reconciliation
-                  </button>
-
-                  <!-- Batalkan Order Button with the same styling -->
-                  <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
-                      <i class="ri-close-line"></i> Batalkan Order
-                  </button>
-                  </div>
               </table>
             </div>
         </div>
@@ -126,65 +52,34 @@ $(document).ready(function () {
 
 <!-- Modal Kedua -->
 <div class="modal fade" id="liat" tabindex="-1" aria-labelledby="liatModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="max-width: 40%; width: auto; max-height: 80vh;">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 80%; width: auto; max-height: 90vh;">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="liatModalLabel">Toko B</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <!-- Second Section -->
-                <div class="d-flex justify-content-between mb-3" style="text-align: left;">
-                    <div>
-                        <p>Delivery Type : <strong>Delivery</strong></p>
-                        <p>Faktur ID : <strong>F002</strong></p>
-                        <p>Total Value : <strong>Rp100.000</strong></p>
-                    </div>
-                </div>
-                <!-- Second Table Section -->
+                <!-- Table Section -->
                 <table class="table table-bordered">
                   <thead>
                       <tr class="table-success">
-                          <th>Faktur Qty</th>
+                          <th>Delivery Type</th>
+                          <th>Document ID</th>
+                          <th>Faktur/Retur Qty</th>
                           <th>WMS Qty</th>
-                          <th>Delivery Qty</th>
+                          <th>Action</th>
                       </tr>
                   </thead>
                   <tbody>
                       <tr>
+                          <td>Delivery</td>
+                          <td>F001</td>
                           <td>20</td>
-                          <td>20</td>
-                          <td>20</td>
-                      </tr>
-                      <tr>
-                          <td>30</td>
-                          <td>30</td>
-                          <td>30</td>
-                      </tr>
-                      <tr>
-                          <td>40</td>
-                          <td>40</td>
-                          <td>40</td>
-                      </tr>
-                      <tr class="table-success">
-                          <td><strong>90</strong></td>
-                          <td><strong>90</strong></td>
-                          <td><strong>90</strong></td>
+                          <td>18</td>
+                          <td><button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
+                        <i class="ri-close-line"></i> Batalkan Order
+                    </button></td>
                       </tr>
                   </tbody>
-                  <div class="text-end mb-3">
-                  <!-- Document Reconciliation Button -->
-                  <button type="button" class="btn btn-sm btn-secondary rounded-pill waves-effect" 
-                      data-bs-toggle="modal" data-bs-target="#modalView">
-                      <i class="ri-file-check-line"></i> Document Reconciliation
-                  </button>
-
-                  <!-- Batalkan Order Button with the same styling -->
-                  <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
-                      <i class="ri-close-line"></i> Batalkan Order
-                  </button>
-
-                  </div>
               </table>
             </div>
         </div>
@@ -595,11 +490,9 @@ $(document).ready(function () {
         { data: 'total_trip_time' }, // Total Trip Time
         { data: 'seq' }, // Seq
         { data: 'location_name' },
-        { data: 'delivery_type' },
         { data: 'do_number' }, // Faktur ID
         { data: 'faktur_qty' }, // Faktur Qty
-        { data: 'wms_qty' }, // WMS Qty
-        { data: 'delivery_qty' }, // Delivery Qty
+        { data: 'wms_qty' },
         { data: 'value' }, // Value
         { data: 'start_time' }, // Start Time
         { data: 'end_time' }, // End Time
@@ -607,51 +500,84 @@ $(document).ready(function () {
         { data: 'notes' }, // Notes
         { data: 'action' } // Action
       ],
-      order: [[5, 'asc']],
+      order: [[5, 'asc']], // Default sorting: based on column 5 in ascending order
       rowCallback: function (row, data, index) {
-        var groupSize = 2;
+        var groupSize = 3; // Number of rows to group together for R004
 
-        // Check if this is the first row of the group
-        if (index % groupSize === 0) {
-          // var mapIcon = $(`  // Commenting out mapIcon part
-          //   <button class="map-button mapsModal" style="background: none; border: none; padding: 0;">
-          //     <span class="ri-map-pin-line" style="color: white; background-color: green; display: inline-block; width: 30px; height: 30px; border-radius: 50%; text-align: center; line-height: 30px; margin-right: 5px;"></span>
-          //   </button>
-          // `);
-          // $('td:eq(0)', row).prepend(mapIcon);  // Comment out the prepend
+        // If route_id is 'R004', group the next rows with null route_id
+        if (data.route_id === 'R004') {
+          // First row of the group: Display all relevant columns
+          if (index % groupSize === 0) {
+            ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(15)'].forEach(function (selector) {
+              $(selector, row).attr('rowspan', groupSize).css({
+                'vertical-align': 'middle',
+                'text-align': 'center'
+              });
+            });
 
-          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(17)'].forEach(function (selector) {
-            $(selector, row).attr('rowspan', groupSize).css({
+            // Show all columns for the first row in the group
+            $(row).find('td:lt(5)').show();
+            $(row).find('td:eq(15)').show();
+          } else {
+            // Hide columns for subsequent rows within the group
+            $(row).find('td:lt(15').hide();
+            $(row).find('td:eq(16)').hide();
+          }
+        } else if (data.route_id === null) {
+          // For rows where route_id is null (below R004), we combine them into one column
+          $(row).find('td:lt(5)').hide(); // Hide the unnecessary columns
+          $(row).find('td:eq(15)').hide(); // Hide the unnecessary column
+
+          // Find the specific row of R004 (previous row) and append these rows as a single value
+          var previousRow = $('#example')
+            .DataTable()
+            .row(index - 1)
+            .node();
+          var combinedCell = $('td:eq(4)', previousRow); // Select column 5 of R004's row
+
+          // Combine the location names of the following rows with null route_id
+          combinedCell.text(function (_, currentText) {
+            return currentText + ' / ' + data.location_name;
+          });
+        } else {
+          // For other route_ids (not R004 or null), treat them normally
+          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(15)'].forEach(function (selector) {
+            $(selector, row).attr('rowspan', 1).css({
               'vertical-align': 'middle',
               'text-align': 'center'
             });
           });
-        } else {
-          $(row).find('td:lt(5)').hide();
-          $(row).find('td:eq(17)').hide();
+
+          // Show all columns for non-'R004' rows
+          $(row).find('td:lt(5)').show();
+          $(row).find('td:eq(15)').show();
         }
 
-        // Create the button for do_number in all rows
-        var doNumberCell = $('td:eq(8)', row); // Assuming do_number is in the 9th column
-        var doNumberButton;
+        // Create the DO Number button for column 9 (adjust as needed)
+        var doNumberCell = $('td:eq(8)', row); // Assume DO number is in column 9
+        var doNumberButton = $('<button/>', {
+          class: 'do-number-button',
+          text: 'DO ' + data.do_number
+        });
+        doNumberCell.append(doNumberButton);
 
-        // Check if do_number is 2 and create the button with an alert icon inside
+        // If DO number is '2', apply special formatting
         if (data.do_number == 2) {
           doNumberButton = $(`
-                <button class="do-number-button view" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;" 
-                        onclick="view">
-                    <span class="ri-alert-line" style="color: black; background-color: yellow; border-radius: 50%; padding: 5px; margin-right: 5px;"></span>
-                    ${data.do_number}
-                </button>`);
+              <button class="do-number-button view" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;" 
+                      onclick="view">
+                ${data.do_number}
+              </button>`);
         } else {
           doNumberButton = $(`
-                <button class="do-number-button liat" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;">
-                    ${data.do_number}
-                </button>`);
+              <button class="do-number-button liat" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;">
+                ${data.do_number}
+              </button>`);
         }
 
         doNumberCell.empty().append(doNumberButton);
       },
+
       columnDefs: [
         {
           targets: -1,
@@ -678,7 +604,10 @@ $(document).ready(function () {
             `;
           }
         }
-      ]
+      ],
+      searching: false, // Disables the search bar
+      lengthChange: false, // Disables the "Show entries" dropdown
+      dom: '<"top"i>rt<"bottom"flp><"clear">' // Custom DOM structure to remove certain elements
     });
   }
 
