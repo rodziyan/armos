@@ -155,9 +155,9 @@
     "jumlah_terkirim": 10,
     "inv_status": 1,
     "harga": "Rp10.000",
-    "tanggal": "",
+    "tanggal": "14/10/2024",
     "doc_ref": "",
-    "waktu_kirim": ""
+    "waktu_kirim": "11.00 WIB"
   },
   {
     "id": 10,
@@ -171,9 +171,9 @@
     "jumlah_terkirim": 25,
     "inv_status": 1,
     "harga": "Rp25.000",
-    "tanggal": "14/10/2024",
+    "tanggal": "21/10/2024",
     "doc_ref": "",
-    "waktu_kirim": "10.30 WIB"
+    "waktu_kirim": "11.00 WIB"
   },
   {
     "id": 11,
