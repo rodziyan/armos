@@ -274,7 +274,7 @@ $(document).ready(function () {
             if (full['status'] === 2) {
               // Abu-abu: Admin ekspedisi belum mengajukan dokumen reconciliation
               buttons += `
-                 <button class="btn btn-warning btn-icon rounded-pill waves-effect">
+                 <button class="btn btn-warning btn-icon rounded-pill waves-effect unholdModal">
                     <i class="ri-error-warning-line" style="color: black;"></i>
                   </button>
               `;
