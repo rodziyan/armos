@@ -64,7 +64,7 @@ $(document).ready(function () {
         {
           targets: 4, // 'id_order' column
           render: function (data, type, row) {
-            if (row.toko === 'Toko G') {
+            if (row.id_order === 'R001') {
               return '<span style="color: red;">' + data + '</span>';
             } else {
               return '<span>' + data + '</span>';
@@ -222,7 +222,7 @@ $(document).ready(function () {
           <i class="ri-edit-line ri-20px"></i>
       </button>
   `;
-            } else if (full['toko'] === 'Toko H') {
+            } else if (full['toko'] === 'Toko F') {
               console.log('Toko E or Toko G detected, using blue button');
               // Blue color if status === 2 (New status)
               buttons += `
@@ -261,7 +261,7 @@ $(document).ready(function () {
                       <i class="ri-file-edit-line"></i> 
                   </button>
               `;
-            } else if (full['toko'] === 'Toko E' || full['toko'] === 'Toko H') {
+            } else if (full['toko'] === 'Toko E' || full['toko'] === 'Toko F') {
               // Hijau: Dokumen sudah dilengkapi oleh Finance, Document Ref terisi
               buttons += `
                   <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect" 
