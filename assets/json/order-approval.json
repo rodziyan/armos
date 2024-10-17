@@ -125,7 +125,7 @@
           "faktur_id": "F002",
           "faktur_qty": 17,
           "wms_qty": 17,
-          "delivery_qty": 15,
+          "delivery_qty": "<span style='color: red;'>15</span>",
           "value": "Rp.17,000",
           "start_time": "10/10/2024",
           "end_time": "14:35 - 15:20",

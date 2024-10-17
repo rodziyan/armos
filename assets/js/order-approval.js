@@ -112,94 +112,7 @@ $(document).ready(function () {
     </div>
 </div>
 
-//     <div class="modal fade" id="view" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
-//     <div class="modal-dialog">
-//         <div class="modal-content">
-//             <div class="modal-header">
-//                 <h5 class="modal-title" id="viewModalLabel">Route-001</h5>
-//                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-//             </div>
-//             <div class="modal-body">
-//                 <!-- First Section -->
-//                 <div class="d-flex justify-content-between mb-3">
-//                     <div>
-//                         <p>Sequence : <strong>1</strong></p>
-//                         <p>DO Number : <strong>DO001-1</strong></p>
-//                         <p>Delivery Type : <strong>Delivery</strong></p>
-//                     </div>
-//                     <div>
-//                         <p>Location : <strong>Toko A</strong></p>
-//                         <p>Faktur ID : <strong>F001</strong></p>
-//                         <p>Total Value : <strong>Rp80.000</strong></p>
-//                     </div>
-//                 </div>
-//                 <!-- Table Section -->
-//                 <table class="table table-bordered">
-//                     <thead>
-//                         <tr class="table-success">
-//                             <th>Produk</th>
-//                             <th>Qty</th>
-//                         </tr>
-//                     </thead>
-//                     <tbody>
-//                         <tr>
-//                             <td>Produk 1</td>
-//                             <td>20</td>
-//                         </tr>
-//                         <tr>
-//                             <td>Produk 2</td>
-//                             <td>20</td>
-//                         </tr>
-//                         <tr>
-//                             <td>Produk 3</td>
-//                             <td>40</td>
-//                         </tr>
-//                         <tr class="table-success">
-//                             <td><strong>TOTAL</strong></td>
-//                             <td><strong>80</strong></td>
-//                         </tr>
-//                     </tbody>
-//                 </table>
-//                 <!-- Second Section -->
-//                 <div class="d-flex justify-content-between mb-3">
-//                     <div>
-//                         <p>Sequence : <strong>2</strong></p>
-//                         <p>DO Number : <strong>DO001-2</strong></p>
-//                         <p>Delivery Type : <strong>Delivery</strong></p>
-//                     </div>
-//                     <div>
-//                         <p>Location : <strong>Toko B</strong></p>
-//                         <p>Faktur ID : <strong>F002</strong></p>
-//                         <p>Total Value : <strong>Rp100.000</strong></p>
-//                     </div>
-//                 </div>
-//                 <!-- Second Table Section -->
-//                 <table class="table table-bordered">
-//                     <thead>
-//                         <tr class="table-success">
-//                             <th>Produk</th>
-//                             <th>Qty</th>
-//                         </tr>
-//                     </thead>
-//                     <tbody>
-//                         <tr>
-//                             <td>Produk 1</td>
-//                             <td>50</td>
-//                         </tr>
-//                         <tr>
-//                             <td>Produk 2</td>
-//                             <td>50</td>
-//                         </tr>
-//                         <tr class="table-success">
-//                             <td><strong>TOTAL</strong></td>
-//                             <td><strong>100</strong></td>
-//                         </tr>
-//                     </tbody>
-//                 </table>
-//             </div>
-//         </div>
-//     </div>
-// </div>
+
 
   
 <!-- Modal Edit Faktur -->
@@ -373,48 +286,7 @@ $(document).ready(function () {
 </div>
 
 
-// <!-- Modal Change Driver & Kernet -->
-// <div class="modal fade" id="changeDriver" tabindex="3" aria-labelledby="changeDriverModalLabel" aria-hidden="true">
-//   <div class="modal-dialog modal-lg">
-//     <div class="modal-content">
-//       <div class="modal-header">
-//         <h5 class="modal-title" id="changeDriverModalLabel">Route-001</h5>
-//         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-//       </div>
-//       <div class="modal-body">
-//         <form id="change-vehicle-form">
-//           <div class="mb-2">
-//           <label for="current-driver-kernet" class="col-md-4 col-form-label">Driver & Kernet: Andi & Ibnu</label>
-//         </div>
-//         <div class="mb-2">
-//           <label for="current-vehicle" class="col-md-4 col-form-label">Kendaraan: Double XT F 1234 ABC</label>
-//         </div>
-//           <div class="mb-3">
-//             <label for="driver-select" class="form-label">Select Driver</label>
-//             <select class="form-select" id="driver-select" name="driver-select">
-//               <option value="" disabled selected>Select a Driver</option>
-//               <option value="andi">Andi</option>
-//               <option value="budi">Budi</option>
-//               <option value="cindy">Cindy</option>
-//             </select>
-//           </div>
-//           <div class="mb-3">
-//             <label for="kernet-select" class="form-label">Select Kernet</label>
-//             <select class="form-select" id="kernet-select" name="kernet-select">
-//               <option value="" disabled selected>Select a Kernet</option>
-//               <option value="kernet1">Kernet 1</option>
-//               <option value="kernet2">Kernet 2</option>
-//               <option value="kernet3">Kernet 3</option>
-//             </select>
-//           </div>
-//         </form>
-//       </div>
-//       <div class="modal-footer">
-//         <button type="submit" form="change-vehicle-form" style="background-color: #004d00; color: white; border: none; padding: 10px 20px;">Save Changes</button>
-//       </div>
-//     </div>
-//   </div>
-// </div>
+
 
 <!-- Modal Route -->
 <div class="modal fade" id="mapsModal" tabindex="-1" aria-labelledby="mapsModalLabel" aria-hidden="true">
@@ -502,7 +374,7 @@ $(document).ready(function () {
                   trip_time: delivery.trip_time,
                   notes: delivery.notes,
                   seq: delivery.seq,
-                  is_first: index === 0
+                  is_first: index === -2
                 });
               });
             } else {
@@ -595,6 +467,7 @@ $(document).ready(function () {
         // Handle rowspan for R004
         if (data.route_id === 'R004' && data.is_first) {
           let rowspan = data.delivery_count;
+          console.log(row);
           $(row)
             .nextAll()
             .each(function () {
