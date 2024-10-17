@@ -478,129 +478,89 @@ $(document).ready(function () {
 
 `);
 
-  // Initialize DataTable
   if ($('.datatables-users').length) {
     dt_User = $('.datatables-users').DataTable({
-      ajax: assetsPath + 'json/order-approval.json',
+      ajax: {
+        url: assetsPath + 'json/order-approval.json',
+        dataSrc: function (json) {
+          let flattenedData = [];
+
+          json.data.forEach(route => {
+            if (route.deliveries && route.deliveries.length > 0) {
+              route.deliveries.forEach((delivery, index) => {
+                flattenedData.push({
+                  ...route,
+                  delivery_count: route.deliveries.length,
+                  location_name: delivery.location_name,
+                  do_number: delivery.do_number,
+                  faktur_qty: delivery.faktur_qty,
+                  wms_qty: delivery.wms_qty,
+                  delivery_qty: delivery.delivery_qty,
+                  value: delivery.value,
+                  start_time: delivery.start_time,
+                  end_time: delivery.end_time,
+                  trip_time: delivery.trip_time,
+                  notes: delivery.notes,
+                  seq: delivery.seq,
+                  is_first: index === 0
+                });
+              });
+            } else {
+              flattenedData.push({
+                ...route,
+                delivery_count: 0,
+                location_name: '',
+                do_number: '',
+                faktur_qty: '',
+                wms_qty: '',
+                delivery_qty: '',
+                value: '',
+                start_time: '',
+                end_time: '',
+                trip_time: '',
+                notes: '',
+                seq: ''
+              });
+            }
+          });
+
+          return flattenedData;
+        }
+      },
       columns: [
-        { data: 'route_id' }, // Route ID
+        { data: 'route_id' },
         { data: 'driver_vehicle' },
-        { data: 'driver_status' }, // Driver - Vehicle
-        { data: 'capacity_percent' }, // % Capacity
-        { data: 'total_value' }, // Total Value
-        { data: 'total_trip_time' }, // Total Trip Time
-        { data: 'seq' }, // Seq
+        { data: 'driver_status' },
+        { data: 'capacity_percent' },
+        { data: 'total_value' },
+        { data: 'total_trip_time' },
+        { data: 'delivery_count' },
         { data: 'location_name' },
-        { data: 'do_number' }, // Faktur ID
-        { data: 'faktur_qty' }, // Faktur Qty
+        { data: 'do_number' },
+        { data: 'faktur_qty' },
         { data: 'wms_qty' },
         { data: 'delivery_qty' },
-        { data: 'value' }, // Value
-        { data: 'start_time' }, // Start Time
-        { data: 'end_time' }, // End Time
-        { data: 'trip_time' }, // Trip Time
-        { data: 'notes' }, // Notes
-        { data: 'action' } // Action
+        { data: 'value' },
+        { data: 'start_time' },
+        { data: 'end_time' },
+        { data: 'trip_time' },
+        { data: 'notes' },
+        { data: 'action' }
       ],
-      order: [[6, 'asc']],
-      rowCallback: function (row, data, index) {
-        if (!data) return;
-
-        // Delivery status object
+      order: [
+        [0, 'asc'],
+        [6, 'asc']
+      ],
+      rowCallback: function (row, data) {
         var statusObj = {
           1: { title: 'Ready to Deliver', class: 'bg-label-success' },
           2: { title: 'Loading', class: 'bg-label-info' }
         };
-
-        // Display delivery status in the designated column
         if (data.driver_status) {
           var deliveryStatusBadge = statusObj[data.driver_status]
-            ? '<span class="badge rounded-pill ' +
-              statusObj[data.driver_status].class +
-              '">' +
-              statusObj[data.driver_status].title +
-              '</span>'
-            : '<span class="badge rounded-pill bg-label-secondary">Unknown</span>'; // Default for unknown status
-
-          // Assuming delivery status is displayed in column 11 (index 10)
+            ? `<span class="badge rounded-pill ${statusObj[data.driver_status].class}">${statusObj[data.driver_status].title}</span>`
+            : '<span class="badge rounded-pill bg-label-secondary">Unknown</span>';
           $('td:eq(2)', row).html(deliveryStatusBadge);
-        }
-
-        // Hitung jumlah entri dengan route_id null untuk grup
-        let groupSizeMap = {
-          R004: 3,
-          R001: 1,
-          R002: 1,
-          R003: 1,
-          R005: 1
-        };
-
-        // Grouping logic based on route_id
-        if (data.route_id === 'R004') {
-          let groupSize = groupSizeMap[data.route_id]; // Ambil ukuran grup dari map
-          if (index % groupSize === 0) {
-            // Show grouped cells for R004
-            ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(5)', 'td:eq(15)'].forEach(
-              function (selector) {
-                $(selector, row).attr('rowspan', groupSize).css({
-                  'vertical-align': 'middle',
-                  'text-align': 'center'
-                });
-              }
-            );
-            $(row).find('td:lt(6)').show();
-            $(row).find('td:eq(16)').show();
-          } else {
-            // Hide cells for grouped rows under R004
-            $(row).find('td:lt(6)').hide();
-            $(row).find('td:eq(16)').hide();
-          }
-        } else if (data.route_id === null) {
-          // Combine row with the previous row (R004)
-          const previousRow = dt_User.row(index - 1).node();
-
-          // Hide current row cells
-          $(row).find('td:lt(6)').hide();
-          $(row).find('td:eq(15)').hide();
-
-          // Adjust cells in previous row
-          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(5)', 'td:eq(15)'].forEach(
-            function (selector) {
-              $(selector, previousRow).attr('rowspan', groupSizeMap['R004']).css({
-                'vertical-align': 'middle',
-                'text-align': 'center'
-              });
-            }
-          );
-        } else if (
-          data.route_id === 'R001' ||
-          data.route_id === 'R002' ||
-          data.route_id === 'R003' ||
-          data.route_id === 'R005'
-        ) {
-          // Handle R001, R002, R003, R005 separately
-          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(5)', 'td:eq(15)'].forEach(
-            function (selector) {
-              $(selector, row).attr('rowspan', 1).css({
-                'vertical-align': 'middle',
-                'text-align': 'center'
-              });
-            }
-          );
-          $(row).find('td:lt(6)').show();
-          $(row).find('td:eq(16)').show();
-        } else {
-          // Handle other route_ids normally
-          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(5)', 'td:eq(15)'].forEach(
-            function (selector) {
-              $(selector, row).attr('rowspan', 1).css({
-                'vertical-align': 'middle',
-                'text-align': 'center'
-              });
-            }
-          );
-          $(row).find('td:lt(6)').show();
-          $(row).find('td:eq(16)').show();
         }
 
         // Add the button with map icon in the second cell (td:eq(1))
@@ -631,8 +591,23 @@ $(document).ready(function () {
         } else {
           $('td:eq(0)', row).html(mapButtonHtml); // Display the button if route_id is not null
         }
-      },
 
+        // Handle rowspan for R004
+        if (data.route_id === 'R004' && data.is_first) {
+          let rowspan = data.delivery_count;
+          $(row)
+            .nextAll()
+            .each(function () {
+              const nextData = dt_User.row(this).data();
+              if (nextData && nextData.route_id === 'R004') {
+                $(this).hide();
+              } else {
+                return false; // Stop when a different route is encountered
+              }
+            });
+          $(row).find('td').attr('rowspan', rowspan);
+        }
+      },
       columnDefs: [
         {
           targets: -1,
@@ -680,9 +655,9 @@ $(document).ready(function () {
           }
         }
       ],
-      searching: false, // Disables the search bar
-      lengthChange: false, // Disables the "Show entries" dropdown
-      dom: '<"top"i>rt<"bottom"flp><"clear">' // Custom DOM structure to remove certain elements
+      searching: false,
+      lengthChange: false,
+      dom: '<"top"i>rt<"bottom"flp><"clear">'
     });
   }
 
