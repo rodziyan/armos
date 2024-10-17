@@ -467,32 +467,49 @@ $(document).ready(function () {
         // Handling grouping for R004
         if (data.route_id === 'R004') {
           if (data.is_first) {
-            // Columns that should have rowspan (repeated data)
-            const rowspanColumns = [0, 1, 2, 3, 4, 5];
+            const rowspanColumns = [0, 1, 2, 3, 4, 5, 17];
             const rowspan = data.delivery_count;
 
-            // Apply rowspan to specified columns
             rowspanColumns.forEach(colIndex => {
               $(`td:eq(${colIndex})`, row).attr('rowspan', rowspan);
             });
 
-            // Set the route button for the first row
             $('td:eq(0)', row).html(mapButtonHtml);
           } else {
-            // Remove the columns that are using rowspan for subsequent rows
-            const columnsToRemove = [0, 1, 2, 3, 4, 5];
-            columnsToRemove.forEach(colIndex => {
-              $(`td:eq(${colIndex})`, row).remove();
+            // If not the first row, hide specified columns
+            const columnsToHide = [0, 1, 2, 3, 4, 5, 17];
+            columnsToHide.forEach(colIndex => {
+              $(`td:eq(${colIndex})`, row).css('display', 'none'); // Hide the columns
+            });
+
+            // Looping through deliveries for subsequent rows
+            data.deliveries.forEach(delivery => {
+              const deliveryRow = $('<tr></tr>'); // Create a new row for each delivery
+
+              // Populate the row with delivery data
+              deliveryRow.append(`<td>${delivery.seq}</td>`);
+              deliveryRow.append(`<td>${delivery.delivery_type}</td>`);
+              deliveryRow.append(`<td>${delivery.location_name}</td>`);
+              deliveryRow.append(`<td>${delivery.do_number}</td>`);
+              deliveryRow.append(`<td>${delivery.faktur_id}</td>`);
+              deliveryRow.append(`<td>${delivery.faktur_qty}</td>`);
+              deliveryRow.append(`<td>${delivery.wms_qty}</td>`);
+              deliveryRow.append(`<td>${delivery.delivery_qty}</td>`);
+              deliveryRow.append(`<td>${delivery.value}</td>`);
+              deliveryRow.append(`<td>${delivery.start_time}</td>`);
+              deliveryRow.append(`<td>${delivery.end_time}</td>`);
+              deliveryRow.append(`<td>${delivery.trip_time}</td>`);
+              deliveryRow.append(`<td>${delivery.notes ? delivery.notes : ''}</td>`);
+
+              // Append the delivery row to the table
+              $(row).after(deliveryRow);
             });
           }
         } else if (data.route_id) {
-          // For other routes, just show the route button
           $('td:eq(0)', row).html(mapButtonHtml);
         }
       },
-      drawCallback: function (settings) {
-        // Additional styling or post-draw operations if needed
-      },
+      drawCallback: function (settings) {},
 
       columnDefs: [
         {
@@ -508,8 +525,8 @@ $(document).ready(function () {
 
             // Determine view item based on doNumber
             if (doNumber === 1) {
-              buttons += `<li><a class="dropdown-item liat" href="#liat">View</a></li>`;
-            } else {
+              buttons += `<li><a class="dropdown-item liat" href="#">View</a></li>`;
+            } else if (doNumber === 2) {
               buttons += `<li><a class="dropdown-item view" href="#">View</a></li>`;
             }
 
@@ -547,15 +564,29 @@ $(document).ready(function () {
     });
   }
 
+  // Event listener for the "view" button
   $('.datatables-users tbody').on('click', '.view', function (event) {
     event.preventDefault(); // Prevent default action
     showModal('#view');
   });
 
+  // Event listener for the "liat" button
   $('.datatables-users tbody').on('click', '.liat', function (event) {
     event.preventDefault(); // Prevent default action
     showModal('#liat');
   });
+
+  // Function to open modals (ensure this is defined)
+  function showModal(modalId) {
+    $(modalId).modal('show');
+  }
+
+  // Function to handle cancellation (ensure this is defined)
+  function openModals(event) {
+    // Your logic for handling the button click
+    // For example, show a confirmation modal or perform an action
+    alert('Order has been cancelled!'); // Example action
+  }
   $('.datatables-users tbody').on('click', '.mapsModal', function () {
     $('#mapsModal').modal('show');
   });
