@@ -484,7 +484,8 @@ $(document).ready(function () {
       ajax: assetsPath + 'json/order-approval.json',
       columns: [
         { data: 'route_id' }, // Route ID
-        { data: 'driver_vehicle' }, // Driver - Vehicle
+        { data: 'driver_vehicle' },
+        { data: 'driver_status' }, // Driver - Vehicle
         { data: 'capacity_percent' }, // % Capacity
         { data: 'total_value' }, // Total Value
         { data: 'total_trip_time' }, // Total Trip Time
@@ -493,6 +494,7 @@ $(document).ready(function () {
         { data: 'do_number' }, // Faktur ID
         { data: 'faktur_qty' }, // Faktur Qty
         { data: 'wms_qty' },
+        { data: 'delivery_qty' },
         { data: 'value' }, // Value
         { data: 'start_time' }, // Start Time
         { data: 'end_time' }, // End Time
@@ -500,82 +502,135 @@ $(document).ready(function () {
         { data: 'notes' }, // Notes
         { data: 'action' } // Action
       ],
-      order: [[5, 'asc']], // Default sorting: based on column 5 in ascending order
+      order: [[6, 'asc']],
       rowCallback: function (row, data, index) {
-        var groupSize = 3; // Number of rows to group together for R004
+        if (!data) return;
 
-        // If route_id is 'R004', group the next rows with null route_id
+        // Delivery status object
+        var statusObj = {
+          1: { title: 'Ready to Deliver', class: 'bg-label-success' },
+          2: { title: 'Loading', class: 'bg-label-info' }
+        };
+
+        // Display delivery status in the designated column
+        if (data.driver_status) {
+          var deliveryStatusBadge = statusObj[data.driver_status]
+            ? '<span class="badge rounded-pill ' +
+              statusObj[data.driver_status].class +
+              '">' +
+              statusObj[data.driver_status].title +
+              '</span>'
+            : '<span class="badge rounded-pill bg-label-secondary">Unknown</span>'; // Default for unknown status
+
+          // Assuming delivery status is displayed in column 11 (index 10)
+          $('td:eq(2)', row).html(deliveryStatusBadge);
+        }
+
+        // Hitung jumlah entri dengan route_id null untuk grup
+        let groupSizeMap = {
+          R004: 3,
+          R001: 1,
+          R002: 1,
+          R003: 1,
+          R005: 1
+        };
+
+        // Grouping logic based on route_id
         if (data.route_id === 'R004') {
-          // First row of the group: Display all relevant columns
+          let groupSize = groupSizeMap[data.route_id]; // Ambil ukuran grup dari map
           if (index % groupSize === 0) {
-            ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(15)'].forEach(function (selector) {
-              $(selector, row).attr('rowspan', groupSize).css({
-                'vertical-align': 'middle',
-                'text-align': 'center'
-              });
-            });
-
-            // Show all columns for the first row in the group
-            $(row).find('td:lt(5)').show();
-            $(row).find('td:eq(15)').show();
+            // Show grouped cells for R004
+            ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(5)', 'td:eq(15)'].forEach(
+              function (selector) {
+                $(selector, row).attr('rowspan', groupSize).css({
+                  'vertical-align': 'middle',
+                  'text-align': 'center'
+                });
+              }
+            );
+            $(row).find('td:lt(6)').show();
+            $(row).find('td:eq(16)').show();
           } else {
-            // Hide columns for subsequent rows within the group
-            $(row).find('td:lt(15').hide();
+            // Hide cells for grouped rows under R004
+            $(row).find('td:lt(6)').hide();
             $(row).find('td:eq(16)').hide();
           }
         } else if (data.route_id === null) {
-          // For rows where route_id is null (below R004), we combine them into one column
-          $(row).find('td:lt(5)').hide(); // Hide the unnecessary columns
-          $(row).find('td:eq(15)').hide(); // Hide the unnecessary column
+          // Combine row with the previous row (R004)
+          const previousRow = dt_User.row(index - 1).node();
 
-          // Find the specific row of R004 (previous row) and append these rows as a single value
-          var previousRow = $('#example')
-            .DataTable()
-            .row(index - 1)
-            .node();
-          var combinedCell = $('td:eq(4)', previousRow); // Select column 5 of R004's row
+          // Hide current row cells
+          $(row).find('td:lt(6)').hide();
+          $(row).find('td:eq(15)').hide();
 
-          // Combine the location names of the following rows with null route_id
-          combinedCell.text(function (_, currentText) {
-            return currentText + ' / ' + data.location_name;
-          });
+          // Adjust cells in previous row
+          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(5)', 'td:eq(15)'].forEach(
+            function (selector) {
+              $(selector, previousRow).attr('rowspan', groupSizeMap['R004']).css({
+                'vertical-align': 'middle',
+                'text-align': 'center'
+              });
+            }
+          );
+        } else if (
+          data.route_id === 'R001' ||
+          data.route_id === 'R002' ||
+          data.route_id === 'R003' ||
+          data.route_id === 'R005'
+        ) {
+          // Handle R001, R002, R003, R005 separately
+          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(5)', 'td:eq(15)'].forEach(
+            function (selector) {
+              $(selector, row).attr('rowspan', 1).css({
+                'vertical-align': 'middle',
+                'text-align': 'center'
+              });
+            }
+          );
+          $(row).find('td:lt(6)').show();
+          $(row).find('td:eq(16)').show();
         } else {
-          // For other route_ids (not R004 or null), treat them normally
-          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(15)'].forEach(function (selector) {
-            $(selector, row).attr('rowspan', 1).css({
-              'vertical-align': 'middle',
-              'text-align': 'center'
-            });
-          });
-
-          // Show all columns for non-'R004' rows
-          $(row).find('td:lt(5)').show();
-          $(row).find('td:eq(15)').show();
+          // Handle other route_ids normally
+          ['td:eq(0)', 'td:eq(1)', 'td:eq(2)', 'td:eq(3)', 'td:eq(4)', 'td:eq(5)', 'td:eq(15)'].forEach(
+            function (selector) {
+              $(selector, row).attr('rowspan', 1).css({
+                'vertical-align': 'middle',
+                'text-align': 'center'
+              });
+            }
+          );
+          $(row).find('td:lt(6)').show();
+          $(row).find('td:eq(16)').show();
         }
 
-        // Create the DO Number button for column 9 (adjust as needed)
-        var doNumberCell = $('td:eq(8)', row); // Assume DO number is in column 9
-        var doNumberButton = $('<button/>', {
-          class: 'do-number-button',
-          text: 'DO ' + data.do_number
-        });
-        doNumberCell.append(doNumberButton);
-
-        // If DO number is '2', apply special formatting
-        if (data.do_number == 2) {
-          doNumberButton = $(`
-              <button class="do-number-button view" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;" 
-                      onclick="view">
-                ${data.do_number}
-              </button>`);
-        } else {
-          doNumberButton = $(`
-              <button class="do-number-button liat" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;">
-                ${data.do_number}
-              </button>`);
+        // Add the button with map icon in the second cell (td:eq(1))
+        let iconHtml = '';
+        if (data.route_id === 'R004') {
+          iconHtml = `
+            <span class="badge bg-warning" style="color: black; display: flex; align-items: center; 
+                justify-content: center; padding: 1px 3px; font-size: 1rem; border-radius: 50%; width: 20px; height: 20px;">
+                <i class="ri-error-warning-line" style="font-size: 1rem;"></i>
+            </span>
+          `;
         }
 
-        doNumberCell.empty().append(doNumberButton);
+        const mapButtonHtml = `
+  <div class="d-flex flex-column align-items-center">
+    <button type="button" class="btn btn-sm map-btn d-flex align-items-center justify-content-center" 
+            style="width: 70px; height: 40px; padding: 0; background-color: #006400; color: white; border: none;" 
+            data-route-id="${data.route_id}" 
+            data-bs-toggle="modal" 
+            data-bs-target="#mapsModal">
+      ${iconHtml}<span class="mt-1">${data.route_id}</span>
+    </button> 
+  </div>`;
+
+        // Update the first cell (td:eq(0)) with the button or leave it empty if route_id is null
+        if (data.route_id === null) {
+          $('td:eq(0)', row).html(''); // Leave it empty if route_id is null
+        } else {
+          $('td:eq(0)', row).html(mapButtonHtml); // Display the button if route_id is not null
+        }
       },
 
       columnDefs: [
@@ -585,6 +640,25 @@ $(document).ready(function () {
           orderable: false,
           render: function (data, type, full) {
             console.log('Rendering data:', data, type, full);
+
+            let buttons = ''; // Initialize buttons variable
+            const driverStatus = full['driver_status'] || 'N/A';
+            const doNumber = full['do_number'] || 'N/A';
+
+            // Determine view item based on doNumber
+            if (doNumber === 1) {
+              buttons += `<li><a class="dropdown-item liat" href="#liat">View</a></li>`;
+            } else {
+              buttons += `<li><a class="dropdown-item view" href="#">View</a></li>`;
+            }
+
+            // Determine change vehicle item based on driver status
+            if (driverStatus === 1) {
+              buttons += `<li><a class="dropdown-item disabled" href="#" tabindex="-1" aria-disabled="true">Change Vehicle</a></li>`;
+            } else {
+              buttons += `<li><a class="dropdown-item changeKendaraan" href="#">Change Vehicle</a></li>`;
+            }
+
             return `
               <div class="dropdown">
                 <button 
@@ -593,12 +667,13 @@ $(document).ready(function () {
                   id="dropdownMenuButton" 
                   data-bs-toggle="dropdown" 
                   aria-expanded="false"
+                  aria-label="Actions"
                   style="border: 2px solid blue; background-color: blue; padding: 0; color: white;">
                   <i class="ri-more-2-fill" style="font-size: 20px;"></i>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item changeKendaraan" href="#">Change Vehicle</a></li>
-                  <li><a class="dropdown-item " onclick="openRoute(event)" href="#">Batalkan Route</a></li>
+                  ${buttons}  <!-- Use the buttons variable here -->
+                  <li><a class="dropdown-item" onclick="openRoute(event)" href="#">Cancel Route</a></li>
                 </ul>
               </div>
             `;
@@ -611,12 +686,14 @@ $(document).ready(function () {
     });
   }
 
-  // Show the modal
-  $('.datatables-users tbody').on('click', '.view', function () {
-    $('#view').modal('show');
+  $('.datatables-users tbody').on('click', '.view', function (event) {
+    event.preventDefault(); // Prevent default action
+    showModal('#view');
   });
-  $('.datatables-users tbody').on('click', '.liat', function () {
-    $('#liat').modal('show');
+
+  $('.datatables-users tbody').on('click', '.liat', function (event) {
+    event.preventDefault(); // Prevent default action
+    showModal('#liat');
   });
   $('.datatables-users tbody').on('click', '.mapsModal', function () {
     $('#mapsModal').modal('show');

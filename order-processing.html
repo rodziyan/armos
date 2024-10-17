@@ -584,12 +584,12 @@
                           <div data-i18n="Review Route">Review Route</div>
                         </a>
                       </li>
-                      <li class="menu-item">
+                      <!-- <li class="menu-item">
                         <a href="order-service.html" class="menu-link">
                           <i class="menu-icon tf-icons ri-truck-line"></i>
                           <div data-i18n="Ready To Deliver">Ready To Deliver</div>
                         </a>
-                      </li>
+                      </li> -->
                       <li class="menu-item">
                         <a href="in-delivery.html" class="menu-link">
                           <i class="menu-icon tf-icons ri-road-map-line"></i>
@@ -749,13 +749,7 @@
                             <!-- Filter by Delivery Date -->
                             <div class="flex-grow-1 d-flex flex-column">
                               <label for="filter-delivery-date" class="form-label">Filter by Delivery Date</label>
-                              <select id="filter-delivery-date" class="form-select">
-                                <option value="" disabled selected>Choose Delivery Date</option>
-                                <!-- Add your options here -->
-                                <option value="2024-10-01">2024-10-01</option>
-                                <option value="2024-10-02">2024-10-02</option>
-                                <option value="2024-10-03">2024-10-03</option>
-                              </select>
+                              <input type="date" id="filter-delivery-date" class="form-control">
                             </div>
 
                             <!-- Filter by Status -->
@@ -764,7 +758,7 @@
                               <select id="filter-status" class="form-select">
                                 <option value="" disabled selected>Choose Status</option>
                                 <option value="1">New</option>
-                                <option value="2">Pending</option>
+                                <option value="2">Hold</option>
                               </select>
                             </div>
 
@@ -856,6 +850,7 @@
               <option value="1">Sesi 1: 11.00</option>
               <option value="2">Sesi 2: 14.00</option>
               <option value="3">Sesi 3: 18.00</option>
+              <option value="4">-</option>
             </select>
           </div>
           <div class="mb-3">
@@ -976,6 +971,32 @@
       // Display current date
       document.getElementById('currentDate').innerText = new Date().toLocaleDateString('id-ID');
   </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const holdNoDateCheckbox = document.getElementById('holdNoDate');
+    const dateInput = document.getElementById('dateInput');
+    const sessionSelect = document.getElementById('sessionSelect');
+
+    // Function to toggle the disabled state of the input fields
+    function toggleFields() {
+      const isChecked = holdNoDateCheckbox.checked;
+      dateInput.disabled = isChecked;
+      sessionSelect.disabled = isChecked;
+      if (isChecked) {
+        dateInput.value = ''; // Clear the date input if the checkbox is checked
+        sessionSelect.value = '4'; // Reset session select if the checkbox is checked
+      }
+    }
+
+    // Initial setup
+    toggleFields();
+
+    // Add event listener to the checkbox
+    holdNoDateCheckbox.addEventListener('change', toggleFields);
+  });
+</script>
+
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

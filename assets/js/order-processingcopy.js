@@ -150,11 +150,6 @@ $(document).ready(function () {
             var $scheduledOptimizationDate = full['scheduled_optimization_date'];
             var $scheduledOptimizationTime = full['scheduled_optimization_time'];
             var $deliveryType = full['delivery_type'] || 'N/A';
-            var $jumlah_order = full['jumlah_order'] || 'N/A';
-            var $jumlah_terkirim = full['jumlah_terkirim'] || 'N/A';
-            var $tanggal = full['tanggal'] || 'N/A';
-            var $waktu_kirim = full['waktu_kirim'] || 'N/A';
-            var $harga = full['harga'] || 'N/A';
 
             const statusObj = {
               1: 'New',
@@ -163,122 +158,90 @@ $(document).ready(function () {
             var $statusText = statusObj[$status] || 'Unknown';
 
             var buttons = `
-            <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
-                data-id="${$id}"
-                data-toko="${$toko}"
-                data-tipe_outlet="${$tipeOutlet}"
-                data-faktur_id="${$fakturId}"
-                data-faktur_date="${$fakturDate}"
-                data-delivery_date="${$deliveryDate}"
-                data-qty="${$qty}"
-                data-value="${$value}"
-                data-status="${$statusText}"
-                data-scheduled_optimization_date="${$scheduledOptimizationDate}"
-                data-scheduled_optimization_time="${$scheduledOptimizationTime}"
-                data-delivery_type="${$deliveryType}">
-                <i class="ri-eye-line ri-20px"></i>
-            </button>
-          `;
+            <div class="dropdown">
+                <button 
+                    class="btn btn-sm btn-icon rounded-pill waves-effect dropdown-toggle d-flex align-items-center justify-content-center" 
+                    type="button" 
+                    id="dropdownMenuButton${$id}" 
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false"
+                    style="border: 2px solid blue; background-color: blue; padding: 0; color: white;">
+                    <i class="ri-more-2-fill" style="font-size: 20px;"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton${$id}">`;
 
-            // Check the value of 'toko' for additional conditions
-            if (full['toko'] === 'Toko E') {
-              console.log('Toko A or Toko C detected');
-              // Green color if inv_status === 2, status === 2, and toko is Toko A or Toko C
-              buttons += `
-      <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect updateModal"
-          data-id="${$id}"
-          data-toko="${$toko}"
-          data-tipe_outlet="${$tipeOutlet}"
-          data-faktur_id="${$fakturId}"
-          data-faktur_date="${$fakturDate}"
-          data-delivery_date="${$deliveryDate}"
-          data-qty="${$qty}"
-          data-value="${$value}"
-          data-status="${$statusText}"
-          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
-          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
-          data-delivery_type="${$deliveryType}">
-          <i class="ri-edit-line ri-20px"></i>
-      </button>
-  `;
-            } else if (null) {
-              console.log('Toko A or Toko C not detected, using default gray button');
-              // Gray color if inv_status === 2, status === 2, and toko is neither Toko A nor Toko C
-              buttons += `
-      <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect updateModal"
-          data-id="${$id}"
-          data-toko="${$toko}"
-          data-tipe_outlet="${$tipeOutlet}"
-          data-faktur_id="${$fakturId}"
-          data-faktur_date="${$fakturDate}"
-          data-delivery_date="${$deliveryDate}"
-          data-qty="${$qty}"
-          data-value="${$value}"
-          data-status="${$statusText}"
-          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
-          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
-          data-delivery_type="${$deliveryType}"
-          disabled>
-          <i class="ri-edit-line ri-20px"></i>
-      </button>
-  `;
-            } else if (full['toko'] === 'Toko F') {
-              console.log('Toko E or Toko G detected, using blue button');
-              // Blue color if status === 2 (New status)
-              buttons += `
-      <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
-          data-id="${$id}"
-          data-toko="${$toko}"
-          data-tipe_outlet="${$tipeOutlet}"
-          data-faktur_id="${$fakturId}"
-          data-faktur_date="${$fakturDate}"
-          data-delivery_date="${$deliveryDate}"
-          data-qty="${$qty}"
-          data-value="${$value}"
-          data-status="${$statusText}"
-          data-scheduled_optimization_date="${$scheduledOptimizationDate}"
-          data-scheduled_optimization_time="${$scheduledOptimizationTime}"
-          data-delivery_type="${$deliveryType}">
-          <i class="ri-edit-line ri-20px"></i>
-      </button>
-  `;
-            }
+            // View button
+            buttons += `
+                    <li>
+                        <a class="dropdown-item viewModal" 
+                           data-id="${$id}" 
+                           data-toko="${$toko}" 
+                           data-tipe_outlet="${$tipeOutlet}" 
+                           data-faktur_id="${$fakturId}" 
+                           data-faktur_date="${$fakturDate}" 
+                           data-delivery_date="${$deliveryDate}" 
+                           data-qty="${$qty}" 
+                           data-value="${$value}" 
+                           data-status="${$statusText}" 
+                           data-scheduled_optimization_date="${$scheduledOptimizationDate}" 
+                           data-scheduled_optimization_time="${$scheduledOptimizationTime}" 
+                           data-delivery_type="${$deliveryType}">
+                           View
+                        </a>
+                    </li>`;
 
-            if (null) {
-              // Abu-abu: Admin ekspedisi belum mengajukan dokumen reconciliation
+            // Update button logic based on conditions
+            if ($toko === 'Toko D') {
               buttons += `
-                  <button type="button" class="btn btn-sm btn-secondary btn-icon rounded-pill waves-effect" 
-                          data-bs-toggle="modal" data-bs-target="#modalView" style="background-color: gray;"
-                          disabled>
-                      <i class="ri-file-edit-line"></i> 
-                  </button>
-              `;
-            } else if (null) {
-              // Merah: Dokumen reconciliation sudah diajukan, tapi Finance belum lengkapi
-              buttons += `
-                  <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect" 
-                          data-bs-toggle="modal" data-bs-target="#revisiSave">
-                      <i class="ri-file-edit-line"></i> 
-                  </button>
-              `;
-            } else if (full['toko'] === 'Toko E' || full['toko'] === 'Toko F') {
-              // Hijau: Dokumen sudah dilengkapi oleh Finance, Document Ref terisi
-              buttons += `
-                  <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect" 
-                          data-bs-toggle="modal" data-bs-target="#editFakur">
-                      <i class="ri-file-edit-line"></i> 
-                  </button>
-              `;
+                    <li>
+                        <a class="dropdown-item updateModal" 
+                           data-id="${$id}" 
+                           data-toko="${$toko}" 
+                           data-tipe_outlet="${$tipeOutlet}" 
+                           data-faktur_id="${$fakturId}" 
+                           data-faktur_date="${$fakturDate}" 
+                           data-delivery_date="${$deliveryDate}" 
+                           data-qty="${$qty}" 
+                           data-value="${$value}" 
+                           data-status="${$statusText}" 
+                           data-scheduled_optimization_date="${$scheduledOptimizationDate}" 
+                           data-scheduled_optimization_time="${$scheduledOptimizationTime}" 
+                           data-delivery_type="${$deliveryType}">
+                           Update
+                        </a>
+                    </li>`;
             }
 
             if (full['status'] === 2) {
-              // Abu-abu: Admin ekspedisi belum mengajukan dokumen reconciliation
               buttons += `
-                 <button class="btn btn-warning btn-icon rounded-pill waves-effect unholdModal">
-                    <i class="ri-error-warning-line" style="color: black;"></i>
-                  </button>
-              `;
+                    <li>
+                        <a class="dropdown-item unholdModal">Unhold
+                            <i class="ri-error-warning-line" style="color: black;"></i>
+                        </a>
+                    </li>`;
             }
+
+            // Conditional buttons based on other criteria
+            if (null) {
+              buttons += `
+                    <li>
+                        <a class="dropdown-item" disabled>Reconciliation Document Pending</a>
+                    </li>`;
+            } else if (null) {
+              buttons += `
+                    <li>
+                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#revisiSave">Revising Document</a>
+                    </li>`;
+            } else if ($toko === 'Toko D' || $toko === 'Toko F') {
+              buttons += `
+                    <li>
+                        <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editFakur">Edit Document</a>
+                    </li>`;
+            }
+
+            buttons += `
+                </ul>
+            </div>`;
 
             return buttons;
           }
@@ -461,36 +424,63 @@ function createViewModal() {
                             <tr>
                                 <td>SKU001</td>
                                 <td>Produk A</td>
-                                <td><input type="text" class="form-control form-control-sm" value="20" id="fakturQty1"></td>
-                                <td><input type="text" class="form-control form-control-sm" value="20" id="wmsQty1"></td>
+                                <td><input type="text" class="form-control form-control-sm" value="9" id="fakturQty1"></td>
+                                <td><input type="text" class="form-control form-control-sm" value="5" id="wmsQty1"></td>
                             </tr>
                             <tr>
                                 <td>SKU002</td>
                                 <td>Produk B</td>
-                                <td><input type="text" class="form-control form-control-sm" value="30" id="fakturQty2"></td>
-                                <td><input type="text" class="form-control form-control-sm" value="30" id="wmsQty2"></td>
+                                <td><input type="text" class="form-control form-control-sm" value="8" id="fakturQty2" readonly></td>
+                                <td><input type="text" class="form-control form-control-sm" value="8" id="wmsQty2" readonly></td>
                             </tr>
                             <tr>
                                 <td>SKU003</td>
                                 <td>Produk C</td>
-                                <td><input type="text" class="form-control form-control-sm" value="40" id="fakturQty3"></td>
-                                <td><input type="text" class="form-control form-control-sm" value="40" id="wmsQty3"></td>
+                                <td><input type="text" class="form-control form-control-sm" value="8" id="fakturQty3" readonly></td>
+                                <td><input type="text" class="form-control form-control-sm" value="8" id="wmsQty3" readonly></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 
                 <!-- Bottom Action Section -->
-                <div class="d-flex justify-content-end mt-3">
-                    <button type="button" class="btn btn-success btn-sm rounded-pill" style="background-color: #006400; border-color: #006400;">
-                        <i class="ri-save-line"></i> Save Changes
-                    </button>
+<div class="d-flex justify-content-end mt-3">
+    <button type="button" class="btn btn-success btn-sm rounded-pill" style="background-color: #006400; border-color: #006400;" data-bs-toggle="modal" data-bs-target="#changeQTY">
+        <i class=""></i> Save Changes
+    </button>
+</div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="changeQTY" tabindex="-1" aria-labelledby="changeQTYModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="changeQTYModalLabel">Konfirmasi Perubahan Jumlah</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <i class="ri-exchange-dollar-line" style="font-size: 30px; color: #2e7d32;"></i>
+                <p style="color: #2e7d32;">Apakah Anda yakin ingin mengubah jumlah order ini?</p>
+                <p>Perubahan akan diterapkan dan order akan diproses.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Konfirmasi</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  Ketika melakukan penyimpanan perubahan 
+Quantity pada Outstanding Order, Schedule 
+Opt. Date dan Time pada data order tersebut di
+simpan pada cut-off terdekat dari optimisasi 
+selanjutnya. -->
 
     <!-- Modal -->
 <div class="modal fade" id="unholdModal" tabindex="-1" aria-labelledby="unholdModalLabel" aria-hidden="true">

@@ -584,12 +584,12 @@
                           <div data-i18n="Review Route">Review Route</div>
                         </a>
                       </li>
-                      <li class="menu-item">
+                      <!-- <li class="menu-item">
                         <a href="order-service.html" class="menu-link">
                           <i class="menu-icon tf-icons ri-truck-line"></i>
                           <div data-i18n="Ready To Deliver">Ready To Deliver</div>
                         </a>
-                      </li>
+                      </li> --> 
                       <li class="menu-item">
                         <a href="in-delivery.html" class="menu-link">
                           <i class="menu-icon tf-icons ri-road-map-line"></i>
@@ -734,15 +734,10 @@
                             </div>
                             
                             <!-- Filter by Document ID -->
-                            <div class="col-md">
-                              <label for="filter-faktur-id" class="form-label">Filter by Document ID</label>
-                              <select id="filter-faktur-id" class="form-select">
-                                <option value="" disabled selected>Choose a Document ID</option>
-                                <!-- Add your document options here -->
-                                <option value="doc1">Document 1</option>
-                                <option value="doc2">Document 2</option>
-                              </select>
-                            </div>
+                          <div class="col-md">
+                            <label for="filter-faktur-id" class="form-label">Search Route by Document ID</label>
+                            <input type="text" id="filter-faktur-id" class="form-control" placeholder="Enter Document ID">
+                          </div>
                             
                             <!-- Buttons -->
                             <div class="col-md-auto mt-6">
@@ -766,22 +761,25 @@
                           <tr>
                             <th>Route ID</th>
                             <th>Driver - Vehicle</th>
+                            <th>Driver Status</th>
                             <th>% Capacity</th>
                             <th>Total Value</th>
-                            <th>Total Trip Time</th>
+                            <th>Est. Trip Time</th>
                             <th>Seq</th>
                             <th>Location Name</th>
                             <th>Jumlah Dokumen</th>
                             <th>Faktur/Retur Qty</th>
                             <th>WMS Qty</th>
+                            <th>Delivery Qty</th>
                             <th>Value</th>
-                            <th>Start Time</th>
-                            <th>End Time</th>
+                            <th>Delivery Date</th>
+                            <th>Delivery Time</th>
                             <th>Trip Time</th>
                             <th>Notes</th>
                             <th>Action</th>
                         </tr>                        
                         </thead>
+                        <tbody></tbody>
                       </table>
                     </div>
                   </div>
