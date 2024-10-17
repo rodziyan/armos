@@ -526,8 +526,8 @@ $(document).ready(function () {
             // Determine view item based on doNumber
             if (doNumber === 1) {
               buttons += `<li><a class="dropdown-item liat" href="#">View</a></li>`;
-            } else if (doNumber === 2) {
-              buttons += `<li><a class="dropdown-item view" href="#">View</a></li>`;
+            } else {
+              buttons += `<li><a class="dropdown-item view" href="#view">View</a></li>`;
             }
 
             // Determine change vehicle item based on driver status
