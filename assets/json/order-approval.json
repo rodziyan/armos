@@ -47,7 +47,7 @@
           "value": "Rp.35,000",
           "start_time": "10/10/2024",
           "end_time": "13:00 - 13:45",
-          "trip_time": "00:15:00",
+          "trip_time": "00:45:00",
           "notes": null
         }
       ]
@@ -73,7 +73,7 @@
           "value": "Rp.22,000",
           "start_time": "10/10/2024",
           "end_time": "13:00 - 13:40",
-          "trip_time": "00:10:00",
+          "trip_time": "00:40:00",
           "notes": null
         }
       ]
@@ -99,7 +99,7 @@
           "value": "Rp.40,000",
           "start_time": "10/10/2024",
           "end_time": "13:00 - 13:50",
-          "trip_time": "00:20:00",
+          "trip_time": "00:50:00",
           "notes": null
         },
         {
@@ -113,8 +113,8 @@
           "delivery_qty": 25,
           "value": "Rp.25,000",
           "start_time": "10/10/2024",
-          "end_time": "13:50 - 14:35",
-          "trip_time": "00:15:00",
+          "end_time": "13:50 - 14:00",
+          "trip_time": "00:10:00",
           "notes": null
         },
         {
@@ -128,8 +128,8 @@
           "delivery_qty": "<span style='color: red;'>15</span>",
           "value": "Rp.17,000",
           "start_time": "10/10/2024",
-          "end_time": "14:35 - 15:20",
-          "trip_time": "00:15:00",
+          "end_time": "14:00 - 15:00",
+          "trip_time": "01:00:00",
           "notes": null
         }
       ]
@@ -155,7 +155,7 @@
           "value": "Rp.35,000",
           "start_time": "10/10/2024",
           "end_time": "13:00 - 13:45",
-          "trip_time": "00:15:00",
+          "trip_time": "00:45:00",
           "notes": null
         }
       ]

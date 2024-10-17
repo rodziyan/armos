@@ -29,7 +29,12 @@ $(document).ready(function () {
                           <td>F001</td>
                           <td>20</td>
                           <td>18</td>
-                          <td><button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
+                          <td>
+                          <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#editFakur">
+    <i class="ri-file-text-line"></i> Document Reconciliation
+</button>
+
+                          <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
                         <i class="ri-close-line"></i> Batalkan Order
                     </button></td>
                       </tr>
@@ -38,9 +43,15 @@ $(document).ready(function () {
                           <td>F002</td>
                           <td>30</td>
                           <td>28</td>
-                          <td><button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
+                          <td>
+                          <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#editFakur">
+    <i class="ri-file-text-line"></i> Document Reconciliation
+</button>
+
+                          <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
                         <i class="ri-close-line"></i> Batalkan Order
-                    </button></td>
+                    </button>
+                    </td>
                       </tr>
                   </tbody>
               </table>
@@ -75,9 +86,14 @@ $(document).ready(function () {
                           <td>F001</td>
                           <td>20</td>
                           <td>18</td>
-                          <td><button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
+                          <td>
+                          <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#editFakur">
+                              <i class="ri-file-text-line"></i> Document Reconciliation
+                          </button>
+                          <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
                         <i class="ri-close-line"></i> Batalkan Order
-                    </button></td>
+                    </button>
+                    </td>
                       </tr>
                   </tbody>
               </table>
@@ -347,6 +363,76 @@ $(document).ready(function () {
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="approvalModal" tabindex="-1" role="dialog" aria-labelledby="approvalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn-close mt-3 me-3" aria-label="Close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-header justify-content-center">
+                <h5 class="modal-title text-center" style="flex: 1;">
+                    <i class="ri-truck-line" style="color: #2C3E50; font-size: 45px;"></i>
+                </h5>
+            </div>
+            <div class="modal-body text-center" style="color: #2C3E50;">
+                <h5 style="color: #28a745;">Apakah Anda yakin untuk memberikan approval pengantaran ini?</h5>
+            </div>
+            <div class="modal-footer justify-content-end">
+                <button type="button" class="btn btn-danger" style="background-color: #dc3545; border-color: #dc3545;" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-success" style="background-color: #28a745; border-color: #28a745;">Ya, Approval Start Delivery</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="editFakur" tabindex="-1" aria-labelledby="editFakurLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg"> 
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editFakurLabel">Revisi Faktur</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Form Edit -->
+        <form id="editForm">
+          <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="documentID" class="form-label">Document ID</label>
+                <input type="text" class="form-control" id="documentID" placeholder="Masukkan Document ID" value="F000">
+              </div>
+              <div class="mb-3">
+                <label for="documentType" class="form-label">Tipe Dokumen</label>
+                <input type="text" class="form-control" id="documentType" placeholder="Masukkan Tipe Dokumen" value="Faktur Revisi">
+              </div>
+              <div class="mb-3">
+                <label for="documentRef" class="form-label">Document Ref</label>
+                <input type="text" class="form-control" id="documentRef" placeholder="Masukkan Document Ref" value="Delivery">
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Deskripsi</label>
+                <textarea class="form-control" id="description" rows="3" placeholder="Masukkan Deskripsi">Faktur revisi untuk penyesuaian quantity.</textarea>
+              </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-md-6">
+              <div class="mb-3">
+                <div class="item">
+                  <img src="assets/img/KFaktur.png" alt="Foto Dokumen Revisi Faktur" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 `);
 
@@ -447,21 +533,17 @@ $(document).ready(function () {
         }
 
         const mapButtonHtml = `
-  <div class="d-flex flex-column align-items-center">
-    <button type="button" class="btn btn-sm map-btn d-flex align-items-center justify-content-center" 
-            style="width: 70px; height: 40px; padding: 0; background-color: #006400; color: white; border: none;" 
-            data-route-id="${data.route_id}" 
-            data-bs-toggle="modal" 
-            data-bs-target="#mapsModal">
-      ${iconHtml}<span class="mt-1">${data.route_id}</span>
-    </button> 
-  </div>`;
+        <div class="d-flex align-items-center">
+          <span class="me-3">${iconHtml}</span>
+          <span>${data.route_id}</span>
+        </div>
+      `;
 
         // Update the first cell (td:eq(0)) with the button or leave it empty if route_id is null
         if (data.route_id === null) {
           $('td:eq(0)', row).html(''); // Leave it empty if route_id is null
         } else {
-          $('td:eq(0)', row).html(mapButtonHtml); // Display the button if route_id is not null
+          $('td:eq(0)', row).html(iconHtml); // Display the button if route_id is not null
         }
 
         // Handling grouping for R004
@@ -537,6 +619,11 @@ $(document).ready(function () {
               buttons += `<li><a class="dropdown-item changeKendaraan" href="#">Change Vehicle</a></li>`;
             }
 
+            // Determine change vehicle item based on driver status
+            if (driverStatus === 1) {
+              buttons += `<li><a class="dropdown-item approvalModal" href="#">Approval</a></li>`;
+            }
+
             return `
               <div class="dropdown">
                 <button 
@@ -563,6 +650,16 @@ $(document).ready(function () {
       dom: '<"top"i>rt<"bottom"flp><"clear">'
     });
   }
+
+  // Event untuk membuka modal
+  $(document).on('click', '.approvalModal', function () {
+    $('#approvalModal').modal('show');
+  });
+
+  // Event untuk menutup modal
+  $(document).on('click', '#closeModalBtn, #closeModalBtn2', function () {
+    $('#approvalModal').modal('hide');
+  });
 
   // Event listener for the "view" button
   $('.datatables-users tbody').on('click', '.view', function (event) {
