@@ -374,7 +374,7 @@ $(document).ready(function () {
                   trip_time: delivery.trip_time,
                   notes: delivery.notes,
                   seq: delivery.seq,
-                  is_first: index === -2
+                  is_first: index === 0
                 });
               });
             } else {
@@ -406,7 +406,7 @@ $(document).ready(function () {
         { data: 'capacity_percent' },
         { data: 'total_value' },
         { data: 'total_trip_time' },
-        { data: 'delivery_count' },
+        { data: 'seq' },
         { data: 'location_name' },
         { data: 'do_number' },
         { data: 'faktur_qty' },
@@ -464,23 +464,36 @@ $(document).ready(function () {
           $('td:eq(0)', row).html(mapButtonHtml); // Display the button if route_id is not null
         }
 
-        // Handle rowspan for R004
-        if (data.route_id === 'R004' && data.is_first) {
-          let rowspan = data.delivery_count;
-          console.log(row);
-          $(row)
-            .nextAll()
-            .each(function () {
-              const nextData = dt_User.row(this).data();
-              if (nextData && nextData.route_id === 'R004') {
-                $(this).hide();
-              } else {
-                return false; // Stop when a different route is encountered
-              }
+        // Handling grouping for R004
+        if (data.route_id === 'R004') {
+          if (data.is_first) {
+            // Columns that should have rowspan (repeated data)
+            const rowspanColumns = [0, 1, 2, 3, 4, 5];
+            const rowspan = data.delivery_count;
+
+            // Apply rowspan to specified columns
+            rowspanColumns.forEach(colIndex => {
+              $(`td:eq(${colIndex})`, row).attr('rowspan', rowspan);
             });
-          $(row).find('td').attr('rowspan', rowspan);
+
+            // Set the route button for the first row
+            $('td:eq(0)', row).html(mapButtonHtml);
+          } else {
+            // Remove the columns that are using rowspan for subsequent rows
+            const columnsToRemove = [0, 1, 2, 3, 4, 5];
+            columnsToRemove.forEach(colIndex => {
+              $(`td:eq(${colIndex})`, row).remove();
+            });
+          }
+        } else if (data.route_id) {
+          // For other routes, just show the route button
+          $('td:eq(0)', row).html(mapButtonHtml);
         }
       },
+      drawCallback: function (settings) {
+        // Additional styling or post-draw operations if needed
+      },
+
       columnDefs: [
         {
           targets: -1,
