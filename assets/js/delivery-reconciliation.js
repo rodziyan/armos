@@ -169,6 +169,9 @@ function createModals() {
                   <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
                     <i class="ri-eye-line"></i>
                   </button>
+                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                      <i class="ri-file-text-line"></i> 
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -233,6 +236,9 @@ function createModals() {
                   <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
                     <i class="ri-eye-line"></i>
                   </button>
+                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                      <i class="ri-file-text-line"></i> 
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -247,6 +253,9 @@ function createModals() {
                 <td>
                   <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
                     <i class="ri-eye-line"></i>
+                  </button>
+                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                      <i class="ri-file-text-line"></i> 
                   </button>
                 </td>
               </tr>
@@ -313,6 +322,9 @@ function createModals() {
                   <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
                     <i class="ri-eye-line"></i>
                   </button>
+                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                      <i class="ri-file-text-line"></i> 
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -328,6 +340,9 @@ function createModals() {
                 <td>
                   <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
                     <i class="ri-eye-line"></i>
+                  </button>
+                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                      <i class="ri-file-text-line"></i> 
                   </button>
                 </td>
               </tr>
@@ -394,6 +409,9 @@ function createModals() {
                   <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
                     <i class="ri-eye-line"></i>
                   </button>
+                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                      <i class="ri-file-text-line"></i> 
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -445,6 +463,7 @@ function createModals() {
     </div>
   </div>
 </div>
+
 
   `;
 

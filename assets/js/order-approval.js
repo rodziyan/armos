@@ -401,20 +401,18 @@ $(document).ready(function () {
             <!-- Left Column -->
             <div class="col-md-6">
               <div class="mb-3">
-                <label for="documentID" class="form-label">Document ID</label>
-                <input type="text" class="form-control" id="documentID" placeholder="Masukkan Document ID" value="F000">
+                
               </div>
               <div class="mb-3">
-                <label for="documentType" class="form-label">Tipe Dokumen</label>
-                <input type="text" class="form-control" id="documentType" placeholder="Masukkan Tipe Dokumen" value="Faktur Revisi">
+                <label for="documentType" class="form-label">Document Ref</label>
+                <input type="text" class="form-control" id="documentType" placeholder="Document Reference" value="REF12345" readonly>
               </div>
               <div class="mb-3">
-                <label for="documentRef" class="form-label">Document Ref</label>
-                <input type="text" class="form-control" id="documentRef" placeholder="Masukkan Document Ref" value="Delivery">
+                <label for="documentRef" class="form-label">Created at</label>
+                <input type="text" class="form-control" id="documentRef" placeholder="Created at" value="17/10/2024" readonly>
               </div>
               <div class="mb-3">
-                <label for="description" class="form-label">Deskripsi</label>
-                <textarea class="form-control" id="description" rows="3" placeholder="Masukkan Deskripsi">Faktur revisi untuk penyesuaian quantity.</textarea>
+                
               </div>
             </div>
 
