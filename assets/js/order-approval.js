@@ -508,6 +508,26 @@ $(document).ready(function () {
         [6, 'asc']
       ],
       rowCallback: function (row, data) {
+        // Create the button for do_number in all rows
+        var doNumberCell = $('td:eq(8)', row); // Assuming do_number is in the 9th column
+        var doNumberButton;
+
+        // Check if do_number is 2 and create the button with an alert icon inside
+        if (data.do_number == 2) {
+          doNumberButton = $(`
+      <button class="do-number-button view" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;" 
+              onclick="view">
+          ${data.do_number}
+      </button>`);
+        } else {
+          doNumberButton = $(`
+      <button class="do-number-button liat" style="background-color: green; color: white; border: none; padding: 5px 10px; border-radius: 5px;">
+          ${data.do_number}
+      </button>`);
+        }
+
+        doNumberCell.empty().append(doNumberButton);
+
         var statusObj = {
           1: { title: 'Ready to Deliver', class: 'bg-label-success' },
           2: { title: 'Loading', class: 'bg-label-info' }
@@ -601,14 +621,6 @@ $(document).ready(function () {
 
             let buttons = ''; // Initialize buttons variable
             const driverStatus = full['driver_status'] || 'N/A';
-            const doNumber = full['do_number'] || 'N/A';
-
-            // Determine view item based on doNumber
-            if (doNumber === 1) {
-              buttons += `<li><a class="dropdown-item liat" href="#">View</a></li>`;
-            } else {
-              buttons += `<li><a class="dropdown-item view" href="#view">View</a></li>`;
-            }
 
             // Determine change vehicle item based on driver status
             if (driverStatus === 1) {

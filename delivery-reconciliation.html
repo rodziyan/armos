@@ -1454,13 +1454,13 @@
             </div>
           </div>
           <div class="col-md-6 mb-3">
-            <div class="item">
+            <!-- <div class="item">
               <img src="assets/img/BBM.png" alt="Biaya BBM" class="img-fluid" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
               <div class="description mt-2">
                 <strong>Biaya BBM</strong><br>
                 <small>KM: [Kilometers]</small>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -1568,39 +1568,32 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <!-- Form Edit -->
-          <form id="editForm">
-            <div class="row">
-              <!-- Left Column -->
-              <div class="col-md-6">
-                <div class="mb-3">
-                  
-                </div>
-                <div class="mb-3">
-                  <label for="documentType" class="form-label">Document Ref</label>
-                  <input type="text" class="form-control" id="documentType" placeholder="Document Reference" value="REF12345" readonly>
-                </div>
-                <div class="mb-3">
-                  <label for="documentRef" class="form-label">Created at</label>
-                  <input type="text" class="form-control" id="documentRef" placeholder="Created at" value="17/10/2024" readonly>
-                </div>
-                <div class="mb-3">
-                  
-                </div>
-              </div>
-  
-              <!-- Right Column -->
-              <div class="col-md-6">
-                <div class="mb-3">
-                  <div class="item">
-                    <img src="assets/img/KFaktur.png" alt="Foto Dokumen Revisi Faktur" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
+          <!-- Table -->
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Toko</th>
+                <th scope="col">Document Reference</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Link Download</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Toko A</td>
+                <td>REF12345</td>
+                <td>17/10/2024</td>
+                <td><a href="path/to/document1.pdf" target="_blank">Download</a></td>
+              </tr>
+              <tr>
+                <td>Toko B</td>
+                <td>REF67890</td>
+                <td>18/10/2024</td>
+                <td><a href="path/to/document2.pdf" target="_blank">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        
       </div>
     </div>
   </div>
