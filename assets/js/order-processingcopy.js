@@ -222,7 +222,7 @@ $(document).ready(function () {
           <i class="ri-edit-line ri-20px"></i>
       </button>
   `;
-            } else if (full['toko'] === 'Toko F') {
+            } else if (null) {
               console.log('Toko E or Toko G detected, using blue button');
               // Blue color if status === 2 (New status)
               buttons += `
