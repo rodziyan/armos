@@ -166,8 +166,8 @@ function createModals() {
                 <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
                 <td></td>
                 <td>
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
-                    <i class="ri-eye-line"></i>
+                  <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
+                      <i class="ri-eye-line"></i>
                   </button>
                   <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
@@ -233,8 +233,8 @@ function createModals() {
                 <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
                 <td></td>
                 <td>
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
-                    <i class="ri-eye-line"></i>
+                  <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
+                      <i class="ri-eye-line"></i>
                   </button>
                   <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
@@ -251,8 +251,8 @@ function createModals() {
                 <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
                 <td></td>
                 <td>
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
-                    <i class="ri-eye-line"></i>
+                  <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
+                      <i class="ri-eye-line"></i>
                   </button>
                   <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
@@ -319,8 +319,8 @@ function createModals() {
                 <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
                 <td></td>
                 <td>
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
-                    <i class="ri-eye-line"></i>
+                  <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
+                      <i class="ri-eye-line"></i>
                   </button>
                   <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
@@ -338,8 +338,8 @@ function createModals() {
                 <td style="color: green; font-weight: bold;">Completed</td> <!-- Delivery status in green -->
                 <td></td>
                 <td>
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
-                    <i class="ri-eye-line"></i>
+                  <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
+                      <i class="ri-eye-line"></i>
                   </button>
                   <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
@@ -406,8 +406,8 @@ function createModals() {
                 <td style="color: green; font-weight: bold;">Completed</td>
                 <td></td>
                 <td>
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
-                    <i class="ri-eye-line"></i>
+                  <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
+                      <i class="ri-eye-line"></i>
                   </button>
                   <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
@@ -426,8 +426,8 @@ function createModals() {
                 <td style="color: red; font-weight: bold;">Skip</td>
                 <td>1x Skip</td>
                 <td>
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
-                    <i class="ri-eye-line"></i>
+                  <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
+                      <i class="ri-eye-line"></i>
                   </button>
                 </td>
               </tr>
@@ -443,11 +443,11 @@ function createModals() {
                 <td style="color: red; font-weight: bold;">Skip</td>
                 <td>2x Skip</td>
                 <td>
-                  <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalView">
-                    <i class="ri-eye-line"></i>
+                  <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
+                      <i class="ri-eye-line"></i>
                   </button>
-                  <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#returnModal">
-                    <i class="ri-home-2-line"></i>
+                  <button class="btn btn-primary btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#returnModal">
+                      <i class="ri-home-2-line"></i>
                   </button>
                 </td>
               </tr>
