@@ -555,15 +555,11 @@ selanjutnya. -->
                     <div class="col-md-12">
                         <div class="mb-3">
                             <label for="documentID" class="form-label">Document ID</label>
-                            <input type="text" class="form-control" id="documentID" placeholder="Masukkan Document ID" value="F004">
+                            <input type="text" class="form-control" id="documentID" placeholder="Masukkan Document ID" value="F004" disabled>
                         </div>
                         <div class="mb-3">
                             <label for="documentType" class="form-label">Tipe Dokumen</label>
-                            <input type="text" class="form-control" id="documentType" placeholder="Masukkan Tipe Dokumen" value="Revisi Faktur">
-                        </div>
-                        <div class="mb-3">
-                            <label for="documentRef" class="form-label">Document Ref</label>
-                            <input type="text" class="form-control" id="documentRef" placeholder="Masukkan Document Ref" disabled>
+                            <input type="text" class="form-control" id="documentType" placeholder="Masukkan Tipe Dokumen" value="Revisi Faktur" disabled>
                         </div>
                         <div class="mb-3">
                             <label for="description" class="form-label">Deskripsi <span class="text-danger">*</span></label>
