@@ -388,49 +388,39 @@ $(document).ready(function () {
 </div>
 
 <div class="modal fade" id="editFakur" tabindex="-1" aria-labelledby="editFakurLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg"> 
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editFakurLabel">Revisi Faktur</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editFakurLabel">Revisi Faktur</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Table -->
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Document Reference</th>
+                <th scope="col">Created At</th>
+                <th scope="col">Link Download</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>REF12345</td>
+                <td>17/10/2024</td>
+                <td><a href="path/to/document1.pdf" target="_blank">Download</a></td>
+              </tr>
+              <tr>
+                <td>REF67890</td>
+                <td>18/10/2024</td>
+                <td><a href="path/to/document2.pdf" target="_blank">Download</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div class="modal-body">
-        <!-- Form Edit -->
-        <form id="editForm">
-          <div class="row">
-            <!-- Left Column -->
-            <div class="col-md-6">
-              <div class="mb-3">
-                
-              </div>
-              <div class="mb-3">
-                <label for="documentType" class="form-label">Document Ref</label>
-                <input type="text" class="form-control" id="documentType" placeholder="Document Reference" value="REF12345" readonly>
-              </div>
-              <div class="mb-3">
-                <label for="documentRef" class="form-label">Created at</label>
-                <input type="text" class="form-control" id="documentRef" placeholder="Created at" value="17/10/2024" readonly>
-              </div>
-              <div class="mb-3">
-                
-              </div>
-            </div>
-
-            <!-- Right Column -->
-            <div class="col-md-6">
-              <div class="mb-3">
-                <div class="item">
-                  <img src="assets/img/KFaktur.png" alt="Foto Dokumen Revisi Faktur" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-      
     </div>
   </div>
-</div>
 
 `);
 
