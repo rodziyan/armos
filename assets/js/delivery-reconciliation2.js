@@ -169,10 +169,10 @@ function createModals() {
                   <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
                       <i class="ri-eye-line"></i>
                   </button>
-                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                  <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
                   </button>
-                  <button id="DocRecon" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#DocRecon">
+                  <button id="DocRecon" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#DocRecon">
                       <i class="ri-article-line"></i> 
                   </button>
                 </td>
@@ -239,7 +239,7 @@ function createModals() {
                   <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
                       <i class="ri-eye-line"></i>
                   </button>
-                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                  <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
                   </button>
                 </td>
@@ -257,7 +257,7 @@ function createModals() {
                   <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
                       <i class="ri-eye-line"></i>
                   </button>
-                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                  <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
                   </button>
                 </td>
@@ -325,7 +325,7 @@ function createModals() {
                   <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
                       <i class="ri-eye-line"></i>
                   </button>
-                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                  <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
                   </button>
                 </td>
@@ -344,7 +344,7 @@ function createModals() {
                   <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
                       <i class="ri-eye-line"></i>
                   </button>
-                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                  <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
                   </button>
                 </td>
@@ -429,10 +429,10 @@ function createModals() {
                   <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
                       <i class="ri-eye-line"></i>
                   </button>
-                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                  <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
                   </button>
-                  <button id="DocRecon" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#DocRecon">
+                  <button id="DocRecon" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#DocRecon">
                       <i class="ri-article-line"></i> 
                   </button>
                 </td>
@@ -452,10 +452,10 @@ function createModals() {
                   <button class="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalView">
                       <i class="ri-eye-line"></i>
                   </button>
-                  <button id="editFaktur" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
+                  <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#document">
                       <i class="ri-file-text-line"></i> 
                   </button>
-                  <button id="DocRecon" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#DocRecon">
+                  <button id="DocRecon" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#DocRecon">
                       <i class="ri-article-line"></i> 
                   </button>
                   <button class="btn btn-sm rounded-pill" style="background-color: purple; color: white;" data-bs-toggle="modal" data-bs-target="#returnModal">

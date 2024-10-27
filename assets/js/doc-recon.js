@@ -41,9 +41,6 @@ $('body').append(`
           <label for="supportingDocument" class="form-label">Upload / Download Dokumen Pendukung</label>
           <div class="mb-3 d-flex align-items-center">
             <input type="file" class="form-control me-2" id="supportingDocument">
-            <button class="btn btn-primary" id="downloadButton">
-                <i class="ri-download-line"></i> 
-            </button>
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Deskripsi</label>
@@ -89,9 +86,11 @@ $('body').append(`
               <option value="lainnya">Lainnya</option>
             </select>
           </div>
+          <label for="supportingDocument" class="form-label">Download File Document Reconciliation</label>
           <div class="mb-3">
-            <label for="supportingDocument" class="form-label">Upload / Download Dokumen Pendukung</label>
-            <input type="file" class="form-control" id="supportingDocument" readonly>
+              <button class="btn btn-primary" id="downloadButton">
+                  <i class="ri-download-line"></i> 
+              </button>
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Deskripsi</label>
@@ -136,9 +135,6 @@ $('body').append(`
           <label for="supportingDocument" class="form-label">Upload / Download Dokumen Pendukung</label>
           <div class="mb-3 d-flex align-items-center">
             <input type="file" class="form-control me-2" id="supportingDocument">
-            <button class="btn btn-primary" id="downloadButton">
-                <i class="ri-download-line"></i> 
-            </button>
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Deskripsi</label>
