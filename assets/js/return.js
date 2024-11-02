@@ -17,14 +17,17 @@ $('body').append(`
             <!-- Nama Toko -->
               <div class="col-md-6 mb-3">
                 <label for="storeName" class="form-label">Nama Toko</label>
-                <select class="form-control" id="storeName">
-                  <option value="" disabled selected>Pilih Nama Toko</option>
-                  <option value="toko1">Toko 1</option>
-                  <option value="toko2">Toko 2</option>
-                  <option value="toko3">Toko 3</option>
-                  <option value="toko4">Toko 4</option>
-                </select>
-              </div>
+                <div class="searchable-dropdown">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Cari Nama Toko" onkeyup="filterStores()" onclick="showDropdown()" onblur="hideDropdown()">
+                    <select class="form-control" id="storeName" size="4" onchange="updateInput()" style="display: none;">
+                        <option value="" readonly selected></option>
+                        <option value="toko1">Toko 1</option>
+                        <option value="toko2">Toko 2</option>
+                        <option value="toko3">Toko 3</option>
+                        <option value="toko4">Toko 4</option>
+                    </select>
+                </div>
+            </div>
 
             
             <!-- Retur Document -->
@@ -148,15 +151,17 @@ $('body').append(`
          <div class="row">
             <!-- Nama Toko -->
             <div class="col-md-6 mb-3">
-              <label for="storeName" class="form-label">Nama Toko</label>
-              <select class="form-control" id="storeName">
-                <option value="" disabled selected>Pilih Nama Toko</option>
-                <option value="tokoABC" selected>Toko ABC</option>
-                <option value="tokoXYZ">Toko XYZ</option>
-                <option value="tokoDEF">Toko DEF</option>
-                <option value="tokoGHI">Toko GHI</option>
-                <!-- Tambahkan opsi toko lainnya sesuai kebutuhan -->
-              </select>
+                <label for="storeName" class="form-label">Nama Toko</label>
+                <div class="searchable-dropdown">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Cari Nama Toko" onkeyup="filterStores()" onclick="showDropdown()" onblur="hideDropdown()">
+                    <select class="form-control" id="storeName" size="4" onchange="updateInput()" style="display: none;">
+                        <option value="" readonly selected></option>
+                        <option value="toko1">Toko 1</option>
+                        <option value="toko2">Toko 2</option>
+                        <option value="toko3">Toko 3</option>
+                        <option value="toko4">Toko 4</option>
+                    </select>
+                </div>
             </div>
 
             <div class="col-md-6 mb-3">
@@ -332,6 +337,58 @@ $('body').append(`
   </div>
 </div>
 
+<style>
+.searchable-dropdown {
+    position: relative;
+}
+
+#searchInput {
+    margin-bottom: 5px;
+}
+</style>
+
+<script>
+function filterStores() {
+    const input = document.getElementById("searchInput");
+    const filter = input.value.toLowerCase();
+    const select = document.getElementById("storeName");
+    const options = select.options;
+
+    let hasVisibleOptions = false;
+
+    for (let i = 1; i < options.length; i++) {
+        const txtValue = options[i].text.toLowerCase();
+        options[i].style.display = txtValue.includes(filter) ? "" : "none";
+        if (options[i].style.display === "") {
+            hasVisibleOptions = true;
+        }
+    }
+
+    // Show or hide the dropdown based on whether there are visible options
+    select.style.display = hasVisibleOptions ? "block" : "none";
+}
+
+function updateInput() {
+    const select = document.getElementById("storeName");
+    const input = document.getElementById("searchInput");
+    const selectedOption = select.options[select.selectedIndex].text;
+    
+    // Update the input field with the selected store name
+    input.value = selectedOption;
+    select.style.display = "none"; // Hide dropdown after selection
+}
+
+function showDropdown() {
+    const select = document.getElementById("storeName");
+    select.size = 4; // Show all options when input is clicked
+    select.style.display = "block"; // Show dropdown
+}
+
+function hideDropdown() {
+    const select = document.getElementById("storeName");
+    select.style.display = "none"; // Hide dropdown when input loses focus
+}
+</script>
 `);
 
 const style = document.createElement('style');
