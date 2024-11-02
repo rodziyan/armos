@@ -26,24 +26,16 @@ $('body').append(`
                 </select>
               </div>
 
-            <div class="col-md-6 mb-3">
-              <label for="returDocument" class="form-label">Retur Document</label>
-              <select class="form-control" id="returDocument">
-                <option value="" disabled selected>Pilih Dokumen Retur</option>
-                <option value="doc1">Dokumen 1</option>
-                <option value="doc2">Dokumen 2</option>
-                <option value="doc3">Dokumen 3</option>
-                <option value="doc4">Dokumen 4</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="row">
+            
             <!-- Retur Document -->
             <div class="col-md-6 mb-3">
               <label for="returDocument" class="form-label">Retur Document Reference</label>
               <input type="text" class="form-control" id="returDocument" placeholder="Masukkan Dokumen Retur Reference">
             </div>
+          </div>
+
+          <div class="row">
+            
             <!-- Pick Up Date -->
             <div class="col-md-6 mb-3">
               <label for="pickUpDate" class="form-label">Request Pick Up Date</label>
@@ -51,13 +43,7 @@ $('body').append(`
             </div>
           </div>
 
-          <div class="row">
-          <!-- Pick Up Date -->
-            <div class="col-md-6 mb-3">
-              <label for="pickUpDate" class="form-label">Pick Up Date</label>
-              <input type="date" class="form-control" id="pickUpDate" value="" disabled>
-            </div>
-          </div>
+          
 
           <!-- Tabel Produk -->
           <table class="table">
@@ -120,7 +106,7 @@ $('body').append(`
       </div>
       <!-- Modal Footer with Save Changes Button -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" id="saveChanges" style="background-color: #004d00; border-color: #004d00;">Create</button>
+        <button type="button" class="btn btn-success" id="saveChanges" style="background-color: #004d00; border-color: #004d00;">Simpan Data</button>
       </div>
     </div>
   </div>
@@ -173,18 +159,14 @@ $('body').append(`
               </select>
             </div>
 
-            <!-- Retur Document -->
-            <div class="col-md-6 mb-3">
-              <label for="returDocument" class="form-label">Retur Document</label>
-              <input type="text" class="form-control" id="returDocument" placeholder="Masukkan Dokumen Retur" value="RT123456">
-            </div>
-          </div>
-
-          <div class="row">
             <div class="col-md-6 mb-3">
               <label for="returDocument" class="form-label">Retur Document Reference</label>
               <input type="text" class="form-control" id="returDocument" value="DOC123456">
             </div> 
+          </div>
+
+          <div class="row">
+            
           
             <!-- Pick Up Date -->
             <div class="col-md-6 mb-3">
@@ -193,13 +175,7 @@ $('body').append(`
             </div>
           </div>
 
-          <div class="row">
-          <!-- Pick Up Date -->
-            <div class="col-md-6 mb-3">
-              <label for="pickUpDate" class="form-label">Pick Up Date</label>
-              <input type="date" class="form-control" id="pickUpDate" value="2024-10-10" readonly>
-            </div>
-          </div>
+          
           
           <!-- Tabel Produk -->
           <table class="table">
@@ -259,7 +235,7 @@ $('body').append(`
       </div>
       <!-- Modal Footer with Save Changes Button -->
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" id="saveChanges" style="background-color: #004d00; border-color: #004d00;">Save</button>
+        <button type="button" class="btn btn-success" id="saveChanges" style="background-color: #004d00; border-color: #004d00;">Simpan Data</button>
       </div>
     </div>
   </div>
@@ -282,18 +258,14 @@ $('body').append(`
               <input type="text" class="form-control" id="storeName" placeholder="Masukkan Nama Toko" value="Toko ABC" readonly>
             </div>
 
-            <!-- Retur Document -->
             <div class="col-md-6 mb-3">
-              <label for="returDocument" class="form-label">Request Retur Document</label>
-              <input type="text" class="form-control" id="returDocument" placeholder="Masukkan Dokumen Retur" value="RT123456" readonly>
-            </div>
+              <label for="returDocument" class="form-label">Retur Document Reference</label>
+              <input type="text" class="form-control" id="returDocument" value="DOC123456" readonly>
+            </div> 
           </div>
 
           <div class="row">
-          <div class="col-md-6 mb-3">
-              <label for="returDocument" class="form-label">Retur Document Reference</label>
-              <input type="text" class="form-control" id="returDocument" value="DOC123456" readonly>
-            </div>     
+              
 
              <!-- Pick Up Date -->
             <div class="col-md-6 mb-3">
@@ -302,13 +274,7 @@ $('body').append(`
             </div>
           </div>
 
-          <div class="row">
-          <!-- Pick Up Date -->
-            <div class="col-md-6 mb-3">
-              <label for="pickUpDate" class="form-label">Pick Up Date</label>
-              <input type="date" class="form-control" id="pickUpDate" value="2024-10-10" readonly>
-            </div>
-          </div>
+          
           <!-- Tabel Produk -->
           <table class="table">
             <thead>
