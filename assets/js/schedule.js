@@ -46,13 +46,6 @@ $('body').append(`
           </div>
           <div class="row mb-3">
             <div class="col-md-6">
-              <label for="status" class="form-label">Status</label>
-              <select class="form-select" id="status">
-                <option value="" disabled selected>Pilih Status</option>
-                <option value="new">New</option>
-              </select>
-            </div>
-            <div class="col-md-6">
               <label for="assignVendor" class="form-label">Assign Vendor</label>
               <select class="form-select" id="assignVendor">
                 <option value="" disabled selected>Pilih Vendor</option>
@@ -61,22 +54,7 @@ $('body').append(`
               </select>
             </div>
           </div>
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <label for="requestDate" class="form-label">Request Date</label>
-              <input type="date" class="form-control" id="requestDate">
-            </div>
-            <div class="col-md-6">
-              <label for="requestedBy" class="form-label">Requested By</label>
-              <select class="form-select" id="requestedBy">
-                <option value="" disabled selected>Pilih Nama</option>
-                <option value="John Doe">John Doe</option>
-                <option value="Jane Smith">Jane Smith</option>
-                <option value="Michael Johnson">Michael Johnson</option>
-                <option value="Sarah Lee">Sarah Lee</option>
-              </select>
-            </div>
-          </div>
+          
           <div class="row mb-3">
             <div class="col-md-12">
               <label for="notes" class="form-label">Notes</label>
@@ -146,26 +124,7 @@ $('body').append(`
               </select>
             </div>
           </div>
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <label for="requestDate" class="form-label">Request Date</label>
-              <input type="date" class="form-control" id="requestDate" value="2024-09-05" readonly>
-            </div>
-            <div class="col-md-6">
-              <label for="requestedBy" class="form-label">Requested By</label>
-              <input type="text" class="form-control" id="requestedBy" placeholder="Masukkan Nama" value="User D" readonly>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <label for="approvalDate" class="form-label">Approval Date</label>
-              <input type="date" class="form-control" id="approvalDate" value="2024-09-06" readonly>
-            </div>
-            <div class="col-md-6">
-              <label for="approvalBy" class="form-label">Approved By</label>
-              <input type="text" class="form-control" id="approvalBy" placeholder="Masukkan Nama" value="Manager W" readonly>
-            </div>
-          </div>
+          
           <div class="row mb-3">
             <div class="col-md-12">
               <label for="notes" class="form-label">Notes</label>
@@ -243,38 +202,7 @@ $('body').append(`
               </select>
             </div>
           </div>
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <label for="requestDate" class="form-label">Request Date</label>
-              <input type="date" class="form-control" id="requestDate" value="2024-09-05">
-            </div>
-            <div class="col-md-6">
-              <label for="requestedBy" class="form-label">Requested By</label>
-              <select class="form-select" id="requestedBy">
-                <option value="" disabled selected>Pilih Nama</option>
-                <option value="User A">User A</option>
-                <option value="User B">User B</option>
-                <option value="User C">User C</option>
-                <option value="User D" selected>User D</option>
-              </select>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col-md-6">
-              <label for="approvalDate" class="form-label">Approval Date</label>
-              <input type="date" class="form-control" id="approvalDate" value="2024-09-06">
-            </div>
-            <div class="col-md-6">
-              <label for="approvalBy" class="form-label">Approved By</label>
-              <select class="form-select" id="approvalBy">
-                <option value="" disabled selected>Pilih Nama</option>
-                <option value="Manager A">Manager A</option>
-                <option value="Manager B">Manager B</option>
-                <option value="Manager C">Manager C</option>
-                <option value="Manager W" selected>Manager W</option>
-              </select>
-            </div>
-          </div>
+          
           <div class="row mb-3">
             <div class="col-md-12">
               <label for="notes" class="form-label">Notes</label>
