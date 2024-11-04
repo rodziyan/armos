@@ -507,20 +507,22 @@ $(document).ready(function () {
         }
       }
     ],
-    order: [[8, 'asc']],
-    // Remove the default search box
-    dom: '<"d-flex justify-content-end align-items-end mt-2 mb-2 me-4"B>t',
-    // Add custom buttons
-    buttons: [
-      {
-        text: '+ Add New',
-        className: 'btn btn-primary',
-        action: function (e, dt, node, config) {
-          // Memanggil modal dengan id 'myModal'
-          $('#myModal').modal('show');
-        }
-      }
-    ]
+    // order: [[8, 'asc']],
+    searching: false,
+    paging: false
+    // // Remove the default search box
+    // dom: '<"d-flex justify-content-end align-items-end mt-2 mb-2 me-4"B>t',
+    // // Add custom buttons
+    // buttons: [
+    //   {
+    //     text: '+ Add New',
+    //     className: 'btn btn-primary',
+    //     action: function (e, dt, node, config) {
+    //       // Memanggil modal dengan id 'myModal'
+    //       $('#myModal').modal('show');
+    //     }
+    //   }
+    // ]
   });
 
   // Show Cancel Route Modal
