@@ -108,13 +108,7 @@ $('body').append(`
             </div>
           </div>
           <div class="row mb-3">
-            <div class="col-md-6">
-              <label for="status" class="form-label">Status</label>
-              <select class="form-select" id="status" disabled>
-                <option value="1" selected>Approved</option>
-                <option value="new">New</option>
-              </select>
-            </div>
+            
             <div class="col-md-6">
               <label for="assignVendor" class="form-label">Assign Vendor</label>
               <select class="form-select" id="assignVendor" disabled>
@@ -184,14 +178,7 @@ $('body').append(`
             </div>
           </div>
           <div class="row mb-3">
-            <div class="col-md-6">
-              <label for="status" class="form-label">Status</label>
-              <select class="form-select" id="status">
-                <option value="" disabled>Pilih Status</option>
-                <option value="new">New</option>
-                <option value="approved" selected>Approval</option> <!-- Pre-selected -->
-              </select>
-            </div>
+            
             <div class="col-md-6">
               <label for="assignVendor" class="form-label">Assign Vendor</label>
               <select class="form-select" id="assignVendor">

@@ -40,10 +40,6 @@ $('body').append(`
               <option value="bbm">BBM</option>
             </select>
           </div>
-          <div class="mb-3">
-            <label for="kmPerLiter" class="form-label">KM Terakhir</label>
-            <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM Terakhir">
-          </div>
         </form>
       </div>
       <!-- Modal Footer with Cancel and Save Buttons -->
@@ -92,17 +88,33 @@ $('body').append(`
                 </select>
               </div>
 
+              <div class="mb-3" id="RPC" style="display: none;">
+                <label for="kmPerLiter" class="form-label">Rp.</label>
+                <input type="text" class="form-control" id="kmPerLiter" placeholder="Rp." value="Rp.150.000" disabled>
+              </div>
               <div class="mb-3" id="KML" style="display: none;">
                 <label for="kmPerLiter" class="form-label">KM Terakhir</label>
-                <input type="text" class="form-control" id="kmPerLiter" placeholder="Masukkan KM Terakhir" value="15.000 KM" disabled>
+                <input type="text" class="form-control" id="Rp" placeholder="Masukkan KM Terakhir" value="15.000 KM" disabled>
               </div>
 
               <div class="mb-3" id="Vendor" style="display: none;">
                 <label for="vendor" class="form-label">Vendor</label>
                 <input type="text" class="form-control" id="vendorInput" placeholder="Vendor" value="Vendor A" disabled>
               </div>
-
             </div>
+
+          <div class="col-md-6" id="maintenance" style="display: none;">
+              <div class="mb-3">
+                  <label for="fileUpload" class="form-label">Upload File</label>
+                  <input type="file" class="form-control" id="fileUpload" accept=".pdf,.doc,.docx,.xls,.xlsx" disabled>
+                  <input type="hidden" id="uploadedFile" value="test.pdf">
+              </div>
+              <div class="mb-3">    
+                  <label for="totalCost" class="form-label">Total Cost</label>
+                  <input type="number" class="form-control" id="totalCost" placeholder="Masukkan Total Cost" value="1000000" disabled>
+              </div>
+          </div>
+ 
 
            <div class="col-md-6" id="biayaBBM" style="display: none;">
               <div class="mb-3">
@@ -111,13 +123,7 @@ $('body').append(`
                 </div>
               </div>
             </div>
-            <div class="col-md-6" id="maintenance" style="display: none;">
-              <div class="mb-3">
-                <div class="item">
-                  <img src="assets/img/maintenance.png" alt="Biaya Maintenance" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
-                </div>
-              </div>
-            </div>
+            
           </div>
         </form>
       </div>
@@ -155,6 +161,10 @@ $('body').append(`
                 </select>
               </div>
 
+              <div class="mb-3" id="RPCOST" style="display: none;">
+                <label for="kmPerLiter" class="form-label">Rp.</label>
+                <input type="text" class="form-control" id="Rp" placeholder="Rp." value="Rp.150.000">
+              </div>
               <div class="mb-3" id="KMLSection" style="display: none;">
                 <label for="kmPerLiterBBM" class="form-label">KM Terakhir</label>
                 <input type="text" class="form-control" id="kmPerLiterBBM" placeholder="Masukkan KM Terakhir" value="15.000 KM">
@@ -173,17 +183,24 @@ $('body').append(`
               </div>
             </div>
 
+
+          <div class="col-md-6" id="maintenanceSection" style="display: none;">
+              <div class="mb-3">
+                  <label for="fileUpload" class="form-label">Upload File</label>
+                  <input type="file" class="form-control" id="fileUpload" accept=".pdf,.doc,.docx,.xls,.xlsx">
+                  <input type="hidden" id="uploadedFile" value="test.pdf">
+              </div>
+              <div class="mb-3">    
+                  <label for="totalCost" class="form-label">Total Cost</label>
+                  <input type="number" class="form-control" id="totalCost" placeholder="Masukkan Total Cost" value="1000000">
+              </div>
+          </div>
+  
+
             <div class="col-md-6" id="biayaBBMSection" style="display: none;">
               <div class="mb-3">
                 <div class="item">
                   <img src="assets/img/BBM.png" alt="Biaya BBM" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6" id="maintenanceSection" style="display: none;">
-              <div class="mb-3">
-                <div class="item">
-                  <img src="assets/img/maintenance.png" alt="Biaya Maintenance" class="img-fluid" style="max-height: 400px; object-fit: cover; border-radius: 10px;"> 
                 </div>
               </div>
             </div>
@@ -368,6 +385,8 @@ $(document).ready(function () {
       'biayaBBM',
       'maintenance',
       'BBMSection',
+      'RPC',
+      'RPCOST',
       'KMLSection',
       'MaintenanceViewSection',
       'VendorSection',
@@ -400,6 +419,8 @@ $(document).ready(function () {
       document.getElementById('KML').style.display = 'block';
       document.getElementById('biayaBBM').style.display = 'block';
       document.getElementById('BBMSection').style.display = 'block';
+      document.getElementById('RPC').style.display = 'block';
+      document.getElementById('RPCOST').style.display = 'block';
       document.getElementById('KMLSection').style.display = 'block';
       document.getElementById('biayaBBMSection').style.display = 'block';
     } else if (status === 2 && costRequestType === 'Maintenance') {
@@ -413,22 +434,30 @@ $(document).ready(function () {
       document.getElementById('BBM').style.display = 'block';
       document.getElementById('KML').style.display = 'block';
       document.getElementById('BBMSection').style.display = 'block';
+      document.getElementById('RPC').style.display = 'block';
+      document.getElementById('RPCOST').style.display = 'block';
       document.getElementById('KMLSection').style.display = 'block';
     } else if (status === 3 && costRequestType === 'Maintenance') {
       document.getElementById('MaintenanceView').style.display = 'block';
       document.getElementById('Vendor').style.display = 'block';
       document.getElementById('MaintenanceViewSection').style.display = 'block';
       document.getElementById('VendorSection').style.display = 'block';
+      document.getElementById('maintenanceSection').style.display = 'block';
+      document.getElementById('maintenance').style.display = 'block';
     } else if (status === 4 && costRequestType === 'BBM') {
       document.getElementById('BBM').style.display = 'block';
       document.getElementById('KML').style.display = 'block';
       document.getElementById('BBMSection').style.display = 'block';
+      document.getElementById('RPC').style.display = 'block';
+      document.getElementById('RPCOST').style.display = 'block';
       document.getElementById('KMLSection').style.display = 'block';
     } else if (status === 4 && costRequestType === 'Maintenance') {
       document.getElementById('MaintenanceView').style.display = 'block';
       document.getElementById('Vendor').style.display = 'block';
       document.getElementById('MaintenanceViewSection').style.display = 'block';
       document.getElementById('VendorSection').style.display = 'block';
+      document.getElementById('maintenanceSection').style.display = 'block';
+      document.getElementById('maintenance').style.display = 'block';
     }
   });
 });
