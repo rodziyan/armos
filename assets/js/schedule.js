@@ -229,6 +229,28 @@ $('body').append(`
     </div>
   </div>
 </div>
+
+
+<div class="modal fade" id="otherModal" tabindex="-1" aria-labelledby="otherModal" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <!-- Delete Icon -->
+        <i class="ri-delete-bin-5-line" style="font-size: 3rem; color: red;"></i>
+        <!-- Confirmation Message -->
+        <p style="color: red; font-size: 1.25rem; margin-top: 10px;">Apakah Anda yakin ingin melakukan Cancel pada item ini?</p>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <!-- Cancel Button -->
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <!-- Custom Action Button (tombol lain untuk status 2) -->
+        <button type="button" class="btn btn-danger" id="confirmOtherAction" style="background-color: red; border-color: red;">
+          Ya, Lakukan Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 `);
 
 $(document).ready(function () {
@@ -278,7 +300,8 @@ $(document).ready(function () {
           // Define the updated statusObj for mapping delivery_status values
           var statusObj = {
             1: { title: 'New', class: 'bg-label-primary' },
-            2: { title: 'Approved', class: 'bg-label-success' }
+            2: { title: 'Approved', class: 'bg-label-success' },
+            3: { title: 'Canceled', class: 'bg-label-danger' }
           };
 
           // Fallback if status is not in statusObj
@@ -322,31 +345,97 @@ $(document).ready(function () {
         title: 'Actions',
         orderable: false,
         render: function (data, type, full) {
+          // Menyimpan status untuk memeriksa kondisi
+          const status = full.status; // Asumsi status ada di properti 'status' dari 'full'
+
           console.log('Rendering data:', data, type, full);
-          return `
+
+          // Kondisi jika status === 1, tampilkan semua tombol
+          if (status === 1) {
+            return `
               <div class="button-group">
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect approval" 
                         style="border: 2px solid blue; background-color: blue; color: white; padding: 0; display: flex; align-items: center;">
-                    <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-eye-line ms-3" style="font-size: 20px;"></i>
-                    </span>
+                  <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                    <i class="ri-eye-line ms-3" style="font-size: 20px;"></i>
+                  </span>
                 </button>
                 
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect editModal" 
                         style="border: 2px solid orange; background-color: orange; color: white; padding: 0; display: flex; align-items: center;">
-                    <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-pencil-line ms-3" style="font-size: 20px;"></i>
-                    </span>
+                  <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                    <i class="ri-pencil-line ms-3" style="font-size: 20px;"></i>
+                  </span>
                 </button>
                 
                 <button class="btn btn-sm btn-icon rounded-pill waves-effect cancelModal" 
                         style="border: 2px solid red; background-color: red; color: white; padding: 0; display: flex; align-items: center;">
-                    <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
-                        <i class="ri-delete-bin-line ms-3" style="font-size: 20px;"></i>
-                    </span>
+                  <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                    <i class="ri-delete-bin-line ms-3" style="font-size: 20px;"></i>
+                  </span>
                 </button>
-            </div>
+              </div>
             `;
+          }
+          // Kondisi jika status === 2, tampilkan approval, editModal, dan cancelModal diganti id lain
+          else if (status === 2) {
+            return `
+              <div class="button-group">
+                <button class="btn btn-sm btn-icon rounded-pill waves-effect approval" 
+                        style="border: 2px solid blue; background-color: blue; color: white; padding: 0; display: flex; align-items: center;">
+                  <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                    <i class="ri-eye-line ms-3" style="font-size: 20px;"></i>
+                  </span>
+                </button>
+                
+                <button class="btn btn-sm btn-icon rounded-pill waves-effect editModal" 
+                        style="border: 2px solid orange; background-color: orange; color: white; padding: 0; display: flex; align-items: center;">
+                  <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                    <i class="ri-pencil-line ms-3" style="font-size: 20px;"></i>
+                  </span>
+                </button>
+                
+                <button class="btn btn-sm btn-icon rounded-pill waves-effect otherModal" 
+                        style="border: 2px solid red; background-color: red; color: white; padding: 0; display: flex; align-items: center;">
+                  <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                    <i class="ri-close-circle-line ms-3" style="font-size: 20px;"></i>
+                  </span>
+                </button>
+              </div>
+            `;
+          }
+          // Kondisi jika status === 3, tampilkan approval dan disabled/readonly btn editModal dan cancelModal
+          else if (status === 3) {
+            return `
+              <div class="button-group">
+                <button class="btn btn-sm btn-icon rounded-pill waves-effect approval" 
+                        style="border: 2px solid blue; background-color: blue; color: white; padding: 0; display: flex; align-items: center;">
+                  <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                    <i class="ri-eye-line ms-3" style="font-size: 20px;"></i>
+                  </span>
+                </button>
+                
+                <button class="btn btn-sm btn-icon rounded-pill waves-effect editModal" 
+                        style="border: 2px solid orange; background-color: orange; color: white; padding: 0; display: flex; align-items: center;" 
+                        disabled>
+                  <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                    <i class="ri-pencil-line ms-3" style="font-size: 20px;"></i>
+                  </span>
+                </button>
+                
+                <button class="btn btn-sm btn-icon rounded-pill waves-effect cancelModal" 
+                        style="border: 2px solid red; background-color: red; color: white; padding: 0; display: flex; align-items: center;" 
+                        disabled>
+                  <span style="display: inline-flex; justify-content: center; align-items: center; width: 30px; height: 30px; border-radius: 50%; margin-right: 10px;">
+                    <i class="ri-delete-bin-line ms-3" style="font-size: 20px;"></i>
+                  </span>
+                </button>
+              </div>
+            `;
+          }
+
+          // Default return for any other status (if needed)
+          return '';
         }
       }
     ],
@@ -376,5 +465,10 @@ $(document).ready(function () {
   // Show Cancel Route Modal
   $('.datatables-users tbody').on('click', '.cancelModal', function () {
     $('#cancelModal').modal('show');
+  });
+  // Show Other Modal for Status 2
+  $('.datatables-users tbody').on('click', '.otherModal', function () {
+    console.log('Tombol dengan kelas .otherModal diklik');
+    $('#otherModal').modal('show');
   });
 });

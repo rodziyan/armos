@@ -15,16 +15,16 @@
     },
     {
       "no_plat_kendaraan": "DEF456",
-      "tipe_off_time": "Perpanjangan Dokumen",
-      "start_off_date": "2024-09-11",
-      "end_off_date": "2024-09-11",
-      "status": 2,
+      "tipe_off_time": "Ganti Oli",
+      "start_off_date": "",
+      "end_off_date": "",
+      "status": 3,
       "request_date": "2024-09-02",
       "request_by": "User B",
-      "approval_date": "2024-09-03",
-      "approval_by": "Manager Y",
+      "approval_date": "",
+      "approval_by": "",
       "action": "action",
-      "vendor": "Vendor 2"
+      "vendor": ""
     },
     {
       "no_plat_kendaraan": "GHI789",
