@@ -6,7 +6,7 @@
       "value_order": "Rp.500.000.000",
       "ratio_complete_order": "95%",
       "pendapatan": "Rp.475.000.000",
-      "extra_rate": "Rp.5.000.000",
+      "extra_rate": 1,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -16,7 +16,7 @@
       "value_order": "Rp.1.000.000.000",
       "ratio_complete_order": "80%",
       "pendapatan": "Rp.800.000.000",
-      "extra_rate": "Rp.10.000.000",
+      "extra_rate": 2,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -26,7 +26,7 @@
       "value_order": "Rp.1.200.000.000",
       "ratio_complete_order": "90%",
       "pendapatan": "Rp.1.080.000.000",
-      "extra_rate": "Rp.7.000.000",
+      "extra_rate": 3,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -36,7 +36,7 @@
       "value_order": "Rp.2.000.000.000",
       "ratio_complete_order": "75%",
       "pendapatan": "Rp.1.500.000.000",
-      "extra_rate": "Rp.12.000.000",
+      "extra_rate": 4,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -46,7 +46,7 @@
       "value_order": "Rp.800.000.000",
       "ratio_complete_order": "85%",
       "pendapatan": "Rp.680.000.000",
-      "extra_rate": "Rp.4.000.000",
+      "extra_rate": 5,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -56,7 +56,7 @@
       "value_order": "Rp.950.000.000",
       "ratio_complete_order": "70%",
       "pendapatan": "Rp.665.000.000",
-      "extra_rate": "Rp.9.000.000",
+      "extra_rate": 6,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -66,7 +66,7 @@
       "value_order": "Rp.700.000.000",
       "ratio_complete_order": "92%",
       "pendapatan": "Rp.644.000.000",
-      "extra_rate": "Rp.6.500.000",
+      "extra_rate": 7,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -76,7 +76,7 @@
       "value_order": "Rp.1.100.000.000",
       "ratio_complete_order": "78%",
       "pendapatan": "Rp.858.000.000",
-      "extra_rate": "Rp.11.000.000",
+      "extra_rate": 8,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -86,7 +86,7 @@
       "value_order": "Rp.1.300.000.000",
       "ratio_complete_order": "88%",
       "pendapatan": "Rp.1.144.000.000",
-      "extra_rate": "Rp.8.000.000",
+      "extra_rate": 1,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -96,7 +96,7 @@
       "value_order": "Rp.1.600.000.000",
       "ratio_complete_order": "80%",
       "pendapatan": "Rp.1.280.000.000",
-      "extra_rate": "Rp.15.000.000",
+      "extra_rate": 2,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -106,7 +106,7 @@
       "value_order": "Rp.1.800.000.000",
       "ratio_complete_order": "93%",
       "pendapatan": "Rp.1.674.000.000",
-      "extra_rate": "Rp.13.000.000",
+      "extra_rate": 3,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -116,7 +116,7 @@
       "value_order": "Rp.950.000.000",
       "ratio_complete_order": "85%",
       "pendapatan": "Rp.807.500.000",
-      "extra_rate": "Rp.8.500.000",
+      "extra_rate": 4,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -126,7 +126,7 @@
       "value_order": "Rp.1.100.000.000",
       "ratio_complete_order": "90%",
       "pendapatan": "Rp.990.000.000",
-      "extra_rate": "Rp.9.500.000",
+      "extra_rate": 5,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -136,7 +136,7 @@
       "value_order": "Rp.1.400.000.000",
       "ratio_complete_order": "78%",
       "pendapatan": "Rp.1.092.000.000",
-      "extra_rate": "Rp.12.500.000",
+      "extra_rate": 6,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -146,7 +146,7 @@
       "value_order": "Rp.750.000.000",
       "ratio_complete_order": "88%",
       "pendapatan": "Rp.660.000.000",
-      "extra_rate": "Rp.7.000.000",
+      "extra_rate": 7,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -156,7 +156,7 @@
       "value_order": "Rp.1.050.000.000",
       "ratio_complete_order": "85%",
       "pendapatan": "Rp.892.500.000",
-      "extra_rate": "Rp.11.500.000",
+      "extra_rate": 8,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -166,7 +166,7 @@
       "value_order": "Rp.850.000.000",
       "ratio_complete_order": "80%",
       "pendapatan": "Rp.680.000.000",
-      "extra_rate": "Rp.6.500.000",
+      "extra_rate": 1,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -176,7 +176,7 @@
       "value_order": "Rp.950.000.000",
       "ratio_complete_order": "82%",
       "pendapatan": "Rp.779.000.000",
-      "extra_rate": "Rp.9.000.000",
+      "extra_rate": 2,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -186,7 +186,7 @@
       "value_order": "Rp.1.300.000.000",
       "ratio_complete_order": "91%",
       "pendapatan": "Rp.1.183.000.000",
-      "extra_rate": "Rp.10.500.000",
+      "extra_rate": 3,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -196,7 +196,7 @@
       "value_order": "Rp.1.600.000.000",
       "ratio_complete_order": "75%",
       "pendapatan": "Rp.1.200.000.000",
-      "extra_rate": "Rp.14.000.000",
+      "extra_rate": 4,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -206,7 +206,7 @@
       "value_order": "Rp.900.000.000",
       "ratio_complete_order": "89%",
       "pendapatan": "Rp.801.000.000",
-      "extra_rate": "Rp.8.000.000",
+      "extra_rate": 5,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -216,7 +216,7 @@
       "value_order": "Rp.1.150.000.000",
       "ratio_complete_order": "80%",
       "pendapatan": "Rp.920.000.000",
-      "extra_rate": "Rp.11.000.000",
+      "extra_rate": 6,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -226,7 +226,7 @@
       "value_order": "Rp.1.300.000.000",
       "ratio_complete_order": "95%",
       "pendapatan": "Rp.1.235.000.000",
-      "extra_rate": "Rp.13.000.000",
+      "extra_rate": 7,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -236,7 +236,7 @@
       "value_order": "Rp.1.600.000.000",
       "ratio_complete_order": "88%",
       "pendapatan": "Rp.1.408.000.000",
-      "extra_rate": "Rp.15.000.000",
+      "extra_rate": 8,
       "action": "action",
       "jumlah_rute": 2
     },
@@ -246,7 +246,7 @@
       "value_order": "Rp.2.000.000.000",
       "ratio_complete_order": "90%",
       "pendapatan": "Rp.1.800.000.000",
-      "extra_rate": "Rp.17.000.000",
+      "extra_rate": 1,
       "action": "action",
       "jumlah_rute": 2
     }
