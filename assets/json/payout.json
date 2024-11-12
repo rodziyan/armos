@@ -1,154 +1,254 @@
 {
   "data": [
     {
-      "trip_id": 1,
-      "faktur_number": "F001",
-      "tanggal": "2024-08-01",
-      "status": 1
+      "status": 1,
+      "driver": "Driver A",
+      "value_order": "Rp.500.000.000",
+      "ratio_complete_order": "95%",
+      "pendapatan": "Rp.475.000.000",
+      "extra_rate": "Rp.5.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 2,
-      "faktur_number": "F002",
-      "tanggal": "2024-08-02",
-      "status": 2
+      "status": 2,
+      "driver": "Driver B",
+      "value_order": "Rp.1.000.000.000",
+      "ratio_complete_order": "80%",
+      "pendapatan": "Rp.800.000.000",
+      "extra_rate": "Rp.10.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 3,
-      "faktur_number": "F003",
-      "tanggal": "2024-08-03",
-      "status": 1
+      "status": 1,
+      "driver": "Driver C",
+      "value_order": "Rp.1.200.000.000",
+      "ratio_complete_order": "90%",
+      "pendapatan": "Rp.1.080.000.000",
+      "extra_rate": "Rp.7.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 4,
-      "faktur_number": "F004",
-      "tanggal": "2024-08-04",
-      "status": 2
+      "status": 2,
+      "driver": "Driver D",
+      "value_order": "Rp.2.000.000.000",
+      "ratio_complete_order": "75%",
+      "pendapatan": "Rp.1.500.000.000",
+      "extra_rate": "Rp.12.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 5,
-      "faktur_number": "F005",
-      "tanggal": "2024-08-05",
-      "status": 1
+      "status": 1,
+      "driver": "Driver E",
+      "value_order": "Rp.800.000.000",
+      "ratio_complete_order": "85%",
+      "pendapatan": "Rp.680.000.000",
+      "extra_rate": "Rp.4.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 6,
-      "faktur_number": "F006",
-      "tanggal": "2024-08-06",
-      "status": 2
+      "status": 2,
+      "driver": "Driver F",
+      "value_order": "Rp.950.000.000",
+      "ratio_complete_order": "70%",
+      "pendapatan": "Rp.665.000.000",
+      "extra_rate": "Rp.9.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 7,
-      "faktur_number": "F007",
-      "tanggal": "2024-08-07",
-      "status": 1
+      "status": 1,
+      "driver": "Driver G",
+      "value_order": "Rp.700.000.000",
+      "ratio_complete_order": "92%",
+      "pendapatan": "Rp.644.000.000",
+      "extra_rate": "Rp.6.500.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 8,
-      "faktur_number": "F008",
-      "tanggal": "2024-08-08",
-      "status": 2
+      "status": 2,
+      "driver": "Driver H",
+      "value_order": "Rp.1.100.000.000",
+      "ratio_complete_order": "78%",
+      "pendapatan": "Rp.858.000.000",
+      "extra_rate": "Rp.11.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 9,
-      "faktur_number": "F009",
-      "tanggal": "2024-08-09",
-      "status": 1
+      "status": 1,
+      "driver": "Driver I",
+      "value_order": "Rp.1.300.000.000",
+      "ratio_complete_order": "88%",
+      "pendapatan": "Rp.1.144.000.000",
+      "extra_rate": "Rp.8.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 10,
-      "faktur_number": "F010",
-      "tanggal": "2024-08-10",
-      "status": 2
+      "status": 2,
+      "driver": "Driver J",
+      "value_order": "Rp.1.600.000.000",
+      "ratio_complete_order": "80%",
+      "pendapatan": "Rp.1.280.000.000",
+      "extra_rate": "Rp.15.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 11,
-      "faktur_number": "F011",
-      "tanggal": "2024-08-11",
-      "status": 1
+      "status": 1,
+      "driver": "Driver K",
+      "value_order": "Rp.1.800.000.000",
+      "ratio_complete_order": "93%",
+      "pendapatan": "Rp.1.674.000.000",
+      "extra_rate": "Rp.13.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 12,
-      "faktur_number": "F012",
-      "tanggal": "2024-08-12",
-      "status": 2
+      "status": 2,
+      "driver": "Driver L",
+      "value_order": "Rp.950.000.000",
+      "ratio_complete_order": "85%",
+      "pendapatan": "Rp.807.500.000",
+      "extra_rate": "Rp.8.500.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 13,
-      "faktur_number": "F013",
-      "tanggal": "2024-08-13",
-      "status": 1
+      "status": 1,
+      "driver": "Driver M",
+      "value_order": "Rp.1.100.000.000",
+      "ratio_complete_order": "90%",
+      "pendapatan": "Rp.990.000.000",
+      "extra_rate": "Rp.9.500.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 14,
-      "faktur_number": "F014",
-      "tanggal": "2024-08-14",
-      "status": 2
+      "status": 2,
+      "driver": "Driver N",
+      "value_order": "Rp.1.400.000.000",
+      "ratio_complete_order": "78%",
+      "pendapatan": "Rp.1.092.000.000",
+      "extra_rate": "Rp.12.500.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 15,
-      "faktur_number": "F015",
-      "tanggal": "2024-08-15",
-      "status": 1
+      "status": 1,
+      "driver": "Driver O",
+      "value_order": "Rp.750.000.000",
+      "ratio_complete_order": "88%",
+      "pendapatan": "Rp.660.000.000",
+      "extra_rate": "Rp.7.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 16,
-      "faktur_number": "F016",
-      "tanggal": "2024-08-16",
-      "status": 2
+      "status": 2,
+      "driver": "Driver P",
+      "value_order": "Rp.1.050.000.000",
+      "ratio_complete_order": "85%",
+      "pendapatan": "Rp.892.500.000",
+      "extra_rate": "Rp.11.500.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 17,
-      "faktur_number": "F017",
-      "tanggal": "2024-08-17",
-      "status": 1
+      "status": 1,
+      "driver": "Driver Q",
+      "value_order": "Rp.850.000.000",
+      "ratio_complete_order": "80%",
+      "pendapatan": "Rp.680.000.000",
+      "extra_rate": "Rp.6.500.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 18,
-      "faktur_number": "F018",
-      "tanggal": "2024-08-18",
-      "status": 2
+      "status": 2,
+      "driver": "Driver R",
+      "value_order": "Rp.950.000.000",
+      "ratio_complete_order": "82%",
+      "pendapatan": "Rp.779.000.000",
+      "extra_rate": "Rp.9.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 19,
-      "faktur_number": "F019",
-      "tanggal": "2024-08-19",
-      "status": 1
+      "status": 1,
+      "driver": "Driver S",
+      "value_order": "Rp.1.300.000.000",
+      "ratio_complete_order": "91%",
+      "pendapatan": "Rp.1.183.000.000",
+      "extra_rate": "Rp.10.500.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 20,
-      "faktur_number": "F020",
-      "tanggal": "2024-08-20",
-      "status": 2
+      "status": 2,
+      "driver": "Driver T",
+      "value_order": "Rp.1.600.000.000",
+      "ratio_complete_order": "75%",
+      "pendapatan": "Rp.1.200.000.000",
+      "extra_rate": "Rp.14.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 21,
-      "faktur_number": "F021",
-      "tanggal": "2024-08-21",
-      "status": 1
+      "status": 1,
+      "driver": "Driver U",
+      "value_order": "Rp.900.000.000",
+      "ratio_complete_order": "89%",
+      "pendapatan": "Rp.801.000.000",
+      "extra_rate": "Rp.8.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 22,
-      "faktur_number": "F022",
-      "tanggal": "2024-08-22",
-      "status": 2
+      "status": 2,
+      "driver": "Driver V",
+      "value_order": "Rp.1.150.000.000",
+      "ratio_complete_order": "80%",
+      "pendapatan": "Rp.920.000.000",
+      "extra_rate": "Rp.11.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 23,
-      "faktur_number": "F023",
-      "tanggal": "2024-08-23",
-      "status": 1
+      "status": 1,
+      "driver": "Driver W",
+      "value_order": "Rp.1.300.000.000",
+      "ratio_complete_order": "95%",
+      "pendapatan": "Rp.1.235.000.000",
+      "extra_rate": "Rp.13.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 24,
-      "faktur_number": "F024",
-      "tanggal": "2024-08-24",
-      "status": 2
+      "status": 2,
+      "driver": "Driver X",
+      "value_order": "Rp.1.600.000.000",
+      "ratio_complete_order": "88%",
+      "pendapatan": "Rp.1.408.000.000",
+      "extra_rate": "Rp.15.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     },
     {
-      "trip_id": 25,
-      "faktur_number": "F025",
-      "tanggal": "2024-08-25",
-      "status": 1
+      "status": 1,
+      "driver": "Driver Y",
+      "value_order": "Rp.2.000.000.000",
+      "ratio_complete_order": "90%",
+      "pendapatan": "Rp.1.800.000.000",
+      "extra_rate": "Rp.17.000.000",
+      "action": "action",
+      "jumlah_rute": 2
     }
   ]
 }
