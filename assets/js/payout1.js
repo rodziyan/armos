@@ -245,8 +245,8 @@ $(document).ready(function () {
       { data: 'jumlah_rute' },
       { data: 'value_order' },
       { data: 'ratio_complete_order' },
-      { data: 'pendapatan' },
       { data: 'extra_rate' },
+      { data: 'pendapatan' },
       { data: 'status' },
       { data: 'action' }
     ],
