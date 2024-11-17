@@ -278,12 +278,22 @@ $(function () {
                       data-modal-product-height="${full['product_height']}"
                       data-modal-product-width="${full['product_width']}"
                       data-modal-product-length="${full['product_length']}">
+                      <i class="ri-eye-line ri-20px"></i>
+                  </button>
+                  <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect viewModal"
+                      data-product-type="${full['product_type']}"
+                      data-product-name="${full['product_name']}"
+                      data-modal-product-sku="${full['product_sku']}"
+                      data-product-price="${full['product_price']}"
+                      data-modal-product-height="${full['product_height']}"
+                      data-modal-product-width="${full['product_width']}"
+                      data-modal-product-length="${full['product_length']}">
                       <i class="ri-edit-line ri-20px"></i>
                   </button>
-                  <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect deleteProductModal" 
+                 <!-- <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect deleteProductModal" 
                       data-product-sku="${full['product_sku']}">
                       <i class="ri-delete-bin-6-line ri-20px"></i>
-                  </button>
+                  </button> -->
               `;
           }
         }
