@@ -162,141 +162,159 @@ $(function () {
   var dt_vehicle_table = $('.datatables-vehicles');
   if (dt_vehicle_table.length) {
     var dt_vehicle = dt_vehicle_table.DataTable({
-      ajax: assetsPath + 'json/master-product.json',
+      ajax: assetsPath + 'json/master-product.json', // Ensure this path points to the updated JSON
       columns: [
-        { data: 'product_type' },
-        { data: 'product_name' },
-        { data: 'product_sku' },
-        { data: 'product_price' },
-        { data: 'product_height' },
-        { data: 'product_width' },
-        { data: 'product_length' },
-        { data: 'product_description' }, // Deskripsi Produk
-        { data: 'product_category' }, // Kategori Produk
-        { data: 'product_stock' }, // Stok Produk
-        { data: 'product_image' }, // Gambar Produk
-        { data: 'product_status' }, // Status Produk
-        { data: 'action' }
+        { data: 'product_id' }, // Product ID
+        { data: 'product_sku' }, // SKU Product
+        { data: 'product_height' }, // Tinggi Product
+        { data: 'product_width' }, // Lebar Product
+        { data: 'product_length' }, // Panjang Product
+        { data: 'product_name' }, // Nama Product
+        { data: 'product_price' }, // Harga Product
+        { data: 'product_type' }, // Tipe Product
+        { data: 'product_qty' }, // Qty (Stok Produk)
+        { data: 'product_volume' }, // Volume
+        { data: 'product_weight' }, // Berat Product
+        { data: 'product_uom' }, // UOM (Unit of Measure)
+        { data: 'product_pack_id' }, // Pack ID
+        { data: 'product_warehouse' } // Warehouse
+        // { data: 'action' } // Actions
       ],
       columnDefs: [
         {
-          targets: 0, // product_type column
+          targets: 0, // product_id column
           orderable: true,
           render: function (data, type, full) {
-            return '<span>' + full['product_type'] + '</span>';
+            return '<span>' + full['product_id'] + '</span>';
           }
         },
         {
-          targets: 1, // product_name column
-          orderable: true,
-          render: function (data, type, full) {
-            return '<span>' + full['product_name'] + '</span>';
-          }
-        },
-        {
-          targets: 2, // product_sku column
+          targets: 1, // product_sku column
           orderable: true,
           render: function (data, type, full) {
             return '<span>' + full['product_sku'] + '</span>';
           }
         },
         {
-          targets: 3, // product_price column
-          orderable: true,
-          render: function (data, type, full) {
-            return '<span>' + full['product_price'] + '</span>';
-          }
-        },
-        {
-          targets: 4, // product_height column
+          targets: 2, // product_height column
           orderable: true,
           render: function (data, type, full) {
             return '<span>' + full['product_height'] + '</span>';
           }
         },
         {
-          targets: 5, // product_width column
+          targets: 3, // product_width column
           orderable: true,
           render: function (data, type, full) {
             return '<span>' + full['product_width'] + '</span>';
           }
         },
         {
-          targets: 6, // product_length column
+          targets: 4, // product_length column
           orderable: true,
           render: function (data, type, full) {
             return '<span>' + full['product_length'] + '</span>';
           }
         },
         {
-          targets: 7, // product_description column
+          targets: 5, // product_name column
           orderable: true,
           render: function (data, type, full) {
-            return '<span>' + full['product_description'] + '</span>';
+            return '<span>' + full['product_name'] + '</span>';
           }
         },
         {
-          targets: 8, // product_category column
+          targets: 6, // product_price column
           orderable: true,
           render: function (data, type, full) {
-            return '<span>' + full['product_category'] + '</span>';
+            return '<span>' + full['product_price'] + '</span>';
           }
         },
         {
-          targets: 9, // product_stock column
+          targets: 7, // product_type column
           orderable: true,
           render: function (data, type, full) {
-            return '<span>' + full['product_stock'] + '</span>';
+            return '<span>' + full['product_type'] + '</span>';
           }
         },
         {
-          targets: 10, // product_image column
-          orderable: false, // Assuming you don't want this column to be orderable
-          render: function (data, type, full) {
-            return '<img src="' + full['product_image'] + '" alt="Product Image" style="width:50px;height:50px;" />';
-          }
-        },
-        {
-          targets: 11, // product_status column
+          targets: 8, // product_qty (stock) column
           orderable: true,
           render: function (data, type, full) {
-            return '<span>' + full['product_status'] + '</span>';
+            return '<span>' + full['product_qty'] + '</span>';
           }
         },
         {
-          // Actions
-          targets: -1,
-          title: 'Actions',
-          orderable: false,
+          targets: 9, // product_volume column
+          orderable: true,
           render: function (data, type, full) {
-            return `
-                  <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
-                      data-product-type="${full['product_type']}"
-                      data-product-name="${full['product_name']}"
-                      data-modal-product-sku="${full['product_sku']}"
-                      data-product-price="${full['product_price']}"
-                      data-modal-product-height="${full['product_height']}"
-                      data-modal-product-width="${full['product_width']}"
-                      data-modal-product-length="${full['product_length']}">
-                      <i class="ri-eye-line ri-20px"></i>
-                  </button>
-                  <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect viewModal"
-                      data-product-type="${full['product_type']}"
-                      data-product-name="${full['product_name']}"
-                      data-modal-product-sku="${full['product_sku']}"
-                      data-product-price="${full['product_price']}"
-                      data-modal-product-height="${full['product_height']}"
-                      data-modal-product-width="${full['product_width']}"
-                      data-modal-product-length="${full['product_length']}">
-                      <i class="ri-edit-line ri-20px"></i>
-                  </button>
-                 <!-- <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect deleteProductModal" 
-                      data-product-sku="${full['product_sku']}">
-                      <i class="ri-delete-bin-6-line ri-20px"></i>
-                  </button> -->
-              `;
+            return '<span>' + full['product_volume'] + '</span>';
+          }
+        },
+        {
+          targets: 10, // product_weight column
+          orderable: true,
+          render: function (data, type, full) {
+            return '<span>' + full['product_weight'] + '</span>';
+          }
+        },
+        {
+          targets: 11, // product_uom column
+          orderable: true,
+          render: function (data, type, full) {
+            return '<span>' + full['product_uom'] + '</span>';
+          }
+        },
+        {
+          targets: 12, // product_pack_id column
+          orderable: true,
+          render: function (data, type, full) {
+            return '<span>' + full['product_pack_id'] + '</span>';
+          }
+        },
+        {
+          targets: 13, // product_warehouse column
+          orderable: true,
+          render: function (data, type, full) {
+            return '<span>' + full['product_warehouse'] + '</span>';
           }
         }
+        // {
+        //   // Actions column (last one)
+        //   targets: -1,
+        //   title: 'Actions',
+        //   orderable: false,
+        //   render: function (data, type, full) {
+        //     return `
+        //     <button type="button" class="btn btn-sm btn-primary btn-icon rounded-pill waves-effect viewModal"
+        //         data-product-id="${full['product_id']}"
+        //         data-product-type="${full['product_type']}"
+        //         data-product-name="${full['product_name']}"
+        //         data-product-sku="${full['product_sku']}"
+        //         data-product-price="${full['product_price']}"
+        //         data-product-height="${full['product_height']}"
+        //         data-product-width="${full['product_width']}"
+        //         data-product-length="${full['product_length']}">
+        //         <i class="ri-eye-line ri-20px"></i>
+        //     </button>
+        //     <button type="button" class="btn btn-sm btn-success btn-icon rounded-pill waves-effect viewModal"
+        //         data-product-id="${full['product_id']}"
+        //         data-product-type="${full['product_type']}"
+        //         data-product-name="${full['product_name']}"
+        //         data-product-sku="${full['product_sku']}"
+        //         data-product-price="${full['product_price']}"
+        //         data-product-height="${full['product_height']}"
+        //         data-product-width="${full['product_width']}"
+        //         data-product-length="${full['product_length']}">
+        //         <i class="ri-edit-line ri-20px"></i>
+        //     </button>
+        //     <button type="button" class="btn btn-sm btn-danger btn-icon rounded-pill waves-effect deleteProductModal"
+        //         data-product-sku="${full['product_sku']}">
+        //         <i class="ri-delete-bin-6-line ri-20px"></i>
+        //     </button>
+        //   `;
+        //   }
+        // }
       ],
       order: [[2, 'asc']],
       dom:
