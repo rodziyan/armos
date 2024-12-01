@@ -110,7 +110,7 @@ $('body').append(`
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success justify-end" style="background-color: #28a745; border-color: #28a745;">
-          Ya, Approval
+          Paid Payout
         </button>
       </div>
     </div>
