@@ -178,6 +178,9 @@ $(document).ready(function () {
                 data-delivery_type="${$deliveryType}">
                 <i class="ri-eye-line ri-20px"></i>
             </button>
+            <button type="button" class="btn btn-sm btn-warning btn-icon rounded-pill waves-effect mapsModal">
+                <i class="ri-map-pin-line ri-20px"></i>
+            </button>
           `;
 
             // Check the value of 'toko' for additional conditions
@@ -313,6 +316,12 @@ $(document).ready(function () {
       console.log($('#unholdModal')); // Debug log
       $('#unholdModal').modal('show'); // Tampilkan modal
     });
+    // Event listener untuk unhold modal
+    $(document).on('click', '.mapsModal', function () {
+      var id = $(this).data('id'); // Ambil data ID jika diperlukan
+      console.log($('#mapsModal')); // Debug log
+      $('#mapsModal').modal('show'); // Tampilkan modal
+    });
   }
   $(document).ready(function () {
     // Tambahkan event listener untuk tombol View dan Update
@@ -376,7 +385,7 @@ function createViewModal() {
   var modalHTML = `
     <!-- Modal with updated design and increased content size -->
 <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" style="max-width: 80%; width: auto; max-height: 90vh;">
+    <div class="modal-dialog modal-lg modal-dialog-centered" style="max-width: 80%; width: auto; max-height: 90vh;">
         <div class="modal-content">
             <div class="d-flex justify-content-end me-3 mt-3">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -429,9 +438,57 @@ function createViewModal() {
     </div>
 </div>
 
+ <div class="modal fade" id="mapsModal" tabindex="-1" aria-labelledby="mapsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="d-flex justify-content-end me-3 mt-3">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="modal-title mb-3" id="mapsModalLabel">Daftar Alamat</h5>
+
+                    <!-- Data Alamat 1 -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p class="card-text"><strong>Nama:</strong> Asep</p>
+                            <p class="card-text"><strong>No. Telepon:</strong> 6287771262126</p>
+                            <p class="card-text"><strong>Alamat:</strong> Jl. Dummy No.123, Rt/Rw 001/002, Dummy Town, Dummy City (ID 12345)</p>
+                        </div>
+                    </div>
+
+                    <!-- Data Alamat 2 -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p class="card-text"><strong>Nama:</strong> Siti Rahma</p>
+                            <p class="card-text"><strong>No. Telepon:</strong> 6281234567890</p>
+                            <p class="card-text"><strong>Alamat:</strong> Jl. Contoh No.456, Rt/Rw 003/004, Office Town, Office City (ID 67890)</p>
+                        </div>
+                    </div>
+
+                    <!-- Data Alamat 3 -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p class="card-text"><strong>Nama:</strong> Budi Santoso</p>
+                            <p class="card-text"><strong>No. Telepon:</strong> 6289876543210</p>
+                            <p class="card-text"><strong>Alamat:</strong> Jl. Samping No.789, Rt/Rw 005/006, Suburbia, Suburb City (ID 10111)</p>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Action Section -->
+                    <div class="d-flex justify-content-end mt-3">
+                        <button type="button" class="btn btn-success btn-sm rounded-pill" style="background-color: #006400; border-color: #006400;">
+                            <i class=""></i> Simpan Perubahan
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <!-- Modal with updated design and increased content size -->
 <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" style="max-width: 80%; width: auto; max-height: 90vh;">
+    <div class="modal-dialog modal-lg modal-dialog-centered" style="max-width: 80%; width: auto; max-height: 90vh;">
         <div class="modal-content">
             <div class="d-flex justify-content-end me-3 mt-3">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
