@@ -33,7 +33,9 @@ $(document).ready(function () {
                           <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#editFakur">
     <i class="ri-file-text-line"></i> Document Reconciliation
 </button>
-
+                          <button id="modalView" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#modalView">
+    <i class="ri-file-text-line"></i>Create Document
+</button>
                           <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
                         <i class="ri-close-line"></i> Batalkan Order
                     </button></td>
@@ -46,6 +48,10 @@ $(document).ready(function () {
                           <td>
                           <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#editFakur">
     <i class="ri-file-text-line"></i> Document Reconciliation
+</button>
+
+                          <button id="modalView" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#modalView">
+    <i class="ri-file-text-line"></i>Create Document
 </button>
 
                           <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
@@ -90,6 +96,10 @@ $(document).ready(function () {
                           <button id="editFaktur" class="btn btn-sm btn-primary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#editFakur">
                               <i class="ri-file-text-line"></i> Document Reconciliation
                           </button>
+                          <button id="modalView" class="btn btn-sm btn-secondary rounded-pill waves-effect" data-bs-toggle="modal" data-bs-target="#modalView">
+    <i class="ri-file-text-line"></i>Create Document
+</button>
+
                           <button class="btn btn-sm btn-danger rounded-pill waves-effect" onclick="openModals(event)">
                         <i class="ri-close-line"></i> Batalkan Order
                     </button>
@@ -107,6 +117,7 @@ $(document).ready(function () {
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
+            <h5 class="modal-title" id="modalViewLabel">Revisi Faktur</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -130,7 +141,6 @@ $(document).ready(function () {
 
 
 
-  
 <!-- Modal Edit Faktur -->
   <div class="modal fade" id="editFaktur" tabindex="2" aria-labelledby="editRouteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
